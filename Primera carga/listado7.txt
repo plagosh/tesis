@@ -1,0 +1,5101 @@
+
+3384;sapo;2
+24581;saquitos;2
+8220;sarcófago;2
+26427;momia;2
+7809;sardina;2
+25670;sardina;2
+27737;Entierro de la Sardina;1
+5578;sarpullido;2
+31941;sarro;2
+2558;sartén;2
+22100;sastre;2
+30138;pulsioximetría;2
+10317;oxígeno;2
+24216;oxígeno;2
+3219;sauce;2
+25429;sauna;2
+25433;sauna;2
+25433;sauna;2
+25429;sauna;2
+25429;sauna;2
+25433;sauna;2
+25433;sauna;2
+25429;sauna;2
+34890;haba seca;2
+24396;saxofonista;2
+2559;saxofón;2
+5579;sazonar;3
+28053;scout;2
+28054;scout;2
+27238;saludo Scout;2
+6481;se;6
+7029;se;6
+7031;se;6
+7033;se;6
+31906;se;6
+28429;terminar;3
+7180;yo no sé;5
+32308;no sé leer;5
+8115;este cuento se ha acabado;5
+28429;terminar;3
+2560;secador;2
+33921;secador de manos;2
+33920;secador de pelo;2
+33921;secador de manos;2
+2560;secador;2
+9830;manos;2
+10382;educación física;2
+10383;educación física;2
+13062;educación física;2
+13064;educación física;2
+2443;enjabonar las manos;3
+2566;secar;3
+4873;crema de manos;2
+8975;lavar las manos;3
+10381;educación física;2
+13060;educación física;2
+29210;enjabonar las manos;3
+30506;enjabonar las manos;3
+30520;secar;3
+33920;secador de pelo;2
+35649;manos de cerdo;2
+35977;enjabonar las manos;3
+10372;educación física;2
+10373;educación física;2
+10374;educación física;2
+10375;educación física;2
+10376;educación física;2
+10377;educación física;2
+10380;educación física;2
+10378;educación física;2
+10386;educación física;2
+10387;educación física;2
+10379;educación física;2
+13042;educación física;2
+13048;educación física;2
+13052;educación física;2
+13054;educación física;2
+13056;educación física;2
+13046;educación física;2
+13058;educación física;2
+13044;educación física;2
+13050;educación física;2
+13070;educación física;2
+13072;educación física;2
+10384;educación física;2
+10385;educación física;2
+13066;educación física;2
+13068;educación física;2
+33920;secador de pelo;2
+24256;pelo de animal;2
+2560;secador;2
+2851;pelo;2
+28681;pelo largo;2
+28683;pelo corto;2
+2695;cepillo;2
+5542;plancha de pelo;2
+7239;secar;3
+8084;cortar el pelo;3
+8208;rizar el pelo;3
+8615;enjabonar el pelo;3
+8616;lavar el pelo;3
+8976;lavar el pelo;3
+8978;aclarar el pelo;3
+15357;cinta;2
+16887;secar;3
+26945;enjabonar el pelo;3
+27485;secar;3
+27486;secar;3
+27696;cortar el pelo;3
+27695;cortar el pelo;3
+28503;secar;3
+33921;secador de manos;2
+35037;lavar el pelo;3
+36552;lavar el pelo;3
+36558;maquinilla;2
+26431;secadora;2
+2566;secar;3
+7239;secar;3
+8688;secar;3
+9035;secar;3
+16887;secar;3
+22106;secar;3
+22105;secar;3
+22104;secar;3
+25437;secar;3
+27485;secar;3
+27486;secar;3
+28507;secar;3
+28503;secar;3
+30520;secar;3
+34715;secar;3
+4741;seco;4
+7239;secar;3
+16887;secar;3
+27485;secar;3
+27486;secar;3
+28503;secar;3
+2566;secar;3
+8688;secar;3
+9035;secar;3
+24256;pelo de animal;2
+28507;secar;3
+30520;secar;3
+2851;pelo;2
+22106;secar;3
+22105;secar;3
+22104;secar;3
+25437;secar;3
+34715;secar;3
+28681;pelo largo;2
+28683;pelo corto;2
+2695;cepillo;2
+4741;seco;4
+5542;plancha de pelo;2
+8084;cortar el pelo;3
+8208;rizar el pelo;3
+8615;enjabonar el pelo;3
+8616;lavar el pelo;3
+8976;lavar el pelo;3
+8978;aclarar el pelo;3
+15357;cinta;2
+26945;enjabonar el pelo;3
+27696;cortar el pelo;3
+27695;cortar el pelo;3
+33920;secador de pelo;2
+35037;lavar el pelo;3
+36552;lavar el pelo;3
+36558;maquinilla;2
+31785;secreción;2
+31785;secreción;2
+4742;secretaria;2
+34784;secretaria;2
+9092;oficina;2
+4743;secretario;2
+34784;secretaria;2
+9092;oficina;2
+4742;secretaria;2
+34784;secretaria;2
+27039;secuestro;2
+27038;secuestro;2
+27037;secuestro;2
+27039;secuestro;2
+27033;secuestrador;2
+27033;secuestrador;2
+27037;secuestro;2
+27039;secuestro;2
+27038;secuestro;2
+32294;educación secundaria;2
+7273;sediento;4
+35581;sed;2
+34331;sede comarcal;2
+35989;sedestación;2
+35990;sedestación;2
+35523;sedienta;4
+4963;sediento;4
+7273;sediento;4
+32140;sediento;4
+10151;cortar el césped;3
+26000;cortar el césped;3
+31785;secreción;2
+5588;sierra;2
+32877;seguimiento cefálico;2
+32878;seguimiento cefálico;2
+32876;puntero cefálico;2
+36436;licornio;2
+32879;seguimiento de ojos;2
+32880;seguimiento de ojos;2
+32879;seguimiento de ojos;2
+32880;seguimiento de ojos;2
+2876;ojos;2
+32877;seguimiento cefálico;2
+32878;seguimiento cefálico;2
+3388;sombra de ojos;2
+10146;cerrar;3
+10138;abrir los ojos;3
+34819;tapar los ojos;3
+34818;tapar los ojos;3
+34822;tapar los ojos;3
+36333;mirar a los ojos;3
+7038;perseguir;3
+7037;perseguir;3
+27331;siguiente;4
+15541;segunda;4
+28315;segunda;4
+28320;segunda;4
+34477;segundo;6
+27483;planta superior;2
+27483;planta superior;2
+27480;planta intermedia;2
+3143;planta;2
+11343;piso;2
+27477;bajo;2
+15539;segundo;4
+28319;segundo;4
+34477;segundo;6
+7240;segundo plato;2
+7240;segundo plato;2
+16857;plato;2
+2532;plato;2
+7219;primer plato;2
+34088;plato pequeño;2
+29012;espaguetis;2
+29191;plato de jamón;2
+12261;protección;2
+12260;protección;2
+34856;seguridad;2
+36701;mantener la distancia de seguridad;3
+36702;mantener la distancia de seguridad;3
+36725;distancia de seguridad;2
+3343;vigilante de seguridad;2
+5962;cinturón de seguridad;2
+11278;vigilante de seguridad;2
+28275;gafa de seguridad;2
+31076;arco detector;2
+31088;escáner de seguridad;2
+32374;silla infantil;2
+34671;cinturón de seguridad;2
+34655;cinturón de seguridad;2
+36478;vigilante de seguridad;2
+36479;vigilante de seguridad;2
+34659;levantar la lengüeta del cinturón de seguridad;3
+16029;seguro;2
+16031;seguro;2
+16035;seguro;2
+16027;seguro;2
+16033;seguro;2
+16029;seguro;2
+16031;seguro;2
+16035;seguro;2
+16033;seguro;2
+2339;coche;2
+6981;coche;2
+16027;seguro;2
+3081;coche deportivo;2
+25962;coche fúnebre;2
+2340;coche de juguete;2
+3426;coche de policia;2
+5070;coche de carreras;2
+6983;coche de policia;2
+9006;lavar el coche;3
+21541;coche de rally;2
+25420;carruaje;2
+25419;carruaje;2
+32374;silla infantil;2
+16033;seguro;2
+16029;seguro;2
+16031;seguro;2
+16035;seguro;2
+14264;salud;2
+14664;salud;2
+16027;seguro;2
+36591;salud;2
+29859;centro de salud;2
+32246;centro de salud;2
+32576;salud e higiene;2
+29857;centro de salud mental;2
+16035;seguro;2
+16029;seguro;2
+16031;seguro;2
+16033;seguro;2
+8717;vida;2
+16027;seguro;2
+32788;vida privada;2
+25720;proyecto de vida;2
+25721;proyecto de vida;2
+32706;transición a la vida adulta;2
+16031;seguro;2
+16029;seguro;2
+16035;seguro;2
+16033;seguro;2
+16027;seguro;2
+36347;autonomía personal;2
+7810;según;6
+2632;6;6
+4894;6;6
+7241;6;6
+35683;6;6
+29500;las seis en punto;6
+29312;36;6
+29334;46;6
+29356;56;6
+29376;66;6
+29400;76;6
+29422;86;6
+29444;96;6
+29502;las seis y cuarto;6
+29504;las seis y media;6
+29538;las seis menos cuarto;6
+29384;seiscientos;6
+11694;escoger;3
+22110;seleccionar;3
+30510;escoger;3
+36724;seleccionar;3
+14670;decisión;2
+34809;selfi;2
+7242;sellar;3
+7243;sellar;3
+2802;sello;2
+10324;sello de caucho;2
+10324;sello de caucho;2
+2802;sello;2
+3385;selva;2
+7244;semana;2
+24601;semana;2
+3153;Semana Santa;1
+25441;Semana Santa;1
+32538;Semana Santa;1
+27329;fin de semana;6
+32396;fin de semana;2
+36706;fin de semana;2
+7245;sembrar;3
+6157;semicorchea;2
+8689;semilla;2
+26447;soja;2
+7246;semillero;2
+2567;semáforo;2
+36221;cruzar con semáforo en verde;3
+36223;no cruzar con semáforo en rojo;3
+4959;semáforo rojo;2
+4958;semáforo verde;2
+36446;semáforo rojo;2
+36448;semáforo verde;2
+36445;semáforo en ámbar;2
+36445;semáforo en ámbar;2
+36221;cruzar con semáforo en verde;3
+36223;no cruzar con semáforo en rojo;3
+2567;semáforo;2
+4959;semáforo rojo;2
+4958;semáforo verde;2
+36446;semáforo rojo;2
+36448;semáforo verde;2
+4959;semáforo rojo;2
+36223;no cruzar con semáforo en rojo;3
+36446;semáforo rojo;2
+36221;cruzar con semáforo en verde;3
+2808;rojo;4
+2567;semáforo;2
+2839;pimiento;2
+4958;semáforo verde;2
+36448;semáforo verde;2
+36445;semáforo en ámbar;2
+4958;semáforo verde;2
+36221;cruzar con semáforo en verde;3
+36448;semáforo verde;2
+4886;verde;4
+4887;verde;4
+8317;aceituna;2
+36223;no cruzar con semáforo en rojo;3
+2567;semáforo;2
+2838;pimiento;2
+4959;semáforo rojo;2
+5077;hoja;2
+8354;judía verde;2
+26677;Cabo Verde;1
+36446;semáforo rojo;2
+36445;semáforo en ámbar;2
+6646;pescado;2
+4645;sencillo;4
+32302;sencillo;4
+32434;sencillo;4
+8372;pecho;2
+7275;senos;2
+8372;pecho;2
+32590;sensaciones y sentimientos;2
+11476;sentimientos;2
+12366;sensibilización;2
+12364;sensibilizar;3
+25081;sentada;4
+11370;sentar en el suelo;3
+25082;sentado;4
+35211;hacer pis sentado;3
+25083;estar sentado;3
+11372;sentar en círculo;3
+11370;sentar en el suelo;3
+11371;sentar en círculo;3
+25082;sentado;4
+2801;sentar;3
+6611;sentar;3
+11369;sentar;3
+11373;sentar;3
+11374;sentar;3
+25083;estar sentado;3
+30826;sentar;3
+35033;sentar;3
+35031;sentar;3
+35029;sentar;3
+11372;sentar en círculo;3
+11371;sentar en círculo;3
+36592;sentar en semicírculo;3
+11370;sentar en el suelo;3
+27268;sentar en el borde;3
+27269;sentar en el borde;3
+27270;sentar en el borde;3
+11372;sentar en círculo;3
+11371;sentar en círculo;3
+11374;sentar;3
+2801;sentar;3
+6611;sentar;3
+11369;sentar;3
+11373;sentar;3
+25083;estar sentado;3
+30826;sentar;3
+35033;sentar;3
+35031;sentar;3
+35029;sentar;3
+4603;círculo;2
+34053;círculo;2
+36592;sentar en semicírculo;3
+11370;sentar en el suelo;3
+27268;sentar en el borde;3
+27269;sentar en el borde;3
+27270;sentar en el borde;3
+27268;sentar en el borde;3
+27269;sentar en el borde;3
+27270;sentar en el borde;3
+11374;sentar;3
+2801;sentar;3
+6611;sentar;3
+11369;sentar;3
+11373;sentar;3
+25083;estar sentado;3
+30826;sentar;3
+35033;sentar;3
+35031;sentar;3
+35029;sentar;3
+11372;sentar en círculo;3
+11371;sentar en círculo;3
+36592;sentar en semicírculo;3
+11370;sentar en el suelo;3
+11370;sentar en el suelo;3
+11374;sentar;3
+2575;suelo;2
+2801;sentar;3
+6611;sentar;3
+11369;sentar;3
+11373;sentar;3
+25083;estar sentado;3
+30826;sentar;3
+35033;sentar;3
+35031;sentar;3
+35029;sentar;3
+11372;sentar en círculo;3
+11371;sentar en círculo;3
+36592;sentar en semicírculo;3
+27268;sentar en el borde;3
+27269;sentar en el borde;3
+27270;sentar en el borde;3
+36592;sentar en semicírculo;3
+11374;sentar;3
+2801;sentar;3
+6611;sentar;3
+11369;sentar;3
+11373;sentar;3
+25083;estar sentado;3
+30826;sentar;3
+35033;sentar;3
+35031;sentar;3
+35029;sentar;3
+11372;sentar en círculo;3
+11371;sentar en círculo;3
+11370;sentar en el suelo;3
+27268;sentar en el borde;3
+27269;sentar en el borde;3
+27270;sentar en el borde;3
+11374;sentar;3
+4919;banco;2
+2801;sentar;3
+3062;banco;2
+3255;banco;2
+6055;banco;2
+6611;sentar;3
+10242;banco;2
+11369;sentar;3
+11373;sentar;3
+25083;estar sentado;3
+30826;sentar;3
+35033;sentar;3
+35031;sentar;3
+35029;sentar;3
+9074;Banco Mundial;1
+11372;sentar en círculo;3
+11371;sentar en círculo;3
+30885;banco de iglesia;2
+36592;sentar en semicírculo;3
+11370;sentar en el suelo;3
+27268;sentar en el borde;3
+27269;sentar en el borde;3
+27270;sentar en el borde;3
+10177;sentarse;3
+11374;sentar;3
+16889;sentarse;3
+30050;sentarse;3
+30051;sentarse;3
+30052;sentarse;3
+30826;sentar;3
+35781;sentarse;3
+11372;sentar en círculo;3
+11371;sentar en círculo;3
+11370;sentar en el suelo;3
+27268;sentar en el borde;3
+27269;sentar en el borde;3
+27270;sentar en el borde;3
+11372;sentar en círculo;3
+11371;sentar en círculo;3
+16739;jugar al corro;3
+16741;jugar al corro;3
+10177;sentarse;3
+11374;sentar;3
+16889;sentarse;3
+30050;sentarse;3
+30051;sentarse;3
+30052;sentarse;3
+35781;sentarse;3
+30826;sentar;3
+11370;sentar en el suelo;3
+27268;sentar en el borde;3
+27269;sentar en el borde;3
+27270;sentar en el borde;3
+11372;sentar en círculo;3
+11371;sentar en círculo;3
+10177;sentarse;3
+11374;sentar;3
+16889;sentarse;3
+30050;sentarse;3
+30051;sentarse;3
+30052;sentarse;3
+35781;sentarse;3
+30826;sentar;3
+4603;círculo;2
+34053;círculo;2
+11370;sentar en el suelo;3
+27268;sentar en el borde;3
+27269;sentar en el borde;3
+27270;sentar en el borde;3
+11374;sentar;3
+4919;banco;2
+10177;sentarse;3
+16889;sentarse;3
+30050;sentarse;3
+30051;sentarse;3
+30052;sentarse;3
+35781;sentarse;3
+11372;sentar en círculo;3
+11371;sentar en círculo;3
+3062;banco;2
+3255;banco;2
+6055;banco;2
+10242;banco;2
+30826;sentar;3
+9074;Banco Mundial;1
+30885;banco de iglesia;2
+11370;sentar en el suelo;3
+27268;sentar en el borde;3
+27269;sentar en el borde;3
+27270;sentar en el borde;3
+27268;sentar en el borde;3
+27269;sentar en el borde;3
+27270;sentar en el borde;3
+10177;sentarse;3
+11374;sentar;3
+16889;sentarse;3
+30050;sentarse;3
+30051;sentarse;3
+30052;sentarse;3
+35781;sentarse;3
+11372;sentar en círculo;3
+11371;sentar en círculo;3
+30826;sentar;3
+11370;sentar en el suelo;3
+11370;sentar en el suelo;3
+10177;sentarse;3
+11374;sentar;3
+16889;sentarse;3
+30050;sentarse;3
+30051;sentarse;3
+30052;sentarse;3
+35781;sentarse;3
+11372;sentar en círculo;3
+11371;sentar en círculo;3
+2575;suelo;2
+30826;sentar;3
+27268;sentar en el borde;3
+27269;sentar en el borde;3
+27270;sentar en el borde;3
+10177;sentarse;3
+16889;sentarse;3
+15927;váter;2
+11374;sentar;3
+30050;sentarse;3
+30051;sentarse;3
+30052;sentarse;3
+35781;sentarse;3
+11372;sentar en círculo;3
+11371;sentar en círculo;3
+30826;sentar;3
+2430;váter;2
+27553;cuarto de baño;2
+11370;sentar en el suelo;3
+27268;sentar en el borde;3
+27269;sentar en el borde;3
+27270;sentar en el borde;3
+10183;tirar;3
+30050;sentarse;3
+30051;sentarse;3
+30052;sentarse;3
+35781;sentarse;3
+9121;silla de ruedas;2
+25471;silla de ruedas;2
+6281;silla de niños;2
+10177;sentarse;3
+11374;sentar;3
+16889;sentarse;3
+32374;silla infantil;2
+11372;sentar en círculo;3
+11371;sentar en círculo;3
+3155;silla;2
+6614;silla;2
+30826;sentar;3
+25455;silla adaptada;2
+36193;silla monorueda;2
+4961;silla de salón;2
+4960;silla de cocina;2
+6212;silla de ruedas;2
+9122;silla de ruedas;2
+11376;silla de colegio;2
+25459;silla de montar;2
+25467;silla de ruedas;2
+25460;silla de montar;2
+28085;silla de ruedas;2
+35901;silla con bipedestador;2
+35897;silla de peluqero;2
+11370;sentar en el suelo;3
+24583;silla de playa adaptada;2
+27268;sentar en el borde;3
+27269;sentar en el borde;3
+27270;sentar en el borde;3
+35783;levantarse;3
+11466;llevar en silla de ruedas;3
+11467;dependiente;4
+24587;silla de ruedas de carreras;2
+32288;llevar en silla de ruedas;3
+32500;ir en silla de ruedas;3
+32501;ir en silla de ruedas;3
+33930;llevar en silla de ruedas;3
+33931;llevar en silla de ruedas;3
+35715;ir en silla de ruedas;3
+15026;sentencia de divorcio;2
+15028;sentencia de divorcio;2
+15024;sentencia de divorcio;2
+15012;divorcio;2
+15016;divorcio;2
+15014;divorcio;2
+15030;demanda de divorcio;2
+15032;demanda de divorcio;2
+15034;demanda de divorcio;2
+25445;sentidos;2
+30194;sentir;3
+30198;sentir;3
+30197;sentir;3
+30195;sentir;3
+30196;sentir;3
+29855;jardín de los sentidos;2
+12359;sentimiento;2
+11476;sentimientos;2
+12359;sentimiento;2
+32590;sensaciones y sentimientos;2
+30194;sentir;3
+30198;sentir;3
+30197;sentir;3
+30195;sentir;3
+30196;sentir;3
+36736;sentir vergüenza ajena;3
+36736;sentir vergüenza ajena;3
+30194;sentir;3
+30198;sentir;3
+30197;sentir;3
+30195;sentir;3
+30196;sentir;3
+25823;vergüenza;2
+28077;separador;2
+28078;separador;2
+32920;separador de barra;2
+32920;separador de barra;2
+28611;barra española;2
+3424;/;6
+28077;separador;2
+28078;separador;2
+2494;pan;2
+2992;pintalabios;2
+3413;\;6
+5371;alejar;3
+6893;alejar;3
+6894;alejar;3
+27069;dividir;3
+27070;dividir;3
+32154;alejar;3
+28465;sepia;2
+28466;sepia;2
+6613;septiembre;6
+35929;septiembre;6
+5580;sequía;2
+5581;ser;3
+5858;ser;3
+36480;ser;3
+10250;seres vivos;2
+11375;seres vivos;2
+32572;seres vivos;2
+36600;tener paciencia;3
+36600;tener paciencia;3
+27933;paciente;2
+27935;paciente;2
+27934;paciente;2
+33928;paciente;2
+33926;paciente;2
+31911;paciente embarazada;2
+32099;paciente embarazada;2
+31967;atención al paciente;2
+10250;seres vivos;2
+11375;seres vivos;2
+32572;seres vivos;2
+11397;vivo;4
+10250;seres vivos;2
+11375;seres vivos;2
+32572;seres vivos;2
+36449;serio;4
+29552;serie;2
+29553;serie;2
+15818;serie;2
+19548;1-2-3;5
+29552;serie;2
+29553;serie;2
+8690;serio;4
+32300;serio;4
+36449;serio;4
+36434;ponerse serio;3
+2568;serpiente;2
+34589;tortuga cuello de serpiente;2
+2800;serrar;3
+25447;serrar;3
+25448;serrar;3
+25449;serrar;3
+2799;serrucho;2
+15810;servicio;2
+15814;baño de mujeres;2
+15812;baño de hombres;2
+24657;servicio;2
+27475;retrete;2
+27559;retrete;2
+27561;retrete;2
+16059;servicio de limpieza;2
+16063;servicio de orientación;2
+16065;servicio de orientación;2
+26732;carro;2
+11657;SOI;2
+11659;STO;2
+16061;Servicio de Terapia Ocupacional;2
+35603;servicio provincial de educación;2
+16059;servicio de limpieza;2
+15810;servicio;2
+15814;baño de mujeres;2
+15812;baño de hombres;2
+22791;limpieza;2
+24657;servicio;2
+27475;retrete;2
+27559;retrete;2
+27561;retrete;2
+15836;almacén de limpieza;2
+16063;servicio de orientación;2
+16065;servicio de orientación;2
+26732;carro;2
+36700;empresa de limpieza;2
+11657;SOI;2
+11659;STO;2
+16061;Servicio de Terapia Ocupacional;2
+16117;cuarto de la limpieza;2
+35603;servicio provincial de educación;2
+16063;servicio de orientación;2
+16065;servicio de orientación;2
+15810;servicio;2
+15814;baño de mujeres;2
+15812;baño de hombres;2
+24657;servicio;2
+27475;retrete;2
+27559;retrete;2
+27561;retrete;2
+29804;orientación;2
+32828;orientación sexual;2
+16059;servicio de limpieza;2
+26732;carro;2
+36532;equipo de orientación;2
+11657;SOI;2
+11659;STO;2
+16061;Servicio de Terapia Ocupacional;2
+35603;servicio provincial de educación;2
+35603;servicio provincial de educación;2
+10258;educación física;2
+11245;educación artística;2
+32550;educación artística;2
+32548;educación física;2
+13634;educación plástica y visual;2
+32824;colegio de educación especial;2
+15810;servicio;2
+15814;baño de mujeres;2
+15812;baño de hombres;2
+24657;servicio;2
+27475;retrete;2
+27559;retrete;2
+27561;retrete;2
+8098;educación;2
+10370;educación física;2
+10372;educación física;2
+10373;educación física;2
+10374;educación física;2
+10375;educación física;2
+10376;educación física;2
+10371;educación física;2
+10377;educación física;2
+10381;educación física;2
+10380;educación física;2
+10382;educación física;2
+10384;educación física;2
+10378;educación física;2
+10383;educación física;2
+10386;educación física;2
+10385;educación física;2
+10387;educación física;2
+10379;educación física;2
+11275;educación física;2
+13036;educación física;2
+13038;educación física;2
+13042;educación física;2
+13048;educación física;2
+13052;educación física;2
+13054;educación física;2
+13056;educación física;2
+13046;educación física;2
+13058;educación física;2
+13060;educación física;2
+13044;educación física;2
+13050;educación física;2
+13062;educación física;2
+13064;educación física;2
+13070;educación física;2
+13066;educación física;2
+13068;educación física;2
+13072;educación física;2
+31470;educación infantil;2
+31472;educación primaria;2
+31945;educación física;2
+32294;educación secundaria;2
+32703;educación vial;2
+16059;servicio de limpieza;2
+16063;servicio de orientación;2
+16065;servicio de orientación;2
+26732;carro;2
+32720;educación básica obligatoria;2
+7798;profesora de educación física;2
+7823;profesor de educación física;2
+11649;material de educación física;2
+11657;SOI;2
+11659;STO;2
+16061;Servicio de Terapia Ocupacional;2
+29915;aula de educación de adultos;2
+2569;servilleta;2
+36303;servilleta;2
+7812;servilletero;2
+7247;servir;3
+29364;60;6
+29366;61;6
+29368;62;6
+29370;63;6
+29372;64;6
+29376;66;6
+29378;67;6
+29380;68;6
+29382;69;6
+29374;65;6
+29374;65;6
+29364;60;6
+29366;61;6
+29368;62;6
+29370;63;6
+29372;64;6
+29376;66;6
+29378;67;6
+29380;68;6
+29382;69;6
+29372;64;6
+29364;60;6
+29366;61;6
+29368;62;6
+29370;63;6
+29376;66;6
+29378;67;6
+29380;68;6
+29382;69;6
+29374;65;6
+29368;62;6
+29364;60;6
+29366;61;6
+29370;63;6
+29372;64;6
+29376;66;6
+29378;67;6
+29380;68;6
+29382;69;6
+29374;65;6
+29382;69;6
+29518;las nueve en punto;6
+2635;9;6
+4897;9;6
+7188;9;6
+29364;60;6
+35689;9;6
+29340;49;6
+29318;39;6
+29366;61;6
+29368;62;6
+29370;63;6
+29372;64;6
+29376;66;6
+29378;67;6
+29380;68;6
+29406;79;6
+29362;59;6
+29374;65;6
+29428;89;6
+29450;99;6
+29522;las nueve y media;6
+29520;las nueve y cuarto;6
+29544;las nueve menos cuarto;6
+29380;68;6
+29364;60;6
+29366;61;6
+29368;62;6
+29370;63;6
+29372;64;6
+29376;66;6
+29378;67;6
+29382;69;6
+29374;65;6
+29376;66;6
+29364;60;6
+29366;61;6
+29368;62;6
+29370;63;6
+29372;64;6
+29378;67;6
+29380;68;6
+29382;69;6
+29374;65;6
+29378;67;6
+29364;60;6
+29366;61;6
+29368;62;6
+29370;63;6
+29372;64;6
+29376;66;6
+29380;68;6
+29382;69;6
+29374;65;6
+29370;63;6
+29364;60;6
+29366;61;6
+29368;62;6
+29372;64;6
+29376;66;6
+29378;67;6
+29380;68;6
+29382;69;6
+29374;65;6
+29366;61;6
+29364;60;6
+29368;62;6
+29370;63;6
+29372;64;6
+29376;66;6
+29378;67;6
+29380;68;6
+29382;69;6
+29374;65;6
+2696;cerebro;2
+28425;sestear;3
+35891;siesta;2
+8328;hongo;2
+3154;setas;2
+3386;setas;2
+8328;hongo;2
+29386;setecientos;6
+29388;70;6
+29392;72;6
+29394;73;6
+29396;74;6
+29398;75;6
+29400;76;6
+29402;77;6
+29404;78;6
+29406;79;6
+29390;71;6
+29398;75;6
+29388;70;6
+29392;72;6
+29394;73;6
+29396;74;6
+29400;76;6
+29402;77;6
+29404;78;6
+29406;79;6
+29390;71;6
+29396;74;6
+29388;70;6
+29392;72;6
+29394;73;6
+29398;75;6
+29400;76;6
+29402;77;6
+29404;78;6
+29406;79;6
+29390;71;6
+29392;72;6
+29388;70;6
+29394;73;6
+29396;74;6
+29398;75;6
+29400;76;6
+29402;77;6
+29404;78;6
+29406;79;6
+29390;71;6
+29406;79;6
+29518;las nueve en punto;6
+2635;9;6
+4897;9;6
+7188;9;6
+29388;70;6
+35689;9;6
+29340;49;6
+29318;39;6
+29382;69;6
+29392;72;6
+29394;73;6
+29396;74;6
+29398;75;6
+29400;76;6
+29402;77;6
+29404;78;6
+29362;59;6
+29390;71;6
+29428;89;6
+29450;99;6
+29522;las nueve y media;6
+29520;las nueve y cuarto;6
+29544;las nueve menos cuarto;6
+29404;78;6
+29388;70;6
+29392;72;6
+29394;73;6
+29396;74;6
+29398;75;6
+29400;76;6
+29402;77;6
+29406;79;6
+29390;71;6
+29400;76;6
+29388;70;6
+29392;72;6
+29394;73;6
+29396;74;6
+29398;75;6
+29402;77;6
+29404;78;6
+29406;79;6
+29390;71;6
+29402;77;6
+29388;70;6
+29392;72;6
+29394;73;6
+29396;74;6
+29398;75;6
+29400;76;6
+29404;78;6
+29406;79;6
+29390;71;6
+29394;73;6
+29388;70;6
+29392;72;6
+29396;74;6
+29398;75;6
+29400;76;6
+29402;77;6
+29404;78;6
+29406;79;6
+29390;71;6
+29390;71;6
+29388;70;6
+29392;72;6
+29394;73;6
+29396;74;6
+29398;75;6
+29400;76;6
+29402;77;6
+29404;78;6
+29406;79;6
+10345;sexo;2
+30068;sexo oral;2
+30069;sexo oral;2
+10274;¿de qué sexo es?;5
+30068;sexo oral;2
+30069;sexo oral;2
+10345;sexo;2
+30117;medicación;2
+30120;medicación;2
+30119;medicación;2
+30118;medicación;2
+30116;medicación;2
+10274;¿de qué sexo es?;5
+36451;sexóloga;2
+36450;sexóloga;2
+36452;sexólogo;2
+36453;sexólogo;2
+4755;terremoto;2
+35507;señal;2
+6612;indicar;3
+12345;señalización;2
+4928;cono de señalización;2
+33957;señalizar;3
+33956;señalizar;3
+33958;señalizar;3
+4744;señor;2
+4745;señora;2
+36627;chuparquia;2
+36129;shofar;2
+33023;showdown;2
+33022;showdown;2
+28359;si;6
+5583;sí;4
+5584;sí;4
+6481;se;6
+7029;se;6
+7031;se;6
+7033;se;6
+31906;se;6
+31973;sí;4
+34521;sí;4
+11350;psicóloga;2
+3377;psicólogo;2
+24402;sida;2
+5585;sidra;2
+28946;sidrería;2
+32164;sidrería;2
+7245;sembrar;3
+17322;siempre;4
+5586;sierra;2
+5587;sierra;2
+5588;sierra;2
+24404;sierra;2
+5586;sierra;2
+5587;sierra;2
+5588;sierra;2
+24404;sierra;2
+5588;sierra;2
+5586;sierra;2
+5587;sierra;2
+24404;sierra;2
+5587;sierra;2
+5586;sierra;2
+5588;sierra;2
+3129;mesa;2
+6562;mesa;2
+24404;sierra;2
+2917;mesa camilla;2
+21984;mesa adaptada;2
+25241;mesa electoral;2
+25242;mesa electoral;2
+2916;mesa de estudio;2
+4943;mesa de cocina;2
+4944;mesa de salón;2
+5398;billar;2
+5558;quitar la mesa;3
+5549;poner la mesa;3
+7052;mesa con ruedas;2
+9035;secar;3
+9810;juegos;2
+11302;mesa de colegio;2
+29094;golpear la mesa;3
+29095;golpear la mesa;3
+29096;golpear la mesa;3
+29097;golpear la mesa;3
+31041;golpear la mesa;3
+31042;golpear la mesa;3
+31046;golpear la mesa;3
+32580;juegos de mesa;2
+34801;mesa de luz;2
+35331;mesa de operaciones;2
+36285;mesa de colegio;2
+2471;mesa de ping pong;2
+4942;mesa baja de salón;2
+34649;bajar la mesa del asiento delantero;3
+34667;subir la mesa del asiento delantero;3
+28425;sestear;3
+28426;siesta;2
+35891;siesta;2
+36385;siesta;2
+36386;siesta;2
+2633;7;6
+4895;7;6
+7248;7;6
+35685;7;6
+29506;las siete en punto;6
+29314;37;6
+29336;47;6
+29358;57;6
+29378;67;6
+29402;77;6
+29424;87;6
+29446;97;6
+29508;las siete y cuarto;6
+29510;las siete y media;6
+29540;las siete menos cuarto;6
+6008;signar;3
+11754;lengua de signos;2
+26989;signar;3
+27963;signar;3
+30809;santiguar;3
+30811;santiguar;3
+30812;santiguar;3
+30841;santiguar;3
+30813;santiguar;3
+33978;signar;3
+3413;\;6
+28611;barra española;2
+3424;/;6
+30717;signo meníngeo;2
+30718;signo meníngeo;2
+34629;signo ortográfico;2
+2494;pan;2
+2992;pintalabios;2
+5091;dólar;2
+32920;separador de barra;2
+5091;dólar;2
+30717;signo meníngeo;2
+30718;signo meníngeo;2
+34629;signo ortográfico;2
+3413;\;6
+30717;signo meníngeo;2
+30718;signo meníngeo;2
+34629;signo ortográfico;2
+5091;dólar;2
+3413;\;6
+34629;signo ortográfico;2
+30717;signo meníngeo;2
+30718;signo meníngeo;2
+5091;dólar;2
+3413;\;6
+34629;signo ortográfico;2
+11754;lengua de signos;2
+35527;monitor de signos vitales;2
+24619;intérprete;2
+27331;siguiente;4
+27341;siguiente;4
+7249;silbar;3
+7250;pitido;2
+16891;silbar;3
+35364;pitido;2
+35363;silbar;3
+6182;silbato;2
+5936;silencio;2
+6071;silencio;2
+25453;silenciar;3
+5936;silencio;2
+6071;silencio;2
+25453;silenciar;3
+3155;silla;2
+6281;silla de niños;2
+6614;silla;2
+9121;silla de ruedas;2
+25471;silla de ruedas;2
+32374;silla infantil;2
+25455;silla adaptada;2
+36193;silla monorueda;2
+4961;silla de salón;2
+4960;silla de cocina;2
+6212;silla de ruedas;2
+9122;silla de ruedas;2
+11376;silla de colegio;2
+25459;silla de montar;2
+25467;silla de ruedas;2
+25460;silla de montar;2
+28085;silla de ruedas;2
+35901;silla con bipedestador;2
+35897;silla de peluqero;2
+24583;silla de playa adaptada;2
+30050;sentarse;3
+30051;sentarse;3
+30052;sentarse;3
+35783;levantarse;3
+35781;sentarse;3
+11466;llevar en silla de ruedas;3
+11467;dependiente;4
+24587;silla de ruedas de carreras;2
+32288;llevar en silla de ruedas;3
+32500;ir en silla de ruedas;3
+32501;ir en silla de ruedas;3
+33930;llevar en silla de ruedas;3
+33931;llevar en silla de ruedas;3
+35715;ir en silla de ruedas;3
+25455;silla adaptada;2
+9121;silla de ruedas;2
+25471;silla de ruedas;2
+6281;silla de niños;2
+32374;silla infantil;2
+24583;silla de playa adaptada;2
+3155;silla;2
+6614;silla;2
+11190;biblioteca adaptada;2
+15907;ducha;2
+21984;mesa adaptada;2
+23837;biblioteca adaptada;2
+25688;batidora;2
+26549;cuchara adaptada;2
+36049;biblioteca adaptada;2
+36193;silla monorueda;2
+4961;silla de salón;2
+4960;silla de cocina;2
+6212;silla de ruedas;2
+9122;silla de ruedas;2
+11376;silla de colegio;2
+25459;silla de montar;2
+25467;silla de ruedas;2
+25460;silla de montar;2
+28085;silla de ruedas;2
+35901;silla con bipedestador;2
+35897;silla de peluqero;2
+30050;sentarse;3
+30051;sentarse;3
+30052;sentarse;3
+35783;levantarse;3
+35781;sentarse;3
+11466;llevar en silla de ruedas;3
+11467;dependiente;4
+24587;silla de ruedas de carreras;2
+32288;llevar en silla de ruedas;3
+32500;ir en silla de ruedas;3
+32501;ir en silla de ruedas;3
+33930;llevar en silla de ruedas;3
+33931;llevar en silla de ruedas;3
+35715;ir en silla de ruedas;3
+35901;silla con bipedestador;2
+9121;silla de ruedas;2
+25471;silla de ruedas;2
+6281;silla de niños;2
+32374;silla infantil;2
+3155;silla;2
+6614;silla;2
+11192;bipedestador;2
+24877;bipedestador;2
+25455;silla adaptada;2
+36193;silla monorueda;2
+4961;silla de salón;2
+4960;silla de cocina;2
+6212;silla de ruedas;2
+9122;silla de ruedas;2
+11376;silla de colegio;2
+25459;silla de montar;2
+25467;silla de ruedas;2
+25460;silla de montar;2
+28085;silla de ruedas;2
+35897;silla de peluqero;2
+24583;silla de playa adaptada;2
+30050;sentarse;3
+30051;sentarse;3
+30052;sentarse;3
+35783;levantarse;3
+35781;sentarse;3
+11466;llevar en silla de ruedas;3
+11467;dependiente;4
+24587;silla de ruedas de carreras;2
+32288;llevar en silla de ruedas;3
+32500;ir en silla de ruedas;3
+32501;ir en silla de ruedas;3
+33930;llevar en silla de ruedas;3
+33931;llevar en silla de ruedas;3
+35715;ir en silla de ruedas;3
+32374;silla infantil;2
+9121;silla de ruedas;2
+25471;silla de ruedas;2
+6281;silla de niños;2
+2339;coche;2
+3155;silla;2
+6614;silla;2
+6981;coche;2
+3081;coche deportivo;2
+25455;silla adaptada;2
+25962;coche fúnebre;2
+36193;silla monorueda;2
+2340;coche de juguete;2
+3426;coche de policia;2
+4961;silla de salón;2
+4960;silla de cocina;2
+5070;coche de carreras;2
+6212;silla de ruedas;2
+6983;coche de policia;2
+9006;lavar el coche;3
+9122;silla de ruedas;2
+11376;silla de colegio;2
+16029;seguro;2
+21541;coche de rally;2
+25420;carruaje;2
+25419;carruaje;2
+25459;silla de montar;2
+25467;silla de ruedas;2
+25460;silla de montar;2
+28085;silla de ruedas;2
+35901;silla con bipedestador;2
+35897;silla de peluqero;2
+24583;silla de playa adaptada;2
+30050;sentarse;3
+30051;sentarse;3
+30052;sentarse;3
+35783;levantarse;3
+35781;sentarse;3
+11466;llevar en silla de ruedas;3
+11467;dependiente;4
+24587;silla de ruedas de carreras;2
+32288;llevar en silla de ruedas;3
+32500;ir en silla de ruedas;3
+32501;ir en silla de ruedas;3
+33930;llevar en silla de ruedas;3
+33931;llevar en silla de ruedas;3
+35715;ir en silla de ruedas;3
+4960;silla de cocina;2
+9121;silla de ruedas;2
+25471;silla de ruedas;2
+6281;silla de niños;2
+32374;silla infantil;2
+34631;utensilios de cocina;2
+36618;báscula de cocina;2
+2341;cocina;2
+3155;silla;2
+5965;cocina;2
+6614;silla;2
+10752;cocina;2
+10753;cocina;2
+33070;cocina;2
+25455;silla adaptada;2
+36193;silla monorueda;2
+2496;paño de cocina;2
+4943;mesa de cocina;2
+4961;silla de salón;2
+6166;papel de cocina;2
+6212;silla de ruedas;2
+8200;programa de cocina;2
+9060;recetario;2
+9122;silla de ruedas;2
+10348;cocinero;2
+11376;silla de colegio;2
+15712;chef;2
+23753;armario de cocina;2
+25459;silla de montar;2
+25467;silla de ruedas;2
+25460;silla de montar;2
+28085;silla de ruedas;2
+35387;gorro de cocina;2
+35901;silla con bipedestador;2
+35897;silla de peluqero;2
+16147;cocina de la cafetería;2
+24583;silla de playa adaptada;2
+30050;sentarse;3
+30051;sentarse;3
+30052;sentarse;3
+35783;levantarse;3
+35781;sentarse;3
+11466;llevar en silla de ruedas;3
+11467;dependiente;4
+24587;silla de ruedas de carreras;2
+29989;tienda de muebles de cocina;2
+32288;llevar en silla de ruedas;3
+32500;ir en silla de ruedas;3
+32501;ir en silla de ruedas;3
+33930;llevar en silla de ruedas;3
+33931;llevar en silla de ruedas;3
+35715;ir en silla de ruedas;3
+11376;silla de colegio;2
+9121;silla de ruedas;2
+25471;silla de ruedas;2
+6281;silla de niños;2
+32374;silla infantil;2
+3082;colegio;2
+3155;silla;2
+6454;colegio;2
+6614;silla;2
+32446;colegio;2
+7811;peligro colegio;2
+25455;silla adaptada;2
+30674;colegio mayor;2
+30675;colegio mayor;2
+30676;colegio mayor;2
+32736;colegio electoral;2
+34247;colegio bilingüe;2
+34248;colegio bilingüe;2
+34246;colegio bilingüe;2
+36193;silla monorueda;2
+4961;silla de salón;2
+4960;silla de cocina;2
+6212;silla de ruedas;2
+9122;silla de ruedas;2
+11302;mesa de colegio;2
+25459;silla de montar;2
+25467;silla de ruedas;2
+25460;silla de montar;2
+28085;silla de ruedas;2
+35901;silla con bipedestador;2
+35897;silla de peluqero;2
+36285;mesa de colegio;2
+36473;trasladarse;3
+24583;silla de playa adaptada;2
+30050;sentarse;3
+30051;sentarse;3
+30052;sentarse;3
+32824;colegio de educación especial;2
+35783;levantarse;3
+35781;sentarse;3
+11466;llevar en silla de ruedas;3
+11467;dependiente;4
+24587;silla de ruedas de carreras;2
+32288;llevar en silla de ruedas;3
+32500;ir en silla de ruedas;3
+32501;ir en silla de ruedas;3
+33930;llevar en silla de ruedas;3
+33931;llevar en silla de ruedas;3
+35715;ir en silla de ruedas;3
+25459;silla de montar;2
+25460;silla de montar;2
+9121;silla de ruedas;2
+25471;silla de ruedas;2
+6281;silla de niños;2
+32374;silla infantil;2
+3155;silla;2
+6614;silla;2
+11698;producir;3
+25455;silla adaptada;2
+36193;silla monorueda;2
+36621;montar claras;3
+4961;silla de salón;2
+4960;silla de cocina;2
+5517;montar en bici;3
+6045;pasear en bicicleta;3
+6212;silla de ruedas;2
+6643;montar a caballo;3
+9122;silla de ruedas;2
+11376;silla de colegio;2
+25467;silla de ruedas;2
+27626;montar a caballo;3
+27627;equitación;2
+27900;montar en tándem;3
+27899;montar en tándem;3
+28085;silla de ruedas;2
+35483;montar a caballo;3
+35901;silla con bipedestador;2
+35897;silla de peluqero;2
+36593;subir al autobús;3
+36594;subir al autobús;3
+36595;subir al autobús;3
+24583;silla de playa adaptada;2
+30050;sentarse;3
+30051;sentarse;3
+30052;sentarse;3
+35783;levantarse;3
+35781;sentarse;3
+11466;llevar en silla de ruedas;3
+11467;dependiente;4
+24587;silla de ruedas de carreras;2
+32288;llevar en silla de ruedas;3
+32500;ir en silla de ruedas;3
+32501;ir en silla de ruedas;3
+33930;llevar en silla de ruedas;3
+33931;llevar en silla de ruedas;3
+35715;ir en silla de ruedas;3
+6281;silla de niños;2
+9121;silla de ruedas;2
+25471;silla de ruedas;2
+32374;silla infantil;2
+3155;silla;2
+6614;silla;2
+6975;niños;2
+7178;niños;2
+31462;niños;2
+36560;niños;2
+25455;silla adaptada;2
+36193;silla monorueda;2
+4961;silla de salón;2
+4960;silla de cocina;2
+6212;silla de ruedas;2
+9122;silla de ruedas;2
+11376;silla de colegio;2
+25459;silla de montar;2
+25467;silla de ruedas;2
+25460;silla de montar;2
+26591;niños con autismo;2
+28085;silla de ruedas;2
+33962;Clasificación Decimal Universal;2
+33965;Clasificación Decimal Universal;2
+33964;Clasificación Decimal Universal;2
+35901;silla con bipedestador;2
+35897;silla de peluqero;2
+36561;perfil;2
+24583;silla de playa adaptada;2
+30050;sentarse;3
+30051;sentarse;3
+30052;sentarse;3
+35783;levantarse;3
+35781;sentarse;3
+11466;llevar en silla de ruedas;3
+11467;dependiente;4
+24587;silla de ruedas de carreras;2
+32288;llevar en silla de ruedas;3
+32500;ir en silla de ruedas;3
+32501;ir en silla de ruedas;3
+33930;llevar en silla de ruedas;3
+33931;llevar en silla de ruedas;3
+35715;ir en silla de ruedas;3
+6281;silla de niños;2
+9121;silla de ruedas;2
+25471;silla de ruedas;2
+32374;silla infantil;2
+3155;silla;2
+6614;silla;2
+35111;paseo;2
+35112;paseo;2
+25455;silla adaptada;2
+36193;silla monorueda;2
+4961;silla de salón;2
+4960;silla de cocina;2
+6212;silla de ruedas;2
+9122;silla de ruedas;2
+11376;silla de colegio;2
+25459;silla de montar;2
+25467;silla de ruedas;2
+25460;silla de montar;2
+28085;silla de ruedas;2
+35901;silla con bipedestador;2
+35897;silla de peluqero;2
+24583;silla de playa adaptada;2
+30050;sentarse;3
+30051;sentarse;3
+30052;sentarse;3
+35783;levantarse;3
+35781;sentarse;3
+11466;llevar en silla de ruedas;3
+11467;dependiente;4
+24587;silla de ruedas de carreras;2
+32288;llevar en silla de ruedas;3
+32500;ir en silla de ruedas;3
+32501;ir en silla de ruedas;3
+33930;llevar en silla de ruedas;3
+33931;llevar en silla de ruedas;3
+35715;ir en silla de ruedas;3
+35897;silla de peluqero;2
+9121;silla de ruedas;2
+25471;silla de ruedas;2
+6281;silla de niños;2
+32374;silla infantil;2
+3155;silla;2
+6614;silla;2
+25455;silla adaptada;2
+36193;silla monorueda;2
+4961;silla de salón;2
+4960;silla de cocina;2
+6212;silla de ruedas;2
+9122;silla de ruedas;2
+11376;silla de colegio;2
+25459;silla de montar;2
+25467;silla de ruedas;2
+25460;silla de montar;2
+28085;silla de ruedas;2
+35901;silla con bipedestador;2
+24583;silla de playa adaptada;2
+30050;sentarse;3
+30051;sentarse;3
+30052;sentarse;3
+35783;levantarse;3
+35781;sentarse;3
+11466;llevar en silla de ruedas;3
+11467;dependiente;4
+24587;silla de ruedas de carreras;2
+32288;llevar en silla de ruedas;3
+32500;ir en silla de ruedas;3
+32501;ir en silla de ruedas;3
+33930;llevar en silla de ruedas;3
+33931;llevar en silla de ruedas;3
+35715;ir en silla de ruedas;3
+24583;silla de playa adaptada;2
+9121;silla de ruedas;2
+25471;silla de ruedas;2
+6281;silla de niños;2
+25455;silla adaptada;2
+32374;silla infantil;2
+2826;playa;2
+3155;silla;2
+6614;silla;2
+30518;playa;2
+11190;biblioteca adaptada;2
+15907;ducha;2
+21984;mesa adaptada;2
+23837;biblioteca adaptada;2
+25688;batidora;2
+26549;cuchara adaptada;2
+36049;biblioteca adaptada;2
+36193;silla monorueda;2
+3241;pelota;2
+4746;sombrilla;2
+4758;toalla;2
+4961;silla de salón;2
+4960;silla de cocina;2
+5100;palas de playa;2
+6212;silla de ruedas;2
+9122;silla de ruedas;2
+11376;silla de colegio;2
+25459;silla de montar;2
+25467;silla de ruedas;2
+25460;silla de montar;2
+28085;silla de ruedas;2
+35901;silla con bipedestador;2
+35897;silla de peluqero;2
+30050;sentarse;3
+30051;sentarse;3
+30052;sentarse;3
+35783;levantarse;3
+35781;sentarse;3
+11466;llevar en silla de ruedas;3
+11467;dependiente;4
+24587;silla de ruedas de carreras;2
+32288;llevar en silla de ruedas;3
+32500;ir en silla de ruedas;3
+32501;ir en silla de ruedas;3
+33930;llevar en silla de ruedas;3
+33931;llevar en silla de ruedas;3
+35715;ir en silla de ruedas;3
+6212;silla de ruedas;2
+9122;silla de ruedas;2
+9121;silla de ruedas;2
+25467;silla de ruedas;2
+25471;silla de ruedas;2
+28085;silla de ruedas;2
+6281;silla de niños;2
+32374;silla infantil;2
+11466;llevar en silla de ruedas;3
+11467;dependiente;4
+24587;silla de ruedas de carreras;2
+32288;llevar en silla de ruedas;3
+32500;ir en silla de ruedas;3
+32501;ir en silla de ruedas;3
+33930;llevar en silla de ruedas;3
+33931;llevar en silla de ruedas;3
+35715;ir en silla de ruedas;3
+3155;silla;2
+6614;silla;2
+25455;silla adaptada;2
+36193;silla monorueda;2
+4961;silla de salón;2
+4960;silla de cocina;2
+7052;mesa con ruedas;2
+11376;silla de colegio;2
+25459;silla de montar;2
+25460;silla de montar;2
+30554;patinar sobre ruedas;3
+30582;patinar sobre ruedas;3
+30583;patinar sobre ruedas;3
+30585;patinar sobre ruedas;3
+30584;patinar sobre ruedas;3
+30586;patinar sobre ruedas;3
+30587;patinar sobre ruedas;3
+30588;patinar sobre ruedas;3
+30589;patinar sobre ruedas;3
+30938;patinar sobre ruedas;3
+30942;patinar sobre ruedas;3
+30944;patinar sobre ruedas;3
+30943;patinar sobre ruedas;3
+30939;patinar sobre ruedas;3
+30941;patinar sobre ruedas;3
+30940;patinar sobre ruedas;3
+31144;patinar sobre ruedas;3
+31143;patinar sobre ruedas;3
+35901;silla con bipedestador;2
+35897;silla de peluqero;2
+24583;silla de playa adaptada;2
+30050;sentarse;3
+30051;sentarse;3
+30052;sentarse;3
+35783;levantarse;3
+35781;sentarse;3
+9121;silla de ruedas;2
+25471;silla de ruedas;2
+6281;silla de niños;2
+32374;silla infantil;2
+6212;silla de ruedas;2
+9122;silla de ruedas;2
+25467;silla de ruedas;2
+28085;silla de ruedas;2
+11466;llevar en silla de ruedas;3
+11467;dependiente;4
+24587;silla de ruedas de carreras;2
+32288;llevar en silla de ruedas;3
+32500;ir en silla de ruedas;3
+32501;ir en silla de ruedas;3
+33930;llevar en silla de ruedas;3
+33931;llevar en silla de ruedas;3
+35715;ir en silla de ruedas;3
+3155;silla;2
+6614;silla;2
+10334;motor;2
+25455;silla adaptada;2
+36193;silla monorueda;2
+4961;silla de salón;2
+4960;silla de cocina;2
+7052;mesa con ruedas;2
+11376;silla de colegio;2
+25459;silla de montar;2
+25460;silla de montar;2
+30554;patinar sobre ruedas;3
+30582;patinar sobre ruedas;3
+30583;patinar sobre ruedas;3
+30585;patinar sobre ruedas;3
+30584;patinar sobre ruedas;3
+30586;patinar sobre ruedas;3
+30587;patinar sobre ruedas;3
+30588;patinar sobre ruedas;3
+30589;patinar sobre ruedas;3
+30938;patinar sobre ruedas;3
+30942;patinar sobre ruedas;3
+30944;patinar sobre ruedas;3
+30943;patinar sobre ruedas;3
+30939;patinar sobre ruedas;3
+30941;patinar sobre ruedas;3
+30940;patinar sobre ruedas;3
+31144;patinar sobre ruedas;3
+31143;patinar sobre ruedas;3
+35901;silla con bipedestador;2
+35897;silla de peluqero;2
+24583;silla de playa adaptada;2
+30050;sentarse;3
+30051;sentarse;3
+30052;sentarse;3
+35783;levantarse;3
+35781;sentarse;3
+24587;silla de ruedas de carreras;2
+9121;silla de ruedas;2
+25471;silla de ruedas;2
+6281;silla de niños;2
+32374;silla infantil;2
+6212;silla de ruedas;2
+9122;silla de ruedas;2
+25467;silla de ruedas;2
+28085;silla de ruedas;2
+11466;llevar en silla de ruedas;3
+11467;dependiente;4
+32288;llevar en silla de ruedas;3
+32500;ir en silla de ruedas;3
+32501;ir en silla de ruedas;3
+33930;llevar en silla de ruedas;3
+33931;llevar en silla de ruedas;3
+35715;ir en silla de ruedas;3
+3155;silla;2
+6614;silla;2
+25455;silla adaptada;2
+36193;silla monorueda;2
+4961;silla de salón;2
+4960;silla de cocina;2
+5070;coche de carreras;2
+5084;moto;2
+7052;mesa con ruedas;2
+11376;silla de colegio;2
+25459;silla de montar;2
+25460;silla de montar;2
+30554;patinar sobre ruedas;3
+30582;patinar sobre ruedas;3
+30583;patinar sobre ruedas;3
+30585;patinar sobre ruedas;3
+30584;patinar sobre ruedas;3
+30586;patinar sobre ruedas;3
+30587;patinar sobre ruedas;3
+30588;patinar sobre ruedas;3
+30589;patinar sobre ruedas;3
+30938;patinar sobre ruedas;3
+30942;patinar sobre ruedas;3
+30944;patinar sobre ruedas;3
+30943;patinar sobre ruedas;3
+30939;patinar sobre ruedas;3
+30941;patinar sobre ruedas;3
+30940;patinar sobre ruedas;3
+31144;patinar sobre ruedas;3
+31143;patinar sobre ruedas;3
+35901;silla con bipedestador;2
+35897;silla de peluqero;2
+24583;silla de playa adaptada;2
+30050;sentarse;3
+30051;sentarse;3
+30052;sentarse;3
+35783;levantarse;3
+35781;sentarse;3
+9121;silla de ruedas;2
+25471;silla de ruedas;2
+6281;silla de niños;2
+32374;silla infantil;2
+6212;silla de ruedas;2
+9122;silla de ruedas;2
+25467;silla de ruedas;2
+28085;silla de ruedas;2
+11466;llevar en silla de ruedas;3
+11467;dependiente;4
+24587;silla de ruedas de carreras;2
+32288;llevar en silla de ruedas;3
+32500;ir en silla de ruedas;3
+32501;ir en silla de ruedas;3
+33930;llevar en silla de ruedas;3
+33931;llevar en silla de ruedas;3
+35715;ir en silla de ruedas;3
+3155;silla;2
+6614;silla;2
+5499;lijadora;2
+8599;guitarra eléctrica;2
+25455;silla adaptada;2
+27772;freidora eléctrica;2
+36193;silla monorueda;2
+4961;silla de salón;2
+4960;silla de cocina;2
+7052;mesa con ruedas;2
+11376;silla de colegio;2
+25459;silla de montar;2
+25460;silla de montar;2
+30554;patinar sobre ruedas;3
+30582;patinar sobre ruedas;3
+30583;patinar sobre ruedas;3
+30585;patinar sobre ruedas;3
+30584;patinar sobre ruedas;3
+30586;patinar sobre ruedas;3
+30587;patinar sobre ruedas;3
+30588;patinar sobre ruedas;3
+30589;patinar sobre ruedas;3
+30938;patinar sobre ruedas;3
+30942;patinar sobre ruedas;3
+30944;patinar sobre ruedas;3
+30943;patinar sobre ruedas;3
+30939;patinar sobre ruedas;3
+30941;patinar sobre ruedas;3
+30940;patinar sobre ruedas;3
+31144;patinar sobre ruedas;3
+31143;patinar sobre ruedas;3
+35901;silla con bipedestador;2
+35897;silla de peluqero;2
+24583;silla de playa adaptada;2
+30050;sentarse;3
+30051;sentarse;3
+30052;sentarse;3
+35783;levantarse;3
+35781;sentarse;3
+9121;silla de ruedas;2
+25471;silla de ruedas;2
+6281;silla de niños;2
+32374;silla infantil;2
+6212;silla de ruedas;2
+9122;silla de ruedas;2
+25467;silla de ruedas;2
+28085;silla de ruedas;2
+11466;llevar en silla de ruedas;3
+11467;dependiente;4
+24587;silla de ruedas de carreras;2
+32288;llevar en silla de ruedas;3
+32500;ir en silla de ruedas;3
+32501;ir en silla de ruedas;3
+33930;llevar en silla de ruedas;3
+33931;llevar en silla de ruedas;3
+35715;ir en silla de ruedas;3
+3155;silla;2
+6614;silla;2
+25455;silla adaptada;2
+36193;silla monorueda;2
+4961;silla de salón;2
+4960;silla de cocina;2
+7052;mesa con ruedas;2
+11376;silla de colegio;2
+25459;silla de montar;2
+25460;silla de montar;2
+30554;patinar sobre ruedas;3
+30582;patinar sobre ruedas;3
+30583;patinar sobre ruedas;3
+30585;patinar sobre ruedas;3
+30584;patinar sobre ruedas;3
+30586;patinar sobre ruedas;3
+30587;patinar sobre ruedas;3
+30588;patinar sobre ruedas;3
+30589;patinar sobre ruedas;3
+30938;patinar sobre ruedas;3
+30942;patinar sobre ruedas;3
+30944;patinar sobre ruedas;3
+30943;patinar sobre ruedas;3
+30939;patinar sobre ruedas;3
+30941;patinar sobre ruedas;3
+30940;patinar sobre ruedas;3
+31144;patinar sobre ruedas;3
+31143;patinar sobre ruedas;3
+35901;silla con bipedestador;2
+35897;silla de peluqero;2
+24583;silla de playa adaptada;2
+30050;sentarse;3
+30051;sentarse;3
+30052;sentarse;3
+35783;levantarse;3
+35781;sentarse;3
+4961;silla de salón;2
+9121;silla de ruedas;2
+25471;silla de ruedas;2
+6281;silla de niños;2
+32374;silla infantil;2
+3155;silla;2
+6614;silla;2
+6211;salón;2
+33074;salón;2
+25455;silla adaptada;2
+36193;silla monorueda;2
+4944;mesa de salón;2
+4960;silla de cocina;2
+6212;silla de ruedas;2
+9122;silla de ruedas;2
+9913;salón de actos;2
+11376;silla de colegio;2
+24382;ayuntamiento;2
+25459;silla de montar;2
+25467;silla de ruedas;2
+25460;silla de montar;2
+27495;salón de actos;2
+28085;silla de ruedas;2
+35901;silla con bipedestador;2
+35897;silla de peluqero;2
+36589;ayuntamiento;2
+4942;mesa baja de salón;2
+24583;silla de playa adaptada;2
+30050;sentarse;3
+30051;sentarse;3
+30052;sentarse;3
+35783;levantarse;3
+35781;sentarse;3
+11466;llevar en silla de ruedas;3
+11467;dependiente;4
+24587;silla de ruedas de carreras;2
+32288;llevar en silla de ruedas;3
+32500;ir en silla de ruedas;3
+32501;ir en silla de ruedas;3
+33930;llevar en silla de ruedas;3
+33931;llevar en silla de ruedas;3
+35715;ir en silla de ruedas;3
+32374;silla infantil;2
+9121;silla de ruedas;2
+25471;silla de ruedas;2
+6281;silla de niños;2
+3155;silla;2
+6614;silla;2
+16629;desarrollo;2
+25455;silla adaptada;2
+29556;fisioterapia pediátrica;2
+29558;fisioterapia pediátrica;2
+29557;fisioterapia pediátrica;2
+29853;escuela infantil;2
+31470;educación infantil;2
+32714;hospital infantil;2
+36145;parque infantil;2
+36193;silla monorueda;2
+36710;hospital infantil;2
+36714;hospital infantil;2
+4961;silla de salón;2
+4960;silla de cocina;2
+6212;silla de ruedas;2
+9122;silla de ruedas;2
+11376;silla de colegio;2
+25459;silla de montar;2
+25467;silla de ruedas;2
+25460;silla de montar;2
+28085;silla de ruedas;2
+35901;silla con bipedestador;2
+35897;silla de peluqero;2
+24583;silla de playa adaptada;2
+30050;sentarse;3
+30051;sentarse;3
+30052;sentarse;3
+34884;tienda de ropa infantil;2
+35783;levantarse;3
+35781;sentarse;3
+11466;llevar en silla de ruedas;3
+11467;dependiente;4
+24587;silla de ruedas de carreras;2
+32288;llevar en silla de ruedas;3
+32500;ir en silla de ruedas;3
+32501;ir en silla de ruedas;3
+33930;llevar en silla de ruedas;3
+33931;llevar en silla de ruedas;3
+35715;ir en silla de ruedas;3
+36193;silla monorueda;2
+9121;silla de ruedas;2
+25471;silla de ruedas;2
+6281;silla de niños;2
+32374;silla infantil;2
+3155;silla;2
+6614;silla;2
+25455;silla adaptada;2
+4961;silla de salón;2
+4960;silla de cocina;2
+6212;silla de ruedas;2
+9122;silla de ruedas;2
+11376;silla de colegio;2
+25459;silla de montar;2
+25467;silla de ruedas;2
+25460;silla de montar;2
+28085;silla de ruedas;2
+35901;silla con bipedestador;2
+35897;silla de peluqero;2
+24583;silla de playa adaptada;2
+30050;sentarse;3
+30051;sentarse;3
+30052;sentarse;3
+35783;levantarse;3
+35781;sentarse;3
+11466;llevar en silla de ruedas;3
+11467;dependiente;4
+24587;silla de ruedas de carreras;2
+32288;llevar en silla de ruedas;3
+32500;ir en silla de ruedas;3
+32501;ir en silla de ruedas;3
+33930;llevar en silla de ruedas;3
+33931;llevar en silla de ruedas;3
+35715;ir en silla de ruedas;3
+9121;silla de ruedas;2
+25471;silla de ruedas;2
+6281;silla de niños;2
+32374;silla infantil;2
+3155;silla;2
+6614;silla;2
+25455;silla adaptada;2
+36193;silla monorueda;2
+4961;silla de salón;2
+4960;silla de cocina;2
+6212;silla de ruedas;2
+9122;silla de ruedas;2
+11376;silla de colegio;2
+25459;silla de montar;2
+25467;silla de ruedas;2
+25460;silla de montar;2
+28085;silla de ruedas;2
+35901;silla con bipedestador;2
+35897;silla de peluqero;2
+24583;silla de playa adaptada;2
+30050;sentarse;3
+30051;sentarse;3
+30052;sentarse;3
+35783;levantarse;3
+35781;sentarse;3
+11466;llevar en silla de ruedas;3
+11467;dependiente;4
+24587;silla de ruedas de carreras;2
+32288;llevar en silla de ruedas;3
+32500;ir en silla de ruedas;3
+32501;ir en silla de ruedas;3
+33930;llevar en silla de ruedas;3
+33931;llevar en silla de ruedas;3
+35715;ir en silla de ruedas;3
+6213;sillín;2
+2570;sillón;2
+25475;sillón;2
+35173;sillón odontológico;2
+36554;sillón lavacabezas;2
+36554;sillón lavacabezas;2
+2570;sillón;2
+25475;sillón;2
+35173;sillón odontológico;2
+35173;sillón odontológico;2
+2570;sillón;2
+25475;sillón;2
+35221;espejo dental;2
+36554;sillón lavacabezas;2
+9138;silo;2
+4744;señor;2
+4745;señora;2
+34355;siluro;2
+10212;agradable;4
+7251;simpático;4
+31764;simpático;4
+34335;simulador;2
+7813;sin;6
+8691;sin gluten;2
+11377;pero;6
+31374;entrar sin llamar;3
+34008;leche sin lactosa;2
+11377;pero;6
+8691;sin gluten;2
+34006;gluten;2
+24408;sinagoga;2
+30405;sinagoga;2
+5589;sirena;2
+6214;sirena;2
+6891;sirena;2
+34747;sirope de chocolate;2
+25940;chocolate;2
+29226;pastel de chocolate;2
+34092;cono de chocolate;2
+34615;echar sirope de chocolate;3
+2334;chocolate;2
+6448;chocolate;2
+3331;galleta de chocolate;2
+6525;galletas;2
+9049;cucurucho;2
+11304;huevo de chocolate;2
+28305;grageas de chocolate;2
+36474;turrón de chocolate;2
+21326;chocolate a la taza;2
+12361;sistemas auditivos;2
+9819;lugar;2
+6989;poner;3
+32757;poner;3
+32718;parque de patinaje;2
+32864;slinky;2
+31384;reloj inteligente;2
+34310;dientes de sable;2
+29810;Snowboarding;2
+2989;axila;2
+8369;sobao;2
+4792;sobaos;2
+8369;sobao;2
+8692;sobrasada;2
+7814;sobre;6
+10325;sobre;2
+16837;patinar;3
+21357;andar;3
+25742;sobre de gelatina;2
+30552;patinar sobre hielo;3
+30556;patinar sobre hielo;3
+30557;patinar sobre hielo;3
+30558;patinar sobre hielo;3
+30553;patinar sobre hielo;3
+30554;patinar sobre ruedas;3
+30555;patinar sobre hielo;3
+30559;patinar sobre hielo;3
+30561;patinar sobre hielo;3
+30560;patinar sobre hielo;3
+30582;patinar sobre ruedas;3
+30583;patinar sobre ruedas;3
+30585;patinar sobre ruedas;3
+30584;patinar sobre ruedas;3
+30586;patinar sobre ruedas;3
+30587;patinar sobre ruedas;3
+30588;patinar sobre ruedas;3
+30589;patinar sobre ruedas;3
+30938;patinar sobre ruedas;3
+30942;patinar sobre ruedas;3
+30944;patinar sobre ruedas;3
+30943;patinar sobre ruedas;3
+30939;patinar sobre ruedas;3
+30941;patinar sobre ruedas;3
+30940;patinar sobre ruedas;3
+31144;patinar sobre ruedas;3
+31143;patinar sobre ruedas;3
+29927;promover;3
+25742;sobre de gelatina;2
+21890;gelatina;2
+8359;sobres de medicina;2
+8163;medicinas;2
+34609;médica de medicina nuclear;2
+34653;médico de medicina nuclear;2
+30302;sobrina;2
+30303;sobrina;2
+30304;sobrina;2
+30308;sobrina;2
+30309;sobrina;2
+30306;sobrina;2
+30307;sobrina;2
+30305;sobrina;2
+30288;sobrino;2
+30287;sobrino;2
+30290;sobrino;2
+30291;sobrino;2
+30292;sobrino;2
+30293;sobrino;2
+30286;sobrino;2
+30289;sobrino;2
+8693;sociedad;2
+9046;rescatar;3
+10141;auxiliar;3
+10178;rescatar;3
+3156;socorrista;2
+11378;socorrista;2
+29117;socorrista;2
+29118;socorrista;2
+29119;socorrista;2
+24320;programa;2
+24707;tablero de comunicación;2
+24707;tablero de comunicación;2
+24320;programa;2
+9870;exposición;2
+34623;comunicación;2
+6991;comunicación aumentativa;2
+36723;comunicación aumentativa;2
+6222;tablero de comunicación;2
+7004;cuaderno de comunicación;2
+12347;medios de comunicación;2
+26475;tablero de comunicación;2
+31882;tablero de comunicación;2
+16155;utilizar el cuaderno de comunicación;3
+16157;utilizar el tablero de comunicación;3
+36447;sacar el cuaderno de comunicación;3
+16182;Unidad de Empleo, Igualdad, Cooperación y Comunicación;1
+2571;sofá;2
+25479;sofá;2
+26026;cuerda;2
+36454;sogatira;2
+36454;sogatira;2
+26447;soja;2
+10213;sola;4
+2797;militar;2
+11379;militar;2
+36726;soldado;2
+36727;militar;2
+8694;soldador;2
+24412;soldador;2
+2797;militar;2
+11246;ejército;2
+11379;militar;2
+36726;soldado;2
+36727;militar;2
+8696;soldar;3
+2796;soleado;4
+3210;día parcialmente soleado;2
+10735;¡hace sol!;5
+10725;¿hace sol?;5
+34675;solicitar consentimiento;3
+25696;consentimiento;2
+25698;consentimiento informado;2
+34697;solicitar permiso;3
+28089;solicitar la parada;3
+28089;solicitar la parada;3
+29155;parada;2
+2499;parada;2
+35407;parada;2
+34675;solicitar consentimiento;3
+34697;solicitar permiso;3
+34697;solicitar permiso;3
+34675;solicitar consentimiento;3
+5945;carnet;2
+28089;solicitar la parada;3
+19555;solicitud;2
+30008;solidaridad;2
+7253;solitario;4
+7253;solitario;4
+27542;quedarse solo;3
+27541;quedarse solo;3
+7076;déjame solo;5
+26451;solomillo;2
+6215;soltar;3
+11629;soltera;4
+11631;soltera;4
+11633;soltero;4
+11635;soltero;4
+6649;sombra;2
+3388;sombra de ojos;2
+3388;sombra de ojos;2
+2876;ojos;2
+6649;sombra;2
+10146;cerrar;3
+10138;abrir los ojos;3
+32879;seguimiento de ojos;2
+32880;seguimiento de ojos;2
+34819;tapar los ojos;3
+34818;tapar los ojos;3
+34822;tapar los ojos;3
+36333;mirar a los ojos;3
+2572;sombrero;2
+6216;sombrero;2
+30973;sombrero mejicano;2
+35909;sombrero australiano;2
+8697;sombrero de bruja;2
+8698;sombrero de pirata;2
+35909;sombrero australiano;2
+6216;sombrero;2
+2572;sombrero;2
+30973;sombrero mejicano;2
+8697;sombrero de bruja;2
+8698;sombrero de pirata;2
+8697;sombrero de bruja;2
+6216;sombrero;2
+2572;sombrero;2
+5404;bruja;2
+30973;sombrero mejicano;2
+35909;sombrero australiano;2
+8698;sombrero de pirata;2
+36382;disfraz de bruja;2
+5105;tren de la bruja;2
+6216;sombrero;2
+2356;copa;2
+2572;sombrero;2
+3162;trofeo;2
+30973;sombrero mejicano;2
+31696;copa menstrual;2
+35909;sombrero australiano;2
+8697;sombrero de bruja;2
+8698;sombrero de pirata;2
+8698;sombrero de pirata;2
+6216;sombrero;2
+2572;sombrero;2
+6180;pirata;2
+10353;bandera pirata;2
+21425;barco pirata;2
+30973;sombrero mejicano;2
+35909;sombrero australiano;2
+8697;sombrero de bruja;2
+30973;sombrero mejicano;2
+6216;sombrero;2
+2572;sombrero;2
+35909;sombrero australiano;2
+8697;sombrero de bruja;2
+8698;sombrero de pirata;2
+4746;sombrilla;2
+4746;sombrilla;2
+2826;playa;2
+30518;playa;2
+3241;pelota;2
+4758;toalla;2
+5100;palas de playa;2
+24583;silla de playa adaptada;2
+7254;sonajero;2
+7256;sonar;3
+7255;sonar;3
+8731;sonar;3
+16893;sonar;3
+28793;sonar;3
+28794;sonar;3
+31746;sonar;3
+34469;sonar;3
+7257;soñar;3
+7256;sonar;3
+8731;sonar;3
+16893;sonar;3
+28793;sonar;3
+28794;sonar;3
+31746;sonar;3
+34469;sonar;3
+2887;nariz;2
+8637;nariz de payaso;2
+15722;hurgar;3
+16821;hurgar;3
+33118;sonda de alimentación;2
+29756;sonda nasogástrica;2
+29757;sonda nasogástrica;2
+29758;sonda nasogástrica;2
+30162;poner sonda nasogástrica;3
+30164;poner sonda nasogástrica;3
+30163;poner sonda nasogástrica;3
+30112;sonda vesical;2
+30113;sonda vesical;2
+30747;sonda rectal;2
+35223;explorador dental;2
+15832;almacén de alimentación;2
+29818;poner la sonda;3
+29819;poner la sonda;3
+29820;poner la sonda;3
+31346;amamantar con sonda;3
+31690;sonda de doble balón;2
+31690;sonda de doble balón;2
+29756;sonda nasogástrica;2
+29757;sonda nasogástrica;2
+29758;sonda nasogástrica;2
+30162;poner sonda nasogástrica;3
+30164;poner sonda nasogástrica;3
+30163;poner sonda nasogástrica;3
+33118;sonda de alimentación;2
+2269;balón;2
+24137;balón prisionero;2
+30112;sonda vesical;2
+30113;sonda vesical;2
+30747;sonda rectal;2
+35223;explorador dental;2
+4918;balón de baloncesto;2
+5917;balón de rugby;2
+9015;atrapar;3
+29818;poner la sonda;3
+29819;poner la sonda;3
+29820;poner la sonda;3
+31346;amamantar con sonda;3
+34112;balón de balonmano;2
+34114;balón de voleybol;2
+36587;robar el balón;3
+33118;sonda de alimentación;2
+29756;sonda nasogástrica;2
+29757;sonda nasogástrica;2
+29758;sonda nasogástrica;2
+30162;poner sonda nasogástrica;3
+30164;poner sonda nasogástrica;3
+30163;poner sonda nasogástrica;3
+30112;sonda vesical;2
+30113;sonda vesical;2
+30747;sonda rectal;2
+35223;explorador dental;2
+29818;poner la sonda;3
+29819;poner la sonda;3
+29820;poner la sonda;3
+31346;amamantar con sonda;3
+31690;sonda de doble balón;2
+35223;explorador dental;2
+29756;sonda nasogástrica;2
+29757;sonda nasogástrica;2
+29758;sonda nasogástrica;2
+35213;eyector dental;2
+30162;poner sonda nasogástrica;3
+30164;poner sonda nasogástrica;3
+30163;poner sonda nasogástrica;3
+33118;sonda de alimentación;2
+2694;cepillo;2
+9144;hilo dental;2
+30112;sonda vesical;2
+30113;sonda vesical;2
+30747;sonda rectal;2
+35221;espejo dental;2
+35225;lámpara dental;2
+35219;turbina dental;2
+29818;poner la sonda;3
+29819;poner la sonda;3
+29820;poner la sonda;3
+31346;amamantar con sonda;3
+31690;sonda de doble balón;2
+29756;sonda nasogástrica;2
+29757;sonda nasogástrica;2
+29758;sonda nasogástrica;2
+30162;poner sonda nasogástrica;3
+30164;poner sonda nasogástrica;3
+30163;poner sonda nasogástrica;3
+33118;sonda de alimentación;2
+30112;sonda vesical;2
+30113;sonda vesical;2
+30747;sonda rectal;2
+35223;explorador dental;2
+29818;poner la sonda;3
+29819;poner la sonda;3
+29820;poner la sonda;3
+31346;amamantar con sonda;3
+31690;sonda de doble balón;2
+29756;sonda nasogástrica;2
+29757;sonda nasogástrica;2
+29758;sonda nasogástrica;2
+30162;poner sonda nasogástrica;3
+30164;poner sonda nasogástrica;3
+30163;poner sonda nasogástrica;3
+33118;sonda de alimentación;2
+30112;sonda vesical;2
+30113;sonda vesical;2
+30747;sonda rectal;2
+35223;explorador dental;2
+29818;poner la sonda;3
+29819;poner la sonda;3
+29820;poner la sonda;3
+31346;amamantar con sonda;3
+31690;sonda de doble balón;2
+30747;sonda rectal;2
+29756;sonda nasogástrica;2
+29757;sonda nasogástrica;2
+29758;sonda nasogástrica;2
+30162;poner sonda nasogástrica;3
+30164;poner sonda nasogástrica;3
+30163;poner sonda nasogástrica;3
+33118;sonda de alimentación;2
+30112;sonda vesical;2
+30113;sonda vesical;2
+35223;explorador dental;2
+29818;poner la sonda;3
+29819;poner la sonda;3
+29820;poner la sonda;3
+31346;amamantar con sonda;3
+31690;sonda de doble balón;2
+30112;sonda vesical;2
+30113;sonda vesical;2
+29756;sonda nasogástrica;2
+29757;sonda nasogástrica;2
+29758;sonda nasogástrica;2
+30162;poner sonda nasogástrica;3
+30164;poner sonda nasogástrica;3
+30163;poner sonda nasogástrica;3
+33118;sonda de alimentación;2
+30747;sonda rectal;2
+35223;explorador dental;2
+29818;poner la sonda;3
+29819;poner la sonda;3
+29820;poner la sonda;3
+31346;amamantar con sonda;3
+31690;sonda de doble balón;2
+27073;sonido;2
+13354;reír;3
+13354;reír;3
+2573;sopa;2
+8584;fideos;2
+16043;sopa de carne;2
+16045;sopa de marisco;2
+16047;sopa de pescado;2
+16049;sopa de pollo;2
+35355;sopa de letras;2
+16043;sopa de carne;2
+2316;carne;2
+2573;sopa;2
+6976;carne;2
+6961;carne;2
+7000;carne;2
+7001;carne;2
+24807;carne;2
+24809;carne;2
+24811;carne;2
+24813;costillas;2
+35635;carne picada;2
+5467;estofado;2
+8584;fideos;2
+16045;sopa de marisco;2
+16047;sopa de pescado;2
+16049;sopa de pollo;2
+28223;carne de cordero;2
+28357;carne de membrillo;2
+35355;sopa de letras;2
+36684;carne envasada de cerdo;2
+36685;carne envasada de conejo;2
+36689;carne envasada de ternera;2
+36690;carne envasada de cordero;2
+36691;carne envasada de pavo;2
+36692;carne envasada de pollo;2
+8584;fideos;2
+2573;sopa;2
+16043;sopa de carne;2
+16045;sopa de marisco;2
+16047;sopa de pescado;2
+16049;sopa de pollo;2
+35355;sopa de letras;2
+35355;sopa de letras;2
+2573;sopa;2
+34361;letras;2
+8584;fideos;2
+16043;sopa de carne;2
+16045;sopa de marisco;2
+16047;sopa de pescado;2
+16049;sopa de pollo;2
+16045;sopa de marisco;2
+2573;sopa;2
+8627;marisco;2
+20101;marisco;2
+8584;fideos;2
+16043;sopa de carne;2
+16047;sopa de pescado;2
+16049;sopa de pollo;2
+35355;sopa de letras;2
+16047;sopa de pescado;2
+6502;pescado;2
+6653;pescado;2
+6646;pescado;2
+2519;pescado;2
+2573;sopa;2
+35661;pescado;2
+36429;pescado hervido;2
+8584;fideos;2
+16043;sopa de carne;2
+16045;sopa de marisco;2
+16049;sopa de pollo;2
+35355;sopa de letras;2
+29044;pescado a la parrilla;2
+36428;pescado a la plancha;2
+36430;pescado en salsa de espárragos;2
+16049;sopa de pollo;2
+4952;pollo;2
+24815;pollo;2
+25343;pollo;2
+24817;muslo de pollo;2
+35815;palitos de pollo;2
+36624;briouat de pollo;2
+2533;pollo;2
+2573;sopa;2
+25632;pollo;2
+2534;muslo de pollo;2
+8584;fideos;2
+8655;pechuga de pollo;2
+16043;sopa de carne;2
+16045;sopa de marisco;2
+16047;sopa de pescado;2
+29195;pollo con patatas;2
+31378;nuggets de pollo;2
+35355;sopa de letras;2
+36692;carne envasada de pollo;2
+10257;sopera;2
+4747;soplar;3
+6615;soplar;3
+7258;soplar;3
+10179;soplar;3
+16895;soplar las velas;3
+34365;soplar;3
+34506;soplar;3
+34504;soplar;3
+10179;soplar;3
+16895;soplar las velas;3
+34506;soplar;3
+4747;soplar;3
+6615;soplar;3
+7258;soplar;3
+34365;soplar;3
+34504;soplar;3
+11380;soplete;2
+8982;cargar;3
+8983;cargar;3
+6217;sorber;3
+6616;sorber;3
+10214;sorda;4
+10215;sorda;4
+36143;sordera;2
+4748;sordo;4
+4749;sordo;4
+7260;sorprender;3
+9038;sorprender;3
+9036;sorprender;3
+31099;sorprendida;4
+35529;sorprendido;4
+2574;sorprendido;4
+32170;sorprendido;4
+35529;sorprendido;4
+8517;caja de sorpresas;2
+35565;sorpresa;2
+8699;sortear;3
+11259;eslalon;2
+31676;sortear;3
+32520;eslalon;2
+4606;coger;3
+6888;coger;3
+32761;tener;3
+7257;soñar;3
+7256;sonar;3
+7255;sonar;3
+8731;sonar;3
+16893;sonar;3
+28793;sonar;3
+28794;sonar;3
+31746;sonar;3
+34469;sonar;3
+15337;spa;2
+28203;balneario;2
+34102;spinning;2
+34100;bicicleta de spinning;2
+8225;spray;2
+26571;nebulizador;2
+30707;spray nasal;2
+26571;nebulizador;2
+30707;spray nasal;2
+8225;spray;2
+30142;cánula nasal;2
+36703;frotis nasal;2
+8289;stop;2
+12272;su;4
+12274;su;4
+28942;chipirones en su tinta;2
+26455;suave;4
+7262;suavizante;2
+35823;suavizante;2
+2795;subir;3
+6617;subir;3
+19572;subir;3
+24725;subir;3
+28453;subir;3
+6218;subir potencia;3
+10180;subir el pantalón;3
+10181;subir el calzoncillo;3
+15511;subir la braga;3
+15513;subir la falda;3
+16897;subir la cremallera;3
+27296;subir la cama;3
+27644;subir la temperatura;3
+31666;subir el pantalón;3
+32836;subir las piernas;3
+33016;subir al caballo;3
+34679;subir el asiento;3
+35203;subir al tobogán;3
+36593;subir al autobús;3
+36594;subir al autobús;3
+36595;subir al autobús;3
+36597;subir los leotardos;3
+27278;subir por la escalerilla;3
+27279;subir por la escalerilla;3
+27280;subir por la escalerilla;3
+28073;subir a la trona;3
+28074;subir a la trona;3
+35205;subir a una atracción;3
+34667;subir la mesa del asiento delantero;3
+28073;subir a la trona;3
+28074;subir a la trona;3
+6218;subir potencia;3
+2795;subir;3
+6617;subir;3
+19572;subir;3
+24725;subir;3
+28453;subir;3
+35961;trona;2
+10180;subir el pantalón;3
+10181;subir el calzoncillo;3
+15511;subir la braga;3
+15513;subir la falda;3
+16897;subir la cremallera;3
+27296;subir la cama;3
+27644;subir la temperatura;3
+31666;subir el pantalón;3
+32836;subir las piernas;3
+33016;subir al caballo;3
+34679;subir el asiento;3
+35203;subir al tobogán;3
+36593;subir al autobús;3
+36594;subir al autobús;3
+36595;subir al autobús;3
+36597;subir los leotardos;3
+27278;subir por la escalerilla;3
+27279;subir por la escalerilla;3
+27280;subir por la escalerilla;3
+28256;bajar de la trona;3
+28255;bajar de la trona;3
+35205;subir a una atracción;3
+34667;subir la mesa del asiento delantero;3
+35205;subir a una atracción;3
+6218;subir potencia;3
+2795;subir;3
+6617;subir;3
+19572;subir;3
+24725;subir;3
+28453;subir;3
+10180;subir el pantalón;3
+10181;subir el calzoncillo;3
+15511;subir la braga;3
+15513;subir la falda;3
+16897;subir la cremallera;3
+27296;subir la cama;3
+27644;subir la temperatura;3
+31666;subir el pantalón;3
+32836;subir las piernas;3
+33016;subir al caballo;3
+34679;subir el asiento;3
+35011;atracción de troncomóviles;2
+35203;subir al tobogán;3
+36593;subir al autobús;3
+36594;subir al autobús;3
+36595;subir al autobús;3
+36597;subir los leotardos;3
+27278;subir por la escalerilla;3
+27279;subir por la escalerilla;3
+27280;subir por la escalerilla;3
+28073;subir a la trona;3
+28074;subir a la trona;3
+35207;bajar de una atracción;3
+34667;subir la mesa del asiento delantero;3
+36593;subir al autobús;3
+36594;subir al autobús;3
+36595;subir al autobús;3
+6218;subir potencia;3
+2795;subir;3
+6617;subir;3
+19572;subir;3
+24725;subir;3
+28453;subir;3
+2262;autobús;2
+2263;autobús;2
+26654;autobús;2
+32370;autobús escolar;2
+10180;subir el pantalón;3
+10181;subir el calzoncillo;3
+15511;subir la braga;3
+15513;subir la falda;3
+16897;subir la cremallera;3
+27296;subir la cama;3
+27644;subir la temperatura;3
+31666;subir el pantalón;3
+32836;subir las piernas;3
+33016;subir al caballo;3
+34679;subir el asiento;3
+35203;subir al tobogán;3
+36597;subir los leotardos;3
+27278;subir por la escalerilla;3
+27279;subir por la escalerilla;3
+27280;subir por la escalerilla;3
+28073;subir a la trona;3
+28074;subir a la trona;3
+35205;subir a una atracción;3
+34667;subir la mesa del asiento delantero;3
+33016;subir al caballo;3
+6218;subir potencia;3
+2294;caballo;2
+2795;subir;3
+6617;subir;3
+9200;caballo;2
+19572;subir;3
+24725;subir;3
+28453;subir;3
+34205;caballo;2
+6643;montar a caballo;3
+10180;subir el pantalón;3
+10181;subir el calzoncillo;3
+15511;subir la braga;3
+15513;subir la falda;3
+16897;subir la cremallera;3
+27296;subir la cama;3
+27626;montar a caballo;3
+27627;equitación;2
+27644;subir la temperatura;3
+31666;subir el pantalón;3
+32836;subir las piernas;3
+33014;desmontar;3
+34679;subir el asiento;3
+35203;subir al tobogán;3
+35483;montar a caballo;3
+35485;pasear al caballo;3
+36593;subir al autobús;3
+36594;subir al autobús;3
+36595;subir al autobús;3
+36597;subir los leotardos;3
+27278;subir por la escalerilla;3
+27279;subir por la escalerilla;3
+27280;subir por la escalerilla;3
+28073;subir a la trona;3
+28074;subir a la trona;3
+35205;subir a una atracción;3
+34667;subir la mesa del asiento delantero;3
+35203;subir al tobogán;3
+6218;subir potencia;3
+2795;subir;3
+6617;subir;3
+19572;subir;3
+24725;subir;3
+28453;subir;3
+4759;tobogán;2
+26495;tobogán;2
+34687;tobogán inflable;2
+10180;subir el pantalón;3
+10181;subir el calzoncillo;3
+15511;subir la braga;3
+15513;subir la falda;3
+16897;subir la cremallera;3
+27296;subir la cama;3
+27644;subir la temperatura;3
+31666;subir el pantalón;3
+32836;subir las piernas;3
+33016;subir al caballo;3
+34679;subir el asiento;3
+36593;subir al autobús;3
+36594;subir al autobús;3
+36595;subir al autobús;3
+36597;subir los leotardos;3
+27278;subir por la escalerilla;3
+27279;subir por la escalerilla;3
+27280;subir por la escalerilla;3
+28073;subir a la trona;3
+28074;subir a la trona;3
+35205;subir a una atracción;3
+34900;bajar por el tobogán inflable;3
+34667;subir la mesa del asiento delantero;3
+34679;subir el asiento;3
+6218;subir potencia;3
+32374;silla infantil;2
+34667;subir la mesa del asiento delantero;3
+2795;subir;3
+6617;subir;3
+19520;asiento;2
+19572;subir;3
+24725;subir;3
+28453;subir;3
+34677;asiento;2
+36505;butaca;2
+10180;subir el pantalón;3
+10181;subir el calzoncillo;3
+15511;subir la braga;3
+15513;subir la falda;3
+16897;subir la cremallera;3
+27296;subir la cama;3
+27644;subir la temperatura;3
+31666;subir el pantalón;3
+32836;subir las piernas;3
+33016;subir al caballo;3
+34681;reclinar el asiento;3
+35203;subir al tobogán;3
+36593;subir al autobús;3
+36594;subir al autobús;3
+36595;subir al autobús;3
+36597;subir los leotardos;3
+27278;subir por la escalerilla;3
+27279;subir por la escalerilla;3
+27280;subir por la escalerilla;3
+28073;subir a la trona;3
+28074;subir a la trona;3
+34665;guardar debajo del asiento;3
+35205;subir a una atracción;3
+34657;guardar debajo del asiento delantero;3
+34649;bajar la mesa del asiento delantero;3
+10181;subir el calzoncillo;3
+6218;subir potencia;3
+2303;calzoncillo;2
+2795;subir;3
+6617;subir;3
+19572;subir;3
+24725;subir;3
+28453;subir;3
+10142;bajar el calzoncillo;3
+10180;subir el pantalón;3
+15511;subir la braga;3
+15513;subir la falda;3
+16897;subir la cremallera;3
+27296;subir la cama;3
+27644;subir la temperatura;3
+31666;subir el pantalón;3
+32836;subir las piernas;3
+33016;subir al caballo;3
+34679;subir el asiento;3
+35203;subir al tobogán;3
+36593;subir al autobús;3
+36594;subir al autobús;3
+36595;subir al autobús;3
+36597;subir los leotardos;3
+27278;subir por la escalerilla;3
+27279;subir por la escalerilla;3
+27280;subir por la escalerilla;3
+28073;subir a la trona;3
+28074;subir a la trona;3
+35205;subir a una atracción;3
+34667;subir la mesa del asiento delantero;3
+10180;subir el pantalón;3
+31666;subir el pantalón;3
+6218;subir potencia;3
+2795;subir;3
+6617;subir;3
+19572;subir;3
+24725;subir;3
+28453;subir;3
+2565;pantalón;2
+7193;pantalón;2
+24222;pantalón;2
+29933;pantalón;2
+10143;bajar el pantalón;3
+10181;subir el calzoncillo;3
+15511;subir la braga;3
+15513;subir la falda;3
+16897;subir la cremallera;3
+27296;subir la cama;3
+27644;subir la temperatura;3
+28219;bajar el pantalón;3
+32836;subir las piernas;3
+33016;subir al caballo;3
+34679;subir el asiento;3
+35203;subir al tobogán;3
+36423;pantalón del chándal;2
+36593;subir al autobús;3
+36594;subir al autobús;3
+36595;subir al autobús;3
+36597;subir los leotardos;3
+27278;subir por la escalerilla;3
+27279;subir por la escalerilla;3
+27280;subir por la escalerilla;3
+28073;subir a la trona;3
+28074;subir a la trona;3
+35205;subir a una atracción;3
+22192;meterse la mano en el pantalón;3
+34667;subir la mesa del asiento delantero;3
+6218;subir potencia;3
+5916;baja el volumen;5
+2795;subir;3
+6617;subir;3
+19572;subir;3
+24725;subir;3
+28453;subir;3
+10180;subir el pantalón;3
+10181;subir el calzoncillo;3
+15511;subir la braga;3
+15513;subir la falda;3
+16897;subir la cremallera;3
+27296;subir la cama;3
+27644;subir la temperatura;3
+31666;subir el pantalón;3
+32836;subir las piernas;3
+33016;subir al caballo;3
+34679;subir el asiento;3
+35203;subir al tobogán;3
+36593;subir al autobús;3
+36594;subir al autobús;3
+36595;subir al autobús;3
+36597;subir los leotardos;3
+27278;subir por la escalerilla;3
+27279;subir por la escalerilla;3
+27280;subir por la escalerilla;3
+28073;subir a la trona;3
+28074;subir a la trona;3
+35205;subir a una atracción;3
+34667;subir la mesa del asiento delantero;3
+15511;subir la braga;3
+6218;subir potencia;3
+2289;braga;2
+2795;subir;3
+6617;subir;3
+19572;subir;3
+24725;subir;3
+28453;subir;3
+10180;subir el pantalón;3
+10181;subir el calzoncillo;3
+15513;subir la falda;3
+15806;bajar la braga;3
+16897;subir la cremallera;3
+27296;subir la cama;3
+27644;subir la temperatura;3
+31666;subir el pantalón;3
+32836;subir las piernas;3
+33016;subir al caballo;3
+34679;subir el asiento;3
+35203;subir al tobogán;3
+36593;subir al autobús;3
+36594;subir al autobús;3
+36595;subir al autobús;3
+36597;subir los leotardos;3
+27278;subir por la escalerilla;3
+27279;subir por la escalerilla;3
+27280;subir por la escalerilla;3
+28073;subir a la trona;3
+28074;subir a la trona;3
+35205;subir a una atracción;3
+34667;subir la mesa del asiento delantero;3
+27296;subir la cama;3
+6218;subir potencia;3
+2304;cama;2
+2795;subir;3
+6617;subir;3
+6954;cama;2
+19572;subir;3
+24725;subir;3
+25690;cama;2
+25900;cama;2
+28453;subir;3
+23891;cama elástica;2
+23887;cama elástica;2
+35611;cama elástica;2
+5481;hacer la cama;3
+10180;subir el pantalón;3
+10181;subir el calzoncillo;3
+15511;subir la braga;3
+15513;subir la falda;3
+16711;hacer la cama;3
+16897;subir la cremallera;3
+23810;bajar la cama;3
+26660;bajar la cama;3
+26661;bajar la cama;3
+26724;cama de gatos;2
+27644;subir la temperatura;3
+31666;subir el pantalón;3
+32248;cama de partos;2
+32836;subir las piernas;3
+33016;subir al caballo;3
+34679;subir el asiento;3
+35203;subir al tobogán;3
+35341;cama de hospital;2
+35727;hacer la cama;3
+36593;subir al autobús;3
+36594;subir al autobús;3
+36595;subir al autobús;3
+36597;subir los leotardos;3
+27278;subir por la escalerilla;3
+27279;subir por la escalerilla;3
+27280;subir por la escalerilla;3
+28073;subir a la trona;3
+28074;subir a la trona;3
+35205;subir a una atracción;3
+35621;saltar en la cama elástica;3
+35617;saltar en la cama elástica;3
+35620;saltar en la cama elástica;3
+35619;saltar en la cama elástica;3
+34667;subir la mesa del asiento delantero;3
+16897;subir la cremallera;3
+6218;subir potencia;3
+2723;cremallera;2
+2795;subir;3
+6617;subir;3
+19572;subir;3
+24725;subir;3
+28453;subir;3
+10180;subir el pantalón;3
+10181;subir el calzoncillo;3
+15511;subir la braga;3
+15513;subir la falda;3
+27296;subir la cama;3
+27644;subir la temperatura;3
+31666;subir el pantalón;3
+32836;subir las piernas;3
+33016;subir al caballo;3
+34679;subir el asiento;3
+35203;subir al tobogán;3
+36593;subir al autobús;3
+36594;subir al autobús;3
+36595;subir al autobús;3
+36597;subir los leotardos;3
+27278;subir por la escalerilla;3
+27279;subir por la escalerilla;3
+27280;subir por la escalerilla;3
+28073;subir a la trona;3
+28074;subir a la trona;3
+35205;subir a una atracción;3
+34667;subir la mesa del asiento delantero;3
+15513;subir la falda;3
+6218;subir potencia;3
+2391;falda;2
+2795;subir;3
+6617;subir;3
+19572;subir;3
+24725;subir;3
+28453;subir;3
+10180;subir el pantalón;3
+10181;subir el calzoncillo;3
+15511;subir la braga;3
+15808;bajar la falda;3
+16897;subir la cremallera;3
+27296;subir la cama;3
+27644;subir la temperatura;3
+31666;subir el pantalón;3
+32836;subir las piernas;3
+33016;subir al caballo;3
+34679;subir el asiento;3
+35203;subir al tobogán;3
+36593;subir al autobús;3
+36594;subir al autobús;3
+36595;subir al autobús;3
+36597;subir los leotardos;3
+27278;subir por la escalerilla;3
+27279;subir por la escalerilla;3
+27280;subir por la escalerilla;3
+28073;subir a la trona;3
+28074;subir a la trona;3
+35205;subir a una atracción;3
+34667;subir la mesa del asiento delantero;3
+34667;subir la mesa del asiento delantero;3
+34649;bajar la mesa del asiento delantero;3
+6218;subir potencia;3
+32374;silla infantil;2
+34679;subir el asiento;3
+34657;guardar debajo del asiento delantero;3
+2795;subir;3
+3129;mesa;2
+6562;mesa;2
+6617;subir;3
+19520;asiento;2
+19572;subir;3
+24725;subir;3
+28453;subir;3
+34677;asiento;2
+36505;butaca;2
+2917;mesa camilla;2
+21984;mesa adaptada;2
+25241;mesa electoral;2
+25242;mesa electoral;2
+2916;mesa de estudio;2
+4943;mesa de cocina;2
+4944;mesa de salón;2
+5398;billar;2
+5558;quitar la mesa;3
+5549;poner la mesa;3
+5587;sierra;2
+7052;mesa con ruedas;2
+9035;secar;3
+9810;juegos;2
+10180;subir el pantalón;3
+10181;subir el calzoncillo;3
+11302;mesa de colegio;2
+15511;subir la braga;3
+15513;subir la falda;3
+16897;subir la cremallera;3
+27296;subir la cama;3
+27644;subir la temperatura;3
+29094;golpear la mesa;3
+29095;golpear la mesa;3
+29096;golpear la mesa;3
+29097;golpear la mesa;3
+31041;golpear la mesa;3
+31042;golpear la mesa;3
+31046;golpear la mesa;3
+31666;subir el pantalón;3
+32580;juegos de mesa;2
+32836;subir las piernas;3
+33016;subir al caballo;3
+34681;reclinar el asiento;3
+34801;mesa de luz;2
+35203;subir al tobogán;3
+35331;mesa de operaciones;2
+36285;mesa de colegio;2
+36593;subir al autobús;3
+36594;subir al autobús;3
+36595;subir al autobús;3
+36597;subir los leotardos;3
+2471;mesa de ping pong;2
+4942;mesa baja de salón;2
+27278;subir por la escalerilla;3
+27279;subir por la escalerilla;3
+27280;subir por la escalerilla;3
+28073;subir a la trona;3
+28074;subir a la trona;3
+34665;guardar debajo del asiento;3
+35205;subir a una atracción;3
+27644;subir la temperatura;3
+6218;subir potencia;3
+2795;subir;3
+6617;subir;3
+8230;temperatura;2
+19572;subir;3
+24725;subir;3
+28453;subir;3
+34898;temperatura;2
+10180;subir el pantalón;3
+10181;subir el calzoncillo;3
+15511;subir la braga;3
+15513;subir la falda;3
+16897;subir la cremallera;3
+27296;subir la cama;3
+27735;bajar la temperatura;3
+28027;regular;3
+31666;subir el pantalón;3
+32836;subir las piernas;3
+33016;subir al caballo;3
+34679;subir el asiento;3
+35203;subir al tobogán;3
+36593;subir al autobús;3
+36594;subir al autobús;3
+36595;subir al autobús;3
+36597;subir los leotardos;3
+27278;subir por la escalerilla;3
+27279;subir por la escalerilla;3
+27280;subir por la escalerilla;3
+28073;subir a la trona;3
+28074;subir a la trona;3
+35205;subir a una atracción;3
+34667;subir la mesa del asiento delantero;3
+32836;subir las piernas;3
+6218;subir potencia;3
+2795;subir;3
+6617;subir;3
+19572;subir;3
+24725;subir;3
+28453;subir;3
+10180;subir el pantalón;3
+10181;subir el calzoncillo;3
+15511;subir la braga;3
+15513;subir la falda;3
+16897;subir la cremallera;3
+27296;subir la cama;3
+27644;subir la temperatura;3
+31666;subir el pantalón;3
+33016;subir al caballo;3
+34679;subir el asiento;3
+35203;subir al tobogán;3
+36593;subir al autobús;3
+36594;subir al autobús;3
+36595;subir al autobús;3
+36597;subir los leotardos;3
+27278;subir por la escalerilla;3
+27279;subir por la escalerilla;3
+27280;subir por la escalerilla;3
+28073;subir a la trona;3
+28074;subir a la trona;3
+35205;subir a una atracción;3
+32834;tener las piernas en alto;3
+34667;subir la mesa del asiento delantero;3
+36597;subir los leotardos;3
+6218;subir potencia;3
+2795;subir;3
+3278;leotardo;2
+6617;subir;3
+19572;subir;3
+24725;subir;3
+28453;subir;3
+10180;subir el pantalón;3
+10181;subir el calzoncillo;3
+15511;subir la braga;3
+15513;subir la falda;3
+16897;subir la cremallera;3
+27296;subir la cama;3
+27644;subir la temperatura;3
+31666;subir el pantalón;3
+32836;subir las piernas;3
+33016;subir al caballo;3
+34679;subir el asiento;3
+35203;subir al tobogán;3
+36497;bajar los leotardos;3
+36593;subir al autobús;3
+36594;subir al autobús;3
+36595;subir al autobús;3
+27278;subir por la escalerilla;3
+27279;subir por la escalerilla;3
+27280;subir por la escalerilla;3
+28073;subir a la trona;3
+28074;subir a la trona;3
+35205;subir a una atracción;3
+34667;subir la mesa del asiento delantero;3
+27278;subir por la escalerilla;3
+27279;subir por la escalerilla;3
+27280;subir por la escalerilla;3
+6218;subir potencia;3
+2795;subir;3
+6617;subir;3
+19572;subir;3
+24725;subir;3
+28453;subir;3
+10180;subir el pantalón;3
+10181;subir el calzoncillo;3
+15511;subir la braga;3
+15513;subir la falda;3
+16897;subir la cremallera;3
+27296;subir la cama;3
+27644;subir la temperatura;3
+31666;subir el pantalón;3
+32836;subir las piernas;3
+33016;subir al caballo;3
+34679;subir el asiento;3
+35203;subir al tobogán;3
+36593;subir al autobús;3
+36594;subir al autobús;3
+36595;subir al autobús;3
+36597;subir los leotardos;3
+28073;subir a la trona;3
+28074;subir a la trona;3
+35205;subir a una atracción;3
+34667;subir la mesa del asiento delantero;3
+6218;subir potencia;3
+2795;subir;3
+6617;subir;3
+19572;subir;3
+24725;subir;3
+28453;subir;3
+5916;baja el volumen;5
+10180;subir el pantalón;3
+10181;subir el calzoncillo;3
+15511;subir la braga;3
+15513;subir la falda;3
+16897;subir la cremallera;3
+27296;subir la cama;3
+27644;subir la temperatura;3
+31666;subir el pantalón;3
+32836;subir las piernas;3
+33016;subir al caballo;3
+34679;subir el asiento;3
+35203;subir al tobogán;3
+36593;subir al autobús;3
+36594;subir al autobús;3
+36595;subir al autobús;3
+36597;subir los leotardos;3
+27278;subir por la escalerilla;3
+27279;subir por la escalerilla;3
+27280;subir por la escalerilla;3
+28073;subir a la trona;3
+28074;subir a la trona;3
+35205;subir a una atracción;3
+34667;subir la mesa del asiento delantero;3
+34021;subirse la camiseta;3
+34022;subirse la camiseta;3
+2309;camiseta;2
+2310;camiseta;2
+25908;camiseta de manga larga;2
+3157;submarino;2
+6219;subrayar;3
+28091;subtítulo;2
+28301;subtítulo;2
+33998;ayuda;2
+19548;1-2-3;5
+4750;sucio;4
+26459;sucio;4
+29923;carro de ropa sucia;2
+8700;suciedad;2
+4750;sucio;4
+26459;sucio;4
+35848;pañal sucio;2
+35847;pañal sucio;2
+8701;sudadera;2
+6153;sudamericana;4
+6137;sudamericano;4
+8469;sudar;3
+35721;sudar;3
+35721;sudar;3
+36598;sudorosa;4
+32125;sudoroso;4
+8702;suela;2
+2575;suelo;2
+11370;sentar en el suelo;3
+5927;suero;2
+6220;suero;2
+11164;afortunado;4
+13378;mala suerte;2
+5590;sueño;2
+11576;proponer;3
+11576;proponer;3
+26465;suicidio;2
+26463;suicidio;2
+26464;suicidio;2
+26465;suicidio;2
+2576;sujetador;2
+15497;poner el sujetador;3
+15499;quitarse el sujetador;3
+32276;atar;3
+32761;tener;3
+32029;sujetar el pecho;3
+32029;sujetar el pecho;3
+2853;pecho;2
+8372;pecho;2
+32276;atar;3
+32761;tener;3
+11241;dolor de pecho;2
+28782;dolor de pecho;2
+28781;dolor de pecho;2
+31719;dar el pecho;3
+31718;dar el pecho;3
+32027;dar el pecho;3
+32030;dar el pecho;3
+32184;inflamación del pecho;2
+35195;choque de pecho;5
+17324;sultán;2
+5868;sumar;3
+5868;sumar;3
+34828;sumergir;3
+36728;superhéroes;2
+3389;supermercado;2
+6618;supermercado;2
+34868;superponer;3
+34866;superponer;3
+30670;supositorio de glicerina;2
+30801;poner supositorio;3
+32930;surfear;3
+35837;remar;3
+35838;remar;3
+35841;surf de remo;2
+35839;surf de remo;2
+35840;surf de remo;2
+4752;tabla de surf;2
+33012;neopreno;2
+35837;remar;3
+35838;remar;3
+35841;surf de remo;2
+35839;surf de remo;2
+35840;surf de remo;2
+2867;pala;2
+32930;surfear;3
+34543;pala;2
+2361;cubo y pala;2
+4752;tabla de surf;2
+4946;pala de frontón;2
+33010;raqueta de pádel;2
+33012;neopreno;2
+35837;remar;3
+35838;remar;3
+35841;surf de remo;2
+35839;surf de remo;2
+35840;surf de remo;2
+6206;remo;2
+32930;surfear;3
+4752;tabla de surf;2
+33012;neopreno;2
+32928;surfear;3
+32930;surfear;3
+32929;surfear;3
+8703;surfista;2
+34549;surfista;2
+6221;surtidor;2
+12276;sus;4
+12278;sus;4
+22115;suspender;3
+27393;detener;3
+29640;suspender;3
+29638;suspender;3
+29639;suspender;3
+35571;susto;2
+5841;restar;3
+9037;susurrar;3
+12291;susurrar;3
+16899;susurrar;3
+28837;suturar;3
+28838;suturar;3
+12272;su;4
+12274;su;4
+12276;sus;4
+12278;sus;4
+12272;su;4
+12274;su;4
+12272;su;4
+12274;su;4
+12276;sus;4
+12278;sus;4
+2436;jersey;2
+9164;switch;2
+6605;sábado;6
+8367;sábana;2
+17304;sábana;2
+5567;sabana;2
+17308;sábana bajera;2
+17308;sábana bajera;2
+5567;sabana;2
+8367;sábana;2
+17304;sábana;2
+2551;sábanas;2
+8367;sábana;2
+17304;sábana;2
+26435;sémola;2
+26439;séquito;2
+26440;séquito;2
+5583;sí;4
+5584;sí;4
+6481;se;6
+7029;se;6
+7031;se;6
+7033;se;6
+31906;se;6
+31973;sí;4
+34521;sí;4
+28359;si;6
+32722;sílaba;2
+8222;síndrome de Down;2
+30233;Síndrome de Down;1
+30235;Síndrome de Down apoyo;2
+29165;síntomas;2
+36323;sólido;2
+8223;sótano;2
+27482;sótano;2
+3389;supermercado;2
+6618;supermercado;2
+3042;t;6
+3158;T;6
+34673;espectáculo T-Rex;2
+5101;paquete de tabaco;2
+4753;tabla de windsurf;2
+6143;madera;2
+9090;tabla para cortar;2
+2577;tabla de planchar;2
+4752;tabla de surf;2
+15509;tabla de natación;2
+15509;tabla de natación;2
+4753;tabla de windsurf;2
+9090;tabla para cortar;2
+6143;madera;2
+25038;natación;2
+2577;tabla de planchar;2
+3108;gorro de natación;2
+4752;tabla de surf;2
+27006;monitora;2
+27005;monitor;2
+33984;gorro de natación;2
+2577;tabla de planchar;2
+4753;tabla de windsurf;2
+9090;tabla para cortar;2
+2830;planchar;3
+6143;madera;2
+8192;planchar;3
+26330;planchar;3
+26331;planchar;3
+4752;tabla de surf;2
+15509;tabla de natación;2
+4752;tabla de surf;2
+4753;tabla de windsurf;2
+9090;tabla para cortar;2
+35837;remar;3
+35838;remar;3
+35841;surf de remo;2
+35839;surf de remo;2
+35840;surf de remo;2
+6143;madera;2
+32930;surfear;3
+2577;tabla de planchar;2
+15509;tabla de natación;2
+33012;neopreno;2
+4753;tabla de windsurf;2
+9090;tabla para cortar;2
+6143;madera;2
+2577;tabla de planchar;2
+4752;tabla de surf;2
+15509;tabla de natación;2
+9090;tabla para cortar;2
+4753;tabla de windsurf;2
+2547;cortar;3
+2720;cortar;3
+5975;cortar;3
+6143;madera;2
+25022;cortar;3
+25020;cortar;3
+36632;cortar;3
+2577;tabla de planchar;2
+4752;tabla de surf;2
+8084;cortar el pelo;3
+10150;cortar el pan;3
+10149;cortar el pan;3
+10151;cortar el césped;3
+10153;cortar las uñas;3
+15509;tabla de natación;2
+26000;cortar el césped;3
+27696;cortar el pelo;3
+27695;cortar el pelo;3
+36558;maquinilla;2
+6222;tablero de comunicación;2
+26475;tablero de comunicación;2
+31882;tablero de comunicación;2
+24707;tablero de comunicación;2
+35129;tablero de ajedrez;2
+16157;utilizar el tablero de comunicación;3
+35129;tablero de ajedrez;2
+6222;tablero de comunicación;2
+26475;tablero de comunicación;2
+31882;tablero de comunicación;2
+3054;ajedrez;2
+24707;tablero de comunicación;2
+25181;jugar al ajedrez;3
+25182;jugar al ajedrez;3
+35361;jugar al ajedrez;3
+35428;jugar al ajedrez;3
+16157;utilizar el tablero de comunicación;3
+6222;tablero de comunicación;2
+24707;tablero de comunicación;2
+26475;tablero de comunicación;2
+31882;tablero de comunicación;2
+16157;utilizar el tablero de comunicación;3
+9870;exposición;2
+34623;comunicación;2
+6991;comunicación aumentativa;2
+36723;comunicación aumentativa;2
+7004;cuaderno de comunicación;2
+12347;medios de comunicación;2
+35129;tablero de ajedrez;2
+16155;utilizar el cuaderno de comunicación;3
+36447;sacar el cuaderno de comunicación;3
+16182;Unidad de Empleo, Igualdad, Cooperación y Comunicación;1
+9165;tablet pc;2
+29151;jugar con el tablet;3
+9165;tablet pc;2
+29151;jugar con el tablet;3
+25940;chocolate;2
+28099;tableta;2
+30223;pulsador para tableta;2
+29151;jugar con el tablet;3
+25940;chocolate;2
+29226;pastel de chocolate;2
+34092;cono de chocolate;2
+2334;chocolate;2
+6448;chocolate;2
+28099;tableta;2
+3331;galleta de chocolate;2
+6525;galletas;2
+9049;cucurucho;2
+11304;huevo de chocolate;2
+28305;grageas de chocolate;2
+30223;pulsador para tableta;2
+34747;sirope de chocolate;2
+36474;turrón de chocolate;2
+21326;chocolate a la taza;2
+29151;jugar con el tablet;3
+34615;echar sirope de chocolate;3
+6143;madera;2
+6997;corchera;2
+6997;corchera;2
+6143;madera;2
+3291;taburete;2
+23741;andador;2
+6223;tachar;3
+30851;tachar;3
+3390;taco;2
+22013;taco;2
+17328;tacos de salida;2
+11364;salida;2
+26411;salida;2
+26412;salida;2
+27248;salida;2
+29621;salida;2
+29622;salida;2
+29620;salida;2
+24705;salida dependientes;2
+8687;salida de emergencia;2
+32960;taichí;2
+32961;taichí;2
+32673;tajín;2
+24420;taladradora;2
+3391;taladrar;3
+3392;taladro;2
+6224;talar;3
+14256;talco para bebé;2
+14256;talco para bebé;2
+2275;bebé;2
+6060;bebé;2
+28215;bebé;2
+28216;bebé;2
+26300;pasear al bebé;3
+4667;igual;4
+9923;talla;2
+32618;tallar;3
+32619;tallar;3
+33100;medir;3
+25486;tallarines;2
+6225;taller;2
+9805;taller;2
+11655;taller;2
+32424;taller;2
+24615;escuela taller;2
+30975;taller de cerámica;2
+7263;taller mecánico;2
+16975;taller mecánico;2
+24645;sala taller;2
+24647;sala taller;2
+4956;profesora de taller;2
+7797;profesor de taller;2
+8732;taller de bicicletas;2
+8733;taller de jardinería;2
+9806;taller de textil;2
+9809;taller de textil;2
+11651;monitor;2
+16127;taller de mantenimiento;2
+24675;taller de baile;2
+24676;taller de baile;2
+24680;taller de memoria;2
+24679;taller de memoria;2
+30977;taller de cuero;2
+36065;taller de motos;2
+35517;taller de chapa y pintura;2
+30975;taller de cerámica;2
+9805;taller;2
+24615;escuela taller;2
+6225;taller;2
+11655;taller;2
+32424;taller;2
+16453;alfarería;2
+7263;taller mecánico;2
+16975;taller mecánico;2
+24645;sala taller;2
+24647;sala taller;2
+4956;profesora de taller;2
+7797;profesor de taller;2
+8732;taller de bicicletas;2
+8733;taller de jardinería;2
+9806;taller de textil;2
+9809;taller de textil;2
+11651;monitor;2
+16127;taller de mantenimiento;2
+24675;taller de baile;2
+24676;taller de baile;2
+24680;taller de memoria;2
+24679;taller de memoria;2
+30977;taller de cuero;2
+30985;horno de alfarería;2
+36065;taller de motos;2
+35517;taller de chapa y pintura;2
+24675;taller de baile;2
+24676;taller de baile;2
+9805;taller;2
+24615;escuela taller;2
+30975;taller de cerámica;2
+2652;baile;2
+6225;taller;2
+11655;taller;2
+32424;taller;2
+32562;baile;2
+35747;baile;2
+7263;taller mecánico;2
+16975;taller mecánico;2
+24645;sala taller;2
+24647;sala taller;2
+4956;profesora de taller;2
+7797;profesor de taller;2
+8732;taller de bicicletas;2
+8733;taller de jardinería;2
+9806;taller de textil;2
+9809;taller de textil;2
+11651;monitor;2
+16127;taller de mantenimiento;2
+24680;taller de memoria;2
+24679;taller de memoria;2
+30977;taller de cuero;2
+36065;taller de motos;2
+35517;taller de chapa y pintura;2
+8732;taller de bicicletas;2
+9805;taller;2
+24615;escuela taller;2
+9208;prohibido bicicletas;5
+30975;taller de cerámica;2
+6225;taller;2
+11655;taller;2
+32424;taller;2
+7263;taller mecánico;2
+16975;taller mecánico;2
+24645;sala taller;2
+24647;sala taller;2
+4956;profesora de taller;2
+7797;profesor de taller;2
+8733;taller de jardinería;2
+9806;taller de textil;2
+9809;taller de textil;2
+11651;monitor;2
+16127;taller de mantenimiento;2
+24675;taller de baile;2
+24676;taller de baile;2
+24680;taller de memoria;2
+24679;taller de memoria;2
+26632;aparcamiento de bicicletas;2
+27077;tienda de bicicletas;2
+30977;taller de cuero;2
+34918;alquiler de bicicletas;2
+36065;taller de motos;2
+35517;taller de chapa y pintura;2
+30975;taller de cerámica;2
+9805;taller;2
+24615;escuela taller;2
+6225;taller;2
+11655;taller;2
+32424;taller;2
+36147;cerámica;2
+7263;taller mecánico;2
+16975;taller mecánico;2
+24645;sala taller;2
+24647;sala taller;2
+32622;decorar;3
+4956;profesora de taller;2
+7797;profesor de taller;2
+8732;taller de bicicletas;2
+8733;taller de jardinería;2
+9806;taller de textil;2
+9809;taller de textil;2
+11651;monitor;2
+16127;taller de mantenimiento;2
+24675;taller de baile;2
+24676;taller de baile;2
+24680;taller de memoria;2
+24679;taller de memoria;2
+30977;taller de cuero;2
+36065;taller de motos;2
+35517;taller de chapa y pintura;2
+35517;taller de chapa y pintura;2
+4870;pintura;2
+4950;pintura;2
+9805;taller;2
+24615;escuela taller;2
+30975;taller de cerámica;2
+6225;taller;2
+11655;taller;2
+16601;chapa;2
+25413;pintura;2
+32424;taller;2
+7263;taller mecánico;2
+11177;Altamira;1
+16975;taller mecánico;2
+24645;sala taller;2
+24647;sala taller;2
+36011;mural;2
+4875;cubo de pintura;2
+4956;profesora de taller;2
+7797;profesor de taller;2
+8732;taller de bicicletas;2
+8733;taller de jardinería;2
+9806;taller de textil;2
+9809;taller de textil;2
+11651;monitor;2
+16127;taller de mantenimiento;2
+24675;taller de baile;2
+24676;taller de baile;2
+24680;taller de memoria;2
+24679;taller de memoria;2
+30977;taller de cuero;2
+36065;taller de motos;2
+30977;taller de cuero;2
+9805;taller;2
+24615;escuela taller;2
+30975;taller de cerámica;2
+5979;cuero;2
+6225;taller;2
+11655;taller;2
+32424;taller;2
+7263;taller mecánico;2
+16975;taller mecánico;2
+24645;sala taller;2
+24647;sala taller;2
+4956;profesora de taller;2
+7797;profesor de taller;2
+8732;taller de bicicletas;2
+8733;taller de jardinería;2
+9806;taller de textil;2
+9809;taller de textil;2
+11651;monitor;2
+16127;taller de mantenimiento;2
+24675;taller de baile;2
+24676;taller de baile;2
+24680;taller de memoria;2
+24679;taller de memoria;2
+36065;taller de motos;2
+35517;taller de chapa y pintura;2
+24615;escuela taller;2
+9805;taller;2
+30975;taller de cerámica;2
+6225;taller;2
+11655;taller;2
+32424;taller;2
+7263;taller mecánico;2
+16975;taller mecánico;2
+24645;sala taller;2
+24647;sala taller;2
+4956;profesora de taller;2
+7797;profesor de taller;2
+8732;taller de bicicletas;2
+8733;taller de jardinería;2
+9806;taller de textil;2
+9809;taller de textil;2
+11651;monitor;2
+16127;taller de mantenimiento;2
+24675;taller de baile;2
+24676;taller de baile;2
+24680;taller de memoria;2
+24679;taller de memoria;2
+30977;taller de cuero;2
+36065;taller de motos;2
+35517;taller de chapa y pintura;2
+8733;taller de jardinería;2
+9805;taller;2
+24615;escuela taller;2
+30975;taller de cerámica;2
+6225;taller;2
+11655;taller;2
+32424;taller;2
+7263;taller mecánico;2
+16975;taller mecánico;2
+24645;sala taller;2
+24647;sala taller;2
+4956;profesora de taller;2
+7797;profesor de taller;2
+8732;taller de bicicletas;2
+9806;taller de textil;2
+9809;taller de textil;2
+11651;monitor;2
+16127;taller de mantenimiento;2
+24675;taller de baile;2
+24676;taller de baile;2
+24680;taller de memoria;2
+24679;taller de memoria;2
+30977;taller de cuero;2
+36065;taller de motos;2
+35517;taller de chapa y pintura;2
+9805;taller;2
+24615;escuela taller;2
+30975;taller de cerámica;2
+6143;madera;2
+6225;taller;2
+11655;taller;2
+32424;taller;2
+7263;taller mecánico;2
+16975;taller mecánico;2
+24645;sala taller;2
+24647;sala taller;2
+4923;caballito mecedor;2
+4956;profesora de taller;2
+7797;profesor de taller;2
+8732;taller de bicicletas;2
+8733;taller de jardinería;2
+9806;taller de textil;2
+9809;taller de textil;2
+11651;monitor;2
+16127;taller de mantenimiento;2
+24675;taller de baile;2
+24676;taller de baile;2
+24680;taller de memoria;2
+24679;taller de memoria;2
+30977;taller de cuero;2
+32468;cuchara de madera;2
+36065;taller de motos;2
+35517;taller de chapa y pintura;2
+16127;taller de mantenimiento;2
+9805;taller;2
+24615;escuela taller;2
+30975;taller de cerámica;2
+6225;taller;2
+11655;taller;2
+32424;taller;2
+7263;taller mecánico;2
+16975;taller mecánico;2
+24645;sala taller;2
+24647;sala taller;2
+4956;profesora de taller;2
+7797;profesor de taller;2
+8732;taller de bicicletas;2
+8733;taller de jardinería;2
+9806;taller de textil;2
+9809;taller de textil;2
+11651;monitor;2
+16051;jefa de mantenimiento;2
+16053;jefe de mantenimiento;2
+24675;taller de baile;2
+24676;taller de baile;2
+24680;taller de memoria;2
+24679;taller de memoria;2
+24685;conservación y mantenimiento;2
+30977;taller de cuero;2
+36065;taller de motos;2
+35517;taller de chapa y pintura;2
+24680;taller de memoria;2
+24679;taller de memoria;2
+9800;memoria flash;2
+9805;taller;2
+24615;escuela taller;2
+30975;taller de cerámica;2
+6225;taller;2
+9157;memoria;2
+11655;taller;2
+32424;taller;2
+7263;taller mecánico;2
+16975;taller mecánico;2
+24645;sala taller;2
+24647;sala taller;2
+4956;profesora de taller;2
+7797;profesor de taller;2
+8732;taller de bicicletas;2
+8733;taller de jardinería;2
+9806;taller de textil;2
+9809;taller de textil;2
+11651;monitor;2
+16127;taller de mantenimiento;2
+24675;taller de baile;2
+24676;taller de baile;2
+30977;taller de cuero;2
+36065;taller de motos;2
+35517;taller de chapa y pintura;2
+36065;taller de motos;2
+9805;taller;2
+24615;escuela taller;2
+30975;taller de cerámica;2
+6225;taller;2
+11655;taller;2
+32424;taller;2
+7263;taller mecánico;2
+16975;taller mecánico;2
+24645;sala taller;2
+24647;sala taller;2
+4956;profesora de taller;2
+7797;profesor de taller;2
+8732;taller de bicicletas;2
+8733;taller de jardinería;2
+9806;taller de textil;2
+9809;taller de textil;2
+11651;monitor;2
+16127;taller de mantenimiento;2
+21498;carrera;2
+24675;taller de baile;2
+24676;taller de baile;2
+24680;taller de memoria;2
+24679;taller de memoria;2
+30215;tienda de motos;2
+30977;taller de cuero;2
+35517;taller de chapa y pintura;2
+9806;taller de textil;2
+9809;taller de textil;2
+9805;taller;2
+24615;escuela taller;2
+30975;taller de cerámica;2
+6225;taller;2
+11655;taller;2
+32424;taller;2
+7263;taller mecánico;2
+16975;taller mecánico;2
+24645;sala taller;2
+24647;sala taller;2
+4956;profesora de taller;2
+7797;profesor de taller;2
+8732;taller de bicicletas;2
+8733;taller de jardinería;2
+11651;monitor;2
+16127;taller de mantenimiento;2
+24675;taller de baile;2
+24676;taller de baile;2
+24680;taller de memoria;2
+24679;taller de memoria;2
+30977;taller de cuero;2
+36065;taller de motos;2
+35517;taller de chapa y pintura;2
+7263;taller mecánico;2
+16975;taller mecánico;2
+9805;taller;2
+24615;escuela taller;2
+30975;taller de cerámica;2
+6225;taller;2
+11655;taller;2
+32424;taller;2
+2921;mecánico;2
+6560;mecánico;2
+24645;sala taller;2
+24647;sala taller;2
+4956;profesora de taller;2
+7797;profesor de taller;2
+8732;taller de bicicletas;2
+8733;taller de jardinería;2
+9806;taller de textil;2
+9809;taller de textil;2
+11651;monitor;2
+16127;taller de mantenimiento;2
+24675;taller de baile;2
+24676;taller de baile;2
+24680;taller de memoria;2
+24679;taller de memoria;2
+30977;taller de cuero;2
+36065;taller de motos;2
+35517;taller de chapa y pintura;2
+3159;tallo;2
+17183;tallo;2
+28992;talo;2
+3399;talon;2
+8704;tamaño;2
+2578;tambor;2
+36468;tocar el tambor;3
+5592;tamborrada;2
+28944;Tamborrada;1
+28952;Tamborrada;1
+6619;tampón;2
+29020;ponerse el tampón;3
+29022;quitarse el tampón;3
+31965;prohibido usar tampón;5
+31215;tanatorio;2
+3400;tanque;2
+16285;tanque;2
+5093;tanto por ciento;2
+25492;tantos;2
+10221;canapé;2
+27395;tapadera;2
+29185;tapa;2
+29187;tapa;2
+30401;tapa;2
+30409;tapa;2
+10144;bajar la tapa;3
+10168;levantar la tapa;3
+27395;tapadera;2
+7264;tapar;3
+7266;tapar;3
+7265;tapar;3
+26024;cubrir;3
+31797;tapar;3
+34459;tapar;3
+34465;tapar;3
+34619;tapar;3
+34819;tapar los ojos;3
+34818;tapar los ojos;3
+34822;tapar los ojos;3
+34819;tapar los ojos;3
+34818;tapar los ojos;3
+34822;tapar los ojos;3
+2876;ojos;2
+7264;tapar;3
+7266;tapar;3
+7265;tapar;3
+26024;cubrir;3
+31797;tapar;3
+34459;tapar;3
+34465;tapar;3
+34619;tapar;3
+3388;sombra de ojos;2
+10146;cerrar;3
+10138;abrir los ojos;3
+32879;seguimiento de ojos;2
+32880;seguimiento de ojos;2
+36333;mirar a los ojos;3
+30981;tapiz rodante;2
+22117;taponar;3
+32808;tapones para los oídos;2
+36599;tapón para los oídos;2
+28777;dolor de oído;2
+28778;dolor de oído;2
+7267;tapón;2
+36599;tapón para los oídos;2
+36599;tapón para los oídos;2
+7267;tapón;2
+28777;dolor de oído;2
+28778;dolor de oído;2
+32808;tapones para los oídos;2
+31993;taquicardia;2
+32059;taquicardia;2
+8705;taquilla;2
+24793;taquilla;2
+34189;taquilla;2
+11381;taquillero;2
+7268;tarde;2
+36347;autonomía personal;2
+16031;seguro;2
+33084;aula de TVA;2
+36347;autonomía personal;2
+33084;aula de TVA;2
+4751;tarjeta de crédito;2
+8370;tarjeta amarilla;2
+8371;tarjeta roja;2
+9166;tarjeta gráfica;2
+27256;tarjeta bus;2
+28107;tarjeta bus;2
+34717;tarjeta sanitaria;2
+36729;tarjeta sanitaria;2
+36730;tarjeta sanitaria;2
+7269;tarjeta de Navidad;2
+28111;tarjeta de transporte;2
+28115;tarjeta de transporte;2
+28119;tarjeta de transporte;2
+8370;tarjeta amarilla;2
+4751;tarjeta de crédito;2
+2648;amarillo;4
+8371;tarjeta roja;2
+9166;tarjeta gráfica;2
+27256;tarjeta bus;2
+28107;tarjeta bus;2
+34717;tarjeta sanitaria;2
+36729;tarjeta sanitaria;2
+36730;tarjeta sanitaria;2
+7269;tarjeta de Navidad;2
+28111;tarjeta de transporte;2
+28115;tarjeta de transporte;2
+28119;tarjeta de transporte;2
+27256;tarjeta bus;2
+28107;tarjeta bus;2
+4751;tarjeta de crédito;2
+8370;tarjeta amarilla;2
+8371;tarjeta roja;2
+9166;tarjeta gráfica;2
+28905;bus turístico;2
+34717;tarjeta sanitaria;2
+36729;tarjeta sanitaria;2
+36730;tarjeta sanitaria;2
+7269;tarjeta de Navidad;2
+28111;tarjeta de transporte;2
+28115;tarjeta de transporte;2
+28119;tarjeta de transporte;2
+7269;tarjeta de Navidad;2
+4751;tarjeta de crédito;2
+32456;¡Feliz Navidad!;5
+32458;¡Feliz Navidad!;5
+3134;Navidad;1
+8370;tarjeta amarilla;2
+8371;tarjeta roja;2
+9166;tarjeta gráfica;2
+27256;tarjeta bus;2
+28107;tarjeta bus;2
+34717;tarjeta sanitaria;2
+36729;tarjeta sanitaria;2
+36730;tarjeta sanitaria;2
+3058;árbol de Navidad;2
+3092;Día de Navidad;1
+3100;Estrella de Navidad;1
+5083;luces de Navidad;2
+6885;adorno de Navidad;2
+12305;Tronca de Navidad;2
+24859;árbol de Navidad;2
+28111;tarjeta de transporte;2
+28115;tarjeta de transporte;2
+28119;tarjeta de transporte;2
+36394;flor de pascua;2
+3067;bolas del árbol de navidad;2
+8296;bola del árbol de navidad;2
+4751;tarjeta de crédito;2
+8370;tarjeta amarilla;2
+8371;tarjeta roja;2
+9166;tarjeta gráfica;2
+27256;tarjeta bus;2
+28107;tarjeta bus;2
+34717;tarjeta sanitaria;2
+36729;tarjeta sanitaria;2
+36730;tarjeta sanitaria;2
+7269;tarjeta de Navidad;2
+28111;tarjeta de transporte;2
+28115;tarjeta de transporte;2
+28119;tarjeta de transporte;2
+28111;tarjeta de transporte;2
+28115;tarjeta de transporte;2
+28119;tarjeta de transporte;2
+4751;tarjeta de crédito;2
+10351;transportes;2
+8370;tarjeta amarilla;2
+8371;tarjeta roja;2
+9166;tarjeta gráfica;2
+27256;tarjeta bus;2
+28107;tarjeta bus;2
+34717;tarjeta sanitaria;2
+36729;tarjeta sanitaria;2
+36730;tarjeta sanitaria;2
+7269;tarjeta de Navidad;2
+35911;monitor de transporte;2
+36641;Hercules;2
+9166;tarjeta gráfica;2
+4751;tarjeta de crédito;2
+9174;gráfica;2
+8370;tarjeta amarilla;2
+8371;tarjeta roja;2
+27256;tarjeta bus;2
+28107;tarjeta bus;2
+34717;tarjeta sanitaria;2
+36729;tarjeta sanitaria;2
+36730;tarjeta sanitaria;2
+7269;tarjeta de Navidad;2
+28111;tarjeta de transporte;2
+28115;tarjeta de transporte;2
+28119;tarjeta de transporte;2
+8371;tarjeta roja;2
+4751;tarjeta de crédito;2
+5942;Caperucita Roja;1
+8370;tarjeta amarilla;2
+9075;Cruz Roja;1
+9166;tarjeta gráfica;2
+27256;tarjeta bus;2
+28107;tarjeta bus;2
+30253;Cruz Roja;1
+34717;tarjeta sanitaria;2
+36729;tarjeta sanitaria;2
+36730;tarjeta sanitaria;2
+7269;tarjeta de Navidad;2
+28111;tarjeta de transporte;2
+28115;tarjeta de transporte;2
+28119;tarjeta de transporte;2
+36197;Media Luna Roja;1
+36225;Media Luna Roja;1
+34717;tarjeta sanitaria;2
+36729;tarjeta sanitaria;2
+36730;tarjeta sanitaria;2
+4751;tarjeta de crédito;2
+8370;tarjeta amarilla;2
+8371;tarjeta roja;2
+9166;tarjeta gráfica;2
+27256;tarjeta bus;2
+28107;tarjeta bus;2
+7269;tarjeta de Navidad;2
+28111;tarjeta de transporte;2
+28115;tarjeta de transporte;2
+28119;tarjeta de transporte;2
+4751;tarjeta de crédito;2
+6226;tarjetas;2
+31091;táper;2
+11382;tarrina de helado;2
+11382;tarrina de helado;2
+31091;táper;2
+35209;helado;2
+2420;cucurucho de helado;2
+2579;tarta;2
+8706;tarta;2
+9057;tarta;2
+25488;tarta;2
+29226;pastel de chocolate;2
+29230;pastel de nata;2
+35423;trozo de tarta;2
+29226;pastel de chocolate;2
+8706;tarta;2
+9057;tarta;2
+25488;tarta;2
+25940;chocolate;2
+34092;cono de chocolate;2
+2334;chocolate;2
+2579;tarta;2
+6448;chocolate;2
+3331;galleta de chocolate;2
+6525;galletas;2
+9049;cucurucho;2
+11304;huevo de chocolate;2
+28305;grageas de chocolate;2
+29230;pastel de nata;2
+34747;sirope de chocolate;2
+35423;trozo de tarta;2
+36474;turrón de chocolate;2
+21326;chocolate a la taza;2
+34615;echar sirope de chocolate;3
+25488;tarta;2
+8706;tarta;2
+9057;tarta;2
+5997;¡Feliz Cumpleaños!;5
+6499;¡Feliz Cumpleaños!;5
+16635;¡Feliz Cumpleaños!;5
+26786;¡Feliz Cumpleaños!;5
+26788;¡Feliz Cumpleaños!;5
+2579;tarta;2
+3087;cumpleaños;2
+26781;cumpleaños;2
+28491;cumpleaños;2
+28492;cumpleaños;2
+29226;pastel de chocolate;2
+29230;pastel de nata;2
+35423;trozo de tarta;2
+9057;tarta;2
+8706;tarta;2
+25488;tarta;2
+2462;manzana;2
+2579;tarta;2
+13645;manzana;2
+13644;manzana;2
+11403;zumo de manzana;2
+17010;manzana de caramelo;2
+29226;pastel de chocolate;2
+29230;pastel de nata;2
+35423;trozo de tarta;2
+29230;pastel de nata;2
+8706;tarta;2
+9057;tarta;2
+25488;tarta;2
+2579;tarta;2
+5523;nata;2
+13376;nata líquida;2
+34763;nata montada;2
+29226;pastel de chocolate;2
+34603;echar nata montada;3
+35423;trozo de tarta;2
+8706;tarta;2
+9057;tarta;2
+25488;tarta;2
+2579;tarta;2
+29226;pastel de chocolate;2
+29230;pastel de nata;2
+35423;trozo de tarta;2
+31091;táper;2
+31275;tatami para kárate;2
+31275;tatami para kárate;2
+21955;karate;2
+31231;kárate saludo;2
+31230;kárate saludo;2
+31240;karate katas;2
+31238;kárate karategui;2
+31236;kárate seiza;2
+31246;kárate kumite;2
+31244;árbitra de kárate;2
+31248;espinilleras;2
+31242;árbitro de kárate;2
+31269;guantillas de kárate;2
+6227;tatuaje;2
+10182;tatuar;3
+2580;taxi;2
+29159;pedir un taxi;3
+3221;taxista;2
+11383;taxista;2
+32673;tajín;2
+2582;taza;2
+2581;taza de café;2
+36395;fregar la taza;3
+21326;chocolate a la taza;2
+2581;taza de café;2
+9094;color café;4
+25564;café;2
+2582;taza;2
+2296;café;2
+24479;café;2
+32512;café;2
+24487;café descafeinado;2
+24491;café moca;2
+24483;café capuchino;2
+24655;cuarto del café;2
+28557;molinillo de café;2
+36395;fregar la taza;3
+36625;cápsulas de café;2
+21326;chocolate a la taza;2
+9091;tazón;2
+6625;tú;1
+7290;tú;1
+29802;té instantáneo;2
+7061;¿cómo te llamas?;5
+7180;yo no sé;5
+11597;¿cómo te va?;5
+35879;pastas de té;2
+10284;teatro;2
+32412;teatro;2
+4754;teatro de marionetas;2
+11270;teatro de marionetas;2
+11319;obra de teatro;2
+33082;aula de teatro;2
+25494;Teatro romano de Mérida;1
+36455;teatro de luz negra;2
+36455;teatro de luz negra;2
+8316;aceituna;2
+2886;negro;4
+6282;negra;4
+8619;luz;2
+9124;negra;2
+10284;teatro;2
+32412;teatro;2
+4754;teatro de marionetas;2
+8027;apagar la luz;3
+8103;encender la luz;3
+8376;luz de color;2
+11270;teatro de marionetas;2
+11319;obra de teatro;2
+24559;fibra óptica;2
+33082;aula de teatro;2
+34801;mesa de luz;2
+25494;Teatro romano de Mérida;1
+4754;teatro de marionetas;2
+11270;teatro de marionetas;2
+10284;teatro;2
+32412;teatro;2
+11319;obra de teatro;2
+33082;aula de teatro;2
+25494;Teatro romano de Mérida;1
+36455;teatro de luz negra;2
+3401;tebeo;2
+2583;techo;2
+4938;lámpara;2
+2793;teclado;2
+7270;teclado;2
+7270;teclado;2
+2521;piano;2
+8234;tocar el piano;3
+21851;escribir;3
+24424;teclista;2
+11459;tecnología;2
+36375;clase de tecnología;2
+31376;aula de tecnología;2
+2792;teja;2
+2584;tejado;2
+9039;tejer;3
+9040;tejer;3
+3402;tela;2
+6286;tela de araña;2
+36672;túnel de tela;2
+6286;tela de araña;2
+3402;tela;2
+2254;araña;2
+36672;túnel de tela;2
+36647;juego de la muralla;2
+6286;tela de araña;2
+2587;tele;2
+25498;tele;2
+2782;ver la televisión;3
+6626;ver la televisión;3
+7296;ver la televisión;3
+16905;ver la televisión;3
+28661;ver la televisión;3
+29124;ver la televisión;3
+29125;ver la televisión;3
+29123;ver la televisión;3
+22119;telecabina;2
+8229;telediario;2
+35389;telediario;2
+4691;telefonear;3
+21980;telefonear;3
+22119;telecabina;2
+24428;teleoperador;2
+9192;teleoperadora;2
+15477;telescopio;2
+22123;telesilla;2
+36731;teletrabajo;2
+2587;tele;2
+25498;tele;2
+2782;ver la televisión;3
+6626;ver la televisión;3
+7296;ver la televisión;3
+9802;encender la televisión;3
+16905;ver la televisión;3
+28661;ver la televisión;3
+29124;ver la televisión;3
+29125;ver la televisión;3
+29123;ver la televisión;3
+16139;sala de la televisión;2
+2587;tele;2
+25498;tele;2
+2586;teléfono;2
+2791;teléfono;2
+26479;teléfono;2
+2585;teléfono de disco;2
+31485;número de teléfono;2
+15923;teléfono inhalámbrico;2
+25269;móvil;2
+3258;cabina de teléfono;2
+4662;hablar por teléfono;3
+6518;hablar por teléfono;3
+31484;número de teléfono;2
+34405;hablar por teléfono;3
+36329;pedir por teléfono;3
+36330;pedir por teléfono;3
+2585;teléfono de disco;2
+9187;disco;2
+2586;teléfono;2
+31485;número de teléfono;2
+2791;teléfono;2
+26479;teléfono;2
+9151;disco duro;2
+15923;teléfono inhalámbrico;2
+25269;móvil;2
+34577;pez disco;2
+3258;cabina de teléfono;2
+4662;hablar por teléfono;3
+6518;hablar por teléfono;3
+17259;lanzamiento;2
+31484;número de teléfono;2
+34405;hablar por teléfono;3
+36329;pedir por teléfono;3
+36330;pedir por teléfono;3
+2585;teléfono de disco;2
+5566;rueda;2
+2586;teléfono;2
+31485;número de teléfono;2
+6209;rueda;2
+2791;teléfono;2
+26479;teléfono;2
+15923;teléfono inhalámbrico;2
+25269;móvil;2
+35381;rueda dentada;2
+3258;cabina de teléfono;2
+4662;hablar por teléfono;3
+6518;hablar por teléfono;3
+24573;rueda de psicomotricidad;2
+28895;rueda de prensa;2
+31484;número de teléfono;2
+34405;hablar por teléfono;3
+36329;pedir por teléfono;3
+36330;pedir por teléfono;3
+15923;teléfono inhalámbrico;2
+2586;teléfono;2
+2585;teléfono de disco;2
+31485;número de teléfono;2
+2791;teléfono;2
+26479;teléfono;2
+25269;móvil;2
+3258;cabina de teléfono;2
+4662;hablar por teléfono;3
+6518;hablar por teléfono;3
+31484;número de teléfono;2
+34405;hablar por teléfono;3
+36329;pedir por teléfono;3
+36330;pedir por teléfono;3
+2586;teléfono;2
+25269;móvil;2
+2585;teléfono de disco;2
+31484;número de teléfono;2
+31485;número de teléfono;2
+2791;teléfono;2
+26479;teléfono;2
+15923;teléfono inhalámbrico;2
+28163;Uvi móvil;2
+34906;dispositivo móvil;2
+3258;cabina de teléfono;2
+4662;hablar por teléfono;3
+6518;hablar por teléfono;3
+34405;hablar por teléfono;3
+36329;pedir por teléfono;3
+36330;pedir por teléfono;3
+7109;temblar;3
+4755;terremoto;2
+26483;temerosa;4
+10208;miedoso;4
+10261;miedo;2
+8230;temperatura;2
+34898;temperatura;2
+27644;subir la temperatura;3
+27735;bajar la temperatura;3
+28027;regular;3
+27053;templado;4
+27053;templado;4
+3118;iglesia;2
+6530;iglesia;2
+8231;templo;2
+35127;temporizador;2
+2790;tenaza;2
+24292;pinza;2
+6228;tendedero;2
+11384;tendedero;2
+5593;tender;3
+26487;tender;3
+20121;vendedor;2
+20121;vendedor;2
+24432;tendón;2
+2588;tenedor;2
+26557;tenedor adaptado;2
+36629;coger el tenedor;3
+36628;coger el cuchillo;3
+26557;tenedor adaptado;2
+27553;cuarto de baño;2
+2588;tenedor;2
+8146;juguete adaptado;2
+11187;baloncesto adaptado;2
+15810;servicio;2
+15814;baño de mujeres;2
+15812;baño de hombres;2
+15927;váter;2
+15905;baño;2
+15919;lavabo;2
+24671;deporte adaptado;2
+25000;columpio;2
+25369;ratón adaptado;2
+26553;cuchillo adaptado;2
+27475;retrete;2
+34473;baloncesto adaptado;2
+36629;coger el tenedor;3
+36628;coger el cuchillo;3
+7271;tener;3
+32761;tener;3
+6952;tener calor;3
+7272;tener hambre;3
+7273;sediento;4
+17058;tener tiempo;3
+22127;tener hipo;3
+27333;paciencia;2
+35583;tener frío;3
+36600;tener paciencia;3
+6019;tener una idea;3
+6531;tener una idea;3
+12349;considerar;3
+35479;tener una idea;3
+28613;tener ganas de hacer pis;3
+28614;tener ganas de hacer pis;3
+32834;tener las piernas en alto;3
+6952;tener calor;3
+35561;calor;2
+35597;calor;2
+36407;lámpara de calor;2
+12349;considerar;3
+35583;tener frío;3
+4652;frío;4
+26865;frío;4
+35557;frío;4
+35589;frío;2
+28613;tener ganas de hacer pis;3
+28614;tener ganas de hacer pis;3
+3429;hacer pis;3
+4880;hacer caca;3
+16713;hacer pis;3
+31927;hacer pis;3
+32264;hacer pis;3
+34141;hacer pis;3
+36400;hacerse pis;3
+36399;hacerse pis;3
+36640;hacer pis;3
+32279;no hace pis;5
+32278;no hace pis;5
+35211;hacer pis sentado;3
+36555;limpiar el pis;3
+36652;limpiar el pis;3
+36653;limpiar el pis;3
+7272;tener hambre;3
+35559;hambre;2
+22127;tener hipo;3
+32834;tener las piernas en alto;3
+4557;alto;4
+25782;alto;4
+32836;subir las piernas;3
+27333;paciencia;2
+36600;tener paciencia;3
+36563;paciencia;2
+7273;sediento;4
+35581;sed;2
+17058;tener tiempo;3
+6019;tener una idea;3
+6531;tener una idea;3
+35479;tener una idea;3
+32862;compartir una idea;3
+25502;tenia;2
+10158;tenis;2
+35264;tenis;2
+35263;tenis;2
+2514;pelota de tenis;2
+2544;raqueta;2
+5068;campo de tenis;2
+3222;tenista;2
+6514;golpear;3
+6513;golpear;3
+36456;tens;2
+28127;tensiómetro;2
+28123;tensiómetro;2
+8235;tomar la tensión;3
+16082;terapeuta ocupacional;2
+16084;terapeuta ocupacional;2
+32971;terapeuta ocupacional;2
+32970;terapeuta ocupacional;2
+24821;terapia ocupacional;2
+11657;SOI;2
+11659;STO;2
+16061;Servicio de Terapia Ocupacional;2
+29202;terapia asistida con animales;2
+29203;terapia asistida con animales;2
+36181;terapia asistida con animales;2
+36179;técnico en terapias asistidas con animales;2
+6901;animales;2
+14986;fecundación in vitro;2
+24821;terapia ocupacional;2
+28043;respiración asistida;2
+35853;animales marinos;2
+35857;animales terrestres;2
+35855;animales aéreos;2
+15925;terapia de grupo;2
+16980;tienda de animales;2
+25552;terapia de grupo;2
+29913;protectora de animales;2
+32572;seres vivos;2
+36457;terapia de pareja;2
+36459;terapia de pareja;2
+36461;terapia de pareja;2
+36460;terapia de pareja;2
+36458;terapia de pareja;2
+36462;terapia de pareja;2
+11659;STO;2
+16061;Servicio de Terapia Ocupacional;2
+15925;terapia de grupo;2
+25552;terapia de grupo;2
+15917;generador;2
+15916;generador;2
+23811;banda;2
+24821;terapia ocupacional;2
+15913;grupo de presión;2
+36457;terapia de pareja;2
+36459;terapia de pareja;2
+36461;terapia de pareja;2
+36460;terapia de pareja;2
+36458;terapia de pareja;2
+36462;terapia de pareja;2
+11659;STO;2
+16061;Servicio de Terapia Ocupacional;2
+29202;terapia asistida con animales;2
+29203;terapia asistida con animales;2
+36181;terapia asistida con animales;2
+36457;terapia de pareja;2
+36459;terapia de pareja;2
+36461;terapia de pareja;2
+36460;terapia de pareja;2
+36458;terapia de pareja;2
+36462;terapia de pareja;2
+24821;terapia ocupacional;2
+15925;terapia de grupo;2
+25552;terapia de grupo;2
+11659;STO;2
+16061;Servicio de Terapia Ocupacional;2
+29202;terapia asistida con animales;2
+29203;terapia asistida con animales;2
+36181;terapia asistida con animales;2
+24821;terapia ocupacional;2
+11659;STO;2
+16061;Servicio de Terapia Ocupacional;2
+16082;terapeuta ocupacional;2
+16084;terapeuta ocupacional;2
+32971;terapeuta ocupacional;2
+32970;terapeuta ocupacional;2
+15925;terapia de grupo;2
+25552;terapia de grupo;2
+36457;terapia de pareja;2
+36459;terapia de pareja;2
+36461;terapia de pareja;2
+36460;terapia de pareja;2
+36458;terapia de pareja;2
+36462;terapia de pareja;2
+11657;SOI;2
+29202;terapia asistida con animales;2
+29203;terapia asistida con animales;2
+36181;terapia asistida con animales;2
+15543;tercera;4
+28327;tercera;4
+34447;tercero;4
+31075;tercera edad;2
+31075;tercera edad;2
+31843;menores;4
+7072;edad;2
+32636;Paleolítico;1
+32638;Edad de Piedra;1
+34268;Edad de Hielo;1
+32640;Edad de los Metales;1
+15545;tercero;4
+28330;tercero;4
+28329;tercero;4
+34447;tercero;4
+5358;terminar;3
+28429;terminar;3
+32814;terminar;3
+7274;termo;2
+2789;termómetro;2
+32051;termómetro;2
+29830;ponerse el termómetro;3
+29831;ponerse el termómetro;3
+25630;ternera;2
+26489;ternera;2
+34080;ternera;2
+36650;kefta;2
+36689;carne envasada de ternera;2
+34080;ternera;2
+34946;terrario;2
+22129;terraza;2
+28131;terraza;2
+4755;terremoto;2
+16109;terrorismo;2
+16111;terrorista;2
+23402;diálogo;2
+6229;tesoro;2
+8625;mapa del tesoro;2
+31809;test de embarazo;2
+11250;embarazo;2
+32172;prohibido beber durante el embarazo;5
+35629;testamento;2
+12339;testigo;2
+34351;testigo;2
+7816;testículos;2
+8372;pecho;2
+7275;senos;2
+8372;pecho;2
+7276;tetera;2
+10237;tetrabrik;2
+9110;pirámide;2
+9132;tetris;2
+6620;teñir;3
+8232;teñir;3
+34290;therasuit;2
+6625;tú;1
+7290;tú;1
+24436;tibia;2
+2589;tiburón;2
+34423;tiburón bala;2
+34575;tiburón malayo;2
+35405;diente de tiburón;2
+34423;tiburón bala;2
+8497;proyectil;2
+2589;tiburón;2
+34575;tiburón malayo;2
+35405;diente de tiburón;2
+34575;tiburón malayo;2
+2589;tiburón;2
+34423;tiburón bala;2
+35405;diente de tiburón;2
+9184;ticket;2
+11255;entrada;2
+7072;edad;2
+22631;tiempo;2
+11653;tiempo libre;2
+17058;tener tiempo;3
+24527;dar tiempo;3
+7223;¿qué tiempo hace?;5
+8233;programa del tiempo;2
+32600;tiempo y clima;2
+33054;el tiempo vuela;5
+11653;tiempo libre;2
+11474;libre;4
+28885;buffet libre;2
+32600;tiempo y clima;2
+24721;clima;2
+9117;tienda;2
+9116;tienda;2
+35695;tienda;2
+16980;tienda de animales;2
+32954;vámonos a otra tienda;5
+36313;tienda abierta;2
+36315;tienda cerrada;2
+4756;tienda de campaña;2
+4883;tienda de coches;2
+4885;tienda de ropa;2
+4882;tienda de caramelos;2
+4884;tienda de muebles;2
+6622;tienda de muebles;2
+6621;tienda de caramelos;2
+6623;tienda de ropa;2
+11385;tienda de juguetes;2
+11386;tienda de juguetes;2
+16984;tienda de deportes;2
+16988;tienda de informática;2
+16992;tienda de música;2
+27077;tienda de bicicletas;2
+29881;tienda de complementos;2
+29894;tienda de telefonía;2
+29889;tienda de estética;2
+29909;tienda de manualidades;2
+29887;tienda de electrónica;2
+29891;tienda de puericultura;2
+29975;aceitería;2
+29979;tienda de bricolaje;2
+29983;tienda de cuadros;2
+29991;tienda de apicultura;2
+29996;tienda de serigrafía;2
+30027;tienda de vinos;2
+30215;tienda de motos;2
+30217;tienda de esquís;2
+30222;tienda de colchones;2
+30219;tienda de bolsos;2
+30413;tienda de decoración;2
+30419;tienda de electrodomésticos;2
+30422;tienda de fotografía;2
+30417;tienda de electricidad;2
+30424;tienda de ropa;2
+30425;tienda de ropa;2
+30426;tienda de ropa;2
+30427;tienda de ropa;2
+30436;tienda de ropa;2
+30437;tienda de ropa;2

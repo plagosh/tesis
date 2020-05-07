@@ -1,0 +1,150 @@
+
+21553;contenedor de pilas;2
+5575;contenedor;2
+6501;contenedor;2
+15911;contenedor;2
+36378;contenedor;2
+2355;contenedor;2
+3141;pilas;2
+6501;contenedor;2
+36378;contenedor;2
+5575;contenedor;2
+15911;contenedor;2
+2355;contenedor;2
+9140;cristal;2
+21553;contenedor de pilas;2
+5439;dentro;4
+28647;contenta;4
+35547;contento;4
+3245;contento;4
+9907;contento;4
+31923;contento;4
+32123;contento;4
+35547;contento;4
+10744;¿estás contento?;5
+9030;responder;3
+9031;responder;3
+28433;responder;3
+34547;continente;2
+24998;continuar;3
+7067;contra;6
+17214;contrabajo;2
+32115;contracciones uterinas;2
+27691;contraseña;2
+27367;recordar la contraseña;3
+21557;contratar;3
+30460;control de enfermería;2
+9918;enfermería;2
+22141;torre de control;2
+25990;control de entorno;2
+32982;auxiliar de enfermería;2
+32983;auxiliar de enfermería;2
+25990;control de entorno;2
+14552;entorno;2
+22141;torre de control;2
+30460;control de enfermería;2
+11689;convención;2
+23402;diálogo;2
+3345;hablar;3
+6517;hablar;3
+36544;hablar;3
+11349;presa;2
+4725;preso;2
+19522;ayuda;2
+19524;ayuda;2
+16182;Unidad de Empleo, Igualdad, Cooperación y Comunicación;1
+4570;ayudar;3
+35167;coordinador;2
+33968;coordinadora del comedor;2
+5970;comedor;2
+9824;comedor;2
+16149;comedor del personal;2
+33970;coordinar;3
+2356;copa;2
+3162;trofeo;2
+31696;copa menstrual;2
+6216;sombrero;2
+31696;copa menstrual;2
+2356;copa;2
+3162;trofeo;2
+6216;sombrero;2
+21559;copiar;3
+21561;copiar;3
+29987;copistería;2
+35445;copistería;2
+2717;coro;2
+35269;coral;2
+2715;corazón;2
+4613;corazón;2
+6996;corazón;2
+2716;corbata;2
+4614;corbata;2
+9126;corchea;2
+21553;contenedor de pilas;2
+5575;contenedor;2
+6501;contenedor;2
+15911;contenedor;2
+36378;contenedor;2
+2355;contenedor;2
+3141;pilas;2
+6501;contenedor;2
+36378;contenedor;2
+5575;contenedor;2
+15911;contenedor;2
+2355;contenedor;2
+9140;cristal;2
+21553;contenedor de pilas;2
+5439;dentro;4
+28647;contenta;4
+35547;contento;4
+3245;contento;4
+9907;contento;4
+31923;contento;4
+32123;contento;4
+35547;contento;4
+10744;¿estás contento?;5
+9030;responder;3
+9031;responder;3
+28433;responder;3
+34547;continente;2
+24998;continuar;3
+7067;contra;6
+17214;contrabajo;2
+32115;contracciones uterinas;2
+27691;contraseña;2
+27367;recordar la contraseña;3
+21557;contratar;3
+30460;control de enfermería;2
+9918;enfermería;2
+22141;torre de control;2
+25990;control de entorno;2
+32982;auxiliar de enfermería;2
+32983;auxiliar de enfermería;2
+25990;control de entorno;2
+14552;entorno;2
+22141;torre de control;2
+30460;control de enfermería;2
+11689;convención;2
+23402;diálogo;2
+3345;hablar;3
+6517;hablar;3
+36544;hablar;3
+11349;presa;2
+4725;preso;2
+19522;ayuda;2
+19524;ayuda;2
+16182;Unidad de Empleo, Igualdad, Cooperación y Comunicación;1
+4570;ayudar;3
+35167;coordinador;2
+33968;coordinadora del comedor;2
+5970;comedor;2
+9824;comedor;2
+16149;comedor del personal;2
+33970;coordinar;3
+2356;copa;2
+3162;trofeo;2
+31696;copa menstrual;2
+6216;sombrero;2
+31696;copa menstrual;2
+2356;copa;2
+3162;trofeo;2

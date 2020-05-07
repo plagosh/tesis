@@ -1,0 +1,196 @@
+
+7157;ruidoso;4
+32892;molinete;2
+25257;molinillo;2
+28557;molinillo de café;2
+28557;molinillo de café;2
+9094;color café;4
+25564;café;2
+25257;molinillo;2
+2296;café;2
+24479;café;2
+32512;café;2
+24487;café descafeinado;2
+24491;café moca;2
+24483;café capuchino;2
+2581;taza de café;2
+24655;cuarto del café;2
+36625;cápsulas de café;2
+13086;molino;2
+13086;molino;2
+10726;¿hay viento?;5
+10736;¡hay viento!;5
+7259;viento;2
+35591;hacer viento;3
+28899;Peine del Viento;1
+35667;instrumentos de viento;2
+20111;molusco;2
+20111;molusco;2
+22633;momento;2
+29107;momento;2
+29106;momento;2
+29104;momento;2
+29105;momento;2
+26427;momia;2
+11304;huevo de chocolate;2
+12307;mona de Pascua;2
+29678;mona de Pascua;2
+32478;mona de Pascua;2
+36131;Pésaj;1
+36394;flor de pascua;2
+5563;rey;2
+36069;monarquía;2
+32677;monasterio;2
+32678;monasterio;2
+32790;monasterio;2
+5518;Monasterio de Piedra;1
+5519;Monasterio de San Juan de la Peña;1
+8633;monedas;2
+4698;monedero;2
+2910;monitor;2
+7163;monitor;2
+11651;monitor;2
+15992;monitor;2
+24789;monitor;2
+25498;tele;2
+27005;monitor;2
+24688;monitor de prevención;2
+24687;monitor de prevención;2
+34201;monitor de prevención;2
+35911;monitor de transporte;2
+35527;monitor de signos vitales;2
+27005;monitor;2
+11651;monitor;2
+2910;monitor;2
+7163;monitor;2
+15992;monitor;2
+24789;monitor;2
+25498;tele;2
+25038;natación;2
+3108;gorro de natación;2
+15509;tabla de natación;2
+24688;monitor de prevención;2
+24687;monitor de prevención;2
+27006;monitora;2
+33984;gorro de natación;2
+34201;monitor de prevención;2
+35911;monitor de transporte;2
+35527;monitor de signos vitales;2
+24688;monitor de prevención;2
+24687;monitor de prevención;2
+34201;monitor de prevención;2
+11651;monitor;2
+27005;monitor;2
+2910;monitor;2
+7163;monitor;2
+15992;monitor;2
+24789;monitor;2
+25498;tele;2
+35911;monitor de transporte;2
+35527;monitor de signos vitales;2
+35527;monitor de signos vitales;2
+11651;monitor;2
+27005;monitor;2
+2910;monitor;2
+7163;monitor;2
+15992;monitor;2
+24789;monitor;2
+25498;tele;2
+34629;signo ortográfico;2
+11754;lengua de signos;2
+24688;monitor de prevención;2
+24687;monitor de prevención;2
+34201;monitor de prevención;2
+35911;monitor de transporte;2
+24619;intérprete;2
+11651;monitor;2
+9805;taller;2
+27005;monitor;2
+24615;escuela taller;2
+30975;taller de cerámica;2
+2910;monitor;2
+6225;taller;2
+7163;monitor;2
+11655;taller;2
+15992;monitor;2
+24789;monitor;2
+25498;tele;2
+32424;taller;2
+7263;taller mecánico;2
+16975;taller mecánico;2
+24645;sala taller;2
+24647;sala taller;2
+4956;profesora de taller;2
+7797;profesor de taller;2
+8732;taller de bicicletas;2
+8733;taller de jardinería;2
+9806;taller de textil;2
+9809;taller de textil;2
+16127;taller de mantenimiento;2
+24675;taller de baile;2
+24676;taller de baile;2
+24680;taller de memoria;2
+24679;taller de memoria;2
+24688;monitor de prevención;2
+24687;monitor de prevención;2
+30977;taller de cuero;2
+34201;monitor de prevención;2
+35911;monitor de transporte;2
+36065;taller de motos;2
+35527;monitor de signos vitales;2
+35517;taller de chapa y pintura;2
+35911;monitor de transporte;2
+11651;monitor;2
+27005;monitor;2
+2910;monitor;2
+7163;monitor;2
+10351;transportes;2
+15992;monitor;2
+24789;monitor;2
+25498;tele;2
+24688;monitor de prevención;2
+24687;monitor de prevención;2
+28111;tarjeta de transporte;2
+28115;tarjeta de transporte;2
+28119;tarjeta de transporte;2
+34201;monitor de prevención;2
+36641;Hercules;2
+35527;monitor de signos vitales;2
+2476;monitora;2
+3267;monitora;2
+27006;monitora;2
+27006;monitora;2
+2476;monitora;2
+3267;monitora;2
+25038;natación;2
+3108;gorro de natación;2
+15509;tabla de natación;2
+27005;monitor;2
+33984;gorro de natación;2
+2910;monitor;2
+7163;monitor;2
+11651;monitor;2
+15994;cuidadores;2
+15992;monitor;2
+24789;monitor;2
+25498;tele;2
+27005;monitor;2
+27897;monitorizar;3
+11305;monja;2
+30824;monja;2
+2477;mono;2
+8281;mono;2
+24276;mono;2
+26230;moño;2
+31474;monoaleta;2
+3339;grifo;2
+2507;monopatín;2
+3206;monovolumen;2
+11306;monstruo;2
+11698;producir;3
+36621;montar claras;3
+5517;montar en bici;3
+6045;pasear en bicicleta;3
+6643;montar a caballo;3
+25459;silla de montar;2
+25460;silla de montar;2

@@ -1,0 +1,3 @@
+RewriteEngine On 
+	RewriteCond {HTTP://yotrabajoconpecs.ddns.net [NC]
+	RewriteRule ^(.*)$ https://yotrabajoconpecs.ddns.net/$1 [L,R=301]

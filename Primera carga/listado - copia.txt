@@ -1,0 +1,7286 @@
+
+3417;!;6
+3190;comillas;2
+5091;dólar;2
+3416;paréntesis;2
+3419;paréntesis;2
+3178;asterisco;2
+3220;más;2
+3189;coma;2
+3200;guión;2
+2626;0;6
+6972;0;6
+35693;0;6
+29468;las doce en punto;6
+29452;la una en punto;6
+29454;las diez en punto;6
+29460;las once en punto;6
+29482;las tres en punto;6
+29488;las cuatro en punto;6
+29500;las seis en punto;6
+29506;las siete en punto;6
+29494;las cinco en punto;6
+29476;las dos en punto;6
+29512;las ocho en punto;6
+29518;las nueve en punto;6
+29470;las doce y cuarto;6
+29472;las doce y media;6
+29528;la una menos cuarto;6
+29470;las doce y cuarto;6
+29456;las diez y cuarto;6
+29462;las once y cuarto;6
+29466;la una y cuarto;6
+29484;las tres y cuarto;6
+29496;las cinco y cuarto;6
+29490;las cuatro y cuarto;6
+29508;las siete y cuarto;6
+29478;las dos y cuarto;6
+29520;las nueve y cuarto;6
+29514;las ocho y cuarto;6
+29468;las doce en punto;6
+29472;las doce y media;6
+29502;las seis y cuarto;6
+29528;la una menos cuarto;6
+29472;las doce y media;6
+29458;las diez y media;6
+29464;las once y media;6
+29474;la una y media;6
+29480;las dos y media;6
+29486;las tres y media;6
+29492;las cuatro y media;6
+29498;las cinco y media;6
+29504;las seis y media;6
+29510;las siete y media;6
+29516;las ocho y media;6
+29522;las nueve y media;6
+29468;las doce en punto;6
+29470;las doce y cuarto;6
+29528;la una menos cuarto;6
+29528;la una menos cuarto;6
+29526;las doce menos cuarto;6
+29524;las once menos cuarto;6
+29530;las dos menos cuarto;6
+29532;las tres menos cuarto;6
+29536;las cinco menos cuarto;6
+29542;las ocho menos cuarto;6
+29534;las cuatro menos cuarto;6
+29544;las nueve menos cuarto;6
+29540;las siete menos cuarto;6
+29538;las seis menos cuarto;6
+29546;las diez menos cuarto;6
+29468;las doce en punto;6
+29470;las doce y cuarto;6
+29472;las doce y media;6
+2627;uno;6
+4889;uno;6
+7291;uno;6
+35677;uno;6
+4776;1 euro;2
+4775;1 céntimo;2
+5436;1/4;6
+19570;medio;4
+29452;la una en punto;6
+29466;la una y cuarto;6
+29474;la una y media;6
+29530;las dos menos cuarto;6
+19548;1-2-3;5
+4775;1 céntimo;2
+4776;1 euro;2
+5092;euro;2
+19548;1-2-3;5
+19570;medio;4
+2628;2;6
+2629;3;6
+2627;uno;6
+4890;2;6
+4889;uno;6
+4891;3;6
+7027;2;6
+7283;3;6
+7291;uno;6
+35677;uno;6
+35679;2;6
+35681;3;6
+4776;1 euro;2
+4775;1 céntimo;2
+4777;2 céntimos;2
+5436;1/4;6
+5516;dos cuartos;2
+9047;3/4;6
+10279;2 euros;2
+29452;la una en punto;6
+29466;la una y cuarto;6
+29474;la una y media;6
+29480;las dos y media;6
+29482;las tres en punto;6
+29484;las tres y cuarto;6
+29486;las tres y media;6
+29476;las dos en punto;6
+29478;las dos y cuarto;6
+29530;las dos menos cuarto;6
+29532;las tres menos cuarto;6
+29534;las cuatro menos cuarto;6
+7025;10;6
+29254;10;6
+35691;10;6
+4782;10 euros;2
+4781;10 céntimos;2
+29454;las diez en punto;6
+29456;las diez y cuarto;6
+29458;las diez y media;6
+29524;las once menos cuarto;6
+31334;base 10;2
+31335;base 10;2
+31337;base 10;2
+31336;base 10;2
+31338;base 10;2
+32127;diez días;6
+4781;10 céntimos;2
+7025;10;6
+29254;10;6
+35691;10;6
+35117;céntimos;2
+4777;2 céntimos;2
+4785;50 céntimos;2
+4782;10 euros;2
+4779;5 céntimos;2
+4783;20 céntimos;2
+29454;las diez en punto;6
+29456;las diez y cuarto;6
+29458;las diez y media;6
+29524;las once menos cuarto;6
+31334;base 10;2
+31335;base 10;2
+31337;base 10;2
+31336;base 10;2
+31338;base 10;2
+32127;diez días;6
+32127;diez días;6
+7025;10;6
+29254;10;6
+35691;10;6
+4782;10 euros;2
+4781;10 céntimos;2
+29454;las diez en punto;6
+29456;las diez y cuarto;6
+29458;las diez y media;6
+29524;las once menos cuarto;6
+31334;base 10;2
+31335;base 10;2
+31337;base 10;2
+31336;base 10;2
+31338;base 10;2
+4782;10 euros;2
+7025;10;6
+29254;10;6
+35165;euros;2
+35691;10;6
+4784;20 euros;2
+4786;50 euros;2
+4787;100 euros;2
+4788;200 euros;2
+4781;10 céntimos;2
+4789;500 euros;2
+4780;5 euros;2
+10279;2 euros;2
+29454;las diez en punto;6
+29456;las diez y cuarto;6
+29458;las diez y media;6
+29524;las once menos cuarto;6
+31334;base 10;2
+31335;base 10;2
+31337;base 10;2
+31336;base 10;2
+31338;base 10;2
+32127;diez días;6
+29256;100;6
+4787;100 euros;2
+4787;100 euros;2
+29256;100;6
+35165;euros;2
+4784;20 euros;2
+4786;50 euros;2
+4788;200 euros;2
+4782;10 euros;2
+4789;500 euros;2
+4780;5 euros;2
+10279;2 euros;2
+29258;mil;6
+29454;las diez en punto;6
+29452;la una en punto;6
+29460;las once en punto;6
+29468;las doce en punto;6
+29482;las tres en punto;6
+29488;las cuatro en punto;6
+29500;las seis en punto;6
+29506;las siete en punto;6
+29494;las cinco en punto;6
+29476;las dos en punto;6
+29512;las ocho en punto;6
+29518;las nueve en punto;6
+7025;10;6
+29254;10;6
+35691;10;6
+4782;10 euros;2
+4781;10 céntimos;2
+29456;las diez y cuarto;6
+29458;las diez y media;6
+29524;las once menos cuarto;6
+31334;base 10;2
+31335;base 10;2
+31337;base 10;2
+31336;base 10;2
+31338;base 10;2
+32127;diez días;6
+29456;las diez y cuarto;6
+29462;las once y cuarto;6
+29466;la una y cuarto;6
+29470;las doce y cuarto;6
+29484;las tres y cuarto;6
+29496;las cinco y cuarto;6
+29490;las cuatro y cuarto;6
+29508;las siete y cuarto;6
+29478;las dos y cuarto;6
+29520;las nueve y cuarto;6
+29514;las ocho y cuarto;6
+7025;10;6
+29254;10;6
+35691;10;6
+4782;10 euros;2
+4781;10 céntimos;2
+29454;las diez en punto;6
+29458;las diez y media;6
+29502;las seis y cuarto;6
+29524;las once menos cuarto;6
+31334;base 10;2
+31335;base 10;2
+31337;base 10;2
+31336;base 10;2
+31338;base 10;2
+32127;diez días;6
+29458;las diez y media;6
+29464;las once y media;6
+29472;las doce y media;6
+29474;la una y media;6
+29480;las dos y media;6
+29486;las tres y media;6
+29492;las cuatro y media;6
+29498;las cinco y media;6
+29504;las seis y media;6
+29510;las siete y media;6
+29516;las ocho y media;6
+29522;las nueve y media;6
+7025;10;6
+29254;10;6
+35691;10;6
+4782;10 euros;2
+4781;10 céntimos;2
+29454;las diez en punto;6
+29456;las diez y cuarto;6
+29524;las once menos cuarto;6
+31334;base 10;2
+31335;base 10;2
+31337;base 10;2
+31336;base 10;2
+31338;base 10;2
+32127;diez días;6
+29524;las once menos cuarto;6
+29526;las doce menos cuarto;6
+29528;la una menos cuarto;6
+29530;las dos menos cuarto;6
+29532;las tres menos cuarto;6
+29536;las cinco menos cuarto;6
+29542;las ocho menos cuarto;6
+29534;las cuatro menos cuarto;6
+29544;las nueve menos cuarto;6
+29540;las siete menos cuarto;6
+29538;las seis menos cuarto;6
+29546;las diez menos cuarto;6
+7025;10;6
+29254;10;6
+35691;10;6
+4782;10 euros;2
+4781;10 céntimos;2
+29454;las diez en punto;6
+29456;las diez y cuarto;6
+29458;las diez y media;6
+31334;base 10;2
+31335;base 10;2
+31337;base 10;2
+31336;base 10;2
+31338;base 10;2
+32127;diez días;6
+29260;11;6
+29460;las once en punto;6
+29462;las once y cuarto;6
+29464;las once y media;6
+29526;las doce menos cuarto;6
+29460;las once en punto;6
+29452;la una en punto;6
+29454;las diez en punto;6
+29468;las doce en punto;6
+29482;las tres en punto;6
+29488;las cuatro en punto;6
+29500;las seis en punto;6
+29506;las siete en punto;6
+29494;las cinco en punto;6
+29476;las dos en punto;6
+29512;las ocho en punto;6
+29518;las nueve en punto;6
+29260;11;6
+29462;las once y cuarto;6
+29464;las once y media;6
+29526;las doce menos cuarto;6
+29462;las once y cuarto;6
+29456;las diez y cuarto;6
+29466;la una y cuarto;6
+29470;las doce y cuarto;6
+29484;las tres y cuarto;6
+29496;las cinco y cuarto;6
+29490;las cuatro y cuarto;6
+29508;las siete y cuarto;6
+29478;las dos y cuarto;6
+29520;las nueve y cuarto;6
+29514;las ocho y cuarto;6
+29260;11;6
+29460;las once en punto;6
+29464;las once y media;6
+29502;las seis y cuarto;6
+29526;las doce menos cuarto;6
+29464;las once y media;6
+29458;las diez y media;6
+29472;las doce y media;6
+29474;la una y media;6
+29480;las dos y media;6
+29486;las tres y media;6
+29492;las cuatro y media;6
+29498;las cinco y media;6
+29504;las seis y media;6
+29510;las siete y media;6
+29516;las ocho y media;6
+29522;las nueve y media;6
+29260;11;6
+29460;las once en punto;6
+29462;las once y cuarto;6
+29526;las doce menos cuarto;6
+29526;las doce menos cuarto;6
+29524;las once menos cuarto;6
+29528;la una menos cuarto;6
+29530;las dos menos cuarto;6
+29532;las tres menos cuarto;6
+29536;las cinco menos cuarto;6
+29542;las ocho menos cuarto;6
+29534;las cuatro menos cuarto;6
+29544;las nueve menos cuarto;6
+29540;las siete menos cuarto;6
+29538;las seis menos cuarto;6
+29546;las diez menos cuarto;6
+29260;11;6
+29460;las once en punto;6
+29462;las once y cuarto;6
+29464;las once y media;6
+29262;12;6
+29468;las doce en punto;6
+29470;las doce y cuarto;6
+29472;las doce y media;6
+29528;la una menos cuarto;6
+29468;las doce en punto;6
+29452;la una en punto;6
+29454;las diez en punto;6
+29460;las once en punto;6
+29482;las tres en punto;6
+29488;las cuatro en punto;6
+29500;las seis en punto;6
+29506;las siete en punto;6
+29494;las cinco en punto;6
+29476;las dos en punto;6
+29512;las ocho en punto;6
+29518;las nueve en punto;6
+29262;12;6
+29470;las doce y cuarto;6
+29472;las doce y media;6
+29528;la una menos cuarto;6
+29470;las doce y cuarto;6
+29456;las diez y cuarto;6
+29462;las once y cuarto;6
+29466;la una y cuarto;6
+29484;las tres y cuarto;6
+29496;las cinco y cuarto;6
+29490;las cuatro y cuarto;6
+29508;las siete y cuarto;6
+29478;las dos y cuarto;6
+29520;las nueve y cuarto;6
+29514;las ocho y cuarto;6
+29262;12;6
+29468;las doce en punto;6
+29472;las doce y media;6
+29502;las seis y cuarto;6
+29528;la una menos cuarto;6
+29472;las doce y media;6
+29458;las diez y media;6
+29464;las once y media;6
+29474;la una y media;6
+29480;las dos y media;6
+29486;las tres y media;6
+29492;las cuatro y media;6
+29498;las cinco y media;6
+29504;las seis y media;6
+29510;las siete y media;6
+29516;las ocho y media;6
+29522;las nueve y media;6
+29262;12;6
+29468;las doce en punto;6
+29470;las doce y cuarto;6
+29528;la una menos cuarto;6
+29528;la una menos cuarto;6
+29526;las doce menos cuarto;6
+29524;las once menos cuarto;6
+29530;las dos menos cuarto;6
+29532;las tres menos cuarto;6
+29536;las cinco menos cuarto;6
+29542;las ocho menos cuarto;6
+29534;las cuatro menos cuarto;6
+29544;las nueve menos cuarto;6
+29540;las siete menos cuarto;6
+29538;las seis menos cuarto;6
+29546;las diez menos cuarto;6
+29262;12;6
+29468;las doce en punto;6
+29470;las doce y cuarto;6
+29472;las doce y media;6
+29264;13;6
+29452;la una en punto;6
+29466;la una y cuarto;6
+29474;la una y media;6
+29530;las dos menos cuarto;6
+29452;la una en punto;6
+29454;las diez en punto;6
+29460;las once en punto;6
+29468;las doce en punto;6
+29482;las tres en punto;6
+29488;las cuatro en punto;6
+29500;las seis en punto;6
+29506;las siete en punto;6
+29494;las cinco en punto;6
+29476;las dos en punto;6
+29512;las ocho en punto;6
+29518;las nueve en punto;6
+29264;13;6
+29466;la una y cuarto;6
+29474;la una y media;6
+29530;las dos menos cuarto;6
+29466;la una y cuarto;6
+29456;las diez y cuarto;6
+29462;las once y cuarto;6
+29470;las doce y cuarto;6
+29484;las tres y cuarto;6
+29496;las cinco y cuarto;6
+29490;las cuatro y cuarto;6
+29508;las siete y cuarto;6
+29478;las dos y cuarto;6
+29520;las nueve y cuarto;6
+29514;las ocho y cuarto;6
+29264;13;6
+29452;la una en punto;6
+29474;la una y media;6
+29502;las seis y cuarto;6
+29530;las dos menos cuarto;6
+29474;la una y media;6
+29458;las diez y media;6
+29464;las once y media;6
+29472;las doce y media;6
+29480;las dos y media;6
+29486;las tres y media;6
+29492;las cuatro y media;6
+29498;las cinco y media;6
+29504;las seis y media;6
+29510;las siete y media;6
+29516;las ocho y media;6
+29522;las nueve y media;6
+29264;13;6
+29452;la una en punto;6
+29466;la una y cuarto;6
+29530;las dos menos cuarto;6
+29530;las dos menos cuarto;6
+29526;las doce menos cuarto;6
+29524;las once menos cuarto;6
+29528;la una menos cuarto;6
+29532;las tres menos cuarto;6
+29536;las cinco menos cuarto;6
+29542;las ocho menos cuarto;6
+29534;las cuatro menos cuarto;6
+29544;las nueve menos cuarto;6
+29540;las siete menos cuarto;6
+29538;las seis menos cuarto;6
+29546;las diez menos cuarto;6
+29264;13;6
+29452;la una en punto;6
+29466;la una y cuarto;6
+29474;la una y media;6
+29266;14;6
+29480;las dos y media;6
+29476;las dos en punto;6
+29478;las dos y cuarto;6
+29532;las tres menos cuarto;6
+29476;las dos en punto;6
+29452;la una en punto;6
+29454;las diez en punto;6
+29460;las once en punto;6
+29468;las doce en punto;6
+29482;las tres en punto;6
+29488;las cuatro en punto;6
+29500;las seis en punto;6
+29506;las siete en punto;6
+29494;las cinco en punto;6
+29512;las ocho en punto;6
+29518;las nueve en punto;6
+29266;14;6
+29480;las dos y media;6
+29478;las dos y cuarto;6
+29532;las tres menos cuarto;6
+29478;las dos y cuarto;6
+29456;las diez y cuarto;6
+29462;las once y cuarto;6
+29466;la una y cuarto;6
+29470;las doce y cuarto;6
+29484;las tres y cuarto;6
+29496;las cinco y cuarto;6
+29490;las cuatro y cuarto;6
+29508;las siete y cuarto;6
+29520;las nueve y cuarto;6
+29514;las ocho y cuarto;6
+29266;14;6
+29480;las dos y media;6
+29502;las seis y cuarto;6
+29476;las dos en punto;6
+29532;las tres menos cuarto;6
+29480;las dos y media;6
+29458;las diez y media;6
+29464;las once y media;6
+29472;las doce y media;6
+29474;la una y media;6
+29486;las tres y media;6
+29492;las cuatro y media;6
+29498;las cinco y media;6
+29504;las seis y media;6
+29510;las siete y media;6
+29516;las ocho y media;6
+29522;las nueve y media;6
+29266;14;6
+29476;las dos en punto;6
+29478;las dos y cuarto;6
+29532;las tres menos cuarto;6
+29532;las tres menos cuarto;6
+29526;las doce menos cuarto;6
+29524;las once menos cuarto;6
+29528;la una menos cuarto;6
+29530;las dos menos cuarto;6
+29536;las cinco menos cuarto;6
+29542;las ocho menos cuarto;6
+29534;las cuatro menos cuarto;6
+29544;las nueve menos cuarto;6
+29540;las siete menos cuarto;6
+29538;las seis menos cuarto;6
+29546;las diez menos cuarto;6
+29266;14;6
+29480;las dos y media;6
+29476;las dos en punto;6
+29478;las dos y cuarto;6
+29268;15;6
+29482;las tres en punto;6
+29484;las tres y cuarto;6
+29486;las tres y media;6
+29502;las seis y cuarto;6
+29534;las cuatro menos cuarto;6
+29482;las tres en punto;6
+29452;la una en punto;6
+29454;las diez en punto;6
+29460;las once en punto;6
+29468;las doce en punto;6
+29488;las cuatro en punto;6
+29500;las seis en punto;6
+29506;las siete en punto;6
+29494;las cinco en punto;6
+29476;las dos en punto;6
+29512;las ocho en punto;6
+29518;las nueve en punto;6
+29268;15;6
+29484;las tres y cuarto;6
+29486;las tres y media;6
+29502;las seis y cuarto;6
+29534;las cuatro menos cuarto;6
+29484;las tres y cuarto;6
+29456;las diez y cuarto;6
+29462;las once y cuarto;6
+29466;la una y cuarto;6
+29470;las doce y cuarto;6
+29496;las cinco y cuarto;6
+29490;las cuatro y cuarto;6
+29502;las seis y cuarto;6
+29508;las siete y cuarto;6
+29478;las dos y cuarto;6
+29520;las nueve y cuarto;6
+29514;las ocho y cuarto;6
+29268;15;6
+29482;las tres en punto;6
+29486;las tres y media;6
+29534;las cuatro menos cuarto;6
+29486;las tres y media;6
+29458;las diez y media;6
+29464;las once y media;6
+29472;las doce y media;6
+29474;la una y media;6
+29480;las dos y media;6
+29492;las cuatro y media;6
+29498;las cinco y media;6
+29504;las seis y media;6
+29510;las siete y media;6
+29516;las ocho y media;6
+29522;las nueve y media;6
+29268;15;6
+29482;las tres en punto;6
+29484;las tres y cuarto;6
+29502;las seis y cuarto;6
+29534;las cuatro menos cuarto;6
+29534;las cuatro menos cuarto;6
+29526;las doce menos cuarto;6
+29524;las once menos cuarto;6
+29528;la una menos cuarto;6
+29530;las dos menos cuarto;6
+29532;las tres menos cuarto;6
+29536;las cinco menos cuarto;6
+29542;las ocho menos cuarto;6
+29544;las nueve menos cuarto;6
+29540;las siete menos cuarto;6
+29538;las seis menos cuarto;6
+29546;las diez menos cuarto;6
+29268;15;6
+29482;las tres en punto;6
+29484;las tres y cuarto;6
+29486;las tres y media;6
+29502;las seis y cuarto;6
+29270;16;6
+29488;las cuatro en punto;6
+29492;las cuatro y media;6
+29490;las cuatro y cuarto;6
+29536;las cinco menos cuarto;6
+29488;las cuatro en punto;6
+29452;la una en punto;6
+29454;las diez en punto;6
+29460;las once en punto;6
+29468;las doce en punto;6
+29482;las tres en punto;6
+29500;las seis en punto;6
+29506;las siete en punto;6
+29494;las cinco en punto;6
+29476;las dos en punto;6
+29512;las ocho en punto;6
+29518;las nueve en punto;6
+29270;16;6
+29492;las cuatro y media;6
+29490;las cuatro y cuarto;6
+29536;las cinco menos cuarto;6
+29490;las cuatro y cuarto;6
+29456;las diez y cuarto;6
+29462;las once y cuarto;6
+29466;la una y cuarto;6
+29470;las doce y cuarto;6
+29484;las tres y cuarto;6
+29496;las cinco y cuarto;6
+29508;las siete y cuarto;6
+29478;las dos y cuarto;6
+29520;las nueve y cuarto;6
+29514;las ocho y cuarto;6
+29270;16;6
+29488;las cuatro en punto;6
+29492;las cuatro y media;6
+29502;las seis y cuarto;6
+29536;las cinco menos cuarto;6
+29492;las cuatro y media;6
+29458;las diez y media;6
+29464;las once y media;6
+29472;las doce y media;6
+29474;la una y media;6
+29480;las dos y media;6
+29486;las tres y media;6
+29498;las cinco y media;6
+29504;las seis y media;6
+29510;las siete y media;6
+29516;las ocho y media;6
+29522;las nueve y media;6
+29270;16;6
+29488;las cuatro en punto;6
+29490;las cuatro y cuarto;6
+29536;las cinco menos cuarto;6
+29536;las cinco menos cuarto;6
+29526;las doce menos cuarto;6
+29524;las once menos cuarto;6
+29528;la una menos cuarto;6
+29530;las dos menos cuarto;6
+29532;las tres menos cuarto;6
+29542;las ocho menos cuarto;6
+29534;las cuatro menos cuarto;6
+29544;las nueve menos cuarto;6
+29540;las siete menos cuarto;6
+29538;las seis menos cuarto;6
+29546;las diez menos cuarto;6
+29270;16;6
+29488;las cuatro en punto;6
+29492;las cuatro y media;6
+29490;las cuatro y cuarto;6
+29272;17;6
+29496;las cinco y cuarto;6
+29498;las cinco y media;6
+29494;las cinco en punto;6
+29538;las seis menos cuarto;6
+29494;las cinco en punto;6
+29452;la una en punto;6
+29454;las diez en punto;6
+29460;las once en punto;6
+29468;las doce en punto;6
+29482;las tres en punto;6
+29488;las cuatro en punto;6
+29500;las seis en punto;6
+29506;las siete en punto;6
+29476;las dos en punto;6
+29512;las ocho en punto;6
+29518;las nueve en punto;6
+29272;17;6
+29496;las cinco y cuarto;6
+29498;las cinco y media;6
+29538;las seis menos cuarto;6
+29496;las cinco y cuarto;6
+29456;las diez y cuarto;6
+29462;las once y cuarto;6
+29466;la una y cuarto;6
+29470;las doce y cuarto;6
+29484;las tres y cuarto;6
+29490;las cuatro y cuarto;6
+29508;las siete y cuarto;6
+29478;las dos y cuarto;6
+29520;las nueve y cuarto;6
+29514;las ocho y cuarto;6
+29272;17;6
+29498;las cinco y media;6
+29502;las seis y cuarto;6
+29494;las cinco en punto;6
+29538;las seis menos cuarto;6
+29498;las cinco y media;6
+29458;las diez y media;6
+29464;las once y media;6
+29472;las doce y media;6
+29474;la una y media;6
+29480;las dos y media;6
+29486;las tres y media;6
+29492;las cuatro y media;6
+29504;las seis y media;6
+29510;las siete y media;6
+29516;las ocho y media;6
+29522;las nueve y media;6
+29272;17;6
+29496;las cinco y cuarto;6
+29494;las cinco en punto;6
+29538;las seis menos cuarto;6
+29538;las seis menos cuarto;6
+29526;las doce menos cuarto;6
+29524;las once menos cuarto;6
+29528;la una menos cuarto;6
+29530;las dos menos cuarto;6
+29532;las tres menos cuarto;6
+29536;las cinco menos cuarto;6
+29542;las ocho menos cuarto;6
+29534;las cuatro menos cuarto;6
+29544;las nueve menos cuarto;6
+29540;las siete menos cuarto;6
+29546;las diez menos cuarto;6
+29272;17;6
+29496;las cinco y cuarto;6
+29498;las cinco y media;6
+29494;las cinco en punto;6
+29274;18;6
+29500;las seis en punto;6
+29502;las seis y cuarto;6
+29504;las seis y media;6
+29540;las siete menos cuarto;6
+29500;las seis en punto;6
+29452;la una en punto;6
+29454;las diez en punto;6
+29460;las once en punto;6
+29468;las doce en punto;6
+29482;las tres en punto;6
+29488;las cuatro en punto;6
+29506;las siete en punto;6
+29494;las cinco en punto;6
+29476;las dos en punto;6
+29512;las ocho en punto;6
+29518;las nueve en punto;6
+29274;18;6
+29502;las seis y cuarto;6
+29504;las seis y media;6
+29540;las siete menos cuarto;6
+29502;las seis y cuarto;6
+29274;18;6
+29268;15;6
+29482;las tres en punto;6
+29484;las tres y cuarto;6
+29486;las tres y media;6
+29500;las seis en punto;6
+29504;las seis y media;6
+29534;las cuatro menos cuarto;6
+29540;las siete menos cuarto;6
+29504;las seis y media;6
+29458;las diez y media;6
+29464;las once y media;6
+29472;las doce y media;6
+29474;la una y media;6
+29480;las dos y media;6
+29486;las tres y media;6
+29492;las cuatro y media;6
+29498;las cinco y media;6
+29510;las siete y media;6
+29516;las ocho y media;6
+29522;las nueve y media;6
+29274;18;6
+29500;las seis en punto;6
+29502;las seis y cuarto;6
+29540;las siete menos cuarto;6
+29540;las siete menos cuarto;6
+29526;las doce menos cuarto;6
+29524;las once menos cuarto;6
+29528;la una menos cuarto;6
+29530;las dos menos cuarto;6
+29532;las tres menos cuarto;6
+29536;las cinco menos cuarto;6
+29542;las ocho menos cuarto;6
+29534;las cuatro menos cuarto;6
+29544;las nueve menos cuarto;6
+29538;las seis menos cuarto;6
+29546;las diez menos cuarto;6
+29274;18;6
+29500;las seis en punto;6
+29502;las seis y cuarto;6
+29504;las seis y media;6
+29276;19;6
+29508;las siete y cuarto;6
+29506;las siete en punto;6
+29510;las siete y media;6
+29542;las ocho menos cuarto;6
+29506;las siete en punto;6
+29452;la una en punto;6
+29454;las diez en punto;6
+29460;las once en punto;6
+29468;las doce en punto;6
+29482;las tres en punto;6
+29488;las cuatro en punto;6
+29500;las seis en punto;6
+29494;las cinco en punto;6
+29476;las dos en punto;6
+29512;las ocho en punto;6
+29518;las nueve en punto;6
+29276;19;6
+29508;las siete y cuarto;6
+29510;las siete y media;6
+29542;las ocho menos cuarto;6
+29508;las siete y cuarto;6
+29456;las diez y cuarto;6
+29462;las once y cuarto;6
+29466;la una y cuarto;6
+29470;las doce y cuarto;6
+29484;las tres y cuarto;6
+29496;las cinco y cuarto;6
+29490;las cuatro y cuarto;6
+29478;las dos y cuarto;6
+29520;las nueve y cuarto;6
+29514;las ocho y cuarto;6
+29276;19;6
+29502;las seis y cuarto;6
+29506;las siete en punto;6
+29510;las siete y media;6
+29542;las ocho menos cuarto;6
+29510;las siete y media;6
+29458;las diez y media;6
+29464;las once y media;6
+29472;las doce y media;6
+29474;la una y media;6
+29480;las dos y media;6
+29486;las tres y media;6
+29492;las cuatro y media;6
+29498;las cinco y media;6
+29504;las seis y media;6
+29516;las ocho y media;6
+29522;las nueve y media;6
+29276;19;6
+29508;las siete y cuarto;6
+29506;las siete en punto;6
+29542;las ocho menos cuarto;6
+29542;las ocho menos cuarto;6
+29526;las doce menos cuarto;6
+29524;las once menos cuarto;6
+29528;la una menos cuarto;6
+29530;las dos menos cuarto;6
+29532;las tres menos cuarto;6
+29536;las cinco menos cuarto;6
+29534;las cuatro menos cuarto;6
+29544;las nueve menos cuarto;6
+29540;las siete menos cuarto;6
+29538;las seis menos cuarto;6
+29546;las diez menos cuarto;6
+29276;19;6
+29508;las siete y cuarto;6
+29506;las siete en punto;6
+29510;las siete y media;6
+29452;la una en punto;6
+29454;las diez en punto;6
+29460;las once en punto;6
+29468;las doce en punto;6
+29482;las tres en punto;6
+29488;las cuatro en punto;6
+29500;las seis en punto;6
+29506;las siete en punto;6
+29494;las cinco en punto;6
+29476;las dos en punto;6
+29512;las ocho en punto;6
+29518;las nueve en punto;6
+2627;uno;6
+4889;uno;6
+7291;uno;6
+35677;uno;6
+4776;1 euro;2
+4775;1 céntimo;2
+5436;1/4;6
+19570;medio;4
+29466;la una y cuarto;6
+29474;la una y media;6
+29530;las dos menos cuarto;6
+19548;1-2-3;5
+29466;la una y cuarto;6
+29456;las diez y cuarto;6
+29462;las once y cuarto;6
+29470;las doce y cuarto;6
+29484;las tres y cuarto;6
+29496;las cinco y cuarto;6
+29490;las cuatro y cuarto;6
+29508;las siete y cuarto;6
+29478;las dos y cuarto;6
+29520;las nueve y cuarto;6
+29514;las ocho y cuarto;6
+2627;uno;6
+4889;uno;6
+7291;uno;6
+35677;uno;6
+4776;1 euro;2
+4775;1 céntimo;2
+5436;1/4;6
+19570;medio;4
+29452;la una en punto;6
+29474;la una y media;6
+29502;las seis y cuarto;6
+29530;las dos menos cuarto;6
+19548;1-2-3;5
+29474;la una y media;6
+29458;las diez y media;6
+29464;las once y media;6
+29472;las doce y media;6
+29480;las dos y media;6
+29486;las tres y media;6
+29492;las cuatro y media;6
+29498;las cinco y media;6
+29504;las seis y media;6
+29510;las siete y media;6
+29516;las ocho y media;6
+29522;las nueve y media;6
+2627;uno;6
+4889;uno;6
+7291;uno;6
+35677;uno;6
+4776;1 euro;2
+4775;1 céntimo;2
+5436;1/4;6
+19570;medio;4
+29452;la una en punto;6
+29466;la una y cuarto;6
+29530;las dos menos cuarto;6
+19548;1-2-3;5
+29530;las dos menos cuarto;6
+29526;las doce menos cuarto;6
+29524;las once menos cuarto;6
+29528;la una menos cuarto;6
+29532;las tres menos cuarto;6
+29536;las cinco menos cuarto;6
+29542;las ocho menos cuarto;6
+29534;las cuatro menos cuarto;6
+29544;las nueve menos cuarto;6
+29540;las siete menos cuarto;6
+29538;las seis menos cuarto;6
+29546;las diez menos cuarto;6
+2627;uno;6
+4889;uno;6
+7291;uno;6
+35677;uno;6
+4776;1 euro;2
+4775;1 céntimo;2
+5436;1/4;6
+19570;medio;4
+29452;la una en punto;6
+29466;la una y cuarto;6
+29474;la una y media;6
+19548;1-2-3;5
+2628;2;6
+4890;2;6
+7027;2;6
+35679;2;6
+4777;2 céntimos;2
+5516;dos cuartos;2
+10279;2 euros;2
+19570;medio;4
+29480;las dos y media;6
+29476;las dos en punto;6
+29478;las dos y cuarto;6
+29532;las tres menos cuarto;6
+19548;1-2-3;5
+4777;2 céntimos;2
+35117;céntimos;2
+4785;50 céntimos;2
+4781;10 céntimos;2
+4779;5 céntimos;2
+4783;20 céntimos;2
+10279;2 euros;2
+35165;euros;2
+4784;20 euros;2
+4786;50 euros;2
+4787;100 euros;2
+4788;200 euros;2
+4782;10 euros;2
+4789;500 euros;2
+4780;5 euros;2
+29550;20;6
+4784;20 euros;2
+4783;20 céntimos;2
+29516;las ocho y media;6
+29512;las ocho en punto;6
+29544;las nueve menos cuarto;6
+29514;las ocho y cuarto;6
+4783;20 céntimos;2
+29550;20;6
+35117;céntimos;2
+4777;2 céntimos;2
+4784;20 euros;2
+4785;50 céntimos;2
+4781;10 céntimos;2
+4779;5 céntimos;2
+29516;las ocho y media;6
+29512;las ocho en punto;6
+29544;las nueve menos cuarto;6
+29514;las ocho y cuarto;6
+4784;20 euros;2
+29550;20;6
+35165;euros;2
+4786;50 euros;2
+4787;100 euros;2
+4788;200 euros;2
+4782;10 euros;2
+4789;500 euros;2
+4783;20 céntimos;2
+4780;5 euros;2
+10279;2 euros;2
+29516;las ocho y media;6
+29512;las ocho en punto;6
+29544;las nueve menos cuarto;6
+29514;las ocho y cuarto;6
+29278;doscientos;6
+4788;200 euros;2
+4788;200 euros;2
+29278;doscientos;6
+35165;euros;2
+4784;20 euros;2
+4786;50 euros;2
+4787;100 euros;2
+4782;10 euros;2
+4789;500 euros;2
+4780;5 euros;2
+10279;2 euros;2
+29512;las ocho en punto;6
+29452;la una en punto;6
+29454;las diez en punto;6
+29460;las once en punto;6
+29468;las doce en punto;6
+29482;las tres en punto;6
+29488;las cuatro en punto;6
+29500;las seis en punto;6
+29506;las siete en punto;6
+29494;las cinco en punto;6
+29476;las dos en punto;6
+29518;las nueve en punto;6
+29550;20;6
+4784;20 euros;2
+4783;20 céntimos;2
+29516;las ocho y media;6
+29544;las nueve menos cuarto;6
+29514;las ocho y cuarto;6
+29514;las ocho y cuarto;6
+29456;las diez y cuarto;6
+29462;las once y cuarto;6
+29466;la una y cuarto;6
+29470;las doce y cuarto;6
+29484;las tres y cuarto;6
+29496;las cinco y cuarto;6
+29490;las cuatro y cuarto;6
+29508;las siete y cuarto;6
+29478;las dos y cuarto;6
+29520;las nueve y cuarto;6
+29550;20;6
+4784;20 euros;2
+4783;20 céntimos;2
+29502;las seis y cuarto;6
+29516;las ocho y media;6
+29512;las ocho en punto;6
+29544;las nueve menos cuarto;6
+29516;las ocho y media;6
+29458;las diez y media;6
+29464;las once y media;6
+29472;las doce y media;6
+29474;la una y media;6
+29480;las dos y media;6
+29486;las tres y media;6
+29492;las cuatro y media;6
+29498;las cinco y media;6
+29504;las seis y media;6
+29510;las siete y media;6
+29522;las nueve y media;6
+29550;20;6
+4784;20 euros;2
+4783;20 céntimos;2
+29512;las ocho en punto;6
+29544;las nueve menos cuarto;6
+29514;las ocho y cuarto;6
+29544;las nueve menos cuarto;6
+29526;las doce menos cuarto;6
+29524;las once menos cuarto;6
+29528;la una menos cuarto;6
+29530;las dos menos cuarto;6
+29532;las tres menos cuarto;6
+29536;las cinco menos cuarto;6
+29542;las ocho menos cuarto;6
+29534;las cuatro menos cuarto;6
+29540;las siete menos cuarto;6
+29538;las seis menos cuarto;6
+29546;las diez menos cuarto;6
+29550;20;6
+4784;20 euros;2
+4783;20 céntimos;2
+29516;las ocho y media;6
+29512;las ocho en punto;6
+29514;las ocho y cuarto;6
+29280;21;6
+29522;las nueve y media;6
+29518;las nueve en punto;6
+29520;las nueve y cuarto;6
+29546;las diez menos cuarto;6
+29518;las nueve en punto;6
+29452;la una en punto;6
+29454;las diez en punto;6
+29460;las once en punto;6
+29468;las doce en punto;6
+29482;las tres en punto;6
+29488;las cuatro en punto;6
+29500;las seis en punto;6
+29506;las siete en punto;6
+29494;las cinco en punto;6
+29476;las dos en punto;6
+29512;las ocho en punto;6
+29280;21;6
+29522;las nueve y media;6
+29520;las nueve y cuarto;6
+29546;las diez menos cuarto;6
+29520;las nueve y cuarto;6
+29456;las diez y cuarto;6
+29462;las once y cuarto;6
+29466;la una y cuarto;6
+29470;las doce y cuarto;6
+29484;las tres y cuarto;6
+29496;las cinco y cuarto;6
+29490;las cuatro y cuarto;6
+29508;las siete y cuarto;6
+29478;las dos y cuarto;6
+29514;las ocho y cuarto;6
+29280;21;6
+29502;las seis y cuarto;6
+29522;las nueve y media;6
+29518;las nueve en punto;6
+29546;las diez menos cuarto;6
+29522;las nueve y media;6
+29458;las diez y media;6
+29464;las once y media;6
+29472;las doce y media;6
+29474;la una y media;6
+29480;las dos y media;6
+29486;las tres y media;6
+29492;las cuatro y media;6
+29498;las cinco y media;6
+29504;las seis y media;6
+29510;las siete y media;6
+29516;las ocho y media;6
+29280;21;6
+29518;las nueve en punto;6
+29520;las nueve y cuarto;6
+29546;las diez menos cuarto;6
+29546;las diez menos cuarto;6
+29526;las doce menos cuarto;6
+29524;las once menos cuarto;6
+29528;la una menos cuarto;6
+29530;las dos menos cuarto;6
+29532;las tres menos cuarto;6
+29536;las cinco menos cuarto;6
+29542;las ocho menos cuarto;6
+29534;las cuatro menos cuarto;6
+29544;las nueve menos cuarto;6
+29540;las siete menos cuarto;6
+29538;las seis menos cuarto;6
+29280;21;6
+29522;las nueve y media;6
+29518;las nueve en punto;6
+29520;las nueve y cuarto;6
+29282;22;6
+29454;las diez en punto;6
+29456;las diez y cuarto;6
+29458;las diez y media;6
+29524;las once menos cuarto;6
+29454;las diez en punto;6
+29452;la una en punto;6
+29460;las once en punto;6
+29468;las doce en punto;6
+29482;las tres en punto;6
+29488;las cuatro en punto;6
+29500;las seis en punto;6
+29506;las siete en punto;6
+29494;las cinco en punto;6
+29476;las dos en punto;6
+29512;las ocho en punto;6
+29518;las nueve en punto;6
+29282;22;6
+29456;las diez y cuarto;6
+29458;las diez y media;6
+29524;las once menos cuarto;6
+29456;las diez y cuarto;6
+29462;las once y cuarto;6
+29466;la una y cuarto;6
+29470;las doce y cuarto;6
+29484;las tres y cuarto;6
+29496;las cinco y cuarto;6
+29490;las cuatro y cuarto;6
+29508;las siete y cuarto;6
+29478;las dos y cuarto;6
+29520;las nueve y cuarto;6
+29514;las ocho y cuarto;6
+29282;22;6
+29454;las diez en punto;6
+29458;las diez y media;6
+29502;las seis y cuarto;6
+29524;las once menos cuarto;6
+29458;las diez y media;6
+29464;las once y media;6
+29472;las doce y media;6
+29474;la una y media;6
+29480;las dos y media;6
+29486;las tres y media;6
+29492;las cuatro y media;6
+29498;las cinco y media;6
+29504;las seis y media;6
+29510;las siete y media;6
+29516;las ocho y media;6
+29522;las nueve y media;6
+29282;22;6
+29454;las diez en punto;6
+29456;las diez y cuarto;6
+29524;las once menos cuarto;6
+29524;las once menos cuarto;6
+29526;las doce menos cuarto;6
+29528;la una menos cuarto;6
+29530;las dos menos cuarto;6
+29532;las tres menos cuarto;6
+29536;las cinco menos cuarto;6
+29542;las ocho menos cuarto;6
+29534;las cuatro menos cuarto;6
+29544;las nueve menos cuarto;6
+29540;las siete menos cuarto;6
+29538;las seis menos cuarto;6
+29546;las diez menos cuarto;6
+29282;22;6
+29454;las diez en punto;6
+29456;las diez y cuarto;6
+29458;las diez y media;6
+29284;23;6
+29460;las once en punto;6
+29462;las once y cuarto;6
+29464;las once y media;6
+29526;las doce menos cuarto;6
+29460;las once en punto;6
+29452;la una en punto;6
+29454;las diez en punto;6
+29468;las doce en punto;6
+29482;las tres en punto;6
+29488;las cuatro en punto;6
+29500;las seis en punto;6
+29506;las siete en punto;6
+29494;las cinco en punto;6
+29476;las dos en punto;6
+29512;las ocho en punto;6
+29518;las nueve en punto;6
+29284;23;6
+29462;las once y cuarto;6
+29464;las once y media;6
+29526;las doce menos cuarto;6
+29462;las once y cuarto;6
+29456;las diez y cuarto;6
+29466;la una y cuarto;6
+29470;las doce y cuarto;6
+29484;las tres y cuarto;6
+29496;las cinco y cuarto;6
+29490;las cuatro y cuarto;6
+29508;las siete y cuarto;6
+29478;las dos y cuarto;6
+29520;las nueve y cuarto;6
+29514;las ocho y cuarto;6
+29284;23;6
+29460;las once en punto;6
+29464;las once y media;6
+29502;las seis y cuarto;6
+29526;las doce menos cuarto;6
+29464;las once y media;6
+29458;las diez y media;6
+29472;las doce y media;6
+29474;la una y media;6
+29480;las dos y media;6
+29486;las tres y media;6
+29492;las cuatro y media;6
+29498;las cinco y media;6
+29504;las seis y media;6
+29510;las siete y media;6
+29516;las ocho y media;6
+29522;las nueve y media;6
+29284;23;6
+29460;las once en punto;6
+29462;las once y cuarto;6
+29526;las doce menos cuarto;6
+29526;las doce menos cuarto;6
+29524;las once menos cuarto;6
+29528;la una menos cuarto;6
+29530;las dos menos cuarto;6
+29532;las tres menos cuarto;6
+29536;las cinco menos cuarto;6
+29542;las ocho menos cuarto;6
+29534;las cuatro menos cuarto;6
+29544;las nueve menos cuarto;6
+29540;las siete menos cuarto;6
+29538;las seis menos cuarto;6
+29546;las diez menos cuarto;6
+29284;23;6
+29460;las once en punto;6
+29462;las once y cuarto;6
+29464;las once y media;6
+29286;24;6
+29288;25;6
+29290;26;6
+29292;27;6
+29294;28;6
+29296;29;6
+29476;las dos en punto;6
+29452;la una en punto;6
+29454;las diez en punto;6
+29460;las once en punto;6
+29468;las doce en punto;6
+29482;las tres en punto;6
+29488;las cuatro en punto;6
+29500;las seis en punto;6
+29506;las siete en punto;6
+29494;las cinco en punto;6
+29512;las ocho en punto;6
+29518;las nueve en punto;6
+2628;2;6
+4890;2;6
+7027;2;6
+35679;2;6
+4777;2 céntimos;2
+5516;dos cuartos;2
+10279;2 euros;2
+19570;medio;4
+29480;las dos y media;6
+29478;las dos y cuarto;6
+29532;las tres menos cuarto;6
+19548;1-2-3;5
+29478;las dos y cuarto;6
+29456;las diez y cuarto;6
+29462;las once y cuarto;6
+29466;la una y cuarto;6
+29470;las doce y cuarto;6
+29484;las tres y cuarto;6
+29496;las cinco y cuarto;6
+29490;las cuatro y cuarto;6
+29508;las siete y cuarto;6
+29520;las nueve y cuarto;6
+29514;las ocho y cuarto;6
+2628;2;6
+4890;2;6
+7027;2;6
+35679;2;6
+4777;2 céntimos;2
+5516;dos cuartos;2
+10279;2 euros;2
+19570;medio;4
+29480;las dos y media;6
+29502;las seis y cuarto;6
+29476;las dos en punto;6
+29532;las tres menos cuarto;6
+19548;1-2-3;5
+29480;las dos y media;6
+29458;las diez y media;6
+29464;las once y media;6
+29472;las doce y media;6
+29474;la una y media;6
+29486;las tres y media;6
+29492;las cuatro y media;6
+29498;las cinco y media;6
+29504;las seis y media;6
+29510;las siete y media;6
+29516;las ocho y media;6
+29522;las nueve y media;6
+2628;2;6
+4890;2;6
+7027;2;6
+35679;2;6
+4777;2 céntimos;2
+5516;dos cuartos;2
+10279;2 euros;2
+19570;medio;4
+29476;las dos en punto;6
+29478;las dos y cuarto;6
+29532;las tres menos cuarto;6
+19548;1-2-3;5
+29532;las tres menos cuarto;6
+29526;las doce menos cuarto;6
+29524;las once menos cuarto;6
+29528;la una menos cuarto;6
+29530;las dos menos cuarto;6
+29536;las cinco menos cuarto;6
+29542;las ocho menos cuarto;6
+29534;las cuatro menos cuarto;6
+29544;las nueve menos cuarto;6
+29540;las siete menos cuarto;6
+29538;las seis menos cuarto;6
+29546;las diez menos cuarto;6
+2628;2;6
+4890;2;6
+7027;2;6
+35679;2;6
+4777;2 céntimos;2
+5516;dos cuartos;2
+10279;2 euros;2
+19570;medio;4
+29480;las dos y media;6
+29476;las dos en punto;6
+29478;las dos y cuarto;6
+19548;1-2-3;5
+2629;3;6
+4891;3;6
+7283;3;6
+35681;3;6
+9047;3/4;6
+29482;las tres en punto;6
+29484;las tres y cuarto;6
+29486;las tres y media;6
+29534;las cuatro menos cuarto;6
+19548;1-2-3;5
+29298;30;6
+29300;trescientos;6
+29302;31;6
+29304;32;6
+29306;33;6
+29308;34;6
+29310;35;6
+29312;36;6
+29314;37;6
+29316;38;6
+29318;39;6
+29482;las tres en punto;6
+29452;la una en punto;6
+29454;las diez en punto;6
+29460;las once en punto;6
+29468;las doce en punto;6
+29488;las cuatro en punto;6
+29500;las seis en punto;6
+29506;las siete en punto;6
+29494;las cinco en punto;6
+29476;las dos en punto;6
+29512;las ocho en punto;6
+29518;las nueve en punto;6
+2629;3;6
+4891;3;6
+7283;3;6
+35681;3;6
+9047;3/4;6
+29484;las tres y cuarto;6
+29486;las tres y media;6
+29534;las cuatro menos cuarto;6
+19548;1-2-3;5
+29484;las tres y cuarto;6
+29456;las diez y cuarto;6
+29462;las once y cuarto;6
+29466;la una y cuarto;6
+29470;las doce y cuarto;6
+29496;las cinco y cuarto;6
+29490;las cuatro y cuarto;6
+29508;las siete y cuarto;6
+29478;las dos y cuarto;6
+29520;las nueve y cuarto;6
+29514;las ocho y cuarto;6
+2629;3;6
+4891;3;6
+7283;3;6
+35681;3;6
+9047;3/4;6
+29482;las tres en punto;6
+29486;las tres y media;6
+29502;las seis y cuarto;6
+29534;las cuatro menos cuarto;6
+19548;1-2-3;5
+29486;las tres y media;6
+29458;las diez y media;6
+29464;las once y media;6
+29472;las doce y media;6
+29474;la una y media;6
+29480;las dos y media;6
+29492;las cuatro y media;6
+29498;las cinco y media;6
+29504;las seis y media;6
+29510;las siete y media;6
+29516;las ocho y media;6
+29522;las nueve y media;6
+2629;3;6
+4891;3;6
+7283;3;6
+35681;3;6
+9047;3/4;6
+29482;las tres en punto;6
+29484;las tres y cuarto;6
+29534;las cuatro menos cuarto;6
+19548;1-2-3;5
+29534;las cuatro menos cuarto;6
+29526;las doce menos cuarto;6
+29524;las once menos cuarto;6
+29528;la una menos cuarto;6
+29530;las dos menos cuarto;6
+29532;las tres menos cuarto;6
+29536;las cinco menos cuarto;6
+29542;las ocho menos cuarto;6
+29544;las nueve menos cuarto;6
+29540;las siete menos cuarto;6
+29538;las seis menos cuarto;6
+29546;las diez menos cuarto;6
+2629;3;6
+4891;3;6
+7283;3;6
+35681;3;6
+9047;3/4;6
+29482;las tres en punto;6
+29484;las tres y cuarto;6
+29486;las tres y media;6
+19548;1-2-3;5
+2630;4;6
+4892;4;6
+7005;4;6
+35665;4;6
+5455;entero;4
+5436;1/4;6
+5516;dos cuartos;2
+9047;3/4;6
+29488;las cuatro en punto;6
+29492;las cuatro y media;6
+29490;las cuatro y cuarto;6
+29536;las cinco menos cuarto;6
+29320;40;6
+29322;cuatrocientos;6
+29324;41;6
+29326;42;6
+29328;43;6
+29330;44;6
+29332;45;6
+29334;46;6
+29336;47;6
+29338;48;6
+29340;49;6
+29488;las cuatro en punto;6
+5455;entero;4
+29452;la una en punto;6
+29454;las diez en punto;6
+29460;las once en punto;6
+29468;las doce en punto;6
+29482;las tres en punto;6
+29500;las seis en punto;6
+29506;las siete en punto;6
+29494;las cinco en punto;6
+29476;las dos en punto;6
+29512;las ocho en punto;6
+29518;las nueve en punto;6
+2630;4;6
+4892;4;6
+7005;4;6
+35665;4;6
+5436;1/4;6
+5516;dos cuartos;2
+9047;3/4;6
+29492;las cuatro y media;6
+29490;las cuatro y cuarto;6
+29536;las cinco menos cuarto;6
+29490;las cuatro y cuarto;6
+5455;entero;4
+29456;las diez y cuarto;6
+29462;las once y cuarto;6
+29466;la una y cuarto;6
+29470;las doce y cuarto;6
+29484;las tres y cuarto;6
+29496;las cinco y cuarto;6
+29508;las siete y cuarto;6
+29478;las dos y cuarto;6
+29520;las nueve y cuarto;6
+29514;las ocho y cuarto;6
+2630;4;6
+4892;4;6
+7005;4;6
+35665;4;6
+5436;1/4;6
+5516;dos cuartos;2
+9047;3/4;6
+29488;las cuatro en punto;6
+29492;las cuatro y media;6
+29502;las seis y cuarto;6
+29536;las cinco menos cuarto;6
+29492;las cuatro y media;6
+5455;entero;4
+29458;las diez y media;6
+29464;las once y media;6
+29472;las doce y media;6
+29474;la una y media;6
+29480;las dos y media;6
+29486;las tres y media;6
+29498;las cinco y media;6
+29504;las seis y media;6
+29510;las siete y media;6
+29516;las ocho y media;6
+29522;las nueve y media;6
+2630;4;6
+4892;4;6
+7005;4;6
+35665;4;6
+5436;1/4;6
+5516;dos cuartos;2
+9047;3/4;6
+29488;las cuatro en punto;6
+29490;las cuatro y cuarto;6
+29536;las cinco menos cuarto;6
+29536;las cinco menos cuarto;6
+5455;entero;4
+29526;las doce menos cuarto;6
+29524;las once menos cuarto;6
+29528;la una menos cuarto;6
+29530;las dos menos cuarto;6
+29532;las tres menos cuarto;6
+29542;las ocho menos cuarto;6
+29534;las cuatro menos cuarto;6
+29544;las nueve menos cuarto;6
+29540;las siete menos cuarto;6
+29538;las seis menos cuarto;6
+29546;las diez menos cuarto;6
+2630;4;6
+4892;4;6
+7005;4;6
+35665;4;6
+5436;1/4;6
+5516;dos cuartos;2
+9047;3/4;6
+29488;las cuatro en punto;6
+29492;las cuatro y media;6
+29490;las cuatro y cuarto;6
+2631;5;6
+4893;5;6
+6979;5;6
+35631;5;6
+4779;5 céntimos;2
+4780;5 euros;2
+29496;las cinco y cuarto;6
+29498;las cinco y media;6
+29494;las cinco en punto;6
+29538;las seis menos cuarto;6
+4779;5 céntimos;2
+35117;céntimos;2
+4777;2 céntimos;2
+4785;50 céntimos;2
+4781;10 céntimos;2
+4783;20 céntimos;2
+4780;5 euros;2
+35165;euros;2
+4784;20 euros;2
+4786;50 euros;2
+4787;100 euros;2
+4788;200 euros;2
+4782;10 euros;2
+4789;500 euros;2
+10279;2 euros;2
+29342;50;6
+4785;50 céntimos;2
+4786;50 euros;2
+4785;50 céntimos;2
+29342;50;6
+35117;céntimos;2
+4777;2 céntimos;2
+4786;50 euros;2
+4781;10 céntimos;2
+4779;5 céntimos;2
+4783;20 céntimos;2
+4786;50 euros;2
+29342;50;6
+35165;euros;2
+4784;20 euros;2
+4785;50 céntimos;2
+4787;100 euros;2
+4788;200 euros;2
+4782;10 euros;2
+4789;500 euros;2
+4780;5 euros;2
+10279;2 euros;2
+29344;quinientos;6
+4789;500 euros;2
+4789;500 euros;2
+29344;quinientos;6
+35165;euros;2
+4784;20 euros;2
+4786;50 euros;2
+4787;100 euros;2
+4788;200 euros;2
+4782;10 euros;2
+4780;5 euros;2
+10279;2 euros;2
+29346;51;6
+29348;52;6
+29350;53;6
+29352;54;6
+29354;55;6
+29356;56;6
+29358;57;6
+29360;58;6
+29362;59;6
+29494;las cinco en punto;6
+29452;la una en punto;6
+29454;las diez en punto;6
+29460;las once en punto;6
+29468;las doce en punto;6
+29482;las tres en punto;6
+29488;las cuatro en punto;6
+29500;las seis en punto;6
+29506;las siete en punto;6
+29476;las dos en punto;6
+29512;las ocho en punto;6
+29518;las nueve en punto;6
+2631;5;6
+4893;5;6
+6979;5;6
+35631;5;6
+4779;5 céntimos;2
+4780;5 euros;2
+29496;las cinco y cuarto;6
+29498;las cinco y media;6
+29538;las seis menos cuarto;6
+29496;las cinco y cuarto;6
+29456;las diez y cuarto;6
+29462;las once y cuarto;6
+29466;la una y cuarto;6
+29470;las doce y cuarto;6
+29484;las tres y cuarto;6
+29490;las cuatro y cuarto;6
+29508;las siete y cuarto;6
+29478;las dos y cuarto;6
+29520;las nueve y cuarto;6
+29514;las ocho y cuarto;6
+2631;5;6
+4893;5;6
+6979;5;6
+35631;5;6
+4779;5 céntimos;2
+4780;5 euros;2
+29498;las cinco y media;6
+29502;las seis y cuarto;6
+29494;las cinco en punto;6
+29538;las seis menos cuarto;6
+29498;las cinco y media;6
+29458;las diez y media;6
+29464;las once y media;6
+29472;las doce y media;6
+29474;la una y media;6
+29480;las dos y media;6
+29486;las tres y media;6
+29492;las cuatro y media;6
+29504;las seis y media;6
+29510;las siete y media;6
+29516;las ocho y media;6
+29522;las nueve y media;6
+2631;5;6
+4893;5;6
+6979;5;6
+35631;5;6
+4779;5 céntimos;2
+4780;5 euros;2
+29496;las cinco y cuarto;6
+29494;las cinco en punto;6
+29538;las seis menos cuarto;6
+29538;las seis menos cuarto;6
+29526;las doce menos cuarto;6
+29524;las once menos cuarto;6
+29528;la una menos cuarto;6
+29530;las dos menos cuarto;6
+29532;las tres menos cuarto;6
+29536;las cinco menos cuarto;6
+29542;las ocho menos cuarto;6
+29534;las cuatro menos cuarto;6
+29544;las nueve menos cuarto;6
+29540;las siete menos cuarto;6
+29546;las diez menos cuarto;6
+2631;5;6
+4893;5;6
+6979;5;6
+35631;5;6
+4779;5 céntimos;2
+4780;5 euros;2
+29496;las cinco y cuarto;6
+29498;las cinco y media;6
+29494;las cinco en punto;6
+2632;6;6
+4894;6;6
+7241;6;6
+35683;6;6
+29500;las seis en punto;6
+29502;las seis y cuarto;6
+29504;las seis y media;6
+29540;las siete menos cuarto;6
+29364;60;6
+29384;seiscientos;6
+29366;61;6
+29368;62;6
+29370;63;6
+29372;64;6
+29374;65;6
+29376;66;6
+29378;67;6
+29380;68;6
+29382;69;6
+29500;las seis en punto;6
+29452;la una en punto;6
+29454;las diez en punto;6
+29460;las once en punto;6
+29468;las doce en punto;6
+29482;las tres en punto;6
+29488;las cuatro en punto;6
+29506;las siete en punto;6
+29494;las cinco en punto;6
+29476;las dos en punto;6
+29512;las ocho en punto;6
+29518;las nueve en punto;6
+2632;6;6
+4894;6;6
+7241;6;6
+35683;6;6
+29502;las seis y cuarto;6
+29504;las seis y media;6
+29540;las siete menos cuarto;6
+29502;las seis y cuarto;6
+29456;las diez y cuarto;6
+29462;las once y cuarto;6
+29466;la una y cuarto;6
+29470;las doce y cuarto;6
+29484;las tres y cuarto;6
+29496;las cinco y cuarto;6
+29490;las cuatro y cuarto;6
+29508;las siete y cuarto;6
+29478;las dos y cuarto;6
+29520;las nueve y cuarto;6
+29514;las ocho y cuarto;6
+2632;6;6
+4894;6;6
+7241;6;6
+35683;6;6
+29500;las seis en punto;6
+29504;las seis y media;6
+29540;las siete menos cuarto;6
+29504;las seis y media;6
+29458;las diez y media;6
+29464;las once y media;6
+29472;las doce y media;6
+29474;la una y media;6
+29480;las dos y media;6
+29486;las tres y media;6
+29492;las cuatro y media;6
+29498;las cinco y media;6
+29510;las siete y media;6
+29516;las ocho y media;6
+29522;las nueve y media;6
+2632;6;6
+4894;6;6
+7241;6;6
+35683;6;6
+29500;las seis en punto;6
+29502;las seis y cuarto;6
+29540;las siete menos cuarto;6
+29540;las siete menos cuarto;6
+29526;las doce menos cuarto;6
+29524;las once menos cuarto;6
+29528;la una menos cuarto;6
+29530;las dos menos cuarto;6
+29532;las tres menos cuarto;6
+29536;las cinco menos cuarto;6
+29542;las ocho menos cuarto;6
+29534;las cuatro menos cuarto;6
+29544;las nueve menos cuarto;6
+29538;las seis menos cuarto;6
+29546;las diez menos cuarto;6
+2632;6;6
+4894;6;6
+7241;6;6
+35683;6;6
+29500;las seis en punto;6
+29502;las seis y cuarto;6
+29504;las seis y media;6
+2633;7;6
+4895;7;6
+7248;7;6
+35685;7;6
+29508;las siete y cuarto;6
+29506;las siete en punto;6
+29510;las siete y media;6
+29542;las ocho menos cuarto;6
+29388;70;6
+29386;setecientos;6
+29390;71;6
+29392;72;6
+29394;73;6
+29396;74;6
+29398;75;6
+29400;76;6
+29402;77;6
+29404;78;6
+29406;79;6
+29506;las siete en punto;6
+29452;la una en punto;6
+29454;las diez en punto;6
+29460;las once en punto;6
+29468;las doce en punto;6
+29482;las tres en punto;6
+29488;las cuatro en punto;6
+29500;las seis en punto;6
+29494;las cinco en punto;6
+29476;las dos en punto;6
+29512;las ocho en punto;6
+29518;las nueve en punto;6
+2633;7;6
+4895;7;6
+7248;7;6
+35685;7;6
+29508;las siete y cuarto;6
+29510;las siete y media;6
+29542;las ocho menos cuarto;6
+29508;las siete y cuarto;6
+29456;las diez y cuarto;6
+29462;las once y cuarto;6
+29466;la una y cuarto;6
+29470;las doce y cuarto;6
+29484;las tres y cuarto;6
+29496;las cinco y cuarto;6
+29490;las cuatro y cuarto;6
+29478;las dos y cuarto;6
+29520;las nueve y cuarto;6
+29514;las ocho y cuarto;6
+2633;7;6
+4895;7;6
+7248;7;6
+35685;7;6
+29502;las seis y cuarto;6
+29506;las siete en punto;6
+29510;las siete y media;6
+29542;las ocho menos cuarto;6
+29510;las siete y media;6
+29458;las diez y media;6
+29464;las once y media;6
+29472;las doce y media;6
+29474;la una y media;6
+29480;las dos y media;6
+29486;las tres y media;6
+29492;las cuatro y media;6
+29498;las cinco y media;6
+29504;las seis y media;6
+29516;las ocho y media;6
+29522;las nueve y media;6
+2633;7;6
+4895;7;6
+7248;7;6
+35685;7;6
+29508;las siete y cuarto;6
+29506;las siete en punto;6
+29542;las ocho menos cuarto;6
+29542;las ocho menos cuarto;6
+29526;las doce menos cuarto;6
+29524;las once menos cuarto;6
+29528;la una menos cuarto;6
+29530;las dos menos cuarto;6
+29532;las tres menos cuarto;6
+29536;las cinco menos cuarto;6
+29534;las cuatro menos cuarto;6
+29544;las nueve menos cuarto;6
+29540;las siete menos cuarto;6
+29538;las seis menos cuarto;6
+29546;las diez menos cuarto;6
+2633;7;6
+4895;7;6
+7248;7;6
+35685;7;6
+29508;las siete y cuarto;6
+29506;las siete en punto;6
+29510;las siete y media;6
+2634;8;6
+4896;8;6
+7189;8;6
+35687;8;6
+29516;las ocho y media;6
+29512;las ocho en punto;6
+29544;las nueve menos cuarto;6
+29514;las ocho y cuarto;6
+29410;80;6
+29408;ochocientos;6
+29412;81;6
+29414;82;6
+29416;83;6
+29418;84;6
+29420;85;6
+29422;86;6
+29424;87;6
+29426;88;6
+29428;89;6
+29512;las ocho en punto;6
+29452;la una en punto;6
+29454;las diez en punto;6
+29460;las once en punto;6
+29468;las doce en punto;6
+29482;las tres en punto;6
+29488;las cuatro en punto;6
+29500;las seis en punto;6
+29506;las siete en punto;6
+29494;las cinco en punto;6
+29476;las dos en punto;6
+29518;las nueve en punto;6
+2634;8;6
+4896;8;6
+7189;8;6
+35687;8;6
+29516;las ocho y media;6
+29544;las nueve menos cuarto;6
+29514;las ocho y cuarto;6
+29514;las ocho y cuarto;6
+29456;las diez y cuarto;6
+29462;las once y cuarto;6
+29466;la una y cuarto;6
+29470;las doce y cuarto;6
+29484;las tres y cuarto;6
+29496;las cinco y cuarto;6
+29490;las cuatro y cuarto;6
+29508;las siete y cuarto;6
+29478;las dos y cuarto;6
+29520;las nueve y cuarto;6
+2634;8;6
+4896;8;6
+7189;8;6
+35687;8;6
+29502;las seis y cuarto;6
+29516;las ocho y media;6
+29512;las ocho en punto;6
+29544;las nueve menos cuarto;6
+29516;las ocho y media;6
+29458;las diez y media;6
+29464;las once y media;6
+29472;las doce y media;6
+29474;la una y media;6
+29480;las dos y media;6
+29486;las tres y media;6
+29492;las cuatro y media;6
+29498;las cinco y media;6
+29504;las seis y media;6
+29510;las siete y media;6
+29522;las nueve y media;6
+2634;8;6
+4896;8;6
+7189;8;6
+35687;8;6
+29512;las ocho en punto;6
+29544;las nueve menos cuarto;6
+29514;las ocho y cuarto;6
+29544;las nueve menos cuarto;6
+29526;las doce menos cuarto;6
+29524;las once menos cuarto;6
+29528;la una menos cuarto;6
+29530;las dos menos cuarto;6
+29532;las tres menos cuarto;6
+29536;las cinco menos cuarto;6
+29542;las ocho menos cuarto;6
+29534;las cuatro menos cuarto;6
+29540;las siete menos cuarto;6
+29538;las seis menos cuarto;6
+29546;las diez menos cuarto;6
+2634;8;6
+4896;8;6
+7189;8;6
+35687;8;6
+29516;las ocho y media;6
+29512;las ocho en punto;6
+29514;las ocho y cuarto;6
+2635;9;6
+4897;9;6
+7188;9;6
+35689;9;6
+29522;las nueve y media;6
+29518;las nueve en punto;6
+29520;las nueve y cuarto;6
+29546;las diez menos cuarto;6
+29430;90;6
+29432;novecientos;6
+29434;91;6
+29436;92;6
+29438;93;6
+29440;94;6
+29442;95;6
+29444;96;6
+29446;97;6
+29448;98;6
+29450;99;6
+29518;las nueve en punto;6
+29452;la una en punto;6
+29454;las diez en punto;6
+29460;las once en punto;6
+29468;las doce en punto;6
+29482;las tres en punto;6
+29488;las cuatro en punto;6
+29500;las seis en punto;6
+29506;las siete en punto;6
+29494;las cinco en punto;6
+29476;las dos en punto;6
+29512;las ocho en punto;6
+2635;9;6
+4897;9;6
+7188;9;6
+35689;9;6
+29522;las nueve y media;6
+29520;las nueve y cuarto;6
+29546;las diez menos cuarto;6
+29520;las nueve y cuarto;6
+29456;las diez y cuarto;6
+29462;las once y cuarto;6
+29466;la una y cuarto;6
+29470;las doce y cuarto;6
+29484;las tres y cuarto;6
+29496;las cinco y cuarto;6
+29490;las cuatro y cuarto;6
+29508;las siete y cuarto;6
+29478;las dos y cuarto;6
+29514;las ocho y cuarto;6
+2635;9;6
+4897;9;6
+7188;9;6
+35689;9;6
+29502;las seis y cuarto;6
+29522;las nueve y media;6
+29518;las nueve en punto;6
+29546;las diez menos cuarto;6
+29522;las nueve y media;6
+29458;las diez y media;6
+29464;las once y media;6
+29472;las doce y media;6
+29474;la una y media;6
+29480;las dos y media;6
+29486;las tres y media;6
+29492;las cuatro y media;6
+29498;las cinco y media;6
+29504;las seis y media;6
+29510;las siete y media;6
+29516;las ocho y media;6
+2635;9;6
+4897;9;6
+7188;9;6
+35689;9;6
+29518;las nueve en punto;6
+29520;las nueve y cuarto;6
+29546;las diez menos cuarto;6
+29546;las diez menos cuarto;6
+29526;las doce menos cuarto;6
+29524;las once menos cuarto;6
+29528;la una menos cuarto;6
+29530;las dos menos cuarto;6
+29532;las tres menos cuarto;6
+29536;las cinco menos cuarto;6
+29542;las ocho menos cuarto;6
+29534;las cuatro menos cuarto;6
+29544;las nueve menos cuarto;6
+29540;las siete menos cuarto;6
+29538;las seis menos cuarto;6
+2635;9;6
+4897;9;6
+7188;9;6
+35689;9;6
+29522;las nueve y media;6
+29518;las nueve en punto;6
+29520;las nueve y cuarto;6
+3420;dos puntos;6
+3422;punto y coma;2
+3423;igual;2
+3177;arroba;2
+3049;A;6
+29566;llevar a cuestas;3
+27365;frente a frente;4
+36636;entrar a canasta;3
+5570;saltar a la comba;3
+6608;saltar a la comba;3
+32954;vámonos a otra tienda;5
+3021;a;6
+7041;a;6
+5367;al lado de;4
+27387;a veces;4
+27564;a veces;4
+32848;antes del mediodía;4
+6643;montar a caballo;3
+7068;coser;3
+8274;a través de;6
+11299;mando a distancia;2
+22775;ayuda a domicilio;2
+26182;mando a distancia;2
+26638;aprender a nadar;3
+26641;aprender a nadar;3
+26639;aprender a nadar;3
+26640;aprender a nadar;3
+27399;conectar a internet;3
+27626;montar a caballo;3
+27627;equitación;2
+31316;Port-a-Cath;2
+31317;Port-a-Cath;2
+31318;Port-a-Cath;2
+31319;Port-a-Cath;2
+31354;análisis de sangre;2
+32940;vámonos a casa;5
+35483;montar a caballo;3
+36495;tirar a canasta;3
+36674;tirar a canasta;3
+3002;calamares a la romana;2
+4687;llamar a la puerta;3
+7158;mi turno;5
+8985;comprar;3
+8986;comprar;3
+10162;jugar a la videoconsola;3
+10163;bolos;2
+10372;educación física;2
+10373;educación física;2
+10376;educación física;2
+10377;educación física;2
+10380;educación física;2
+10378;educación física;2
+10379;educación física;2
+13042;educación física;2
+13052;educación física;2
+13054;educación física;2
+13056;educación física;2
+13058;educación física;2
+13044;educación física;2
+13050;educación física;2
+21326;chocolate a la taza;2
+28073;subir a la trona;3
+28074;subir a la trona;3
+28441;saltar a la comba;3
+28665;comprar;3
+29044;pescado a la parrilla;2
+31892;jugar a la pelota;3
+32101;automensaje;2
+33050;trabajo uno a uno;2
+35205;subir a una atracción;3
+35245;bolos;2
+35371;jugar a la pelota;3
+35411;jugar a la pelota;3
+36333;mirar a los ojos;3
+36356;carta a Papá Noel;2
+36398;hablar a la vez;3
+36425;patatas asadas;2
+36428;pescado a la plancha;2
+9207;prohibido peatones;5
+9208;prohibido bicicletas;5
+11366;saltar a la pata coja;3
+11365;saltar a la pata coja;3
+28445;saltar a la pata coja;3
+32216;Zapatilla por Detrás;1
+32706;transición a la vida adulta;2
+33924;amamantar a gemelos o mellizos;3
+29849;centro de atención a la mujer;2
+33974;técnico en atención a personas en situación de dependencia;2
+9073;ACNUR;1
+32724;asociación de madres y padres de alumnos;2
+35071;ARASAAC;1
+2375;enfermera;2
+6050;enfermero;2
+9196;enfermero;2
+31390;enfermera;2
+23729;Adán y Eva;1
+24831;Afganistán;1
+14762;Albacete;1
+29584;Albania;1
+29585;Albania;1
+25411;castillo;2
+14689;Málaga;1
+24153;Málaga;1
+25550;Catedral de Málaga;1
+25544;Palacio de Ferias y Congresos de Málaga;1
+8011;Alemania;1
+28970;Alemania;1
+31027;Alhambra;1
+14767;Alicante;1
+14683;Almería;1
+11177;Altamira;1
+16349;enfermedad de Alzheimer;2
+5377;América;1
+8024;Andalucía;1
+8489;Andalucía;1
+26666;Andorra;1
+28979;Andorra;1
+26667;Angola;1
+31029;Antequera;1
+31031;Antequera;1
+31131;Antequera;1
+31129;Antequera;1
+31133;Antequera;1
+31135;Antequera;1
+21363;Antártida;1
+29957;Anunciación;1
+27017;Olentzero;1
+25748;AraWord;1
+25749;AraWord;1
+24858;Arabia Saudí;1
+34437;Aragosaurus ischiaticus;1
+5384;Aragón;1
+5383;Aragón;1
+5610;Aragón;1
+5608;Aragón;1
+5421;castillo;2
+11268;frutas de Aragón;2
+16377;presidente de Aragón;2
+23751;Arca de Noé;1
+5966;cofre;2
+24198;Noé;1
+36087;Arca de la Alianza;1
+36087;Arca de la Alianza;1
+5966;cofre;2
+23751;Arca de Noé;1
+26668;Argelia;1
+8030;Argentina;1
+29590;Argentina;1
+26669;Armenia;1
+29569;Armenia;1
+5390;Asia;1
+8034;Asturias;1
+8494;Asturias;1
+14829;Asturias;1
+23769;Atomium;1
+21393;Australia;1
+21394;Austria;1
+28980;Austria;1
+26670;Azerbaiyán;1
+29570;Azerbaiyán;1
+36175;cabezudo;2
+5071;Año Nuevo;1
+32536;Año Nuevo;1
+32480;¡Feliz año nuevo!;5
+31777;ano;2
+6903;año;2
+8261;Nochevieja;1
+3061;B;6
+3023;b;6
+35023;Bach;1
+14830;Badajoz;1
+25357;Badajoz;1
+26671;Bahamas;1
+29730;Bahamas;1
+8036;Baleares;1
+8498;Baleares;1
+7048;Baltasar;1
+9074;Banco Mundial;1
+4919;banco;2
+11374;sentar;3
+3062;banco;2
+3255;banco;2
+6055;banco;2
+8173;mundial;4
+10242;banco;2
+30885;banco de iglesia;2
+29927;promover;3
+26672;Barbados;1
+29732;Barbados;1
+3063;Barbie;1
+9858;Barcelona;1
+14832;Barcelona;1
+34439;Baryonyx;1
+27591;Baréin;1
+5394;basílica;2
+5606;Virgen del Pilar;1
+5073;Día del Pilar;1
+8039;Batman;1
+35057;Beethoven;1
+27598;Belice;1
+29729;Belice;1
+5407;cabezudo;2
+23833;Biblia;2
+26539;Biblia;2
+36183;Tanaj;2
+36183;Tanaj;2
+23833;Biblia;2
+26539;Biblia;2
+26673;Bielorrusia;1
+29571;Bielorrusia;1
+21445;Big Ben;1
+27603;Birmania;1
+21447;Blancanieves;1
+29594;Bolivia;1
+29595;Bolivia;1
+21459;Bosnia y Herzegovina;1
+28966;Bosnia y Herzegovina;1
+35867;Botafumeiro;1
+5461;cabezudo;2
+26674;Botsuana;1
+34441;Brachiosaurus;1
+8044;Brasil;1
+29589;Brasil;1
+36123;Brit Milá;1
+27624;Brunéi;1
+23857;Buda;1
+17185;Bulgaria;1
+28984;Bulgaria;1
+36647;juego de la muralla;2
+14771;Burgos;1
+26675;Burkina Faso;1
+26676;Burundi;1
+34571;Princesa de Burundi;2
+27625;Bután;1
+8040;Bélgica;1
+28972;Bélgica;1
+3069;C;6
+3024;c;6
+29080;ç;6
+29078;Ç;6
+36641;Hercules;2
+36641;Hercules;2
+3024;c;6
+3069;C;6
+29080;ç;6
+29078;Ç;6
+2322;CD;2
+15349;CD;2
+25614;videojuego;2
+9156;lector de CD;2
+24509;reproductor de CD;2
+25614;videojuego;2
+15349;CD;2
+2322;CD;2
+9156;lector de CD;2
+24509;reproductor de CD;2
+28372;Clasificación Decimal Universal;2
+28374;Clasificación Decimal Universal;2
+28375;Clasificación Decimal Universal;2
+28376;Clasificación Decimal Universal;2
+28377;Clasificación Decimal Universal;2
+28370;Clasificación Decimal Universal;2
+28371;Clasificación Decimal Universal;2
+28378;Clasificación Decimal Universal;2
+28382;Clasificación Decimal Universal;2
+28383;Clasificación Decimal Universal;2
+28384;Clasificación Decimal Universal;2
+28381;Clasificación Decimal Universal;2
+28380;Clasificación Decimal Universal;2
+28373;Clasificación Decimal Universal;2
+28379;Clasificación Decimal Universal;2
+28369;Clasificación Decimal Universal;2
+33963;Clasificación Decimal Universal;2
+33962;Clasificación Decimal Universal;2
+33965;Clasificación Decimal Universal;2
+33964;Clasificación Decimal Universal;2
+25693;centro de día;2
+16151;CRMF;1
+26677;Cabo Verde;1
+4886;verde;4
+4887;verde;4
+8317;aceituna;2
+36221;cruzar con semáforo en verde;3
+23859;cabo;2
+2838;pimiento;2
+5077;hoja;2
+4958;semáforo verde;2
+8354;judía verde;2
+36448;semáforo verde;2
+6646;pescado;2
+27646;Camboya;1
+8055;Camerún;1
+35835;Camino de Santiago;1
+6955;vía;2
+35831;Santiago de Compostela;1
+35865;Día de Santiago;1
+35871;Santiago el Mayor;1
+35833;Catedral de Santiago;1
+8057;Canadá;1
+29587;Canadá;1
+8058;Canarias;1
+8525;Canarias;1
+8060;Cantabria;1
+8527;Cantabria;1
+14836;Cantabria;1
+5942;Caperucita Roja;1
+5942;Caperucita Roja;1
+8371;tarjeta roja;2
+9075;Cruz Roja;1
+30253;Cruz Roja;1
+36197;Media Luna Roja;1
+36225;Media Luna Roja;1
+24941;Capitolio;1
+15501;Castañada;1
+24951;Castañada;1
+14768;Castellón;1
+8067;Castilla La Mancha;1
+8529;Castilla La Mancha;1
+7151;mancha;2
+8068;Castilla León;1
+8530;Castilla León;1
+8068;Castilla León;1
+8530;Castilla León;1
+2449;león;2
+14772;León;1
+25187;león;2
+27501;león marino;2
+8067;Castilla La Mancha;1
+8529;Castilla La Mancha;1
+5422;castillo;2
+5421;castillo;2
+5950;castillo;2
+25411;castillo;2
+28259;castillo hinchable;2
+4790;castillo de arena;2
+5421;castillo;2
+5422;castillo;2
+5950;castillo;2
+25411;castillo;2
+28259;castillo hinchable;2
+4790;castillo de arena;2
+8069;Cataluña;1
+8532;Cataluña;1
+25550;Catedral de Málaga;1
+5423;Catedral de la Seo;1
+14689;Málaga;1
+24153;Málaga;1
+25411;castillo;2
+35833;Catedral de Santiago;1
+25544;Palacio de Ferias y Congresos de Málaga;1
+35833;Catedral de Santiago;1
+5423;Catedral de la Seo;1
+25550;Catedral de Málaga;1
+35835;Camino de Santiago;1
+35831;Santiago de Compostela;1
+35865;Día de Santiago;1
+35871;Santiago el Mayor;1
+5423;Catedral de la Seo;1
+25550;Catedral de Málaga;1
+35833;Catedral de Santiago;1
+21527;Cenicienta;1
+16151;CRMF;1
+5424;centro;2
+15748;centro;2
+11211;centro comercial;2
+15551;centro comercial;2
+34133;centro auditivo;2
+36247;centro cívico;2
+36249;centro histórico;2
+25692;centro de día;2
+25693;centro de día;2
+29859;centro de salud;2
+29889;tienda de estética;2
+32246;centro de salud;2
+32348;centro de interpretación;2
+32349;centro de interpretación;2
+32712;centro de rehabilitación;2
+35645;centro de datos;2
+29857;centro de salud mental;2
+29967;centro de reconociminento médico;2
+32824;colegio de educación especial;2
+34312;centro especial de empleo;2
+36079;centro de atención temprana;2
+29851;centro de interpretación de las murallas;2
+29849;centro de atención a la mujer;2
+5954;cerdito;2
+5956;cerdito;2
+5955;cerdito;2
+5955;cerdito;2
+5956;cerdito;2
+5954;cerdito;2
+4693;mediano;4
+5956;cerdito;2
+5955;cerdito;2
+5954;cerdito;2
+4716;pequeño;4
+6162;Oso Pequeño;1
+34088;plato pequeño;2
+15351;Cervantes;1
+8070;Ceuta;1
+8535;Ceuta;1
+14837;Ceuta;1
+31330;Ceuta;1
+31331;Ceuta;1
+26752;Chad;1
+21535;Chequia;1
+8071;Chile;1
+29598;Chile;1
+8074;China;1
+5958;china;2
+4924;caja china;2
+10272;Muralla China;1
+21536;Chipre;1
+36173;cabezudo;2
+14763;Ciudad Real;1
+2704;ciudad;2
+5963;ciudad;2
+13348;pavo real;2
+36420;paje;2
+36421;paje;2
+28372;Clasificación Decimal Universal;2
+28374;Clasificación Decimal Universal;2
+28375;Clasificación Decimal Universal;2
+28376;Clasificación Decimal Universal;2
+28377;Clasificación Decimal Universal;2
+28370;Clasificación Decimal Universal;2
+28371;Clasificación Decimal Universal;2
+28378;Clasificación Decimal Universal;2
+28382;Clasificación Decimal Universal;2
+28383;Clasificación Decimal Universal;2
+28384;Clasificación Decimal Universal;2
+28381;Clasificación Decimal Universal;2
+28380;Clasificación Decimal Universal;2
+28373;Clasificación Decimal Universal;2
+28379;Clasificación Decimal Universal;2
+28369;Clasificación Decimal Universal;2
+33963;Clasificación Decimal Universal;2
+33962;Clasificación Decimal Universal;2
+33965;Clasificación Decimal Universal;2
+33964;Clasificación Decimal Universal;2
+14678;diseño universal;2
+2338;Coca-Cola;2
+2709;cola;2
+5967;cola;2
+12311;coca;2
+4940;Cola-Cao;1
+34961;cola de dinosaurio;2
+4940;Cola-Cao;1
+2709;cola;2
+5967;cola;2
+2338;Coca-Cola;2
+34961;cola de dinosaurio;2
+23957;Coliseo de Roma;1
+8080;Colombia;1
+29593;Colombia;1
+8246;Comunidad Valenciana;1
+8713;Comunidad Valenciana;1
+36372;clase de lengua y literatura catalana;2
+11453;comunidad educativa;2
+8156;Comunidad de Madrid;1
+8622;Comunidad de Madrid;1
+8156;Comunidad de Madrid;1
+8622;Comunidad de Madrid;1
+14840;Madrid;1
+8246;Comunidad Valenciana;1
+8713;Comunidad Valenciana;1
+11453;comunidad educativa;2
+25014;Corea del Norte;1
+8178;Norte;1
+6187;Polo Norte;1
+10285;hemisferio norte;2
+25015;Corea del Sur;1
+25015;Corea del Sur;1
+8228;Sur;1
+6188;Polo Sur;1
+10286;hemisferio sur;2
+25014;Corea del Norte;1
+5421;castillo;2
+5610;Aragón;1
+5384;Aragón;1
+5383;Aragón;1
+5608;Aragón;1
+11268;frutas de Aragón;2
+16377;presidente de Aragón;2
+23973;Corán;1
+21567;Costa Rica;1
+29726;Costa Rica;1
+2826;playa;2
+8007;acantilado;2
+10211;rica;4
+30518;playa;2
+26778;Costa de Marfil;1
+26778;Costa de Marfil;1
+2826;playa;2
+8007;acantilado;2
+30518;playa;2
+21567;Costa Rica;1
+29726;Costa Rica;1
+25024;Cremà;1
+21568;protector solar;2
+4873;crema de manos;2
+3376;pomada;2
+32204;pomada;2
+35637;crema;2
+5096;darse crema;3
+21583;dar;3
+21585;darse crema;3
+35829;crema corporal;2
+7763;crema de cacao;2
+15505;crema de queso;2
+24135;Jesús;1
+25036;Cristo Redentor;1
+25036;Cristo Redentor;1
+24135;Jesús;1
+21572;Croacia;1
+28986;Croacia;1
+9075;Cruz Roja;1
+30253;Cruz Roja;1
+5942;Caperucita Roja;1
+8371;tarjeta roja;2
+10370;educación física;2
+10371;educación física;2
+13036;educación física;2
+13038;educación física;2
+31945;educación física;2
+36197;Media Luna Roja;1
+36225;Media Luna Roja;1
+17218;Cuba;1
+29607;Cuba;1
+14764;Cuenca;1
+16637;Cupido;1
+14831;Cáceres;1
+14684;Cádiz;1
+24978;César Augusto;1
+21533;cesar;3
+21531;cesar;3
+14685;Córdoba;1
+3088;D;6
+3025;d;6
+9193;pinchadiscos;2
+5987;carnet;2
+30000;DYA;1
+34595;Dacentrurus armatus;1
+21581;Dalí;1
+30010;Datos personales;2
+9702;datos personales;2
+35645;centro de datos;2
+27723;Diada;1
+34927;Diego de Marcilla;1
+34935;Isabel y Diego;1
+21799;Dinamarca;1
+28981;Dinamarca;1
+24013;Dios;1
+35069;Dios;1
+5987;carnet;2
+21802;documento;2
+4621;décimo de lotería;2
+31135;Antequera;1
+31029;Antequera;1
+31133;Antequera;1
+10359;Don Quijote;1
+15373;Dulcinea;1
+15373;Dulcinea;1
+29927;promover;3
+8173;mundial;4
+26607;autismo;2
+9074;Banco Mundial;1
+26594;niño con autismo;2
+26595;niña con autismo;2
+26598;persona con autismo;2
+26599;persona con autismo;2
+26602;personas con autismo;2
+26603;persona con autismo;2
+26591;niños con autismo;2
+26606;niño con autismo;2
+5071;Año Nuevo;1
+32480;¡Feliz año nuevo!;5
+31777;ano;2
+6903;año;2
+32536;Año Nuevo;1
+8261;Nochevieja;1
+3092;Día de Navidad;1
+32456;¡Feliz Navidad!;5
+32458;¡Feliz Navidad!;5
+7269;tarjeta de Navidad;2
+3134;Navidad;1
+3058;árbol de Navidad;2
+3100;Estrella de Navidad;1
+5083;luces de Navidad;2
+6885;adorno de Navidad;2
+12305;Tronca de Navidad;2
+24859;árbol de Navidad;2
+36394;flor de pascua;2
+3067;bolas del árbol de navidad;2
+8296;bola del árbol de navidad;2
+8260;Nochebuena;1
+8261;Nochevieja;1
+32534;Nochevieja;1
+5072;Día de Reyes;1
+3124;Reyes Magos;1
+26390;Reyes Magos;1
+28267;Día de San Jorge;1
+5576;San Jorge;1
+12309;San Jorge;1
+25427;San Jorge;1
+5577;San Lorenzo;1
+6648;San Jacobo;2
+7238;San José;1
+15036;San Juan;1
+19541;San Valentín;1
+19543;San Valentín;1
+19545;San Valentín;1
+24386;San Juan;1
+27309;San Marino;1
+28701;San Valero;1
+28960;San Sebastián;1
+29581;San Marino;1
+32452;San Juan;1
+5565;Roscón de San Valero;1
+29734;San Cristóbal y Nieves;1
+29735;San Cristóbal y Nieves;1
+31388;Torre de San Salvador;1
+27310;San Vicente y las Granadinas;1
+5519;Monasterio de San Juan de la Peña;1
+35865;Día de Santiago;1
+35835;Camino de Santiago;1
+35831;Santiago de Compostela;1
+35871;Santiago el Mayor;1
+35833;Catedral de Santiago;1
+6951;calabaza;2
+32460;Día de Todos los Santos;1
+27152;Día de los Santos Inocentes;1
+3091;Día de la Madre;1
+31148;madre;2
+27152;Día de los Santos Inocentes;1
+6951;calabaza;2
+32460;Día de Todos los Santos;1
+19541;San Valentín;1
+19543;San Valentín;1
+19545;San Valentín;1
+4558;enamorados;4
+8995;enamorados;4
+11521;enamorados;4
+11529;enamorados;4
+31131;Antequera;1
+3093;Día del Padre;1
+2497;padre;2
+30850;rezar;3
+30889;rezar;3
+5073;Día del Pilar;1
+5394;basílica;2
+5606;Virgen del Pilar;1
+3096;E;6
+3026;e;6
+11399;y;6
+24617;formación online;2
+2639;aguja;2
+32576;salud e higiene;2
+33904;aguja e hilo;2
+32720;educación básica obligatoria;2
+11647;ESPLAI;2
+5446;Ebro;1
+19550;Ecuador;1
+29600;Ecuador;1
+34268;Edad de Hielo;1
+7128;hielo;2
+31843;menores;4
+7072;edad;2
+27106;hockey;2
+31075;tercera edad;2
+5088;pista de hielo;2
+16837;patinar;3
+22022;patines;2
+30450;patines;2
+30552;patinar sobre hielo;3
+30556;patinar sobre hielo;3
+30557;patinar sobre hielo;3
+30558;patinar sobre hielo;3
+30553;patinar sobre hielo;3
+30555;patinar sobre hielo;3
+30559;patinar sobre hielo;3
+30561;patinar sobre hielo;3
+30560;patinar sobre hielo;3
+32636;Paleolítico;1
+32638;Edad de Piedra;1
+34125;bolsa de hielo;2
+5080;jugador de hockey hielo;2
+27226;portería;2
+32640;Edad de los Metales;1
+32636;Paleolítico;1
+32638;Edad de Piedra;1
+31843;menores;4
+6594;piedra;2
+7072;edad;2
+31075;tercera edad;2
+32616;piedra pulida;2
+5518;Monasterio de Piedra;1
+5557;puente;2
+34268;Edad de Hielo;1
+32640;Edad de los Metales;1
+36431;juego de piedra papel o tijera;2
+32640;Edad de los Metales;1
+31843;menores;4
+7072;edad;2
+31075;tercera edad;2
+32636;Paleolítico;1
+32638;Edad de Piedra;1
+34268;Edad de Hielo;1
+8099;Egipto;1
+14843;El Hierro;1
+29652;El Salvador;1
+29653;El Salvador;1
+21581;Dalí;1
+31388;Torre de San Salvador;1
+5999;flautista;2
+21888;El gato con botas;1
+9881;gato;2
+9879;gato;2
+2287;botas;2
+2406;gato;2
+2667;botas;2
+3333;gato;2
+7114;gato;2
+35025;botas camperas;2
+4580;botas de montaña;2
+5552;apretar;3
+16585;botas de fútbol;2
+27274;botas de fútbol;2
+28815;botas de esquí;2
+30239;Maullido de gato;1
+30237;Maullido de gato apoyo;2
+27730;Emiratos Árabes Unidos;1
+8112;Estados Unidos;1
+29588;Estados Unidos;1
+27737;Entierro de la Sardina;1
+3195;entierro;2
+7809;sardina;2
+25670;sardina;2
+5072;Día de Reyes;1
+25064;Equipos de Tratamiento Familiar;2
+34000;punto de encuentro familiar;2
+34317;punto de encuentro familiar;2
+26833;Eritrea;1
+34069;Escandinavia;1
+21844;Escocia;1
+5610;Aragón;1
+7089;escudo;2
+34197;escudo;2
+5384;Aragón;1
+5383;Aragón;1
+5608;Aragón;1
+5421;castillo;2
+11268;frutas de Aragón;2
+16377;presidente de Aragón;2
+21853;Eslovaquia;1
+29572;Eslovaquia;1
+29573;Eslovenia;1
+29586;Eslovenia;1
+8108;España;1
+10476;España;1
+28967;España;1
+10306;ríos de españa;2
+24029;Espíritu Santo;1
+30872;lectura del Santo Evangelio;2
+30873;lectura del Santo Evangelio;2
+30874;lectura del Santo Evangelio;2
+30875;lectura del Santo Evangelio;2
+30876;lectura del Santo Evangelio;2
+30877;lectura del Santo Evangelio;2
+30878;lectura del Santo Evangelio;2
+30879;lectura del Santo Evangelio;2
+24392;santo;2
+35155;santo;2
+32950;Viernes Santo;1
+32951;Viernes Santo;1
+13366;huesos de santo;2
+8112;Estados Unidos;1
+29588;Estados Unidos;1
+27730;Emiratos Árabes Unidos;1
+21854;Estatua de la Libertad;1
+8113;estatua;2
+11488;libertad;2
+8114;Este;1
+7095;este;4
+8115;este cuento se ha acabado;5
+21856;Estonia;1
+29574;Estonia;1
+22795;estrella judia;2
+2752;estrella;2
+4644;estrella;2
+3100;Estrella de Navidad;1
+3310;estrella de mar;2
+36195;Maguén David Adom;1
+36227;Maguén David Adom;1
+3100;Estrella de Navidad;1
+32456;¡Feliz Navidad!;5
+32458;¡Feliz Navidad!;5
+22795;estrella judia;2
+7269;tarjeta de Navidad;2
+2752;estrella;2
+3134;Navidad;1
+4644;estrella;2
+3058;árbol de Navidad;2
+3092;Día de Navidad;1
+3310;estrella de mar;2
+5083;luces de Navidad;2
+6885;adorno de Navidad;2
+12305;Tronca de Navidad;2
+24859;árbol de Navidad;2
+36394;flor de pascua;2
+3067;bolas del árbol de navidad;2
+8296;bola del árbol de navidad;2
+26844;Etiopía;1
+30247;parlamento europeo;2
+5468;Europa;1
+8117;Europa;1
+34591;Europelta carbonensis;1
+8118;País Vasco;1
+8576;País Vasco;1
+24039;Evangelio;1
+30845;Evangelio;1
+30847;Evangelio;1
+30846;Evangelio;1
+30848;Evangelio;1
+30872;lectura del Santo Evangelio;2
+30873;lectura del Santo Evangelio;2
+30874;lectura del Santo Evangelio;2
+30875;lectura del Santo Evangelio;2
+30876;lectura del Santo Evangelio;2
+30877;lectura del Santo Evangelio;2
+30878;lectura del Santo Evangelio;2
+30879;lectura del Santo Evangelio;2
+8120;Extremadura;1
+8580;Extremadura;1
+3101;F;6
+3027;f;6
+9076;FAO;1
+32854;fístula arterio-venosa interna;2
+32855;fístula arterio-venosa interna;2
+9077;FMI;1
+5997;¡Feliz Cumpleaños!;5
+6499;¡Feliz Cumpleaños!;5
+16635;¡Feliz Cumpleaños!;5
+26786;¡Feliz Cumpleaños!;5
+26788;¡Feliz Cumpleaños!;5
+32456;¡Feliz Navidad!;5
+32458;¡Feliz Navidad!;5
+32480;¡Feliz año nuevo!;5
+9907;contento;4
+32123;contento;4
+3087;cumpleaños;2
+26781;cumpleaños;2
+28491;cumpleaños;2
+28492;cumpleaños;2
+25488;tarta;2
+32456;¡Feliz Navidad!;5
+32458;¡Feliz Navidad!;5
+5997;¡Feliz Cumpleaños!;5
+6499;¡Feliz Cumpleaños!;5
+16635;¡Feliz Cumpleaños!;5
+26786;¡Feliz Cumpleaños!;5
+26788;¡Feliz Cumpleaños!;5
+7269;tarjeta de Navidad;2
+32480;¡Feliz año nuevo!;5
+3134;Navidad;1
+9907;contento;4
+32123;contento;4
+3058;árbol de Navidad;2
+3092;Día de Navidad;1
+3100;Estrella de Navidad;1
+5083;luces de Navidad;2
+6885;adorno de Navidad;2
+12305;Tronca de Navidad;2
+24859;árbol de Navidad;2
+36394;flor de pascua;2
+3067;bolas del árbol de navidad;2
+8296;bola del árbol de navidad;2
+32480;¡Feliz año nuevo!;5
+5997;¡Feliz Cumpleaños!;5
+6499;¡Feliz Cumpleaños!;5
+16635;¡Feliz Cumpleaños!;5
+26786;¡Feliz Cumpleaños!;5
+26788;¡Feliz Cumpleaños!;5
+32456;¡Feliz Navidad!;5
+32458;¡Feliz Navidad!;5
+5071;Año Nuevo;1
+9907;contento;4
+31777;ano;2
+32123;contento;4
+6903;año;2
+32536;Año Nuevo;1
+8261;Nochevieja;1
+5073;Día del Pilar;1
+5394;basílica;2
+5606;Virgen del Pilar;1
+32800;fiestas;2
+32566;actividades y fiestas;2
+27761;Filipinas;1
+8261;Nochevieja;1
+5071;Año Nuevo;1
+32480;¡Feliz año nuevo!;5
+31777;ano;2
+6903;año;2
+32536;Año Nuevo;1
+21873;Finlandia;1
+28983;Finlandia;1
+5409;Forana;1
+5410;cabezudo;2
+14848;Formentera;1
+8121;Francia;1
+28968;Francia;1
+15493;Goya;1
+8279;Frankenstein;1
+24478;Fuerteventura;1
+3104;G;6
+3028;g;6
+26871;Gabón;1
+8123;Galicia;1
+8588;Galicia;1
+21882;Gallinita ciega;1
+28693;Gallinita ciega;1
+28695;Gallinita ciega;1
+4600;invidente;2
+11574;invidente;2
+8124;Gambia;1
+7769;Gaspar;1
+26872;Georgia;1
+29575;Georgia;1
+14833;Gerona;1
+26873;Ghana;1
+15493;Goya;1
+24477;Gran Canaria;1
+14686;Granada;1
+26874;Granada;1
+29733;Granada;1
+8594;granada;2
+31027;Alhambra;1
+8130;Grecia;1
+28973;Grecia;1
+26875;Groenlandia;1
+14765;Guadalajara;1
+21916;Guatemala;1
+29724;Guatemala;1
+26879;Guayana Francesa;1
+4967;tortilla;2
+26876;Guinea;1
+26877;Guinea Ecuatorial;1
+26877;Guinea Ecuatorial;1
+26876;Guinea;1
+14760;Guipúzcoa;1
+26878;Guyana;1
+29601;Guyana;1
+3112;H;6
+3029;h;6
+27835;Haití;1
+29728;Haití;1
+6951;calabaza;2
+21923;Hansel y Gretel;1
+36641;Hercules;2
+32632;Historia;1
+36368;clase de historia;2
+32634;historia;2
+32544;religión;2
+19547;Holanda;1
+29568;Holanda;1
+29606;Honduras;1
+29605;Honduras;1
+14687;Huelva;1
+5488;Huesca;1
+14680;Huesca;1
+10251;Hungría;1
+29576;Hungría;1
+3117;I;6
+3030;i;6
+14850;Ibiza;1
+34983;Iguanodón galvensis;1
+25165;India;1
+25484;India;1
+10339;india;4
+27852;Indonesia;1
+31021;Inka Kola;2
+25168;Irak;1
+21941;Irlanda;1
+25169;Irán;1
+34929;Isabel de Segura;1
+34931;Pedro de Segura;1
+34935;Isabel y Diego;1
+34935;Isabel y Diego;1
+34927;Diego de Marcilla;1
+34929;Isabel de Segura;1
+21942;Islandia;1
+25170;Israel;1
+8143;Italia;1
+28971;Italia;1
+3119;J;6
+3031;j;6
+26880;Jamaica;1
+29731;Jamaica;1
+24158;Jamsa;1
+36125;Janucá;1
+8144;Japón;1
+14688;Jaén;1
+24135;Jesús;1
+24135;Jesús;1
+7177;Niño Jesús;1
+25319;Petra;1
+27857;Jordania;1
+7238;San José;1
+24386;San Juan;1
+15036;San Juan;1
+32452;San Juan;1
+5519;Monasterio de San Juan de la Peña;1
+28279;Jueves Graso;1
+6536;jueves;6
+28281;Jueves Lardero;1
+28281;Jueves Lardero;1
+6536;jueves;6
+28279;Jueves Graso;1
+10293;Júpiter;1
+3120;K;6
+3032;k;6
+27858;Kazajistán;1
+27859;Kirguistán;1
+27860;Kuwait;1
+3121;L;6
+3033;l;6
+5421;castillo;2
+31027;Alhambra;1
+8594;granada;2
+14686;Granada;1
+26874;Granada;1
+29733;Granada;1
+21433;La Bella Durmiente;1
+4659;guapa;4
+11194;bonito;4
+35913;La Compostela;1
+35831;Santiago de Compostela;1
+14755;La Coruña;1
+14845;La Gomera;1
+36550;La Meca;1
+14846;La Palma;1
+8149;La Rioja;1
+8613;La Rioja;1
+14839;La Rioja;1
+22098;La Sagrada Familia;1
+11728;familia;2
+11729;familia;2
+11731;familia;2
+11733;familia;2
+11735;familia;2
+31466;familia;2
+31467;familia;2
+2392;familia;2
+24515;familia;2
+24523;familia;2
+24525;familia;2
+30245;familia;2
+24517;familia adoptiva;2
+24521;familia monoparental;2
+24519;familia monoparental;2
+16799;libro de familia;2
+32084;médico de familia;2
+32085;médico de familia;2
+5423;Catedral de la Seo;1
+14847;Lanzarote;1
+27861;Laos;1
+21961;Letonia;1
+29577;Letonia;1
+14772;León;1
+2449;león;2
+25187;león;2
+8068;Castilla León;1
+8530;Castilla León;1
+27501;león marino;2
+27303;Liechtenstein;1
+29578;Liechtenstein;1
+21968;Lituania;1
+5422;castillo;2
+6140;Lobo Feroz;1
+36608;Lobo Feroz;1
+5892;lobo;2
+8135;hombre lobo;2
+5503;Los Amantes;1
+14756;Lugo;1
+2933;Luna;1
+10294;luna llena;2
+10295;luna nueva;2
+8096;eclipse;2
+36197;Media Luna Roja;1
+36225;Media Luna Roja;1
+21973;Luxemburgo;1
+14834;Lérida;1
+27862;Líbano;1
+3125;M;6
+3035;m;6
+32850;después del mediodía;4
+32848;antes del mediodía;4
+21974;Macedonia;1
+8620;macedonia;2
+25207;Machu Picchu;1
+30204;Madagascar;1
+14840;Madrid;1
+8156;Comunidad de Madrid;1
+8622;Comunidad de Madrid;1
+15501;Castañada;1
+24951;Castañada;1
+36195;Maguén David Adom;1
+36227;Maguén David Adom;1
+22795;estrella judia;2
+27863;Malasia;1
+27864;Maldivas;1
+14851;Mallorca;1
+21975;Malta;1
+29579;Malta;1
+6144;Mamá Osa;1
+2458;mamá;2
+24158;Jamsa;1
+2928;mano;2
+4624;derecha;4
+4672;izquierda;4
+30168;mano izquierda;2
+5609;cepillo de mano;2
+5953;cepillo;2
+6610;dar la mano;3
+9034;saber;3
+10330;freno de mano;2
+16885;saber;3
+26405;saber;3
+28419;levantar la mano;3
+28420;levantar la mano;3
+28421;levantar la mano;3
+34286;pedir la mano;3
+13024;coger;3
+24552;correr de la mano;3
+24551;correr de la mano;3
+22192;meterse la mano en el pantalón;3
+34848;meter la mano en la boca;3
+33040;Mar Menor;1
+16121;menor;4
+2925;mar;2
+4571;bajo;4
+4716;pequeño;4
+10196;menor;4
+2672;caballito de mar;2
+3310;estrella de mar;2
+24501;agua salada;2
+34033;erizo de mar;2
+8159;Marruecos;1
+10296;Marte;1
+27304;Martinica;1
+7301;Virgen María;1
+30239;Maullido de gato;1
+9881;gato;2
+9879;gato;2
+30237;Maullido de gato apoyo;2
+2406;gato;2
+3333;gato;2
+7114;gato;2
+5552;apretar;3
+21888;El gato con botas;1
+30237;Maullido de gato apoyo;2
+9881;gato;2
+9879;gato;2
+30239;Maullido de gato;1
+2406;gato;2
+3333;gato;2
+7114;gato;2
+12252;apoyo;2
+5552;apretar;3
+16023;productos de apoyo;2
+33080;aula de apoyo;2
+21888;El gato con botas;1
+30235;Síndrome de Down apoyo;2
+36197;Media Luna Roja;1
+36225;Media Luna Roja;1
+2933;Luna;1
+8358;media;2
+5942;Caperucita Roja;1
+8371;tarjeta roja;2
+9075;Cruz Roja;1
+10294;luna llena;2
+10295;luna nueva;2
+25706;media pensión;2
+30253;Cruz Roja;1
+8096;eclipse;2
+36498;quitar la media;3
+36596;poner la media;3
+29458;las diez y media;6
+29464;las once y media;6
+29472;las doce y media;6
+29474;la una y media;6
+29480;las dos y media;6
+29486;las tres y media;6
+29492;las cuatro y media;6
+29498;las cinco y media;6
+29504;las seis y media;6
+29510;las siete y media;6
+29516;las ocho y media;6
+29522;las nueve y media;6
+34337;unidad de media estancia;2
+8264;Melchor;1
+8164;Melilla;1
+8628;Melilla;1
+14838;Melilla;1
+14852;Menorca;1
+10297;Mercurio;1
+15351;Cervantes;1
+24194;Moisés;1
+29246;escanciar;3
+27305;Moldavia;1
+29580;Moldavia;1
+5518;Monasterio de Piedra;1
+6594;piedra;2
+32677;monasterio;2
+32678;monasterio;2
+32790;monasterio;2
+32616;piedra pulida;2
+5557;puente;2
+32636;Paleolítico;1
+32638;Edad de Piedra;1
+36431;juego de piedra papel o tijera;2
+5519;Monasterio de San Juan de la Peña;1
+5519;Monasterio de San Juan de la Peña;1
+24386;San Juan;1
+15036;San Juan;1
+32452;San Juan;1
+5576;San Jorge;1
+32677;monasterio;2
+32678;monasterio;2
+32790;monasterio;2
+5577;San Lorenzo;1
+6648;San Jacobo;2
+7238;San José;1
+12309;San Jorge;1
+19541;San Valentín;1
+19543;San Valentín;1
+19545;San Valentín;1
+25427;San Jorge;1
+27309;San Marino;1
+28701;San Valero;1
+28960;San Sebastián;1
+29581;San Marino;1
+5518;Monasterio de Piedra;1
+5565;Roscón de San Valero;1
+28267;Día de San Jorge;1
+29734;San Cristóbal y Nieves;1
+29735;San Cristóbal y Nieves;1
+31131;Antequera;1
+31388;Torre de San Salvador;1
+27310;San Vicente y las Granadinas;1
+5520;Moncayo;1
+28061;Mongolia;1
+27307;Montenegro;1
+5411;cabezudo;2
+10272;Muralla China;1
+5958;china;2
+8074;China;1
+8266;muro;2
+4924;caja china;2
+36647;juego de la muralla;2
+8174;Murcia;1
+8636;Murcia;1
+14841;Murcia;1
+14689;Málaga;1
+24153;Málaga;1
+25411;castillo;2
+25550;Catedral de Málaga;1
+25544;Palacio de Ferias y Congresos de Málaga;1
+25494;Teatro romano de Mérida;1
+8167;México;1
+29591;México;1
+27306;Mónaco;1
+3133;N;6
+3036;n;6
+3412;ñ;6
+5085;Ñ;6
+9079;Naciones Unidas;1
+8177;Navarra;1
+8639;Navarra;1
+14842;Navarra;1
+3134;Navidad;1
+32456;¡Feliz Navidad!;5
+32458;¡Feliz Navidad!;5
+7269;tarjeta de Navidad;2
+3058;árbol de Navidad;2
+3092;Día de Navidad;1
+3100;Estrella de Navidad;1
+5083;luces de Navidad;2
+6885;adorno de Navidad;2
+12305;Tronca de Navidad;2
+24859;árbol de Navidad;2
+36394;flor de pascua;2
+3067;bolas del árbol de navidad;2
+8296;bola del árbol de navidad;2
+26252;Nefertiti;1
+32638;Edad de Piedra;1
+28062;Nepal;1
+10298;Neptuno;1
+22004;Nicaragua;1
+29604;Nicaragua;1
+34389;Nilo;1
+34433;cocodrilo;2
+7177;Niño Jesús;1
+2485;niño;2
+7176;niño;2
+10363;niño;2
+24135;Jesús;1
+28287;niño;2
+32842;niño;2
+32841;niño;2
+32843;niño;2
+32840;niño;2
+26594;niño con autismo;2
+26606;niño con autismo;2
+36716;niño con pañal;2
+30158;niño en ropa interior;2
+30188;niño con gafas nasales;2
+31217;niño en ropa interior;2
+31258;niño en ropa interior;2
+8260;Nochebuena;1
+7181;noche;2
+26997;noche;2
+35789;noche;2
+21018;día y noche;2
+8260;Nochebuena;1
+8261;Nochevieja;1
+32534;Nochevieja;1
+27913;Noreste;1
+27913;Noreste;1
+27915;Noroeste;1
+8178;Norte;1
+6187;Polo Norte;1
+10285;hemisferio norte;2
+25014;Corea del Norte;1
+10252;Noruega;1
+28982;Noruega;1
+24198;Noé;1
+23751;Arca de Noé;1
+25273;Nueva Zelanda;1
+3136;O;6
+3037;o;6
+11317;o;6
+24607;¿bien o mal?;5
+33924;amamantar a gemelos o mellizos;3
+36431;juego de piedra papel o tijera;2
+9078;OIT;1
+9080;OMS;1
+9079;Naciones Unidas;1
+27302;OTAN;1
+5528;Oceanía;1
+32699;océano;2
+2925;mar;2
+8179;Oeste;1
+5529;Ofrenda de flores;1
+7105;flores;2
+3271;jarrón de flores;2
+27017;Olentzero;1
+28063;Omán;1
+14757;Orense;1
+6162;Oso Pequeño;1
+2869;oso;2
+2868;oso;2
+2488;oso;2
+4716;pequeño;4
+5956;cerdito;2
+6165;Papá Oso;1
+34088;plato pequeño;2
+4945;osito;2
+3137;P;6
+3038;p;6
+32850;después del mediodía;4
+9162;PDI;2
+30512;PDI;2
+9081;PMA;1
+21020;profesor de pedagogía terapéutica;2
+21022;PT;2
+32938;profesor de pedagogía terapéutica;2
+36274;profesor de pedagogía terapéutica;2
+36275;PT;2
+36273;profesor de pedagogía terapéutica;2
+25325;Pablo Picasso;1
+25413;pintura;2
+25288;Pakistán;1
+25545;palacio de congresos;2
+25542;palacio de congresos;2
+25544;Palacio de Ferias y Congresos de Málaga;1
+5607;Zaragoza;1
+14682;Zaragoza;1
+17279;palacio;2
+25544;Palacio de Ferias y Congresos de Málaga;1
+25545;palacio de congresos;2
+25542;palacio de congresos;2
+17279;palacio;2
+14689;Málaga;1
+24153;Málaga;1
+25411;castillo;2
+25550;Catedral de Málaga;1
+14773;Palencia;1
+32636;Paleolítico;1
+17283;Panamá;1
+29725;Panamá;1
+24234;Papa;1
+31146;papá;2
+3139;Papá Noel;1
+6165;Papá Oso;1
+25297;Papá Noel;1
+25298;Papá Noel;1
+32454;Papá Noel;1
+3109;gorro de papá noel;2
+3150;Rodolfo el Reno;1
+3161;trineo de Papá Noel;2
+5065;calcetín de Papá Noel;2
+36356;carta a Papá Noel;2
+3139;Papá Noel;1
+25297;Papá Noel;1
+25298;Papá Noel;1
+32454;Papá Noel;1
+3109;gorro de papá noel;2
+3150;Rodolfo el Reno;1
+3161;trineo de Papá Noel;2
+5065;calcetín de Papá Noel;2
+36356;carta a Papá Noel;2
+24234;Papa;1
+31146;papá;2
+6165;Papá Oso;1
+6165;Papá Oso;1
+2869;oso;2
+2868;oso;2
+2488;oso;2
+24234;Papa;1
+31146;papá;2
+3139;Papá Noel;1
+6162;Oso Pequeño;1
+25297;Papá Noel;1
+25298;Papá Noel;1
+32454;Papá Noel;1
+4945;osito;2
+3109;gorro de papá noel;2
+3150;Rodolfo el Reno;1
+3161;trineo de Papá Noel;2
+5065;calcetín de Papá Noel;2
+36356;carta a Papá Noel;2
+8181;Paraguay;1
+29599;Paraguay;1
+35863;Parque Güell;1
+2859;parque;2
+26296;parque temático;2
+30979;parque acuático;2
+32987;parque biosaludable;2
+32986;parque biosaludable;2
+36145;parque infantil;2
+36245;parque tecnológico;2
+3140;parque de bomberos;2
+6578;parque de bomberos;2
+32718;parque de patinaje;2
+35005;parque de dinosaurios;2
+35006;parque de dinosaurios;2
+36131;Pésaj;1
+8337;alubia;2
+8354;judía verde;2
+22795;estrella judia;2
+11304;huevo de chocolate;2
+12307;mona de Pascua;2
+29678;mona de Pascua;2
+32478;mona de Pascua;2
+36394;flor de pascua;2
+8118;País Vasco;1
+8576;País Vasco;1
+35431;país;2
+19547;Holanda;1
+34933;Pedro de Azagra;1
+34931;Pedro de Segura;1
+34931;Pedro de Segura;1
+34929;Isabel de Segura;1
+34933;Pedro de Azagra;1
+28899;Peine del Viento;1
+10726;¿hay viento?;5
+10736;¡hay viento!;5
+2852;peine;2
+7259;viento;2
+35591;hacer viento;3
+10308;peine y tijeras;2
+13086;molino;2
+21962;limpiar el peine;3
+25311;peine para caballos;2
+35667;instrumentos de viento;2
+36543;guardar el peine;3
+36590;sacar el peine;3
+8185;Perú;1
+29592;Perú;1
+25319;Petra;1
+31131;Antequera;1
+4558;enamorados;4
+8995;enamorados;4
+11521;enamorados;4
+11529;enamorados;4
+19541;San Valentín;1
+19543;San Valentín;1
+19545;San Valentín;1
+5519;Monasterio de San Juan de la Peña;1
+25325;Pablo Picasso;1
+25413;pintura;2
+5394;basílica;2
+5606;Virgen del Pilar;1
+5073;Día del Pilar;1
+5412;cabezudo;2
+6177;Pinocho;1
+5541;Pirineos;1
+9162;PDI;2
+30512;PDI;2
+2526;pizarra;2
+36659;pizarra;2
+23408;reloj digital;2
+36722;rotulador para pizarra;2
+5543;Plaza del Torico;1
+6185;plaza;2
+6184;plaza;2
+10299;Plutón;1
+6187;Polo Norte;1
+3348;polo;2
+8178;Norte;1
+24308;polo;2
+6188;Polo Sur;1
+10285;hemisferio norte;2
+25014;Corea del Norte;1
+6188;Polo Sur;1
+3348;polo;2
+8228;Sur;1
+24308;polo;2
+6187;Polo Norte;1
+10286;hemisferio sur;2
+25015;Corea del Sur;1
+22051;Polonia;1
+28985;Polonia;1
+14758;Pontevedra;1
+31316;Port-a-Cath;2
+31317;Port-a-Cath;2
+31318;Port-a-Cath;2
+31319;Port-a-Cath;2
+31354;análisis de sangre;2
+29566;llevar a cuestas;3
+27365;frente a frente;4
+36636;entrar a canasta;3
+5570;saltar a la comba;3
+6608;saltar a la comba;3
+32954;vámonos a otra tienda;5
+3021;a;6
+3049;A;6
+7041;a;6
+5367;al lado de;4
+27387;a veces;4
+27564;a veces;4
+32848;antes del mediodía;4
+6643;montar a caballo;3
+7068;coser;3
+8274;a través de;6
+11299;mando a distancia;2
+22775;ayuda a domicilio;2
+26182;mando a distancia;2
+26638;aprender a nadar;3
+26641;aprender a nadar;3
+26639;aprender a nadar;3
+26640;aprender a nadar;3
+27399;conectar a internet;3
+27626;montar a caballo;3
+27627;equitación;2
+32940;vámonos a casa;5
+35483;montar a caballo;3
+36495;tirar a canasta;3
+36674;tirar a canasta;3
+3002;calamares a la romana;2
+4687;llamar a la puerta;3
+7158;mi turno;5
+8985;comprar;3
+8986;comprar;3
+10162;jugar a la videoconsola;3
+10163;bolos;2
+10372;educación física;2
+10373;educación física;2
+10376;educación física;2
+10377;educación física;2
+10380;educación física;2
+10378;educación física;2
+10379;educación física;2
+13042;educación física;2
+13052;educación física;2
+13054;educación física;2
+13056;educación física;2
+13058;educación física;2
+13044;educación física;2
+13050;educación física;2
+21326;chocolate a la taza;2
+28073;subir a la trona;3
+28074;subir a la trona;3
+28441;saltar a la comba;3
+28665;comprar;3
+29044;pescado a la parrilla;2
+31892;jugar a la pelota;3
+32101;automensaje;2
+33050;trabajo uno a uno;2
+35205;subir a una atracción;3
+35245;bolos;2
+35371;jugar a la pelota;3
+35411;jugar a la pelota;3
+36333;mirar a los ojos;3
+36356;carta a Papá Noel;2
+36398;hablar a la vez;3
+36425;patatas asadas;2
+36428;pescado a la plancha;2
+9207;prohibido peatones;5
+9208;prohibido bicicletas;5
+11366;saltar a la pata coja;3
+11365;saltar a la pata coja;3
+28445;saltar a la pata coja;3
+32216;Zapatilla por Detrás;1
+32706;transición a la vida adulta;2
+33924;amamantar a gemelos o mellizos;3
+29849;centro de atención a la mujer;2
+33974;técnico en atención a personas en situación de dependencia;2
+24873;Portal de Belén;1
+5089;belén;2
+8196;Portugal;1
+28969;Portugal;1
+32630;Prehistoria;1
+34571;Princesa de Burundi;2
+5554;princesa;2
+26676;Burundi;1
+34587;Proa Valdearinnoensis;1
+31700;Propess;2
+28014;Protección Civil;1
+12261;protección;2
+12260;protección;2
+3342;guardia civil;2
+11279;guardia civil;2
+32996;registro civil;2
+26302;pasear al perro;3
+30136;prueba de reflejos;2
+30776;prueba de alergia;2
+30777;prueba de alergia;2
+30778;prueba de alergia;2
+30779;prueba de alergia;2
+30780;prueba de alergia;2
+5557;puente;2
+6194;puente;2
+6594;piedra;2
+32616;piedra pulida;2
+5518;Monasterio de Piedra;1
+32636;Paleolítico;1
+32638;Edad de Piedra;1
+36431;juego de piedra papel o tijera;2
+22056;Puerta de Alcalá;1
+3244;puerta;2
+24325;puerta batiente;2
+24324;puerta batiente;2
+24332;puerta oscilobatiente;2
+22058;Puerta de Brandeburgo;1
+22060;Puerta del Carmen;1
+24021;cerrar la puerta;3
+24597;abrir la puerta;3
+25357;Badajoz;1
+28455;abrir la puerta;3
+28457;cerrar la puerta;3
+29102;golpear la puerta;3
+4687;llamar a la puerta;3
+22058;Puerta de Brandeburgo;1
+3244;puerta;2
+24325;puerta batiente;2
+24324;puerta batiente;2
+24332;puerta oscilobatiente;2
+22056;Puerta de Alcalá;1
+22060;Puerta del Carmen;1
+24021;cerrar la puerta;3
+24597;abrir la puerta;3
+25357;Badajoz;1
+28455;abrir la puerta;3
+28457;cerrar la puerta;3
+29102;golpear la puerta;3
+4687;llamar a la puerta;3
+25357;Badajoz;1
+3244;puerta;2
+4563;aplaudir;3
+24325;puerta batiente;2
+24324;puerta batiente;2
+24332;puerta oscilobatiente;2
+36682;aplaudir;3
+22056;Puerta de Alcalá;1
+22058;Puerta de Brandeburgo;1
+22060;Puerta del Carmen;1
+24021;cerrar la puerta;3
+24597;abrir la puerta;3
+28455;abrir la puerta;3
+28457;cerrar la puerta;3
+29048;juego de palmas;2
+29102;golpear la puerta;3
+4687;llamar a la puerta;3
+11226;dar palmas en las rodillas;3
+22060;Puerta del Carmen;1
+3244;puerta;2
+24325;puerta batiente;2
+24324;puerta batiente;2
+24332;puerta oscilobatiente;2
+22056;Puerta de Alcalá;1
+22058;Puerta de Brandeburgo;1
+24021;cerrar la puerta;3
+24597;abrir la puerta;3
+25357;Badajoz;1
+28455;abrir la puerta;3
+28457;cerrar la puerta;3
+29102;golpear la puerta;3
+4687;llamar a la puerta;3
+17296;Puerto Rico;1
+3145;puerto;2
+4733;rico;4
+15535;puerto;2
+31326;puerto;2
+32410;puerto;2
+35453;puerto deportivo;2
+22062;Pulgarcito;1
+36131;Pésaj;1
+3146;Q;6
+3039;q;6
+28064;Qatar;1
+3147;R;6
+3040;r;6
+36438;Ramadán;1
+8206;Reino Unido;1
+28974;Reino Unido;1
+21535;Chequia;1
+27308;República Dominicana;1
+29727;República Dominicana;1
+26769;República Democrática del Congo;1
+26769;República Democrática del Congo;1
+21535;Chequia;1
+27308;República Dominicana;1
+29727;República Dominicana;1
+27308;República Dominicana;1
+29727;República Dominicana;1
+21535;Chequia;1
+26769;República Democrática del Congo;1
+5072;Día de Reyes;1
+3124;Reyes Magos;1
+26390;Reyes Magos;1
+3124;Reyes Magos;1
+26390;Reyes Magos;1
+5072;Día de Reyes;1
+6207;Ricitos de Oro;1
+6161;oro;2
+3128;medalla;2
+5413;cabezudo;2
+3150;Rodolfo el Reno;1
+9069;reno;2
+5565;Roscón de San Valero;1
+28701;San Valero;1
+5576;San Jorge;1
+5577;San Lorenzo;1
+6648;San Jacobo;2
+7238;San José;1
+12309;San Jorge;1
+15036;San Juan;1
+19541;San Valentín;1
+19543;San Valentín;1
+19545;San Valentín;1
+24386;San Juan;1
+25427;San Jorge;1
+27309;San Marino;1
+28960;San Sebastián;1
+29581;San Marino;1
+32452;San Juan;1
+34888;haba del roscón;2
+28267;Día de San Jorge;1
+29734;San Cristóbal y Nieves;1
+29735;San Cristóbal y Nieves;1
+31388;Torre de San Salvador;1
+27310;San Vicente y las Granadinas;1
+5519;Monasterio de San Juan de la Peña;1
+8214;Rumanía;1
+28975;Rumanía;1
+8215;Rusia;1
+28976;Rusia;1
+25036;Cristo Redentor;1
+2811;río;2
+5446;Ebro;1
+34391;río Murray;1
+34941;río Amazonas;1
+34943;río Mekong;1
+3152;S;6
+3041;s;6
+11657;SOI;2
+29016;SOS;1
+11659;STO;2
+36133;Sabbat;1
+22098;La Sagrada Familia;1
+11728;familia;2
+11729;familia;2
+11731;familia;2
+11733;familia;2
+11735;familia;2
+31466;familia;2
+31467;familia;2
+2392;familia;2
+24515;familia;2
+24523;familia;2
+24525;familia;2
+30245;familia;2
+24517;familia adoptiva;2
+24521;familia monoparental;2
+24519;familia monoparental;2
+16799;libro de familia;2
+32084;médico de familia;2
+32085;médico de familia;2
+14774;Salamanca;1
+21581;Dalí;1
+29652;El Salvador;1
+29653;El Salvador;1
+31388;Torre de San Salvador;1
+29734;San Cristóbal y Nieves;1
+29735;San Cristóbal y Nieves;1
+5576;San Jorge;1
+5577;San Lorenzo;1
+6648;San Jacobo;2
+7238;San José;1
+12309;San Jorge;1
+15036;San Juan;1
+19541;San Valentín;1
+19543;San Valentín;1
+19545;San Valentín;1
+24386;San Juan;1
+25427;San Jorge;1
+27309;San Marino;1
+28701;San Valero;1
+28960;San Sebastián;1
+29581;San Marino;1
+32452;San Juan;1
+5565;Roscón de San Valero;1
+28267;Día de San Jorge;1
+31388;Torre de San Salvador;1
+27310;San Vicente y las Granadinas;1
+5519;Monasterio de San Juan de la Peña;1
+6648;San Jacobo;2
+5576;San Jorge;1
+5577;San Lorenzo;1
+7238;San José;1
+12309;San Jorge;1
+15036;San Juan;1
+19541;San Valentín;1
+19543;San Valentín;1
+19545;San Valentín;1
+24386;San Juan;1
+25427;San Jorge;1
+27309;San Marino;1
+28701;San Valero;1
+28960;San Sebastián;1
+29581;San Marino;1
+32452;San Juan;1
+5565;Roscón de San Valero;1
+28267;Día de San Jorge;1
+29734;San Cristóbal y Nieves;1
+29735;San Cristóbal y Nieves;1
+31388;Torre de San Salvador;1
+27310;San Vicente y las Granadinas;1
+5519;Monasterio de San Juan de la Peña;1
+5576;San Jorge;1
+12309;San Jorge;1
+25427;San Jorge;1
+28267;Día de San Jorge;1
+5577;San Lorenzo;1
+6648;San Jacobo;2
+7238;San José;1
+15036;San Juan;1
+19541;San Valentín;1
+19543;San Valentín;1
+19545;San Valentín;1
+24386;San Juan;1
+27309;San Marino;1
+28701;San Valero;1
+28960;San Sebastián;1
+29581;San Marino;1
+32452;San Juan;1
+5565;Roscón de San Valero;1
+29734;San Cristóbal y Nieves;1
+29735;San Cristóbal y Nieves;1
+31388;Torre de San Salvador;1
+27310;San Vicente y las Granadinas;1
+5519;Monasterio de San Juan de la Peña;1
+5576;San Jorge;1
+12309;San Jorge;1
+25427;San Jorge;1
+28267;Día de San Jorge;1
+5572;dragón;2
+5577;San Lorenzo;1
+6648;San Jacobo;2
+7238;San José;1
+15036;San Juan;1
+19541;San Valentín;1
+19543;San Valentín;1
+19545;San Valentín;1
+24386;San Juan;1
+27309;San Marino;1
+28701;San Valero;1
+28960;San Sebastián;1
+29581;San Marino;1
+32452;San Juan;1
+5565;Roscón de San Valero;1
+29734;San Cristóbal y Nieves;1
+29735;San Cristóbal y Nieves;1
+31388;Torre de San Salvador;1
+27310;San Vicente y las Granadinas;1
+5519;Monasterio de San Juan de la Peña;1
+7238;San José;1
+5576;San Jorge;1
+5577;San Lorenzo;1
+6648;San Jacobo;2
+12309;San Jorge;1
+15036;San Juan;1
+19541;San Valentín;1
+19543;San Valentín;1
+19545;San Valentín;1
+24386;San Juan;1
+25427;San Jorge;1
+27309;San Marino;1
+28701;San Valero;1
+28960;San Sebastián;1
+29581;San Marino;1
+32452;San Juan;1
+5565;Roscón de San Valero;1
+28267;Día de San Jorge;1
+29734;San Cristóbal y Nieves;1
+29735;San Cristóbal y Nieves;1
+31388;Torre de San Salvador;1
+27310;San Vicente y las Granadinas;1
+5519;Monasterio de San Juan de la Peña;1
+15036;San Juan;1
+24386;San Juan;1
+32452;San Juan;1
+5576;San Jorge;1
+5519;Monasterio de San Juan de la Peña;1
+5577;San Lorenzo;1
+6648;San Jacobo;2
+7238;San José;1
+12309;San Jorge;1
+19541;San Valentín;1
+19543;San Valentín;1
+19545;San Valentín;1
+25427;San Jorge;1
+27309;San Marino;1
+28701;San Valero;1
+28960;San Sebastián;1
+29581;San Marino;1
+5565;Roscón de San Valero;1
+28267;Día de San Jorge;1
+29734;San Cristóbal y Nieves;1
+29735;San Cristóbal y Nieves;1
+31388;Torre de San Salvador;1
+27310;San Vicente y las Granadinas;1
+5577;San Lorenzo;1
+5576;San Jorge;1
+6648;San Jacobo;2
+7238;San José;1
+12309;San Jorge;1
+15036;San Juan;1
+19541;San Valentín;1
+19543;San Valentín;1
+19545;San Valentín;1
+24386;San Juan;1
+25427;San Jorge;1
+27309;San Marino;1
+28701;San Valero;1
+28960;San Sebastián;1
+29581;San Marino;1
+32452;San Juan;1
+5565;Roscón de San Valero;1
+28267;Día de San Jorge;1
+29734;San Cristóbal y Nieves;1
+29735;San Cristóbal y Nieves;1
+31388;Torre de San Salvador;1
+27310;San Vicente y las Granadinas;1
+5519;Monasterio de San Juan de la Peña;1
+27309;San Marino;1
+29581;San Marino;1
+5576;San Jorge;1
+5507;marinero;2
+5577;San Lorenzo;1
+6648;San Jacobo;2
+7238;San José;1
+12309;San Jorge;1
+15036;San Juan;1
+19541;San Valentín;1
+19543;San Valentín;1
+19545;San Valentín;1
+24386;San Juan;1
+25427;San Jorge;1
+27501;león marino;2
+28701;San Valero;1
+28960;San Sebastián;1
+32452;San Juan;1
+5565;Roscón de San Valero;1
+28267;Día de San Jorge;1
+29734;San Cristóbal y Nieves;1
+29735;San Cristóbal y Nieves;1
+31388;Torre de San Salvador;1
+27310;San Vicente y las Granadinas;1
+5519;Monasterio de San Juan de la Peña;1
+28960;San Sebastián;1
+5576;San Jorge;1
+5577;San Lorenzo;1
+6648;San Jacobo;2
+7238;San José;1
+12309;San Jorge;1
+15036;San Juan;1
+19541;San Valentín;1
+19543;San Valentín;1
+19545;San Valentín;1
+24386;San Juan;1
+25427;San Jorge;1
+27309;San Marino;1
+28701;San Valero;1
+29581;San Marino;1
+32452;San Juan;1
+5565;Roscón de San Valero;1
+28267;Día de San Jorge;1
+29734;San Cristóbal y Nieves;1
+29735;San Cristóbal y Nieves;1
+31388;Torre de San Salvador;1
+27310;San Vicente y las Granadinas;1
+5519;Monasterio de San Juan de la Peña;1
+19541;San Valentín;1
+19543;San Valentín;1
+19545;San Valentín;1
+5576;San Jorge;1
+5577;San Lorenzo;1
+6648;San Jacobo;2
+7238;San José;1
+12309;San Jorge;1
+15036;San Juan;1
+24386;San Juan;1
+25427;San Jorge;1
+27309;San Marino;1
+28701;San Valero;1
+28960;San Sebastián;1
+29581;San Marino;1
+32452;San Juan;1
+5565;Roscón de San Valero;1
+28267;Día de San Jorge;1
+29734;San Cristóbal y Nieves;1
+29735;San Cristóbal y Nieves;1
+31388;Torre de San Salvador;1
+27310;San Vicente y las Granadinas;1
+5519;Monasterio de San Juan de la Peña;1
+28701;San Valero;1
+5576;San Jorge;1
+5565;Roscón de San Valero;1
+5577;San Lorenzo;1
+6648;San Jacobo;2
+7238;San José;1
+12309;San Jorge;1
+15036;San Juan;1
+19541;San Valentín;1
+19543;San Valentín;1
+19545;San Valentín;1
+24386;San Juan;1
+25427;San Jorge;1
+27309;San Marino;1
+28960;San Sebastián;1
+29581;San Marino;1
+32452;San Juan;1
+28267;Día de San Jorge;1
+29734;San Cristóbal y Nieves;1
+29735;San Cristóbal y Nieves;1
+31388;Torre de San Salvador;1
+27310;San Vicente y las Granadinas;1
+5519;Monasterio de San Juan de la Peña;1
+27310;San Vicente y las Granadinas;1
+5576;San Jorge;1
+5577;San Lorenzo;1
+6648;San Jacobo;2
+7238;San José;1
+12309;San Jorge;1
+15036;San Juan;1
+19541;San Valentín;1
+19543;San Valentín;1
+19545;San Valentín;1
+24386;San Juan;1
+25427;San Jorge;1
+27309;San Marino;1
+28701;San Valero;1
+28960;San Sebastián;1
+29581;San Marino;1
+32452;San Juan;1
+5565;Roscón de San Valero;1
+28267;Día de San Jorge;1
+29734;San Cristóbal y Nieves;1
+29735;San Cristóbal y Nieves;1
+31388;Torre de San Salvador;1
+5519;Monasterio de San Juan de la Peña;1
+15495;Sancho Panza;1
+3139;Papá Noel;1
+25297;Papá Noel;1
+25298;Papá Noel;1
+24388;santa;2
+3153;Semana Santa;1
+25441;Semana Santa;1
+32538;Semana Santa;1
+35831;Santiago de Compostela;1
+35913;La Compostela;1
+35835;Camino de Santiago;1
+35865;Día de Santiago;1
+35871;Santiago el Mayor;1
+35833;Catedral de Santiago;1
+35871;Santiago el Mayor;1
+35835;Camino de Santiago;1
+35831;Santiago de Compostela;1
+35865;Día de Santiago;1
+35833;Catedral de Santiago;1
+10300;Saturno;1
+14775;Segovia;1
+3153;Semana Santa;1
+25441;Semana Santa;1
+32538;Semana Santa;1
+7244;semana;2
+24388;santa;2
+24601;semana;2
+3139;Papá Noel;1
+25297;Papá Noel;1
+25298;Papá Noel;1
+27329;fin de semana;6
+32396;fin de semana;2
+36706;fin de semana;2
+8221;Senegal;1
+22112;Serbia;1
+27311;Serbia;1
+28987;Serbia;1
+11657;SOI;2
+11659;STO;2
+16061;Servicio de Terapia Ocupacional;2
+15810;servicio;2
+15814;baño de mujeres;2
+15812;baño de hombres;2
+24657;servicio;2
+27475;retrete;2
+27559;retrete;2
+27561;retrete;2
+16082;terapeuta ocupacional;2
+16084;terapeuta ocupacional;2
+24821;terapia ocupacional;2
+32971;terapeuta ocupacional;2
+32970;terapeuta ocupacional;2
+16059;servicio de limpieza;2
+16063;servicio de orientación;2
+16065;servicio de orientación;2
+26732;carro;2
+24673;orientador laboral;2
+35603;servicio provincial de educación;2
+11659;STO;2
+16061;Servicio de Terapia Ocupacional;2
+24821;terapia ocupacional;2
+11657;SOI;2
+15810;servicio;2
+15814;baño de mujeres;2
+15812;baño de hombres;2
+24657;servicio;2
+27475;retrete;2
+27559;retrete;2
+27561;retrete;2
+16082;terapeuta ocupacional;2
+16084;terapeuta ocupacional;2
+32971;terapeuta ocupacional;2
+32970;terapeuta ocupacional;2
+15925;terapia de grupo;2
+16059;servicio de limpieza;2
+16063;servicio de orientación;2
+16065;servicio de orientación;2
+25552;terapia de grupo;2
+26732;carro;2
+36457;terapia de pareja;2
+36459;terapia de pareja;2
+36461;terapia de pareja;2
+36460;terapia de pareja;2
+36458;terapia de pareja;2
+36462;terapia de pareja;2
+29202;terapia asistida con animales;2
+29203;terapia asistida con animales;2
+35603;servicio provincial de educación;2
+36181;terapia asistida con animales;2
+14690;Sevilla;1
+24400;Shivá;1
+28065;Singapur;1
+28066;Siria;1
+29810;Snowboarding;2
+2798;Sol;1
+7252;Sol;1
+10735;¡hace sol!;5
+10725;¿hace sol?;5
+3330;gafas de sol;2
+5402;broncear;3
+8097;eclipse;2
+9129;clave de sol;2
+26500;broncear;3
+26499;broncear;3
+30243;rayo;2
+36665;Somalia;1
+36666;Somalia;1
+14776;Soria;1
+8224;Spiderman;1
+28067;Sri Lanka;1
+34387;Sudamérica;1
+28095;Sudeste;1
+28096;Sudoeste;1
+22113;Sudáfrica;1
+10253;Suecia;1
+28977;Suecia;1
+22114;Suiza;1
+28978;Suiza;1
+8227;Supermán;1
+8228;Sur;1
+6188;Polo Sur;1
+10286;hemisferio sur;2
+25015;Corea del Sur;1
+28095;Sudeste;1
+27312;Surinam;1
+29603;Surinam;1
+28096;Sudoeste;1
+30233;Síndrome de Down;1
+8222;síndrome de Down;2
+30235;Síndrome de Down apoyo;2
+30235;Síndrome de Down apoyo;2
+8222;síndrome de Down;2
+30233;Síndrome de Down;1
+12252;apoyo;2
+16023;productos de apoyo;2
+33080;aula de apoyo;2
+30237;Maullido de gato apoyo;2
+3158;T;6
+3042;t;6
+34673;espectáculo T-Rex;2
+32706;transición a la vida adulta;2
+33084;aula de TVA;2
+25483;Tailandia;1
+25484;India;1
+28944;Tamborrada;1
+28952;Tamborrada;1
+5592;tamborrada;2
+36183;Tanaj;2
+14835;Tarragona;1
+29800;Tarzán;1
+34579;Tastavinsaurus;1
+28068;Tayikistan;1
+30648;Teacch;1
+32869;Teacch;2
+32868;Teacch;2
+32967;Teacch;2
+32966;Teacch;2
+25494;Teatro romano de Mérida;1
+10284;teatro;2
+32088;romano;2
+32412;teatro;2
+36509;casco romano;2
+4754;teatro de marionetas;2
+11270;teatro de marionetas;2
+11319;obra de teatro;2
+33082;aula de teatro;2
+36455;teatro de luz negra;2
+10305;Teide;1
+14849;Tenerife;1
+31033;Tereré;2
+9185;tpv;2
+3218;punto;2
+34104;punto limpio;2
+34105;punto limpio;2
+35877;al punto;4
+3422;punto y coma;2
+9163;punto de acceso;2
+11352;punto de lectura;2
+29452;la una en punto;6
+29454;las diez en punto;6
+29460;las once en punto;6
+29468;las doce en punto;6
+29482;las tres en punto;6
+29488;las cuatro en punto;6
+29500;las seis en punto;6
+29506;las siete en punto;6
+29494;las cinco en punto;6
+29476;las dos en punto;6
+29512;las ocho en punto;6
+29518;las nueve en punto;6
+34000;punto de encuentro familiar;2
+34317;punto de encuentro familiar;2
+5594;Teruel;1
+14681;Teruel;1
+31133;Antequera;1
+30014;mundo;2
+3160;tierra;2
+12303;Tió de Nadal;1
+30255;tío;2
+30256;tío;2
+30259;tío;2
+30258;tío;2
+30260;tío;2
+30261;tío;2
+30257;tío;2
+30262;tío;2
+6951;calabaza;2
+27152;Día de los Santos Inocentes;1
+32460;Día de Todos los Santos;1
+14766;Toledo;1
+31129;Antequera;1
+31031;Antequera;1
+31029;Antequera;1
+31131;Antequera;1
+31133;Antequera;1
+31135;Antequera;1
+5414;cabezudo;2
+5597;torero;2
+31031;Antequera;1
+2788;tornillo;2
+35161;tornillo;2
+31129;Antequera;1
+35125;tornillo y tuerca;2
+31388;Torre de San Salvador;1
+5576;San Jorge;1
+6232;torre;2
+34165;torre;2
+5577;San Lorenzo;1
+6648;San Jacobo;2
+7238;San José;1
+9150;cpu;2
+10271;torre Eiffel;1
+12309;San Jorge;1
+15036;San Juan;1
+19541;San Valentín;1
+19543;San Valentín;1
+19545;San Valentín;1
+21581;Dalí;1
+24386;San Juan;1
+25427;San Jorge;1
+27309;San Marino;1
+28701;San Valero;1
+28960;San Sebastián;1
+29581;San Marino;1
+29652;El Salvador;1
+29653;El Salvador;1
+32452;San Juan;1
+22145;Torre del Agua;1
+22141;torre de control;2
+5565;Roscón de San Valero;1
+28267;Día de San Jorge;1
+29734;San Cristóbal y Nieves;1
+29735;San Cristóbal y Nieves;1
+27310;San Vicente y las Granadinas;1
+5519;Monasterio de San Juan de la Peña;1
+22145;Torre del Agua;1
+24501;agua salada;2
+2248;agua;2
+6232;torre;2
+6889;agua;2
+32464;agua;2
+34165;torre;2
+8255;agua oxigenada;2
+9150;cpu;2
+10271;torre Eiffel;1
+24495;agua dulce;2
+24499;agua potable;2
+30859;agua bendita;2
+3105;gafas de agua;2
+4768;vaso de agua;2
+8079;colchón de agua;2
+8485;agua no potable;5
+8592;gota de agua;2
+9137;pistola de agua;2
+16285;tanque;2
+22141;torre de control;2
+24497;agua no potable;5
+24605;gotas de agua;2
+25137;gotas de agua;2
+25932;saltar al agua;3
+26425;saltar al agua;3
+26493;tirarse;3
+27278;subir por la escalerilla;3
+27279;subir por la escalerilla;3
+27280;subir por la escalerilla;3
+32310;sala de partos;2
+35217;jeringa aire-agua;2
+35605;cubo de agua;2
+15507;jugar con el agua;3
+16745;jugar con el agua;3
+27265;respirar bajo el agua;3
+27264;respirar bajo el agua;3
+30729;bolsa de agua caliente;2
+30774;bolsa de agua caliente;2
+31388;Torre de San Salvador;1
+28149;Torta del Casar;1
+6965;unir;3
+10234;torta;2
+25606;torta de maíz;2
+28145;torta de maíz;2
+36469;torta de pan;2
+34435;Torvosaurus;1
+34593;Triceratops;1
+34967;cráneo de triceratops;2
+29654;Trinidad y Tobago;1
+29655;Trinidad y Tobago;1
+12303;Tió de Nadal;1
+12305;Tronca de Navidad;2
+12305;Tronca de Navidad;2
+32456;¡Feliz Navidad!;5
+32458;¡Feliz Navidad!;5
+7269;tarjeta de Navidad;2
+3134;Navidad;1
+3058;árbol de Navidad;2
+3092;Día de Navidad;1
+3100;Estrella de Navidad;1
+5083;luces de Navidad;2
+6885;adorno de Navidad;2
+12303;Tió de Nadal;1
+24859;árbol de Navidad;2
+36394;flor de pascua;2
+3067;bolas del árbol de navidad;2
+8296;bola del árbol de navidad;2
+5415;cabezudo;2
+34585;Turiasaurus;1
+28069;Turkmenistan;1
+22161;Turquía;1
+29582;Turquía;1
+26521;Tutankhamon;1
+29246;escanciar;3
+34981;Tyrannosaurus Rex;1
+34969;cráneo de Tyrannosaurus Rex;2
+34673;espectáculo T-Rex;2
+3164;U;6
+3043;u;6
+30468;box de críticos;2
+36337;UCI pediátrica;2
+36339;UCI pediátrica;2
+36337;UCI pediátrica;2
+36339;UCI pediátrica;2
+30468;box de críticos;2
+29556;fisioterapia pediátrica;2
+29558;fisioterapia pediátrica;2
+29557;fisioterapia pediátrica;2
+9082;UNESCO;1
+9083;UNICEF;1
+16184;UNIFOR;1
+27313;Ucrania;1
+29583;Ucrania;1
+16182;Unidad de Empleo, Igualdad, Cooperación y Comunicación;1
+24707;tablero de comunicación;2
+34337;unidad de media estancia;2
+19559;empleo;2
+9870;exposición;2
+19522;ayuda;2
+19524;ayuda;2
+34623;comunicación;2
+6991;comunicación aumentativa;2
+36723;comunicación aumentativa;2
+6222;tablero de comunicación;2
+7004;cuaderno de comunicación;2
+11455;igualdad de oportunidades;2
+11468;igualdad de oportunidades;2
+11701;igualdad de oportunidades;2
+12347;medios de comunicación;2
+24615;escuela taller;2
+24637;oficina de empleo;2
+24638;oficina de empleo;2
+26475;tablero de comunicación;2
+31882;tablero de comunicación;2
+35183;igualdad de género;2
+35184;igualdad de género;2
+30468;box de críticos;2
+34312;centro especial de empleo;2
+16155;utilizar el cuaderno de comunicación;3
+16157;utilizar el tablero de comunicación;3
+36447;sacar el cuaderno de comunicación;3
+10302;Urano;1
+8244;Uruguay;1
+29602;Uruguay;1
+28163;Uvi móvil;2
+2586;teléfono;2
+25269;móvil;2
+34906;dispositivo móvil;2
+31484;número de teléfono;2
+28070;Uzbekistán;1
+3165;V;6
+3044;v;6
+24402;sida;2
+14769;Valencia;1
+14777;Valladolid;1
+27314;Vaticano;1
+29596;Venezuela;1
+29597;Venezuela;1
+10303;Venus;1
+26150;Veo veo;1
+36259;no veo bien;5
+14550;Vieja Cuaresma;1
+11394;viejo;4
+32950;Viernes Santo;1
+32951;Viernes Santo;1
+30872;lectura del Santo Evangelio;2
+30873;lectura del Santo Evangelio;2
+30874;lectura del Santo Evangelio;2
+30875;lectura del Santo Evangelio;2
+30876;lectura del Santo Evangelio;2
+30877;lectura del Santo Evangelio;2
+30878;lectura del Santo Evangelio;2
+30879;lectura del Santo Evangelio;2
+6629;viernes;6
+24392;santo;2
+35155;santo;2
+24029;Espíritu Santo;1
+13366;huesos de santo;2
+28071;Vietnam;1
+7301;Virgen María;1
+5606;Virgen del Pilar;1
+5606;Virgen del Pilar;1
+7301;Virgen María;1
+5394;basílica;2
+5073;Día del Pilar;1
+14761;Vizcaya;1
+3167;W;6
+3045;w;6
+36737;Wonder Woman;1
+3168;X;6
+33104;rayos x;2
+33105;rayos x;2
+3046;x;6
+6198;rayos x;2
+30192;técnico en radiología;2
+32186;collarín de rayos x;2
+32187;collarín de rayos x;2
+3171;Y;6
+32586;forma y medida;2
+36372;clase de lengua y literatura catalana;2
+36371;clase de lengua y literatura;2
+3047;y;6
+11399;y;6
+2361;cubo y pala;2
+3422;punto y coma;2
+4965;tiza y borrador;2
+10228;leche y galletas;2
+10308;peine y tijeras;2
+10312;lápiz y papel;2
+10314;cubo y fregona;2
+10315;escoba y recogedor;2
+21018;día y noche;2
+21459;Bosnia y Herzegovina;1
+21923;Hansel y Gretel;1
+23729;Adán y Eva;1
+24685;conservación y mantenimiento;2
+24703;pluma y papel;2
+28966;Bosnia y Herzegovina;1
+29306;33;6
+29308;34;6
+29304;32;6
+29310;35;6
+29312;36;6
+29314;37;6
+29302;31;6
+29326;42;6
+29328;43;6
+29330;44;6
+29334;46;6
+29332;45;6
+29338;48;6
+29316;38;6
+29340;49;6
+29346;51;6
+29348;52;6
+29318;39;6
+29336;47;6
+29350;53;6
+29358;57;6
+29360;58;6
+29352;54;6
+29324;41;6
+29356;56;6
+29366;61;6
+29368;62;6
+29370;63;6
+29372;64;6
+29376;66;6
+29378;67;6
+29380;68;6
+29382;69;6
+29392;72;6
+29394;73;6
+29396;74;6
+29398;75;6
+29400;76;6
+29402;77;6
+29404;78;6
+29406;79;6
+29412;81;6
+29414;82;6
+29354;55;6
+29362;59;6
+29374;65;6
+29416;83;6
+29418;84;6
+29420;85;6
+29422;86;6
+29424;87;6
+29390;71;6
+29428;89;6
+29434;91;6
+29436;92;6
+29444;96;6
+29446;97;6
+29448;98;6
+29450;99;6
+29426;88;6
+29440;94;6
+29442;95;6
+29438;93;6
+29654;Trinidad y Tobago;1
+29655;Trinidad y Tobago;1
+32566;actividades y fiestas;2
+32574;juego y deporte;2
+32578;aparatos y muebles;2
+32572;seres vivos;2
+32590;sensaciones y sentimientos;2
+32570;ropa y complementos;2
+32600;tiempo y clima;2
+32602;alimentos y bebidas;2
+34031;pesar y medir;3
+34065;regla y compás;2
+34090;bate y pelota;2
+34139;loterías y apuestas;2
+34159;aguja y bobina;2
+34935;Isabel y Diego;1
+35125;tornillo y tuerca;2
+35873;poco hecho;4
+36454;sogatira;2
+10227;hamburguesa y patatas fritas;2
+13634;educación plástica y visual;2
+29456;las diez y cuarto;6
+29458;las diez y media;6
+29462;las once y cuarto;6
+29464;las once y media;6
+29466;la una y cuarto;6
+29470;las doce y cuarto;6
+29472;las doce y media;6
+29474;la una y media;6
+29480;las dos y media;6
+29484;las tres y cuarto;6
+29486;las tres y media;6
+29492;las cuatro y media;6
+29496;las cinco y cuarto;6
+29498;las cinco y media;6
+29490;las cuatro y cuarto;6
+29502;las seis y cuarto;6
+29504;las seis y media;6
+29508;las siete y cuarto;6
+29510;las siete y media;6
+29516;las ocho y media;6
+29478;las dos y cuarto;6
+29522;las nueve y media;6
+29520;las nueve y cuarto;6
+29514;las ocho y cuarto;6
+29734;San Cristóbal y Nieves;1
+29735;San Cristóbal y Nieves;1
+36628;coger el cuchillo;3
+5576;San Jorge;1
+6642;libros de poesia y arte;2
+15493;Goya;1
+25686;sala de estudio y lectura;2
+27310;San Vicente y las Granadinas;1
+29885;tienda de caza y pesca;2
+30614;cepillo y pasta de dientes;2
+34709;clase de ética y valores;2
+35517;taller de chapa y pintura;2
+36263;maestra de audición y lenguaje;2
+36267;maestro de audición y lenguaje;2
+36268;maestro de audición y lenguaje;2
+36271;maestra de audición y lenguaje;2
+36261;maestro de audición y lenguaje;2
+36667;tienda de electrónica y electricidad;2
+6641;libros;2
+16182;Unidad de Empleo, Igualdad, Cooperación y Comunicación;1
+25544;Palacio de Ferias y Congresos de Málaga;1
+32724;asociación de madres y padres de alumnos;2
+28072;Yemen;1
+3173;Z;6
+3048;z;6
+14778;Zamora;1
+32216;Zapatilla por Detrás;1
+8332;zapatilla;2
+36679;zapatilla;2
+8333;zapatilla;2
+31054;apretar la zapatilla;3
+5607;Zaragoza;1
+14682;Zaragoza;1
+25545;palacio de congresos;2
+3413;\;6
+3021;a;6
+7041;a;6
+29566;llevar a cuestas;3
+27365;frente a frente;4
+36636;entrar a canasta;3
+5570;saltar a la comba;3
+6608;saltar a la comba;3
+32954;vámonos a otra tienda;5
+3049;A;6
+5367;al lado de;4
+27387;a veces;4
+27564;a veces;4
+32848;antes del mediodía;4
+6643;montar a caballo;3
+7068;coser;3
+8274;a través de;6
+11299;mando a distancia;2
+22775;ayuda a domicilio;2
+26182;mando a distancia;2
+26638;aprender a nadar;3
+26641;aprender a nadar;3
+26639;aprender a nadar;3
+26640;aprender a nadar;3
+27399;conectar a internet;3
+27626;montar a caballo;3
+27627;equitación;2
+31316;Port-a-Cath;2
+31317;Port-a-Cath;2
+31318;Port-a-Cath;2
+31319;Port-a-Cath;2
+31354;análisis de sangre;2
+32940;vámonos a casa;5
+35483;montar a caballo;3
+36495;tirar a canasta;3
+36674;tirar a canasta;3
+3002;calamares a la romana;2
+4687;llamar a la puerta;3
+7158;mi turno;5
+8985;comprar;3
+8986;comprar;3
+10162;jugar a la videoconsola;3
+10163;bolos;2
+10372;educación física;2
+10373;educación física;2
+10376;educación física;2
+10377;educación física;2
+10380;educación física;2
+10378;educación física;2
+10379;educación física;2
+13042;educación física;2
+13052;educación física;2
+13054;educación física;2
+13056;educación física;2
+13058;educación física;2
+13044;educación física;2
+13050;educación física;2
+21326;chocolate a la taza;2
+28073;subir a la trona;3
+28074;subir a la trona;3
+28441;saltar a la comba;3
+28665;comprar;3
+29044;pescado a la parrilla;2
+31892;jugar a la pelota;3
+32101;automensaje;2
+33050;trabajo uno a uno;2
+35205;subir a una atracción;3
+35245;bolos;2
+35371;jugar a la pelota;3
+35411;jugar a la pelota;3
+36333;mirar a los ojos;3
+36356;carta a Papá Noel;2
+36398;hablar a la vez;3
+36425;patatas asadas;2
+36428;pescado a la plancha;2
+9207;prohibido peatones;5
+9208;prohibido bicicletas;5
+11366;saltar a la pata coja;3
+11365;saltar a la pata coja;3
+28445;saltar a la pata coja;3
+32216;Zapatilla por Detrás;1
+32706;transición a la vida adulta;2
+33924;amamantar a gemelos o mellizos;3
+29849;centro de atención a la mujer;2
+33974;técnico en atención a personas en situación de dependencia;2
+32216;Zapatilla por Detrás;1
+8332;zapatilla;2
+36679;zapatilla;2
+8333;zapatilla;2
+31054;apretar la zapatilla;3
+8274;a través de;6
+27387;a veces;4
+27564;a veces;4
+32848;antes del mediodía;4
+29566;llevar a cuestas;3
+27365;frente a frente;4
+36636;entrar a canasta;3
+5570;saltar a la comba;3
+6608;saltar a la comba;3
+32954;vámonos a otra tienda;5
+3021;a;6
+3035;m;6
+3049;A;6
+3125;M;6
+7041;a;6
+5367;al lado de;4
+27387;a veces;4
+27564;a veces;4
+32850;después del mediodía;4
+6643;montar a caballo;3
+7068;coser;3
+8274;a través de;6
+11299;mando a distancia;2
+22775;ayuda a domicilio;2
+26182;mando a distancia;2
+26638;aprender a nadar;3
+26641;aprender a nadar;3
+26639;aprender a nadar;3
+26640;aprender a nadar;3
+27399;conectar a internet;3
+27626;montar a caballo;3
+27627;equitación;2
+31316;Port-a-Cath;2
+31317;Port-a-Cath;2
+31318;Port-a-Cath;2
+31319;Port-a-Cath;2
+31354;análisis de sangre;2
+32940;vámonos a casa;5
+35483;montar a caballo;3
+36495;tirar a canasta;3
+36674;tirar a canasta;3
+3002;calamares a la romana;2
+4687;llamar a la puerta;3
+7158;mi turno;5
+8985;comprar;3
+8986;comprar;3
+10162;jugar a la videoconsola;3
+10163;bolos;2
+10372;educación física;2
+10373;educación física;2
+10376;educación física;2
+10377;educación física;2
+10380;educación física;2
+10378;educación física;2
+10379;educación física;2
+13042;educación física;2
+13052;educación física;2
+13054;educación física;2
+13056;educación física;2
+13058;educación física;2
+13044;educación física;2
+13050;educación física;2
+21326;chocolate a la taza;2
+28073;subir a la trona;3
+28074;subir a la trona;3
+28441;saltar a la comba;3
+28665;comprar;3
+29044;pescado a la parrilla;2
+31892;jugar a la pelota;3
+32101;automensaje;2
+33050;trabajo uno a uno;2
+35205;subir a una atracción;3
+35245;bolos;2
+35371;jugar a la pelota;3
+35411;jugar a la pelota;3
+36333;mirar a los ojos;3
+36356;carta a Papá Noel;2
+36398;hablar a la vez;3
+36425;patatas asadas;2
+36428;pescado a la plancha;2
+9207;prohibido peatones;5
+9208;prohibido bicicletas;5
+11366;saltar a la pata coja;3
+11365;saltar a la pata coja;3
+28445;saltar a la pata coja;3
+32216;Zapatilla por Detrás;1
+32706;transición a la vida adulta;2
+33924;amamantar a gemelos o mellizos;3
+29849;centro de atención a la mujer;2
+33974;técnico en atención a personas en situación de dependencia;2
+6897;amapola;2
+5355;abajo;4
+8334;abalorio;2
+5356;abalorios;2
+8334;abalorio;2
+21328;abandonar;3
+8480;abanicar;3
+6871;abanico;2
+23703;abdominal;2
+30788;exploración abdominal;2
+23703;abdominal;2
+3050;abecedario;6
+2239;abeja;2
+24823;abeja;2
+3051;abeto;2
+4549;abierta;4
+36313;tienda abierta;2
+4549;abierta;4
+36309;abierto;4
+36317;edificio abierto;2
+11160;abogada;2
+2636;abogado;2
+21330;abolladura;2
+13020;abonar;3
+25750;abonar;3
+25751;abonar;3
+29664;abonar;3
+6872;abono;2
+14974;aborto;2
+5357;abrochar;3
+6023;abrazar;3
+34369;abrazar;3
+4550;abrazo;2
+32198;abrebocas;2
+3226;abrebotellas;2
+35115;abrecartas;2
+17342;abrelatas;2
+17346;abrelatas eléctrico;2
+17338;abrelatas;2
+17346;abrelatas eléctrico;2
+8656;peligro electricidad;2
+9143;cepillo eléctrico;2
+26744;cepillo eléctrico;2
+17342;abrelatas;2
+17338;abrelatas;2
+9175;hornillo;2
+15901;cuadro eléctrico;2
+25954;circuito;2
+36115;bajo;2
+2242;abrigo;2
+6024;abril;6
+35935;abril;6
+2637;abrir;3
+6875;abrir;3
+6874;abrir;3
+10137;abrir;3
+11162;abrir;3
+24598;abrir;3
+24825;abrir;3
+36483;abrir las puertas;3
+10138;abrir los ojos;3
+11161;abrir la cerradura;3
+11737;abrir el grifo;3
+21334;abrir la lavadora;3
+21339;abrir la nevera;3
+21341;abrir el grifo;3
+23707;abrir la nevera;3
+24597;abrir la puerta;3
+28455;abrir la puerta;3
+35193;abrir la valla;3
+35785;abrir el pestillo;3
+36265;abrir el grifo;3
+21336;abrir el cajetín de la lavadora;3
+21336;abrir el cajetín de la lavadora;3
+11162;abrir;3
+36483;abrir las puertas;3
+21334;abrir la lavadora;3
+2442;lavadora;2
+2637;abrir;3
+6875;abrir;3
+6874;abrir;3
+10137;abrir;3
+24598;abrir;3
+24825;abrir;3
+21470;cajetín;2
+10138;abrir los ojos;3
+11161;abrir la cerradura;3
+11737;abrir el grifo;3
+21339;abrir la nevera;3
+21341;abrir el grifo;3
+23707;abrir la nevera;3
+24597;abrir la puerta;3
+28455;abrir la puerta;3
+35193;abrir la valla;3
+35785;abrir el pestillo;3
+36265;abrir el grifo;3
+11737;abrir el grifo;3
+21341;abrir el grifo;3
+36265;abrir el grifo;3
+11162;abrir;3
+36483;abrir las puertas;3
+2414;grifo;2
+2637;abrir;3
+3339;grifo;2
+6875;abrir;3
+6874;abrir;3
+10137;abrir;3
+24598;abrir;3
+24825;abrir;3
+32650;grifo;2
+10138;abrir los ojos;3
+11161;abrir la cerradura;3
+11739;cerrar el grifo;3
+21334;abrir la lavadora;3
+21339;abrir la nevera;3
+23707;abrir la nevera;3
+24597;abrir la puerta;3
+28455;abrir la puerta;3
+35193;abrir la valla;3
+35785;abrir el pestillo;3
+21336;abrir el cajetín de la lavadora;3
+35785;abrir el pestillo;3
+11162;abrir;3
+36483;abrir las puertas;3
+2637;abrir;3
+6875;abrir;3
+6874;abrir;3
+10137;abrir;3
+24598;abrir;3
+24825;abrir;3
+10138;abrir los ojos;3
+11161;abrir la cerradura;3
+11737;abrir el grifo;3
+21334;abrir la lavadora;3
+21339;abrir la nevera;3
+21341;abrir el grifo;3
+23707;abrir la nevera;3
+24597;abrir la puerta;3
+28455;abrir la puerta;3
+35193;abrir la valla;3
+35787;cerrar el pestillo;3
+36265;abrir el grifo;3
+21336;abrir el cajetín de la lavadora;3
+11161;abrir la cerradura;3
+11162;abrir;3
+36483;abrir las puertas;3
+2637;abrir;3
+3261;cerradura;2
+6875;abrir;3
+6874;abrir;3
+10137;abrir;3
+24598;abrir;3
+24825;abrir;3
+10138;abrir los ojos;3
+11737;abrir el grifo;3
+21334;abrir la lavadora;3
+21339;abrir la nevera;3
+21341;abrir el grifo;3
+23707;abrir la nevera;3
+24597;abrir la puerta;3
+28455;abrir la puerta;3
+35193;abrir la valla;3
+35785;abrir el pestillo;3
+36265;abrir el grifo;3
+34854;espiar por la cerradura;3
+21336;abrir el cajetín de la lavadora;3
+21334;abrir la lavadora;3
+11162;abrir;3
+36483;abrir las puertas;3
+21336;abrir el cajetín de la lavadora;3
+2442;lavadora;2
+2637;abrir;3
+6875;abrir;3
+6874;abrir;3
+10137;abrir;3
+24598;abrir;3
+24825;abrir;3
+10138;abrir los ojos;3
+11161;abrir la cerradura;3
+11737;abrir el grifo;3
+21339;abrir la nevera;3
+21341;abrir el grifo;3
+23707;abrir la nevera;3
+24597;abrir la puerta;3
+28455;abrir la puerta;3
+35193;abrir la valla;3
+35785;abrir el pestillo;3
+36265;abrir el grifo;3
+21339;abrir la nevera;3
+23707;abrir la nevera;3
+11162;abrir;3
+36483;abrir las puertas;3
+2637;abrir;3
+3272;nevera;2
+4876;nevera;2
+6875;abrir;3
+6874;abrir;3
+10137;abrir;3
+24598;abrir;3
+24825;abrir;3
+10138;abrir los ojos;3
+11161;abrir la cerradura;3
+11737;abrir el grifo;3
+21334;abrir la lavadora;3
+21341;abrir el grifo;3
+24597;abrir la puerta;3
+28455;abrir la puerta;3
+35193;abrir la valla;3
+35785;abrir el pestillo;3
+36265;abrir el grifo;3
+21336;abrir el cajetín de la lavadora;3
+24597;abrir la puerta;3
+28455;abrir la puerta;3
+11162;abrir;3
+36483;abrir las puertas;3
+2637;abrir;3
+3244;puerta;2
+6875;abrir;3
+6874;abrir;3
+10137;abrir;3
+24598;abrir;3
+24825;abrir;3
+24325;puerta batiente;2
+24324;puerta batiente;2
+24332;puerta oscilobatiente;2
+10138;abrir los ojos;3
+11161;abrir la cerradura;3
+11737;abrir el grifo;3
+21334;abrir la lavadora;3
+21339;abrir la nevera;3
+21341;abrir el grifo;3
+22056;Puerta de Alcalá;1
+22058;Puerta de Brandeburgo;1
+22060;Puerta del Carmen;1
+23707;abrir la nevera;3
+24021;cerrar la puerta;3
+25357;Badajoz;1
+28457;cerrar la puerta;3
+29102;golpear la puerta;3
+35193;abrir la valla;3
+35785;abrir el pestillo;3
+36265;abrir el grifo;3
+4687;llamar a la puerta;3
+21336;abrir el cajetín de la lavadora;3
+35193;abrir la valla;3
+11162;abrir;3
+36483;abrir las puertas;3
+2637;abrir;3
+6651;valla;2
+6875;abrir;3
+6874;abrir;3
+10137;abrir;3
+24598;abrir;3
+24825;abrir;3
+10138;abrir los ojos;3
+11161;abrir la cerradura;3
+11737;abrir el grifo;3
+21334;abrir la lavadora;3
+21339;abrir la nevera;3
+21341;abrir el grifo;3
+23707;abrir la nevera;3
+24597;abrir la puerta;3
+28455;abrir la puerta;3
+35189;saltar la valla;3
+35785;abrir el pestillo;3
+36265;abrir el grifo;3
+21336;abrir el cajetín de la lavadora;3
+11162;abrir;3
+24465;ventana;2
+36483;abrir las puertas;3
+2611;ventana;2
+2637;abrir;3
+6875;abrir;3
+6874;abrir;3
+10137;abrir;3
+24598;abrir;3
+24825;abrir;3
+32918;ventana;2
+9008;limpiar la ventana;3
+10138;abrir los ojos;3
+11161;abrir la cerradura;3
+11737;abrir el grifo;3
+21334;abrir la lavadora;3
+21339;abrir la nevera;3
+21341;abrir el grifo;3
+23707;abrir la nevera;3
+24597;abrir la puerta;3
+28455;abrir la puerta;3
+29746;limpiar las ventanas;3
+35193;abrir la valla;3
+35785;abrir el pestillo;3
+36265;abrir el grifo;3
+21336;abrir el cajetín de la lavadora;3
+36483;abrir las puertas;3
+11162;abrir;3
+2637;abrir;3
+6875;abrir;3
+6874;abrir;3
+10137;abrir;3
+24598;abrir;3
+24825;abrir;3
+10138;abrir los ojos;3
+11161;abrir la cerradura;3
+11737;abrir el grifo;3
+21334;abrir la lavadora;3
+21339;abrir la nevera;3
+21341;abrir el grifo;3
+23707;abrir la nevera;3
+24597;abrir la puerta;3
+28455;abrir la puerta;3
+35193;abrir la valla;3
+35785;abrir el pestillo;3
+36265;abrir el grifo;3
+36698;día de puertas abiertas;2
+21336;abrir el cajetín de la lavadora;3
+10138;abrir los ojos;3
+11162;abrir;3
+36483;abrir las puertas;3
+2637;abrir;3
+2876;ojos;2
+6875;abrir;3
+6874;abrir;3
+10137;abrir;3
+24598;abrir;3
+24825;abrir;3
+3388;sombra de ojos;2
+10146;cerrar;3
+11161;abrir la cerradura;3
+11737;abrir el grifo;3
+21334;abrir la lavadora;3
+21339;abrir la nevera;3
+21341;abrir el grifo;3
+23707;abrir la nevera;3
+24597;abrir la puerta;3
+28455;abrir la puerta;3
+32879;seguimiento de ojos;2
+32880;seguimiento de ojos;2
+34819;tapar los ojos;3
+34818;tapar los ojos;3
+34822;tapar los ojos;3
+35193;abrir la valla;3
+35785;abrir el pestillo;3
+36265;abrir el grifo;3
+36333;mirar a los ojos;3
+21336;abrir el cajetín de la lavadora;3
+5357;abrochar;3
+27566;abrochar;3
+32317;abrochar;3
+32316;abrochar;3
+5380;abrochar el cinturón;3
+34669;abrochar el cinturón;3
+34691;abrochar el cinturón;3
+5380;abrochar el cinturón;3
+27566;abrochar;3
+32317;abrochar;3
+32316;abrochar;3
+34669;abrochar el cinturón;3
+34691;abrochar el cinturón;3
+5357;abrochar;3
+2336;cinturón;2
+5962;cinturón de seguridad;2
+27288;cinturón de flotación;2
+31119;cinturón de buceo;2
+34663;abrocharse el cinturón;3
+34671;cinturón de seguridad;2
+34655;cinturón de seguridad;2
+34761;desabrochar el cinturón;3
+34659;levantar la lengüeta del cinturón de seguridad;3
+34663;abrocharse el cinturón;3
+2336;cinturón;2
+5380;abrochar el cinturón;3
+5962;cinturón de seguridad;2
+27288;cinturón de flotación;2
+27566;abrochar;3
+31119;cinturón de buceo;2
+32317;abrochar;3
+32316;abrochar;3
+34669;abrochar el cinturón;3
+34671;cinturón de seguridad;2
+34655;cinturón de seguridad;2
+34691;abrochar el cinturón;3
+34761;desabrochar el cinturón;3
+34659;levantar la lengüeta del cinturón de seguridad;3
+13022;abubilla;2
+26611;insultar;3
+2243;abuela;2
+10194;abuela;2
+23709;abuela;2
+23710;abuela;2
+2244;abuelo;2
+4560;abuelo;2
+23718;abuelo;2
+23717;abuelo;2
+2244;abuelo;2
+4560;abuelo;2
+6876;abuelos;2
+23718;abuelo;2
+23717;abuelo;2
+30482;abuelos;2
+28705;aburrida;4
+35531;aburrido;4
+2245;aburrido;4
+31744;aburrido;4
+35531;aburrido;4
+20089;aburrimiento;2
+35553;aburrimiento;2
+6873;aburrir;3
+30989;abuso sexual;2
+30990;abuso sexual;2
+30993;abuso sexual;2
+30992;abuso sexual;2
+30991;abuso sexual;2
+31002;abuso sexual;2
+30999;abuso sexual;2
+31005;abuso sexual;2
+31003;abuso sexual;2
+31006;abuso sexual;2
+31007;abuso sexual;2
+31001;abuso sexual;2
+34262;abuso sexual;2
+34263;abuso sexual;2
+34264;abuso sexual;2
+30056;abuso sexual;2
+30057;abuso sexual;2
+30058;abuso sexual;2
+30056;abuso sexual;2
+30057;abuso sexual;2
+30058;abuso sexual;2
+30989;abuso sexual;2
+30990;abuso sexual;2
+30993;abuso sexual;2
+30992;abuso sexual;2
+30991;abuso sexual;2
+31002;abuso sexual;2
+30999;abuso sexual;2
+31005;abuso sexual;2
+31003;abuso sexual;2
+31006;abuso sexual;2
+31007;abuso sexual;2
+31001;abuso sexual;2
+34262;abuso sexual;2
+34263;abuso sexual;2
+34264;abuso sexual;2
+32828;orientación sexual;2
+5358;terminar;3
+28429;terminar;3
+34161;academia;2
+25912;acampada;2
+6025;acampar;3
+8007;acantilado;2
+27407;acariciar;3
+27408;acariciar;3
+35471;acariciar;3
+35469;acariciar;3
+4733;rico;4
+2742;entrar;3
+6491;entrar;3
+26811;entrar;3
+28687;entrar;3
+11478;accesibilidad;2
+11465;accesible;4
+30227;web accesible;2
+28351;hotel accesible;2
+24917;cabina electoral accesible;2
+12246;acceso;2
+31865;acceso;2
+9163;punto de acceso;2
+31294;adaptaciones de acceso;2
+4551;accidente;2
+15830;accidente;2
+15828;accidente;2
+30965;accidente;2
+35895;accidente;2
+15828;accidente;2
+15830;accidente;2
+4551;accidente;2
+30965;accidente;2
+35895;accidente;2
+15830;accidente;2
+15828;accidente;2
+5094;tren;2
+2603;tren;2
+4551;accidente;2
+7282;tren;2
+30965;accidente;2
+35895;accidente;2
+29008;tren turístico;2
+3099;estación de tren;2
+6494;estación de tren;2
+29905;estación de tren;2
+5105;tren de la bruja;2
+21399;tren de alta velocidad;2
+7297;verbo;2
+32067;acción;2
+7297;verbo;2
+32067;acción;2
+3052;acebo;2
+2246;aceite;2
+8481;aceite;2
+34357;aceite;2
+9178;lámpara;2
+16747;lata de aceite;2
+29975;aceitería;2
+8481;aceite;2
+2246;aceite;2
+11274;girasol;2
+34357;aceite;2
+9178;lámpara;2
+16747;lata de aceite;2
+29975;aceitería;2
+2246;aceite;2
+8317;aceituna;2
+8316;aceituna;2
+8481;aceite;2
+34357;aceite;2
+9178;lámpara;2
+16747;lata de aceite;2
+29975;aceitería;2
+6877;aceitera;2
+29975;aceitería;2
+8317;aceituna;2
+8316;aceituna;2
+8316;aceituna;2
+8317;aceituna;2
+2886;negro;4
+6282;negra;4
+9124;negra;2
+36455;teatro de luz negra;2
+8317;aceituna;2
+4886;verde;4
+4887;verde;4
+8316;aceituna;2
+36221;cruzar con semáforo en verde;3
+2838;pimiento;2
+5077;hoja;2
+4958;semáforo verde;2
+8354;judía verde;2
+26677;Cabo Verde;1
+36448;semáforo verde;2
+6646;pescado;2
+2874;aceitunas;2
+2875;aceitunas;2
+8317;aceituna;2
+8316;aceituna;2
+2875;aceitunas;2
+8316;aceituna;2
+2874;aceitunas;2
+34120;uvas negras;2
+16775;lata de olivas negras;2
+2874;aceitunas;2
+8317;aceituna;2
+2875;aceitunas;2
+2438;judías verdes;2
+34127;espárragos verdes;2
+16781;lata de olivas;2
+27156;judías verdes con patatas;2
+10326;acelerador;2
+2981;acelga;2
+27154;acelga con patatas;2
+27154;acelga con patatas;2
+5400;bolsa de fritos;2
+36425;patatas asadas;2
+2981;acelga;2
+2505;patatas fritas;2
+8653;patatas fritas;2
+16827;patatas bravas;2
+27155;borraja con patatas;2
+28601;patatas con chorizo;2
+29195;pollo con patatas;2
+10227;hamburguesa y patatas fritas;2
+27156;judías verdes con patatas;2
+29163;huevos fritos con patatas;2
+17044;coger;3
+17042;coger;3
+25752;¡Acertaste!;5
+25757;¡Acertaste!;5
+25758;acequia;2
+2247;acera;2
+5359;acercar;3
+6878;acercar;3
+6879;acercar;3
+24829;adivinanza;2
+26615;aclamar;3
+21345;aclarar;3
+21347;aclarar;3
+21343;aclarar;3
+28505;aclarar;3
+34824;aclarar;3
+8978;aclarar el pelo;3
+8978;aclarar el pelo;3
+24256;pelo de animal;2
+2851;pelo;2
+21345;aclarar;3
+21347;aclarar;3
+21343;aclarar;3
+28505;aclarar;3
+34824;aclarar;3
+28681;pelo largo;2
+28683;pelo corto;2
+2695;cepillo;2
+5542;plancha de pelo;2
+7239;secar;3
+8084;cortar el pelo;3
+8208;rizar el pelo;3
+8615;enjabonar el pelo;3
+8616;lavar el pelo;3
+8976;lavar el pelo;3
+15357;cinta;2
+16887;secar;3
+26945;enjabonar el pelo;3
+27485;secar;3
+27486;secar;3
+27696;cortar el pelo;3
+27695;cortar el pelo;3
+28503;secar;3
+33920;secador de pelo;2
+35037;lavar el pelo;3
+36552;lavar el pelo;3
+36558;maquinilla;2
+26616;granos;2
+29668;granos;2
+6880;acompañada;4
+10191;acompañado;2
+25762;acompañar;3
+27568;visitar;3
+28187;visitar;3
+21349;acondicionador;2
+11357;recordar;3
+11358;recordar;3
+5895;acordeón;2
+30644;acoso;2
+30645;acoso;2
+4553;acostar;3
+6027;acostar;3
+35097;acreditar;3
+35915;acreditar peregrinación;3
+35915;acreditar peregrinación;3
+35097;acreditar;3
+4762;trapecista;2
+11388;trapecista;2
+8008;actividades;2
+32212;actividades;2
+34805;duración de la actividad;2
+8008;actividades;2
+32212;actividades;2
+24647;sala taller;2
+32566;actividades y fiestas;2
+24694;técnico de actividades deportivas;2
+24695;técnico de actividades deportivas;2
+24693;técnico de actividades deportivas;2
+16178;técnica superior de actividades específicas;2
+16180;técnico superior de actividades específicas;2
+24701;técnico superior de actividades específicas;2
+24699;técnico superior de actividades específicas;2
+32566;actividades y fiestas;2
+8008;actividades;2
+32212;actividades;2
+32800;fiestas;2
+5073;Día del Pilar;1
+24647;sala taller;2
+24694;técnico de actividades deportivas;2
+24695;técnico de actividades deportivas;2
+24693;técnico de actividades deportivas;2
+16178;técnica superior de actividades específicas;2
+16180;técnico superior de actividades específicas;2
+24701;técnico superior de actividades específicas;2
+24699;técnico superior de actividades específicas;2
+11548;matrimonio;2
+4554;actor;2
+36075;actor;2
+4555;actriz;2
+35709;actuar;3
+6881;acuarelas;2
+5360;acuario;2
+6882;acuario;2
+26618;acuario;2
+31273;herir;3
+11708;venir;3
+13356;venir;3
+24826;acueducto;2
+6883;acunar;3
+29754;acunar;3
+16093;acusada;2
+15984;acusado;2
+23725;acuífero;2
+5382;aquí;4
+34223;acículas;2
+34229;acículas;2
+31294;adaptaciones de acceso;2
+12246;acceso;2
+31865;acceso;2
+9163;punto de acceso;2
+12242;adaptación;2
+31291;adaptación curricular;2
+31290;adaptación curricular;2
+31301;adaptación curricular;2
+31291;adaptación curricular;2
+31290;adaptación curricular;2
+31301;adaptación curricular;2
+12242;adaptación;2
+11687;adaptar;3
+8482;adelantar;3
+34844;adelantar;3
+6884;adelgazar;3
+28199;adelgazar;3
+34359;aderezo;2
+34359;aderezo;2
+24828;pegar;3
+5868;sumar;3
+36177;adiestrador;2
+4733;rico;4
+24829;adivinanza;2
+11163;adivinar;3
+5896;adiós;5
+6028;adiós;5
+34467;adiós;5
+32584;adjetivos;2
+16174;administración;2
+16176;administración;2
+16074;responsable;2
+16076;responsable;2
+3414;¡;6
+3417;!;6
+11470;mejor;4
+22627;mejor;4
+30464;admisión;2
+30464;admisión;2
+25590;grúa;2
+30790;pulsera hospitalaria;2
+30765;orinal;2
+17044;coger;3
+17042;coger;3
+10268;adn;2
+20387;adolescencia;2
+4673;joven;4
+10206;joven;4
+21353;adoptar;3
+7008;decorar;3
+16435;decorar;3
+16641;decorar;3
+27715;decorar;3
+29670;decorar;3
+10318;adorno;2
+6885;adorno de Navidad;2
+6885;adorno de Navidad;2
+32456;¡Feliz Navidad!;5
+32458;¡Feliz Navidad!;5
+7269;tarjeta de Navidad;2
+3134;Navidad;1
+10318;adorno;2
+3058;árbol de Navidad;2
+3092;Día de Navidad;1
+3100;Estrella de Navidad;1
+5083;luces de Navidad;2
+12305;Tronca de Navidad;2
+24859;árbol de Navidad;2
+36394;flor de pascua;2
+3067;bolas del árbol de navidad;2
+8296;bola del árbol de navidad;2
+25764;adosado;2
+6457;comprar;3
+16017;compra;2
+8483;frontera;2
+28201;adulta;4
+32706;transición a la vida adulta;2
+6886;adulto;4
+6886;adulto;4
+6887;adultos;4
+29915;aula de educación de adultos;2
+26623;advertir;3
+26622;advertir;3
+25768;aerogenerador;2
+34757;aeroplano;2
+34757;aeroplano;2
+3053;aeropuerto;2
+6031;aeropuerto;2
+32506;aeropuerto;2
+30126;aerosol;2
+30128;aerosol;2
+30127;aerosol;2
+5361;afeitar;3
+6032;afeitar;3
+2726;cuchilla;2
+2750;espuma de afeitar;2
+4941;máquina de afeitar;2
+5362;afilar;3
+16449;afilador;2
+25772;afilador;2
+5362;afilar;3
+5583;sí;4
+31973;sí;4
+34521;sí;4
+5363;aflojar;3
+11164;afortunado;4
+29672;agachada;4
+6033;agachado;4
+16437;agachar;3
+4606;coger;3
+6888;coger;3
+13024;coger;3
+31480;agarrar;3
+32773;coger;3
+34185;agarrar;3
+34186;agarrar;3
+33048;agencia de desarrollo;2
+16629;desarrollo;2
+33034;desarrollo sostenible;2
+5897;agencia de viajes;2
+29843;agencia de modelos;2
+29843;agencia de modelos;2
+5897;agencia de viajes;2
+33048;agencia de desarrollo;2
+5897;agencia de viajes;2
+29843;agencia de modelos;2
+33048;agencia de desarrollo;2
+5898;agenda;2
+35133;responsable;2
+30494;guardabosques;2
+30495;guardabosques;2
+30496;guardabosques;2
+30494;guardabosques;2
+30495;guardabosques;2
+30496;guardabosques;2
+35133;responsable;2
+5365;agitar;3
+9012;menear;3
+32230;agitar la cabeza;3
+32230;agitar la cabeza;3
+2673;cabeza;2
+5365;agitar;3
+9012;menear;3
+22137;tirarse;3
+23796;bajar la cabeza;3
+26493;tirarse;3
+28651;dolor de cabeza;2
+28754;dolor de cabeza;2
+28753;dolor de cabeza;2
+31458;tirarse;3
+31871;dolor de cabeza;2
+32160;dolor de cabeza;2
+35199;tirarse de cabeza;3
+36415;masajeador de cabeza;2
+10386;educación física;2
+10387;educación física;2
+13070;educación física;2
+13072;educación física;2
+30458;golpear con la cabeza;3
+31069;golpear;3
+10384;educación física;2
+10385;educación física;2
+13066;educación física;2
+13068;educación física;2
+36341;agobiado;4
+36341;agobiado;4
+6034;agosto;6
+35941;agosto;6
+32778;agotar;3
+7251;simpático;4
+8484;agradable;4
+10212;agradable;4
+31764;simpático;4
+31851;agradable;4
+32340;agradable;4
+6920;aumentar;3
+8026;añadir;3
+20091;agresión;2
+2982;agricultor;2
+6035;agricultor;2
+11165;agricultora;2
+10139;agrupar;3
+2248;agua;2
+6889;agua;2
+32464;agua;2
+24501;agua salada;2
+8255;agua oxigenada;2
+24495;agua dulce;2
+24499;agua potable;2
+30859;agua bendita;2
+3105;gafas de agua;2
+4768;vaso de agua;2
+8079;colchón de agua;2
+8485;agua no potable;5
+8592;gota de agua;2
+9137;pistola de agua;2
+16285;tanque;2
+22145;Torre del Agua;1
+24497;agua no potable;5
+24605;gotas de agua;2
+25137;gotas de agua;2
+25932;saltar al agua;3
+26425;saltar al agua;3
+26493;tirarse;3
+27278;subir por la escalerilla;3
+27279;subir por la escalerilla;3
+27280;subir por la escalerilla;3
+32310;sala de partos;2
+35217;jeringa aire-agua;2
+35605;cubo de agua;2
+15507;jugar con el agua;3
+16745;jugar con el agua;3
+27265;respirar bajo el agua;3
+27264;respirar bajo el agua;3
+30729;bolsa de agua caliente;2
+30774;bolsa de agua caliente;2
+30859;agua bendita;2
+24501;agua salada;2
+2248;agua;2
+6889;agua;2
+32464;agua;2
+8255;agua oxigenada;2
+24495;agua dulce;2
+24499;agua potable;2
+3105;gafas de agua;2
+4768;vaso de agua;2
+8079;colchón de agua;2
+8485;agua no potable;5
+8592;gota de agua;2
+9137;pistola de agua;2
+16285;tanque;2
+22145;Torre del Agua;1
+24497;agua no potable;5
+24605;gotas de agua;2
+25137;gotas de agua;2
+25932;saltar al agua;3
+26425;saltar al agua;3
+26493;tirarse;3
+27278;subir por la escalerilla;3
+27279;subir por la escalerilla;3
+27280;subir por la escalerilla;3
+32310;sala de partos;2
+35217;jeringa aire-agua;2
+35605;cubo de agua;2
+15507;jugar con el agua;3
+16745;jugar con el agua;3
+27265;respirar bajo el agua;3
+27264;respirar bajo el agua;3
+30729;bolsa de agua caliente;2
+30774;bolsa de agua caliente;2
+24501;agua salada;2
+2248;agua;2
+2925;mar;2
+6889;agua;2
+32464;agua;2
+8255;agua oxigenada;2
+24495;agua dulce;2
+24499;agua potable;2
+30859;agua bendita;2
+33040;Mar Menor;1
+2672;caballito de mar;2
+3105;gafas de agua;2
+3310;estrella de mar;2
+4768;vaso de agua;2
+8079;colchón de agua;2
+8485;agua no potable;5
+8592;gota de agua;2
+9137;pistola de agua;2
+16285;tanque;2
+22145;Torre del Agua;1
+24497;agua no potable;5
+24605;gotas de agua;2
+25137;gotas de agua;2
+25932;saltar al agua;3
+26425;saltar al agua;3
+26493;tirarse;3
+27278;subir por la escalerilla;3
+27279;subir por la escalerilla;3
+27280;subir por la escalerilla;3
+32310;sala de partos;2
+34033;erizo de mar;2
+35217;jeringa aire-agua;2
+35605;cubo de agua;2
+15507;jugar con el agua;3
+16745;jugar con el agua;3
+27265;respirar bajo el agua;3
+27264;respirar bajo el agua;3
+30729;bolsa de agua caliente;2
+30774;bolsa de agua caliente;2
+24495;agua dulce;2
+24501;agua salada;2
+2248;agua;2
+4636;dulce;4
+6889;agua;2
+10201;dulce;4
+31837;dulce;4
+32440;dulce;4
+32464;agua;2
+8255;agua oxigenada;2
+24499;agua potable;2
+30859;agua bendita;2
+3105;gafas de agua;2
+4768;vaso de agua;2
+8079;colchón de agua;2
+8485;agua no potable;5
+8592;gota de agua;2
+9137;pistola de agua;2
+16285;tanque;2
+22145;Torre del Agua;1
+24497;agua no potable;5
+24605;gotas de agua;2
+25137;gotas de agua;2
+25932;saltar al agua;3
+26425;saltar al agua;3
+26493;tirarse;3
+27278;subir por la escalerilla;3
+27279;subir por la escalerilla;3
+27280;subir por la escalerilla;3
+28357;carne de membrillo;2
+32310;sala de partos;2
+35217;jeringa aire-agua;2
+35605;cubo de agua;2
+15507;jugar con el agua;3
+16745;jugar con el agua;3
+27265;respirar bajo el agua;3
+27264;respirar bajo el agua;3
+30729;bolsa de agua caliente;2
+30774;bolsa de agua caliente;2
+8485;agua no potable;5
+24497;agua no potable;5
+24499;agua potable;2
+24501;agua salada;2
+2248;agua;2
+6889;agua;2
+32464;agua;2
+8255;agua oxigenada;2
+24495;agua dulce;2
+30859;agua bendita;2
+3105;gafas de agua;2
+4768;vaso de agua;2
+8079;colchón de agua;2
+8592;gota de agua;2
+9137;pistola de agua;2
+16285;tanque;2
+22145;Torre del Agua;1
+24605;gotas de agua;2
+25137;gotas de agua;2
+25932;saltar al agua;3
+26425;saltar al agua;3
+26493;tirarse;3
+27278;subir por la escalerilla;3
+27279;subir por la escalerilla;3
+27280;subir por la escalerilla;3
+32310;sala de partos;2
+35217;jeringa aire-agua;2
+35605;cubo de agua;2
+15507;jugar con el agua;3
+16745;jugar con el agua;3
+27265;respirar bajo el agua;3
+27264;respirar bajo el agua;3
+30729;bolsa de agua caliente;2
+30774;bolsa de agua caliente;2
+8255;agua oxigenada;2
+24501;agua salada;2
+2248;agua;2
+6889;agua;2
+32464;agua;2
+24495;agua dulce;2
+24499;agua potable;2
+30859;agua bendita;2
+3105;gafas de agua;2
+4768;vaso de agua;2
+8079;colchón de agua;2
+8485;agua no potable;5
+8592;gota de agua;2
+9137;pistola de agua;2
+16285;tanque;2
+22145;Torre del Agua;1
+24497;agua no potable;5
+24605;gotas de agua;2
+25137;gotas de agua;2
+25932;saltar al agua;3
+26425;saltar al agua;3
+26493;tirarse;3
+27278;subir por la escalerilla;3
+27279;subir por la escalerilla;3
+27280;subir por la escalerilla;3
+32310;sala de partos;2
+35217;jeringa aire-agua;2
+35605;cubo de agua;2
+15507;jugar con el agua;3
+16745;jugar con el agua;3
+27265;respirar bajo el agua;3
+27264;respirar bajo el agua;3
+30729;bolsa de agua caliente;2
+30774;bolsa de agua caliente;2
+24499;agua potable;2
+24501;agua salada;2
+8485;agua no potable;5
+24497;agua no potable;5
+2248;agua;2
+6889;agua;2
+32464;agua;2
+8255;agua oxigenada;2
+24495;agua dulce;2
+30859;agua bendita;2
+3105;gafas de agua;2
+4768;vaso de agua;2
+8079;colchón de agua;2
+8592;gota de agua;2
+9137;pistola de agua;2
+16285;tanque;2
+22145;Torre del Agua;1
+24605;gotas de agua;2
+25137;gotas de agua;2
+25932;saltar al agua;3
+26425;saltar al agua;3
+26493;tirarse;3
+27278;subir por la escalerilla;3
+27279;subir por la escalerilla;3
+27280;subir por la escalerilla;3
+32310;sala de partos;2
+35217;jeringa aire-agua;2
+35605;cubo de agua;2
+15507;jugar con el agua;3
+16745;jugar con el agua;3
+27265;respirar bajo el agua;3
+27264;respirar bajo el agua;3
+30729;bolsa de agua caliente;2
+30774;bolsa de agua caliente;2
+24501;agua salada;2
+2248;agua;2
+6889;agua;2
+32464;agua;2
+8255;agua oxigenada;2
+24495;agua dulce;2
+24499;agua potable;2
+30859;agua bendita;2
+3105;gafas de agua;2
+4768;vaso de agua;2
+8079;colchón de agua;2
+8485;agua no potable;5
+8592;gota de agua;2
+9137;pistola de agua;2
+16285;tanque;2
+22145;Torre del Agua;1
+24497;agua no potable;5
+24605;gotas de agua;2
+25137;gotas de agua;2
+25932;saltar al agua;3
+26425;saltar al agua;3
+26493;tirarse;3
+27278;subir por la escalerilla;3
+27279;subir por la escalerilla;3
+27280;subir por la escalerilla;3
+32310;sala de partos;2
+35217;jeringa aire-agua;2
+35605;cubo de agua;2
+15507;jugar con el agua;3
+16745;jugar con el agua;3
+27265;respirar bajo el agua;3
+27264;respirar bajo el agua;3
+30729;bolsa de agua caliente;2
+30774;bolsa de agua caliente;2
+8009;aguacate;2
+15337;spa;2
+28203;balneario;2
+32103;romper aguas;3
+32210;romper aguas;3
+24691;laboratorio de aguas;2
+2639;aguja;2
+11166;aguja;2
+33904;aguja e hilo;2
+34159;aguja y bobina;2
+2639;aguja;2
+33904;aguja e hilo;2
+2978;hilo;2
+11166;aguja;2
+9144;hilo dental;2
+34159;aguja y bobina;2
+34159;aguja y bobina;2
+2639;aguja;2
+2978;hilo;2
+11166;aguja;2
+33904;aguja e hilo;2
+2639;aguja;2
+3353;agujas de lana;2
+11166;aguja;2
+3353;agujas de lana;2
+2948;lana;2
+6036;agujero;2
+5366;ahogar;3
+6037;ahogar;3
+11167;ahogar;3
+11168;ahogar;3
+31913;ahogar;3
+36484;ahogar;3
+13026;ahora;4
+32747;ahora;4
+4556;ahorrar;3
+36403;ahorro;2
+5375;ahí;4
+32964;aikido;2
+23731;aire;2
+2640;aire acondicionado;2
+10726;¿hay viento?;5
+10736;¡hay viento!;5
+35217;jeringa aire-agua;2
+29142;encender el aire acondicionado;3
+29140;apagar el aire acondicionado;3
+2640;aire acondicionado;2
+29142;encender el aire acondicionado;3
+29140;apagar el aire acondicionado;3
+23731;aire;2
+10726;¿hay viento?;5
+10736;¡hay viento!;5
+35217;jeringa aire-agua;2
+25776;aislar;3
+31742;aislamiento;2
+25776;aislar;3
+28917;aizcolari;2
+3054;ajedrez;2
+25181;jugar al ajedrez;3
+25182;jugar al ajedrez;3
+35129;tablero de ajedrez;2
+35361;jugar al ajedrez;3
+35428;jugar al ajedrez;3
+2641;ajo;2
+34084;diente de ajo;2
+34086;dientes de ajo;2
+24535;ajustar dosis;3
+15020;ajuste razonable;2
+11709;al;6
+35877;al punto;4
+5367;al lado de;4
+9016;pasear al perro;3
+10160;golf;2
+10171;llamar;3
+10381;educación física;2
+13060;educación física;2
+16739;jugar al corro;3
+16741;jugar al corro;3
+16743;fútbol;2
+24541;atención al público;2
+24642;atención al público;2
+24641;atención al público;2
+25181;jugar al ajedrez;3
+25182;jugar al ajedrez;3
+25932;saltar al agua;3
+26300;pasear al bebé;3
+26302;pasear al perro;3
+26425;saltar al agua;3
+26493;tirarse;3
+28609;pádel;2
+28685;arroz al horno;2
+29167;llamar al 112;3
+29738;pasear al perro;3
+31967;atención al paciente;2
+33016;subir al caballo;3
+35203;subir al tobogán;3
+35241;pádel;2
+35242;pádel;2
+35247;golf;2
+35361;jugar al ajedrez;3
+35428;jugar al ajedrez;3
+35485;pasear al caballo;3
+35757;llamar al 061;3
+35749;jugar al baloncesto;3
+36424;pasear al perro;3
+36473;trasladarse;3
+36545;jugar al fútbol;3
+36593;subir al autobús;3
+36594;subir al autobús;3
+36595;subir al autobús;3
+31951;prohibido ir al baño;5
+32196;prohibido ir al baño;5
+32266;permitido ir al baño;5
+32267;permitido ir al baño;5
+10183;tirar;3
+5367;al lado de;4
+35877;al punto;4
+3218;punto;2
+34104;punto limpio;2
+34105;punto limpio;2
+3422;punto y coma;2
+9163;punto de acceso;2
+11352;punto de lectura;2
+9185;tpv;2
+29452;la una en punto;6
+29454;las diez en punto;6
+29460;las once en punto;6
+29468;las doce en punto;6
+29482;las tres en punto;6
+29488;las cuatro en punto;6
+29500;las seis en punto;6
+29506;las siete en punto;6
+29494;las cinco en punto;6
+29476;las dos en punto;6
+29512;las ocho en punto;6
+29518;las nueve en punto;6
+34000;punto de encuentro familiar;2
+34317;punto de encuentro familiar;2
+5368;ala;2
+6890;ala;2
+11169;ala;2
+10190;volar;3
+10190;volar;3
+5368;ala;2
+6890;ala;2
+11169;ala;2
+7042;alambre;2
+11170;alargadera;2
+6891;sirena;2
+36342;alarma;2
+36435;botón de alarma;2
+36342;alarma;2
+36435;botón de alarma;2
+6891;sirena;2
+36413;manguera de incendios;2
+2983;albaricoque;2
+2642;albañil;2
+6038;albañil;2
+11171;albañil;2
+11222;colonia;2
+11477;amanecer;3
+5369;albornoz;2
+24832;alborotar;3
+24833;alborotar;3
+24832;alborotar;3
+24833;alborotar;3
+8335;albóndiga;2
+3249;albóndigas;2
+8335;albóndiga;2
+5370;alcachofa;2
+3170;alcalde;2
+11172;alcaldesa;2
+3060;ayuntamiento;2
+17161;alcantarilla;2
+17163;alcantarilla;2
+8188;atrapar;3
+8187;atrapar;3
+24208;conseguir;3
+2744;escarpia;2
+25411;castillo;2
+8010;alce;2
+2984;alcohol;2
+26626;alcohol;2
+25321;picaporte;2
+6892;alegrar;3
+3250;alegre;4
+10192;alegre;4
+31849;alegre;4
+35533;alegre;4
+35563;alegría;2
+5371;alejar;3
+6893;alejar;3
+6894;alejar;3
+32154;alejar;3
+36107;alejar;3
+32154;alejar;3
+5372;alergia;2
+31662;alergia;2
+31823;alergia;2
+31987;alergia;2
+35957;alergia;2
+36071;alergia;2
+30776;prueba de alergia;2
+30777;prueba de alergia;2
+30778;prueba de alergia;2
+30779;prueba de alergia;2
+30780;prueba de alergia;2
+31172;alergólogo;2
+31174;alergóloga;2
+31174;alergóloga;2
+31172;alergólogo;2
+6895;aleta;2
+3055;aletas;2
+5373;aletas;2
+6895;aleta;2
+27315;aleteo;2
+27316;aleteo;2
+31123;bucear;3
+27315;aleteo;2
+27316;aleteo;2
+3050;abecedario;6
+8721;alfarera;2
+11173;alfarero;2
+16453;alfarería;2
+30975;taller de cerámica;2
+30985;horno de alfarería;2
+34169;alfil;2
+8291;alfiler;2
+29788;alfiler;2
+2643;alfileres;2
+8291;alfiler;2
+29788;alfiler;2
+2249;alfombra;2
+24834;alfombrilla;2
+36612;alfombrilla;2
+6040;alga;2
+2985;algodón;2
+11174;algodón de azúcar;2
+33946;brazo con algodón;2
+11174;algodón de azúcar;2
+2985;algodón;2
+25560;azúcar;2
+27590;azúcar moreno;2
+33946;brazo con algodón;2
+5374;algunos;4
+27385;vez;2
+27385;vez;2
+5374;algunos;4
+27387;a veces;4
+27564;a veces;4
+27387;a veces;4
+27564;a veces;4
+5374;algunos;4
+5374;algunos;4
+11175;algunos;4
+5374;algunos;4
+24968;alicatado;2
+23733;alicatador;2
+2644;alicate;2
+11176;alimentar;3
+4610;comida;2
+4610;comida;2
+32602;alimentos y bebidas;2
+36693;alimentos de juguete;2
+36693;alimentos de juguete;2
+4610;comida;2
+9813;juguetes;2
+32568;juguetes;2
+8146;juguete adaptado;2
+2307;camión de juguete;2
+2340;coche de juguete;2
+5094;tren;2
+32602;alimentos y bebidas;2
+32864;slinky;2
+32602;alimentos y bebidas;2
+4575;bebida;2
+4610;comida;2
+30403;bebida;2
+6077;carro;2
+30444;tienda de bebidas;2
+36693;alimentos de juguete;2
+35813;alioli;2
+8192;planchar;3
+32220;aliviar;3
+32224;aliviar;3
+32222;aliviar;3
+32221;aliviar;3
+32223;aliviar;3
+5375;ahí;4
+5375;ahí;4
+27511;colocar;3
+27514;colocar;3
+16057;encargado;2
+6896;almacén;2
+15832;almacén de alimentación;2
+15834;almacén de lencería;2
+15836;almacén de limpieza;2
+15838;almacén de papelería;2
+15842;almacén de ropa;2
+16057;encargado;2
+16055;encargada;2
+24683;almacén de ludoteca;2
+33026;jefa de almacén;2
+33028;jefe de almacén;2
+15840;almacén de la plancha;2
+16067;almacén de la vajilla;2
+15832;almacén de alimentación;2
+6896;almacén;2
+15834;almacén de lencería;2
+15836;almacén de limpieza;2
+15838;almacén de papelería;2
+15842;almacén de ropa;2
+16057;encargado;2
+16055;encargada;2
+24683;almacén de ludoteca;2
+33026;jefa de almacén;2
+33028;jefe de almacén;2
+33118;sonda de alimentación;2
+15840;almacén de la plancha;2
+16067;almacén de la vajilla;2
+15840;almacén de la plancha;2
+2528;plancha;2
+6896;almacén;2
+5542;plancha de pelo;2
+15832;almacén de alimentación;2
+15834;almacén de lencería;2
+15836;almacén de limpieza;2
+15838;almacén de papelería;2
+15842;almacén de ropa;2
+16057;encargado;2
+16055;encargada;2
+24683;almacén de ludoteca;2
+33026;jefa de almacén;2
+33028;jefe de almacén;2
+16067;almacén de la vajilla;2
+36428;pescado a la plancha;2
+16067;almacén de la vajilla;2
+11390;vajilla;2
+6896;almacén;2
+15832;almacén de alimentación;2
+15834;almacén de lencería;2
+15836;almacén de limpieza;2
+15838;almacén de papelería;2
+15842;almacén de ropa;2
+16057;encargado;2
+16055;encargada;2
+24683;almacén de ludoteca;2
+33026;jefa de almacén;2
+33028;jefe de almacén;2
+15840;almacén de la plancha;2
+15834;almacén de lencería;2
+6896;almacén;2
+29899;lencería;2
+15832;almacén de alimentación;2
+15836;almacén de limpieza;2
+15838;almacén de papelería;2
+15842;almacén de ropa;2
+16057;encargado;2
+16055;encargada;2
+24683;almacén de ludoteca;2
+33026;jefa de almacén;2
+33028;jefe de almacén;2
+15840;almacén de la plancha;2
+16067;almacén de la vajilla;2
+15836;almacén de limpieza;2
+22791;limpieza;2
+6896;almacén;2
+15832;almacén de alimentación;2
+15834;almacén de lencería;2
+15838;almacén de papelería;2
+15842;almacén de ropa;2
+16057;encargado;2
+16059;servicio de limpieza;2
+16055;encargada;2
+24683;almacén de ludoteca;2
+33026;jefa de almacén;2
+33028;jefe de almacén;2
+36700;empresa de limpieza;2
+15840;almacén de la plancha;2
+16067;almacén de la vajilla;2
+16117;cuarto de la limpieza;2
+24683;almacén de ludoteca;2
+4689;ludoteca;2
+6896;almacén;2
+15832;almacén de alimentación;2
+15834;almacén de lencería;2
+15836;almacén de limpieza;2
+15838;almacén de papelería;2
+15842;almacén de ropa;2
+16057;encargado;2
+16055;encargada;2
+33026;jefa de almacén;2
+33028;jefe de almacén;2
+15840;almacén de la plancha;2
+16067;almacén de la vajilla;2
+15838;almacén de papelería;2
+6896;almacén;2
+29897;papelería;2
+15832;almacén de alimentación;2
+15834;almacén de lencería;2
+15836;almacén de limpieza;2
+15842;almacén de ropa;2
+16057;encargado;2
+16055;encargada;2
+24683;almacén de ludoteca;2
+33026;jefa de almacén;2
+33028;jefe de almacén;2
+15840;almacén de la plancha;2
+16067;almacén de la vajilla;2
+15842;almacén de ropa;2
+22175;cesta de la ropa;2
+7233;ropa;2
+6896;almacén;2
+25680;ropa interior;2
+31476;ropa rota;2
+4741;seco;4
+4885;tienda de ropa;2
+5496;lavar la ropa;3
+6623;tienda de ropa;2
+7021;detergente;2
+15832;almacén de alimentación;2
+15834;almacén de lencería;2
+15836;almacén de limpieza;2
+15838;almacén de papelería;2
+16057;encargado;2
+16055;encargada;2
+16861;plegar;3
+24683;almacén de ludoteca;2
+30424;tienda de ropa;2
+30425;tienda de ropa;2
+30426;tienda de ropa;2
+30427;tienda de ropa;2
+30436;tienda de ropa;2
+30437;tienda de ropa;2
+32570;ropa y complementos;2
+33026;jefa de almacén;2
+33028;jefe de almacén;2
+15840;almacén de la plancha;2
+16067;almacén de la vajilla;2
+29923;carro de ropa sucia;2
+30152;mujer en ropa interior;2
+30154;hombre en ropa interior;2
+30155;hombre en ropa interior;2
+30158;niño en ropa interior;2
+30160;niña en ropa interior;2
+31213;niña en ropa interior;2
+31217;niño en ropa interior;2
+31258;niño en ropa interior;2
+31260;niña en ropa interior;2
+31268;hombre en ropa interior;2
+31262;hombre en ropa interior;2
+34884;tienda de ropa infantil;2
+36466;tienda de ropa flamenca;2
+29977;tienda de arreglos de ropa;2
+36465;tienda de ropa de casa;2
+3071;calendario;2
+2645;almeja;2
+8292;almendra;2
+35143;almendra;2
+2646;almendras;2
+8292;almendra;2
+35143;almendra;2
+3174;almendro;2
+24185;minarete;2
+2250;almohada;2
+5095;almohadilla;2
+25365;rasqueta;2
+28207;almuerzo;2
+28206;almuerzo;2
+28205;almuerzo;2
+28207;almuerzo;2
+28206;almuerzo;2
+28205;almuerzo;2
+32376;bolsa de almuerzo;2
+36418;meter el almuerzo;3
+36444;sacar el almuerzo;3
+36487;alpargata;2
+25778;alpargatas;2
+36487;alpargata;2
+26813;escalar;3
+26814;escalar;3
+8012;alquilar;3
+34918;alquiler de bicicletas;2
+9208;prohibido bicicletas;5
+8732;taller de bicicletas;2
+26632;aparcamiento de bicicletas;2
+26692;bicicleta de alquiler;2
+27077;tienda de bicicletas;2
+34880;tienda de alquiler de coches;2
+5376;alrededor;4
+6218;subir potencia;3
+10193;mayor;4
+33912;dar el alta;3
+21399;tren de alta velocidad;2
+23737;altar;2
+30914;altar;2
+30916;altar;2
+30917;altar;2
+2647;altavoces;2
+8336;altavoz;2
+26628;altavoz;2
+8336;altavoz;2
+26628;altavoz;2
+4557;alto;4
+25782;alto;4
+32834;tener las piernas en alto;3
+8013;altura;2
+31286;altura;2
+31287;altura;2
+34703;altura correcta;2
+17314;salto de altura;2
+34703;altura correcta;2
+8013;altura;2
+31286;altura;2
+31287;altura;2
+32270;postura correcta;2
+34683;postura correcta;2
+17314;salto de altura;2
+8337;alubia;2
+3294;judías;2
+8337;alubia;2
+29686;alud;2
+6015;iluminar;3
+34535;alumbrar;3
+5899;alumna;2
+6041;alumna;2
+5900;alumno;2
+6042;alumno;2
+36528;elevador;2
+36528;elevador;2
+36505;butaca;2
+24836;alzar;3
+33994;amable;4
+11179;amor;2
+11178;amor;2
+8014;amamantar;3
+32028;amamantar;3
+31346;amamantar con sonda;3
+33924;amamantar a gemelos o mellizos;3
+33924;amamantar a gemelos o mellizos;3
+7115;gemelos;4
+8014;amamantar;3
+24069;gemelos;2
+26106;gemelos;2
+32028;amamantar;3
+34002;mellizos;4
+34094;gemelos;4
+31346;amamantar con sonda;3
+31346;amamantar con sonda;3
+29756;sonda nasogástrica;2
+29757;sonda nasogástrica;2
+29758;sonda nasogástrica;2
+30162;poner sonda nasogástrica;3
+30164;poner sonda nasogástrica;3
+30163;poner sonda nasogástrica;3
+33118;sonda de alimentación;2
+8014;amamantar;3
+32028;amamantar;3
+30112;sonda vesical;2
+30113;sonda vesical;2
+30747;sonda rectal;2
+35223;explorador dental;2
+29818;poner la sonda;3
+29819;poner la sonda;3
+29820;poner la sonda;3
+31690;sonda de doble balón;2
+33924;amamantar a gemelos o mellizos;3
+3175;amanecer;3
+11477;amanecer;3
+6897;amapola;2
+6898;amar;3
+11519;amar;3
+11517;amar;3
+30928;amargo;4
+2648;amarillo;4
+8370;tarjeta amarilla;2
+2648;amarillo;4
+5391;anudar;3
+32276;atar;3
+8015;amasar;3
+21355;amasar;3
+8211;rodillo;2
+34834;amazona;2
+5367;al lado de;4
+2251;ambulancia;2
+6899;ambulancia;2
+36199;ambulancia;2
+36203;ambulancia;2
+36214;ambulancia;2
+36200;ambulancia;2
+35121;ambulatorio;2
+3296;americana;2
+8486;amiga;2
+25786;amiga;2
+8487;amigo;2
+25790;amigo;2
+2255;amigos;2
+8487;amigo;2
+25790;amigo;2
+25792;amigos;2
+8488;amistad;2
+26857;ammonite;2
+34055;ammonite;2
+34056;ammonite;2
+33124;amniocentesis;2
+32210;romper aguas;3
+6904;apilar;3
+6905;apilar;3
+8016;amontonar;3
+8020;cariño;2
+11178;amor;2
+11179;amor;2
+35807;ampolla;2
+35141;anacardos;2
+32220;aliviar;3
+32224;aliviar;3
+32222;aliviar;3
+32221;aliviar;3
+32223;aliviar;3
+31306;analgésico;2
+31176;analista clínica;2
+6523;clínica;2
+31178;analista clínico;2
+36578;psicólogo clínico;2
+29921;clínica de rehabilitación motriz;2
+31178;analista clínico;2
+31176;analista clínica;2
+32112;análisis;2
+32111;análisis;2
+36578;psicólogo clínico;2
+35297;anatomopatóloga;2
+35299;anatomopatólogo;2
+4559;ancho;4
+8022;ancho;4
+4559;ancho;4
+8022;ancho;4
+28930;anchoa;2
+8023;anchura;2
+34894;anciano;4
+25796;anciano;4
+34894;anciano;4
+36217;anciano;4
+6043;ancla;2
+5902;andador;2
+23741;andador;2
+24850;andador;2
+25800;andador;2
+32730;andador;2
+32693;caminar con el andador;3
+32694;caminar con el andador;3
+32945;caminar con el andador;3
+32944;caminar con el andador;3
+32946;caminar con el andador;3
+3251;caminar;3
+6044;caminar;3
+16461;andar;3
+21357;andar;3
+31917;caminar;3
+32214;caminar;3
+32908;caminar;3
+31949;prohibido andar;5
+21357;andar;3
+3251;caminar;3
+6044;caminar;3
+16461;andar;3
+31917;caminar;3
+32214;caminar;3
+32908;caminar;3
+36678;zancos;2
+31949;prohibido andar;5
+7174;aneblar;3
+31740;punción;2
+32286;epidural;2
+35335;máquina de anestesia;2
+35613;mascarilla de anestesia;2
+28043;respiración asistida;2
+35277;anestesióloga;2
+35279;anestesiólogo;2
+35277;anestesióloga;2
+35279;anestesiólogo;2
+7043;anfibios;2
+7043;anfibios;2
+34300;anfiteatro;2
+3056;ángel;2
+14250;anginas;2
+31168;angiólogo;2
+31170;angióloga;2
+31170;angióloga;2
+31168;angiólogo;2
+5378;anguila;2
+36341;agobiado;4
+36341;agobiado;4
+7174;aneblar;3
+2252;anillo;2
+6900;anillo;2
+31788;anillo vaginal;2
+31788;anillo vaginal;2
+2252;anillo;2
+6900;anillo;2
+31694;medicación vaginal;2
+31781;sangrado vaginal;2
+31869;medicación vaginal;2
+32017;sangrado vaginal;2
+33120;espéculo vaginal;2
+33122;citología vaginal;2
+10347;animadora;2
+6901;animales;2
+8025;animal;2
+24256;pelo de animal;2
+34294;bañar un animal;3
+2254;araña;2
+2239;abeja;2
+6901;animales;2
+8025;animal;2
+36179;técnico en terapias asistidas con animales;2
+35853;animales marinos;2
+35857;animales terrestres;2
+35855;animales aéreos;2
+16980;tienda de animales;2
+29913;protectora de animales;2
+32572;seres vivos;2
+29202;terapia asistida con animales;2
+29203;terapia asistida con animales;2
+36181;terapia asistida con animales;2
+35855;animales aéreos;2
+36179;técnico en terapias asistidas con animales;2
+6901;animales;2
+35853;animales marinos;2
+35857;animales terrestres;2
+16980;tienda de animales;2
+29913;protectora de animales;2
+32572;seres vivos;2
+29202;terapia asistida con animales;2
+29203;terapia asistida con animales;2
+36181;terapia asistida con animales;2
+35853;animales marinos;2
+36179;técnico en terapias asistidas con animales;2
+6901;animales;2
+35857;animales terrestres;2
+35855;animales aéreos;2
+16980;tienda de animales;2
+29913;protectora de animales;2
+32572;seres vivos;2
+29202;terapia asistida con animales;2
+29203;terapia asistida con animales;2
+36181;terapia asistida con animales;2
+35857;animales terrestres;2
+36179;técnico en terapias asistidas con animales;2
+6901;animales;2
+35853;animales marinos;2
+35855;animales aéreos;2
+16980;tienda de animales;2
+29913;protectora de animales;2
+32572;seres vivos;2
+29202;terapia asistida con animales;2
+29203;terapia asistida con animales;2
+36181;terapia asistida con animales;2
+32572;seres vivos;2
+36179;técnico en terapias asistidas con animales;2
+6901;animales;2
+11572;plantas;2
+35853;animales marinos;2
+35857;animales terrestres;2
+35855;animales aéreos;2
+8355;guía de plantas;2
+16980;tienda de animales;2
+29913;protectora de animales;2
+29202;terapia asistida con animales;2
+29203;terapia asistida con animales;2
+36181;terapia asistida con animales;2
+5903;animar;3
+6046;animar;3
+31799;animar;3
+31777;ano;2
+5071;Año Nuevo;1
+32480;¡Feliz año nuevo!;5
+6903;año;2
+32536;Año Nuevo;1
+8261;Nochevieja;1
+35731;anochecer;3
+25804;anorak;2
+6487;anotar;3
+8490;anotar;3
+30484;ansioso;4
+30485;ansioso;4
+7044;ante;6
+32848;antes del mediodía;4
+32848;antes del mediodía;4
+32850;después del mediodía;4
+27319;anterior;4
+27389;anterior;4
+2253;antena;2
+3252;antena;2
+27319;anterior;4
+27389;anterior;4
+13028;antes;4
+32745;antes;4
+32848;antes del mediodía;4
+32848;antes del mediodía;4
+32708;mediodía;2
+32709;mediodía;2
+32850;después del mediodía;4
+36343;dispositivo anti-atragantamiento;2
+31811;anticonceptivo;2
+31779;parche anticonceptivo;2
+32037;implante anticonceptivo;2
+31811;anticonceptivo;2
+5904;antifaz;2
+32806;antiguo;4
+10195;desagradable;4
+6902;antipático;4
+32150;antipático;4
+26688;desinfectar;3
+5905;antorcha;2
+27570;antílope;2
+3071;calendario;2
+5391;anudar;3
+7045;anular;2
+27393;detener;3
+8065;cartel;2
+8275;anuncio;2
+12326;cartel;2
+12325;cartel;2
+5906;anzuelo;2
+32112;análisis;2
+32111;análisis;2
+5901;análisis de sangre;2
+8021;análisis de orina;2
+30080;análisis de orina;2
+30078;análisis de orina;2
+30084;análisis de sangre;2
+30079;análisis de orina;2
+31354;análisis de sangre;2
+31725;análisis de orina;2
+32852;análisis de heces;2
+33093;análisis de sangre;2
+33094;análisis de sangre;2
+33092;análisis de sangre;2
+32112;análisis;2
+32111;análisis;2
+31178;analista clínico;2
+36578;psicólogo clínico;2
+5901;análisis de sangre;2
+8021;análisis de orina;2
+30080;análisis de orina;2
+30078;análisis de orina;2
+30084;análisis de sangre;2
+30079;análisis de orina;2
+31354;análisis de sangre;2
+31725;análisis de orina;2
+32852;análisis de heces;2
+33093;análisis de sangre;2
+33094;análisis de sangre;2
+33092;análisis de sangre;2
+32852;análisis de heces;2
+32112;análisis;2
+32111;análisis;2
+5901;análisis de sangre;2
+8021;análisis de orina;2
+30080;análisis de orina;2
+30078;análisis de orina;2
+30084;análisis de sangre;2
+30079;análisis de orina;2
+31354;análisis de sangre;2
+31725;análisis de orina;2
+33093;análisis de sangre;2
+33094;análisis de sangre;2
+33092;análisis de sangre;2
+8021;análisis de orina;2
+30080;análisis de orina;2
+30078;análisis de orina;2
+30079;análisis de orina;2
+31725;análisis de orina;2
+32112;análisis;2
+32111;análisis;2
+32279;no hace pis;5
+32278;no hace pis;5
+5901;análisis de sangre;2
+30084;análisis de sangre;2
+31354;análisis de sangre;2
+32852;análisis de heces;2
+33093;análisis de sangre;2
+33094;análisis de sangre;2
+33092;análisis de sangre;2
+5901;análisis de sangre;2
+30084;análisis de sangre;2
+31354;análisis de sangre;2
+33093;análisis de sangre;2
+33094;análisis de sangre;2
+33092;análisis de sangre;2
+32112;análisis;2
+32111;análisis;2
+2803;sangre;2
+24595;recoger sangre;3
+8021;análisis de orina;2
+30080;análisis de orina;2
+30078;análisis de orina;2
+30079;análisis de orina;2
+31725;análisis de orina;2
+32852;análisis de heces;2
+8252;apagado;4
+8252;apagado;4
+4562;apagar;3
+4561;apagar;3
+5907;apagar;3
+6047;apagar;3
+8027;apagar la luz;3
+20093;apagar;3
+21365;apagar;3
+29140;apagar el aire acondicionado;3
+29140;apagar el aire acondicionado;3
+8027;apagar la luz;3
+2640;aire acondicionado;2
+29142;encender el aire acondicionado;3
+4562;apagar;3
+4561;apagar;3
+5907;apagar;3
+6047;apagar;3
+20093;apagar;3
+21365;apagar;3
+23731;aire;2
+10726;¿hay viento?;5
+10736;¡hay viento!;5
+35217;jeringa aire-agua;2
+8027;apagar la luz;3
+4562;apagar;3
+4561;apagar;3
+5907;apagar;3
+6047;apagar;3
+8619;luz;2
+20093;apagar;3
+21365;apagar;3
+8103;encender la luz;3
+8376;luz de color;2
+24559;fibra óptica;2
+34801;mesa de luz;2
+29140;apagar el aire acondicionado;3
+36455;teatro de luz negra;2
+26278;palanca;2
+26279;palanca;2
+13030;aparato;2
+36343;dispositivo anti-atragantamiento;2
+36343;dispositivo anti-atragantamiento;2
+13030;aparato;2
+32578;aparatos y muebles;2
+32594;muebles;2
+4884;tienda de muebles;2
+6622;tienda de muebles;2
+29989;tienda de muebles de cocina;2
+6283;aparcamiento;2
+26632;aparcamiento de bicicletas;2
+26632;aparcamiento de bicicletas;2
+9208;prohibido bicicletas;5
+6283;aparcamiento;2
+8732;taller de bicicletas;2
+27077;tienda de bicicletas;2
+34918;alquiler de bicicletas;2
+5379;aparcar;3
+24741;encontrar;3
+24742;encontrar;3
+24774;encontrar;3
+24773;encontrar;3
+2649;arquitecto;2
+28211;arquitecto;2
+8491;apartamento;2
+27327;apellido;2
+27349;¿cuál es tu apellido?;5
+24854;aperitivo;2
+30488;aperitivo;2
+30489;aperitivo;2
+8028;apestar;3
+16439;apestar;3
+31073;apestar;3
+31137;apestar;3
+31138;apestar;3
+31775;apestar;3
+31957;apestar;3
+32045;apestar;3
+32046;apestar;3
+6904;apilar;3
+6905;apilar;3
+36379;apilar;3
+8492;apio;2
+21367;apisonadora;2
+11180;aplastar;3
+13032;aplastar;3
+4563;aplaudir;3
+36682;aplaudir;3
+12248;aportación;2
+7280;traer;3
+7279;traer;3
+32061;traer;3
+21371;apostar;3
+4570;ayudar;3
+21377;apoyar;3
+21375;apoyarse;3
+21373;apoyarse;3
+12252;apoyo;2
+16023;productos de apoyo;2
+33080;aula de apoyo;2
+30235;Síndrome de Down apoyo;2
+30237;Maullido de gato apoyo;2
+8029;aprender;3
+26636;aprender;3
+26638;aprender a nadar;3
+26641;aprender a nadar;3
+26639;aprender a nadar;3
+26640;aprender a nadar;3
+26638;aprender a nadar;3
+26641;aprender a nadar;3
+26639;aprender a nadar;3
+26640;aprender a nadar;3
+6568;nadar;3
+8029;aprender;3
+24903;nadar;3
+26636;aprender;3
+31460;nadar;3
+24617;formación online;2
+5432;correo;2
+26543;circuito;2
+27355;correo electrónico;2
+32540;correo;2
+33084;aula de TVA;2
+11613;¿cuál es tu email?;5
+27351;¿cuál es tu email?;5
+8087;detener;3
+5552;apretar;3
+32866;apretar;3
+5381;apretar la tuerca;3
+31053;apretar el zapato;3

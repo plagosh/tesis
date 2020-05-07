@@ -1,0 +1,143 @@
+
+3082;colegio;2
+6454;colegio;2
+32446;colegio;2
+34782;director de escuela;2
+24615;escuela taller;2
+29853;escuela infantil;2
+26589;escuela de familias;2
+29907;conservatorio;2
+29917;escuela de arte;2
+29911;escuela oficial de idiomas;2
+29917;escuela de arte;2
+34782;director de escuela;2
+3082;colegio;2
+6454;colegio;2
+32446;colegio;2
+24615;escuela taller;2
+29853;escuela infantil;2
+26589;escuela de familias;2
+29907;conservatorio;2
+29911;escuela oficial de idiomas;2
+6642;libros de poesia y arte;2
+26589;escuela de familias;2
+34782;director de escuela;2
+3082;colegio;2
+6454;colegio;2
+32446;colegio;2
+24615;escuela taller;2
+29853;escuela infantil;2
+29907;conservatorio;2
+29917;escuela de arte;2
+29911;escuela oficial de idiomas;2
+29907;conservatorio;2
+2746;escuchar música;3
+29718;escuchar música;3
+29720;escuchar música;3
+29719;escuchar música;3
+32131;escuchar música;3
+35719;escuchar música;3
+35741;escuchar música;3
+34782;director de escuela;2
+3082;colegio;2
+6454;colegio;2
+32446;colegio;2
+11311;música;2
+24791;música;2
+24795;música;2
+24615;escuela taller;2
+29853;escuela infantil;2
+2378;equipo de música;2
+4955;profesora de música;2
+5914;aula de música;2
+7796;profesor;2
+15349;CD;2
+16992;tienda de música;2
+26242;música de órgano;2
+26589;escuela de familias;2
+29917;escuela de arte;2
+35434;clase de música;2
+35433;clase de música;2
+29911;escuela oficial de idiomas;2
+29853;escuela infantil;2
+32374;silla infantil;2
+34782;director de escuela;2
+3082;colegio;2
+6454;colegio;2
+32446;colegio;2
+16629;desarrollo;2
+24615;escuela taller;2
+29556;fisioterapia pediátrica;2
+29558;fisioterapia pediátrica;2
+29557;fisioterapia pediátrica;2
+31470;educación infantil;2
+3082;colegio;2
+6454;colegio;2
+32446;colegio;2
+34782;director de escuela;2
+24615;escuela taller;2
+29853;escuela infantil;2
+26589;escuela de familias;2
+29907;conservatorio;2
+29917;escuela de arte;2
+29911;escuela oficial de idiomas;2
+29917;escuela de arte;2
+34782;director de escuela;2
+3082;colegio;2
+6454;colegio;2
+32446;colegio;2
+24615;escuela taller;2
+29853;escuela infantil;2
+26589;escuela de familias;2
+29907;conservatorio;2
+29911;escuela oficial de idiomas;2
+6642;libros de poesia y arte;2
+26589;escuela de familias;2
+34782;director de escuela;2
+3082;colegio;2
+6454;colegio;2
+32446;colegio;2
+24615;escuela taller;2
+29853;escuela infantil;2
+29907;conservatorio;2
+29917;escuela de arte;2
+29911;escuela oficial de idiomas;2
+29907;conservatorio;2
+2746;escuchar música;3
+29718;escuchar música;3
+29720;escuchar música;3
+29719;escuchar música;3
+32131;escuchar música;3
+35719;escuchar música;3
+35741;escuchar música;3
+34782;director de escuela;2
+3082;colegio;2
+6454;colegio;2
+32446;colegio;2
+11311;música;2
+24791;música;2
+24795;música;2
+24615;escuela taller;2
+29853;escuela infantil;2
+2378;equipo de música;2
+4955;profesora de música;2
+5914;aula de música;2
+7796;profesor;2
+15349;CD;2
+16992;tienda de música;2
+26242;música de órgano;2
+26589;escuela de familias;2
+29917;escuela de arte;2
+35434;clase de música;2
+35433;clase de música;2
+29911;escuela oficial de idiomas;2
+29853;escuela infantil;2
+32374;silla infantil;2
+34782;director de escuela;2
+3082;colegio;2
+6454;colegio;2
+32446;colegio;2
+16629;desarrollo;2
+24615;escuela taller;2
+29556;fisioterapia pediátrica;2
+29558;fisioterapia pediátrica;2
