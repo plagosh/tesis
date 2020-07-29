@@ -8,14 +8,28 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:orientation="vertical"
-        android:layout_marginLeft="16dp"
-        android:layout_marginRight="16dp">
+        android:orientation="horizontal"
+        android:layout_margin="16dp">
 
-        <ScrollView
-            android:layout_width="250sp"
+        <LinearLayout
+            android:id="@+id/layoutdesglose"
+            android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:background="#FF6D00"
-            android:layout_gravity="center"/>
+            android:orientation="vertical">
+
+            <ScrollView
+                android:layout_width="250sp"
+                android:layout_height="match_parent"
+                android:background="@color/cardview_shadow_start_color"
+                android:layout_gravity="center">
+
+                <LinearLayout
+                    android:id="@+id/cajaBotonImagen"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+                </LinearLayout>
+            </ScrollView>
+        </LinearLayout>
     </LinearLayout>
 </LinearLayout>

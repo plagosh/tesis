@@ -22,11 +22,6 @@
         android:label="libro"
         tools:layout="@layout/pdc_1" />
     <fragment
-        android:id="@+id/nav_panel"
-        android:name="cl.paulina.yotrabajoconpecs.ui.panel.panelFragment"
-        android:label="Panel"
-        tools:layout="@layout/pdc_2" />
-    <fragment
         android:id="@+id/nav_buscar_picto_pdc"
         android:name="cl.paulina.yotrabajoconpecs.ui.busqueda_pictograma_pdc.busquedaPictogramapdcFragment"
         android:label="Listado pictogramas"
@@ -36,4 +31,19 @@
         android:name="cl.paulina.yotrabajoconpecs.ui.busqueda_pictograma_empleador.busquedaPictogramaFragment"
         android:label="TiraFrase"
         tools:layout="@layout/empleador_1_1" />
+    <fragment
+        android:id="@+id/nav_panel"
+        android:name="cl.paulina.yotrabajoconpecs.ui.panel.panelFragment"
+        android:label="Panel"
+        tools:layout="@layout/pdc_2" />
+    <fragment
+        android:id="@+id/nav_desglose"
+        android:name="cl.paulina.yotrabajoconpecs.ui.panel.desglose"
+        android:label="Actividades secundarias"
+        tools:layout="@layout/pdc_2_1" />
+    <fragment
+        android:id="@+id/nav_herramientas"
+        android:name="cl.paulina.yotrabajoconpecs.ui.panel.herramientas"
+        android:label="Herramientas"
+        tools:layout="@layout/pdc_2_1_1" />
 </navigation>

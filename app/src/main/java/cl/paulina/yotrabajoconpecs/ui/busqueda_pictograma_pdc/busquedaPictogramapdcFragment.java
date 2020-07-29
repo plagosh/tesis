@@ -91,11 +91,11 @@ public class busquedaPictogramapdcFragment extends Fragment{
                     Toast toast2 = Toast.makeText(context2, text2, duration2);
                     toast2.show();*/
                     try{
-                        /*Context context3 = getApplicationContext();
-                        CharSequence text3 = "Entre al try";
-                        int duration3 = Toast.LENGTH_SHORT;
-                        Toast toast3 = Toast.makeText(context3, text3, duration3);
-                        toast3.show();*/
+                            /*Context context3 = getApplicationContext();
+                            CharSequence text3 = "Entre al try";
+                            int duration3 = Toast.LENGTH_SHORT;
+                            Toast toast3 = Toast.makeText(context3, text3, duration3);
+                            toast3.show();*/
 
                         JSONArray jsonarray = new JSONArray(new String(responseBody));
                         for(int i = 0; i < jsonarray.length(); i++){
