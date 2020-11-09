@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:background="@drawable/background">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_margin="16dp"
+        android:orientation="vertical">
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="2"
+            android:layout_gravity="center">
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recyclerview"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                tools:listitem="@layout/cardviewmensajes"
+                android:layout_gravity="start">
+
+            </androidx.recyclerview.widget.RecyclerView>
+        </ScrollView>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="150sp"
+            android:layout_gravity="bottom"
+            android:orientation="horizontal">
+
+
+            <ImageButton
+                android:layout_width="80sp"
+                android:layout_height="80sp"
+                android:layout_gravity="center"
+                android:orientation="vertical"
+                android:layout_marginRight="5sp"
+                android:background="@drawable/boton_rectangulo_bitmap"/>
+
+            <ImageButton
+                android:layout_width="80sp"
+                android:layout_height="80sp"
+                android:layout_gravity="center"
+                android:layout_marginRight="5sp"
+                android:background="@drawable/boton_rectangulo_bitmap2" />
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="5sp"
+                android:orientation="vertical">
+
+                <ImageButton
+                    android:id="@+id/ArribaButtonUno"
+                    android:src="@drawable/ic_baseline_arrow_drop_up_24"
+                    android:layout_width="80sp"
+                    android:layout_height="35sp"
+                    android:layout_gravity="center"
+                    android:scaleType="fitCenter"
+                    android:background="@null" />
+
+                <ImageButton
+                    android:id="@+id/ImagenButtonUno"
+                    android:layout_width="80sp"
+                    android:layout_height="80sp"
+                    android:layout_gravity="center_vertical"
+                    android:background="@drawable/boton_rectangulo" />
+
+                <ImageButton
+                    android:id="@+id/AbajoButtonUno"
+                    android:layout_width="80sp"
+                    android:layout_height="25sp"
+                    android:visibility="invisible"
+                    android:src="@drawable/ic_baseline_arrow_drop_down_24"
+                    android:scaleType="fitCenter"
+                    android:background="@null" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="5sp"
+                android:orientation="vertical">
+
+                <ImageButton
+                    android:id="@+id/ArribaButtonDos"
+                    android:layout_width="80sp"
+                    android:layout_height="35sp"
+                    android:src="@drawable/ic_baseline_arrow_drop_up_24"
+                    android:scaleType="fitCenter"
+                    android:visibility="invisible"
+                    android:background="@null" />
+
+                <ImageButton
+                    android:id="@+id/ImagenButtonDos"
+                    android:layout_width="80sp"
+                    android:layout_height="80sp"
+                    android:layout_gravity="center_vertical"
+                    android:background="@drawable/boton_rectangulo" />
+
+                <ImageButton
+                    android:id="@+id/AbajoButton2"
+                    android:layout_width="80sp"
+                    android:layout_height="25sp"
+                    android:src="@drawable/ic_baseline_arrow_drop_down_24"
+                    android:scaleType="fitCenter"
+                    android:visibility="invisible"
+                    android:background="@null" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <Button
+                    android:id="@+id/bTEnviarMensaje"
+                    android:layout_weight="1"
+                    android:layout_width="wrap_content"
+                    android:background="@drawable/bordes_redondos"
+                    android:textColor="#ffffff"
+                    android:textSize="20sp"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="15dp"
+                    android:drawableLeft="@drawable/ic_baseline_send_24"
+                    android:layout_height="wrap_content"/>
+
+                <Button
+                    android:id="@+id/bTEnviarFrase"
+                    android:layout_width="wrap_content"
+                    android:background="@drawable/bordes_redondos"
+                    android:textColor="#ffffff"
+                    android:textSize="20sp"
+                    android:layout_marginTop="15dp"
+                    android:layout_gravity="center"
+                    android:drawableLeft="@drawable/ic_baseline_text_fields_24"
+                    android:layout_height="wrap_content"/>
+            </LinearLayout>
+
+        </LinearLayout>
+    </LinearLayout>
+</LinearLayout>

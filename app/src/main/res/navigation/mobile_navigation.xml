@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@+id/nav_inicio">
+
+    <fragment
+        android:id="@+id/nav_inicio"
+        android:name="cl.paulina.yotrabajoconpecs.MainActivity"
+        android:label="Inicio de sesión"
+        tools:layout="@layout/sesion" />
+    <fragment
+        android:id="@+id/nav_principal"
+        android:name="cl.paulina.yotrabajoconpecs.ui.principal.panelPrincipalFragment"
+        android:label="Menú principal"
+        tools:layout="@layout/pdc_0" />
+    <fragment
+        android:id="@+id/nav_libro"
+        android:name="cl.paulina.yotrabajoconpecs.ui.libro.libroFragment"
+        android:label="libro"
+        tools:layout="@layout/pdc_1" />
+    <fragment
+        android:id="@+id/nav_buscar_picto_pdc"
+        android:name="cl.paulina.yotrabajoconpecs.ui.busqueda_pictograma_pdc.busquedaPictogramapdcFragment"
+        android:label="Listado pictogramas"
+        tools:layout="@layout/pdc_1_2" />
+    <fragment
+        android:id="@+id/nav_frases_pdc"
+        android:name="cl.paulina.yotrabajoconpecs.ui.busqueda_pictograma_pdc.fraseFragment"
+        android:label="Listado frases"
+        tools:layout="@layout/pdc_1_5" />
+    <fragment
+        android:id="@+id/nav_buscar_picto_pdc2"
+        android:name="cl.paulina.yotrabajoconpecs.ui.busqueda_pictograma_pdc.busquedaPictogramapdc2Fragment"
+        android:label="Listado pictogramas2"
+        tools:layout="@layout/pdc_1_3" />
+    <fragment
+        android:id="@+id/nav_buscar_picto_pdc3"
+        android:name="cl.paulina.yotrabajoconpecs.ui.busqueda_pictograma_pdc.busquedaPictogramapdc3Fragment"
+        android:label="Listado pictogramas3"
+        tools:layout="@layout/pdc_1_4" />
+    <fragment
+        android:id="@+id/nav_buscar_picto_empleador"
+        android:name="cl.paulina.yotrabajoconpecs.ui.busqueda_pictograma_empleador.busquedaPictogramaFragment"
+        android:label="TiraFrase"
+        tools:layout="@layout/empleador_1_1" />
+    <fragment
+        android:id="@+id/nav_chatempleador"
+        android:name="cl.paulina.yotrabajoconpecs.ui.busqueda_pictograma_empleador.Mensajeria"
+        android:label="Chat"
+        tools:layout="@layout/mensajeria" />
+    <fragment
+        android:id="@+id/nav_panel"
+        android:name="cl.paulina.yotrabajoconpecs.ui.panel.panelFragment"
+        android:label="Panel"
+        tools:layout="@layout/pdc_2" />
+    <fragment
+        android:id="@+id/nav_desglose"
+        android:name="cl.paulina.yotrabajoconpecs.ui.panel.desglose"
+        android:label="Actividades secundarias"
+        tools:layout="@layout/pdc_2_1" />
+    <fragment
+        android:id="@+id/nav_herramientas"
+        android:name="cl.paulina.yotrabajoconpecs.ui.panel.herramientas"
+        android:label="Herramientas"
+        tools:layout="@layout/pdc_2_1_1" />
+    <fragment
+        android:id="@+id/nav_libroEmpleador"
+        android:name="cl.paulina.yotrabajoconpecs.ui.busqueda_pictograma_empleador.busquedaPictogramaFragment"
+        android:label="Libro empleador"
+        tools:layout="@layout/empleador_1_1" />
+    <fragment
+        android:id="@+id/nav_panelEmpleador"
+        android:name="cl.paulina.yotrabajoconpecs.ui.panel.panelEmpleador"
+        android:label="Panel empleador"
+        tools:layout="@layout/empleador_2" />
+    <fragment
+        android:id="@+id/nav_agregarPDC"
+        android:name="cl.paulina.yotrabajoconpecs.ui.panel.agregarPDC"
+        android:label="Agregar PDC"
+        tools:layout="@layout/register" />
+    <fragment
+        android:id="@+id/nav_amigos"
+        android:name="cl.paulina.yotrabajoconpecs.Amigos.ActivityAmigos"
+        android:label="Lista de contactos"
+        tools:layout="@layout/activity_amigos" />
+    <fragment
+        android:id="@+id/nav_libropdchat"
+        android:name="cl.paulina.yotrabajoconpecs.ui.libro.libroPDC"
+        android:label="Chat"
+        tools:layout="@layout/pdc_mensajeria" />
+    <fragment
+        android:id="@+id/nav_n"
+        android:name="cl.paulina.yotrabajoconpecs.ui.busqueda_pictograma_pdc.ExampleBottomSheetDialog"
+        android:label="Chat"
+        tools:layout="@layout/bottom_sheet_layout" />
+</navigation>

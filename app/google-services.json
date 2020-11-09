@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "514794675909",
+    "firebase_url": "https://yotrabajoconpecs.firebaseio.com",
+    "project_id": "yotrabajoconpecs",
+    "storage_bucket": "yotrabajoconpecs.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:514794675909:android:b8afec907ee4017d68daac",
+        "android_client_info": {
+          "package_name": "cl.paulina.yotrabajoconpecs"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "514794675909-bied33i4rj2h12h2nqdo099mejdm65ev.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC4J2YxAckoVETpOqLuSIbkYkSyuWHEc1s"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "514794675909-bied33i4rj2h12h2nqdo099mejdm65ev.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

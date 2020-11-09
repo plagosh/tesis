@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:background="@drawable/background">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_margin="16dp"
+        android:orientation="horizontal">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <EditText
+                android:id="@+id/etBusquedaPictograma"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColorHint="@color/colorAccent"
+                android:textSize="20sp"
+                android:hint="Escribe una Palabra"/>
+
+            <Button
+                android:id="@+id/btnBusquedaPictograma"
+                android:layout_width="100dp"
+                android:background="@drawable/bordes_redondos"
+                android:textColor="#ffffff"
+                android:textSize="20sp"
+                android:layout_gravity="right"
+                android:layout_height="match_parent"
+                android:text="Buscar"/>
+
+            <LinearLayout
+                android:id="@+id/layoutDomingo"
+                android:layout_width="250sp"
+                android:layout_marginTop="20dp"
+                android:layout_height="match_parent"
+                android:layout_gravity="center"
+                android:orientation="vertical">
+
+                <ScrollView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center"
+                    android:background="@color/cardview_shadow_start_color">
+
+                    <LinearLayout
+                        android:id="@+id/cajaBotonImagen"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                    </LinearLayout>
+                </ScrollView>
+            </LinearLayout>
+        </LinearLayout>
+        </LinearLayout>
+
+
+    <com.github.clans.fab.FloatingActionMenu
+        android:id="@+id/fab_tirafrase"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:menu_fab_label="Opciones"
+        android:layout_gravity="bottom|end"
+        app:fab_colorNormal="@color/colorAccent"
+        app:fab_colorPressed="@color/colorPrimaryDark"
+        android:src="@drawable/ic_baseline_menu_24"
+        android:layout_margin="16dp">
+
+        <com.github.clans.fab.FloatingActionButton
+            android:id="@+id/fab_tirafrase_enviar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom|end"
+            app:menu_fab_label="Añadir"
+            app:fab_colorNormal="@color/colorAccent"
+            app:fab_colorPressed="@color/colorPrimaryDark"
+            android:src="@drawable/ic_baseline_send_24">
+        </com.github.clans.fab.FloatingActionButton>
+
+        <com.github.clans.fab.FloatingActionButton
+            android:id="@+id/fab_tirafrase_eliminar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom|end"
+            app:menu_fab_label="Eliminar"
+            app:fab_colorNormal="@color/colorAccent"
+            app:fab_colorPressed="@color/colorPrimaryDark"
+            android:src="@drawable/ic_delete_black_24dp">
+        </com.github.clans.fab.FloatingActionButton>
+    </com.github.clans.fab.FloatingActionMenu>
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>
