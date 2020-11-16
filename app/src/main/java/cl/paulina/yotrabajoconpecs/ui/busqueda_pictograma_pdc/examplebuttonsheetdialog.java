@@ -1,13 +1,11 @@
 package cl.paulina.yotrabajoconpecs.ui.busqueda_pictograma_pdc;
-// aqui estuve yo 2 asdasdasdasdadasdasdas
+
 import android.annotation.SuppressLint;
 import android.app.Dialog;
 import android.app.ProgressDialog;
 import android.content.Context;
 import android.os.Build;
 import android.os.Bundle;
-import android.util.Log;
-import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -18,7 +16,6 @@ import android.widget.LinearLayout;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
 import androidx.annotation.RequiresApi;
 import androidx.coordinatorlayout.widget.CoordinatorLayout;
 import androidx.fragment.app.Fragment;
@@ -40,7 +37,10 @@ import cz.msebera.android.httpclient.Header;
 public class examplebuttonsheetdialog extends BottomSheetDialogFragment {
     private GridView gridView;
     public LinearLayout contentCaja;
-    private ArrayList id_frase, url, id_imagen, agregandoFrase;
+    private ArrayList id_frase;
+    private ArrayList url;
+    private ArrayList id_imagen;
+    private ArrayList agregandoFrase;
     public Fragment fragment;
     Bundle datos;
     public int id = 1;
@@ -101,6 +101,7 @@ public class examplebuttonsheetdialog extends BottomSheetDialogFragment {
 
                 @Override
                 public void onSlide(@NonNull View bottomSheet, float slideOffset) {
+                    String state = "";
                 }
             });
         }

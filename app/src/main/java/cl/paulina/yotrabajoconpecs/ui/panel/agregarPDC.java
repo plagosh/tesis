@@ -17,7 +17,7 @@ import cl.paulina.yotrabajoconpecs.R;
 
 public class agregarPDC extends Fragment {
     EditText firstNameRegister, lastNameRegister,emailRegister,passwordRegister;
-    ProgressBar progressRegister;
+    private ProgressBar progressRegister;
     Button agregar;
     TextView volver;
 

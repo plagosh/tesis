@@ -34,12 +34,10 @@ import cz.msebera.android.httpclient.Header;
 public class herramientas extends Fragment {
     ArrayList pictos;
     public Fragment fragment;
-    PreferenciasCompartidas pc;
-    AlertDialog.Builder builder;
-    int Sapo = 0;
+    private PreferenciasCompartidas pc;
     Bundle datos;
     String key = "id_desglose";
-    LinearLayout contenido, caja, layout;
+    LinearLayout caja, layout;
     private ArrayList id_herramienta, desglose_id_desglose, url;
 
     public View onCreateView(@NonNull LayoutInflater inflater,

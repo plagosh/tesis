@@ -9,17 +9,12 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.BaseAdapter;
 import android.widget.Button;
-import android.widget.DigitalClock;
 import android.widget.ImageButton;
-import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
-
-import androidx.activity.OnBackPressedCallback;
 import androidx.annotation.NonNull;
 import androidx.annotation.RequiresApi;
 import androidx.fragment.app.Fragment;
@@ -34,8 +29,6 @@ import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Date;
 import cl.paulina.yotrabajoconpecs.R;
-import cl.paulina.yotrabajoconpecs.ui.busqueda_pictograma_pdc.busquedaPictogramapdcFragment;
-import cl.paulina.yotrabajoconpecs.ui.lista_pictos;
 import cz.msebera.android.httpclient.Header;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
@@ -65,7 +58,7 @@ public class panelFragment extends Fragment {
     int minuto = fecha.get(Calendar.MINUTE);
     int segundo = fecha.get(Calendar.SECOND);
     int aumentardia = 1;
-    int aumentarhora = 1;
+    private int aumentarhora = 1;
     int ciclohora = 1;
 
     public View onCreateView(@NonNull LayoutInflater inflater,

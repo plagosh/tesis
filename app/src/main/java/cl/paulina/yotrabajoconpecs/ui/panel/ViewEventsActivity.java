@@ -5,7 +5,6 @@ import android.content.Context;
 import android.content.DialogInterface;
 import android.os.Build;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -13,31 +12,18 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.BaseAdapter;
 import android.widget.GridView;
-import android.widget.ImageButton;
-import android.widget.LinearLayout;
-import android.widget.ListView;
 import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
-
 import androidx.annotation.NonNull;
 import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AlertDialog;
 import androidx.fragment.app.Fragment;
-import com.android.volley.AuthFailureError;
-import com.android.volley.Request;
-import com.android.volley.RequestQueue;
-import com.android.volley.Response;
-import com.android.volley.VolleyError;
-import com.android.volley.toolbox.StringRequest;
-import com.android.volley.toolbox.Volley;
 import com.loopj.android.http.AsyncHttpClient;
 import com.loopj.android.http.AsyncHttpResponseHandler;
 import org.json.JSONArray;
 import org.json.JSONException;
 import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.Map;
 import cl.paulina.yotrabajoconpecs.R;
 import cz.msebera.android.httpclient.Header;
 import java.text.ParseException;
@@ -193,7 +179,7 @@ public class ViewEventsActivity extends Fragment implements View.OnLongClickList
     public class CustomAdapter extends BaseAdapter {
         Context ctx;
         LayoutInflater layoutInflater;
-        TextView tvtarea, tvfechainicio, tvfechatermino, tvhorainicio, tvhoratermino, tvdia;
+        private TextView tvtarea, tvfechainicio, tvfechatermino, tvhorainicio, tvhoratermino, tvdia;
 
         @RequiresApi(api = Build.VERSION_CODES.M)
         public CustomAdapter(Context applicationContext) {

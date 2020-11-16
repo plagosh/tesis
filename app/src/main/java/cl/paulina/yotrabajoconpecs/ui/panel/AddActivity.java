@@ -1,13 +1,9 @@
 package cl.paulina.yotrabajoconpecs.ui.panel;
-//Prueba git
-import android.annotation.SuppressLint;
+
 import android.app.ProgressDialog;
 import android.content.Context;
-import android.content.DialogInterface;
 import android.os.Build;
 import android.os.Bundle;
-import android.util.Log;
-import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -16,15 +12,11 @@ import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.EditText;
-import android.widget.ImageButton;
-import android.widget.LinearLayout;
 import android.widget.Spinner;
 import android.widget.Toast;
-
 import androidx.annotation.NonNull;
 import androidx.annotation.RequiresApi;
 import androidx.fragment.app.Fragment;
-
 import com.android.volley.AuthFailureError;
 import com.android.volley.Request;
 import com.android.volley.RequestQueue;
@@ -34,23 +26,19 @@ import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
 import com.loopj.android.http.AsyncHttpClient;
 import com.loopj.android.http.AsyncHttpResponseHandler;
-import com.squareup.picasso.Picasso;
-
 import org.json.JSONArray;
 import org.json.JSONException;
-
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
-
 import cl.paulina.yotrabajoconpecs.R;
-import cl.paulina.yotrabajoconpecs.Register;
 import cz.msebera.android.httpclient.Header;
 
 public class AddActivity extends Fragment {
     private EditText fechadesde, horadesde, fechahasta, horahasta;
     private Button guardar;
-    Spinner spinnerTarea, spinnerPDC;
+    Spinner spinnerTarea;
+    Spinner spinnerPDC;
     ArrayList idtarea, nombretarea, idcalendario, llenadodias, idUsuario, nombreUsuario, apellidoUsuario, idCalendario;
     public String tareaSeleccionada;
     CheckBox lunes, martes, miercoles, jueves, viernes, sabado, domingo;
