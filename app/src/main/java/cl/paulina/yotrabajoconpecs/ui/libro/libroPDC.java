@@ -64,7 +64,6 @@ public class libroPDC extends Fragment {
     private String EMISOR;
     private String NOMBRE;
     private String RECEPTOR;
-    public String variableUno, variableDos, variableTres, variableCuatro, palabra, dato;
     public int sapo2 = 0;
     public int sapo3 = 0;
     public String ultimaCategoria;
@@ -117,6 +116,12 @@ public class libroPDC extends Fragment {
 
         RECEPTOR = "1";
 
+        Bundle recibir_verbo = new Bundle();
+        String url_verbo = recibir_verbo.getString("url_verbo");
+        String categoria_verbo = recibir_verbo.getString("categoria_imagen_verbo");
+        Toast.makeText(getContext(), categoria_verbo, Toast.LENGTH_SHORT).show();
+        Picasso.get().load("https://yotrabajoconpecs.ddns.net/" + url_verbo).into(imagen1);
+
         bTEnviarFrase.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -152,6 +157,7 @@ public class libroPDC extends Fragment {
                 abajo1.setVisibility(View.VISIBLE);
                 arriba2.setVisibility(View.VISIBLE);
                 sapo2++;
+                imagen1.setBackgroundResource(R.drawable.boton_rectangulo);
                 Picasso.get().load("https://yotrabajoconpecs.ddns.net/" + url.get(sapo2)).into(imagen1);
                 //imagen1.setStroke(8, getResources().getColor(R.color.colorWhite));
                 nDatos = nombre.get(sapo2).toString();
@@ -168,6 +174,7 @@ public class libroPDC extends Fragment {
             public void onClick(View v) {
                 if(sapo2 > 0){
                     sapo2--;
+                    imagen1.setBackgroundResource(R.drawable.boton_rectangulo);
                     Picasso.get().load("https://yotrabajoconpecs.ddns.net/" + url.get(sapo2)).into(imagen1);
                     nDatos = nombre.get(sapo2).toString();
                     nURL = url.get(sapo2).toString();
@@ -188,14 +195,17 @@ public class libroPDC extends Fragment {
                 abajo2.setVisibility(View.VISIBLE);
                 if(ultimaCategoria == "3") {
                     sapo3++;
+                    imagen2.setBackgroundResource(R.drawable.boton_rectangulo);
                     Picasso.get().load("https://yotrabajoconpecs.ddns.net/" + urlita.get(sapo3)).into(imagen2);
                     nDatitos = nombrecito.get(sapo3).toString();
                     nURLita = urlita.get(sapo3).toString();
                     //Toast.makeText(getContext(), nDatitos, Toast.LENGTH_SHORT).show();
                     imagen2.setScaleType(ImageButton.ScaleType.FIT_CENTER);
+
                     botondos.add(nombrecito.get(sapo3));
                 }else{
                     sapo3++;
+                    imagen2.setBackgroundResource(R.drawable.boton_rectangulo);
                     Picasso.get().load("https://yotrabajoconpecs.ddns.net/" + urlota.get(sapo3)).into(imagen2);
                     nDatotes = nombresote.get(sapo3).toString();
                     nURLota = urlota.get(sapo3).toString();
@@ -213,6 +223,7 @@ public class libroPDC extends Fragment {
                 if(ultimaCategoria == "3") {
                     if(sapo3 > 0){
                         sapo3--;
+                        imagen2.setBackgroundResource(R.drawable.boton_rectangulo);
                         Picasso.get().load("https://yotrabajoconpecs.ddns.net/" + urlita.get(sapo3)).into(imagen2);
                         nDatitos = nombrecito.get(sapo3).toString();
                         nURLita = urlita.get(sapo3).toString();
@@ -224,6 +235,7 @@ public class libroPDC extends Fragment {
                     }
                 }else{
                     if(sapo3 > 0){
+                        imagen2.setBackgroundResource(R.drawable.boton_rectangulo);
                         Picasso.get().load("https://yotrabajoconpecs.ddns.net/" + urlota.get(sapo3)).into(imagen2);
                         nDatotes = nombresote.get(sapo3).toString();
                         nURLota = urlota.get(sapo3).toString();
@@ -244,33 +256,31 @@ public class libroPDC extends Fragment {
                 cambiarFragmento(fragment);
             }
         });
-        Bundle recibir_verbo = new Bundle();
-        String url_verbo = recibir_verbo.getString("url_verbo");
-        String categoria_verbo = recibir_verbo.getString("categoria_imagen_verbo");
-        Picasso.get().load("https://yotrabajoconpecs.ddns.net/" + url_verbo).into(imagen1);
 
-        if(categoria_verbo.equals("3")){
-            imagen2.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-                    Fragment fragment = new busquedaPictogramapdc2Fragment();
-                    cambiarFragmento(fragment);
-                }
-            });
-            Bundle recibir_sust = new Bundle();
-            String url_sust = recibir_sust.getString("url_sust");
-            Picasso.get().load("https://yotrabajoconpecs.ddns.net/" + url_sust).into(imagen2);
-        }else{
-            imagen2.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-                    Fragment fragment = new busquedaPictogramapdc3Fragment();
-                    cambiarFragmento(fragment);
-                }
-            });
-            Bundle recibir_adj = new Bundle();
-            String url_adj = recibir_adj.getString("url_adj");
-            Picasso.get().load("https://yotrabajoconpecs.ddns.net/" + url_adj).into(imagen2);
+        if(categoria_verbo != null){
+            if(categoria_verbo.equals("3")){
+                imagen2.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        Fragment fragment = new busquedaPictogramapdc2Fragment();
+                        cambiarFragmento(fragment);
+                    }
+                });
+                Bundle recibir_sust = new Bundle();
+                String url_sust = recibir_sust.getString("url_sust");
+                Picasso.get().load("https://yotrabajoconpecs.ddns.net/" + url_sust).into(imagen2);
+            }else{
+                imagen2.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        Fragment fragment = new busquedaPictogramapdc3Fragment();
+                        cambiarFragmento(fragment);
+                    }
+                });
+                Bundle recibir_adj = new Bundle();
+                String url_adj = recibir_adj.getString("url_adj");
+                Picasso.get().load("https://yotrabajoconpecs.ddns.net/" + url_adj).into(imagen2);
+            }
         }
 
         bTEnviarMensaje.setOnClickListener(new View.OnClickListener() {

@@ -75,10 +75,8 @@ public class messageAdapter extends RecyclerView.Adapter<messageAdapter.Mensajes
         lista = new ArrayList();
 
         String id = mensajedetexto.get(position).getId();
-        //Toast.makeText(context, mensaje, Toast.LENGTH_SHORT).show();
 
         String urlCompleto[] = id.split(" ");
-        String largo = urlCompleto.length + "";
         holder.TvMensaje.removeAllViews();
         for(int i = 0; i < urlCompleto.length; i++){
             lista.add(urlCompleto[i]);
@@ -90,7 +88,6 @@ public class messageAdapter extends RecyclerView.Adapter<messageAdapter.Mensajes
             Picasso.get().load("https://yotrabajoconpecs.ddns.net/" + urlCompleto[i]).into(imagen);
             holder.TvMensaje.addView(imagen);
         }
-
         holder.TvHora.setText(mensajedetexto.get(position).getHoraDelMensaje());
         if(Build.VERSION.SDK_INT < Build.VERSION_CODES.LOLLIPOP) holder.cardView.getBackground().setAlpha(0);
         else holder.cardView.setBackgroundColor(ContextCompat.getColor(context, android.R.color.transparent));

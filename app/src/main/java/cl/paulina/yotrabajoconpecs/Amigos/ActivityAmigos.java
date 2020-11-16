@@ -77,16 +77,7 @@ public class ActivityAmigos extends Fragment {
                     for(int i = 0; i < jsonarray.length(); i++){
                         JSONObject js = jsonarray.getJSONObject(i);
                         String nombreCompleto = js.getString("nombre_usuario") + " " + js.getString("apellido_usuario");
-                        bR = new BroadcastReceiver() {
-                            @Override
-                            public void onReceive(Context context, Intent intent) {
-                                mensaje = intent.getStringExtra("key_mensaje");
-                                String hora = intent.getStringExtra("key_hora");
-                                horaParametros = hora.split("\\,");
-                                emisor = intent.getStringExtra("key_emisor_PHP");
-                            }
-                        };
-                        agregarAmigos(R.drawable.ic_baseline_supervised_user_circle_24, nombreCompleto, mensaje, horaParametros[0], js.getString("correo"));
+                        agregarAmigos(R.drawable.ic_baseline_supervised_user_circle_24, nombreCompleto, "último mensaje", "00:00", js.getString("correo"));
                     }
                 } catch (JSONException e) {
                     Toast.makeText(getContext(), "Ocurrió un error al descomponer el JSON", Toast.LENGTH_SHORT).show();

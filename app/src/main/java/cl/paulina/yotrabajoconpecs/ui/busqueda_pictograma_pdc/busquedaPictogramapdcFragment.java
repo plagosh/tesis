@@ -6,6 +6,7 @@ import android.graphics.Color;
 import android.os.Build;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -53,13 +54,9 @@ public class busquedaPictogramapdcFragment extends Fragment{
     public Fragment fragment;
     private ImageButton tvimagen;
     Bundle datos;
-    Bundle datosRecibidos;
 
     public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-
         View vista = inflater.inflate(R.layout.pdc_1_2, container, false);
-        datosRecibidos = getArguments();
-        fragment = getTargetFragment();
         datos = new Bundle();
         gridView = vista.findViewById(R.id.listview);
         tvimagen = vista.findViewById(R.id.tv_imagen);
@@ -84,7 +81,6 @@ public class busquedaPictogramapdcFragment extends Fragment{
             @RequiresApi(api = Build.VERSION_CODES.M)
             @Override
             public void onSuccess(int statusCode, Header[] headers, byte[] responseBody) {
-                Toast.makeText(getContext(), "Conexión exitosa", Toast.LENGTH_SHORT).show();
                 if(statusCode == 200){
                     progressDialog.dismiss();
                     try{
@@ -139,15 +135,15 @@ public class busquedaPictogramapdcFragment extends Fragment{
 
             Object var = url.get(position).toString();
             Picasso.get().load("https://yotrabajoconpecs.ddns.net/" + var).into(tvimagen);
-            tvimagen.setLayoutParams(new LinearLayout.LayoutParams(300, 300));
-            tvimagen.setPadding(10, 10, 10, 10);
-            tvimagen.setScaleType(ImageButton.ScaleType.CENTER_CROP);
-            tvimagen.setBackgroundColor(0xFFFFFF);
+            tvimagen.setLayoutParams(new LinearLayout.LayoutParams(200, 200));
+            tvimagen.setScaleType(ImageButton.ScaleType.FIT_CENTER);
+            tvimagen.setBackgroundResource(R.drawable.boton_rectangulo);
             tvnombre.setText(nombre_imagen.get(position).toString());
             tvimagen.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
                     Fragment fragment = new libroPDC();
+                    Toast.makeText(getContext(), categoria_imagen.get(position).toString(), Toast.LENGTH_SHORT).show();
                     datos.putString("url_verbo", url.get(position).toString());
                     datos.putString("categoria_imagen_verbo", categoria_imagen.get(position).toString());
                     datos.putString("nombre_imagen_verbo", nombre_imagen.get(position).toString());
@@ -183,7 +179,7 @@ public class busquedaPictogramapdcFragment extends Fragment{
         StringRequest stringRequest = new StringRequest(Request.Method.POST, URL, new Response.Listener<String>() {
             @Override
             public void onResponse(String response) {
-                Toast.makeText(getContext(), "OPERACION EXITOSA", Toast.LENGTH_SHORT).show();
+                //Toast.makeText(getContext(), "OPERACION EXITOSA", Toast.LENGTH_SHORT).show();
             }
         }, new Response.ErrorListener(){
             @Override

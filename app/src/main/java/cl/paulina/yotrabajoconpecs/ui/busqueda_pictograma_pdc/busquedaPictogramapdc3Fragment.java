@@ -74,7 +74,6 @@ public class busquedaPictogramapdc3Fragment extends Fragment {
             @RequiresApi(api = Build.VERSION_CODES.M)
             @Override
             public void onSuccess(int statusCode, Header[] headers, byte[] responseBody) {
-                Toast.makeText(getContext(), "Conexión exitosa", Toast.LENGTH_SHORT).show();
                 if(statusCode == 200){
                     progressDialog.dismiss();
                     try{
@@ -132,10 +131,9 @@ public class busquedaPictogramapdc3Fragment extends Fragment {
 
             Object var = url.get(position).toString();
             Picasso.get().load("https://yotrabajoconpecs.ddns.net/" + var).into(tvimagen);
-            tvimagen.setLayoutParams(new LinearLayout.LayoutParams(300, 300));
-            tvimagen.setPadding(10, 10, 10, 10);
-            tvimagen.setScaleType(ImageButton.ScaleType.CENTER_CROP);
-            tvimagen.setBackgroundColor(0xFFFFFF);
+            tvimagen.setLayoutParams(new LinearLayout.LayoutParams(200, 200));
+            tvimagen.setScaleType(ImageButton.ScaleType.FIT_CENTER);
+            tvimagen.setBackgroundResource(R.drawable.boton_rectangulo);
             tvnombre.setText(nombre_imagen.get(position).toString());
             tvimagen.setOnClickListener(new View.OnClickListener() {
                 @Override
