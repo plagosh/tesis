@@ -7,7 +7,6 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.Toast;
 
@@ -22,15 +21,10 @@ import com.loopj.android.http.AsyncHttpResponseHandler;
 import org.json.JSONArray;
 import org.json.JSONException;
 
-import java.sql.Array;
 import java.util.ArrayList;
 
 import cl.paulina.yotrabajoconpecs.Amigos.ActivityAmigos;
 import cl.paulina.yotrabajoconpecs.R;
-import cl.paulina.yotrabajoconpecs.ui.busqueda_pictograma_empleador.Mensajeria;
-import cl.paulina.yotrabajoconpecs.ui.busqueda_pictograma_empleador.busquedaPictogramaFragment;
-import cl.paulina.yotrabajoconpecs.ui.libro.libroFragment;
-import cl.paulina.yotrabajoconpecs.ui.panel.listapdcparaempleador;
 import cl.paulina.yotrabajoconpecs.ui.panel.panelEmpleador;
 import cl.paulina.yotrabajoconpecs.ui.panel.panelFragment;
 import cz.msebera.android.httpclient.Header;
@@ -53,17 +47,14 @@ public class panelPrincipalFragment extends Fragment {
         btnLibro.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                //Toast.makeText(getContext(),actualizar,Toast.LENGTH_SHORT).show();
                 String uno = "1";
                 if(actualizar.equals(uno)) {
-                    //Toast.makeText(getContext(),"entre al 1",Toast.LENGTH_SHORT).show();
                     Fragment fragment = new ActivityAmigos();
                     FragmentTransaction transaction = getFragmentManager().beginTransaction();
                     transaction.replace(R.id.nav_host_fragment, fragment);
                     transaction.addToBackStack(null);
                     transaction.commit();
                 }else{
-                    //Toast.makeText(getContext(),"entre al 2",Toast.LENGTH_SHORT).show();
                     Fragment fragment = new cl.paulina.yotrabajoconpecs.ui.libro.libroPDC();
                     FragmentTransaction transaction = getFragmentManager().beginTransaction();
                     transaction.replace(R.id.nav_host_fragment, fragment);

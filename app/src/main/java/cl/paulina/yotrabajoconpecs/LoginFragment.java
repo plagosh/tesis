@@ -114,7 +114,7 @@ public class LoginFragment extends Fragment{
                         datos.putString("tipo_usuario", tipo);
                         Log.e("Agregar", "datos enviados");
                         Toast.makeText(getContext(), "pase el nombre: " + nombres + "junto con el tipo " + tipo, Toast.LENGTH_SHORT).show();
-                        if (tipo == "1") {
+                        if (tipo.equals("1")) {
                             Toast.makeText(getContext(), "Sesión Iniciada", Toast.LENGTH_SHORT).show();
                             startActivity(new Intent(getContext(), menu_lateral.class));
                         } else {

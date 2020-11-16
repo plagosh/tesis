@@ -16,6 +16,7 @@ import android.widget.Toast;
 import androidx.annotation.NonNull;
 import androidx.annotation.RequiresApi;
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentTransaction;
 import androidx.localbroadcastmanager.content.LocalBroadcastManager;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -44,8 +45,12 @@ import java.util.Map;
 
 import cl.paulina.yotrabajoconpecs.R;
 import cl.paulina.yotrabajoconpecs.ui.busqueda_pictograma_empleador.MensajeDeTexto;
+import cl.paulina.yotrabajoconpecs.ui.busqueda_pictograma_pdc.busquedaPictogramapdc2Fragment;
+import cl.paulina.yotrabajoconpecs.ui.busqueda_pictograma_pdc.busquedaPictogramapdc3Fragment;
 import cl.paulina.yotrabajoconpecs.ui.busqueda_pictograma_pdc.examplebuttonsheetdialog;
 import cl.paulina.yotrabajoconpecs.ui.busqueda_pictograma_pdc.messageAdapter;
+import cl.paulina.yotrabajoconpecs.ui.busqueda_pictograma_pdc.busquedaPictogramapdcFragment;
+import cl.paulina.yotrabajoconpecs.ui.panel.AddActivity;
 import cz.msebera.android.httpclient.Header;
 
 public class libroPDC extends Fragment {
@@ -74,7 +79,6 @@ public class libroPDC extends Fragment {
         View vista = inflater.inflate(R.layout.pdc_mensajeria, container, false);
 
         rv = vista.findViewById(R.id.recyclerview);
-        //rvbr = vista.findViewById(R.id.recyclerview);
         imagen1 = vista.findViewById(R.id.ImagenButtonUno);
         imagen2 = vista.findViewById(R.id.ImagenButtonDos);
         arriba1 = vista.findViewById(R.id.ArribaButtonUno);
@@ -233,7 +237,41 @@ public class libroPDC extends Fragment {
                 }
             }
         });
+        imagen1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Fragment fragment = new busquedaPictogramapdcFragment();
+                cambiarFragmento(fragment);
+            }
+        });
+        Bundle recibir_verbo = new Bundle();
+        String url_verbo = recibir_verbo.getString("url_verbo");
+        String categoria_verbo = recibir_verbo.getString("categoria_imagen_verbo");
+        Picasso.get().load("https://yotrabajoconpecs.ddns.net/" + url_verbo).into(imagen1);
 
+        if(categoria_verbo.equals("3")){
+            imagen2.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    Fragment fragment = new busquedaPictogramapdc2Fragment();
+                    cambiarFragmento(fragment);
+                }
+            });
+            Bundle recibir_sust = new Bundle();
+            String url_sust = recibir_sust.getString("url_sust");
+            Picasso.get().load("https://yotrabajoconpecs.ddns.net/" + url_sust).into(imagen2);
+        }else{
+            imagen2.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    Fragment fragment = new busquedaPictogramapdc3Fragment();
+                    cambiarFragmento(fragment);
+                }
+            });
+            Bundle recibir_adj = new Bundle();
+            String url_adj = recibir_adj.getString("url_adj");
+            Picasso.get().load("https://yotrabajoconpecs.ddns.net/" + url_adj).into(imagen2);
+        }
 
         bTEnviarMensaje.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -289,11 +327,6 @@ public class libroPDC extends Fragment {
         hashMapToken.put("nombrecompleto", NOMBRE);
         hashMapToken.put("receptor", RECEPTOR);
         hashMapToken.put("mensaje", MENSAJE_ENVIAR);
-        /*Toast.makeText(getContext(), EMISOR, Toast.LENGTH_SHORT).show();
-        Toast.makeText(getContext(), NOMBRE, Toast.LENGTH_SHORT).show();
-        Toast.makeText(getContext(), RECEPTOR, Toast.LENGTH_SHORT).show();
-        Toast.makeText(getContext(), MENSAJE_ENVIAR, Toast.LENGTH_SHORT).show();*/
-        //Toast.makeText(Login.this, emailemail + FirebaseInstanceId.getInstance().getToken(), Toast.LENGTH_SHORT).show();
 
         JsonObjectRequest solicitud = new JsonObjectRequest(Request.Method.POST, IP_MENSAJE, new JSONObject(hashMapToken), new Response.Listener<JSONObject>() {
             @Override
@@ -515,31 +548,6 @@ public class libroPDC extends Fragment {
         });
     }
 
-    private void descargarDatosQueryCero(String consulta){
-        JsonObjectRequest solicitud = new JsonObjectRequest("https://yotrabajoconpecs.ddns.net/query0.php?consulta=" + consulta, null, new Response.Listener<JSONObject>() {
-            @Override
-            public void onResponse(JSONObject response) {
-                try {
-                    String responseBody = response.getString("resultado");
-                    JSONArray jsonarray = new JSONArray(new String(responseBody));
-                    for (int i = 0; i < jsonarray.length(); i++) {
-                        JSONObject js = jsonarray.getJSONObject(i);
-                        dato = js.getString("url");
-                    }
-                } catch (JSONException e) {
-                    Toast.makeText(getContext(), "Ocurrió un error al descomponer el JSON", Toast.LENGTH_SHORT).show();
-                }
-            }
-        }, new Response.ErrorListener() {
-            @Override
-            public void onErrorResponse(VolleyError error) {
-                Toast.makeText(getContext(), "Ocurrió un error, por favor contactese con el administrador", Toast.LENGTH_SHORT).show();
-            }
-        });
-        RequestQueue requestQueue = Volley.newRequestQueue(getContext());
-        requestQueue.add(solicitud);
-    }
-
     private void ejecutarservicio(String URL, String dato){
         StringRequest stringRequest = new StringRequest(Request.Method.POST, URL, new Response.Listener<String>() {
             @Override
@@ -565,27 +573,10 @@ public class libroPDC extends Fragment {
         requestQueue.add(stringRequest);
     }
 
-    private void consultarURL(String URL, String url, String palabra){
-        StringRequest stringRequest = new StringRequest(Request.Method.POST, URL, new Response.Listener<String>() {
-            @Override
-            public void onResponse(String response) {
-                //Toast.makeText(getContext(), "OPERACION EXITOSA", Toast.LENGTH_SHORT).show();
-            }
-        }, new Response.ErrorListener(){
-            @Override
-            public void onErrorResponse(VolleyError error) {
-                Toast.makeText(getContext(), error.toString(), Toast.LENGTH_SHORT).show();
-            }
-        }){
-            @Override
-            protected Map<String, String> getParams() throws AuthFailureError {
-                Map<String,String> parametros = new HashMap<String,String>();
-                parametros.put("nombre", palabra);
-                parametros.put("url", url);
-                return parametros;
-            }
-        };
-        RequestQueue requestQueue = Volley.newRequestQueue(getContext());
-        requestQueue.add(stringRequest);
+    public void cambiarFragmento(Fragment fragment){
+        FragmentTransaction transaction = getFragmentManager().beginTransaction();
+        transaction.replace(R.id.nav_host_fragment, fragment);
+        transaction.addToBackStack(null);
+        transaction.commit();
     }
 }

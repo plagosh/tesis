@@ -33,7 +33,6 @@ import cl.paulina.yotrabajoconpecs.R;
 
 public class ActivityAmigos extends Fragment {
     public static final String MENSAJE = "MENSAJE";
-    private RecyclerView rv;
     private BroadcastReceiver bR;
     private List<AmigosAtributos> atributosList;
     private AmigosAdapter adapter;
@@ -45,7 +44,7 @@ public class ActivityAmigos extends Fragment {
 
         atributosList = new ArrayList<>();
 
-        rv = vista.findViewById(R.id.amigosRecyclerView);
+        RecyclerView rv = vista.findViewById(R.id.amigosRecyclerView);
         LinearLayoutManager lm = new LinearLayoutManager(getContext());
         rv.setLayoutManager(lm);
 

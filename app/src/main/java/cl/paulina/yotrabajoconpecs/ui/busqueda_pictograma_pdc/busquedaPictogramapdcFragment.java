@@ -43,6 +43,7 @@ import java.util.Map;
 
 import cl.paulina.yotrabajoconpecs.R;
 import cl.paulina.yotrabajoconpecs.ui.busqueda_pictograma_pdc.busquedaPictogramapdcFragment;
+import cl.paulina.yotrabajoconpecs.ui.libro.libroPDC;
 import cz.msebera.android.httpclient.Header;
 
 public class busquedaPictogramapdcFragment extends Fragment{
@@ -77,21 +78,13 @@ public class busquedaPictogramapdcFragment extends Fragment{
         nombre_imagen.clear();
         categoria_imagen.clear();
         url.clear();
-
         final ProgressDialog progressDialog = new ProgressDialog(getActivity());
-        progressDialog.setMessage("Cargando datos...");
-        progressDialog.show();
         AsyncHttpClient client = new AsyncHttpClient();
         client.get("https://yotrabajoconpecs.ddns.net/query.php", new AsyncHttpResponseHandler() {
             @RequiresApi(api = Build.VERSION_CODES.M)
             @Override
             public void onSuccess(int statusCode, Header[] headers, byte[] responseBody) {
-                Context context = getContext();
-                CharSequence text = "Conexión exitosa";
-                int duration = Toast.LENGTH_SHORT;
-
-                Toast toast = Toast.makeText(context, text, duration);
-                toast.show();
+                Toast.makeText(getContext(), "Conexión exitosa", Toast.LENGTH_SHORT).show();
                 if(statusCode == 200){
                     progressDialog.dismiss();
                     try{
@@ -101,21 +94,15 @@ public class busquedaPictogramapdcFragment extends Fragment{
                             id_imagen.add(jsonarray.getJSONObject(i).getString("id_imagen"));
                             nombre_imagen.add(jsonarray.getJSONObject(i).getString("nombre_imagen"));
                             url.add(jsonarray.getJSONObject(i).getString("url"));
-                        }
-                        gridView.setAdapter(new CustomAdapter(getContext()));
+                        }gridView.setAdapter(new CustomAdapter(getContext()));
                     }catch(JSONException e){
                         e.printStackTrace();
                     }
                 }
             }
-
             @Override
             public void onFailure(int statusCode, Header[] headers, byte[] responseBody, Throwable error) {
-                Context context = getContext();
-                CharSequence text = "Conexión fallida";
-                int duration = Toast.LENGTH_SHORT;
-                Toast toast = Toast.makeText(context, text, duration);
-                toast.show();
+                Toast.makeText(getContext(), "Conexión fallida", Toast.LENGTH_SHORT).show();
             }
         });
     }
@@ -123,14 +110,12 @@ public class busquedaPictogramapdcFragment extends Fragment{
     private class CustomAdapter extends BaseAdapter {
         Context ctx;
         LayoutInflater layoutInflater;
-        TextView tvnombre, tvcategoria, tvurl;
-
+        TextView tvnombre;
         @RequiresApi(api = Build.VERSION_CODES.M)
         public CustomAdapter(Context applicationContext){
             this.ctx = applicationContext;
             layoutInflater = (LayoutInflater)this.ctx.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
         }
-
         @Override
         public int getCount(){
             return nombre_imagen.size();
@@ -153,35 +138,25 @@ public class busquedaPictogramapdcFragment extends Fragment{
             tvnombre = (TextView) viewGroup.findViewById(R.id.tv_nombre);
 
             Object var = url.get(position).toString();
-            Object var2 = id_imagen.get(position);
-            //Toast.makeText(getContext(),"Posición: " + var2, Toast.LENGTH_SHORT).show();
             Picasso.get().load("https://yotrabajoconpecs.ddns.net/" + var).into(tvimagen);
             tvimagen.setLayoutParams(new LinearLayout.LayoutParams(300, 300));
             tvimagen.setPadding(10, 10, 10, 10);
             tvimagen.setScaleType(ImageButton.ScaleType.CENTER_CROP);
             tvimagen.setBackgroundColor(0xFFFFFF);
-
             tvnombre.setText(nombre_imagen.get(position).toString());
-            //tvcategoria.setText(categoria_imagen.get(position).toString());
-
             tvimagen.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    Fragment fragmento = fragment;
-                    Log.e("Agregar", "agregado");
-                    datos.putString("url", url.get(position).toString());
-                    datos.putString("categoria_imagen", categoria_imagen.get(position).toString());
-                    datos.putString("nombre_imagen", nombre_imagen.get(position).toString());
-                    Log.e("Agregar", "datos enviados");
+                    Fragment fragment = new libroPDC();
+                    datos.putString("url_verbo", url.get(position).toString());
+                    datos.putString("categoria_imagen_verbo", categoria_imagen.get(position).toString());
+                    datos.putString("nombre_imagen_verbo", nombre_imagen.get(position).toString());
                     fragment.setArguments(datos);
-                    cambiarFragmento(fragmento);
-                    Toast.makeText(getContext(), "pase el url: " + url.get(position).toString() + "junto con la categoria " + categoria_imagen.get(position).toString(), Toast.LENGTH_SHORT).show();
+                    cambiarFragmento(fragment);
                     String consulta2 = "INSERT INTO `automata` (`idautomata`, `fecha`, `categoria`) VALUES (NULL, current_timestamp(), '"+categoria_imagen.get(position).toString()+"');";
-                    ejecutarservicio("https://yotrabajoconpecs.ddns.net/save.php",consulta2);
-
+                    ejecutarservicio("https://yotrabajoconpecs.ddns.net/save.php", consulta2);
                 }
             });
-
             return viewGroup;
         }
     }
@@ -198,20 +173,6 @@ public class busquedaPictogramapdcFragment extends Fragment{
         requireActivity().getOnBackPressedDispatcher().addCallback(this,callback);
     }
     public void cambiarFragmento(Fragment fragment){
-        if(fragment.getTargetRequestCode() != 1){
-            if(fragment.getTargetRequestCode() == 2){
-                Log.e("Clima","DatosEnviado");
-                datos.putString("tipo","clima");
-                fragment.setArguments(datos);
-                datosRecibidos.clear();
-            }
-            if(fragment.getTargetRequestCode() == 3) {
-                Log.e("Estacion","DatosEnviado");
-                datos.putString("tipo", "estacion");
-                fragment.setArguments(datos);
-                datosRecibidos.clear();
-            }
-        }
         FragmentTransaction transaction = getFragmentManager().beginTransaction();
         transaction.replace(R.id.nav_host_fragment, fragment);
         transaction.addToBackStack(null);
@@ -242,4 +203,5 @@ public class busquedaPictogramapdcFragment extends Fragment{
         RequestQueue requestQueue = Volley.newRequestQueue(getContext());
         requestQueue.add(stringRequest);
     }
+
 }

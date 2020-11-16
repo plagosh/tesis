@@ -3,14 +3,12 @@ package cl.paulina.yotrabajoconpecs.ui.panel;
 import android.app.AlertDialog;
 import android.app.ProgressDialog;
 import android.content.Context;
-import android.graphics.Color;
 import android.os.Build;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.LinearLayout;
 import android.widget.Toast;
@@ -28,12 +26,9 @@ import org.json.JSONArray;
 import org.json.JSONException;
 
 import java.util.ArrayList;
-import java.util.Calendar;
-import java.util.GregorianCalendar;
 
 import cl.paulina.yotrabajoconpecs.R;
 import cl.paulina.yotrabajoconpecs.ServicioAPI.PreferenciasCompartidas;
-import cl.paulina.yotrabajoconpecs.ui.libro.libroFragment;
 import cz.msebera.android.httpclient.Header;
 
 public class desglose extends Fragment {

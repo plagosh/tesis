@@ -60,10 +60,7 @@ public class menu_lateral extends AppCompatActivity {
                         JSONArray jsonarray = new JSONArray(new String(responseBody));
                         for (int i = 0; i < jsonarray.length(); i++) {
                             recibiendo.add(jsonarray.getJSONObject(i).getString("nombres"));
-                            //Toast.makeText(getContext(),"recibiendo: " + recibiendo.get(i).toString(), Toast.LENGTH_SHORT).show();
                         }
-                        String dato = recibiendo.get(recibiendo.size() - 1).toString();
-                        //menuName.setText(dato);
                     } catch (JSONException e) {
                         e.printStackTrace();
                     }
@@ -72,14 +69,9 @@ public class menu_lateral extends AppCompatActivity {
 
             @Override
             public void onFailure(int statusCode, Header[] headers, byte[] responseBody, Throwable error) {
-                Context context = getApplicationContext();
-                CharSequence text = "Conexión fallida";
-                int duration = Toast.LENGTH_SHORT;
-                Toast toast = Toast.makeText(context, text, duration);
-                toast.show();
+                Toast.makeText(getApplicationContext(), "Conexión fallida", Toast.LENGTH_SHORT).show();
             }
         });
-
 
         mAppBarConfiguration = new AppBarConfiguration.Builder(
                 R.id.nav_inicio, R.id.nav_libro, R.id.nav_panel, R.id.nav_micuenta, R.id.nav_configuracion, R.id.nav_cerrar_sesion)
