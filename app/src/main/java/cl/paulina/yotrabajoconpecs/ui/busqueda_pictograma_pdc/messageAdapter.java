@@ -78,22 +78,18 @@ public class messageAdapter extends RecyclerView.Adapter<messageAdapter.Mensajes
         //Toast.makeText(context, mensaje, Toast.LENGTH_SHORT).show();
 
         String urlCompleto[] = id.split(" ");
+        String largo = urlCompleto.length + "";
+        holder.TvMensaje.removeAllViews();
         for(int i = 0; i < urlCompleto.length; i++){
             lista.add(urlCompleto[i]);
+            ImageButton imagen = new ImageButton(context);
+            holder.TvMensaje.setGravity(Gravity.CENTER);
+            imagen.setBackgroundResource(R.drawable.boton_rectangulo);
+            imagen.setLayoutParams(new LinearLayout.LayoutParams(130, 130));
+            imagen.setScaleType(ImageButton.ScaleType.FIT_CENTER);
+            Picasso.get().load("https://yotrabajoconpecs.ddns.net/" + urlCompleto[i]).into(imagen);
+            holder.TvMensaje.addView(imagen);
         }
-            holder.TvUno.setVisibility(View.VISIBLE);
-            Picasso.get().load("https://yotrabajoconpecs.ddns.net/" + urlCompleto[0]).into(holder.TvUno);
-
-            holder.TvDos.setVisibility(View.VISIBLE);
-            Picasso.get().load("https://yotrabajoconpecs.ddns.net/" + urlCompleto[1]).into(holder.TvDos);
-
-
-            holder.TvTres.setVisibility(View.VISIBLE);
-            Picasso.get().load("https://yotrabajoconpecs.ddns.net/" + urlCompleto[2]).into(holder.TvTres);
-
-
-            holder.TvCuatro.setVisibility(View.VISIBLE);
-            Picasso.get().load("https://yotrabajoconpecs.ddns.net/" + urlCompleto[3]).into(holder.TvCuatro);
 
         holder.TvHora.setText(mensajedetexto.get(position).getHoraDelMensaje());
         if(Build.VERSION.SDK_INT < Build.VERSION_CODES.LOLLIPOP) holder.cardView.getBackground().setAlpha(0);
@@ -109,18 +105,13 @@ public class messageAdapter extends RecyclerView.Adapter<messageAdapter.Mensajes
         CardView cardView;
         LinearLayout mensajeBG, TvMensaje;
         TextView TvHora;
-        ImageView TvUno, TvDos, TvTres, TvCuatro;
 
         MensajesViewHolder(View itemView){
             super(itemView);
             cardView = (CardView) itemView.findViewById(R.id.cvMensajes);
             mensajeBG = (LinearLayout) itemView.findViewById(R.id.mensajeBG);
-            TvMensaje = (LinearLayout) itemView.findViewById(R.id.cajaBotonImagen);
+            TvMensaje = (LinearLayout) itemView.findViewById(R.id.crearCaja);
             TvHora = (TextView) itemView.findViewById(R.id.msHora);
-            TvUno = (ImageView) itemView.findViewById(R.id.imagen0);
-            TvDos = (ImageView) itemView.findViewById(R.id.imagen1);
-            TvTres = (ImageView) itemView.findViewById(R.id.imagen2);
-            TvCuatro = (ImageView) itemView.findViewById(R.id.imagen3);
         }
     }
 }

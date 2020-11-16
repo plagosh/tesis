@@ -11,13 +11,11 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.ImageButton;
-import android.widget.ImageView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.RequiresApi;
 import androidx.fragment.app.Fragment;
-import androidx.fragment.app.FragmentTransaction;
 import androidx.localbroadcastmanager.content.LocalBroadcastManager;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -30,8 +28,6 @@ import com.android.volley.VolleyError;
 import com.android.volley.toolbox.JsonObjectRequest;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
-import com.google.android.gms.common.SignInButton;
-import com.google.android.material.bottomsheet.BottomSheetDialog;
 import com.loopj.android.http.AsyncHttpClient;
 import com.loopj.android.http.AsyncHttpResponseHandler;
 import com.squareup.picasso.Picasso;
@@ -41,16 +37,15 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
 import cl.paulina.yotrabajoconpecs.R;
 import cl.paulina.yotrabajoconpecs.ui.busqueda_pictograma_empleador.MensajeDeTexto;
-import cl.paulina.yotrabajoconpecs.ui.busqueda_pictograma_pdc.ExampleBottomSheetDialog;
 import cl.paulina.yotrabajoconpecs.ui.busqueda_pictograma_pdc.examplebuttonsheetdialog;
 import cl.paulina.yotrabajoconpecs.ui.busqueda_pictograma_pdc.messageAdapter;
-import cl.paulina.yotrabajoconpecs.ui.busqueda_pictograma_empleador.MesajesAdapter;
 import cz.msebera.android.httpclient.Header;
 
 public class libroPDC extends Fragment {
@@ -64,12 +59,12 @@ public class libroPDC extends Fragment {
     private String EMISOR;
     private String NOMBRE;
     private String RECEPTOR;
-    public String variableUno, variableDos, variableTres, variableCuatro, palabraUno, palabraDos, palabraTres, palabraCuatro;
+    public String variableUno, variableDos, variableTres, variableCuatro, palabra, dato;
     public int sapo2 = 0;
     public int sapo3 = 0;
     public String ultimaCategoria;
-    public String nDatos, nDatitos, nDatotes, nURL, nURLita, nURLota;
-    public ArrayList nombre_login, correo_login, pictos, url, urlita, urlota, categoria, categories, nombre, nombrecito, nombresote, botonuno, botondos, pos, menssage, urlQueryCero, nombreQueryCero, urls;
+    public String nDatos, nDatitos, nDatotes, nURL, nURLita, nURLota, id;
+    public ArrayList nombre_login, correo_login, pictos, url, urlita, urlota, categoria, categories, nombre, nombrecito, nombresote, botonuno, botondos, pos, menssage, urlQueryCero, nombreQueryCero, urls, celular;
     private static final String IP_MENSAJE = "https://yotrabajoconpecs.ddns.net/Enviar_Mensajes.php";
     ImageButton imagen1, imagen2, arriba1, arriba2, abajo1, abajo2;
     Bundle datos;
@@ -105,6 +100,7 @@ public class libroPDC extends Fragment {
         pos = new ArrayList();
         botonuno = new ArrayList();
         botondos = new ArrayList();
+        celular = new ArrayList();
         botonuno.clear();
         botondos.clear();
         botonuno.add(0);
@@ -243,6 +239,8 @@ public class libroPDC extends Fragment {
             @Override
             public void onClick(View v) {
                 //sustantivo y 3 es un verbo
+                nombreQueryCero.clear();
+                celular.clear();
                 String nMensaje;
                 String nMURL;
                 if(ultimaCategoria == "2"){
@@ -252,86 +250,31 @@ public class libroPDC extends Fragment {
                     nMensaje = nDatotes;
                     nMURL = nURLota;
                 }
+
+                Date dt = new Date();
+                int hours = dt.getHours();
+                int minutes = dt.getMinutes();
+                String curTime = hours + ":" + minutes;
+
                 //para enviar el mensaje accedemos al método.
                 String mensaje = "yo quiero " + nDatos + " " + nMensaje;
                 String mensajedos = "repo/img/2617.png " + "repo/img/5441.png " + nURL + " " + nMURL;
                 MENSAJE_ENVIAR = mensaje;
                 MandarMensaje();
-                CreateMensaje(mensajedos, mensaje, "00:00", 1);
+                CreateMensaje(mensajedos, mensaje, curTime, 1);
             }
         });
 
         bR = new BroadcastReceiver() {
             @Override
             public void onReceive(Context context, Intent intent) {
-                palabraUno = "";
-                palabraDos = "";
-                palabraTres = "";
-                palabraCuatro = "";
                 String mensaje = intent.getStringExtra("key_mensaje");
-                //Toast.makeText(getContext(), mensaje, Toast.LENGTH_SHORT).show();
-                String split[] = mensaje.split(" ");
-                palabraUno = split[0];
-                palabraDos = split[1];
-                palabraTres = split[2];
-                palabraCuatro = split[3];
-                //Toast.makeText(getContext(), palabraUno+palabraDos+palabraTres+palabraCuatro, Toast.LENGTH_SHORT).show();
-
-                //descargarDatosQueryCero();
-                urlQueryCero.clear();
-                nombreQueryCero.clear();
-                final ProgressDialog progressDialog = new ProgressDialog(getActivity());
-                AsyncHttpClient client = new AsyncHttpClient();
-                client.get("https://yotrabajoconpecs.ddns.net/query0.php", new AsyncHttpResponseHandler() {
-                    @RequiresApi(api = Build.VERSION_CODES.M)
-                    @Override
-                    public void onSuccess(int statusCode, Header[] headers, byte[] responseBody) {
-                        if(statusCode == 200){
-                            progressDialog.dismiss();
-                            try{
-                                JSONArray jsonarray = new JSONArray(new String(responseBody));
-                                Toast.makeText(getContext(), palabraUno+palabraDos+palabraTres+palabraCuatro, Toast.LENGTH_SHORT).show();
-                                for(int i = 0; i < jsonarray.length(); i++){
-                                    urlQueryCero.add(jsonarray.getJSONObject(i).getString("url"));
-                                    nombreQueryCero.add(jsonarray.getJSONObject(i).getString("nombre_imagen"));
-                                    String nombreQuery = nombreQueryCero.get(i).toString();
-                                    if(nombreQuery.equals(palabraUno)) {
-                                        variableUno = urlQueryCero.get(i).toString();
-                                        Toast.makeText(getContext(), urlQueryCero.get(i).toString(), Toast.LENGTH_SHORT).show();
-                                    }else if(nombreQuery.equals(palabraDos)) {
-                                        variableDos = urlQueryCero.get(i).toString();
-                                        //Toast.makeText(getContext(), urlQueryCero.get(i).toString(), Toast.LENGTH_SHORT).show();
-                                    }else if(nombreQuery.equals(palabraTres)) {
-                                        variableTres = urlQueryCero.get(i).toString();
-                                        //Toast.makeText(getContext(), urlQueryCero.get(i).toString(), Toast.LENGTH_SHORT).show();
-                                    }else if(nombreQuery.equals(palabraCuatro)) {
-                                        variableCuatro = urlQueryCero.get(i).toString();
-                                        //Toast.makeText(getContext(), urlQueryCero.get(i).toString(), Toast.LENGTH_SHORT).show();
-                                    }
-                                }
-                            }catch(JSONException e){
-                                e.printStackTrace();
-                            }
-                        }
-                    }
-                    @Override
-                    public void onFailure(int statusCode, Header[] headers, byte[] responseBody, Throwable error) {
-                        Context context = getContext();
-                        CharSequence text = "Conexión fallida";
-                        int duration = Toast.LENGTH_SHORT;
-                        Toast toast = Toast.makeText(context, text, duration);
-                        toast.show();
-                    }
-                });
-
-                //Toast.makeText(getContext(), variableUno+variableDos+variableTres+variableCuatro, Toast.LENGTH_SHORT).show();
-                String id = variableUno + " " + variableDos + " " + variableTres + " " + variableCuatro;
-                //Toast.makeText(getContext(), variableUno + " " + variableDos + " " + variableTres + " " + variableCuatro, Toast.LENGTH_SHORT).show();
+                String url = intent.getStringExtra("key_url");
                 String hora = intent.getStringExtra("key_hora");
                 String horaParametros[] = hora.split("\\,");
                 String emisor = intent.getStringExtra("key_emisor_PHP");
                 if(emisor.equals(RECEPTOR)){
-                    CreateMensaje(id, mensaje, horaParametros[0], 2);
+                    CreateMensaje(url, mensaje, horaParametros[0], 2);
                 }
             }
         };
@@ -572,53 +515,29 @@ public class libroPDC extends Fragment {
         });
     }
 
-    private void descargarDatosQueryCero(){
-        urlQueryCero.clear();
-        nombreQueryCero.clear();
-        final ProgressDialog progressDialog = new ProgressDialog(getActivity());
-        AsyncHttpClient client = new AsyncHttpClient();
-        client.get("https://yotrabajoconpecs.ddns.net/query0.php", new AsyncHttpResponseHandler() {
-            @RequiresApi(api = Build.VERSION_CODES.M)
+    private void descargarDatosQueryCero(String consulta){
+        JsonObjectRequest solicitud = new JsonObjectRequest("https://yotrabajoconpecs.ddns.net/query0.php?consulta=" + consulta, null, new Response.Listener<JSONObject>() {
             @Override
-            public void onSuccess(int statusCode, Header[] headers, byte[] responseBody) {
-                if(statusCode == 200){
-                    progressDialog.dismiss();
-                    try{
-                        JSONArray jsonarray = new JSONArray(new String(responseBody));
-                        Toast.makeText(getContext(), palabraUno+palabraDos+palabraTres+palabraCuatro, Toast.LENGTH_SHORT).show();
-                        for(int i = 0; i < jsonarray.length(); i++){
-                            urlQueryCero.add(jsonarray.getJSONObject(i).getString("url"));
-                            nombreQueryCero.add(jsonarray.getJSONObject(i).getString("nombre_imagen"));
-                            String nombreQuery = nombreQueryCero.get(i).toString();
-                            if(nombreQuery == palabraUno) {
-                                variableUno = urlQueryCero.get(i).toString();
-                                //Toast.makeText(getContext(), urlQueryCero.get(i).toString(), Toast.LENGTH_SHORT).show();
-                            }else if(nombreQuery == palabraDos) {
-                                variableDos = urlQueryCero.get(i).toString();
-                                //Toast.makeText(getContext(), urlQueryCero.get(i).toString(), Toast.LENGTH_SHORT).show();
-                            }else if(nombreQuery == palabraTres) {
-                                variableTres = urlQueryCero.get(i).toString();
-                                //Toast.makeText(getContext(), urlQueryCero.get(i).toString(), Toast.LENGTH_SHORT).show();
-                            }else if(nombreQuery == palabraCuatro) {
-                                variableCuatro = urlQueryCero.get(i).toString();
-                                //Toast.makeText(getContext(), urlQueryCero.get(i).toString(), Toast.LENGTH_SHORT).show();
-                            }
-                        }
-                    }catch(JSONException e){
-                        e.printStackTrace();
+            public void onResponse(JSONObject response) {
+                try {
+                    String responseBody = response.getString("resultado");
+                    JSONArray jsonarray = new JSONArray(new String(responseBody));
+                    for (int i = 0; i < jsonarray.length(); i++) {
+                        JSONObject js = jsonarray.getJSONObject(i);
+                        dato = js.getString("url");
                     }
+                } catch (JSONException e) {
+                    Toast.makeText(getContext(), "Ocurrió un error al descomponer el JSON", Toast.LENGTH_SHORT).show();
                 }
             }
-
+        }, new Response.ErrorListener() {
             @Override
-            public void onFailure(int statusCode, Header[] headers, byte[] responseBody, Throwable error) {
-                Context context = getContext();
-                CharSequence text = "Conexión fallida";
-                int duration = Toast.LENGTH_SHORT;
-                Toast toast = Toast.makeText(context, text, duration);
-                toast.show();
+            public void onErrorResponse(VolleyError error) {
+                Toast.makeText(getContext(), "Ocurrió un error, por favor contactese con el administrador", Toast.LENGTH_SHORT).show();
             }
         });
+        RequestQueue requestQueue = Volley.newRequestQueue(getContext());
+        requestQueue.add(solicitud);
     }
 
     private void ejecutarservicio(String URL, String dato){
@@ -639,6 +558,30 @@ public class libroPDC extends Fragment {
                 parametros.put("id","");
                 parametros.put("fecha","");
                 parametros.put("categoria",dato);
+                return parametros;
+            }
+        };
+        RequestQueue requestQueue = Volley.newRequestQueue(getContext());
+        requestQueue.add(stringRequest);
+    }
+
+    private void consultarURL(String URL, String url, String palabra){
+        StringRequest stringRequest = new StringRequest(Request.Method.POST, URL, new Response.Listener<String>() {
+            @Override
+            public void onResponse(String response) {
+                //Toast.makeText(getContext(), "OPERACION EXITOSA", Toast.LENGTH_SHORT).show();
+            }
+        }, new Response.ErrorListener(){
+            @Override
+            public void onErrorResponse(VolleyError error) {
+                Toast.makeText(getContext(), error.toString(), Toast.LENGTH_SHORT).show();
+            }
+        }){
+            @Override
+            protected Map<String, String> getParams() throws AuthFailureError {
+                Map<String,String> parametros = new HashMap<String,String>();
+                parametros.put("nombre", palabra);
+                parametros.put("url", url);
                 return parametros;
             }
         };

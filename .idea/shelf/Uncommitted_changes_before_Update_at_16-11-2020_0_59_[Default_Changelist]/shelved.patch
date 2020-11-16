@@ -1,0 +1,1238 @@
+Index: app/src/main/java/cl/paulina/yotrabajoconpecs/ui/busqueda_pictograma_empleador/Mensajeria.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package cl.paulina.yotrabajoconpecs.ui.busqueda_pictograma_empleador;\r\n\r\nimport android.app.ProgressDialog;\r\nimport android.content.BroadcastReceiver;\r\nimport android.content.Context;\r\nimport android.content.Intent;\r\nimport android.content.IntentFilter;\r\nimport android.os.Build;\r\nimport android.os.Bundle;\r\nimport android.text.Editable;\r\nimport android.text.TextWatcher;\r\nimport android.view.LayoutInflater;\r\nimport android.view.View;\r\nimport android.view.ViewGroup;\r\nimport android.widget.Button;\r\nimport android.widget.EditText;\r\nimport android.widget.LinearLayout;\r\nimport android.widget.Toast;\r\n\r\nimport androidx.annotation.NonNull;\r\nimport androidx.annotation.RequiresApi;\r\nimport androidx.fragment.app.Fragment;\r\nimport androidx.fragment.app.FragmentTransaction;\r\nimport androidx.localbroadcastmanager.content.LocalBroadcastManager;\r\nimport androidx.recyclerview.widget.LinearLayoutManager;\r\nimport androidx.recyclerview.widget.RecyclerView;\r\n\r\nimport com.android.volley.Request;\r\nimport com.android.volley.RequestQueue;\r\nimport com.android.volley.Response;\r\nimport com.android.volley.VolleyError;\r\nimport com.android.volley.toolbox.JsonObjectRequest;\r\nimport com.android.volley.toolbox.Volley;\r\nimport com.google.android.material.bottomsheet.BottomSheetBehavior;\r\nimport com.google.android.material.bottomsheet.BottomSheetDialog;\r\nimport com.google.firebase.iid.FirebaseInstanceId;\r\nimport com.google.firebase.iid.FirebaseInstanceIdService;\r\nimport com.loopj.android.http.AsyncHttpClient;\r\nimport com.loopj.android.http.AsyncHttpResponseHandler;\r\n\r\nimport org.json.JSONArray;\r\nimport org.json.JSONException;\r\nimport org.json.JSONObject;\r\n\r\nimport java.util.ArrayList;\r\nimport java.util.HashMap;\r\nimport java.util.List;\r\n\r\nimport cl.paulina.yotrabajoconpecs.Login;\r\nimport cl.paulina.yotrabajoconpecs.Preferences;\r\nimport cl.paulina.yotrabajoconpecs.R;\r\nimport cl.paulina.yotrabajoconpecs.ServicioAPI.FireBaseId;\r\nimport cl.paulina.yotrabajoconpecs.menu_lateral;\r\nimport cl.paulina.yotrabajoconpecs.ui.busqueda_pictograma_pdc.ExampleBottomSheetDialog;\r\nimport cl.paulina.yotrabajoconpecs.ui.busqueda_pictograma_pdc.busquedaPictogramapdcFragment;\r\nimport cz.msebera.android.httpclient.Header;\r\n\r\npublic class Mensajeria extends Fragment {\r\n    public static final String MENSAJE = \"MENSAJE\";\r\n    private BroadcastReceiver bR;\r\n    private RecyclerView rv;\r\n    private List<MensajeDeTexto> mensajedetexto;\r\n    private MesajesAdapter adapter;\r\n    private Button bTEnviarMensaje;\r\n    private EditText eTEscribirMensaje;\r\n    private int TEXT_LINES = 1;\r\n    private String MENSAJE_ENVIAR = \"\";\r\n    private String EMISOR;\r\n    private String NOMBRE;\r\n    private String RECEPTOR;\r\n    public ArrayList nombre_login, correo_login;\r\n    private static final String IP_MENSAJE = \"https://yotrabajoconpecs.ddns.net/Enviar_Mensajes.php\";\r\n\r\n    public View onCreateView(@NonNull LayoutInflater inflater,\r\n                             ViewGroup container, Bundle savedInstanceState) {\r\n        View vista = inflater.inflate(R.layout.mensajeria, container, false);\r\n        mensajedetexto = new ArrayList<>();\r\n        rv = vista.findViewById(R.id.recyclerview);\r\n\r\n        nombre_login = new ArrayList();\r\n        correo_login = new ArrayList();\r\n\r\n        Bundle bundle = getArguments();\r\n        Bundle datosRecibido = getArguments();\r\n        if (datosRecibido != null) {\r\n            RECEPTOR = datosRecibido.getString(\"key_receptor\");\r\n        }\r\n\r\n        descargarDatos();\r\n\r\n        LinearLayoutManager lm = new LinearLayoutManager(getContext());\r\n        rv.setLayoutManager(lm);\r\n        adapter = new MesajesAdapter(mensajedetexto, getContext());\r\n        rv.setAdapter(adapter);\r\n        bTEnviarMensaje = vista.findViewById(R.id.bTEnviarMensaje);\r\n        eTEscribirMensaje = vista.findViewById(R.id.eTEscribirMensaje);\r\n\r\n        eTEscribirMensaje.addTextChangedListener(new TextWatcher() {\r\n            @Override\r\n            public void beforeTextChanged(CharSequence s, int start, int count, int after) {\r\n\r\n            }\r\n\r\n            @Override\r\n            public void onTextChanged(CharSequence s, int start, int before, int count) {\r\n                if (eTEscribirMensaje.getLayout().getLineCount() != TEXT_LINES) {\r\n                    setScrollbarChat();\r\n                    TEXT_LINES = eTEscribirMensaje.getLayout().getLineCount();\r\n                }\r\n            }\r\n\r\n            @Override\r\n            public void afterTextChanged(Editable s) {\r\n\r\n            }\r\n        });\r\n\r\n        bTEnviarMensaje.setOnClickListener(new View.OnClickListener() {\r\n            @Override\r\n            public void onClick(View v) {\r\n                //para enviar el mensaje accedemos al método.\r\n                String mensaje = eTEscribirMensaje.getText().toString().trim();\r\n                if (!mensaje.isEmpty()) {\r\n                    MENSAJE_ENVIAR = mensaje;\r\n                    MandarMensaje();\r\n                    CreateMensaje(mensaje, \"00:00\", 1);\r\n                    eTEscribirMensaje.setText(\"\");\r\n                }\r\n            }\r\n        });\r\n\r\n        bR = new BroadcastReceiver() {\r\n            @Override\r\n            public void onReceive(Context context, Intent intent) {\r\n                String mensaje = intent.getStringExtra(\"key_mensaje\");\r\n                Toast.makeText(getContext(), \"Se ha iniciado sesión: \", Toast.LENGTH_SHORT).show();\r\n                String hora = intent.getStringExtra(\"key_hora\");\r\n                String horaParametros[] = hora.split(\"\\\\,\");\r\n                String emisor = intent.getStringExtra(\"key_emisor_PHP\");\r\n                if(emisor.equals(RECEPTOR)){\r\n                    CreateMensaje(mensaje, horaParametros[0], 2);\r\n                }\r\n            }\r\n        };\r\n\r\n        return vista;\r\n    }\r\n\r\n    private void MandarMensaje() {\r\n        //Toast.makeText(Login.this, \"entre a SubirToken\", Toast.LENGTH_SHORT).show();\r\n        HashMap<String, String> hashMapToken = new HashMap<>();\r\n        hashMapToken.put(\"emisor\", EMISOR);\r\n        hashMapToken.put(\"nombrecompleto\", NOMBRE);\r\n        hashMapToken.put(\"receptor\", RECEPTOR);\r\n        hashMapToken.put(\"mensaje\", MENSAJE_ENVIAR);\r\n        /*Toast.makeText(getContext(), EMISOR, Toast.LENGTH_SHORT).show();\r\n        Toast.makeText(getContext(), NOMBRE, Toast.LENGTH_SHORT).show();\r\n        Toast.makeText(getContext(), RECEPTOR, Toast.LENGTH_SHORT).show();\r\n        Toast.makeText(getContext(), MENSAJE_ENVIAR, Toast.LENGTH_SHORT).show();*/\r\n        //Toast.makeText(Login.this, emailemail + FirebaseInstanceId.getInstance().getToken(), Toast.LENGTH_SHORT).show();\r\n\r\n        JsonObjectRequest solicitud = new JsonObjectRequest(Request.Method.POST, IP_MENSAJE, new JSONObject(hashMapToken), new Response.Listener<JSONObject>() {\r\n            @Override\r\n            public void onResponse(JSONObject response) {\r\n                try {\r\n                    Toast.makeText(getContext(), \"Se ha iniciado sesión: \" + response.getString(\"resultado\"), Toast.LENGTH_SHORT).show();\r\n                } catch (JSONException e) {\r\n                }\r\n            }\r\n        }, new Response.ErrorListener() {\r\n            @Override\r\n            public void onErrorResponse(VolleyError error) {\r\n                Toast.makeText(getContext(), \"Ocurrió un error\", Toast.LENGTH_SHORT).show();\r\n            }\r\n        });\r\n        RequestQueue requestQueue = Volley.newRequestQueue(getContext());\r\n        requestQueue.add(solicitud);\r\n    }\r\n\r\n    public void CreateMensaje(String mensaje, String hora, int tipoDeMensaje) {\r\n        MensajeDeTexto mensajeDeTextoAuxiliar = new MensajeDeTexto();\r\n        mensajeDeTextoAuxiliar.setId(\"0\");\r\n        mensajeDeTextoAuxiliar.setMensaje(mensaje);\r\n        mensajeDeTextoAuxiliar.setTipoMensaje(tipoDeMensaje);\r\n        mensajeDeTextoAuxiliar.setHoraDelMensaje(hora);\r\n        mensajedetexto.add(mensajeDeTextoAuxiliar);\r\n        adapter.notifyDataSetChanged();\r\n        setScrollbarChat();\r\n    }\r\n\r\n    @Override\r\n    public void onPause() {\r\n        super.onPause();\r\n        LocalBroadcastManager.getInstance(getActivity()).unregisterReceiver(bR);\r\n    }\r\n\r\n    @Override\r\n    public void onResume() {\r\n        super.onResume();\r\n        LocalBroadcastManager.getInstance(getActivity()).registerReceiver(bR, new IntentFilter(MENSAJE));\r\n    }\r\n\r\n    public void setScrollbarChat() {\r\n        rv.scrollToPosition(adapter.getItemCount() - 1);\r\n    }\r\n\r\n    private void descargarDatos() {\r\n        nombre_login.clear();\r\n        correo_login.clear();\r\n        final ProgressDialog progressDialog = new ProgressDialog(getActivity());\r\n        AsyncHttpClient client = new AsyncHttpClient();\r\n        client.get(\"https://yotrabajoconpecs.ddns.net/query_loginreciclado.php\", new AsyncHttpResponseHandler() {\r\n            @RequiresApi(api = Build.VERSION_CODES.M)\r\n            @Override\r\n            public void onSuccess(int statusCode, Header[] headers, byte[] responseBody) {\r\n                if (statusCode == 200) {\r\n                    progressDialog.dismiss();\r\n                    try {\r\n                        JSONArray jsonarray = new JSONArray(new String(responseBody));\r\n                        for (int i = 0; i < jsonarray.length(); i++) {\r\n                            nombre_login.add(jsonarray.getJSONObject(i).getString(\"nombres\"));\r\n                            correo_login.add(jsonarray.getJSONObject(i).getString(\"correo\"));\r\n                        }\r\n                        EMISOR = correo_login.get(correo_login.size()-1).toString();\r\n                        NOMBRE = nombre_login.get(nombre_login.size()-1).toString();\r\n                    } catch (JSONException e) {\r\n                        e.printStackTrace();\r\n                    }\r\n                }\r\n            }\r\n\r\n            @Override\r\n            public void onFailure(int statusCode, Header[] headers, byte[] responseBody, Throwable error) {\r\n                Context context = getContext();\r\n                CharSequence text = \"Conexión fallida\";\r\n                int duration = Toast.LENGTH_SHORT;\r\n                Toast toast = Toast.makeText(context, text, duration);\r\n                toast.show();\r\n            }\r\n        });\r\n    }\r\n}\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- app/src/main/java/cl/paulina/yotrabajoconpecs/ui/busqueda_pictograma_empleador/Mensajeria.java	(revision 0b8bf6ec11462bf77e240b64e94a3e5f06e7de28)
++++ app/src/main/java/cl/paulina/yotrabajoconpecs/ui/busqueda_pictograma_empleador/Mensajeria.java	(date 1605463765045)
+@@ -14,13 +14,11 @@
+ import android.view.ViewGroup;
+ import android.widget.Button;
+ import android.widget.EditText;
+-import android.widget.LinearLayout;
+ import android.widget.Toast;
+ 
+ import androidx.annotation.NonNull;
+ import androidx.annotation.RequiresApi;
+ import androidx.fragment.app.Fragment;
+-import androidx.fragment.app.FragmentTransaction;
+ import androidx.localbroadcastmanager.content.LocalBroadcastManager;
+ import androidx.recyclerview.widget.LinearLayoutManager;
+ import androidx.recyclerview.widget.RecyclerView;
+@@ -31,10 +29,6 @@
+ import com.android.volley.VolleyError;
+ import com.android.volley.toolbox.JsonObjectRequest;
+ import com.android.volley.toolbox.Volley;
+-import com.google.android.material.bottomsheet.BottomSheetBehavior;
+-import com.google.android.material.bottomsheet.BottomSheetDialog;
+-import com.google.firebase.iid.FirebaseInstanceId;
+-import com.google.firebase.iid.FirebaseInstanceIdService;
+ import com.loopj.android.http.AsyncHttpClient;
+ import com.loopj.android.http.AsyncHttpResponseHandler;
+ 
+@@ -43,16 +37,11 @@
+ import org.json.JSONObject;
+ 
+ import java.util.ArrayList;
++import java.util.Date;
+ import java.util.HashMap;
+ import java.util.List;
+ 
+-import cl.paulina.yotrabajoconpecs.Login;
+-import cl.paulina.yotrabajoconpecs.Preferences;
+ import cl.paulina.yotrabajoconpecs.R;
+-import cl.paulina.yotrabajoconpecs.ServicioAPI.FireBaseId;
+-import cl.paulina.yotrabajoconpecs.menu_lateral;
+-import cl.paulina.yotrabajoconpecs.ui.busqueda_pictograma_pdc.ExampleBottomSheetDialog;
+-import cl.paulina.yotrabajoconpecs.ui.busqueda_pictograma_pdc.busquedaPictogramapdcFragment;
+ import cz.msebera.android.httpclient.Header;
+ 
+ public class Mensajeria extends Fragment {
+@@ -122,8 +111,14 @@
+                 String mensaje = eTEscribirMensaje.getText().toString().trim();
+                 if (!mensaje.isEmpty()) {
+                     MENSAJE_ENVIAR = mensaje;
++
++                    Date dt = new Date();
++                    int hours = dt.getHours();
++                    int minutes = dt.getMinutes();
++                    String curTime = hours + ":" + minutes;
++
+                     MandarMensaje();
+-                    CreateMensaje(mensaje, "00:00", 1);
++                    CreateMensaje(mensaje, curTime, 1);
+                     eTEscribirMensaje.setText("");
+                 }
+             }
+Index: app/src/main/java/cl/paulina/yotrabajoconpecs/ServicioAPI/FireBaseServiceMensajes.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package cl.paulina.yotrabajoconpecs.ServicioAPI;\r\n\r\nimport android.app.Notification;\r\nimport android.app.NotificationManager;\r\nimport android.app.PendingIntent;\r\nimport android.content.Context;\r\nimport android.content.Intent;\r\nimport android.media.RingtoneManager;\r\nimport android.net.ConnectivityManager;\r\nimport android.net.Uri;\r\nimport android.widget.Toast;\r\n\r\nimport androidx.annotation.NonNull;\r\nimport androidx.core.app.NotificationCompat.Builder;\r\nimport androidx.localbroadcastmanager.content.LocalBroadcastManager;\r\n\r\nimport com.google.firebase.messaging.FirebaseMessagingService;\r\nimport com.google.firebase.messaging.RemoteMessage;\r\n\r\nimport java.util.Random;\r\n\r\nimport cl.paulina.yotrabajoconpecs.Preferences;\r\nimport cl.paulina.yotrabajoconpecs.R;\r\nimport cl.paulina.yotrabajoconpecs.ui.busqueda_pictograma_empleador.Mensajeria;\r\nimport cl.paulina.yotrabajoconpecs.ui.libro.libroPDC;\r\n\r\npublic class FireBaseServiceMensajes extends FirebaseMessagingService {\r\n    @Override\r\n    public void onMessageReceived(@NonNull RemoteMessage remoteMessage) {\r\n        super.onMessageReceived(remoteMessage);\r\n        String mensaje = remoteMessage.getData().get(\"mensaje\");\r\n        String hora = remoteMessage.getData().get(\"hora\");\r\n        String cabecera = remoteMessage.getData().get(\"cabecera\");\r\n        String cuerpo = remoteMessage.getData().get(\"cuerpo\");\r\n        String receptor = remoteMessage.getData().get(\"receptor\");\r\n        String emisorPHP = remoteMessage.getData().get(\"emisor\");\r\n        String emisor = Preferences.obtenerPreferenceString(this, Preferences.PREFERENCE_USUARIO_LOGIN);\r\n\r\n        if(!emisorPHP.equals(receptor)) {\r\n            String uno = \"PaulinaLagosHenriquez\";\r\n            if (emisor.equals(uno)) {\r\n                MensajeEmpleador(mensaje, hora, emisorPHP);\r\n                showNotificationEmpleador(cabecera, cuerpo);\r\n            } else {\r\n                MensajePDC(mensaje, hora, emisorPHP);\r\n                showNotificationPDC(cabecera, cuerpo);\r\n            }\r\n        }\r\n    }\r\n\r\n    private void MensajeEmpleador(String mensaje, String hora, String emisor){\r\n        Intent i = new Intent(Mensajeria.MENSAJE);\r\n        i.putExtra(\"key_mensaje\",  mensaje);\r\n        i.putExtra(\"key_hora\",  hora);\r\n        i.putExtra(\"key_emisor_PHP\",  emisor);\r\n        LocalBroadcastManager.getInstance(getApplicationContext()).sendBroadcast(i);\r\n    }\r\n\r\n    private void MensajePDC(String mensaje, String hora, String emisor){\r\n        Intent i = new Intent(libroPDC.MENSAJE);\r\n        i.putExtra(\"key_mensaje\",  mensaje);\r\n        i.putExtra(\"key_hora\",  hora);\r\n        i.putExtra(\"key_emisor_PHP\",  emisor);\r\n        LocalBroadcastManager.getInstance(getApplicationContext()).sendBroadcast(i);\r\n    }\r\n\r\n    private void showNotificationEmpleador(String cabecera, String cuerpo){\r\n        Intent i = new Intent(this, Mensajeria.class);\r\n        PendingIntent pendingIntent = PendingIntent.getActivity(this, 0, i, PendingIntent.FLAG_ONE_SHOT);\r\n\r\n        Uri soundNotificacion = RingtoneManager.getDefaultUri(RingtoneManager.TYPE_NOTIFICATION);\r\n\r\n        Builder builder = new Builder(this);\r\n        builder.setAutoCancel(true);\r\n        builder.setContentTitle(cabecera);\r\n        builder.setContentText(cuerpo);\r\n        builder.setSound(soundNotificacion);\r\n        builder.setSmallIcon(R.drawable.logo);\r\n        builder.setTicker(cuerpo);\r\n        builder.setContentIntent(pendingIntent);\r\n\r\n        NotificationManager notificationManager = (NotificationManager) getSystemService(Context.NOTIFICATION_SERVICE);\r\n        Random random = new Random();\r\n\r\n        notificationManager.notify(random.nextInt(), builder.build());\r\n    }\r\n\r\n    private void showNotificationPDC(String cabecera, String cuerpo){\r\n        Intent i = new Intent(this, libroPDC.class);\r\n        PendingIntent pendingIntent = PendingIntent.getActivity(this, 0, i, PendingIntent.FLAG_ONE_SHOT);\r\n\r\n        Uri soundNotificacion = RingtoneManager.getDefaultUri(RingtoneManager.TYPE_NOTIFICATION);\r\n\r\n        Builder builder = new Builder(this);\r\n        builder.setAutoCancel(true);\r\n        builder.setContentTitle(cabecera);\r\n        builder.setContentText(cuerpo);\r\n        builder.setSound(soundNotificacion);\r\n        builder.setSmallIcon(R.drawable.logo);\r\n        builder.setTicker(cuerpo);\r\n        builder.setContentIntent(pendingIntent);\r\n\r\n        NotificationManager notificationManager = (NotificationManager) getSystemService(Context.NOTIFICATION_SERVICE);\r\n        Random random = new Random();\r\n\r\n        notificationManager.notify(random.nextInt(), builder.build());\r\n    }\r\n}\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- app/src/main/java/cl/paulina/yotrabajoconpecs/ServicioAPI/FireBaseServiceMensajes.java	(revision 0b8bf6ec11462bf77e240b64e94a3e5f06e7de28)
++++ app/src/main/java/cl/paulina/yotrabajoconpecs/ServicioAPI/FireBaseServiceMensajes.java	(date 1605483015573)
+@@ -14,11 +14,23 @@
+ import androidx.core.app.NotificationCompat.Builder;
+ import androidx.localbroadcastmanager.content.LocalBroadcastManager;
+ 
++import com.android.volley.RequestQueue;
++import com.android.volley.Response;
++import com.android.volley.VolleyError;
++import com.android.volley.toolbox.JsonObjectRequest;
++import com.android.volley.toolbox.Volley;
+ import com.google.firebase.messaging.FirebaseMessagingService;
+ import com.google.firebase.messaging.RemoteMessage;
+ 
++import org.json.JSONArray;
++import org.json.JSONException;
++import org.json.JSONObject;
++
++import java.lang.reflect.Array;
++import java.util.ArrayList;
+ import java.util.Random;
+ 
++import cl.paulina.yotrabajoconpecs.Amigos.ActivityAmigos;
+ import cl.paulina.yotrabajoconpecs.Preferences;
+ import cl.paulina.yotrabajoconpecs.R;
+ import cl.paulina.yotrabajoconpecs.ui.busqueda_pictograma_empleador.Mensajeria;
+@@ -34,6 +46,7 @@
+         String cuerpo = remoteMessage.getData().get("cuerpo");
+         String receptor = remoteMessage.getData().get("receptor");
+         String emisorPHP = remoteMessage.getData().get("emisor");
++        String url = remoteMessage.getData().get("url");
+         String emisor = Preferences.obtenerPreferenceString(this, Preferences.PREFERENCE_USUARIO_LOGIN);
+ 
+         if(!emisorPHP.equals(receptor)) {
+@@ -41,13 +54,22 @@
+             if (emisor.equals(uno)) {
+                 MensajeEmpleador(mensaje, hora, emisorPHP);
+                 showNotificationEmpleador(cabecera, cuerpo);
++                actualizacion(mensaje, hora, emisorPHP);
+             } else {
+-                MensajePDC(mensaje, hora, emisorPHP);
++                MensajePDC(mensaje, hora, emisorPHP, url);
+                 showNotificationPDC(cabecera, cuerpo);
+             }
+         }
+     }
+ 
++    private void actualizacion(String mensaje, String hora, String emisor){
++        Intent i = new Intent(ActivityAmigos.MENSAJE);
++        i.putExtra("key_mensaje",  mensaje);
++        i.putExtra("key_hora",  hora);
++        i.putExtra("key_emisor_PHP",  emisor);
++        LocalBroadcastManager.getInstance(getApplicationContext()).sendBroadcast(i);
++    }
++
+     private void MensajeEmpleador(String mensaje, String hora, String emisor){
+         Intent i = new Intent(Mensajeria.MENSAJE);
+         i.putExtra("key_mensaje",  mensaje);
+@@ -56,11 +78,12 @@
+         LocalBroadcastManager.getInstance(getApplicationContext()).sendBroadcast(i);
+     }
+ 
+-    private void MensajePDC(String mensaje, String hora, String emisor){
++    private void MensajePDC(String mensaje, String hora, String emisor, String url){
+         Intent i = new Intent(libroPDC.MENSAJE);
+         i.putExtra("key_mensaje",  mensaje);
+         i.putExtra("key_hora",  hora);
+         i.putExtra("key_emisor_PHP",  emisor);
++        i.putExtra("key_url",  url);
+         LocalBroadcastManager.getInstance(getApplicationContext()).sendBroadcast(i);
+     }
+ 
+@@ -105,4 +128,5 @@
+ 
+         notificationManager.notify(random.nextInt(), builder.build());
+     }
++
+ }
+Index: app/src/main/java/cl/paulina/yotrabajoconpecs/ui/libro/libroPDC.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package cl.paulina.yotrabajoconpecs.ui.libro;\r\nimport android.app.ProgressDialog;\r\nimport android.content.BroadcastReceiver;\r\nimport android.content.Context;\r\nimport android.content.Intent;\r\nimport android.content.IntentFilter;\r\nimport android.os.Build;\r\nimport android.os.Bundle;\r\nimport android.view.LayoutInflater;\r\nimport android.view.View;\r\nimport android.view.ViewGroup;\r\nimport android.widget.Button;\r\nimport android.widget.ImageButton;\r\nimport android.widget.ImageView;\r\nimport android.widget.Toast;\r\n\r\nimport androidx.annotation.NonNull;\r\nimport androidx.annotation.RequiresApi;\r\nimport androidx.fragment.app.Fragment;\r\nimport androidx.fragment.app.FragmentTransaction;\r\nimport androidx.localbroadcastmanager.content.LocalBroadcastManager;\r\nimport androidx.recyclerview.widget.LinearLayoutManager;\r\nimport androidx.recyclerview.widget.RecyclerView;\r\n\r\nimport com.android.volley.AuthFailureError;\r\nimport com.android.volley.Request;\r\nimport com.android.volley.RequestQueue;\r\nimport com.android.volley.Response;\r\nimport com.android.volley.VolleyError;\r\nimport com.android.volley.toolbox.JsonObjectRequest;\r\nimport com.android.volley.toolbox.StringRequest;\r\nimport com.android.volley.toolbox.Volley;\r\nimport com.google.android.gms.common.SignInButton;\r\nimport com.google.android.material.bottomsheet.BottomSheetDialog;\r\nimport com.loopj.android.http.AsyncHttpClient;\r\nimport com.loopj.android.http.AsyncHttpResponseHandler;\r\nimport com.squareup.picasso.Picasso;\r\n\r\nimport org.json.JSONArray;\r\nimport org.json.JSONException;\r\nimport org.json.JSONObject;\r\n\r\nimport java.util.ArrayList;\r\nimport java.util.HashMap;\r\nimport java.util.List;\r\nimport java.util.Map;\r\n\r\nimport cl.paulina.yotrabajoconpecs.R;\r\nimport cl.paulina.yotrabajoconpecs.ui.busqueda_pictograma_empleador.MensajeDeTexto;\r\nimport cl.paulina.yotrabajoconpecs.ui.busqueda_pictograma_pdc.ExampleBottomSheetDialog;\r\nimport cl.paulina.yotrabajoconpecs.ui.busqueda_pictograma_pdc.examplebuttonsheetdialog;\r\nimport cl.paulina.yotrabajoconpecs.ui.busqueda_pictograma_pdc.messageAdapter;\r\nimport cl.paulina.yotrabajoconpecs.ui.busqueda_pictograma_empleador.MesajesAdapter;\r\nimport cz.msebera.android.httpclient.Header;\r\n\r\npublic class libroPDC extends Fragment {\r\n    public static final String MENSAJE = \"MENSAJE\";\r\n    private BroadcastReceiver bR;\r\n    private RecyclerView rv;\r\n    private List<MensajeDeTexto> mensajedetexto;\r\n    private messageAdapter adapter;\r\n    private Button bTEnviarMensaje, bTEnviarFrase;\r\n    private String MENSAJE_ENVIAR = \"\";\r\n    private String EMISOR;\r\n    private String NOMBRE;\r\n    private String RECEPTOR;\r\n    public String variableUno, variableDos, variableTres, variableCuatro, palabraUno, palabraDos, palabraTres, palabraCuatro;\r\n    public int sapo2 = 0;\r\n    public int sapo3 = 0;\r\n    public String ultimaCategoria;\r\n    public String nDatos, nDatitos, nDatotes, nURL, nURLita, nURLota;\r\n    public ArrayList nombre_login, correo_login, pictos, url, urlita, urlota, categoria, categories, nombre, nombrecito, nombresote, botonuno, botondos, pos, menssage, urlQueryCero, nombreQueryCero, urls;\r\n    private static final String IP_MENSAJE = \"https://yotrabajoconpecs.ddns.net/Enviar_Mensajes.php\";\r\n    ImageButton imagen1, imagen2, arriba1, arriba2, abajo1, abajo2;\r\n    Bundle datos;\r\n\r\n    public View onCreateView(@NonNull LayoutInflater inflater,\r\n                             ViewGroup container, Bundle savedInstanceState) {\r\n        View vista = inflater.inflate(R.layout.pdc_mensajeria, container, false);\r\n\r\n        rv = vista.findViewById(R.id.recyclerview);\r\n        //rvbr = vista.findViewById(R.id.recyclerview);\r\n        imagen1 = vista.findViewById(R.id.ImagenButtonUno);\r\n        imagen2 = vista.findViewById(R.id.ImagenButtonDos);\r\n        arriba1 = vista.findViewById(R.id.ArribaButtonUno);\r\n        arriba2 = vista.findViewById(R.id.ArribaButtonDos);\r\n        abajo1 = vista.findViewById(R.id.AbajoButtonUno);\r\n        abajo2 = vista.findViewById(R.id.AbajoButton2);\r\n        bTEnviarFrase = vista.findViewById(R.id.bTEnviarFrase);\r\n\r\n        datos = new Bundle();\r\n        mensajedetexto = new ArrayList<>();\r\n        nombre_login = new ArrayList();\r\n        correo_login = new ArrayList();\r\n        pictos = new ArrayList();\r\n        nombre = new ArrayList();\r\n        nombrecito = new ArrayList();\r\n        nombresote = new ArrayList();\r\n        pictos = new ArrayList();\r\n        url = new ArrayList();\r\n        urlita = new ArrayList();\r\n        urlota = new ArrayList();\r\n        categoria = new ArrayList();\r\n        categories = new ArrayList();\r\n        pos = new ArrayList();\r\n        botonuno = new ArrayList();\r\n        botondos = new ArrayList();\r\n        botonuno.clear();\r\n        botondos.clear();\r\n        botonuno.add(0);\r\n        botondos.add(0);\r\n        pos.add(0);\r\n        menssage = new ArrayList();\r\n        urlQueryCero = new ArrayList();\r\n        nombreQueryCero = new ArrayList();\r\n        urls = new ArrayList();\r\n\r\n        RECEPTOR = \"1\";\r\n\r\n        bTEnviarFrase.setOnClickListener(new View.OnClickListener() {\r\n            @Override\r\n            public void onClick(View v) {\r\n                examplebuttonsheetdialog fragment = new examplebuttonsheetdialog();\r\n                fragment.show(getActivity().getSupportFragmentManager(), \"TAG\");\r\n                /*\r\n                Fragment fragment = new ExampleBottomSheetDialog();\r\n                FragmentTransaction transaction = getFragmentManager().beginTransaction();\r\n                transaction.replace(R.id.nav_host_fragment, fragment);\r\n                transaction.addToBackStack(null);\r\n                transaction.commit();*/\r\n            }\r\n        });\r\n\r\n        descargar();\r\n        //todos\r\n        descargarDatos();\r\n        //sustantivos\r\n        descargarDatitos();\r\n        //adjetivos\r\n        descargarDatotes();\r\n\r\n        LinearLayoutManager lm = new LinearLayoutManager(getContext());\r\n        rv.setLayoutManager(lm);\r\n        adapter = new messageAdapter(mensajedetexto, getContext());\r\n        rv.setAdapter(adapter);\r\n        bTEnviarMensaje = vista.findViewById(R.id.bTEnviarMensaje);\r\n\r\n\r\n        arriba1.setOnClickListener(new View.OnClickListener() {\r\n            @Override\r\n            public void onClick(View v) {\r\n                abajo1.setVisibility(View.VISIBLE);\r\n                arriba2.setVisibility(View.VISIBLE);\r\n                sapo2++;\r\n                Picasso.get().load(\"https://yotrabajoconpecs.ddns.net/\" + url.get(sapo2)).into(imagen1);\r\n                //imagen1.setStroke(8, getResources().getColor(R.color.colorWhite));\r\n                nDatos = nombre.get(sapo2).toString();\r\n                nURL = url.get(sapo2).toString();\r\n                //Toast.makeText(getContext(), nDatos, Toast.LENGTH_SHORT).show();\r\n                imagen1.setScaleType(ImageButton.ScaleType.FIT_CENTER);\r\n                botonuno.add(categoria.get(sapo2));\r\n                String consulta = \"INSERT INTO `automata` (`idautomata`, `fecha`, `categoria`) VALUES (NULL, current_timestamp(), '\" + categoria.get(sapo2).toString() + \"');\";\r\n                ejecutarservicio(\"https://yotrabajoconpecs.ddns.net/save.php\", consulta);\r\n            }\r\n        });\r\n        abajo1.setOnClickListener(new View.OnClickListener() {\r\n            @Override\r\n            public void onClick(View v) {\r\n                if(sapo2 > 0){\r\n                    sapo2--;\r\n                    Picasso.get().load(\"https://yotrabajoconpecs.ddns.net/\" + url.get(sapo2)).into(imagen1);\r\n                    nDatos = nombre.get(sapo2).toString();\r\n                    nURL = url.get(sapo2).toString();\r\n                    //Toast.makeText(getContext(), nDatos, Toast.LENGTH_SHORT).show();\r\n                    imagen1.setScaleType(ImageButton.ScaleType.FIT_CENTER);\r\n                    botonuno.add(categoria.get(sapo2));\r\n                    String consulta = \"INSERT INTO `automata` (`idautomata`, `fecha`, `categoria`) VALUES (NULL, current_timestamp(), '\" + categoria.get(sapo2).toString() + \"');\";\r\n                    ejecutarservicio(\"https://yotrabajoconpecs.ddns.net/save.php\", consulta);\r\n                    //Toast.makeText(getContext(), \"n: \" + sapo2, Toast.LENGTH_SHORT).show();\r\n                }else{\r\n                    Toast.makeText(getContext(), \"No hay más pictos\", Toast.LENGTH_SHORT).show();\r\n                }\r\n            }\r\n        });\r\n        arriba2.setOnClickListener(new View.OnClickListener() {\r\n            @Override\r\n            public void onClick(View v) {\r\n                abajo2.setVisibility(View.VISIBLE);\r\n                if(ultimaCategoria == \"3\") {\r\n                    sapo3++;\r\n                    Picasso.get().load(\"https://yotrabajoconpecs.ddns.net/\" + urlita.get(sapo3)).into(imagen2);\r\n                    nDatitos = nombrecito.get(sapo3).toString();\r\n                    nURLita = urlita.get(sapo3).toString();\r\n                    //Toast.makeText(getContext(), nDatitos, Toast.LENGTH_SHORT).show();\r\n                    imagen2.setScaleType(ImageButton.ScaleType.FIT_CENTER);\r\n                    botondos.add(nombrecito.get(sapo3));\r\n                }else{\r\n                    sapo3++;\r\n                    Picasso.get().load(\"https://yotrabajoconpecs.ddns.net/\" + urlota.get(sapo3)).into(imagen2);\r\n                    nDatotes = nombresote.get(sapo3).toString();\r\n                    nURLota = urlota.get(sapo3).toString();\r\n                    //Toast.makeText(getContext(), nDatotes, Toast.LENGTH_SHORT).show();\r\n                    imagen2.setScaleType(ImageButton.ScaleType.FIT_CENTER);\r\n                    botondos.add(nombrecito.get(sapo3));\r\n                }\r\n            }\r\n        });\r\n        //automata\r\n        descargarSave();\r\n        abajo2.setOnClickListener(new View.OnClickListener() {\r\n            @Override\r\n            public void onClick(View v) {\r\n                if(ultimaCategoria == \"3\") {\r\n                    if(sapo3 > 0){\r\n                        sapo3--;\r\n                        Picasso.get().load(\"https://yotrabajoconpecs.ddns.net/\" + urlita.get(sapo3)).into(imagen2);\r\n                        nDatitos = nombrecito.get(sapo3).toString();\r\n                        nURLita = urlita.get(sapo3).toString();\r\n                        //Toast.makeText(getContext(), nDatitos, Toast.LENGTH_SHORT).show();\r\n                        imagen2.setScaleType(ImageButton.ScaleType.FIT_CENTER);\r\n                        botondos.add(nombrecito.get(sapo3));\r\n                    }else{\r\n                        Toast.makeText(getContext(), \"No hay más pictos\", Toast.LENGTH_SHORT).show();\r\n                    }\r\n                }else{\r\n                    if(sapo3 > 0){\r\n                        Picasso.get().load(\"https://yotrabajoconpecs.ddns.net/\" + urlota.get(sapo3)).into(imagen2);\r\n                        nDatotes = nombresote.get(sapo3).toString();\r\n                        nURLota = urlota.get(sapo3).toString();\r\n                        //Toast.makeText(getContext(), nDatotes, Toast.LENGTH_SHORT).show();\r\n                        imagen2.setScaleType(ImageButton.ScaleType.FIT_CENTER);\r\n                        botondos.add(nombresote.get(sapo3));\r\n                        sapo3--;\r\n                    }else{\r\n                        Toast.makeText(getContext(), \"No hay más pictos\", Toast.LENGTH_SHORT).show();\r\n                    }\r\n                }\r\n            }\r\n        });\r\n\r\n\r\n        bTEnviarMensaje.setOnClickListener(new View.OnClickListener() {\r\n            @Override\r\n            public void onClick(View v) {\r\n                //sustantivo y 3 es un verbo\r\n                String nMensaje;\r\n                String nMURL;\r\n                if(ultimaCategoria == \"2\"){\r\n                    nMensaje = nDatitos;\r\n                    nMURL = nURLita;\r\n                }else{\r\n                    nMensaje = nDatotes;\r\n                    nMURL = nURLota;\r\n                }\r\n                //para enviar el mensaje accedemos al método.\r\n                String mensaje = \"yo quiero \" + nDatos + \" \" + nMensaje;\r\n                String mensajedos = \"repo/img/2617.png \" + \"repo/img/5441.png \" + nURL + \" \" + nMURL;\r\n                MENSAJE_ENVIAR = mensaje;\r\n                MandarMensaje();\r\n                CreateMensaje(mensajedos, mensaje, \"00:00\", 1);\r\n            }\r\n        });\r\n\r\n        bR = new BroadcastReceiver() {\r\n            @Override\r\n            public void onReceive(Context context, Intent intent) {\r\n                palabraUno = \"\";\r\n                palabraDos = \"\";\r\n                palabraTres = \"\";\r\n                palabraCuatro = \"\";\r\n                String mensaje = intent.getStringExtra(\"key_mensaje\");\r\n                //Toast.makeText(getContext(), mensaje, Toast.LENGTH_SHORT).show();\r\n                String split[] = mensaje.split(\" \");\r\n                palabraUno = split[0];\r\n                palabraDos = split[1];\r\n                palabraTres = split[2];\r\n                palabraCuatro = split[3];\r\n                //Toast.makeText(getContext(), palabraUno+palabraDos+palabraTres+palabraCuatro, Toast.LENGTH_SHORT).show();\r\n\r\n                //descargarDatosQueryCero();\r\n                urlQueryCero.clear();\r\n                nombreQueryCero.clear();\r\n                final ProgressDialog progressDialog = new ProgressDialog(getActivity());\r\n                AsyncHttpClient client = new AsyncHttpClient();\r\n                client.get(\"https://yotrabajoconpecs.ddns.net/query0.php\", new AsyncHttpResponseHandler() {\r\n                    @RequiresApi(api = Build.VERSION_CODES.M)\r\n                    @Override\r\n                    public void onSuccess(int statusCode, Header[] headers, byte[] responseBody) {\r\n                        if(statusCode == 200){\r\n                            progressDialog.dismiss();\r\n                            try{\r\n                                JSONArray jsonarray = new JSONArray(new String(responseBody));\r\n                                Toast.makeText(getContext(), palabraUno+palabraDos+palabraTres+palabraCuatro, Toast.LENGTH_SHORT).show();\r\n                                for(int i = 0; i < jsonarray.length(); i++){\r\n                                    urlQueryCero.add(jsonarray.getJSONObject(i).getString(\"url\"));\r\n                                    nombreQueryCero.add(jsonarray.getJSONObject(i).getString(\"nombre_imagen\"));\r\n                                    String nombreQuery = nombreQueryCero.get(i).toString();\r\n                                    if(nombreQuery.equals(palabraUno)) {\r\n                                        variableUno = urlQueryCero.get(i).toString();\r\n                                        Toast.makeText(getContext(), urlQueryCero.get(i).toString(), Toast.LENGTH_SHORT).show();\r\n                                    }else if(nombreQuery.equals(palabraDos)) {\r\n                                        variableDos = urlQueryCero.get(i).toString();\r\n                                        //Toast.makeText(getContext(), urlQueryCero.get(i).toString(), Toast.LENGTH_SHORT).show();\r\n                                    }else if(nombreQuery.equals(palabraTres)) {\r\n                                        variableTres = urlQueryCero.get(i).toString();\r\n                                        //Toast.makeText(getContext(), urlQueryCero.get(i).toString(), Toast.LENGTH_SHORT).show();\r\n                                    }else if(nombreQuery.equals(palabraCuatro)) {\r\n                                        variableCuatro = urlQueryCero.get(i).toString();\r\n                                        //Toast.makeText(getContext(), urlQueryCero.get(i).toString(), Toast.LENGTH_SHORT).show();\r\n                                    }\r\n                                }\r\n                            }catch(JSONException e){\r\n                                e.printStackTrace();\r\n                            }\r\n                        }\r\n                    }\r\n                    @Override\r\n                    public void onFailure(int statusCode, Header[] headers, byte[] responseBody, Throwable error) {\r\n                        Context context = getContext();\r\n                        CharSequence text = \"Conexión fallida\";\r\n                        int duration = Toast.LENGTH_SHORT;\r\n                        Toast toast = Toast.makeText(context, text, duration);\r\n                        toast.show();\r\n                    }\r\n                });\r\n\r\n                //Toast.makeText(getContext(), variableUno+variableDos+variableTres+variableCuatro, Toast.LENGTH_SHORT).show();\r\n                String id = variableUno + \" \" + variableDos + \" \" + variableTres + \" \" + variableCuatro;\r\n                //Toast.makeText(getContext(), variableUno + \" \" + variableDos + \" \" + variableTres + \" \" + variableCuatro, Toast.LENGTH_SHORT).show();\r\n                String hora = intent.getStringExtra(\"key_hora\");\r\n                String horaParametros[] = hora.split(\"\\\\,\");\r\n                String emisor = intent.getStringExtra(\"key_emisor_PHP\");\r\n                if(emisor.equals(RECEPTOR)){\r\n                    CreateMensaje(id, mensaje, horaParametros[0], 2);\r\n                }\r\n            }\r\n        };\r\n\r\n        return vista;\r\n    }\r\n\r\n    private void MandarMensaje() {\r\n        //Toast.makeText(Login.this, \"entre a SubirToken\", Toast.LENGTH_SHORT).show();\r\n        HashMap<String, String> hashMapToken = new HashMap<>();\r\n        hashMapToken.put(\"emisor\", EMISOR);\r\n        hashMapToken.put(\"nombrecompleto\", NOMBRE);\r\n        hashMapToken.put(\"receptor\", RECEPTOR);\r\n        hashMapToken.put(\"mensaje\", MENSAJE_ENVIAR);\r\n        /*Toast.makeText(getContext(), EMISOR, Toast.LENGTH_SHORT).show();\r\n        Toast.makeText(getContext(), NOMBRE, Toast.LENGTH_SHORT).show();\r\n        Toast.makeText(getContext(), RECEPTOR, Toast.LENGTH_SHORT).show();\r\n        Toast.makeText(getContext(), MENSAJE_ENVIAR, Toast.LENGTH_SHORT).show();*/\r\n        //Toast.makeText(Login.this, emailemail + FirebaseInstanceId.getInstance().getToken(), Toast.LENGTH_SHORT).show();\r\n\r\n        JsonObjectRequest solicitud = new JsonObjectRequest(Request.Method.POST, IP_MENSAJE, new JSONObject(hashMapToken), new Response.Listener<JSONObject>() {\r\n            @Override\r\n            public void onResponse(JSONObject response) {\r\n                try {\r\n                    Toast.makeText(getContext(), \"Se ha iniciado sesión: \" + response.getString(\"resultado\"), Toast.LENGTH_SHORT).show();\r\n                } catch (JSONException e) {\r\n                }\r\n            }\r\n        }, new Response.ErrorListener() {\r\n            @Override\r\n            public void onErrorResponse(VolleyError error) {\r\n                Toast.makeText(getContext(), \"Ocurrió un error\", Toast.LENGTH_SHORT).show();\r\n            }\r\n        });\r\n        RequestQueue requestQueue = Volley.newRequestQueue(getContext());\r\n        requestQueue.add(solicitud);\r\n    }\r\n\r\n    public void CreateMensaje(String id, String mensaje, String hora, int tipoDeMensaje) {\r\n        MensajeDeTexto mensajeDeTextoAuxiliar = new MensajeDeTexto();\r\n        mensajeDeTextoAuxiliar.setId(id);\r\n        mensajeDeTextoAuxiliar.setMensaje(mensaje);\r\n        mensajeDeTextoAuxiliar.setTipoMensaje(tipoDeMensaje);\r\n        mensajeDeTextoAuxiliar.setHoraDelMensaje(hora);\r\n        mensajedetexto.add(mensajeDeTextoAuxiliar);\r\n        adapter.notifyDataSetChanged();\r\n        setScrollbarChat();\r\n    }\r\n\r\n    @Override\r\n    public void onPause() {\r\n        super.onPause();\r\n        LocalBroadcastManager.getInstance(getActivity()).unregisterReceiver(bR);\r\n    }\r\n\r\n    @Override\r\n    public void onResume() {\r\n        super.onResume();\r\n        LocalBroadcastManager.getInstance(getActivity()).registerReceiver(bR, new IntentFilter(MENSAJE));\r\n    }\r\n\r\n    public void setScrollbarChat() {\r\n        rv.scrollToPosition(adapter.getItemCount() - 1);\r\n    }\r\n\r\n    private void descargar() {\r\n        nombre_login.clear();\r\n        correo_login.clear();\r\n        final ProgressDialog progressDialog = new ProgressDialog(getActivity());\r\n        AsyncHttpClient client = new AsyncHttpClient();\r\n        client.get(\"https://yotrabajoconpecs.ddns.net/query_loginreciclado.php\", new AsyncHttpResponseHandler() {\r\n            @RequiresApi(api = Build.VERSION_CODES.M)\r\n            @Override\r\n            public void onSuccess(int statusCode, Header[] headers, byte[] responseBody) {\r\n                if (statusCode == 200) {\r\n                    progressDialog.dismiss();\r\n                    try {\r\n                        JSONArray jsonarray = new JSONArray(new String(responseBody));\r\n                        for (int i = 0; i < jsonarray.length(); i++) {\r\n                            nombre_login.add(jsonarray.getJSONObject(i).getString(\"nombres\"));\r\n                            correo_login.add(jsonarray.getJSONObject(i).getString(\"correo\"));\r\n                        }\r\n                        EMISOR = correo_login.get(correo_login.size()-1).toString();\r\n                        NOMBRE = nombre_login.get(nombre_login.size()-1).toString();\r\n                    } catch (JSONException e) {\r\n                        e.printStackTrace();\r\n                    }\r\n                }\r\n            }\r\n\r\n            @Override\r\n            public void onFailure(int statusCode, Header[] headers, byte[] responseBody, Throwable error) {\r\n                Context context = getContext();\r\n                CharSequence text = \"Conexión fallida\";\r\n                int duration = Toast.LENGTH_SHORT;\r\n                Toast toast = Toast.makeText(context, text, duration);\r\n                toast.show();\r\n            }\r\n        });\r\n    }\r\n\r\n    private void descargarDatos(){\r\n        url.clear();\r\n        categoria.clear();\r\n        nombre.clear();\r\n        final ProgressDialog progressDialog = new ProgressDialog(getActivity());\r\n        AsyncHttpClient client = new AsyncHttpClient();\r\n        client.get(\"https://yotrabajoconpecs.ddns.net/query.php\", new AsyncHttpResponseHandler() {\r\n            @RequiresApi(api = Build.VERSION_CODES.M)\r\n            @Override\r\n            public void onSuccess(int statusCode, Header[] headers, byte[] responseBody) {\r\n                if(statusCode == 200){\r\n                    progressDialog.dismiss();\r\n                    try{\r\n                        JSONArray jsonarray = new JSONArray(new String(responseBody));\r\n                        for(int i = 0; i < jsonarray.length(); i++){\r\n                            url.add(jsonarray.getJSONObject(i).getString(\"url\"));\r\n                            nombre.add(jsonarray.getJSONObject(i).getString(\"nombre_imagen\"));\r\n                            categoria.add(jsonarray.getJSONObject(i).getString(\"categoria_imagen\"));\r\n                        }\r\n                    }catch(JSONException e){\r\n                        e.printStackTrace();\r\n                    }\r\n                }\r\n            }\r\n\r\n            @Override\r\n            public void onFailure(int statusCode, Header[] headers, byte[] responseBody, Throwable error) {\r\n                Context context = getContext();\r\n                CharSequence text = \"Conexión fallida\";\r\n                int duration = Toast.LENGTH_SHORT;\r\n                Toast toast = Toast.makeText(context, text, duration);\r\n                toast.show();\r\n            }\r\n        });\r\n    }\r\n\r\n    private void descargarDatitos(){\r\n        //sustantivos\r\n        urlita.clear();\r\n        nombrecito.clear();\r\n        final ProgressDialog progressDialog = new ProgressDialog(getActivity());\r\n        AsyncHttpClient client = new AsyncHttpClient();\r\n        client.get(\"https://yotrabajoconpecs.ddns.net/query1.php\", new AsyncHttpResponseHandler() {\r\n            @RequiresApi(api = Build.VERSION_CODES.M)\r\n            @Override\r\n            public void onSuccess(int statusCode, Header[] headers, byte[] responseBody) {\r\n                if(statusCode == 200){\r\n                    progressDialog.dismiss();\r\n                    try{\r\n                        JSONArray jsonarray = new JSONArray(new String(responseBody));\r\n                        for(int i = 0; i < jsonarray.length(); i++){\r\n                            urlita.add(jsonarray.getJSONObject(i).getString(\"url\"));\r\n                            nombrecito.add(jsonarray.getJSONObject(i).getString(\"nombre_imagen\"));\r\n                        }\r\n                    }catch(JSONException e){\r\n                        e.printStackTrace();\r\n                    }\r\n                }\r\n            }\r\n\r\n            @Override\r\n            public void onFailure(int statusCode, Header[] headers, byte[] responseBody, Throwable error) {\r\n                Context context = getContext();\r\n                CharSequence text = \"Conexión fallida\";\r\n                int duration = Toast.LENGTH_SHORT;\r\n                Toast toast = Toast.makeText(context, text, duration);\r\n                toast.show();\r\n            }\r\n        });\r\n    }\r\n\r\n    private void descargarDatotes(){\r\n        //sustantivos\r\n        urlota.clear();\r\n        nombresote.clear();\r\n        final ProgressDialog progressDialog = new ProgressDialog(getActivity());\r\n        AsyncHttpClient client = new AsyncHttpClient();\r\n        client.get(\"https://yotrabajoconpecs.ddns.net/query5.php\", new AsyncHttpResponseHandler() {\r\n            @RequiresApi(api = Build.VERSION_CODES.M)\r\n            @Override\r\n            public void onSuccess(int statusCode, Header[] headers, byte[] responseBody) {\r\n                if(statusCode == 200){\r\n                    progressDialog.dismiss();\r\n                    try{\r\n                        JSONArray jsonarray = new JSONArray(new String(responseBody));\r\n                        for(int i = 0; i < jsonarray.length(); i++){\r\n                            urlota.add(jsonarray.getJSONObject(i).getString(\"url\"));\r\n                            nombresote.add(jsonarray.getJSONObject(i).getString(\"nombre_imagen\"));\r\n                        }\r\n                    }catch(JSONException e){\r\n                        e.printStackTrace();\r\n                    }\r\n                }\r\n            }\r\n\r\n            @Override\r\n            public void onFailure(int statusCode, Header[] headers, byte[] responseBody, Throwable error) {\r\n                Context context = getContext();\r\n                CharSequence text = \"Conexión fallida\";\r\n                int duration = Toast.LENGTH_SHORT;\r\n                Toast toast = Toast.makeText(context, text, duration);\r\n                toast.show();\r\n            }\r\n        });\r\n    }\r\n\r\n    private void descargarSave(){\r\n        categories.clear();\r\n        final ProgressDialog progressDialog = new ProgressDialog(getActivity());\r\n        AsyncHttpClient client = new AsyncHttpClient();\r\n        client.get(\"https://yotrabajoconpecs.ddns.net/query6.php\", new AsyncHttpResponseHandler() {\r\n            @RequiresApi(api = Build.VERSION_CODES.M)\r\n            @Override\r\n            public void onSuccess(int statusCode, Header[] headers, byte[] responseBody) {\r\n                if(statusCode == 200){\r\n                    progressDialog.dismiss();\r\n                    try{\r\n                        JSONArray jsonarray = new JSONArray(new String(responseBody));\r\n                        for(int i = 0; i < jsonarray.length(); i++){\r\n                            categories.add(jsonarray.getJSONObject(i).getString(\"categoria\"));\r\n                        }\r\n                        ultimaCategoria = categories.get(categories.size()-1).toString();\r\n                    }catch(JSONException e){\r\n                        e.printStackTrace();\r\n                    }\r\n                }\r\n            }\r\n\r\n            @Override\r\n            public void onFailure(int statusCode, Header[] headers, byte[] responseBody, Throwable error) {\r\n                Context context = getContext();\r\n                CharSequence text = \"Conexión fallida\";\r\n                int duration = Toast.LENGTH_SHORT;\r\n                Toast toast = Toast.makeText(context, text, duration);\r\n                toast.show();\r\n            }\r\n        });\r\n    }\r\n\r\n    private void descargarDatosQueryCero(){\r\n        urlQueryCero.clear();\r\n        nombreQueryCero.clear();\r\n        final ProgressDialog progressDialog = new ProgressDialog(getActivity());\r\n        AsyncHttpClient client = new AsyncHttpClient();\r\n        client.get(\"https://yotrabajoconpecs.ddns.net/query0.php\", new AsyncHttpResponseHandler() {\r\n            @RequiresApi(api = Build.VERSION_CODES.M)\r\n            @Override\r\n            public void onSuccess(int statusCode, Header[] headers, byte[] responseBody) {\r\n                if(statusCode == 200){\r\n                    progressDialog.dismiss();\r\n                    try{\r\n                        JSONArray jsonarray = new JSONArray(new String(responseBody));\r\n                        Toast.makeText(getContext(), palabraUno+palabraDos+palabraTres+palabraCuatro, Toast.LENGTH_SHORT).show();\r\n                        for(int i = 0; i < jsonarray.length(); i++){\r\n                            urlQueryCero.add(jsonarray.getJSONObject(i).getString(\"url\"));\r\n                            nombreQueryCero.add(jsonarray.getJSONObject(i).getString(\"nombre_imagen\"));\r\n                            String nombreQuery = nombreQueryCero.get(i).toString();\r\n                            if(nombreQuery == palabraUno) {\r\n                                variableUno = urlQueryCero.get(i).toString();\r\n                                //Toast.makeText(getContext(), urlQueryCero.get(i).toString(), Toast.LENGTH_SHORT).show();\r\n                            }else if(nombreQuery == palabraDos) {\r\n                                variableDos = urlQueryCero.get(i).toString();\r\n                                //Toast.makeText(getContext(), urlQueryCero.get(i).toString(), Toast.LENGTH_SHORT).show();\r\n                            }else if(nombreQuery == palabraTres) {\r\n                                variableTres = urlQueryCero.get(i).toString();\r\n                                //Toast.makeText(getContext(), urlQueryCero.get(i).toString(), Toast.LENGTH_SHORT).show();\r\n                            }else if(nombreQuery == palabraCuatro) {\r\n                                variableCuatro = urlQueryCero.get(i).toString();\r\n                                //Toast.makeText(getContext(), urlQueryCero.get(i).toString(), Toast.LENGTH_SHORT).show();\r\n                            }\r\n                        }\r\n                    }catch(JSONException e){\r\n                        e.printStackTrace();\r\n                    }\r\n                }\r\n            }\r\n\r\n            @Override\r\n            public void onFailure(int statusCode, Header[] headers, byte[] responseBody, Throwable error) {\r\n                Context context = getContext();\r\n                CharSequence text = \"Conexión fallida\";\r\n                int duration = Toast.LENGTH_SHORT;\r\n                Toast toast = Toast.makeText(context, text, duration);\r\n                toast.show();\r\n            }\r\n        });\r\n    }\r\n\r\n    private void ejecutarservicio(String URL, String dato){\r\n        StringRequest stringRequest = new StringRequest(Request.Method.POST, URL, new Response.Listener<String>() {\r\n            @Override\r\n            public void onResponse(String response) {\r\n                //Toast.makeText(getContext(), \"OPERACION EXITOSA\", Toast.LENGTH_SHORT).show();\r\n            }\r\n        }, new Response.ErrorListener(){\r\n            @Override\r\n            public void onErrorResponse(VolleyError error) {\r\n                Toast.makeText(getContext(), error.toString(), Toast.LENGTH_SHORT).show();\r\n            }\r\n        }){\r\n            @Override\r\n            protected Map<String, String> getParams() throws AuthFailureError {\r\n                Map<String,String> parametros = new HashMap<String,String>();\r\n                parametros.put(\"id\",\"\");\r\n                parametros.put(\"fecha\",\"\");\r\n                parametros.put(\"categoria\",dato);\r\n                return parametros;\r\n            }\r\n        };\r\n        RequestQueue requestQueue = Volley.newRequestQueue(getContext());\r\n        requestQueue.add(stringRequest);\r\n    }\r\n}\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- app/src/main/java/cl/paulina/yotrabajoconpecs/ui/libro/libroPDC.java	(revision 0b8bf6ec11462bf77e240b64e94a3e5f06e7de28)
++++ app/src/main/java/cl/paulina/yotrabajoconpecs/ui/libro/libroPDC.java	(date 1605463765034)
+@@ -11,13 +11,11 @@
+ import android.view.ViewGroup;
+ import android.widget.Button;
+ import android.widget.ImageButton;
+-import android.widget.ImageView;
+ import android.widget.Toast;
+ 
+ import androidx.annotation.NonNull;
+ import androidx.annotation.RequiresApi;
+ import androidx.fragment.app.Fragment;
+-import androidx.fragment.app.FragmentTransaction;
+ import androidx.localbroadcastmanager.content.LocalBroadcastManager;
+ import androidx.recyclerview.widget.LinearLayoutManager;
+ import androidx.recyclerview.widget.RecyclerView;
+@@ -30,8 +28,6 @@
+ import com.android.volley.toolbox.JsonObjectRequest;
+ import com.android.volley.toolbox.StringRequest;
+ import com.android.volley.toolbox.Volley;
+-import com.google.android.gms.common.SignInButton;
+-import com.google.android.material.bottomsheet.BottomSheetDialog;
+ import com.loopj.android.http.AsyncHttpClient;
+ import com.loopj.android.http.AsyncHttpResponseHandler;
+ import com.squareup.picasso.Picasso;
+@@ -41,16 +37,15 @@
+ import org.json.JSONObject;
+ 
+ import java.util.ArrayList;
++import java.util.Date;
+ import java.util.HashMap;
+ import java.util.List;
+ import java.util.Map;
+ 
+ import cl.paulina.yotrabajoconpecs.R;
+ import cl.paulina.yotrabajoconpecs.ui.busqueda_pictograma_empleador.MensajeDeTexto;
+-import cl.paulina.yotrabajoconpecs.ui.busqueda_pictograma_pdc.ExampleBottomSheetDialog;
+ import cl.paulina.yotrabajoconpecs.ui.busqueda_pictograma_pdc.examplebuttonsheetdialog;
+ import cl.paulina.yotrabajoconpecs.ui.busqueda_pictograma_pdc.messageAdapter;
+-import cl.paulina.yotrabajoconpecs.ui.busqueda_pictograma_empleador.MesajesAdapter;
+ import cz.msebera.android.httpclient.Header;
+ 
+ public class libroPDC extends Fragment {
+@@ -64,12 +59,12 @@
+     private String EMISOR;
+     private String NOMBRE;
+     private String RECEPTOR;
+-    public String variableUno, variableDos, variableTres, variableCuatro, palabraUno, palabraDos, palabraTres, palabraCuatro;
++    public String variableUno, variableDos, variableTres, variableCuatro, palabra, dato;
+     public int sapo2 = 0;
+     public int sapo3 = 0;
+     public String ultimaCategoria;
+-    public String nDatos, nDatitos, nDatotes, nURL, nURLita, nURLota;
+-    public ArrayList nombre_login, correo_login, pictos, url, urlita, urlota, categoria, categories, nombre, nombrecito, nombresote, botonuno, botondos, pos, menssage, urlQueryCero, nombreQueryCero, urls;
++    public String nDatos, nDatitos, nDatotes, nURL, nURLita, nURLota, id;
++    public ArrayList nombre_login, correo_login, pictos, url, urlita, urlota, categoria, categories, nombre, nombrecito, nombresote, botonuno, botondos, pos, menssage, urlQueryCero, nombreQueryCero, urls, celular;
+     private static final String IP_MENSAJE = "https://yotrabajoconpecs.ddns.net/Enviar_Mensajes.php";
+     ImageButton imagen1, imagen2, arriba1, arriba2, abajo1, abajo2;
+     Bundle datos;
+@@ -105,6 +100,7 @@
+         pos = new ArrayList();
+         botonuno = new ArrayList();
+         botondos = new ArrayList();
++        celular = new ArrayList();
+         botonuno.clear();
+         botondos.clear();
+         botonuno.add(0);
+@@ -243,6 +239,8 @@
+             @Override
+             public void onClick(View v) {
+                 //sustantivo y 3 es un verbo
++                nombreQueryCero.clear();
++                celular.clear();
+                 String nMensaje;
+                 String nMURL;
+                 if(ultimaCategoria == "2"){
+@@ -252,86 +250,31 @@
+                     nMensaje = nDatotes;
+                     nMURL = nURLota;
+                 }
++
++                Date dt = new Date();
++                int hours = dt.getHours();
++                int minutes = dt.getMinutes();
++                String curTime = hours + ":" + minutes;
++
+                 //para enviar el mensaje accedemos al método.
+                 String mensaje = "yo quiero " + nDatos + " " + nMensaje;
+                 String mensajedos = "repo/img/2617.png " + "repo/img/5441.png " + nURL + " " + nMURL;
+                 MENSAJE_ENVIAR = mensaje;
+                 MandarMensaje();
+-                CreateMensaje(mensajedos, mensaje, "00:00", 1);
++                CreateMensaje(mensajedos, mensaje, curTime, 1);
+             }
+         });
+ 
+         bR = new BroadcastReceiver() {
+             @Override
+             public void onReceive(Context context, Intent intent) {
+-                palabraUno = "";
+-                palabraDos = "";
+-                palabraTres = "";
+-                palabraCuatro = "";
+                 String mensaje = intent.getStringExtra("key_mensaje");
+-                //Toast.makeText(getContext(), mensaje, Toast.LENGTH_SHORT).show();
+-                String split[] = mensaje.split(" ");
+-                palabraUno = split[0];
+-                palabraDos = split[1];
+-                palabraTres = split[2];
+-                palabraCuatro = split[3];
+-                //Toast.makeText(getContext(), palabraUno+palabraDos+palabraTres+palabraCuatro, Toast.LENGTH_SHORT).show();
+-
+-                //descargarDatosQueryCero();
+-                urlQueryCero.clear();
+-                nombreQueryCero.clear();
+-                final ProgressDialog progressDialog = new ProgressDialog(getActivity());
+-                AsyncHttpClient client = new AsyncHttpClient();
+-                client.get("https://yotrabajoconpecs.ddns.net/query0.php", new AsyncHttpResponseHandler() {
+-                    @RequiresApi(api = Build.VERSION_CODES.M)
+-                    @Override
+-                    public void onSuccess(int statusCode, Header[] headers, byte[] responseBody) {
+-                        if(statusCode == 200){
+-                            progressDialog.dismiss();
+-                            try{
+-                                JSONArray jsonarray = new JSONArray(new String(responseBody));
+-                                Toast.makeText(getContext(), palabraUno+palabraDos+palabraTres+palabraCuatro, Toast.LENGTH_SHORT).show();
+-                                for(int i = 0; i < jsonarray.length(); i++){
+-                                    urlQueryCero.add(jsonarray.getJSONObject(i).getString("url"));
+-                                    nombreQueryCero.add(jsonarray.getJSONObject(i).getString("nombre_imagen"));
+-                                    String nombreQuery = nombreQueryCero.get(i).toString();
+-                                    if(nombreQuery.equals(palabraUno)) {
+-                                        variableUno = urlQueryCero.get(i).toString();
+-                                        Toast.makeText(getContext(), urlQueryCero.get(i).toString(), Toast.LENGTH_SHORT).show();
+-                                    }else if(nombreQuery.equals(palabraDos)) {
+-                                        variableDos = urlQueryCero.get(i).toString();
+-                                        //Toast.makeText(getContext(), urlQueryCero.get(i).toString(), Toast.LENGTH_SHORT).show();
+-                                    }else if(nombreQuery.equals(palabraTres)) {
+-                                        variableTres = urlQueryCero.get(i).toString();
+-                                        //Toast.makeText(getContext(), urlQueryCero.get(i).toString(), Toast.LENGTH_SHORT).show();
+-                                    }else if(nombreQuery.equals(palabraCuatro)) {
+-                                        variableCuatro = urlQueryCero.get(i).toString();
+-                                        //Toast.makeText(getContext(), urlQueryCero.get(i).toString(), Toast.LENGTH_SHORT).show();
+-                                    }
+-                                }
+-                            }catch(JSONException e){
+-                                e.printStackTrace();
+-                            }
+-                        }
+-                    }
+-                    @Override
+-                    public void onFailure(int statusCode, Header[] headers, byte[] responseBody, Throwable error) {
+-                        Context context = getContext();
+-                        CharSequence text = "Conexión fallida";
+-                        int duration = Toast.LENGTH_SHORT;
+-                        Toast toast = Toast.makeText(context, text, duration);
+-                        toast.show();
+-                    }
+-                });
+-
+-                //Toast.makeText(getContext(), variableUno+variableDos+variableTres+variableCuatro, Toast.LENGTH_SHORT).show();
+-                String id = variableUno + " " + variableDos + " " + variableTres + " " + variableCuatro;
+-                //Toast.makeText(getContext(), variableUno + " " + variableDos + " " + variableTres + " " + variableCuatro, Toast.LENGTH_SHORT).show();
++                String url = intent.getStringExtra("key_url");
+                 String hora = intent.getStringExtra("key_hora");
+                 String horaParametros[] = hora.split("\\,");
+                 String emisor = intent.getStringExtra("key_emisor_PHP");
+                 if(emisor.equals(RECEPTOR)){
+-                    CreateMensaje(id, mensaje, horaParametros[0], 2);
++                    CreateMensaje(url, mensaje, horaParametros[0], 2);
+                 }
+             }
+         };
+@@ -572,53 +515,29 @@
+         });
+     }
+ 
+-    private void descargarDatosQueryCero(){
+-        urlQueryCero.clear();
+-        nombreQueryCero.clear();
+-        final ProgressDialog progressDialog = new ProgressDialog(getActivity());
+-        AsyncHttpClient client = new AsyncHttpClient();
+-        client.get("https://yotrabajoconpecs.ddns.net/query0.php", new AsyncHttpResponseHandler() {
+-            @RequiresApi(api = Build.VERSION_CODES.M)
++    private void descargarDatosQueryCero(String consulta){
++        JsonObjectRequest solicitud = new JsonObjectRequest("https://yotrabajoconpecs.ddns.net/query0.php?consulta=" + consulta, null, new Response.Listener<JSONObject>() {
+             @Override
+-            public void onSuccess(int statusCode, Header[] headers, byte[] responseBody) {
+-                if(statusCode == 200){
+-                    progressDialog.dismiss();
+-                    try{
+-                        JSONArray jsonarray = new JSONArray(new String(responseBody));
+-                        Toast.makeText(getContext(), palabraUno+palabraDos+palabraTres+palabraCuatro, Toast.LENGTH_SHORT).show();
+-                        for(int i = 0; i < jsonarray.length(); i++){
+-                            urlQueryCero.add(jsonarray.getJSONObject(i).getString("url"));
+-                            nombreQueryCero.add(jsonarray.getJSONObject(i).getString("nombre_imagen"));
+-                            String nombreQuery = nombreQueryCero.get(i).toString();
+-                            if(nombreQuery == palabraUno) {
+-                                variableUno = urlQueryCero.get(i).toString();
+-                                //Toast.makeText(getContext(), urlQueryCero.get(i).toString(), Toast.LENGTH_SHORT).show();
+-                            }else if(nombreQuery == palabraDos) {
+-                                variableDos = urlQueryCero.get(i).toString();
+-                                //Toast.makeText(getContext(), urlQueryCero.get(i).toString(), Toast.LENGTH_SHORT).show();
+-                            }else if(nombreQuery == palabraTres) {
+-                                variableTres = urlQueryCero.get(i).toString();
+-                                //Toast.makeText(getContext(), urlQueryCero.get(i).toString(), Toast.LENGTH_SHORT).show();
+-                            }else if(nombreQuery == palabraCuatro) {
+-                                variableCuatro = urlQueryCero.get(i).toString();
+-                                //Toast.makeText(getContext(), urlQueryCero.get(i).toString(), Toast.LENGTH_SHORT).show();
+-                            }
+-                        }
+-                    }catch(JSONException e){
+-                        e.printStackTrace();
+-                    }
++            public void onResponse(JSONObject response) {
++                try {
++                    String responseBody = response.getString("resultado");
++                    JSONArray jsonarray = new JSONArray(new String(responseBody));
++                    for (int i = 0; i < jsonarray.length(); i++) {
++                        JSONObject js = jsonarray.getJSONObject(i);
++                        dato = js.getString("url");
++                    }
++                } catch (JSONException e) {
++                    Toast.makeText(getContext(), "Ocurrió un error al descomponer el JSON", Toast.LENGTH_SHORT).show();
+                 }
+             }
+-
++        }, new Response.ErrorListener() {
+             @Override
+-            public void onFailure(int statusCode, Header[] headers, byte[] responseBody, Throwable error) {
+-                Context context = getContext();
+-                CharSequence text = "Conexión fallida";
+-                int duration = Toast.LENGTH_SHORT;
+-                Toast toast = Toast.makeText(context, text, duration);
+-                toast.show();
++            public void onErrorResponse(VolleyError error) {
++                Toast.makeText(getContext(), "Ocurrió un error, por favor contactese con el administrador", Toast.LENGTH_SHORT).show();
+             }
+         });
++        RequestQueue requestQueue = Volley.newRequestQueue(getContext());
++        requestQueue.add(solicitud);
+     }
+ 
+     private void ejecutarservicio(String URL, String dato){
+@@ -645,4 +564,28 @@
+         RequestQueue requestQueue = Volley.newRequestQueue(getContext());
+         requestQueue.add(stringRequest);
+     }
++
++    private void consultarURL(String URL, String url, String palabra){
++        StringRequest stringRequest = new StringRequest(Request.Method.POST, URL, new Response.Listener<String>() {
++            @Override
++            public void onResponse(String response) {
++                //Toast.makeText(getContext(), "OPERACION EXITOSA", Toast.LENGTH_SHORT).show();
++            }
++        }, new Response.ErrorListener(){
++            @Override
++            public void onErrorResponse(VolleyError error) {
++                Toast.makeText(getContext(), error.toString(), Toast.LENGTH_SHORT).show();
++            }
++        }){
++            @Override
++            protected Map<String, String> getParams() throws AuthFailureError {
++                Map<String,String> parametros = new HashMap<String,String>();
++                parametros.put("nombre", palabra);
++                parametros.put("url", url);
++                return parametros;
++            }
++        };
++        RequestQueue requestQueue = Volley.newRequestQueue(getContext());
++        requestQueue.add(stringRequest);
++    }
+ }
+Index: app/src/main/res/layout/bottom_sheet_layout.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"utf-8\"?>\r\n<LinearLayout\r\n    android:id=\"@+id/contentCaja\"\r\n    xmlns:android=\"http://schemas.android.com/apk/res/android\"\r\n    android:orientation=\"vertical\"\r\n    android:layout_width=\"match_parent\"\r\n    android:layout_gravity=\"center\"\r\n    android:background=\"@drawable/background\"\r\n    android:layout_height=\"match_parent\">\r\n\r\n    <GridView\r\n        android:layout_margin=\"16dp\"\r\n        android:id=\"@+id/listviewFrase\"\r\n        android:layout_width=\"match_parent\"\r\n        android:layout_height=\"wrap_content\"\r\n        android:gravity=\"center_horizontal\">\r\n\r\n    </GridView>\r\n</LinearLayout>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- app/src/main/res/layout/bottom_sheet_layout.xml	(revision 0b8bf6ec11462bf77e240b64e94a3e5f06e7de28)
++++ app/src/main/res/layout/bottom_sheet_layout.xml	(date 1605312785820)
+@@ -5,7 +5,6 @@
+     android:orientation="vertical"
+     android:layout_width="match_parent"
+     android:layout_gravity="center"
+-    android:background="@drawable/background"
+     android:layout_height="match_parent">
+ 
+     <GridView
+Index: app/src/main/java/cl/paulina/yotrabajoconpecs/ui/panel/AddActivity.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package cl.paulina.yotrabajoconpecs.ui.panel;\r\n\r\nimport android.annotation.SuppressLint;\r\nimport android.app.ProgressDialog;\r\nimport android.content.Context;\r\nimport android.content.DialogInterface;\r\nimport android.os.Build;\r\nimport android.os.Bundle;\r\nimport android.util.Log;\r\nimport android.view.Gravity;\r\nimport android.view.LayoutInflater;\r\nimport android.view.View;\r\nimport android.view.ViewGroup;\r\nimport android.widget.AdapterView;\r\nimport android.widget.ArrayAdapter;\r\nimport android.widget.Button;\r\nimport android.widget.CheckBox;\r\nimport android.widget.EditText;\r\nimport android.widget.ImageButton;\r\nimport android.widget.LinearLayout;\r\nimport android.widget.Spinner;\r\nimport android.widget.Toast;\r\n\r\nimport androidx.annotation.NonNull;\r\nimport androidx.annotation.RequiresApi;\r\nimport androidx.fragment.app.Fragment;\r\n\r\nimport com.android.volley.AuthFailureError;\r\nimport com.android.volley.Request;\r\nimport com.android.volley.RequestQueue;\r\nimport com.android.volley.Response;\r\nimport com.android.volley.VolleyError;\r\nimport com.android.volley.toolbox.StringRequest;\r\nimport com.android.volley.toolbox.Volley;\r\nimport com.loopj.android.http.AsyncHttpClient;\r\nimport com.loopj.android.http.AsyncHttpResponseHandler;\r\nimport com.squareup.picasso.Picasso;\r\n\r\nimport org.json.JSONArray;\r\nimport org.json.JSONException;\r\n\r\nimport java.util.ArrayList;\r\nimport java.util.HashMap;\r\nimport java.util.Map;\r\n\r\nimport cl.paulina.yotrabajoconpecs.R;\r\nimport cl.paulina.yotrabajoconpecs.Register;\r\nimport cz.msebera.android.httpclient.Header;\r\n\r\npublic class AddActivity extends Fragment {\r\n    private EditText fechadesde, horadesde, fechahasta, horahasta;\r\n    private Button guardar;\r\n    Spinner spinnerTarea, spinnerPDC;\r\n    ArrayList idtarea, nombretarea, idcalendario, llenadodias, idUsuario, nombreUsuario, apellidoUsuario, idCalendario;\r\n    public String tareaSeleccionada, ultimoIdCalendario;\r\n    CheckBox lunes, martes, miercoles, jueves, viernes, sabado, domingo;\r\n\r\n    public View onCreateView(@NonNull LayoutInflater inflater,\r\n                             ViewGroup container, Bundle savedInstanceState) {\r\n        View vista = inflater.inflate(R.layout.activity_add, container, false);\r\n        fechadesde = vista.findViewById(R.id.fechadesde);\r\n        horadesde = vista.findViewById(R.id.horadesde);\r\n        fechahasta = vista.findViewById(R.id.fechahasta);\r\n        horahasta = vista.findViewById(R.id.horahasta);\r\n        guardar = vista.findViewById(R.id.btnAddActivity);\r\n        spinnerTarea = vista.findViewById(R.id.spinnerTarea);\r\n        spinnerPDC = vista.findViewById(R.id.spinnerPDC);\r\n        lunes = vista.findViewById(R.id.lunes);\r\n        martes = vista.findViewById(R.id.martes);\r\n        miercoles = vista.findViewById(R.id.miercoles);\r\n        jueves = vista.findViewById(R.id.jueves);\r\n        viernes = vista.findViewById(R.id.viernes);\r\n        sabado = vista.findViewById(R.id.sabado);\r\n        domingo = vista.findViewById(R.id.domingo);\r\n\r\n        idUsuario = new ArrayList();\r\n        nombreUsuario = new ArrayList();\r\n        apellidoUsuario = new ArrayList();\r\n        idtarea = new ArrayList();\r\n        nombretarea = new ArrayList();\r\n        idcalendario = new ArrayList();\r\n        llenadodias = new ArrayList();\r\n        idCalendario = new ArrayList();\r\n\r\n        descargarPDC();\r\n        descargarTareas();\r\n\r\n        Bundle bundle = getArguments();\r\n        int dia = 0, mes = 0, anio = 0;\r\n        dia = bundle.getInt(\"key_dia\");\r\n        mes = bundle.getInt(\"key_mes\");\r\n        anio = bundle.getInt(\"key_anio\");\r\n        fechadesde.setText(anio + \"-\" + mes + \"-\" + dia);\r\n        fechahasta.setText(anio + \"-\" + mes + \"-\" + dia);\r\n\r\n        guardar.setOnClickListener(new View.OnClickListener() {\r\n            @Override\r\n            public void onClick(View v) {\r\n                llenadodias.clear();\r\n                validar();\r\n                for(int i = 0; i < llenadodias.size(); i++){\r\n                    guardarCalendario(\"https://yotrabajoconpecs.ddns.net/saveCalendario.php\", fechadesde.getText().toString(), fechahasta.getText().toString(), horadesde.getText().toString(), horahasta.getText().toString(), llenadodias.get(i).toString());\r\n                    descargarIdCalendario();\r\n                    Toast.makeText(getContext(), ultimoIdCalendario, Toast.LENGTH_SHORT).show();\r\n                    guardarTareaCalendario(\"https://yotrabajoconpecs.ddns.net/saveTareaCalendario.php\", tareaSeleccionada, ultimoIdCalendario);\r\n                }\r\n                fechadesde.setText(\"\");\r\n                fechahasta.setText(\"\");\r\n                horadesde.setText(\"\");\r\n                horahasta.setText(\"\");\r\n                Toast.makeText(getContext(), \"Se ha asignado la tarea con éxito\", Toast.LENGTH_SHORT).show();\r\n            }\r\n        });\r\n\r\n        return vista;\r\n    }\r\n\r\n    private void guardarCalendario(String URL, String fechainicio, String fechatermino, String horainicio, String horatermino, String dia){\r\n        StringRequest stringRequest = new StringRequest(Request.Method.POST, URL, new Response.Listener<String>() {\r\n            @Override\r\n            public void onResponse(String response) { }\r\n        }, new Response.ErrorListener(){\r\n            @Override\r\n            public void onErrorResponse(VolleyError error) {\r\n                Toast.makeText(getContext(), error.toString(), Toast.LENGTH_SHORT).show();\r\n            }\r\n        }){\r\n            @Override\r\n            protected Map<String, String> getParams() throws AuthFailureError {\r\n                Map<String,String> parametros = new HashMap<String,String>();\r\n                parametros.put(\"fecha_inicio\", fechainicio);\r\n                parametros.put(\"fecha_termino\", fechatermino);\r\n                parametros.put(\"hora_inicio\", horainicio);\r\n                parametros.put(\"hora_termino\", horatermino);\r\n                parametros.put(\"dia\", dia);\r\n                return parametros;\r\n            }\r\n        };\r\n        RequestQueue requestQueue = Volley.newRequestQueue(getContext());\r\n        requestQueue.add(stringRequest);\r\n    }\r\n\r\n    private void guardarTareaCalendario(String URL, String tarea, String calendario){\r\n        StringRequest stringRequest = new StringRequest(Request.Method.POST, URL, new Response.Listener<String>() {\r\n            @Override\r\n            public void onResponse(String response) { }\r\n        }, new Response.ErrorListener(){\r\n            @Override\r\n            public void onErrorResponse(VolleyError error) {\r\n                Toast.makeText(getContext(), error.toString(), Toast.LENGTH_SHORT).show();\r\n            }\r\n        }){\r\n            @Override\r\n            protected Map<String, String> getParams() throws AuthFailureError {\r\n                Map<String,String> parametros = new HashMap<String,String>();\r\n                parametros.put(\"calendario_id_calendario\", calendario);\r\n                parametros.put(\"tarea_id_tarea\", tarea);\r\n                return parametros;\r\n            }\r\n        };\r\n        RequestQueue requestQueue = Volley.newRequestQueue(getContext());\r\n        requestQueue.add(stringRequest);\r\n    }\r\n\r\n    private void descargarTareas(){\r\n        idtarea.clear();\r\n        nombretarea.clear();\r\n        final ProgressDialog progressDialog = new ProgressDialog(getActivity());\r\n        AsyncHttpClient client = new AsyncHttpClient();\r\n        client.get(\"https://yotrabajoconpecs.ddns.net/query_tarea.php\", new AsyncHttpResponseHandler() {\r\n            @RequiresApi(api = Build.VERSION_CODES.M)\r\n            @Override\r\n            public void onSuccess(int statusCode, Header[] headers, byte[] responseBody) {\r\n                if(statusCode == 200){\r\n                    progressDialog.dismiss();\r\n                    try{\r\n                        JSONArray jsonarray = new JSONArray(new String(responseBody));\r\n                        for(int i = 0; i < jsonarray.length(); i++){\r\n                            idtarea.add(jsonarray.getJSONObject(i).getString(\"id_tarea\"));\r\n                            nombretarea.add(jsonarray.getJSONObject(i).getString(\"nombre_tarea\"));\r\n                        }\r\n                        ArrayAdapter adp = new ArrayAdapter(getContext(), android.R.layout.simple_spinner_dropdown_item, nombretarea);\r\n                        spinnerTarea.setAdapter(adp);\r\n                        spinnerTarea.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {\r\n                            @Override\r\n                            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {\r\n                                String elemento = (String) spinnerTarea.getAdapter().getItem(position);\r\n                                tareaSeleccionada = idtarea.get(position).toString();\r\n                            }\r\n                            @Override\r\n                            public void onNothingSelected(AdapterView<?> parent) {\r\n                                Toast.makeText(getContext(), \"No ha seleccionado una opción\", Toast.LENGTH_SHORT).show();\r\n                            }\r\n                        });\r\n                    }catch(JSONException e){\r\n                        e.printStackTrace();\r\n                    }\r\n                }\r\n            }\r\n\r\n            @Override\r\n            public void onFailure(int statusCode, Header[] headers, byte[] responseBody, Throwable error) {\r\n                Context context = getContext();\r\n                CharSequence text = \"Conexión fallida\";\r\n                int duration = Toast.LENGTH_SHORT;\r\n                Toast toast = Toast.makeText(context, text, duration);\r\n                toast.show();\r\n            }\r\n        });\r\n    }\r\n\r\n    private void descargarPDC(){\r\n        idUsuario.clear();\r\n        nombreUsuario.clear();\r\n        apellidoUsuario.clear();\r\n        final ProgressDialog progressDialog = new ProgressDialog(getActivity());\r\n        AsyncHttpClient client = new AsyncHttpClient();\r\n        client.get(\"https://yotrabajoconpecs.ddns.net/query_pdc.php\", new AsyncHttpResponseHandler() {\r\n            @RequiresApi(api = Build.VERSION_CODES.M)\r\n            @Override\r\n            public void onSuccess(int statusCode, Header[] headers, byte[] responseBody) {\r\n                if(statusCode == 200){\r\n                    progressDialog.dismiss();\r\n                    try{\r\n                        JSONArray jsonarray = new JSONArray(new String(responseBody));\r\n                        for(int i = 0; i < jsonarray.length(); i++){\r\n                            idUsuario.add(jsonarray.getJSONObject(i).getString(\"id_usuario\"));\r\n                            nombreUsuario.add(jsonarray.getJSONObject(i).getString(\"nombre_usuario\"));\r\n                            apellidoUsuario.add(jsonarray.getJSONObject(i).getString(\"apellido_usuario\"));\r\n                        }\r\n                        ArrayList nombreCompleto = new ArrayList();\r\n                        for(int j = 0; j < nombreUsuario.size(); j++){\r\n                            nombreCompleto.add(nombreUsuario.get(j).toString() + \" \" + apellidoUsuario.get(j).toString());\r\n                        }\r\n                        ArrayAdapter adapter = new ArrayAdapter(getContext(), android.R.layout.simple_spinner_dropdown_item, nombreCompleto);\r\n                        spinnerPDC.setAdapter(adapter);\r\n                        spinnerPDC.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {\r\n                            @Override\r\n                            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {\r\n                                String nombreUsuario = (String) spinnerPDC.getAdapter().getItem(position);\r\n                            }\r\n                            @Override\r\n                            public void onNothingSelected(AdapterView<?> parent) {\r\n                                Toast.makeText(getContext(), \"No ha seleccionado una opción\", Toast.LENGTH_SHORT).show();\r\n                            }\r\n                        });\r\n                    }catch(JSONException e){\r\n                        e.printStackTrace();\r\n                    }\r\n                }\r\n            }\r\n\r\n            @Override\r\n            public void onFailure(int statusCode, Header[] headers, byte[] responseBody, Throwable error) {\r\n                Context context = getContext();\r\n                CharSequence text = \"Conexión fallida\";\r\n                int duration = Toast.LENGTH_SHORT;\r\n                Toast toast = Toast.makeText(context, text, duration);\r\n                toast.show();\r\n            }\r\n        });\r\n    }\r\n\r\n    private void descargarIdCalendario(){\r\n        idCalendario.clear();\r\n        final ProgressDialog progressDialog = new ProgressDialog(getActivity());\r\n        AsyncHttpClient client = new AsyncHttpClient();\r\n        client.get(\"https://yotrabajoconpecs.ddns.net/ultimoIdCalendario.php\", new AsyncHttpResponseHandler() {\r\n            @RequiresApi(api = Build.VERSION_CODES.M)\r\n            @Override\r\n            public void onSuccess(int statusCode, Header[] headers, byte[] responseBody) {\r\n                if(statusCode == 200){\r\n                    progressDialog.dismiss();\r\n                    try{\r\n                        JSONArray jsonarray = new JSONArray(new String(responseBody));\r\n                        for(int i = 0; i < jsonarray.length(); i++){\r\n                            idCalendario.add(jsonarray.getJSONObject(i).getString(\"id_calendario\"));\r\n                        }\r\n                        ultimoIdCalendario = idCalendario.get(idCalendario.size()-1).toString();\r\n                        int ultimoIntCalendario = Integer.parseInt(ultimoIdCalendario);\r\n                        ultimoIntCalendario++;\r\n                        ultimoIdCalendario = ultimoIntCalendario + \"\";\r\n                    }catch(JSONException e){\r\n                        e.printStackTrace();\r\n                    }\r\n                }\r\n            }\r\n\r\n            @Override\r\n            public void onFailure(int statusCode, Header[] headers, byte[] responseBody, Throwable error) {\r\n                Context context = getContext();\r\n                CharSequence text = \"Conexión fallida\";\r\n                int duration = Toast.LENGTH_SHORT;\r\n                Toast toast = Toast.makeText(context, text, duration);\r\n                toast.show();\r\n            }\r\n        });\r\n    }\r\n\r\n    private void validar() {\r\n        if (lunes.isChecked() == true) {\r\n            llenadodias.add(\"lunes\");\r\n        }else if (martes.isChecked() == true) {\r\n            llenadodias.add(\"martes\");\r\n        }else if (lunes.isChecked() == true) {\r\n            llenadodias.add(\"miercoles\");\r\n        }else if (lunes.isChecked() == true) {\r\n            llenadodias.add(\"jueves\");\r\n        }else if (lunes.isChecked() == true) {\r\n            llenadodias.add(\"viernes\");\r\n        }else if (lunes.isChecked() == true) {\r\n            llenadodias.add(\"sabado\");\r\n        }else if (domingo.isChecked() == true) {\r\n            llenadodias.add(\"lunes\");\r\n        } else {\r\n            Toast.makeText(getContext(), \"No se han seleccionado dias\", Toast.LENGTH_SHORT).show();\r\n        }\r\n    }\r\n}\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- app/src/main/java/cl/paulina/yotrabajoconpecs/ui/panel/AddActivity.java	(revision 0b8bf6ec11462bf77e240b64e94a3e5f06e7de28)
++++ app/src/main/java/cl/paulina/yotrabajoconpecs/ui/panel/AddActivity.java	(date 1605476008709)
+@@ -52,7 +52,7 @@
+     private Button guardar;
+     Spinner spinnerTarea, spinnerPDC;
+     ArrayList idtarea, nombretarea, idcalendario, llenadodias, idUsuario, nombreUsuario, apellidoUsuario, idCalendario;
+-    public String tareaSeleccionada, ultimoIdCalendario;
++    public String tareaSeleccionada;
+     CheckBox lunes, martes, miercoles, jueves, viernes, sabado, domingo;
+ 
+     public View onCreateView(@NonNull LayoutInflater inflater,
+@@ -99,10 +99,9 @@
+                 llenadodias.clear();
+                 validar();
+                 for(int i = 0; i < llenadodias.size(); i++){
++                    Toast.makeText(getContext(), llenadodias.get(i).toString(), Toast.LENGTH_SHORT).show();
+                     guardarCalendario("https://yotrabajoconpecs.ddns.net/saveCalendario.php", fechadesde.getText().toString(), fechahasta.getText().toString(), horadesde.getText().toString(), horahasta.getText().toString(), llenadodias.get(i).toString());
+-                    descargarIdCalendario();
+-                    Toast.makeText(getContext(), ultimoIdCalendario, Toast.LENGTH_SHORT).show();
+-                    guardarTareaCalendario("https://yotrabajoconpecs.ddns.net/saveTareaCalendario.php", tareaSeleccionada, ultimoIdCalendario);
++                    guardarTareaCalendario("https://yotrabajoconpecs.ddns.net/saveTareaCalendario.php", tareaSeleccionada);
+                 }
+                 fechadesde.setText("");
+                 fechahasta.setText("");
+@@ -140,7 +139,7 @@
+         requestQueue.add(stringRequest);
+     }
+ 
+-    private void guardarTareaCalendario(String URL, String tarea, String calendario){
++    private void guardarTareaCalendario(String URL, String tarea){
+         StringRequest stringRequest = new StringRequest(Request.Method.POST, URL, new Response.Listener<String>() {
+             @Override
+             public void onResponse(String response) { }
+@@ -153,7 +152,7 @@
+             @Override
+             protected Map<String, String> getParams() throws AuthFailureError {
+                 Map<String,String> parametros = new HashMap<String,String>();
+-                parametros.put("calendario_id_calendario", calendario);
++                parametros.put("calendario_id_calendario", "");
+                 parametros.put("tarea_id_tarea", tarea);
+                 return parametros;
+             }
+@@ -261,58 +260,29 @@
+         });
+     }
+ 
+-    private void descargarIdCalendario(){
+-        idCalendario.clear();
+-        final ProgressDialog progressDialog = new ProgressDialog(getActivity());
+-        AsyncHttpClient client = new AsyncHttpClient();
+-        client.get("https://yotrabajoconpecs.ddns.net/ultimoIdCalendario.php", new AsyncHttpResponseHandler() {
+-            @RequiresApi(api = Build.VERSION_CODES.M)
+-            @Override
+-            public void onSuccess(int statusCode, Header[] headers, byte[] responseBody) {
+-                if(statusCode == 200){
+-                    progressDialog.dismiss();
+-                    try{
+-                        JSONArray jsonarray = new JSONArray(new String(responseBody));
+-                        for(int i = 0; i < jsonarray.length(); i++){
+-                            idCalendario.add(jsonarray.getJSONObject(i).getString("id_calendario"));
+-                        }
+-                        ultimoIdCalendario = idCalendario.get(idCalendario.size()-1).toString();
+-                        int ultimoIntCalendario = Integer.parseInt(ultimoIdCalendario);
+-                        ultimoIntCalendario++;
+-                        ultimoIdCalendario = ultimoIntCalendario + "";
+-                    }catch(JSONException e){
+-                        e.printStackTrace();
+-                    }
+-                }
+-            }
+-
+-            @Override
+-            public void onFailure(int statusCode, Header[] headers, byte[] responseBody, Throwable error) {
+-                Context context = getContext();
+-                CharSequence text = "Conexión fallida";
+-                int duration = Toast.LENGTH_SHORT;
+-                Toast toast = Toast.makeText(context, text, duration);
+-                toast.show();
+-            }
+-        });
+-    }
+-
+     private void validar() {
+         if (lunes.isChecked() == true) {
+             llenadodias.add("lunes");
+-        }else if (martes.isChecked() == true) {
++        }
++        if (martes.isChecked() == true) {
+             llenadodias.add("martes");
+-        }else if (lunes.isChecked() == true) {
++        }
++        if (miercoles.isChecked() == true) {
+             llenadodias.add("miercoles");
+-        }else if (lunes.isChecked() == true) {
++        }
++        if (jueves.isChecked() == true) {
+             llenadodias.add("jueves");
+-        }else if (lunes.isChecked() == true) {
++        }
++        if (viernes.isChecked() == true) {
+             llenadodias.add("viernes");
+-        }else if (lunes.isChecked() == true) {
++        }
++        if (sabado.isChecked() == true) {
+             llenadodias.add("sabado");
+-        }else if (domingo.isChecked() == true) {
++        }
++        if (domingo.isChecked() == true) {
+             llenadodias.add("lunes");
+-        } else {
++        }
++        if ((lunes.isChecked() == false) && (martes.isChecked() == false) && (miercoles.isChecked() == false) && (jueves.isChecked() == false) && (viernes.isChecked() == false) && (sabado.isChecked() == false) && (domingo.isChecked() == false)){
+             Toast.makeText(getContext(), "No se han seleccionado dias", Toast.LENGTH_SHORT).show();
+         }
+     }
+Index: app/src/main/java/cl/paulina/yotrabajoconpecs/Amigos/ActivityAmigos.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package cl.paulina.yotrabajoconpecs.Amigos;\r\n\r\nimport android.os.Bundle;\r\nimport android.view.LayoutInflater;\r\nimport android.view.View;\r\nimport android.view.ViewGroup;\r\nimport android.widget.Toast;\r\n\r\nimport androidx.annotation.NonNull;\r\nimport androidx.fragment.app.Fragment;\r\nimport androidx.recyclerview.widget.LinearLayoutManager;\r\nimport androidx.recyclerview.widget.RecyclerView;\r\n\r\nimport com.android.volley.Request;\r\nimport com.android.volley.RequestQueue;\r\nimport com.android.volley.Response;\r\nimport com.android.volley.VolleyError;\r\nimport com.android.volley.toolbox.JsonObjectRequest;\r\nimport com.android.volley.toolbox.Volley;\r\n\r\nimport org.json.JSONArray;\r\nimport org.json.JSONException;\r\nimport org.json.JSONObject;\r\n\r\nimport java.util.ArrayList;\r\nimport java.util.HashMap;\r\nimport java.util.List;\r\n\r\nimport cl.paulina.yotrabajoconpecs.R;\r\n\r\npublic class ActivityAmigos extends Fragment {\r\n    private RecyclerView rv;\r\n    private List<AmigosAtributos> atributosList;\r\n    private AmigosAdapter adapter;\r\n    private static final String URL_GET_ALL_USUARIOS = \"https://yotrabajoconpecs.ddns.net/Amigos_GETALL.php\";\r\n\r\n    public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {\r\n        View vista = inflater.inflate(R.layout.activity_amigos, container, false);\r\n\r\n        atributosList = new ArrayList<>();\r\n\r\n        rv = vista.findViewById(R.id.amigosRecyclerView);\r\n        LinearLayoutManager lm = new LinearLayoutManager(getContext());\r\n        rv.setLayoutManager(lm);\r\n\r\n        adapter = new AmigosAdapter(atributosList, getContext());\r\n        rv.setAdapter(adapter);\r\n\r\n        SolicitudJSON();\r\n        return vista;\r\n    }\r\n\r\n    public void agregarAmigos(int fotoDePerfil, String nombre, String ultimoMensaje, String hora, String id){\r\n        AmigosAtributos amigosAtributos = new AmigosAtributos();\r\n        amigosAtributos.setFotoDePerfil(fotoDePerfil);\r\n        amigosAtributos.setNombre(nombre);\r\n        amigosAtributos.setUltimoMensaje(ultimoMensaje);\r\n        amigosAtributos.setHora(hora);\r\n        atributosList.add(amigosAtributos);\r\n        amigosAtributos.setId(id);\r\n        adapter.notifyDataSetChanged();\r\n    }\r\n\r\n    public void SolicitudJSON(){\r\n        JsonObjectRequest solicitud = new JsonObjectRequest(URL_GET_ALL_USUARIOS, null, new Response.Listener<JSONObject>() {\r\n            @Override\r\n            public void onResponse(JSONObject response) {\r\n                try {\r\n                    String responseBody = response.getString(\"resultado\");\r\n                    JSONArray jsonarray = new JSONArray(new String(responseBody));\r\n                    for(int i = 0; i < jsonarray.length(); i++){\r\n                        JSONObject js = jsonarray.getJSONObject(i);\r\n                        String nombreCompleto = js.getString(\"nombre_usuario\") + \" \" + js.getString(\"apellido_usuario\");\r\n                        agregarAmigos(R.drawable.ic_baseline_supervised_user_circle_24, nombreCompleto, \"mensaje\" + i, \"00:00\", js.getString(\"correo\"));\r\n                    }\r\n                } catch (JSONException e) {\r\n                    Toast.makeText(getContext(), \"Ocurrió un error al descomponer el JSON\", Toast.LENGTH_SHORT).show();\r\n                }\r\n            }\r\n        },new Response.ErrorListener() {\r\n            @Override\r\n            public void onErrorResponse(VolleyError error) {\r\n                Toast.makeText(getContext(), \"Ocurrió un error, por favor contactese con el administrador\", Toast.LENGTH_SHORT).show();\r\n            }\r\n        });\r\n        RequestQueue requestQueue = Volley.newRequestQueue(getContext());\r\n        requestQueue.add(solicitud);\r\n    }\r\n}\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- app/src/main/java/cl/paulina/yotrabajoconpecs/Amigos/ActivityAmigos.java	(revision 0b8bf6ec11462bf77e240b64e94a3e5f06e7de28)
++++ app/src/main/java/cl/paulina/yotrabajoconpecs/Amigos/ActivityAmigos.java	(date 1605492636953)
+@@ -1,5 +1,8 @@
+ package cl.paulina.yotrabajoconpecs.Amigos;
+ 
++import android.content.BroadcastReceiver;
++import android.content.Context;
++import android.content.Intent;
+ import android.os.Bundle;
+ import android.view.LayoutInflater;
+ import android.view.View;
+@@ -29,9 +32,12 @@
+ import cl.paulina.yotrabajoconpecs.R;
+ 
+ public class ActivityAmigos extends Fragment {
++    public static final String MENSAJE = "MENSAJE";
+     private RecyclerView rv;
++    private BroadcastReceiver bR;
+     private List<AmigosAtributos> atributosList;
+     private AmigosAdapter adapter;
++    public String mensaje, emisor, horaParametros[];
+     private static final String URL_GET_ALL_USUARIOS = "https://yotrabajoconpecs.ddns.net/Amigos_GETALL.php";
+ 
+     public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
+@@ -47,6 +53,7 @@
+         rv.setAdapter(adapter);
+ 
+         SolicitudJSON();
++
+         return vista;
+     }
+ 
+@@ -71,7 +78,7 @@
+                     for(int i = 0; i < jsonarray.length(); i++){
+                         JSONObject js = jsonarray.getJSONObject(i);
+                         String nombreCompleto = js.getString("nombre_usuario") + " " + js.getString("apellido_usuario");
+-                        agregarAmigos(R.drawable.ic_baseline_supervised_user_circle_24, nombreCompleto, "mensaje" + i, "00:00", js.getString("correo"));
++                        agregarAmigos(R.drawable.ic_baseline_supervised_user_circle_24, nombreCompleto, "asdads", "00:00", js.getString("correo"));
+                     }
+                 } catch (JSONException e) {
+                     Toast.makeText(getContext(), "Ocurrió un error al descomponer el JSON", Toast.LENGTH_SHORT).show();
+Index: app/src/main/java/cl/paulina/yotrabajoconpecs/ui/busqueda_pictograma_pdc/ExampleBottomSheetDialog.java
+===================================================================
+--- app/src/main/java/cl/paulina/yotrabajoconpecs/ui/busqueda_pictograma_pdc/ExampleBottomSheetDialog.java	(revision 0b8bf6ec11462bf77e240b64e94a3e5f06e7de28)
++++ app/src/main/java/cl/paulina/yotrabajoconpecs/ui/busqueda_pictograma_pdc/ExampleBottomSheetDialog.java	(revision 0b8bf6ec11462bf77e240b64e94a3e5f06e7de28)
+@@ -1,166 +0,0 @@
+-package cl.paulina.yotrabajoconpecs.ui.busqueda_pictograma_pdc;
+-
+-import android.app.AlertDialog;
+-import android.app.ProgressDialog;
+-import android.content.Context;
+-import android.os.Build;
+-import android.os.Bundle;
+-import android.util.Log;
+-import android.view.Gravity;
+-import android.view.LayoutInflater;
+-import android.view.View;
+-import android.view.ViewGroup;
+-import android.widget.BaseAdapter;
+-import android.widget.GridView;
+-import android.widget.ImageButton;
+-import android.widget.LinearLayout;
+-import android.widget.TextView;
+-import android.widget.Toast;
+-
+-import androidx.annotation.NonNull;
+-import androidx.annotation.Nullable;
+-import androidx.annotation.RequiresApi;
+-import androidx.fragment.app.Fragment;
+-
+-import com.google.android.material.bottomsheet.BottomSheetDialogFragment;
+-import com.loopj.android.http.AsyncHttpClient;
+-import com.loopj.android.http.AsyncHttpResponseHandler;
+-import com.squareup.picasso.Picasso;
+-
+-import org.json.JSONArray;
+-import org.json.JSONException;
+-
+-import java.util.ArrayList;
+-
+-import cl.paulina.yotrabajoconpecs.R;
+-import cl.paulina.yotrabajoconpecs.ServicioAPI.PreferenciasCompartidas;
+-import cz.msebera.android.httpclient.Header;
+-
+-public class ExampleBottomSheetDialog extends Fragment {
+-    private GridView gridView;
+-    public LinearLayout contenido, contentCaja, contentFrase;
+-    private ArrayList id_frase, url;
+-    public String id = "1";
+-
+-    public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
+-        View vista = inflater.inflate(R.layout.bottom_sheet_layout, container, false);
+-        gridView = vista.findViewById(R.id.listviewFrase);
+-        contentCaja = vista.findViewById(R.id.contentCaja);
+-        contentFrase = vista.findViewById(R.id.contentFrase);
+-
+-        id_frase = new ArrayList();
+-        url = new ArrayList();
+-
+-        descargarDatos();
+-
+-        return vista;
+-    }
+-
+-    private void descargarDatos(){
+-        url.clear();
+-        id_frase.clear();
+-        final ProgressDialog progressDialog = new ProgressDialog(getActivity());
+-        AsyncHttpClient client = new AsyncHttpClient();
+-        client.get("https://yotrabajoconpecs.ddns.net/query7.php", new AsyncHttpResponseHandler() {
+-            @RequiresApi(api = Build.VERSION_CODES.M)
+-            @Override
+-            public void onSuccess(int statusCode, Header[] headers, byte[] responseBody) {
+-                if(statusCode == 200){
+-                    progressDialog.dismiss();
+-                    try{
+-                        JSONArray jsonarray = new JSONArray(new String(responseBody));
+-                        for(int i = 0; i < jsonarray.length(); i++){
+-                            id_frase.add(jsonarray.getJSONObject(i).getString("frase_detallefrase"));
+-                            url.add(jsonarray.getJSONObject(i).getString("url"));
+-                        }gridView.setAdapter(new CustomAdapter(getContext()));
+-                    }catch(JSONException e){
+-                        e.printStackTrace();
+-                    }
+-                }
+-            }
+-
+-            @Override
+-            public void onFailure(int statusCode, Header[] headers, byte[] responseBody, Throwable error) {
+-                Context context = getContext();
+-                CharSequence text = "Conexión fallida";
+-                int duration = Toast.LENGTH_SHORT;
+-                Toast toast = Toast.makeText(context, text, duration);
+-                toast.show();
+-            }
+-        });
+-    }
+-
+-    private class CustomAdapter extends BaseAdapter {
+-        Context ctx;
+-        LayoutInflater layoutInflater;
+-        LinearLayout TvImagenButton;
+-
+-        @RequiresApi(api = Build.VERSION_CODES.M)
+-        public CustomAdapter(Context applicationContext){
+-            this.ctx = applicationContext;
+-            layoutInflater = (LayoutInflater)this.ctx.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+-        }
+-
+-        @Override
+-        public int getCount(){
+-            return id_frase.size();
+-        }
+-
+-        @Override
+-        public Object getItem(int position){
+-            return position;
+-        }
+-
+-        @Override
+-        public long getItemId(int position){
+-            return position;
+-        }
+-
+-        @Override
+-        public View getView(int position, View convertView, ViewGroup parent){
+-            ViewGroup viewGroup = (ViewGroup) layoutInflater.inflate(R.layout.list_view_frase, null);
+-            TvImagenButton = (LinearLayout) viewGroup.findViewById(R.id.tv_imagen_frase);
+-
+-            ImageButton imagen = new ImageButton(getContext());
+-            contenido = new LinearLayout(getContext());
+-            contenido.setLayoutParams(new LinearLayout.LayoutParams(ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT));
+-            contenido.setOrientation(LinearLayout.HORIZONTAL);
+-            contenido.setPadding(5,5,5,5);
+-            imagen.setBackgroundResource(R.drawable.boton_rectangulo);
+-            imagen.setLayoutParams(new LinearLayout.LayoutParams(400, 400));
+-            imagen.setScaleType(ImageButton.ScaleType.FIT_CENTER);
+-            Picasso.get().load("https://yotrabajoconpecs.ddns.net/" + url.get(position).toString()).into(imagen);
+-            contenido.addView(imagen);
+-            TvImagenButton.addView(contenido);
+-            /*
+-            for(int i = 0; i < url.size(); i++) {
+-                String segundaFrase = id_frase.get(position).toString();
+-                if(segundaFrase.equals(id)) {
+-                    ImageButton imagen = new ImageButton(getContext());
+-                    contenido = new LinearLayout(getContext());
+-                    contenido.setLayoutParams(new LinearLayout.LayoutParams(ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT));
+-                    contenido.setOrientation(LinearLayout.HORIZONTAL);
+-                    contenido.setPadding(5,5,5,5);
+-                    imagen.setBackgroundResource(R.drawable.boton_rectangulo);
+-                    imagen.setLayoutParams(new LinearLayout.LayoutParams(100, 100));
+-                    imagen.setScaleType(ImageButton.ScaleType.FIT_CENTER);
+-                    Picasso.get().load("https://yotrabajoconpecs.ddns.net/" + url.get(i).toString()).into(imagen);
+-                    contenido.addView(imagen);
+-                }
+-            }TvImagenButton.addView(contenido);*/
+-
+-            //TvImagenButton.removeView(contenido);
+-            int ultimoIntId = Integer.parseInt(id);
+-            ultimoIntId++;
+-            id = ultimoIntId + "";
+-
+-            TvImagenButton.setOnClickListener(new View.OnClickListener() {
+-                @Override
+-                public void onClick(View v) {
+-
+-                }
+-            });
+-            return viewGroup;
+-        }
+-    }
+-}
+Index: app/src/main/java/cl/paulina/yotrabajoconpecs/ui/busqueda_pictograma_pdc/messageAdapter.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package cl.paulina.yotrabajoconpecs.ui.busqueda_pictograma_pdc;\r\n\r\nimport android.app.ProgressDialog;\r\nimport android.content.Context;\r\nimport android.os.Build;\r\nimport android.text.Layout;\r\nimport android.view.Gravity;\r\nimport android.view.LayoutInflater;\r\nimport android.view.View;\r\nimport android.view.ViewGroup;\r\nimport android.widget.FrameLayout;\r\nimport android.widget.ImageButton;\r\nimport android.widget.ImageView;\r\nimport android.widget.LinearLayout;\r\nimport android.widget.RelativeLayout;\r\nimport android.widget.TextView;\r\nimport android.widget.Toast;\r\n\r\nimport androidx.annotation.NonNull;\r\nimport androidx.annotation.RequiresApi;\r\nimport androidx.cardview.widget.CardView;\r\nimport androidx.core.content.ContextCompat;\r\nimport androidx.recyclerview.widget.RecyclerView;\r\n\r\nimport com.loopj.android.http.AsyncHttpClient;\r\nimport com.loopj.android.http.AsyncHttpResponseHandler;\r\nimport com.squareup.picasso.Picasso;\r\n\r\nimport org.json.JSONArray;\r\nimport org.json.JSONException;\r\n\r\nimport java.util.ArrayList;\r\nimport java.util.List;\r\n\r\nimport cl.paulina.yotrabajoconpecs.R;\r\nimport cl.paulina.yotrabajoconpecs.ui.busqueda_pictograma_empleador.MensajeDeTexto;\r\nimport cz.msebera.android.httpclient.Header;\r\n\r\npublic class messageAdapter extends RecyclerView.Adapter<messageAdapter.MensajesViewHolder> {\r\n    private List<MensajeDeTexto> mensajedetexto;\r\n    private Context context;\r\n    public LinearLayout contenido;\r\n    public String u;\r\n    public ArrayList lista;\r\n\r\n    public messageAdapter(List<MensajeDeTexto> mensajedetexto, Context context) {\r\n        this.mensajedetexto = mensajedetexto;\r\n        this.context = context;\r\n    }\r\n\r\n    @Override\r\n    public messageAdapter.MensajesViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {\r\n        View v = LayoutInflater.from(parent.getContext()).inflate(R.layout.cardviewmensajes,parent,false);\r\n        return new MensajesViewHolder(v);\r\n    }\r\n\r\n    @Override\r\n    public void onBindViewHolder(@NonNull messageAdapter.MensajesViewHolder holder, int position) {\r\n        RelativeLayout.LayoutParams rl = (RelativeLayout.LayoutParams) holder.cardView.getLayoutParams();\r\n        FrameLayout.LayoutParams fl = (FrameLayout.LayoutParams) holder.mensajeBG.getLayoutParams();\r\n        if(mensajedetexto.get(position).getTipoMensaje() == 1){\r\n            holder.mensajeBG.setBackgroundResource(R.drawable.in_message_bg);\r\n            rl.addRule(RelativeLayout.ALIGN_PARENT_LEFT, 0);\r\n            rl.addRule(RelativeLayout.ALIGN_PARENT_RIGHT);\r\n            fl.gravity = Gravity.RIGHT;\r\n        }else if(mensajedetexto.get(position).getTipoMensaje() == 2){\r\n            holder.mensajeBG.setBackgroundResource(R.drawable.out_message_bg);\r\n            rl.addRule(RelativeLayout.ALIGN_PARENT_RIGHT, 0);\r\n            rl.addRule(RelativeLayout.ALIGN_PARENT_LEFT);\r\n            fl.gravity = Gravity.LEFT;\r\n        }\r\n        holder.cardView.setLayoutParams(rl);\r\n        holder.mensajeBG.setLayoutParams(fl);\r\n\r\n        lista = new ArrayList();\r\n\r\n        String id = mensajedetexto.get(position).getId();\r\n        //Toast.makeText(context, mensaje, Toast.LENGTH_SHORT).show();\r\n\r\n        String urlCompleto[] = id.split(\" \");\r\n        for(int i = 0; i < urlCompleto.length; i++){\r\n            lista.add(urlCompleto[i]);\r\n        }\r\n            holder.TvUno.setVisibility(View.VISIBLE);\r\n            Picasso.get().load(\"https://yotrabajoconpecs.ddns.net/\" + urlCompleto[0]).into(holder.TvUno);\r\n\r\n            holder.TvDos.setVisibility(View.VISIBLE);\r\n            Picasso.get().load(\"https://yotrabajoconpecs.ddns.net/\" + urlCompleto[1]).into(holder.TvDos);\r\n\r\n\r\n            holder.TvTres.setVisibility(View.VISIBLE);\r\n            Picasso.get().load(\"https://yotrabajoconpecs.ddns.net/\" + urlCompleto[2]).into(holder.TvTres);\r\n\r\n\r\n            holder.TvCuatro.setVisibility(View.VISIBLE);\r\n            Picasso.get().load(\"https://yotrabajoconpecs.ddns.net/\" + urlCompleto[3]).into(holder.TvCuatro);\r\n\r\n        holder.TvHora.setText(mensajedetexto.get(position).getHoraDelMensaje());\r\n        if(Build.VERSION.SDK_INT < Build.VERSION_CODES.LOLLIPOP) holder.cardView.getBackground().setAlpha(0);\r\n        else holder.cardView.setBackgroundColor(ContextCompat.getColor(context, android.R.color.transparent));\r\n    }\r\n\r\n    @Override\r\n    public int getItemCount() {\r\n        return mensajedetexto.size();\r\n    }\r\n\r\n    static class MensajesViewHolder extends RecyclerView.ViewHolder{\r\n        CardView cardView;\r\n        LinearLayout mensajeBG, TvMensaje;\r\n        TextView TvHora;\r\n        ImageView TvUno, TvDos, TvTres, TvCuatro;\r\n\r\n        MensajesViewHolder(View itemView){\r\n            super(itemView);\r\n            cardView = (CardView) itemView.findViewById(R.id.cvMensajes);\r\n            mensajeBG = (LinearLayout) itemView.findViewById(R.id.mensajeBG);\r\n            TvMensaje = (LinearLayout) itemView.findViewById(R.id.cajaBotonImagen);\r\n            TvHora = (TextView) itemView.findViewById(R.id.msHora);\r\n            TvUno = (ImageView) itemView.findViewById(R.id.imagen0);\r\n            TvDos = (ImageView) itemView.findViewById(R.id.imagen1);\r\n            TvTres = (ImageView) itemView.findViewById(R.id.imagen2);\r\n            TvCuatro = (ImageView) itemView.findViewById(R.id.imagen3);\r\n        }\r\n    }\r\n}\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- app/src/main/java/cl/paulina/yotrabajoconpecs/ui/busqueda_pictograma_pdc/messageAdapter.java	(revision 0b8bf6ec11462bf77e240b64e94a3e5f06e7de28)
++++ app/src/main/java/cl/paulina/yotrabajoconpecs/ui/busqueda_pictograma_pdc/messageAdapter.java	(date 1605322556497)
+@@ -78,22 +78,18 @@
+         //Toast.makeText(context, mensaje, Toast.LENGTH_SHORT).show();
+ 
+         String urlCompleto[] = id.split(" ");
++        String largo = urlCompleto.length + "";
++        holder.TvMensaje.removeAllViews();
+         for(int i = 0; i < urlCompleto.length; i++){
+             lista.add(urlCompleto[i]);
++            ImageButton imagen = new ImageButton(context);
++            holder.TvMensaje.setGravity(Gravity.CENTER);
++            imagen.setBackgroundResource(R.drawable.boton_rectangulo);
++            imagen.setLayoutParams(new LinearLayout.LayoutParams(130, 130));
++            imagen.setScaleType(ImageButton.ScaleType.FIT_CENTER);
++            Picasso.get().load("https://yotrabajoconpecs.ddns.net/" + urlCompleto[i]).into(imagen);
++            holder.TvMensaje.addView(imagen);
+         }
+-            holder.TvUno.setVisibility(View.VISIBLE);
+-            Picasso.get().load("https://yotrabajoconpecs.ddns.net/" + urlCompleto[0]).into(holder.TvUno);
+-
+-            holder.TvDos.setVisibility(View.VISIBLE);
+-            Picasso.get().load("https://yotrabajoconpecs.ddns.net/" + urlCompleto[1]).into(holder.TvDos);
+-
+-
+-            holder.TvTres.setVisibility(View.VISIBLE);
+-            Picasso.get().load("https://yotrabajoconpecs.ddns.net/" + urlCompleto[2]).into(holder.TvTres);
+-
+-
+-            holder.TvCuatro.setVisibility(View.VISIBLE);
+-            Picasso.get().load("https://yotrabajoconpecs.ddns.net/" + urlCompleto[3]).into(holder.TvCuatro);
+ 
+         holder.TvHora.setText(mensajedetexto.get(position).getHoraDelMensaje());
+         if(Build.VERSION.SDK_INT < Build.VERSION_CODES.LOLLIPOP) holder.cardView.getBackground().setAlpha(0);
+@@ -109,18 +105,13 @@
+         CardView cardView;
+         LinearLayout mensajeBG, TvMensaje;
+         TextView TvHora;
+-        ImageView TvUno, TvDos, TvTres, TvCuatro;
+ 
+         MensajesViewHolder(View itemView){
+             super(itemView);
+             cardView = (CardView) itemView.findViewById(R.id.cvMensajes);
+             mensajeBG = (LinearLayout) itemView.findViewById(R.id.mensajeBG);
+-            TvMensaje = (LinearLayout) itemView.findViewById(R.id.cajaBotonImagen);
++            TvMensaje = (LinearLayout) itemView.findViewById(R.id.crearCaja);
+             TvHora = (TextView) itemView.findViewById(R.id.msHora);
+-            TvUno = (ImageView) itemView.findViewById(R.id.imagen0);
+-            TvDos = (ImageView) itemView.findViewById(R.id.imagen1);
+-            TvTres = (ImageView) itemView.findViewById(R.id.imagen2);
+-            TvCuatro = (ImageView) itemView.findViewById(R.id.imagen3);
+         }
+     }
+ }
+Index: build.gradle
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>// Top-level build file where you can add configuration options common to all sub-projects/modules.\r\n\r\nbuildscript {\r\n    \r\n    repositories {\r\n        google()\r\n        jcenter()\r\n        \r\n    }\r\n    dependencies {\r\n        classpath 'com.android.tools.build:gradle:4.1.0'\r\n        classpath 'com.google.gms:google-services:4.3.4'\r\n        // NOTE: Do not place your application dependencies here; they belong\r\n        // in the individual module build.gradle files\r\n    }\r\n}\r\n\r\nallprojects {\r\n    repositories {\r\n        google()\r\n        jcenter()\r\n        \r\n    }\r\n}\r\n\r\ntask clean(type: Delete) {\r\n    delete rootProject.buildDir\r\n}\r\n\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- build.gradle	(revision 0b8bf6ec11462bf77e240b64e94a3e5f06e7de28)
++++ build.gradle	(date 1605497190991)
+@@ -8,7 +8,7 @@
+         
+     }
+     dependencies {
+-        classpath 'com.android.tools.build:gradle:4.1.0'
++        classpath 'com.android.tools.build:gradle:4.1.1'
+         classpath 'com.google.gms:google-services:4.3.4'
+         // NOTE: Do not place your application dependencies here; they belong
+         // in the individual module build.gradle files
+Index: app/src/main/res/layout/list.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"utf-8\"?>\r\n<LinearLayout\r\n    xmlns:android=\"http://schemas.android.com/apk/res/android\"\r\n    android:layout_width=\"match_parent\"\r\n    android:layout_height=\"wrap_content\"\r\n    android:layout_gravity=\"center_horizontal\"\r\n    android:orientation=\"vertical\">\r\n\r\n    <LinearLayout\r\n        android:layout_width=\"match_parent\"\r\n        android:layout_height=\"wrap_content\"\r\n        android:orientation=\"horizontal\">\r\n\r\n        <LinearLayout\r\n            android:layout_width=\"150sp\"\r\n            android:layout_height=\"wrap_content\"\r\n            android:orientation=\"vertical\">\r\n\r\n            <TextView\r\n                android:layout_width=\"match_parent\"\r\n                android:layout_height=\"wrap_content\"\r\n                android:text=\"tarea\"\r\n                android:textSize=\"20dp\"\r\n                android:textStyle=\"bold\"\r\n                android:layout_gravity=\"center\"\r\n                android:textAlignment=\"center\"\r\n                android:textColor=\"@color/colorAccent\"\r\n                android:id=\"@+id/tv_tarea\"/>\r\n\r\n            <TextView\r\n                android:layout_width=\"match_parent\"\r\n                android:layout_height=\"wrap_content\"\r\n                android:text=\"dia\"\r\n                android:textSize=\"16dp\"\r\n                android:layout_gravity=\"center\"\r\n                android:textAlignment=\"center\"\r\n                android:textStyle=\"italic\"\r\n                android:id=\"@+id/tv_dia\"/>\r\n        </LinearLayout>\r\n\r\n        <LinearLayout\r\n            android:layout_width=\"match_parent\"\r\n            android:layout_height=\"wrap_content\"\r\n            android:orientation=\"vertical\">\r\n\r\n            <LinearLayout\r\n                android:layout_width=\"match_parent\"\r\n                android:layout_height=\"wrap_content\"\r\n                android:orientation=\"horizontal\">\r\n\r\n                <TextView\r\n                    android:layout_width=\"match_parent\"\r\n                    android:layout_height=\"wrap_content\"\r\n                    android:layout_weight=\"1\"\r\n                    android:text=\"fechainicio\"\r\n                    android:textSize=\"16dp\"\r\n                    android:layout_gravity=\"center\"\r\n                    android:textAlignment=\"center\"\r\n                    android:id=\"@+id/tv_fechainicio\"/>\r\n\r\n                <TextView\r\n                    android:layout_width=\"match_parent\"\r\n                    android:layout_height=\"wrap_content\"\r\n                    android:layout_weight=\"1\"\r\n                    android:text=\"horainicio\"\r\n                    android:textSize=\"16dp\"\r\n                    android:layout_gravity=\"center\"\r\n                    android:textAlignment=\"center\"\r\n                    android:layout_marginLeft=\"10dp\"\r\n                    android:id=\"@+id/tv_horainicio\"/>\r\n\r\n            </LinearLayout>\r\n\r\n            <LinearLayout\r\n                android:layout_width=\"match_parent\"\r\n                android:layout_height=\"wrap_content\"\r\n                android:orientation=\"horizontal\">\r\n\r\n                <TextView\r\n                    android:layout_width=\"match_parent\"\r\n                    android:layout_height=\"wrap_content\"\r\n                    android:layout_weight=\"1\"\r\n                    android:text=\"fechatermino\"\r\n                    android:textSize=\"16dp\"\r\n                    android:layout_gravity=\"center\"\r\n                    android:textAlignment=\"center\"\r\n                    android:textColor=\"@color/colorAccent\"\r\n                    android:id=\"@+id/tv_fechatermino\"/>\r\n\r\n                <TextView\r\n                    android:layout_width=\"match_parent\"\r\n                    android:layout_height=\"wrap_content\"\r\n                    android:layout_weight=\"1\"\r\n                    android:text=\"horatermino\"\r\n                    android:textSize=\"16dp\"\r\n                    android:layout_marginLeft=\"10dp\"\r\n                    android:layout_gravity=\"center\"\r\n                    android:textAlignment=\"center\"\r\n                    android:textColor=\"@color/colorAccent\"\r\n                    android:id=\"@+id/tv_horatermino\"/>\r\n            </LinearLayout>\r\n\r\n        </LinearLayout>\r\n    </LinearLayout>\r\n</LinearLayout>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- app/src/main/res/layout/list.xml	(revision 0b8bf6ec11462bf77e240b64e94a3e5f06e7de28)
++++ app/src/main/res/layout/list.xml	(date 1605482052235)
+@@ -9,6 +9,7 @@
+     <LinearLayout
+         android:layout_width="match_parent"
+         android:layout_height="wrap_content"
++        android:layout_marginBottom="5sp"
+         android:orientation="horizontal">
+ 
+         <LinearLayout
+Index: app/src/main/res/layout/cardviewmensajes.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"utf-8\"?>\r\n<RelativeLayout\r\n    xmlns:android=\"http://schemas.android.com/apk/res/android\"\r\n    xmlns:card_view=\"http://schemas.android.com/apk/res-auto\"\r\n    android:layout_width=\"wrap_content\"\r\n    android:layout_height=\"wrap_content\">\r\n\r\n    <androidx.cardview.widget.CardView\r\n        android:id=\"@+id/cvMensajes\"\r\n        card_view:cardElevation=\"0dp\"\r\n        android:layout_width=\"wrap_content\"\r\n        android:layout_height=\"wrap_content\">\r\n\r\n        <LinearLayout\r\n            android:id=\"@+id/mensajeBG\"\r\n            android:layout_width=\"330sp\"\r\n            android:layout_height=\"120sp\"\r\n            android:orientation=\"vertical\"\r\n            android:background=\"@drawable/out_message_bg\">\r\n\r\n            <LinearLayout\r\n                android:layout_width=\"match_parent\"\r\n                android:layout_height=\"wrap_content\"\r\n                android:orientation=\"horizontal\">\r\n\r\n                <ImageView\r\n                    android:id=\"@+id/imagen0\"\r\n                    android:layout_width=\"70sp\"\r\n                    android:layout_height=\"70sp\"\r\n                    android:layout_marginRight=\"5sp\"\r\n                    android:visibility=\"invisible\"\r\n                    android:src=\"@drawable/boton_rectangulo\"/>\r\n\r\n                <ImageView\r\n                    android:id=\"@+id/imagen1\"\r\n                    android:layout_width=\"70sp\"\r\n                    android:layout_height=\"70sp\"\r\n                    android:layout_marginRight=\"5sp\"\r\n                    android:visibility=\"invisible\"\r\n                    android:src=\"@drawable/boton_rectangulo\"/>\r\n\r\n                <ImageView\r\n                    android:id=\"@+id/imagen2\"\r\n                    android:layout_width=\"70sp\"\r\n                    android:layout_height=\"70sp\"\r\n                    android:layout_marginRight=\"5sp\"\r\n                    android:visibility=\"invisible\"\r\n                    android:src=\"@drawable/boton_rectangulo\"/>\r\n\r\n                <ImageView\r\n                    android:id=\"@+id/imagen3\"\r\n                    android:layout_width=\"70sp\"\r\n                    android:layout_height=\"70sp\"\r\n                    android:visibility=\"invisible\"\r\n                    android:src=\"@drawable/boton_rectangulo\"/>\r\n\r\n            </LinearLayout>\r\n\r\n\r\n\r\n            <TextView\r\n                android:id=\"@+id/msHora\"\r\n                android:layout_width=\"wrap_content\"\r\n                android:layout_height=\"wrap_content\"\r\n                android:text=\"12:10 pm\"\r\n                android:layout_gravity=\"bottom|right\"\r\n                android:textSize=\"10dp\">\r\n            </TextView>\r\n        </LinearLayout>\r\n    </androidx.cardview.widget.CardView>\r\n</RelativeLayout>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- app/src/main/res/layout/cardviewmensajes.xml	(revision 0b8bf6ec11462bf77e240b64e94a3e5f06e7de28)
++++ app/src/main/res/layout/cardviewmensajes.xml	(date 1605306444931)
+@@ -13,50 +13,22 @@
+ 
+         <LinearLayout
+             android:id="@+id/mensajeBG"
+-            android:layout_width="330sp"
++            android:layout_width="wrap_content"
+             android:layout_height="120sp"
+             android:orientation="vertical"
+             android:background="@drawable/out_message_bg">
+ 
+-            <LinearLayout
+-                android:layout_width="match_parent"
+-                android:layout_height="wrap_content"
+-                android:orientation="horizontal">
+-
+-                <ImageView
+-                    android:id="@+id/imagen0"
+-                    android:layout_width="70sp"
+-                    android:layout_height="70sp"
+-                    android:layout_marginRight="5sp"
+-                    android:visibility="invisible"
+-                    android:src="@drawable/boton_rectangulo"/>
+-
+-                <ImageView
+-                    android:id="@+id/imagen1"
+-                    android:layout_width="70sp"
+-                    android:layout_height="70sp"
+-                    android:layout_marginRight="5sp"
+-                    android:visibility="invisible"
+-                    android:src="@drawable/boton_rectangulo"/>
+-
+-                <ImageView
+-                    android:id="@+id/imagen2"
+-                    android:layout_width="70sp"
+-                    android:layout_height="70sp"
+-                    android:layout_marginRight="5sp"
+-                    android:visibility="invisible"
+-                    android:src="@drawable/boton_rectangulo"/>
+-
+-                <ImageView
+-                    android:id="@+id/imagen3"
+-                    android:layout_width="70sp"
+-                    android:layout_height="70sp"
+-                    android:visibility="invisible"
+-                    android:src="@drawable/boton_rectangulo"/>
+-
+-            </LinearLayout>
+-
+-
++            <HorizontalScrollView
++                android:layout_width="wrap_content"
++                android:layout_height="wrap_content">
++
++                <LinearLayout
++                    android:id="@+id/crearCaja"
++                    android:layout_width="match_parent"
++                    android:layout_height="wrap_content"
++                    android:orientation="horizontal">
++                </LinearLayout>
++            </HorizontalScrollView>
+ 
+             <TextView
+                 android:id="@+id/msHora"
+Index: app/src/main/java/cl/paulina/yotrabajoconpecs/ui/panel/panelEmpleador.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package cl.paulina.yotrabajoconpecs.ui.panel;\r\n\r\nimport android.content.Context;\r\nimport android.content.DialogInterface;\r\nimport android.content.Intent;\r\nimport android.os.Bundle;\r\nimport android.view.LayoutInflater;\r\nimport android.view.View;\r\nimport android.view.ViewGroup;\r\nimport android.widget.CalendarView;\r\nimport android.widget.TextView;\r\nimport android.widget.Toast;\r\n\r\nimport androidx.annotation.NonNull;\r\nimport androidx.appcompat.app.AlertDialog;\r\nimport androidx.appcompat.app.AppCompatActivity;\r\nimport androidx.fragment.app.Fragment;\r\nimport androidx.fragment.app.FragmentTransaction;\r\n\r\nimport cl.paulina.yotrabajoconpecs.R;\r\nimport cl.paulina.yotrabajoconpecs.ui.principal.panelPrincipalFragment;\r\n\r\npublic class panelEmpleador extends Fragment implements CalendarView.OnDateChangeListener {\r\n    public CalendarView calendarView;\r\n    public TextView calendarText;\r\n    Long date;\r\n\r\n    public View onCreateView(@NonNull LayoutInflater inflater,\r\n                             ViewGroup container, Bundle savedInstanceState) {\r\n        View vista = inflater.inflate(R.layout.empleador_2_1, container, false);\r\n        calendarView = vista.findViewById(R.id.calendarView);\r\n        calendarText = vista.findViewById(R.id.textViewCalendar);\r\n        calendarView.setOnDateChangeListener(this);\r\n        return vista;\r\n    }\r\n\r\n    @Override\r\n    public void onSelectedDayChange(@NonNull CalendarView view, int year, int month, int dayOfMonth) {\r\n        String date = (month + 1) + \"/\" + dayOfMonth + \"/\" + year;\r\n        calendarText.setText(date);\r\n        AlertDialog.Builder builder = new AlertDialog.Builder(getContext());\r\n        CharSequence []items = new CharSequence[3];\r\n        items[0] = \"Agregar Tarea\";\r\n        items[1] = \"Ver tareas\";\r\n        items[2] = \"Cancelar\";\r\n        final int dia, mes, anio;\r\n        dia = dayOfMonth;\r\n        mes = month + 1;\r\n        anio = year;\r\n\r\n        builder.setTitle(\"Seleccione una tarea\").setItems(items, new DialogInterface.OnClickListener() {\r\n            @Override\r\n            public void onClick(DialogInterface dialog, int which) {\r\n                if(which==0){\r\n                    //agregar evento\r\n                    Fragment fragment = new AddActivity();\r\n                    Bundle bundle = new Bundle();\r\n                    bundle.putInt(\"dia\",dia);\r\n                    bundle.putInt(\"mes\",mes);\r\n                    bundle.putInt(\"año\",anio);\r\n                    bundle.putInt(\"key_dia\", dia);\r\n                    bundle.putInt(\"key_mes\", mes);\r\n                    bundle.putInt(\"key_anio\", anio);\r\n                    fragment.setArguments(bundle);\r\n                    cambiarFragmento(fragment);\r\n                }else if(which == 1){\r\n                    //ver eventos\r\n                    Fragment fragment = new ViewEventsActivity();\r\n                    Bundle bundle = new Bundle();\r\n                    bundle.putInt(\"dia\",dia);\r\n                    bundle.putInt(\"mes\",mes);\r\n                    bundle.putInt(\"año\",anio);\r\n                    fragment.setArguments(bundle);\r\n                    cambiarFragmento(fragment);\r\n                }else{\r\n                    return;\r\n                }\r\n            }\r\n        });\r\n        AlertDialog dialog = builder.create();\r\n        dialog.show();\r\n    }\r\n\r\n    public void cambiarFragmento(Fragment fragment){\r\n        FragmentTransaction transaction = getFragmentManager().beginTransaction();\r\n        transaction.replace(R.id.nav_host_fragment, fragment);\r\n        transaction.addToBackStack(null);\r\n        transaction.commit();\r\n    }\r\n}\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- app/src/main/java/cl/paulina/yotrabajoconpecs/ui/panel/panelEmpleador.java	(revision 0b8bf6ec11462bf77e240b64e94a3e5f06e7de28)
++++ app/src/main/java/cl/paulina/yotrabajoconpecs/ui/panel/panelEmpleador.java	(date 1605481820320)
+@@ -55,9 +55,6 @@
+                     //agregar evento
+                     Fragment fragment = new AddActivity();
+                     Bundle bundle = new Bundle();
+-                    bundle.putInt("dia",dia);
+-                    bundle.putInt("mes",mes);
+-                    bundle.putInt("año",anio);
+                     bundle.putInt("key_dia", dia);
+                     bundle.putInt("key_mes", mes);
+                     bundle.putInt("key_anio", anio);
+@@ -67,9 +64,9 @@
+                     //ver eventos
+                     Fragment fragment = new ViewEventsActivity();
+                     Bundle bundle = new Bundle();
+-                    bundle.putInt("dia",dia);
+-                    bundle.putInt("mes",mes);
+-                    bundle.putInt("año",anio);
++                    bundle.putInt("key_dia", dia);
++                    bundle.putInt("key_mes", mes);
++                    bundle.putInt("key_año", anio);
+                     fragment.setArguments(bundle);
+                     cambiarFragmento(fragment);
+                 }else{
+Index: app/src/main/java/cl/paulina/yotrabajoconpecs/ui/busqueda_pictograma_pdc/examplebuttonsheetdialog.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package cl.paulina.yotrabajoconpecs.ui.busqueda_pictograma_pdc;\r\n\r\nimport android.annotation.SuppressLint;\r\nimport android.app.Dialog;\r\nimport android.app.ProgressDialog;\r\nimport android.content.Context;\r\nimport android.os.Build;\r\nimport android.os.Bundle;\r\nimport android.view.LayoutInflater;\r\nimport android.view.View;\r\nimport android.view.ViewGroup;\r\nimport android.widget.BaseAdapter;\r\nimport android.widget.GridView;\r\nimport android.widget.ImageButton;\r\nimport android.widget.LinearLayout;\r\nimport android.widget.Toast;\r\n\r\nimport androidx.annotation.NonNull;\r\nimport androidx.annotation.Nullable;\r\nimport androidx.annotation.RequiresApi;\r\nimport androidx.coordinatorlayout.widget.CoordinatorLayout;\r\n\r\nimport com.google.android.material.bottomsheet.BottomSheetBehavior;\r\nimport com.google.android.material.bottomsheet.BottomSheetDialogFragment;\r\nimport com.loopj.android.http.AsyncHttpClient;\r\nimport com.loopj.android.http.AsyncHttpResponseHandler;\r\nimport com.squareup.picasso.Picasso;\r\n\r\nimport org.json.JSONArray;\r\nimport org.json.JSONException;\r\n\r\nimport java.util.ArrayList;\r\n\r\nimport cl.paulina.yotrabajoconpecs.R;\r\nimport cz.msebera.android.httpclient.Header;\r\n\r\npublic class examplebuttonsheetdialog extends BottomSheetDialogFragment {\r\n    private GridView gridView;\r\n    public LinearLayout contenido, contentCaja, contentFrase;\r\n    private ArrayList id_frase, url;\r\n    public String id = \"1\";\r\n\r\n    @SuppressLint(\"RestrictedApi\")\r\n    @Override\r\n    public void setupDialog(Dialog dialog, int style) {\r\n        super.setupDialog(dialog, style);\r\n        View view = LayoutInflater.from(getContext()).inflate(R.layout.bottom_sheet_layout, null);\r\n        dialog.setContentView(view);\r\n\r\n        gridView = view.findViewById(R.id.listviewFrase);\r\n        contentCaja = view.findViewById(R.id.contentCaja);\r\n        contentFrase = view.findViewById(R.id.contentFrase);\r\n\r\n        id_frase = new ArrayList();\r\n        url = new ArrayList();\r\n\r\n        descargarDatos();\r\n\r\n        CoordinatorLayout.LayoutParams params = (CoordinatorLayout.LayoutParams) ((View) view.getParent()).getLayoutParams();\r\n        CoordinatorLayout.Behavior behavior = params.getBehavior();\r\n\r\n        if (behavior != null && behavior instanceof BottomSheetBehavior) {\r\n            ((BottomSheetBehavior) behavior).setBottomSheetCallback(new BottomSheetBehavior.BottomSheetCallback() {\r\n                @Override\r\n                public void onStateChanged(@NonNull View bottomSheet, int newState) {\r\n                    String state = \"\";\r\n\r\n                    switch (newState) {\r\n                        case BottomSheetBehavior.STATE_DRAGGING: {\r\n                            state = \"DRAGGING\";\r\n                            break;\r\n                        }\r\n                        case BottomSheetBehavior.STATE_SETTLING: {\r\n                            state = \"SETTLING\";\r\n                            break;\r\n                        }\r\n                        case BottomSheetBehavior.STATE_EXPANDED: {\r\n                            state = \"EXPANDED\";\r\n                            break;\r\n                        }\r\n                        case BottomSheetBehavior.STATE_COLLAPSED: {\r\n                            state = \"COLLAPSED\";\r\n                            break;\r\n                        }\r\n                        case BottomSheetBehavior.STATE_HIDDEN: {\r\n                            dismiss();\r\n                            state = \"HIDDEN\";\r\n                            break;\r\n                        }\r\n                    }\r\n\r\n                    //Toast.makeText(getContext(), \"Bottom Sheet State Changed to: \" + state, Toast.LENGTH_SHORT).show();\r\n                }\r\n\r\n                @Override\r\n                public void onSlide(@NonNull View bottomSheet, float slideOffset) {\r\n                }\r\n            });\r\n        }\r\n    }\r\n\r\n    private void descargarDatos(){\r\n        url.clear();\r\n        id_frase.clear();\r\n        final ProgressDialog progressDialog = new ProgressDialog(getActivity());\r\n        AsyncHttpClient client = new AsyncHttpClient();\r\n        client.get(\"https://yotrabajoconpecs.ddns.net/query7.php\", new AsyncHttpResponseHandler() {\r\n            @RequiresApi(api = Build.VERSION_CODES.M)\r\n            @Override\r\n            public void onSuccess(int statusCode, Header[] headers, byte[] responseBody) {\r\n                if(statusCode == 200){\r\n                    progressDialog.dismiss();\r\n                    try{\r\n                        JSONArray jsonarray = new JSONArray(new String(responseBody));\r\n                        for(int i = 0; i < jsonarray.length(); i++){\r\n                            id_frase.add(jsonarray.getJSONObject(i).getString(\"frase_detallefrase\"));\r\n                            url.add(jsonarray.getJSONObject(i).getString(\"url\"));\r\n                        }gridView.setAdapter(new CustomAdapter(getContext()));\r\n                    }catch(JSONException e){\r\n                        e.printStackTrace();\r\n                    }\r\n                }\r\n            }\r\n\r\n            @Override\r\n            public void onFailure(int statusCode, Header[] headers, byte[] responseBody, Throwable error) {\r\n                Context context = getContext();\r\n                CharSequence text = \"Conexión fallida\";\r\n                int duration = Toast.LENGTH_SHORT;\r\n                Toast toast = Toast.makeText(context, text, duration);\r\n                toast.show();\r\n            }\r\n        });\r\n    }\r\n\r\n    private class CustomAdapter extends BaseAdapter {\r\n        Context ctx;\r\n        LayoutInflater layoutInflater;\r\n        LinearLayout TvImagenButton;\r\n\r\n        @RequiresApi(api = Build.VERSION_CODES.M)\r\n        public CustomAdapter(Context applicationContext){\r\n            this.ctx = applicationContext;\r\n            layoutInflater = (LayoutInflater)this.ctx.getSystemService(Context.LAYOUT_INFLATER_SERVICE);\r\n        }\r\n\r\n        @Override\r\n        public int getCount(){\r\n            return id_frase.size();\r\n        }\r\n\r\n        @Override\r\n        public Object getItem(int position){\r\n            return position;\r\n        }\r\n\r\n        @Override\r\n        public long getItemId(int position){\r\n            return position;\r\n        }\r\n\r\n        @Override\r\n        public View getView(int position, View convertView, ViewGroup parent){\r\n            ViewGroup viewGroup = (ViewGroup) layoutInflater.inflate(R.layout.list_view_frase, null);\r\n            TvImagenButton = (LinearLayout) viewGroup.findViewById(R.id.tv_imagen_frase);\r\n\r\n            ImageButton imagen = new ImageButton(getContext());\r\n            contenido = new LinearLayout(getContext());\r\n            contenido.setLayoutParams(new LinearLayout.LayoutParams(ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT));\r\n            contenido.setOrientation(LinearLayout.HORIZONTAL);\r\n            contenido.setPadding(5,5,5,5);\r\n            imagen.setBackgroundResource(R.drawable.boton_rectangulo);\r\n            imagen.setLayoutParams(new LinearLayout.LayoutParams(400, 400));\r\n            imagen.setScaleType(ImageButton.ScaleType.FIT_CENTER);\r\n            Picasso.get().load(\"https://yotrabajoconpecs.ddns.net/\" + url.get(position).toString()).into(imagen);\r\n            contenido.addView(imagen);\r\n            TvImagenButton.addView(contenido);\r\n            /*\r\n            for(int i = 0; i < url.size(); i++) {\r\n                String segundaFrase = id_frase.get(position).toString();\r\n                if(segundaFrase.equals(id)) {\r\n                    ImageButton imagen = new ImageButton(getContext());\r\n                    contenido = new LinearLayout(getContext());\r\n                    contenido.setLayoutParams(new LinearLayout.LayoutParams(ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT));\r\n                    contenido.setOrientation(LinearLayout.HORIZONTAL);\r\n                    contenido.setPadding(5,5,5,5);\r\n                    imagen.setBackgroundResource(R.drawable.boton_rectangulo);\r\n                    imagen.setLayoutParams(new LinearLayout.LayoutParams(100, 100));\r\n                    imagen.setScaleType(ImageButton.ScaleType.FIT_CENTER);\r\n                    Picasso.get().load(\"https://yotrabajoconpecs.ddns.net/\" + url.get(i).toString()).into(imagen);\r\n                    contenido.addView(imagen);\r\n                }\r\n            }TvImagenButton.addView(contenido);*/\r\n\r\n            //TvImagenButton.removeView(contenido);\r\n            int ultimoIntId = Integer.parseInt(id);\r\n            ultimoIntId++;\r\n            id = ultimoIntId + \"\";\r\n\r\n            TvImagenButton.setOnClickListener(new View.OnClickListener() {\r\n                @Override\r\n                public void onClick(View v) {\r\n\r\n                }\r\n            });\r\n            return viewGroup;\r\n        }\r\n    }\r\n}\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- app/src/main/java/cl/paulina/yotrabajoconpecs/ui/busqueda_pictograma_pdc/examplebuttonsheetdialog.java	(revision 0b8bf6ec11462bf77e240b64e94a3e5f06e7de28)
++++ app/src/main/java/cl/paulina/yotrabajoconpecs/ui/busqueda_pictograma_pdc/examplebuttonsheetdialog.java	(date 1605465937566)
+@@ -6,6 +6,8 @@
+ import android.content.Context;
+ import android.os.Build;
+ import android.os.Bundle;
++import android.util.Log;
++import android.view.Gravity;
+ import android.view.LayoutInflater;
+ import android.view.View;
+ import android.view.ViewGroup;
+@@ -19,6 +21,7 @@
+ import androidx.annotation.Nullable;
+ import androidx.annotation.RequiresApi;
+ import androidx.coordinatorlayout.widget.CoordinatorLayout;
++import androidx.fragment.app.Fragment;
+ 
+ import com.google.android.material.bottomsheet.BottomSheetBehavior;
+ import com.google.android.material.bottomsheet.BottomSheetDialogFragment;
+@@ -36,9 +39,11 @@
+ 
+ public class examplebuttonsheetdialog extends BottomSheetDialogFragment {
+     private GridView gridView;
+-    public LinearLayout contenido, contentCaja, contentFrase;
+-    private ArrayList id_frase, url;
+-    public String id = "1";
++    public LinearLayout contentCaja;
++    private ArrayList id_frase, url, id_imagen, agregandoFrase;
++    public Fragment fragment;
++    Bundle datos;
++    public int id = 1;
+ 
+     @SuppressLint("RestrictedApi")
+     @Override
+@@ -49,10 +54,12 @@
+ 
+         gridView = view.findViewById(R.id.listviewFrase);
+         contentCaja = view.findViewById(R.id.contentCaja);
+-        contentFrase = view.findViewById(R.id.contentFrase);
+ 
+         id_frase = new ArrayList();
+         url = new ArrayList();
++        agregandoFrase = new ArrayList();
++        id_imagen = new ArrayList();
++        datos = new Bundle();
+ 
+         descargarDatos();
+ 
+@@ -102,6 +109,7 @@
+     private void descargarDatos(){
+         url.clear();
+         id_frase.clear();
++        id_imagen.clear();
+         final ProgressDialog progressDialog = new ProgressDialog(getActivity());
+         AsyncHttpClient client = new AsyncHttpClient();
+         client.get("https://yotrabajoconpecs.ddns.net/query7.php", new AsyncHttpResponseHandler() {
+@@ -115,6 +123,7 @@
+                         for(int i = 0; i < jsonarray.length(); i++){
+                             id_frase.add(jsonarray.getJSONObject(i).getString("frase_detallefrase"));
+                             url.add(jsonarray.getJSONObject(i).getString("url"));
++                            id_imagen.add(jsonarray.getJSONObject(i).getString("imagen_id_imagen"));
+                         }gridView.setAdapter(new CustomAdapter(getContext()));
+                     }catch(JSONException e){
+                         e.printStackTrace();
+@@ -163,44 +172,45 @@
+         public View getView(int position, View convertView, ViewGroup parent){
+             ViewGroup viewGroup = (ViewGroup) layoutInflater.inflate(R.layout.list_view_frase, null);
+             TvImagenButton = (LinearLayout) viewGroup.findViewById(R.id.tv_imagen_frase);
+-
+-            ImageButton imagen = new ImageButton(getContext());
+-            contenido = new LinearLayout(getContext());
+-            contenido.setLayoutParams(new LinearLayout.LayoutParams(ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT));
+-            contenido.setOrientation(LinearLayout.HORIZONTAL);
+-            contenido.setPadding(5,5,5,5);
+-            imagen.setBackgroundResource(R.drawable.boton_rectangulo);
+-            imagen.setLayoutParams(new LinearLayout.LayoutParams(400, 400));
+-            imagen.setScaleType(ImageButton.ScaleType.FIT_CENTER);
+-            Picasso.get().load("https://yotrabajoconpecs.ddns.net/" + url.get(position).toString()).into(imagen);
+-            contenido.addView(imagen);
+-            TvImagenButton.addView(contenido);
+-            /*
+-            for(int i = 0; i < url.size(); i++) {
+-                String segundaFrase = id_frase.get(position).toString();
+-                if(segundaFrase.equals(id)) {
+-                    ImageButton imagen = new ImageButton(getContext());
+-                    contenido = new LinearLayout(getContext());
+-                    contenido.setLayoutParams(new LinearLayout.LayoutParams(ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT));
+-                    contenido.setOrientation(LinearLayout.HORIZONTAL);
+-                    contenido.setPadding(5,5,5,5);
+-                    imagen.setBackgroundResource(R.drawable.boton_rectangulo);
+-                    imagen.setLayoutParams(new LinearLayout.LayoutParams(100, 100));
+-                    imagen.setScaleType(ImageButton.ScaleType.FIT_CENTER);
+-                    Picasso.get().load("https://yotrabajoconpecs.ddns.net/" + url.get(i).toString()).into(imagen);
+-                    contenido.addView(imagen);
+-                }
+-            }TvImagenButton.addView(contenido);*/
+-
+-            //TvImagenButton.removeView(contenido);
+-            int ultimoIntId = Integer.parseInt(id);
+-            ultimoIntId++;
+-            id = ultimoIntId + "";
+-
++            agregandoFrase.clear();
++            String postitionGrid = id_frase.get(position).toString();
++            int ultimo = id_frase.size();
++            String anterior = id_frase.get(position-1).toString();
++            String actual = id_frase.get(position).toString();
++            int anteriornum = Integer.parseInt(anterior);
++            if(anteriornum != ultimo){
++                if(!anterior.equals(actual)){
++                    for(int i = 0; i < url.size(); i++) {
++                        String recorrido = id_frase.get(i).toString();
++                        if(recorrido.equals(postitionGrid)) {
++                            agregandoFrase.add(id_imagen.get(i).toString());
++                            ImageButton imagen = new ImageButton(getContext());
++                            imagen.setBackgroundResource(R.drawable.boton_rectangulo);
++                            imagen.setLayoutParams(new LinearLayout.LayoutParams(130, 130));
++                            imagen.setScaleType(ImageButton.ScaleType.FIT_CENTER);
++                            Picasso.get().load("https://yotrabajoconpecs.ddns.net/" + url.get(i).toString()).into(imagen);
++                            TvImagenButton.addView(imagen);
++                        }
++                    }
++                }
++            }else{
++                ImageButton imagen = new ImageButton(getContext());
++                imagen.setBackgroundResource(R.drawable.boton_rectangulo);
++                imagen.setLayoutParams(new LinearLayout.LayoutParams(130, 130));
++                imagen.setScaleType(ImageButton.ScaleType.FIT_CENTER);
++                Picasso.get().load("https://yotrabajoconpecs.ddns.net/" + url.get(position).toString()).into(imagen);
++                TvImagenButton.addView(imagen);
++            }
++            id++;
+             TvImagenButton.setOnClickListener(new View.OnClickListener() {
+                 @Override
+                 public void onClick(View v) {
+-
++                    datos.putString("url_", id_imagen.get(position).toString());
++                    Toast.makeText(getContext(), id_imagen.get(position).toString(), Toast.LENGTH_SHORT).show();
++                    for(int j = 0; j < agregandoFrase.size(); j++){
++                        datos.putString("url_" + j, agregandoFrase.get(j).toString());
++                    }
++                    //fragment.setArguments(datos);
+                 }
+             });
+             return viewGroup;
+Index: app/src/main/java/cl/paulina/yotrabajoconpecs/ui/panel/ViewEventsActivity.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package cl.paulina.yotrabajoconpecs.ui.panel;\r\n\r\nimport android.app.ProgressDialog;\r\nimport android.content.Context;\r\nimport android.content.DialogInterface;\r\nimport android.os.Build;\r\nimport android.os.Bundle;\r\nimport android.util.Log;\r\nimport android.view.LayoutInflater;\r\nimport android.view.View;\r\nimport android.view.ViewGroup;\r\nimport android.widget.AdapterView;\r\nimport android.widget.ArrayAdapter;\r\nimport android.widget.BaseAdapter;\r\nimport android.widget.GridView;\r\nimport android.widget.ImageButton;\r\nimport android.widget.LinearLayout;\r\nimport android.widget.ListView;\r\nimport android.widget.Spinner;\r\nimport android.widget.TextView;\r\nimport android.widget.Toast;\r\n\r\nimport androidx.annotation.NonNull;\r\nimport androidx.annotation.RequiresApi;\r\nimport androidx.appcompat.app.AlertDialog;\r\nimport androidx.fragment.app.Fragment;\r\nimport com.android.volley.AuthFailureError;\r\nimport com.android.volley.Request;\r\nimport com.android.volley.RequestQueue;\r\nimport com.android.volley.Response;\r\nimport com.android.volley.VolleyError;\r\nimport com.android.volley.toolbox.StringRequest;\r\nimport com.android.volley.toolbox.Volley;\r\nimport com.loopj.android.http.AsyncHttpClient;\r\nimport com.loopj.android.http.AsyncHttpResponseHandler;\r\nimport org.json.JSONArray;\r\nimport org.json.JSONException;\r\nimport java.util.ArrayList;\r\nimport java.util.HashMap;\r\nimport java.util.Map;\r\nimport cl.paulina.yotrabajoconpecs.R;\r\nimport cz.msebera.android.httpclient.Header;\r\nimport java.text.ParseException;\r\nimport java.text.SimpleDateFormat;\r\nimport java.util.Date;\r\n\r\npublic class ViewEventsActivity extends Fragment implements View.OnLongClickListener{\r\n    private GridView listView;\r\n    public ArrayList idCalendario, fechaInicio, fechaTermino, horaInicio, horaTermino, diaCalendario, nombreTarea, idUsuario, nombreUsuario, apellidoUsuario;\r\n    public String fecha;\r\n    private Spinner spinnerPDC;\r\n\r\n    public View onCreateView(@NonNull LayoutInflater inflater,\r\n                             ViewGroup container, Bundle savedInstanceState) {\r\n        View vista = inflater.inflate(R.layout.activity_view_events, container, false);\r\n        listView = vista.findViewById(R.id.listaeventos);\r\n        spinnerPDC = vista.findViewById(R.id.spinnerPDC);\r\n\r\n        idCalendario = new ArrayList();\r\n        fechaInicio = new ArrayList();\r\n        fechaTermino = new ArrayList();\r\n        horaInicio = new ArrayList();\r\n        horaTermino = new ArrayList();\r\n        diaCalendario = new ArrayList();\r\n        nombreTarea = new ArrayList();\r\n        idUsuario = new ArrayList();\r\n        nombreUsuario = new ArrayList();\r\n        apellidoUsuario = new ArrayList();\r\n\r\n        Bundle bundle = getArguments();\r\n        int dia, mes, anio;\r\n        dia = mes = anio = 0;\r\n        dia = bundle.getInt(\"key_dia\");\r\n        mes = bundle.getInt(\"key_mes\");\r\n        anio = bundle.getInt(\"key_anio\");\r\n        fecha = anio + \"-\" + mes + \"-\" + dia;\r\n\r\n        listView.setOnLongClickListener(this);\r\n        descargarPDC();\r\n        return vista;\r\n    }\r\n\r\n    @Override\r\n    public boolean onLongClick(View v) {\r\n        AlertDialog.Builder builder = new AlertDialog.Builder(getContext());\r\n        CharSequence []items = new CharSequence[2];\r\n        items[0] = \"Eliminar evento\";\r\n        items[1] = \"Cancelar\";\r\n        builder.setTitle(\"Eliminar evento\").setItems(items, new DialogInterface.OnClickListener() {\r\n            @Override\r\n            public void onClick(DialogInterface dialog, int which) {\r\n                if(which == 0){\r\n                    //eliminar evento\r\n                }\r\n            }\r\n        });\r\n        AlertDialog dialog = builder.create();\r\n        dialog.show();\r\n        return false;\r\n    }\r\n\r\n    private void descargarPDC(){\r\n        idUsuario.clear();\r\n        nombreUsuario.clear();\r\n        apellidoUsuario.clear();\r\n        final ProgressDialog progressDialog = new ProgressDialog(getActivity());\r\n        AsyncHttpClient client = new AsyncHttpClient();\r\n        client.get(\"https://yotrabajoconpecs.ddns.net/query_pdc.php\", new AsyncHttpResponseHandler() {\r\n            @RequiresApi(api = Build.VERSION_CODES.M)\r\n            @Override\r\n            public void onSuccess(int statusCode, Header[] headers, byte[] responseBody) {\r\n                if(statusCode == 200){\r\n                    progressDialog.dismiss();\r\n                    try{\r\n                        JSONArray jsonarray = new JSONArray(new String(responseBody));\r\n                        for(int i = 0; i < jsonarray.length(); i++){\r\n                            idUsuario.add(jsonarray.getJSONObject(i).getString(\"id_usuario\"));\r\n                            nombreUsuario.add(jsonarray.getJSONObject(i).getString(\"nombre_usuario\"));\r\n                            apellidoUsuario.add(jsonarray.getJSONObject(i).getString(\"apellido_usuario\"));\r\n                        }\r\n                        ArrayList nombreCompleto = new ArrayList();\r\n                        for(int j = 0; j < nombreUsuario.size(); j++){\r\n                            nombreCompleto.add(nombreUsuario.get(j).toString() + \" \" + apellidoUsuario.get(j).toString());\r\n                        }\r\n                        ArrayAdapter adapter = new ArrayAdapter(getContext(), android.R.layout.simple_spinner_dropdown_item, nombreCompleto);\r\n                        spinnerPDC.setAdapter(adapter);\r\n                        spinnerPDC.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {\r\n                            @Override\r\n                            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {\r\n                                String nombreUsuario = (String) spinnerPDC.getAdapter().getItem(position);\r\n                                descargarDatosCalendario();\r\n                            }\r\n                            @Override\r\n                            public void onNothingSelected(AdapterView<?> parent) {\r\n                                Toast.makeText(getContext(), \"No ha seleccionado una opción\", Toast.LENGTH_SHORT).show();\r\n                            }\r\n                        });\r\n                    }catch(JSONException e){\r\n                        e.printStackTrace();\r\n                    }\r\n                }\r\n            }\r\n\r\n            @Override\r\n            public void onFailure(int statusCode, Header[] headers, byte[] responseBody, Throwable error) {\r\n                Context context = getContext();\r\n                CharSequence text = \"Conexión fallida\";\r\n                int duration = Toast.LENGTH_SHORT;\r\n                Toast toast = Toast.makeText(context, text, duration);\r\n                toast.show();\r\n            }\r\n        });\r\n    }\r\n\r\n    private void descargarDatosCalendario(){\r\n        idCalendario.clear();\r\n        fechaInicio.clear();\r\n        fechaTermino.clear();\r\n        horaInicio.clear();\r\n        horaTermino.clear();\r\n        diaCalendario.clear();\r\n        nombreTarea.clear();\r\n        final ProgressDialog progressDialog = new ProgressDialog(getActivity());\r\n        AsyncHttpClient client = new AsyncHttpClient();\r\n        client.get(\"https://yotrabajoconpecs.ddns.net/queryVerTarea.php\", new AsyncHttpResponseHandler() {\r\n            @RequiresApi(api = Build.VERSION_CODES.M)\r\n            @Override\r\n            public void onSuccess(int statusCode, Header[] headers, byte[] responseBody) {\r\n                if(statusCode == 200){\r\n                    progressDialog.dismiss();\r\n                    try{\r\n                        JSONArray jsonarray = new JSONArray(new String(responseBody));\r\n                        for(int i = 0; i < jsonarray.length(); i++){\r\n                            idCalendario.add(jsonarray.getJSONObject(i).getString(\"id_calendario\"));\r\n                            fechaInicio.add(jsonarray.getJSONObject(i).getString(\"fecha_inicio\"));\r\n                            fechaTermino.add(jsonarray.getJSONObject(i).getString(\"fecha_termino\"));\r\n                            horaInicio.add(jsonarray.getJSONObject(i).getString(\"hora_inicio\"));\r\n                            horaTermino.add(jsonarray.getJSONObject(i).getString(\"hora_termino\"));\r\n                            diaCalendario.add(jsonarray.getJSONObject(i).getString(\"dia\"));\r\n                            nombreTarea.add(jsonarray.getJSONObject(i).getString(\"nombre_tarea\"));\r\n                        }listView.setAdapter(new CustomAdapter(getContext()));\r\n                    }catch(JSONException e){\r\n                        e.printStackTrace();\r\n                    }\r\n                }\r\n            }\r\n            @Override\r\n            public void onFailure(int statusCode, Header[] headers, byte[] responseBody, Throwable error) {\r\n                Toast.makeText(getContext(), \"Conexión fallida\", Toast.LENGTH_SHORT).show();\r\n            }\r\n        });\r\n    }\r\n\r\n    public class CustomAdapter extends BaseAdapter {\r\n        Context ctx;\r\n        LayoutInflater layoutInflater;\r\n        TextView tvtarea, tvfechainicio, tvfechatermino, tvhorainicio, tvhoratermino, tvdia;\r\n\r\n        @RequiresApi(api = Build.VERSION_CODES.M)\r\n        public CustomAdapter(Context applicationContext) {\r\n            this.ctx = applicationContext;\r\n            layoutInflater = (LayoutInflater) this.ctx.getSystemService(Context.LAYOUT_INFLATER_SERVICE);\r\n        }\r\n\r\n        @Override\r\n        public int getCount() {\r\n            return idCalendario.size();\r\n        }\r\n\r\n        @Override\r\n        public Object getItem(int position) {\r\n            return position;\r\n        }\r\n\r\n        @Override\r\n        public long getItemId(int position) {\r\n            return position;\r\n        }\r\n\r\n        @Override\r\n        public View getView(int position, View convertView, ViewGroup parent) {\r\n            ViewGroup viewGroup = (ViewGroup) layoutInflater.inflate(R.layout.list, null);\r\n            tvtarea = (TextView) viewGroup.findViewById(R.id.tv_tarea);\r\n            tvfechainicio = (TextView) viewGroup.findViewById(R.id.tv_fechainicio);\r\n            tvfechatermino = (TextView) viewGroup.findViewById(R.id.tv_fechatermino);\r\n            tvhorainicio = (TextView) viewGroup.findViewById(R.id.tv_horainicio);\r\n            tvhoratermino = (TextView) viewGroup.findViewById(R.id.tv_horatermino);\r\n            tvdia = (TextView) viewGroup.findViewById(R.id.tv_dia);\r\n\r\n            /*Date fechaDate = ParseFecha(fecha);\r\n            Date fechaInicioDate = ParseFecha(fechaInicio.get(position).toString());\r\n            Date fechaTerminoDate = ParseFecha(fechaTermino.get(position).toString());\r\n            Toast.makeText(getContext(), fechaDate.toString(), Toast.LENGTH_SHORT).show();*/\r\n            Toast.makeText(getContext(), \"entre al if\", Toast.LENGTH_SHORT).show();\r\n            tvtarea.setText(nombreTarea.get(position).toString());\r\n            tvfechainicio.setText(fechaInicio.get(position).toString());\r\n            tvfechatermino.setText(fechaTermino.get(position).toString());\r\n            tvhorainicio.setText(horaInicio.get(position).toString());\r\n            tvhoratermino.setText(horaTermino.get(position).toString());\r\n            tvdia.setText(diaCalendario.get(position).toString());\r\n\r\n            return viewGroup;\r\n        }\r\n    }\r\n\r\n    public static Date ParseFecha(String fecha) {\r\n        SimpleDateFormat formato = new SimpleDateFormat(\"yyyy-MM-dd\");\r\n        Date fechaDate = null;\r\n        try {\r\n            fechaDate = formato.parse(fecha);\r\n        }catch (ParseException ex) {\r\n            System.out.println(ex);\r\n        }\r\n        return fechaDate;\r\n    }\r\n\r\n}\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- app/src/main/java/cl/paulina/yotrabajoconpecs/ui/panel/ViewEventsActivity.java	(revision 0b8bf6ec11462bf77e240b64e94a3e5f06e7de28)
++++ app/src/main/java/cl/paulina/yotrabajoconpecs/ui/panel/ViewEventsActivity.java	(date 1605481985255)
+@@ -72,11 +72,11 @@
+         dia = mes = anio = 0;
+         dia = bundle.getInt("key_dia");
+         mes = bundle.getInt("key_mes");
+-        anio = bundle.getInt("key_anio");
++        anio = bundle.getInt("key_año");
+         fecha = anio + "-" + mes + "-" + dia;
+-
+         listView.setOnLongClickListener(this);
+         descargarPDC();
++        descargarDatosCalendario("https://yotrabajoconpecs.ddns.net/queryVerTarea.php?fecha=" + fecha);
+         return vista;
+     }
+ 
+@@ -84,9 +84,9 @@
+     public boolean onLongClick(View v) {
+         AlertDialog.Builder builder = new AlertDialog.Builder(getContext());
+         CharSequence []items = new CharSequence[2];
+-        items[0] = "Eliminar evento";
++        items[0] = "Eliminar tarea";
+         items[1] = "Cancelar";
+-        builder.setTitle("Eliminar evento").setItems(items, new DialogInterface.OnClickListener() {
++        builder.setTitle("Eliminar tarea").setItems(items, new DialogInterface.OnClickListener() {
+             @Override
+             public void onClick(DialogInterface dialog, int which) {
+                 if(which == 0){
+@@ -128,7 +128,6 @@
+                             @Override
+                             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+                                 String nombreUsuario = (String) spinnerPDC.getAdapter().getItem(position);
+-                                descargarDatosCalendario();
+                             }
+                             @Override
+                             public void onNothingSelected(AdapterView<?> parent) {
+@@ -152,7 +151,7 @@
+         });
+     }
+ 
+-    private void descargarDatosCalendario(){
++    private void descargarDatosCalendario(String URL){
+         idCalendario.clear();
+         fechaInicio.clear();
+         fechaTermino.clear();
+@@ -162,7 +161,7 @@
+         nombreTarea.clear();
+         final ProgressDialog progressDialog = new ProgressDialog(getActivity());
+         AsyncHttpClient client = new AsyncHttpClient();
+-        client.get("https://yotrabajoconpecs.ddns.net/queryVerTarea.php", new AsyncHttpResponseHandler() {
++        client.get(URL, new AsyncHttpResponseHandler() {
+             @RequiresApi(api = Build.VERSION_CODES.M)
+             @Override
+             public void onSuccess(int statusCode, Header[] headers, byte[] responseBody) {
+@@ -231,7 +230,6 @@
+             Date fechaInicioDate = ParseFecha(fechaInicio.get(position).toString());
+             Date fechaTerminoDate = ParseFecha(fechaTermino.get(position).toString());
+             Toast.makeText(getContext(), fechaDate.toString(), Toast.LENGTH_SHORT).show();*/
+-            Toast.makeText(getContext(), "entre al if", Toast.LENGTH_SHORT).show();
+             tvtarea.setText(nombreTarea.get(position).toString());
+             tvfechainicio.setText(fechaInicio.get(position).toString());
+             tvfechatermino.setText(fechaTermino.get(position).toString());
+Index: app/src/main/res/layout/list_view_frase.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"utf-8\"?>\r\n<LinearLayout\r\n    android:id=\"@+id/contentFrase\"\r\n    xmlns:android=\"http://schemas.android.com/apk/res/android\"\r\n    android:layout_width=\"match_parent\"\r\n    android:layout_height=\"wrap_content\"\r\n    android:layout_gravity=\"center_horizontal\"\r\n    android:orientation=\"vertical\">\r\n\r\n    <LinearLayout\r\n        android:layout_width=\"match_parent\"\r\n        android:layout_height=\"wrap_content\"\r\n        android:layout_gravity=\"center\"\r\n        android:orientation=\"horizontal\"\r\n        android:id=\"@+id/tv_imagen_frase\"/>\r\n</LinearLayout>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- app/src/main/res/layout/list_view_frase.xml	(revision 0b8bf6ec11462bf77e240b64e94a3e5f06e7de28)
++++ app/src/main/res/layout/list_view_frase.xml	(date 1605311799778)
+@@ -1,6 +1,5 @@
+ <?xml version="1.0" encoding="utf-8"?>
+ <LinearLayout
+-    android:id="@+id/contentFrase"
+     xmlns:android="http://schemas.android.com/apk/res/android"
+     android:layout_width="match_parent"
+     android:layout_height="wrap_content"
+@@ -10,7 +9,8 @@
+     <LinearLayout
+         android:layout_width="match_parent"
+         android:layout_height="wrap_content"
+-        android:layout_gravity="center"
+         android:orientation="horizontal"
++        android:layout_marginTop="5sp"
++        android:layout_marginBottom="5sp"
+         android:id="@+id/tv_imagen_frase"/>
+ </LinearLayout>
+\ No newline at end of file

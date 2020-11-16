@@ -6,6 +6,8 @@ import android.app.ProgressDialog;
 import android.content.Context;
 import android.os.Build;
 import android.os.Bundle;
+import android.util.Log;
+import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -19,6 +21,7 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.annotation.RequiresApi;
 import androidx.coordinatorlayout.widget.CoordinatorLayout;
+import androidx.fragment.app.Fragment;
 
 import com.google.android.material.bottomsheet.BottomSheetBehavior;
 import com.google.android.material.bottomsheet.BottomSheetDialogFragment;
@@ -36,9 +39,11 @@ import cz.msebera.android.httpclient.Header;
 
 public class examplebuttonsheetdialog extends BottomSheetDialogFragment {
     private GridView gridView;
-    public LinearLayout contenido, contentCaja, contentFrase;
-    private ArrayList id_frase, url;
-    public String id = "1";
+    public LinearLayout contentCaja;
+    private ArrayList id_frase, url, id_imagen, agregandoFrase;
+    public Fragment fragment;
+    Bundle datos;
+    public int id = 1;
 
     @SuppressLint("RestrictedApi")
     @Override
@@ -49,10 +54,12 @@ public class examplebuttonsheetdialog extends BottomSheetDialogFragment {
 
         gridView = view.findViewById(R.id.listviewFrase);
         contentCaja = view.findViewById(R.id.contentCaja);
-        contentFrase = view.findViewById(R.id.contentFrase);
 
         id_frase = new ArrayList();
         url = new ArrayList();
+        agregandoFrase = new ArrayList();
+        id_imagen = new ArrayList();
+        datos = new Bundle();
 
         descargarDatos();
 
@@ -102,6 +109,7 @@ public class examplebuttonsheetdialog extends BottomSheetDialogFragment {
     private void descargarDatos(){
         url.clear();
         id_frase.clear();
+        id_imagen.clear();
         final ProgressDialog progressDialog = new ProgressDialog(getActivity());
         AsyncHttpClient client = new AsyncHttpClient();
         client.get("https://yotrabajoconpecs.ddns.net/query7.php", new AsyncHttpResponseHandler() {
@@ -115,6 +123,7 @@ public class examplebuttonsheetdialog extends BottomSheetDialogFragment {
                         for(int i = 0; i < jsonarray.length(); i++){
                             id_frase.add(jsonarray.getJSONObject(i).getString("frase_detallefrase"));
                             url.add(jsonarray.getJSONObject(i).getString("url"));
+                            id_imagen.add(jsonarray.getJSONObject(i).getString("imagen_id_imagen"));
                         }gridView.setAdapter(new CustomAdapter(getContext()));
                     }catch(JSONException e){
                         e.printStackTrace();
@@ -163,44 +172,45 @@ public class examplebuttonsheetdialog extends BottomSheetDialogFragment {
         public View getView(int position, View convertView, ViewGroup parent){
             ViewGroup viewGroup = (ViewGroup) layoutInflater.inflate(R.layout.list_view_frase, null);
             TvImagenButton = (LinearLayout) viewGroup.findViewById(R.id.tv_imagen_frase);
-
-            ImageButton imagen = new ImageButton(getContext());
-            contenido = new LinearLayout(getContext());
-            contenido.setLayoutParams(new LinearLayout.LayoutParams(ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT));
-            contenido.setOrientation(LinearLayout.HORIZONTAL);
-            contenido.setPadding(5,5,5,5);
-            imagen.setBackgroundResource(R.drawable.boton_rectangulo);
-            imagen.setLayoutParams(new LinearLayout.LayoutParams(400, 400));
-            imagen.setScaleType(ImageButton.ScaleType.FIT_CENTER);
-            Picasso.get().load("https://yotrabajoconpecs.ddns.net/" + url.get(position).toString()).into(imagen);
-            contenido.addView(imagen);
-            TvImagenButton.addView(contenido);
-            /*
-            for(int i = 0; i < url.size(); i++) {
-                String segundaFrase = id_frase.get(position).toString();
-                if(segundaFrase.equals(id)) {
-                    ImageButton imagen = new ImageButton(getContext());
-                    contenido = new LinearLayout(getContext());
-                    contenido.setLayoutParams(new LinearLayout.LayoutParams(ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT));
-                    contenido.setOrientation(LinearLayout.HORIZONTAL);
-                    contenido.setPadding(5,5,5,5);
-                    imagen.setBackgroundResource(R.drawable.boton_rectangulo);
-                    imagen.setLayoutParams(new LinearLayout.LayoutParams(100, 100));
-                    imagen.setScaleType(ImageButton.ScaleType.FIT_CENTER);
-                    Picasso.get().load("https://yotrabajoconpecs.ddns.net/" + url.get(i).toString()).into(imagen);
-                    contenido.addView(imagen);
+            agregandoFrase.clear();
+            String postitionGrid = id_frase.get(position).toString();
+            int ultimo = id_frase.size();
+            String anterior = id_frase.get(position-1).toString();
+            String actual = id_frase.get(position).toString();
+            int anteriornum = Integer.parseInt(anterior);
+            if(anteriornum != ultimo){
+                if(!anterior.equals(actual)){
+                    for(int i = 0; i < url.size(); i++) {
+                        String recorrido = id_frase.get(i).toString();
+                        if(recorrido.equals(postitionGrid)) {
+                            agregandoFrase.add(id_imagen.get(i).toString());
+                            ImageButton imagen = new ImageButton(getContext());
+                            imagen.setBackgroundResource(R.drawable.boton_rectangulo);
+                            imagen.setLayoutParams(new LinearLayout.LayoutParams(130, 130));
+                            imagen.setScaleType(ImageButton.ScaleType.FIT_CENTER);
+                            Picasso.get().load("https://yotrabajoconpecs.ddns.net/" + url.get(i).toString()).into(imagen);
+                            TvImagenButton.addView(imagen);
+                        }
+                    }
                 }
-            }TvImagenButton.addView(contenido);*/
-
-            //TvImagenButton.removeView(contenido);
-            int ultimoIntId = Integer.parseInt(id);
-            ultimoIntId++;
-            id = ultimoIntId + "";
-
+            }else{
+                ImageButton imagen = new ImageButton(getContext());
+                imagen.setBackgroundResource(R.drawable.boton_rectangulo);
+                imagen.setLayoutParams(new LinearLayout.LayoutParams(130, 130));
+                imagen.setScaleType(ImageButton.ScaleType.FIT_CENTER);
+                Picasso.get().load("https://yotrabajoconpecs.ddns.net/" + url.get(position).toString()).into(imagen);
+                TvImagenButton.addView(imagen);
+            }
+            id++;
             TvImagenButton.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-
+                    datos.putString("url_", id_imagen.get(position).toString());
+                    Toast.makeText(getContext(), id_imagen.get(position).toString(), Toast.LENGTH_SHORT).show();
+                    for(int j = 0; j < agregandoFrase.size(); j++){
+                        datos.putString("url_" + j, agregandoFrase.get(j).toString());
+                    }
+                    //fragment.setArguments(datos);
                 }
             });
             return viewGroup;

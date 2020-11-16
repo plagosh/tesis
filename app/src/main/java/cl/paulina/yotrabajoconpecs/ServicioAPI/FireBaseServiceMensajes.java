@@ -14,11 +14,23 @@ import androidx.annotation.NonNull;
 import androidx.core.app.NotificationCompat.Builder;
 import androidx.localbroadcastmanager.content.LocalBroadcastManager;
 
+import com.android.volley.RequestQueue;
+import com.android.volley.Response;
+import com.android.volley.VolleyError;
+import com.android.volley.toolbox.JsonObjectRequest;
+import com.android.volley.toolbox.Volley;
 import com.google.firebase.messaging.FirebaseMessagingService;
 import com.google.firebase.messaging.RemoteMessage;
 
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
+
+import java.lang.reflect.Array;
+import java.util.ArrayList;
 import java.util.Random;
 
+import cl.paulina.yotrabajoconpecs.Amigos.ActivityAmigos;
 import cl.paulina.yotrabajoconpecs.Preferences;
 import cl.paulina.yotrabajoconpecs.R;
 import cl.paulina.yotrabajoconpecs.ui.busqueda_pictograma_empleador.Mensajeria;
@@ -34,6 +46,7 @@ public class FireBaseServiceMensajes extends FirebaseMessagingService {
         String cuerpo = remoteMessage.getData().get("cuerpo");
         String receptor = remoteMessage.getData().get("receptor");
         String emisorPHP = remoteMessage.getData().get("emisor");
+        String url = remoteMessage.getData().get("url");
         String emisor = Preferences.obtenerPreferenceString(this, Preferences.PREFERENCE_USUARIO_LOGIN);
 
         if(!emisorPHP.equals(receptor)) {
@@ -41,11 +54,20 @@ public class FireBaseServiceMensajes extends FirebaseMessagingService {
             if (emisor.equals(uno)) {
                 MensajeEmpleador(mensaje, hora, emisorPHP);
                 showNotificationEmpleador(cabecera, cuerpo);
+                actualizacion(mensaje, hora, emisorPHP);
             } else {
-                MensajePDC(mensaje, hora, emisorPHP);
+                MensajePDC(mensaje, hora, emisorPHP, url);
                 showNotificationPDC(cabecera, cuerpo);
             }
         }
+    }
+
+    private void actualizacion(String mensaje, String hora, String emisor){
+        Intent i = new Intent(ActivityAmigos.MENSAJE);
+        i.putExtra("key_mensaje",  mensaje);
+        i.putExtra("key_hora",  hora);
+        i.putExtra("key_emisor_PHP",  emisor);
+        LocalBroadcastManager.getInstance(getApplicationContext()).sendBroadcast(i);
     }
 
     private void MensajeEmpleador(String mensaje, String hora, String emisor){
@@ -56,11 +78,12 @@ public class FireBaseServiceMensajes extends FirebaseMessagingService {
         LocalBroadcastManager.getInstance(getApplicationContext()).sendBroadcast(i);
     }
 
-    private void MensajePDC(String mensaje, String hora, String emisor){
+    private void MensajePDC(String mensaje, String hora, String emisor, String url){
         Intent i = new Intent(libroPDC.MENSAJE);
         i.putExtra("key_mensaje",  mensaje);
         i.putExtra("key_hora",  hora);
         i.putExtra("key_emisor_PHP",  emisor);
+        i.putExtra("key_url",  url);
         LocalBroadcastManager.getInstance(getApplicationContext()).sendBroadcast(i);
     }
 
@@ -105,4 +128,5 @@ public class FireBaseServiceMensajes extends FirebaseMessagingService {
 
         notificationManager.notify(random.nextInt(), builder.build());
     }
+
 }

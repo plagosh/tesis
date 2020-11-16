@@ -52,7 +52,7 @@ public class AddActivity extends Fragment {
     private Button guardar;
     Spinner spinnerTarea, spinnerPDC;
     ArrayList idtarea, nombretarea, idcalendario, llenadodias, idUsuario, nombreUsuario, apellidoUsuario, idCalendario;
-    public String tareaSeleccionada, ultimoIdCalendario;
+    public String tareaSeleccionada;
     CheckBox lunes, martes, miercoles, jueves, viernes, sabado, domingo;
 
     public View onCreateView(@NonNull LayoutInflater inflater,
@@ -99,10 +99,9 @@ public class AddActivity extends Fragment {
                 llenadodias.clear();
                 validar();
                 for(int i = 0; i < llenadodias.size(); i++){
+                    Toast.makeText(getContext(), llenadodias.get(i).toString(), Toast.LENGTH_SHORT).show();
                     guardarCalendario("https://yotrabajoconpecs.ddns.net/saveCalendario.php", fechadesde.getText().toString(), fechahasta.getText().toString(), horadesde.getText().toString(), horahasta.getText().toString(), llenadodias.get(i).toString());
-                    descargarIdCalendario();
-                    Toast.makeText(getContext(), ultimoIdCalendario, Toast.LENGTH_SHORT).show();
-                    guardarTareaCalendario("https://yotrabajoconpecs.ddns.net/saveTareaCalendario.php", tareaSeleccionada, ultimoIdCalendario);
+                    guardarTareaCalendario("https://yotrabajoconpecs.ddns.net/saveTareaCalendario.php", tareaSeleccionada);
                 }
                 fechadesde.setText("");
                 fechahasta.setText("");
@@ -140,7 +139,7 @@ public class AddActivity extends Fragment {
         requestQueue.add(stringRequest);
     }
 
-    private void guardarTareaCalendario(String URL, String tarea, String calendario){
+    private void guardarTareaCalendario(String URL, String tarea){
         StringRequest stringRequest = new StringRequest(Request.Method.POST, URL, new Response.Listener<String>() {
             @Override
             public void onResponse(String response) { }
@@ -153,7 +152,7 @@ public class AddActivity extends Fragment {
             @Override
             protected Map<String, String> getParams() throws AuthFailureError {
                 Map<String,String> parametros = new HashMap<String,String>();
-                parametros.put("calendario_id_calendario", calendario);
+                parametros.put("calendario_id_calendario", "");
                 parametros.put("tarea_id_tarea", tarea);
                 return parametros;
             }
@@ -261,58 +260,29 @@ public class AddActivity extends Fragment {
         });
     }
 
-    private void descargarIdCalendario(){
-        idCalendario.clear();
-        final ProgressDialog progressDialog = new ProgressDialog(getActivity());
-        AsyncHttpClient client = new AsyncHttpClient();
-        client.get("https://yotrabajoconpecs.ddns.net/ultimoIdCalendario.php", new AsyncHttpResponseHandler() {
-            @RequiresApi(api = Build.VERSION_CODES.M)
-            @Override
-            public void onSuccess(int statusCode, Header[] headers, byte[] responseBody) {
-                if(statusCode == 200){
-                    progressDialog.dismiss();
-                    try{
-                        JSONArray jsonarray = new JSONArray(new String(responseBody));
-                        for(int i = 0; i < jsonarray.length(); i++){
-                            idCalendario.add(jsonarray.getJSONObject(i).getString("id_calendario"));
-                        }
-                        ultimoIdCalendario = idCalendario.get(idCalendario.size()-1).toString();
-                        int ultimoIntCalendario = Integer.parseInt(ultimoIdCalendario);
-                        ultimoIntCalendario++;
-                        ultimoIdCalendario = ultimoIntCalendario + "";
-                    }catch(JSONException e){
-                        e.printStackTrace();
-                    }
-                }
-            }
-
-            @Override
-            public void onFailure(int statusCode, Header[] headers, byte[] responseBody, Throwable error) {
-                Context context = getContext();
-                CharSequence text = "Conexión fallida";
-                int duration = Toast.LENGTH_SHORT;
-                Toast toast = Toast.makeText(context, text, duration);
-                toast.show();
-            }
-        });
-    }
-
     private void validar() {
         if (lunes.isChecked() == true) {
             llenadodias.add("lunes");
-        }else if (martes.isChecked() == true) {
+        }
+        if (martes.isChecked() == true) {
             llenadodias.add("martes");
-        }else if (lunes.isChecked() == true) {
+        }
+        if (miercoles.isChecked() == true) {
             llenadodias.add("miercoles");
-        }else if (lunes.isChecked() == true) {
+        }
+        if (jueves.isChecked() == true) {
             llenadodias.add("jueves");
-        }else if (lunes.isChecked() == true) {
+        }
+        if (viernes.isChecked() == true) {
             llenadodias.add("viernes");
-        }else if (lunes.isChecked() == true) {
+        }
+        if (sabado.isChecked() == true) {
             llenadodias.add("sabado");
-        }else if (domingo.isChecked() == true) {
+        }
+        if (domingo.isChecked() == true) {
             llenadodias.add("lunes");
-        } else {
+        }
+        if ((lunes.isChecked() == false) && (martes.isChecked() == false) && (miercoles.isChecked() == false) && (jueves.isChecked() == false) && (viernes.isChecked() == false) && (sabado.isChecked() == false) && (domingo.isChecked() == false)){
             Toast.makeText(getContext(), "No se han seleccionado dias", Toast.LENGTH_SHORT).show();
         }
     }

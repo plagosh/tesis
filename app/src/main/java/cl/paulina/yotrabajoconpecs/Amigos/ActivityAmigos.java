@@ -1,5 +1,8 @@
 package cl.paulina.yotrabajoconpecs.Amigos;
 
+import android.content.BroadcastReceiver;
+import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -29,9 +32,12 @@ import java.util.List;
 import cl.paulina.yotrabajoconpecs.R;
 
 public class ActivityAmigos extends Fragment {
+    public static final String MENSAJE = "MENSAJE";
     private RecyclerView rv;
+    private BroadcastReceiver bR;
     private List<AmigosAtributos> atributosList;
     private AmigosAdapter adapter;
+    public String mensaje, emisor, horaParametros[];
     private static final String URL_GET_ALL_USUARIOS = "https://yotrabajoconpecs.ddns.net/Amigos_GETALL.php";
 
     public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
@@ -47,6 +53,7 @@ public class ActivityAmigos extends Fragment {
         rv.setAdapter(adapter);
 
         SolicitudJSON();
+
         return vista;
     }
 
@@ -71,7 +78,16 @@ public class ActivityAmigos extends Fragment {
                     for(int i = 0; i < jsonarray.length(); i++){
                         JSONObject js = jsonarray.getJSONObject(i);
                         String nombreCompleto = js.getString("nombre_usuario") + " " + js.getString("apellido_usuario");
-                        agregarAmigos(R.drawable.ic_baseline_supervised_user_circle_24, nombreCompleto, "mensaje" + i, "00:00", js.getString("correo"));
+                        bR = new BroadcastReceiver() {
+                            @Override
+                            public void onReceive(Context context, Intent intent) {
+                                mensaje = intent.getStringExtra("key_mensaje");
+                                String hora = intent.getStringExtra("key_hora");
+                                horaParametros = hora.split("\\,");
+                                emisor = intent.getStringExtra("key_emisor_PHP");
+                            }
+                        };
+                        agregarAmigos(R.drawable.ic_baseline_supervised_user_circle_24, nombreCompleto, mensaje, horaParametros[0], js.getString("correo"));
                     }
                 } catch (JSONException e) {
                     Toast.makeText(getContext(), "Ocurrió un error al descomponer el JSON", Toast.LENGTH_SHORT).show();

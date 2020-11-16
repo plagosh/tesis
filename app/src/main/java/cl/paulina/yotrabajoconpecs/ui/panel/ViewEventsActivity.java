@@ -72,11 +72,11 @@ public class ViewEventsActivity extends Fragment implements View.OnLongClickList
         dia = mes = anio = 0;
         dia = bundle.getInt("key_dia");
         mes = bundle.getInt("key_mes");
-        anio = bundle.getInt("key_anio");
+        anio = bundle.getInt("key_año");
         fecha = anio + "-" + mes + "-" + dia;
-
         listView.setOnLongClickListener(this);
         descargarPDC();
+        descargarDatosCalendario("https://yotrabajoconpecs.ddns.net/queryVerTarea.php?fecha=" + fecha);
         return vista;
     }
 
@@ -84,9 +84,9 @@ public class ViewEventsActivity extends Fragment implements View.OnLongClickList
     public boolean onLongClick(View v) {
         AlertDialog.Builder builder = new AlertDialog.Builder(getContext());
         CharSequence []items = new CharSequence[2];
-        items[0] = "Eliminar evento";
+        items[0] = "Eliminar tarea";
         items[1] = "Cancelar";
-        builder.setTitle("Eliminar evento").setItems(items, new DialogInterface.OnClickListener() {
+        builder.setTitle("Eliminar tarea").setItems(items, new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialog, int which) {
                 if(which == 0){
@@ -128,7 +128,6 @@ public class ViewEventsActivity extends Fragment implements View.OnLongClickList
                             @Override
                             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
                                 String nombreUsuario = (String) spinnerPDC.getAdapter().getItem(position);
-                                descargarDatosCalendario();
                             }
                             @Override
                             public void onNothingSelected(AdapterView<?> parent) {
@@ -152,7 +151,7 @@ public class ViewEventsActivity extends Fragment implements View.OnLongClickList
         });
     }
 
-    private void descargarDatosCalendario(){
+    private void descargarDatosCalendario(String URL){
         idCalendario.clear();
         fechaInicio.clear();
         fechaTermino.clear();
@@ -162,7 +161,7 @@ public class ViewEventsActivity extends Fragment implements View.OnLongClickList
         nombreTarea.clear();
         final ProgressDialog progressDialog = new ProgressDialog(getActivity());
         AsyncHttpClient client = new AsyncHttpClient();
-        client.get("https://yotrabajoconpecs.ddns.net/queryVerTarea.php", new AsyncHttpResponseHandler() {
+        client.get(URL, new AsyncHttpResponseHandler() {
             @RequiresApi(api = Build.VERSION_CODES.M)
             @Override
             public void onSuccess(int statusCode, Header[] headers, byte[] responseBody) {
@@ -231,7 +230,6 @@ public class ViewEventsActivity extends Fragment implements View.OnLongClickList
             Date fechaInicioDate = ParseFecha(fechaInicio.get(position).toString());
             Date fechaTerminoDate = ParseFecha(fechaTermino.get(position).toString());
             Toast.makeText(getContext(), fechaDate.toString(), Toast.LENGTH_SHORT).show();*/
-            Toast.makeText(getContext(), "entre al if", Toast.LENGTH_SHORT).show();
             tvtarea.setText(nombreTarea.get(position).toString());
             tvfechainicio.setText(fechaInicio.get(position).toString());
             tvfechatermino.setText(fechaTermino.get(position).toString());

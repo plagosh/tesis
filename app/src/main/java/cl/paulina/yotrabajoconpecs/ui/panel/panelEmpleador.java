@@ -55,9 +55,6 @@ public class panelEmpleador extends Fragment implements CalendarView.OnDateChang
                     //agregar evento
                     Fragment fragment = new AddActivity();
                     Bundle bundle = new Bundle();
-                    bundle.putInt("dia",dia);
-                    bundle.putInt("mes",mes);
-                    bundle.putInt("año",anio);
                     bundle.putInt("key_dia", dia);
                     bundle.putInt("key_mes", mes);
                     bundle.putInt("key_anio", anio);
@@ -67,9 +64,9 @@ public class panelEmpleador extends Fragment implements CalendarView.OnDateChang
                     //ver eventos
                     Fragment fragment = new ViewEventsActivity();
                     Bundle bundle = new Bundle();
-                    bundle.putInt("dia",dia);
-                    bundle.putInt("mes",mes);
-                    bundle.putInt("año",anio);
+                    bundle.putInt("key_dia", dia);
+                    bundle.putInt("key_mes", mes);
+                    bundle.putInt("key_año", anio);
                     fragment.setArguments(bundle);
                     cambiarFragmento(fragment);
                 }else{

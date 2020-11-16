@@ -14,13 +14,11 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.LinearLayout;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.RequiresApi;
 import androidx.fragment.app.Fragment;
-import androidx.fragment.app.FragmentTransaction;
 import androidx.localbroadcastmanager.content.LocalBroadcastManager;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -31,10 +29,6 @@ import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.JsonObjectRequest;
 import com.android.volley.toolbox.Volley;
-import com.google.android.material.bottomsheet.BottomSheetBehavior;
-import com.google.android.material.bottomsheet.BottomSheetDialog;
-import com.google.firebase.iid.FirebaseInstanceId;
-import com.google.firebase.iid.FirebaseInstanceIdService;
 import com.loopj.android.http.AsyncHttpClient;
 import com.loopj.android.http.AsyncHttpResponseHandler;
 
@@ -43,16 +37,11 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
 
-import cl.paulina.yotrabajoconpecs.Login;
-import cl.paulina.yotrabajoconpecs.Preferences;
 import cl.paulina.yotrabajoconpecs.R;
-import cl.paulina.yotrabajoconpecs.ServicioAPI.FireBaseId;
-import cl.paulina.yotrabajoconpecs.menu_lateral;
-import cl.paulina.yotrabajoconpecs.ui.busqueda_pictograma_pdc.ExampleBottomSheetDialog;
-import cl.paulina.yotrabajoconpecs.ui.busqueda_pictograma_pdc.busquedaPictogramapdcFragment;
 import cz.msebera.android.httpclient.Header;
 
 public class Mensajeria extends Fragment {
@@ -122,8 +111,14 @@ public class Mensajeria extends Fragment {
                 String mensaje = eTEscribirMensaje.getText().toString().trim();
                 if (!mensaje.isEmpty()) {
                     MENSAJE_ENVIAR = mensaje;
+
+                    Date dt = new Date();
+                    int hours = dt.getHours();
+                    int minutes = dt.getMinutes();
+                    String curTime = hours + ":" + minutes;
+
                     MandarMensaje();
-                    CreateMensaje(mensaje, "00:00", 1);
+                    CreateMensaje(mensaje, curTime, 1);
                     eTEscribirMensaje.setText("");
                 }
             }
