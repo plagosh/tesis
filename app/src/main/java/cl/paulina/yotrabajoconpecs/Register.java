@@ -46,12 +46,12 @@ import java.util.Map;
 import cz.msebera.android.httpclient.Header;
 
 public class Register extends AppCompatActivity {
-    EditText firstNameRegister, lastNameRegister,emailRegister,passwordRegister, jefaturaRegister, fecha, cargoRegister;
+    private EditText firstNameRegister, lastNameRegister,emailRegister,passwordRegister, jefaturaRegister, fecha, cargoRegister;
     ProgressBar progressRegister;
     Spinner myspinner, spinnerjefatura;
     DatePickerDialog.OnDateSetListener setListener;
-    Calendar c;
-    ArrayList idusuario, nombreusuario, apellidousuario, jefatura;
+    private Calendar c;
+    private ArrayList idusuario, nombreusuario, apellidousuario, jefatura;
     public int ultimo;
     public String jefaturafinal = "";
     public String edad = "";
