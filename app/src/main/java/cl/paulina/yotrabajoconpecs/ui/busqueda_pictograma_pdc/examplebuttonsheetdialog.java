@@ -1,5 +1,5 @@
 package cl.paulina.yotrabajoconpecs.ui.busqueda_pictograma_pdc;
-// aqui estuve yo 2 asdasdasdasd
+// aqui estuve yo 2 asdasdasdasdadasdasdas
 import android.annotation.SuppressLint;
 import android.app.Dialog;
 import android.app.ProgressDialog;
