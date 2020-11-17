@@ -141,7 +141,7 @@ public class busquedaPictogramapdc2Fragment extends Fragment {
                     Fragment fragmento = new libroPDC();
                     datos.putString("url_sust", url.get(position).toString());
                     datos.putString("nombre_imagen_sust", nombre_imagen.get(position).toString());
-                    fragment.setArguments(datos);
+                    fragmento.setArguments(datos);
                     cambiarFragmento(fragmento);
                 }
             });

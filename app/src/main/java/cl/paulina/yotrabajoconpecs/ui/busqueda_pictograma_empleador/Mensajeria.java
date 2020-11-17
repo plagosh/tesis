@@ -158,7 +158,7 @@ public class Mensajeria extends Fragment {
             @Override
             public void onResponse(JSONObject response) {
                 try {
-                    Toast.makeText(getContext(), "Se ha iniciado sesión: " + response.getString("resultado"), Toast.LENGTH_SHORT).show();
+                    Toast.makeText(getContext(), response.getString("resultado"), Toast.LENGTH_SHORT).show();
                 } catch (JSONException e) {
                 }
             }

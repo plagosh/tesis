@@ -19,6 +19,7 @@ import androidx.annotation.NonNull;
 import androidx.annotation.RequiresApi;
 import androidx.coordinatorlayout.widget.CoordinatorLayout;
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentTransaction;
 
 import com.google.android.material.bottomsheet.BottomSheetBehavior;
 import com.google.android.material.bottomsheet.BottomSheetDialogFragment;
@@ -32,6 +33,7 @@ import org.json.JSONException;
 import java.util.ArrayList;
 
 import cl.paulina.yotrabajoconpecs.R;
+import cl.paulina.yotrabajoconpecs.ui.libro.libroPDC;
 import cz.msebera.android.httpclient.Header;
 
 public class examplebuttonsheetdialog extends BottomSheetDialogFragment {
@@ -41,9 +43,9 @@ public class examplebuttonsheetdialog extends BottomSheetDialogFragment {
     private ArrayList url;
     private ArrayList id_imagen;
     private ArrayList agregandoFrase;
+    private ArrayList glosa;
     public Fragment fragment;
     Bundle datos;
-    public int id = 1;
 
     @SuppressLint("RestrictedApi")
     @Override
@@ -59,7 +61,7 @@ public class examplebuttonsheetdialog extends BottomSheetDialogFragment {
         url = new ArrayList();
         agregandoFrase = new ArrayList();
         id_imagen = new ArrayList();
-        datos = new Bundle();
+        glosa = new ArrayList();
 
         descargarDatos();
 
@@ -108,12 +110,10 @@ public class examplebuttonsheetdialog extends BottomSheetDialogFragment {
     }
 
     private void descargarDatos(){
-        url.clear();
         id_frase.clear();
-        id_imagen.clear();
         final ProgressDialog progressDialog = new ProgressDialog(getActivity());
         AsyncHttpClient client = new AsyncHttpClient();
-        client.get("https://yotrabajoconpecs.ddns.net/query7.php", new AsyncHttpResponseHandler() {
+        client.get("https://yotrabajoconpecs.ddns.net/query_frase.php", new AsyncHttpResponseHandler() {
             @RequiresApi(api = Build.VERSION_CODES.M)
             @Override
             public void onSuccess(int statusCode, Header[] headers, byte[] responseBody) {
@@ -122,23 +122,16 @@ public class examplebuttonsheetdialog extends BottomSheetDialogFragment {
                     try{
                         JSONArray jsonarray = new JSONArray(new String(responseBody));
                         for(int i = 0; i < jsonarray.length(); i++){
-                            id_frase.add(jsonarray.getJSONObject(i).getString("frase_detallefrase"));
-                            url.add(jsonarray.getJSONObject(i).getString("url"));
-                            id_imagen.add(jsonarray.getJSONObject(i).getString("imagen_id_imagen"));
+                            id_frase.add(jsonarray.getJSONObject(i).getString("url"));
                         }gridView.setAdapter(new CustomAdapter(getContext()));
                     }catch(JSONException e){
                         e.printStackTrace();
                     }
                 }
             }
-
             @Override
             public void onFailure(int statusCode, Header[] headers, byte[] responseBody, Throwable error) {
-                Context context = getContext();
-                CharSequence text = "Conexión fallida";
-                int duration = Toast.LENGTH_SHORT;
-                Toast toast = Toast.makeText(context, text, duration);
-                toast.show();
+                Toast.makeText(getContext(), "Conexión fallida", Toast.LENGTH_SHORT).show();
             }
         });
     }
@@ -173,48 +166,36 @@ public class examplebuttonsheetdialog extends BottomSheetDialogFragment {
         public View getView(int position, View convertView, ViewGroup parent){
             ViewGroup viewGroup = (ViewGroup) layoutInflater.inflate(R.layout.list_view_frase, null);
             TvImagenButton = (LinearLayout) viewGroup.findViewById(R.id.tv_imagen_frase);
-            agregandoFrase.clear();
-            String postitionGrid = id_frase.get(position).toString();
-            int ultimo = id_frase.size();
-            String anterior = id_frase.get(position-1).toString();
-            String actual = id_frase.get(position).toString();
-            int anteriornum = Integer.parseInt(anterior);
-            if(anteriornum != ultimo){
-                if(!anterior.equals(actual)){
-                    for(int i = 0; i < url.size(); i++) {
-                        String recorrido = id_frase.get(i).toString();
-                        if(recorrido.equals(postitionGrid)) {
-                            agregandoFrase.add(id_imagen.get(i).toString());
-                            ImageButton imagen = new ImageButton(getContext());
-                            imagen.setBackgroundResource(R.drawable.boton_rectangulo);
-                            imagen.setLayoutParams(new LinearLayout.LayoutParams(130, 130));
-                            imagen.setScaleType(ImageButton.ScaleType.FIT_CENTER);
-                            Picasso.get().load("https://yotrabajoconpecs.ddns.net/" + url.get(i).toString()).into(imagen);
-                            TvImagenButton.addView(imagen);
-                        }
-                    }
-                }
-            }else{
+
+            String frase = id_frase.get(position).toString();
+            String split[] = frase.split(" ");
+            for(int i = 0; i < split.length; i++) {
                 ImageButton imagen = new ImageButton(getContext());
                 imagen.setBackgroundResource(R.drawable.boton_rectangulo);
-                imagen.setLayoutParams(new LinearLayout.LayoutParams(130, 130));
+                imagen.setLayoutParams(new LinearLayout.LayoutParams(300, 300));
                 imagen.setScaleType(ImageButton.ScaleType.FIT_CENTER);
-                Picasso.get().load("https://yotrabajoconpecs.ddns.net/" + url.get(position).toString()).into(imagen);
+                Picasso.get().load("https://yotrabajoconpecs.ddns.net/" + split[i]).into(imagen);
                 TvImagenButton.addView(imagen);
             }
-            id++;
             TvImagenButton.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    datos.putString("url_", id_imagen.get(position).toString());
-                    Toast.makeText(getContext(), id_imagen.get(position).toString(), Toast.LENGTH_SHORT).show();
-                    for(int j = 0; j < agregandoFrase.size(); j++){
-                        datos.putString("url_" + j, agregandoFrase.get(j).toString());
-                    }
-                    //fragment.setArguments(datos);
+                    Fragment fragmento = new libroPDC();
+                    datos = new Bundle();
+                    datos.putString("url_frase", id_frase.get(position).toString());
+                    Toast.makeText(getContext(), id_frase.get(position).toString(), Toast.LENGTH_SHORT).show();
+                    fragmento.setArguments(datos);
+                    cambiarFragmento(fragmento);
                 }
             });
             return viewGroup;
         }
+    }
+
+    public void cambiarFragmento(Fragment fragment){
+        FragmentTransaction transaction = getFragmentManager().beginTransaction();
+        transaction.replace(R.id.nav_host_fragment, fragment);
+        transaction.addToBackStack(null);
+        transaction.commit();
     }
 }

@@ -56,6 +56,7 @@ import cz.msebera.android.httpclient.Header;
 public class libroPDC extends Fragment {
     public static final String MENSAJE = "MENSAJE";
     private BroadcastReceiver bR;
+    Bundle recibir_frase;
     private RecyclerView rv;
     private List<MensajeDeTexto> mensajedetexto;
     private messageAdapter adapter;
@@ -66,6 +67,7 @@ public class libroPDC extends Fragment {
     private String RECEPTOR;
     public int sapo2 = 0;
     public int sapo3 = 0;
+    public String categoria_verbo;
     public String ultimaCategoria;
     public String nDatos, nDatitos, nDatotes, nURL, nURLita, nURLota, id;
     public ArrayList nombre_login, correo_login, pictos, url, urlita, urlota, categoria, categories, nombre, nombrecito, nombresote, botonuno, botondos, pos, menssage, urlQueryCero, nombreQueryCero, urls, celular;
@@ -114,13 +116,72 @@ public class libroPDC extends Fragment {
         nombreQueryCero = new ArrayList();
         urls = new ArrayList();
 
-        RECEPTOR = "1";
+        recibir_frase = getArguments();
+        Bundle recibir_verbo = getArguments();
+        Bundle recibir_sust = getArguments();
+        Bundle recibir_adj = getArguments();
 
-        Bundle recibir_verbo = new Bundle();
-        String url_verbo = recibir_verbo.getString("url_verbo");
-        String categoria_verbo = recibir_verbo.getString("categoria_imagen_verbo");
-        Toast.makeText(getContext(), categoria_verbo, Toast.LENGTH_SHORT).show();
-        Picasso.get().load("https://yotrabajoconpecs.ddns.net/" + url_verbo).into(imagen1);
+        RECEPTOR = "1";
+        /*
+        if(recibir_verbo != null) {
+            if (String.valueOf(recibir_verbo.getString("url_verbo")) != String.valueOf(0)) {
+                String url_verbo = recibir_verbo.getString("url_verbo");
+                categoria_verbo = recibir_verbo.getString("categoria_imagen_verbo");
+                Toast.makeText(getContext(), categoria_verbo, Toast.LENGTH_SHORT).show();
+                Picasso.get().load("https://yotrabajoconpecs.ddns.net/" + url_verbo).into(imagen1);
+            }
+            recibir_verbo.clear();
+        }
+
+        if(categoria_verbo != null){
+            if(categoria_verbo.equals("3")){
+                imagen2.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        Fragment fragment = new busquedaPictogramapdc2Fragment();
+                        cambiarFragmento(fragment);
+                    }
+                });
+            }else{
+                imagen2.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        Fragment fragment = new busquedaPictogramapdc3Fragment();
+                        cambiarFragmento(fragment);
+                    }
+                });
+            }
+        }
+
+        if(recibir_sust != null) {
+            if (String.valueOf(recibir_sust.getString("url_sust")) != String.valueOf(0)) {
+                String url_sust = recibir_sust.getString("url_sust");
+                Picasso.get().load("https://yotrabajoconpecs.ddns.net/" + url_sust).into(imagen2);
+            }
+            recibir_sust.clear();
+        }
+
+        if(recibir_adj != null) {
+            if (String.valueOf(recibir_adj.getString("url_adj")) != String.valueOf(0)) {
+                String url_adj = recibir_adj.getString("url_adj");
+                Picasso.get().load("https://yotrabajoconpecs.ddns.net/" + url_adj).into(imagen2);
+            }
+            recibir_adj.clear();
+        }
+        */
+        if(recibir_frase != null) {
+            Toast.makeText(getContext(), recibir_frase.getString("url_frase"), Toast.LENGTH_SHORT).show();
+            if (String.valueOf(recibir_frase.getString("url_frase")) != String.valueOf(0)) {
+                String url_frase = recibir_frase.getString("url_frase");
+                Date dt = new Date();
+                int hours = dt.getHours();
+                int minutes = dt.getMinutes();
+                String curTime = hours + ":" + minutes;
+                MandarMensaje();
+                CreateMensaje(url_frase, "mensaje por frase", curTime, 1);
+            }
+            recibir_frase.clear();
+        }
 
         bTEnviarFrase.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -249,6 +310,7 @@ public class libroPDC extends Fragment {
                 }
             }
         });
+        /*
         imagen1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -256,33 +318,7 @@ public class libroPDC extends Fragment {
                 cambiarFragmento(fragment);
             }
         });
-
-        if(categoria_verbo != null){
-            if(categoria_verbo.equals("3")){
-                imagen2.setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View v) {
-                        Fragment fragment = new busquedaPictogramapdc2Fragment();
-                        cambiarFragmento(fragment);
-                    }
-                });
-                Bundle recibir_sust = new Bundle();
-                String url_sust = recibir_sust.getString("url_sust");
-                Picasso.get().load("https://yotrabajoconpecs.ddns.net/" + url_sust).into(imagen2);
-            }else{
-                imagen2.setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View v) {
-                        Fragment fragment = new busquedaPictogramapdc3Fragment();
-                        cambiarFragmento(fragment);
-                    }
-                });
-                Bundle recibir_adj = new Bundle();
-                String url_adj = recibir_adj.getString("url_adj");
-                Picasso.get().load("https://yotrabajoconpecs.ddns.net/" + url_adj).into(imagen2);
-            }
-        }
-
+        */
         bTEnviarMensaje.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -342,7 +378,7 @@ public class libroPDC extends Fragment {
             @Override
             public void onResponse(JSONObject response) {
                 try {
-                    Toast.makeText(getContext(), "Se ha iniciado sesión: " + response.getString("resultado"), Toast.LENGTH_SHORT).show();
+                    Toast.makeText(getContext(), response.getString("resultado"), Toast.LENGTH_SHORT).show();
                 } catch (JSONException e) {
                 }
             }

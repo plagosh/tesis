@@ -95,7 +95,6 @@ public class AddActivity extends Fragment {
                 fechahasta.setText("");
                 horadesde.setText("");
                 horahasta.setText("");
-                Toast.makeText(getContext(), "Se ha asignado la tarea con éxito", Toast.LENGTH_SHORT).show();
             }
         });
 
@@ -130,7 +129,9 @@ public class AddActivity extends Fragment {
     private void guardarTareaCalendario(String URL, String tarea){
         StringRequest stringRequest = new StringRequest(Request.Method.POST, URL, new Response.Listener<String>() {
             @Override
-            public void onResponse(String response) { }
+            public void onResponse(String response) {
+                Toast.makeText(getContext(), "Se ha asignado la tarea con éxito", Toast.LENGTH_SHORT).show();
+            }
         }, new Response.ErrorListener(){
             @Override
             public void onErrorResponse(VolleyError error) {
@@ -140,7 +141,6 @@ public class AddActivity extends Fragment {
             @Override
             protected Map<String, String> getParams() throws AuthFailureError {
                 Map<String,String> parametros = new HashMap<String,String>();
-                parametros.put("calendario_id_calendario", "");
                 parametros.put("tarea_id_tarea", tarea);
                 return parametros;
             }
