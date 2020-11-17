@@ -172,7 +172,7 @@ public class examplebuttonsheetdialog extends BottomSheetDialogFragment {
             for(int i = 0; i < split.length; i++) {
                 ImageButton imagen = new ImageButton(getContext());
                 imagen.setBackgroundResource(R.drawable.boton_rectangulo);
-                imagen.setLayoutParams(new LinearLayout.LayoutParams(300, 300));
+                imagen.setLayoutParams(new LinearLayout.LayoutParams(130, 130));
                 imagen.setScaleType(ImageButton.ScaleType.FIT_CENTER);
                 Picasso.get().load("https://yotrabajoconpecs.ddns.net/" + split[i]).into(imagen);
                 TvImagenButton.addView(imagen);
@@ -183,7 +183,6 @@ public class examplebuttonsheetdialog extends BottomSheetDialogFragment {
                     Fragment fragmento = new libroPDC();
                     datos = new Bundle();
                     datos.putString("url_frase", id_frase.get(position).toString());
-                    Toast.makeText(getContext(), id_frase.get(position).toString(), Toast.LENGTH_SHORT).show();
                     fragmento.setArguments(datos);
                     cambiarFragmento(fragmento);
                 }

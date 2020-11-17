@@ -54,20 +54,11 @@ public class FireBaseServiceMensajes extends FirebaseMessagingService {
             if (emisor.equals(uno)) {
                 MensajeEmpleador(mensaje, hora, emisorPHP);
                 showNotificationEmpleador(cabecera, cuerpo);
-                actualizacion(mensaje, hora, emisorPHP);
             } else {
                 MensajePDC(mensaje, hora, emisorPHP, url);
                 showNotificationPDC(cabecera, cuerpo);
             }
         }
-    }
-
-    private void actualizacion(String mensaje, String hora, String emisor){
-        Intent i = new Intent(ActivityAmigos.MENSAJE);
-        i.putExtra("key_mensaje",  mensaje);
-        i.putExtra("key_hora",  hora);
-        i.putExtra("key_emisor_PHP",  emisor);
-        LocalBroadcastManager.getInstance(getApplicationContext()).sendBroadcast(i);
     }
 
     private void MensajeEmpleador(String mensaje, String hora, String emisor){

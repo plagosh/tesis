@@ -128,7 +128,6 @@ public class Mensajeria extends Fragment {
             @Override
             public void onReceive(Context context, Intent intent) {
                 String mensaje = intent.getStringExtra("key_mensaje");
-                Toast.makeText(getContext(), "Se ha iniciado sesión: ", Toast.LENGTH_SHORT).show();
                 String hora = intent.getStringExtra("key_hora");
                 String horaParametros[] = hora.split("\\,");
                 String emisor = intent.getStringExtra("key_emisor_PHP");
