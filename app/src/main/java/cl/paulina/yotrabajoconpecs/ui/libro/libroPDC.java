@@ -87,7 +87,6 @@ public class libroPDC extends Fragment {
         abajo1 = vista.findViewById(R.id.AbajoButtonUno);
         abajo2 = vista.findViewById(R.id.AbajoButton2);
         bTEnviarFrase = vista.findViewById(R.id.bTEnviarFrase);
-
         datos = new Bundle();
         mensajedetexto = new ArrayList<>();
         nombre_login = new ArrayList();
@@ -118,6 +117,7 @@ public class libroPDC extends Fragment {
 
         recibir_frase = getArguments();
         Bundle recibir_verbo = getArguments();
+        Bundle recibir_glosa = getArguments();
         Bundle recibir_sust = getArguments();
         Bundle recibir_adj = getArguments();
 
@@ -169,31 +169,12 @@ public class libroPDC extends Fragment {
             recibir_adj.clear();
         }
         */
-        if(recibir_frase != null) {
-            Toast.makeText(getContext(), recibir_frase.getString("url_frase"), Toast.LENGTH_SHORT).show();
-            if (String.valueOf(recibir_frase.getString("url_frase")) != String.valueOf(0)) {
-                String url_frase = recibir_frase.getString("url_frase");
-                Date dt = new Date();
-                int hours = dt.getHours();
-                int minutes = dt.getMinutes();
-                String curTime = hours + ":" + minutes;
-                MandarMensaje();
-                CreateMensaje(url_frase, "mensaje por frase", curTime, 1);
-            }
-            recibir_frase.clear();
-        }
 
         bTEnviarFrase.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 examplebuttonsheetdialog fragment = new examplebuttonsheetdialog();
                 fragment.show(getActivity().getSupportFragmentManager(), "TAG");
-                /*
-                Fragment fragment = new ExampleBottomSheetDialog();
-                FragmentTransaction transaction = getFragmentManager().beginTransaction();
-                transaction.replace(R.id.nav_host_fragment, fragment);
-                transaction.addToBackStack(null);
-                transaction.commit();*/
             }
         });
 
@@ -211,6 +192,22 @@ public class libroPDC extends Fragment {
         rv.setAdapter(adapter);
         bTEnviarMensaje = vista.findViewById(R.id.bTEnviarMensaje);
 
+        if(recibir_frase != null && recibir_glosa != null) {
+            if (String.valueOf(recibir_frase.getString("url_frase")) != String.valueOf(0)) {
+                if (String.valueOf(recibir_glosa.getString("glosa_frase")) != String.valueOf(0)) {
+                    String url_frase = recibir_frase.getString("url_frase");
+                    String glosa_frase = recibir_glosa.getString("glosa_frase");
+                    Date dt = new Date();
+                    int hours = dt.getHours();
+                    int minutes = dt.getMinutes();
+                    String curTime = hours + ":" + minutes;
+                    MENSAJE_ENVIAR = url_frase;
+                    MandarMensaje();
+                    CreateMensaje(MENSAJE_ENVIAR, glosa_frase, curTime, 1);
+                }
+            }
+            recibir_frase.clear();
+        }
 
         arriba1.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -339,7 +336,6 @@ public class libroPDC extends Fragment {
                 int hours = dt.getHours();
                 int minutes = dt.getMinutes();
                 String curTime = hours + ":" + minutes;
-
                 //para enviar el mensaje accedemos al método.
                 String mensaje = "yo quiero " + nDatos + " " + nMensaje;
                 String mensajedos = "repo/img/2617.png " + "repo/img/5441.png " + nURL + " " + nMURL;
@@ -394,6 +390,10 @@ public class libroPDC extends Fragment {
 
     public void CreateMensaje(String id, String mensaje, String hora, int tipoDeMensaje) {
         MensajeDeTexto mensajeDeTextoAuxiliar = new MensajeDeTexto();
+        Toast.makeText(getContext(), id, Toast.LENGTH_SHORT).show();
+        Toast.makeText(getContext(), mensaje, Toast.LENGTH_SHORT).show();
+        Toast.makeText(getContext(), hora, Toast.LENGTH_SHORT).show();
+        Toast.makeText(getContext(), tipoDeMensaje + "", Toast.LENGTH_SHORT).show();
         mensajeDeTextoAuxiliar.setId(id);
         mensajeDeTextoAuxiliar.setMensaje(mensaje);
         mensajeDeTextoAuxiliar.setTipoMensaje(tipoDeMensaje);
