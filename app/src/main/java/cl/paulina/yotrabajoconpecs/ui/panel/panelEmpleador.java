@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.CalendarView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -23,6 +24,7 @@ import cl.paulina.yotrabajoconpecs.ui.principal.panelPrincipalFragment;
 public class panelEmpleador extends Fragment implements CalendarView.OnDateChangeListener {
     public CalendarView calendarView;
     public TextView calendarText;
+    public Button stack;
     Long date;
 
     public View onCreateView(@NonNull LayoutInflater inflater,
@@ -30,7 +32,17 @@ public class panelEmpleador extends Fragment implements CalendarView.OnDateChang
         View vista = inflater.inflate(R.layout.empleador_2_1, container, false);
         calendarView = vista.findViewById(R.id.calendarView);
         calendarText = vista.findViewById(R.id.textViewCalendar);
+        stack = vista.findViewById(R.id.irastack);
         calendarView.setOnDateChangeListener(panelEmpleador.this);
+
+        stack.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Fragment fragment = new stackTareas();
+                cambiarFragmento(fragment);
+            }
+        });
+
         return vista;
     }
 
