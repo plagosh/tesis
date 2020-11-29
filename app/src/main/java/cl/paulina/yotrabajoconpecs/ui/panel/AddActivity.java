@@ -87,7 +87,6 @@ public class AddActivity extends Fragment {
                 llenadodias.clear();
                 validar();
                 for(int i = 0; i < llenadodias.size(); i++){
-                    Toast.makeText(getContext(), llenadodias.get(i).toString(), Toast.LENGTH_SHORT).show();
                     guardarCalendario("https://yotrabajoconpecs.ddns.net/saveCalendario.php", fechadesde.getText().toString(), fechahasta.getText().toString(), horadesde.getText().toString(), horahasta.getText().toString(), llenadodias.get(i).toString());
                     guardarTareaCalendario("https://yotrabajoconpecs.ddns.net/saveTareaCalendario.php", tareaSeleccionada);
                 }

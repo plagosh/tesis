@@ -70,7 +70,7 @@ public class libroPDC extends Fragment {
     public String categoria_verbo;
     public String ultimaCategoria;
     public String nDatos, nDatitos, nDatotes, nURL, nURLita, nURLota, id;
-    public ArrayList nombre_login, correo_login, pictos, url, urlita, urlota, categoria, categories, nombre, nombrecito, nombresote, botonuno, botondos, pos, menssage, urlQueryCero, nombreQueryCero, urls, celular;
+    public ArrayList nombre_login, correo_login, pictos, url, urlita, urlota, categoria, categories, nombre, nombrecito, nombresote, botonuno, botondos, pos, menssage, urlQueryCero, urls, celular;
     private static final String IP_MENSAJE = "https://yotrabajoconpecs.ddns.net/Enviar_Mensajes.php";
     ImageButton imagen1, imagen2, arriba1, arriba2, abajo1, abajo2;
     Bundle datos;
@@ -112,7 +112,6 @@ public class libroPDC extends Fragment {
         pos.add(0);
         menssage = new ArrayList();
         urlQueryCero = new ArrayList();
-        nombreQueryCero = new ArrayList();
         urls = new ArrayList();
 
         recibir_frase = getArguments();
@@ -179,12 +178,6 @@ public class libroPDC extends Fragment {
         });
 
         descargar();
-        //todos
-        descargarDatos();
-        //sustantivos
-        descargarDatitos();
-        //adjetivos
-        descargarDatotes();
 
         LinearLayoutManager lm = new LinearLayoutManager(getContext());
         rv.setLayoutManager(lm);
@@ -201,28 +194,40 @@ public class libroPDC extends Fragment {
                     int hours = dt.getHours();
                     int minutes = dt.getMinutes();
                     String curTime = hours + ":" + minutes;
-                    MENSAJE_ENVIAR = url_frase;
+                    MENSAJE_ENVIAR = glosa_frase;
+                    EMISOR = "Maximiliano Ramirez Henriquez";
+                    NOMBRE = "marce36";
                     MandarMensaje();
-                    CreateMensaje(MENSAJE_ENVIAR, glosa_frase, curTime, 1);
+                    CreateMensaje(url_frase, MENSAJE_ENVIAR, curTime, 1);
                 }
             }
             recibir_frase.clear();
         }
+        //todos
+        descargarDatos();
+        //sustantivos
+        descargarDatitos();
+        //adjetivos
+        descargarDatotes();
 
         arriba1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 abajo1.setVisibility(View.VISIBLE);
                 arriba2.setVisibility(View.VISIBLE);
-                sapo2++;
                 imagen1.setBackgroundResource(R.drawable.boton_rectangulo);
-                Picasso.get().load("https://yotrabajoconpecs.ddns.net/" + url.get(sapo2)).into(imagen1);
+                //Toast.makeText(getContext(), sapo2 + "", Toast.LENGTH_SHORT).show();
+                //Toast.makeText(getContext(), url.get(sapo2).toString(), Toast.LENGTH_SHORT).show();
+                String url_rescatada = url.get(sapo2).toString();
+                Picasso.get().load("https://yotrabajoconpecs.ddns.net/" + url_rescatada).into(imagen1);
                 //imagen1.setStroke(8, getResources().getColor(R.color.colorWhite));
                 nDatos = nombre.get(sapo2).toString();
                 nURL = url.get(sapo2).toString();
                 //Toast.makeText(getContext(), nDatos, Toast.LENGTH_SHORT).show();
                 imagen1.setScaleType(ImageButton.ScaleType.FIT_CENTER);
                 botonuno.add(categoria.get(sapo2));
+                //Toast.makeText(getContext(), sapo2 + "", Toast.LENGTH_SHORT).show();
+                sapo2++;
                 String consulta = "INSERT INTO `automata` (`idautomata`, `fecha`, `categoria`) VALUES (NULL, current_timestamp(), '" + categoria.get(sapo2).toString() + "');";
                 ejecutarservicio("https://yotrabajoconpecs.ddns.net/save.php", consulta);
             }
@@ -233,7 +238,7 @@ public class libroPDC extends Fragment {
                 if(sapo2 > 0){
                     sapo2--;
                     imagen1.setBackgroundResource(R.drawable.boton_rectangulo);
-                    Picasso.get().load("https://yotrabajoconpecs.ddns.net/" + url.get(sapo2)).into(imagen1);
+                    Picasso.get().load("https://yotrabajoconpecs.ddns.net/" + url.get(sapo2).toString()).into(imagen1);
                     nDatos = nombre.get(sapo2).toString();
                     nURL = url.get(sapo2).toString();
                     //Toast.makeText(getContext(), nDatos, Toast.LENGTH_SHORT).show();
@@ -254,7 +259,7 @@ public class libroPDC extends Fragment {
                 if(ultimaCategoria == "3") {
                     sapo3++;
                     imagen2.setBackgroundResource(R.drawable.boton_rectangulo);
-                    Picasso.get().load("https://yotrabajoconpecs.ddns.net/" + urlita.get(sapo3)).into(imagen2);
+                    Picasso.get().load("https://yotrabajoconpecs.ddns.net/" + urlita.get(sapo3).toString()).into(imagen2);
                     nDatitos = nombrecito.get(sapo3).toString();
                     nURLita = urlita.get(sapo3).toString();
                     //Toast.makeText(getContext(), nDatitos, Toast.LENGTH_SHORT).show();
@@ -264,7 +269,7 @@ public class libroPDC extends Fragment {
                 }else{
                     sapo3++;
                     imagen2.setBackgroundResource(R.drawable.boton_rectangulo);
-                    Picasso.get().load("https://yotrabajoconpecs.ddns.net/" + urlota.get(sapo3)).into(imagen2);
+                    Picasso.get().load("https://yotrabajoconpecs.ddns.net/" + urlota.get(sapo3).toString()).into(imagen2);
                     nDatotes = nombresote.get(sapo3).toString();
                     nURLota = urlota.get(sapo3).toString();
                     //Toast.makeText(getContext(), nDatotes, Toast.LENGTH_SHORT).show();
@@ -282,7 +287,7 @@ public class libroPDC extends Fragment {
                     if(sapo3 > 0){
                         sapo3--;
                         imagen2.setBackgroundResource(R.drawable.boton_rectangulo);
-                        Picasso.get().load("https://yotrabajoconpecs.ddns.net/" + urlita.get(sapo3)).into(imagen2);
+                        Picasso.get().load("https://yotrabajoconpecs.ddns.net/" + urlita.get(sapo3).toString()).into(imagen2);
                         nDatitos = nombrecito.get(sapo3).toString();
                         nURLita = urlita.get(sapo3).toString();
                         //Toast.makeText(getContext(), nDatitos, Toast.LENGTH_SHORT).show();
@@ -294,7 +299,7 @@ public class libroPDC extends Fragment {
                 }else{
                     if(sapo3 > 0){
                         imagen2.setBackgroundResource(R.drawable.boton_rectangulo);
-                        Picasso.get().load("https://yotrabajoconpecs.ddns.net/" + urlota.get(sapo3)).into(imagen2);
+                        Picasso.get().load("https://yotrabajoconpecs.ddns.net/" + urlota.get(sapo3).toString()).into(imagen2);
                         nDatotes = nombresote.get(sapo3).toString();
                         nURLota = urlota.get(sapo3).toString();
                         //Toast.makeText(getContext(), nDatotes, Toast.LENGTH_SHORT).show();
@@ -320,7 +325,6 @@ public class libroPDC extends Fragment {
             @Override
             public void onClick(View v) {
                 //sustantivo y 3 es un verbo
-                nombreQueryCero.clear();
                 celular.clear();
                 String nMensaje;
                 String nMURL;
@@ -369,6 +373,7 @@ public class libroPDC extends Fragment {
         hashMapToken.put("nombrecompleto", NOMBRE);
         hashMapToken.put("receptor", RECEPTOR);
         hashMapToken.put("mensaje", MENSAJE_ENVIAR);
+        Toast.makeText(getContext(), EMISOR + NOMBRE + RECEPTOR + MENSAJE_ENVIAR + "" + IP_MENSAJE, Toast.LENGTH_SHORT).show();
 
         JsonObjectRequest solicitud = new JsonObjectRequest(Request.Method.POST, IP_MENSAJE, new JSONObject(hashMapToken), new Response.Listener<JSONObject>() {
             @Override
@@ -390,10 +395,6 @@ public class libroPDC extends Fragment {
 
     public void CreateMensaje(String id, String mensaje, String hora, int tipoDeMensaje) {
         MensajeDeTexto mensajeDeTextoAuxiliar = new MensajeDeTexto();
-        Toast.makeText(getContext(), id, Toast.LENGTH_SHORT).show();
-        Toast.makeText(getContext(), mensaje, Toast.LENGTH_SHORT).show();
-        Toast.makeText(getContext(), hora, Toast.LENGTH_SHORT).show();
-        Toast.makeText(getContext(), tipoDeMensaje + "", Toast.LENGTH_SHORT).show();
         mensajeDeTextoAuxiliar.setId(id);
         mensajeDeTextoAuxiliar.setMensaje(mensaje);
         mensajeDeTextoAuxiliar.setTipoMensaje(tipoDeMensaje);

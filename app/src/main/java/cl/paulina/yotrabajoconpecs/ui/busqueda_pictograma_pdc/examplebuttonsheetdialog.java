@@ -62,7 +62,7 @@ public class examplebuttonsheetdialog extends BottomSheetDialogFragment {
         agregandoFrase = new ArrayList();
         id_imagen = new ArrayList();
         glosa = new ArrayList();
-        descargarGlosa();
+
         descargarDatos();
 
         CoordinatorLayout.LayoutParams params = (CoordinatorLayout.LayoutParams) ((View) view.getParent()).getLayoutParams();
@@ -204,6 +204,30 @@ public class examplebuttonsheetdialog extends BottomSheetDialogFragment {
                 Picasso.get().load("https://yotrabajoconpecs.ddns.net/" + split[i]).into(imagen);
                 TvImagenButton.addView(imagen);
             }
+            glosa.clear();
+            final ProgressDialog progressDialog = new ProgressDialog(getActivity());
+            AsyncHttpClient client = new AsyncHttpClient();
+            client.get("https://yotrabajoconpecs.ddns.net/query_frase2.php", new AsyncHttpResponseHandler() {
+                @RequiresApi(api = Build.VERSION_CODES.M)
+                @Override
+                public void onSuccess(int statusCode, Header[] headers, byte[] responseBody) {
+                    if(statusCode == 200){
+                        progressDialog.dismiss();
+                        try{
+                            JSONArray jsonarray = new JSONArray(new String(responseBody));
+                            for(int i = 0; i < jsonarray.length(); i++){
+                                glosa.add(jsonarray.getJSONObject(i).getString("glosa"));
+                            }
+                        }catch(JSONException e){
+                            e.printStackTrace();
+                        }
+                    }
+                }
+                @Override
+                public void onFailure(int statusCode, Header[] headers, byte[] responseBody, Throwable error) {
+                    Toast.makeText(getContext(), "Conexión fallida", Toast.LENGTH_SHORT).show();
+                }
+            });
             TvImagenButton.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
@@ -211,9 +235,8 @@ public class examplebuttonsheetdialog extends BottomSheetDialogFragment {
                     datos = new Bundle();
                     datos.putString("url_frase", id_frase.get(position).toString());
                     datos.putString("glosa_frase", glosa.get(position).toString());
-                    Toast.makeText(getContext(), glosa.get(position).toString(), Toast.LENGTH_SHORT).show();
                     fragmento.setArguments(datos);
-                    //cambiarFragmento(fragmento);
+                    cambiarFragmento(fragmento);
                 }
             });
             return viewGroup;

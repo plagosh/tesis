@@ -13,6 +13,7 @@
 
         <ImageView
             android:id="@+id/libro"
+            android:clickable="true"
             android:layout_width="200sp"
             android:layout_height="200sp"
             android:src="@drawable/bitmap1"
@@ -21,6 +22,7 @@
 
         <ImageView
             android:id="@+id/panel"
+            android:clickable="true"
             android:layout_width="200sp"
             android:layout_height="200sp"
             android:src="@drawable/bitmap2"

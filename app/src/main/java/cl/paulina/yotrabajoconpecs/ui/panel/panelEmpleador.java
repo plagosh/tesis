@@ -30,7 +30,7 @@ public class panelEmpleador extends Fragment implements CalendarView.OnDateChang
         View vista = inflater.inflate(R.layout.empleador_2_1, container, false);
         calendarView = vista.findViewById(R.id.calendarView);
         calendarText = vista.findViewById(R.id.textViewCalendar);
-        calendarView.setOnDateChangeListener(this);
+        calendarView.setOnDateChangeListener(panelEmpleador.this);
         return vista;
     }
 

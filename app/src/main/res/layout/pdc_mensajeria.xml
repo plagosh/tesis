@@ -63,6 +63,7 @@
                     android:src="@drawable/ic_baseline_arrow_drop_up_24"
                     android:layout_width="80sp"
                     android:layout_height="35sp"
+                    android:clickable="true"
                     android:layout_gravity="center"
                     android:scaleType="fitCenter"
                     android:background="@null" />
@@ -78,6 +79,7 @@
                     android:id="@+id/AbajoButtonUno"
                     android:layout_width="80sp"
                     android:layout_height="25sp"
+                    android:clickable="true"
                     android:visibility="invisible"
                     android:src="@drawable/ic_baseline_arrow_drop_down_24"
                     android:scaleType="fitCenter"
@@ -94,6 +96,7 @@
                     android:id="@+id/ArribaButtonDos"
                     android:layout_width="80sp"
                     android:layout_height="35sp"
+                    android:clickable="true"
                     android:src="@drawable/ic_baseline_arrow_drop_up_24"
                     android:scaleType="fitCenter"
                     android:visibility="invisible"
@@ -112,6 +115,7 @@
                     android:layout_height="25sp"
                     android:src="@drawable/ic_baseline_arrow_drop_down_24"
                     android:scaleType="fitCenter"
+                    android:clickable="true"
                     android:visibility="invisible"
                     android:background="@null" />
             </LinearLayout>

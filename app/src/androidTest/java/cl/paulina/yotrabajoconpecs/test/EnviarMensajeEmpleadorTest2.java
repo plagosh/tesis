@@ -13,6 +13,7 @@ import androidx.test.runner.AndroidJUnit4;
 import org.hamcrest.Description;
 import org.hamcrest.Matcher;
 import org.hamcrest.TypeSafeMatcher;
+import org.hamcrest.core.IsInstanceOf;
 import org.junit.Rule;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -22,22 +23,24 @@ import static androidx.test.espresso.Espresso.pressBack;
 import static androidx.test.espresso.action.ViewActions.click;
 import static androidx.test.espresso.action.ViewActions.closeSoftKeyboard;
 import static androidx.test.espresso.action.ViewActions.replaceText;
+import static androidx.test.espresso.assertion.ViewAssertions.matches;
 import static androidx.test.espresso.matcher.ViewMatchers.isDisplayed;
 import static androidx.test.espresso.matcher.ViewMatchers.withClassName;
 import static androidx.test.espresso.matcher.ViewMatchers.withId;
+import static androidx.test.espresso.matcher.ViewMatchers.withParent;
 import static androidx.test.espresso.matcher.ViewMatchers.withText;
 import static org.hamcrest.Matchers.allOf;
 import static org.hamcrest.Matchers.is;
 
 @LargeTest
 @RunWith(AndroidJUnit4.class)
-public class EnviarMensajeTest {
+public class EnviarMensajeEmpleadorTest2 {
 
     @Rule
     public ActivityTestRule<Login> mActivityTestRule = new ActivityTestRule<>(Login.class);
 
     @Test
-    public void enviarMensajeTest() {
+    public void enviarMensajeEmpleadorTest2() {
         // Added a sleep statement to match the app's execution delay.
         // The recommended way to handle such scenarios is to use Espresso idling resources:
         // https://google.github.io/android-testing-support-library/docs/espresso/idling-resource/index.html
@@ -66,8 +69,6 @@ public class EnviarMensajeTest {
                                 2),
                         isDisplayed()));
         appCompatEditText2.perform(replaceText("1"), closeSoftKeyboard());
-
-        pressBack();
 
         ViewInteraction appCompatButton = onView(
                 allOf(withId(R.id.button_login), withText("Ingresar"),
@@ -126,7 +127,7 @@ public class EnviarMensajeTest {
                                         1),
                                 0),
                         isDisplayed()));
-        appCompatEditText3.perform(replaceText("hola como estas ?"), closeSoftKeyboard());
+        appCompatEditText3.perform(replaceText("hola"), closeSoftKeyboard());
 
         ViewInteraction appCompatButton2 = onView(
                 allOf(withId(R.id.bTEnviarMensaje),
@@ -139,6 +140,13 @@ public class EnviarMensajeTest {
         appCompatButton2.perform(click());
 
         pressBack();
+
+        ViewInteraction linearLayout = onView(
+                allOf(withId(R.id.mensajeBG),
+                        withParent(allOf(withId(R.id.cvMensajes),
+                                withParent(IsInstanceOf.<View>instanceOf(android.widget.RelativeLayout.class)))),
+                        isDisplayed()));
+        linearLayout.check(matches(isDisplayed()));
     }
 
     private static Matcher<View> childAtPosition(

@@ -1,16 +1,20 @@
 package cl.paulina.yotrabajoconpecs.ServicioAPI;
 
 import android.app.Notification;
+import android.app.NotificationChannel;
 import android.app.NotificationManager;
 import android.app.PendingIntent;
+import android.content.ContentResolver;
 import android.content.Context;
 import android.content.Intent;
 import android.media.RingtoneManager;
 import android.net.ConnectivityManager;
 import android.net.Uri;
+import android.os.Build;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
+import androidx.annotation.RequiresApi;
 import androidx.core.app.NotificationCompat.Builder;
 import androidx.localbroadcastmanager.content.LocalBroadcastManager;
 
@@ -37,6 +41,7 @@ import cl.paulina.yotrabajoconpecs.ui.busqueda_pictograma_empleador.Mensajeria;
 import cl.paulina.yotrabajoconpecs.ui.libro.libroPDC;
 
 public class FireBaseServiceMensajes extends FirebaseMessagingService {
+    @RequiresApi(api = Build.VERSION_CODES.O)
     @Override
     public void onMessageReceived(@NonNull RemoteMessage remoteMessage) {
         super.onMessageReceived(remoteMessage);
@@ -78,46 +83,58 @@ public class FireBaseServiceMensajes extends FirebaseMessagingService {
         LocalBroadcastManager.getInstance(getApplicationContext()).sendBroadcast(i);
     }
 
+    @RequiresApi(api = Build.VERSION_CODES.O)
     private void showNotificationEmpleador(String cabecera, String cuerpo){
         Intent i = new Intent(this, Mensajeria.class);
         PendingIntent pendingIntent = PendingIntent.getActivity(this, 0, i, PendingIntent.FLAG_ONE_SHOT);
 
         Uri soundNotificacion = RingtoneManager.getDefaultUri(RingtoneManager.TYPE_NOTIFICATION);
 
-        Builder builder = new Builder(this);
-        builder.setAutoCancel(true);
-        builder.setContentTitle(cabecera);
-        builder.setContentText(cuerpo);
-        builder.setSound(soundNotificacion);
-        builder.setSmallIcon(R.drawable.logo);
-        builder.setTicker(cuerpo);
-        builder.setContentIntent(pendingIntent);
-
+        String id ="channel_1";//id of channel
+        String description = "123";//Description information of channel
+        int importance = NotificationManager.IMPORTANCE_LOW;//The Importance of channel
+        NotificationChannel channel = new NotificationChannel(id, "123", importance);//Generating channel
         NotificationManager notificationManager = (NotificationManager) getSystemService(Context.NOTIFICATION_SERVICE);
-        Random random = new Random();
+        notificationManager.createNotificationChannel(channel);
 
-        notificationManager.notify(random.nextInt(), builder.build());
+        Notification notification = new Notification.Builder(FireBaseServiceMensajes.this,id)
+                .setCategory(Notification.CATEGORY_MESSAGE)
+                .setContentTitle(cabecera)
+                .setContentText(cuerpo)
+                .setSound(soundNotificacion)
+                .setSmallIcon(R.drawable.logo)
+                .setTicker(cuerpo)
+                .setContentIntent(pendingIntent)
+                .setAutoCancel(true)
+                .build();
+        notificationManager.notify(1,notification);
     }
 
+    @RequiresApi(api = Build.VERSION_CODES.O)
     private void showNotificationPDC(String cabecera, String cuerpo){
         Intent i = new Intent(this, libroPDC.class);
         PendingIntent pendingIntent = PendingIntent.getActivity(this, 0, i, PendingIntent.FLAG_ONE_SHOT);
 
         Uri soundNotificacion = RingtoneManager.getDefaultUri(RingtoneManager.TYPE_NOTIFICATION);
 
-        Builder builder = new Builder(this);
-        builder.setAutoCancel(true);
-        builder.setContentTitle(cabecera);
-        builder.setContentText(cuerpo);
-        builder.setSound(soundNotificacion);
-        builder.setSmallIcon(R.drawable.logo);
-        builder.setTicker(cuerpo);
-        builder.setContentIntent(pendingIntent);
-
+        String id ="channel_1";//id of channel
+        String description = "123";//Description information of channel
+        int importance = NotificationManager.IMPORTANCE_LOW;//The Importance of channel
+        NotificationChannel channel = new NotificationChannel(id, "123", importance);//Generating channel
         NotificationManager notificationManager = (NotificationManager) getSystemService(Context.NOTIFICATION_SERVICE);
-        Random random = new Random();
+        notificationManager.createNotificationChannel(channel);
 
-        notificationManager.notify(random.nextInt(), builder.build());
+        Notification notification = new Notification.Builder(FireBaseServiceMensajes.this,id)
+                .setCategory(Notification.CATEGORY_MESSAGE)
+                .setContentTitle(cabecera)
+                .setContentText(cuerpo)
+                .setSound(soundNotificacion)
+                .setSmallIcon(R.drawable.logo)
+                .setTicker(cuerpo)
+                .setContentIntent(pendingIntent)
+                .setAutoCancel(true)
+                .build();
+        notificationManager.notify(1,notification);
     }
 
 }

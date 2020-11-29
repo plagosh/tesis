@@ -5,6 +5,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.view.ViewParent;
 
+import androidx.test.espresso.DataInteraction;
 import androidx.test.espresso.ViewInteraction;
 import androidx.test.filters.LargeTest;
 import androidx.test.rule.ActivityTestRule;
@@ -17,6 +18,7 @@ import org.junit.Rule;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 
+import static androidx.test.espresso.Espresso.onData;
 import static androidx.test.espresso.Espresso.onView;
 import static androidx.test.espresso.action.ViewActions.click;
 import static androidx.test.espresso.action.ViewActions.closeSoftKeyboard;
@@ -25,18 +27,20 @@ import static androidx.test.espresso.matcher.ViewMatchers.isDisplayed;
 import static androidx.test.espresso.matcher.ViewMatchers.withClassName;
 import static androidx.test.espresso.matcher.ViewMatchers.withId;
 import static androidx.test.espresso.matcher.ViewMatchers.withText;
+import static java.util.regex.Pattern.matches;
 import static org.hamcrest.Matchers.allOf;
+import static org.hamcrest.Matchers.anything;
 import static org.hamcrest.Matchers.is;
 
 @LargeTest
 @RunWith(AndroidJUnit4.class)
-public class ValidarLecturaTest {
+public class VerTareaTest {
 
     @Rule
     public ActivityTestRule<Login> mActivityTestRule = new ActivityTestRule<>(Login.class);
 
     @Test
-    public void validarLecturaTest() {
+    public void verTareaTest() {
         // Added a sleep statement to match the app's execution delay.
         // The recommended way to handle such scenarios is to use Espresso idling resources:
         // https://google.github.io/android-testing-support-library/docs/espresso/idling-resource/index.html
@@ -65,16 +69,6 @@ public class ValidarLecturaTest {
                                 2),
                         isDisplayed()));
         appCompatEditText2.perform(replaceText("1"), closeSoftKeyboard());
-
-        ViewInteraction appCompatRadioButton = onView(
-                allOf(withId(R.id.RBsesion),
-                        childAtPosition(
-                                childAtPosition(
-                                        withClassName(is("android.widget.LinearLayout")),
-                                        0),
-                                3),
-                        isDisplayed()));
-        appCompatRadioButton.perform(click());
 
         ViewInteraction appCompatButton = onView(
                 allOf(withId(R.id.button_login), withText("Ingresar"),
@@ -106,24 +100,22 @@ public class ValidarLecturaTest {
         circleImageView.perform(click());
 
         ViewInteraction appCompatImageView = onView(
-                allOf(withId(R.id.libro),
+                allOf(withId(R.id.panel),
                         childAtPosition(
                                 childAtPosition(
                                         withClassName(is("android.widget.LinearLayout")),
                                         0),
-                                0),
+                                1),
                         isDisplayed()));
         appCompatImageView.perform(click());
 
-        ViewInteraction cardView = onView(
-                allOf(withId(R.id.cardViewAmigos),
+        DataInteraction appCompatTextView = onData(anything())
+                .inAdapterView(allOf(withId(R.id.select_dialog_listview),
                         childAtPosition(
-                                childAtPosition(
-                                        withId(R.id.amigosRecyclerView),
-                                        0),
-                                0),
-                        isDisplayed()));
-        cardView.perform(click());
+                                withId(R.id.contentPanel),
+                                0)))
+                .atPosition(1);
+        appCompatTextView.perform(click());
     }
 
     private static Matcher<View> childAtPosition(
