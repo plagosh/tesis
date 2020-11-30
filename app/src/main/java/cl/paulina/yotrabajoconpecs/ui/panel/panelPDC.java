@@ -165,7 +165,7 @@ public class panelPDC extends Fragment {
             public void onClick(View v) {
                 usuario = Preferences.obtenerPreferenceString(getContext(), Preferences.PREFERENCE_USUARIO_LOGIN);
                 descargarUsuario();
-                guardarListaTarea("https://yotrabajoconpecs.ddns.net/save_lista_tarea.php", pasando_dato, usuario, id_jefatura);
+                guardarListaTarea("https://yotrabajoconpecs.ddns.net/save_lista_tarea.php", pasando_dato, usuario, "1");
             }
         });
 
@@ -698,7 +698,7 @@ public class panelPDC extends Fragment {
             @Override
             protected Map<String, String> getParams() throws AuthFailureError {
                 Map<String,String> parametros = new HashMap<String,String>();
-                parametros.put("id_tarea", tarea);
+                parametros.put("id_tarea_lista", tarea);
                 parametros.put("quien_envia", quien);
                 parametros.put("id_jefatura", jefatura);
                 return parametros;
