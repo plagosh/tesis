@@ -38,7 +38,7 @@
         tools:layout="@layout/mensajeria" />
     <fragment
         android:id="@+id/nav_panel"
-        android:name="cl.paulina.yotrabajoconpecs.ui.panel.panelFragment"
+        android:name="cl.paulina.yotrabajoconpecs.ui.panel.panelPDC"
         android:label="Panel"
         tools:layout="@layout/pdc_2" />
     <fragment

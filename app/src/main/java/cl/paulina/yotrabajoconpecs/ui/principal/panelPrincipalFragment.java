@@ -26,7 +26,7 @@ import java.util.ArrayList;
 import cl.paulina.yotrabajoconpecs.Amigos.ActivityAmigos;
 import cl.paulina.yotrabajoconpecs.R;
 import cl.paulina.yotrabajoconpecs.ui.panel.panelEmpleador;
-import cl.paulina.yotrabajoconpecs.ui.panel.panelFragment;
+import cl.paulina.yotrabajoconpecs.ui.panel.panelPDC;
 import cz.msebera.android.httpclient.Header;
 
 public class panelPrincipalFragment extends Fragment {
@@ -76,7 +76,7 @@ public class panelPrincipalFragment extends Fragment {
                     transaction.addToBackStack(null);
                     transaction.commit();
                 }else{
-                    Fragment fragment = new panelFragment();
+                    Fragment fragment = new panelPDC();
                     FragmentTransaction transaction = getFragmentManager().beginTransaction();
                     transaction.replace(R.id.nav_host_fragment, fragment);
                     transaction.addToBackStack(null);

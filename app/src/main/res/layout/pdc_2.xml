@@ -136,11 +136,11 @@
                 <ImageButton
                     android:id="@+id/checktarea"
                     android:layout_width="100sp"
+                    android:visibility="invisible"
                     android:layout_gravity="center"
                     android:background="@drawable/boton_terminar"
                     android:layout_height="100sp"/>
             </LinearLayout>
         </LinearLayout>
     </LinearLayout>
-
 </LinearLayout>

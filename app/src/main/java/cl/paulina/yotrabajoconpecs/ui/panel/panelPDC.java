@@ -6,11 +6,14 @@ import android.os.Build;
 import android.os.Bundle;
 import android.os.Handler;
 import android.util.Log;
+import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.CheckBox;
 import android.widget.ImageButton;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.ProgressBar;
 import android.widget.TextView;
@@ -19,6 +22,14 @@ import androidx.annotation.NonNull;
 import androidx.annotation.RequiresApi;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentTransaction;
+
+import com.android.volley.AuthFailureError;
+import com.android.volley.Request;
+import com.android.volley.RequestQueue;
+import com.android.volley.Response;
+import com.android.volley.VolleyError;
+import com.android.volley.toolbox.StringRequest;
+import com.android.volley.toolbox.Volley;
 import com.loopj.android.http.AsyncHttpClient;
 import com.loopj.android.http.AsyncHttpResponseHandler;
 import com.squareup.picasso.Picasso;
@@ -28,18 +39,23 @@ import org.json.JSONException;
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Date;
+
+import cl.paulina.yotrabajoconpecs.Preferences;
 import cl.paulina.yotrabajoconpecs.R;
 import cz.msebera.android.httpclient.Header;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.GregorianCalendar;
+import java.util.HashMap;
+import java.util.Map;
 
-public class panelFragment extends Fragment {
+public class panelPDC extends Fragment {
     TextView tvdia, tvano, reloj;
     Button agregardia, agregarhora;
     public Fragment fragment;
     private ProgressBar pb;
     private int mProgressStatus = 0;
+    private ImageButton checkTarea;
     Bundle datos;
     Bundle datosRecibidos;
     private ArrayList id, fecha_inicio, fecha_termino, hora_inicio, hora_termino, dia, url, id_tarea;
@@ -60,6 +76,8 @@ public class panelFragment extends Fragment {
     int aumentardia = 1;
     private int aumentarhora = 1;
     int ciclohora = 1;
+    public String pasando_dato;
+    public String pasando_tarea;
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
@@ -72,6 +90,7 @@ public class panelFragment extends Fragment {
         tvano = vista.findViewById(R.id.ano);
         tvmes = vista.findViewById(R.id.mes);
         reloj = vista.findViewById(R.id.reloj);
+        checkTarea = vista.findViewById(R.id.checktarea);
         reloj.setText(horan);
         agregardia = vista.findViewById(R.id.agregardia);
         agregarhora = vista.findViewById(R.id.agregarhora);
@@ -133,6 +152,13 @@ public class panelFragment extends Fragment {
 
         descargarDatos();
 
+        checkTarea.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                guardarListaTarea("https://yotrabajoconpecs.ddns.net/save_lista_tarea.php", pasando_dato, "Preferences");
+            }
+        });
+
         agregardia.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -188,12 +214,9 @@ public class panelFragment extends Fragment {
                                     if(text.equals(Valor_dia) && horan.compareTo(hora_inicio.get(i).toString()) > 0 && horan.compareTo(hora_termino.get(i).toString()) < 0){
                                         String dato = url.get(i).toString();
                                         Picasso.get().load("https://yotrabajoconpecs.ddns.net/" + dato).into(tvpanel);
-
-                                        tvpanel.setLayoutParams(new LinearLayout.LayoutParams(800, 800));
-                                        tvpanel.setPadding(200, 10, 10, 10);
-                                        tvpanel.setScaleType(ImageButton.ScaleType.FIT_CENTER);
-                                        tvpanel.setBackgroundColor(0xFFFFFF);
-
+                                        tvpanel.setBackgroundResource(R.drawable.boton_rectangulo);
+                                        tvpanel.setLayoutParams(new LinearLayout.LayoutParams(ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT));
+                                        tvpanel.setScaleType(ImageButton.ScaleType.CENTER_INSIDE);
                                         String pasando_dato = id_tarea.get(i).toString();
                                         tvpanel.setOnClickListener(new View.OnClickListener() {
                                             @Override
@@ -428,13 +451,10 @@ public class panelFragment extends Fragment {
                                         String text = dia.get(i).toString();
                                         if (text.equals(Valor_dia) && horan.compareTo(hora_inicio.get(i).toString()) > 0 && horan.compareTo(hora_termino.get(i).toString()) < 0) {
                                             String dato = url.get(i).toString();
+                                            tvpanel.setBackgroundResource(R.drawable.boton_rectangulo);
+                                            tvpanel.setLayoutParams(new LinearLayout.LayoutParams(ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT));
+                                            tvpanel.setScaleType(ImageButton.ScaleType.CENTER_INSIDE);
                                             Picasso.get().load("https://yotrabajoconpecs.ddns.net/" + dato).into(tvpanel);
-
-                                            tvpanel.setLayoutParams(new LinearLayout.LayoutParams(800, 800));
-                                            tvpanel.setPadding(200, 10, 10, 10);
-                                            tvpanel.setScaleType(ImageButton.ScaleType.FIT_CENTER);
-                                            tvpanel.setBackgroundColor(0xFFFFFF);
-
                                             String pasando_dato = id_tarea.get(i).toString();
                                             tvpanel.setOnClickListener(new View.OnClickListener() {
                                                 @Override
@@ -516,7 +536,6 @@ public class panelFragment extends Fragment {
                     }
                 }
             });
-
         return vista;
     }
 
@@ -576,15 +595,13 @@ public class panelFragment extends Fragment {
                             if(text.equals(Valor_dia) && horan.compareTo(hora_inicio.get(i).toString()) > 0 && horan.compareTo(hora_termino.get(i).toString()) < 0){
                                 //tvpanel.setBackgroundResource(R.drawable.diciembre);
                                 //Toast.makeText(getContext(),"entre al if",Toast.LENGTH_SHORT).show();
+                                checkTarea.setVisibility(View.VISIBLE);
                                 String dato = url.get(i).toString();
+                                tvpanel.setBackgroundResource(R.drawable.boton_rectangulo);
+                                tvpanel.setLayoutParams(new LinearLayout.LayoutParams(ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT));
+                                tvpanel.setScaleType(ImageButton.ScaleType.CENTER_INSIDE);
                                 Picasso.get().load("https://yotrabajoconpecs.ddns.net/" + dato).into(tvpanel);
-
-                                tvpanel.setLayoutParams(new LinearLayout.LayoutParams(800, 800));
-                                tvpanel.setPadding(200, 10, 10, 10);
-                                tvpanel.setScaleType(ImageButton.ScaleType.FIT_CENTER);
-                                tvpanel.setBackgroundColor(0xFFFFFF);
-
-                                String pasando_dato = id_tarea.get(i).toString();
+                                pasando_dato = id_tarea.get(i).toString();
                                 tvpanel.setOnClickListener(new View.OnClickListener() {
                                     @Override
                                     public void onClick(View v) {
@@ -654,5 +671,29 @@ public class panelFragment extends Fragment {
                 toast.show();
             }
         });
+    }
+
+    private void guardarListaTarea(String URL, String tarea, String quien){
+        StringRequest stringRequest = new StringRequest(Request.Method.POST, URL, new Response.Listener<String>() {
+            @Override
+            public void onResponse(String response) {
+                Toast.makeText(getContext(), "Se ha terminado la tarea con éxito", Toast.LENGTH_SHORT).show();
+            }
+        }, new Response.ErrorListener(){
+            @Override
+            public void onErrorResponse(VolleyError error) {
+                Toast.makeText(getContext(), error.toString(), Toast.LENGTH_SHORT).show();
+            }
+        }){
+            @Override
+            protected Map<String, String> getParams() throws AuthFailureError {
+                Map<String,String> parametros = new HashMap<String,String>();
+                parametros.put("id_tarea", tarea);
+                parametros.put("quien_envia", quien);
+                return parametros;
+            }
+        };
+        RequestQueue requestQueue = Volley.newRequestQueue(getContext());
+        requestQueue.add(stringRequest);
     }
 }
