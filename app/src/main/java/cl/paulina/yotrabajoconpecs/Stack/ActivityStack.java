@@ -18,10 +18,13 @@ import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.android.volley.AuthFailureError;
+import com.android.volley.Request;
 import com.android.volley.RequestQueue;
 import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.JsonObjectRequest;
+import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
 import com.loopj.android.http.AsyncHttpClient;
 import com.loopj.android.http.AsyncHttpResponseHandler;
@@ -31,12 +34,16 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 import java.util.Stack;
 
 import cl.paulina.yotrabajoconpecs.Amigos.AmigosAdapter;
 import cl.paulina.yotrabajoconpecs.Amigos.AmigosAtributos;
 import cl.paulina.yotrabajoconpecs.R;
+import cl.paulina.yotrabajoconpecs.ui.panel.ViewEventsActivity;
+import cl.paulina.yotrabajoconpecs.ui.panel.panelPDC;
 import cz.msebera.android.httpclient.Header;
 
 public class ActivityStack extends Fragment {
@@ -96,6 +103,15 @@ public class ActivityStack extends Fragment {
                             tv_hora.add(jsonarray.getJSONObject(i).getString("fecha"));
                             String mensaje = tv_tarea.get(i).toString() + " ha terminado la tarea:";
                             agregarStack(R.drawable.ic_baseline_supervised_user_circle_24, mensaje, id_tarea.get(i).toString(), tv_hora.get(i).toString());
+                            if (checkear.isChecked() == true){
+                                //Enviar corroboración
+                                Fragment fragment = new panelPDC();
+                                Bundle bundle = new Bundle();
+                                bundle.putString("key_comprobacion", "eliminado");
+                                fragment.setArguments(bundle);
+                                //Eliminar del stack
+                                eliminarTareaLista("https://yotrabajoconpecs.ddns.net/eliminar_ListaTarea.php", id_tarea.get(i).toString());
+                            }
                         }
                     }catch(JSONException e){
                         e.printStackTrace();
@@ -112,5 +128,28 @@ public class ActivityStack extends Fragment {
                 toast.show();
             }
         });
+    }
+
+    private void eliminarTareaLista(String URL, String id_tarea_lista){
+        StringRequest stringRequest = new StringRequest(Request.Method.POST, URL, new Response.Listener<String>() {
+            @Override
+            public void onResponse(String response) {
+                Toast.makeText(getContext(), "Se ha eliminado de la lista de tarea", Toast.LENGTH_SHORT).show();
+            }
+        }, new Response.ErrorListener(){
+            @Override
+            public void onErrorResponse(VolleyError error) {
+                Toast.makeText(getContext(), error.toString(), Toast.LENGTH_SHORT).show();
+            }
+        }){
+            @Override
+            protected Map<String, String> getParams() throws AuthFailureError {
+                Map<String,String> parametros = new HashMap<String,String>();
+                parametros.put("id_tarea_lista", id_tarea_lista);
+                return parametros;
+            }
+        };
+        RequestQueue requestQueue = Volley.newRequestQueue(getContext());
+        requestQueue.add(stringRequest);
     }
 }

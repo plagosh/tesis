@@ -78,6 +78,11 @@ public class panelPDC extends Fragment {
     int ciclohora = 1;
     public String pasando_dato;
     public String pasando_tarea;
+    private ArrayList nombre_usuario;
+    private ArrayList jefatura_usuario;
+    private ArrayList apellido_usuario;
+    public String usuario;
+    public String id_jefatura;
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
@@ -103,6 +108,9 @@ public class panelPDC extends Fragment {
         dia = new ArrayList();
         url = new ArrayList();
         id_tarea = new ArrayList();
+        nombre_usuario = new ArrayList();
+        jefatura_usuario = new ArrayList();
+        apellido_usuario = new ArrayList();
         tvdia.setText("" + tv_dia);
         tvano.setText("" + tv_ano);
         int ciclo = 1;
@@ -155,7 +163,9 @@ public class panelPDC extends Fragment {
         checkTarea.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                guardarListaTarea("https://yotrabajoconpecs.ddns.net/save_lista_tarea.php", pasando_dato, "Preferences");
+                usuario = Preferences.obtenerPreferenceString(getContext(), Preferences.PREFERENCE_USUARIO_LOGIN);
+                descargarUsuario();
+                guardarListaTarea("https://yotrabajoconpecs.ddns.net/save_lista_tarea.php", pasando_dato, usuario, id_jefatura);
             }
         });
 
@@ -673,7 +683,7 @@ public class panelPDC extends Fragment {
         });
     }
 
-    private void guardarListaTarea(String URL, String tarea, String quien){
+    private void guardarListaTarea(String URL, String tarea, String quien, String jefatura){
         StringRequest stringRequest = new StringRequest(Request.Method.POST, URL, new Response.Listener<String>() {
             @Override
             public void onResponse(String response) {
@@ -690,10 +700,54 @@ public class panelPDC extends Fragment {
                 Map<String,String> parametros = new HashMap<String,String>();
                 parametros.put("id_tarea", tarea);
                 parametros.put("quien_envia", quien);
+                parametros.put("id_jefatura", jefatura);
                 return parametros;
             }
         };
         RequestQueue requestQueue = Volley.newRequestQueue(getContext());
         requestQueue.add(stringRequest);
+    }
+
+    private void descargarUsuario(){
+        nombre_usuario.clear();
+        jefatura_usuario.clear();
+        apellido_usuario.clear();
+        final ProgressDialog progressDialog = new ProgressDialog(getActivity());
+        AsyncHttpClient client = new AsyncHttpClient();
+        client.get("https://yotrabajoconpecs.ddns.net/query_usuario.php", new AsyncHttpResponseHandler() {
+            @RequiresApi(api = Build.VERSION_CODES.M)
+            @Override
+            public void onSuccess(int statusCode, Header[] headers, byte[] responseBody) {
+                if(statusCode == 200){
+                    progressDialog.dismiss();
+                    try{
+                        JSONArray jsonarray = new JSONArray(new String(responseBody));
+                        int position = 0;
+                        for(int i = 0; i < jsonarray.length(); i++){
+                            nombre_usuario.add(jsonarray.getJSONObject(i).getString("nombre_usuario"));
+                            apellido_usuario.add(jsonarray.getJSONObject(i).getString("apellido_usuario"));
+                            jefatura_usuario.add(jsonarray.getJSONObject(i).getString("jefatura"));
+                            String nombre_usuario_conespacios = nombre_usuario.get(i).toString() + " " + apellido_usuario.get(i).toString();
+                            String nombre_usuario_sinespacios = nombre_usuario_conespacios.replace(" ", "");
+                            if(usuario.equals(nombre_usuario_sinespacios)){
+                                position = i;
+                            }
+                        }
+                        id_jefatura = jefatura_usuario.get(position).toString();
+                    }catch(JSONException e){
+                        e.printStackTrace();
+                    }
+                }
+            }
+
+            @Override
+            public void onFailure(int statusCode, Header[] headers, byte[] responseBody, Throwable error) {
+                Context context = getContext();
+                CharSequence text = "Conexión fallida";
+                int duration = Toast.LENGTH_SHORT;
+                Toast toast = Toast.makeText(context, text, duration);
+                toast.show();
+            }
+        });
     }
 }
