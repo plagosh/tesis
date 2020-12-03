@@ -86,6 +86,9 @@ public class panelPDC extends Fragment {
     private ArrayList apellido_usuario;
     private ArrayList correo_usuario;
     private ArrayList id_usuario;
+    private ArrayList tarea_id;
+    private ArrayList realizada;
+    private ArrayList realizada_pdc;
     public String usuario;
     public String id_jefatura;
     public String nombre_usuario_conespacios;
@@ -93,6 +96,9 @@ public class panelPDC extends Fragment {
     public String EMISOR;
     public String RECEPTOR;
     public String NOMBRE;
+    public String dato;
+    public String pasando_modificar;
+    public String realizado_pdc;
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
@@ -123,6 +129,9 @@ public class panelPDC extends Fragment {
         apellido_usuario = new ArrayList();
         correo_usuario = new ArrayList();
         id_usuario = new ArrayList();
+        tarea_id = new ArrayList();
+        realizada = new ArrayList();
+        realizada_pdc = new ArrayList();
         tvdia.setText("" + tv_dia);
         tvano.setText("" + tv_ano);
         int ciclo = 1;
@@ -170,8 +179,6 @@ public class panelPDC extends Fragment {
         tvmes.setPadding(10, 10, 10, 10);
         tvmes.setScaleType(ImageButton.ScaleType.CENTER_CROP);
         tvmes.setBackgroundColor(0xFFFFFF);
-
-        descargarDatos();
 
         agregardia.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -547,7 +554,7 @@ public class panelPDC extends Fragment {
         return vista;
     }
 
-    private void descargarDatos(){
+    private void descargarDatos(String URL){
         id.clear();
         fecha_inicio.clear();
         fecha_termino.clear();
@@ -555,12 +562,14 @@ public class panelPDC extends Fragment {
         hora_termino.clear();
         dia.clear();
         url.clear();
-
+        tarea_id.clear();
+        realizada.clear();
+        realizada_pdc.clear();
         final ProgressDialog progressDialog = new ProgressDialog(getActivity());
         progressDialog.setMessage("Cargando datos...");
         progressDialog.show();
         AsyncHttpClient client = new AsyncHttpClient();
-        client.get("https://yotrabajoconpecs.ddns.net/query3.php", new AsyncHttpResponseHandler() {
+        client.get(URL, new AsyncHttpResponseHandler() {
             @RequiresApi(api = Build.VERSION_CODES.M)
             @Override
             public void onSuccess(int statusCode, Header[] headers, byte[] responseBody) {
@@ -569,7 +578,7 @@ public class panelPDC extends Fragment {
                     try{
                         JSONArray jsonarray = new JSONArray(new String(responseBody));
                         for(int i = 0; i < jsonarray.length(); i++){
-                            id.add(jsonarray.getJSONObject(i).getString("id_calendario"));
+                            id.add(jsonarray.getJSONObject(i).getString("id_dia"));
                             fecha_inicio.add(jsonarray.getJSONObject(i).getString("fecha_inicio"));
                             fecha_termino.add(jsonarray.getJSONObject(i).getString("fecha_termino"));
                             hora_inicio.add(jsonarray.getJSONObject(i).getString("hora_inicio"));
@@ -577,87 +586,82 @@ public class panelPDC extends Fragment {
                             dia.add(jsonarray.getJSONObject(i).getString("dia"));
                             url.add(jsonarray.getJSONObject(i).getString("url"));
                             id_tarea.add(jsonarray.getJSONObject(i).getString("id_tarea"));
-                            //Toast.makeText(getContext(), dia.get(i).toString(), Toast.LENGTH_SHORT).show();
+                            realizada.add(jsonarray.getJSONObject(i).getString("realizada"));
+                            realizada_pdc.add(jsonarray.getJSONObject(i).getString("realizada_pdc"));
 
-                            String text = dia.get(i).toString();
-                            if(horan.compareTo(hora_inicio.get(i).toString()) > 0 && horan.compareTo(hora_termino.get(i).toString()) < 0){
-                                //tvpanel.setBackgroundResource(R.drawable.diciembre);
-                                //Toast.makeText(getContext(),"entre al if",Toast.LENGTH_SHORT).show();
-                                checkTarea.setVisibility(View.VISIBLE);
-                                String dato = url.get(i).toString();
-                                tvpanel.setBackgroundResource(R.drawable.boton_rectangulo);
-                                tvpanel.setLayoutParams(new LinearLayout.LayoutParams(ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT));
-                                tvpanel.setScaleType(ImageButton.ScaleType.CENTER_INSIDE);
-                                Picasso.get().load("https://yotrabajoconpecs.ddns.net/" + dato).into(tvpanel);
-                                pasando_dato = id_tarea.get(i).toString();
-                                tvpanel.setOnClickListener(new View.OnClickListener() {
-                                    @Override
-                                    public void onClick(View v) {
-                                        Fragment fragment = new desglose();
-                                        FragmentTransaction transaction = getFragmentManager().beginTransaction();
-                                        transaction.replace(R.id.nav_host_fragment, fragment);
-                                        transaction.addToBackStack(null);
-                                        transaction.commit();
-                                        datos.putString("id_tarea", pasando_dato);
-                                        Log.e("Enviar", "tarea enviada");
-                                        fragment.setArguments(datos);
-                                        //Toast.makeText(getContext(), "pase el id_tarea: " + pasando_dato, Toast.LENGTH_SHORT).show();
-                                    }
-                                });
+                            String horainicio = hora_inicio.get(i).toString();
+                            String subhorainicio = horainicio.substring(0,2);
+                            int subhorainicio1 = Integer.parseInt(subhorainicio);
+                            String subminutoinicio = horainicio.substring(4,5);
+                            int subminutoinicio1 = Integer.parseInt(subminutoinicio);
+                            String subsegundoinicio = horainicio.substring(7,8);
+                            int subsegundoinicio1 = Integer.parseInt(subsegundoinicio);
 
-                                Bundle recibir_check = getArguments();
-                                if(recibir_check != null) {
-                                    recibir_check.clear();
-                                    if (String.valueOf(recibir_check.getString("key_tarea_corroborada")) != String.valueOf(0)) {
-                                        String check = recibir_check.getString("key_tarea_corroborada");
-                                        Toast.makeText(getContext(), check, Toast.LENGTH_SHORT).show();
-                                        checkTarea.setVisibility(View.VISIBLE);
-                                        String datos = url.get(i+1).toString();
-                                        tvpanel.setBackgroundResource(R.drawable.boton_rectangulo);
-                                        tvpanel.setLayoutParams(new LinearLayout.LayoutParams(ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT));
-                                        tvpanel.setScaleType(ImageButton.ScaleType.CENTER_INSIDE);
-                                        Picasso.get().load("https://yotrabajoconpecs.ddns.net/" + datos).into(tvpanel);
+                            String horatermino = hora_termino.get(i).toString();
+                            String subhoratermino = horatermino.substring(0,2);
+                            int subhoratermino1 = Integer.parseInt(subhoratermino);
+                            String subminutotermino = horatermino.substring(4,5);
+                            int subminutotermino1 = Integer.parseInt(subminutotermino);
+                            String subsegundotermino = horatermino.substring(7,8);
+                            int subsegundotermino1 = Integer.parseInt(subsegundotermino);
+
+                            int calculoSegundos = (subhoratermino1 - hora)*60*60 + subminutotermino1*60 + (60 - minuto)*60 + subsegundotermino1 + (60 - segundo);
+                            //Toast.makeText(getContext(),"segundos restantes: " + calculoSegundos,Toast.LENGTH_SHORT).show();
+                            pb.setMax(calculoSegundos);
+                            mProgressStatus = (hora - subhorainicio1)*60*60 + subminutoinicio1*60 + (60 - minuto)*60 + subsegundoinicio1 + (60 - segundo);
+                            new Thread(new Runnable() {
+                                @Override
+                                public void run() {
+                                    while(mProgressStatus < calculoSegundos){
+                                        mProgressStatus++;
+                                        android.os.SystemClock.sleep(50);
+                                        mHandler.post(new Runnable(){
+                                            @Override
+                                            public void run() {
+                                                pb.setProgress(mProgressStatus);
+                                            }
+                                        });
                                     }
                                 }
-
-                                String horainicio = hora_inicio.get(i).toString();
-                                String subhorainicio = horainicio.substring(0,2);
-                                int subhorainicio1 = Integer.parseInt(subhorainicio);
-                                String subminutoinicio = horainicio.substring(4,5);
-                                int subminutoinicio1 = Integer.parseInt(subminutoinicio);
-                                String subsegundoinicio = horainicio.substring(7,8);
-                                int subsegundoinicio1 = Integer.parseInt(subsegundoinicio);
-
-                                String horatermino = hora_termino.get(i).toString();
-                                String subhoratermino = horatermino.substring(0,2);
-                                int subhoratermino1 = Integer.parseInt(subhoratermino);
-                                String subminutotermino = horatermino.substring(4,5);
-                                int subminutotermino1 = Integer.parseInt(subminutotermino);
-                                String subsegundotermino = horatermino.substring(7,8);
-                                int subsegundotermino1 = Integer.parseInt(subsegundotermino);
-
-                                int calculoSegundos = (subhoratermino1 - hora)*60*60 + subminutotermino1*60 + (60 - minuto)*60 + subsegundotermino1 + (60 - segundo);
-                                //Toast.makeText(getContext(),"segundos restantes: " + calculoSegundos,Toast.LENGTH_SHORT).show();
-                                pb.setMax(calculoSegundos);
-                                mProgressStatus = (hora - subhorainicio1)*60*60 + subminutoinicio1*60 + (60 - minuto)*60 + subsegundoinicio1 + (60 - segundo);
-                                new Thread(new Runnable() {
-                                    @Override
-                                    public void run() {
-                                        while(mProgressStatus < calculoSegundos){
-                                            mProgressStatus++;
-                                            android.os.SystemClock.sleep(50);
-                                            mHandler.post(new Runnable(){
-                                                @Override
-                                                public void run() {
-                                                    pb.setProgress(mProgressStatus);
-                                                }
-                                            });
-                                        }
-                                    }
-                                }).start();
-                            }
+                            }).start();
                             //Toast.makeText(getContext(), text, duration).show();
                         }
+                        for(int j = 0; j < id.size(); j++){
+                            if(realizada.get(j).toString().equals("null")) {
+                                if(horan.compareTo(hora_inicio.get(j).toString()) > 0 && horan.compareTo(hora_termino.get(j).toString()) < 0) {
+                                    dato = url.get(j).toString();
+                                    pasando_dato = id_tarea.get(j).toString();
+                                    pasando_modificar = id.get(j).toString();
+                                    realizado_pdc = realizada_pdc.get(j).toString();
+                                }else if(horan.compareTo(hora_termino.get(j).toString()) > 0) {
+                                    dato = url.get(j).toString();
+                                    pasando_dato = id_tarea.get(j).toString();
+                                    pasando_modificar = id.get(j).toString();
+                                    realizado_pdc = realizada_pdc.get(j).toString();
+                                }
+                            }
+                            if(realizado_pdc == "null"){
+                                checkTarea.setVisibility(View.VISIBLE);
+                            }
+                            tvpanel.setOnClickListener(new View.OnClickListener() {
+                                @Override
+                                public void onClick(View v) {
+                                    Fragment fragment = new desglose();
+                                    FragmentTransaction transaction = getFragmentManager().beginTransaction();
+                                    transaction.replace(R.id.nav_host_fragment, fragment);
+                                    transaction.addToBackStack(null);
+                                    transaction.commit();
+                                    datos.putString("id_tarea", pasando_dato);
+                                    Log.e("Enviar", "tarea enviada");
+                                    fragment.setArguments(datos);
+                                    //Toast.makeText(getContext(), "pase el id_tarea: " + pasando_dato, Toast.LENGTH_SHORT).show();
+                                }
+                            });
+                        }
+                        tvpanel.setBackgroundResource(R.drawable.boton_rectangulo);
+                        tvpanel.setLayoutParams(new LinearLayout.LayoutParams(ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT));
+                        tvpanel.setScaleType(ImageButton.ScaleType.CENTER_INSIDE);
+                        Picasso.get().load("https://yotrabajoconpecs.ddns.net/" + dato).into(tvpanel);
                     }catch(JSONException e){
                         e.printStackTrace();
                     }
@@ -668,74 +672,6 @@ public class panelPDC extends Fragment {
                 Toast.makeText(getContext(), "Conexión fallida", Toast.LENGTH_SHORT).show();
             }
         });
-    }
-
-    private void descargarDia(){
-        id.clear();
-        fecha_inicio.clear();
-        fecha_termino.clear();
-        hora_inicio.clear();
-        hora_termino.clear();
-        dia.clear();
-        url.clear();
-        final ProgressDialog progressDialog = new ProgressDialog(getActivity());
-        progressDialog.setMessage("Cargando datos...");
-        progressDialog.show();
-        AsyncHttpClient client = new AsyncHttpClient();
-        client.get("https://yotrabajoconpecs.ddns.net/query3.php", new AsyncHttpResponseHandler() {
-            @RequiresApi(api = Build.VERSION_CODES.M)
-            @Override
-            public void onSuccess(int statusCode, Header[] headers, byte[] responseBody) {
-                if(statusCode == 200) {
-                    progressDialog.dismiss();
-                    try {
-                        JSONArray jsonarray = new JSONArray(new String(responseBody));
-                        for (int i = 0; i < jsonarray.length(); i++) {
-                            id.add(jsonarray.getJSONObject(i).getString("id_calendario"));
-                            fecha_inicio.add(jsonarray.getJSONObject(i).getString("fecha_inicio"));
-                            fecha_termino.add(jsonarray.getJSONObject(i).getString("fecha_termino"));
-                            hora_inicio.add(jsonarray.getJSONObject(i).getString("hora_inicio"));
-                            hora_termino.add(jsonarray.getJSONObject(i).getString("hora_termino"));
-                            dia.add(jsonarray.getJSONObject(i).getString("dia"));
-                            url.add(jsonarray.getJSONObject(i).getString("url"));
-                            id_tarea.add(jsonarray.getJSONObject(i).getString("id_tarea"));
-
-                        }
-                    } catch (JSONException e) {
-                        e.printStackTrace();
-                    }
-                }
-            }
-            @Override
-            public void onFailure(int statusCode, Header[] headers, byte[] responseBody, Throwable error) {
-                Toast.makeText(getContext(), "Conexión fallida", Toast.LENGTH_SHORT).show();
-            }
-        });
-    }
-
-    private void guardarListaTarea(String URL, String tarea, String quien, String jefatura){
-        StringRequest stringRequest = new StringRequest(Request.Method.POST, URL, new Response.Listener<String>() {
-            @Override
-            public void onResponse(String response) {
-                Toast.makeText(getContext(), "Se ha terminado la tarea con éxito", Toast.LENGTH_SHORT).show();
-            }
-        }, new Response.ErrorListener(){
-            @Override
-            public void onErrorResponse(VolleyError error) {
-                Toast.makeText(getContext(), error.toString(), Toast.LENGTH_SHORT).show();
-            }
-        }){
-            @Override
-            protected Map<String, String> getParams() throws AuthFailureError {
-                Map<String,String> parametros = new HashMap<String,String>();
-                parametros.put("id_tarea_lista", tarea);
-                parametros.put("quien_envia", quien);
-                parametros.put("id_jefatura", jefatura);
-                return parametros;
-            }
-        };
-        RequestQueue requestQueue = Volley.newRequestQueue(getContext());
-        requestQueue.add(stringRequest);
     }
 
     private void descargarUsuario(){
@@ -768,13 +704,16 @@ public class panelPDC extends Fragment {
                                 id_jefatura = jefatura_usuario.get(i).toString();
                             }
                         }
+                        descargarDatos("https://yotrabajoconpecs.ddns.net/query_TareasDia.php?usuario=" + EMISOR);
                         checkTarea.setOnClickListener(new View.OnClickListener() {
                             @Override
                             public void onClick(View v) {
-                                guardarListaTarea("https://yotrabajoconpecs.ddns.net/save_lista_tarea.php", pasando_dato, nombre_usuario_conespacios, id_jefatura);
+                                guardarListaTarea("https://yotrabajoconpecs.ddns.net/save_lista_tarea.php", pasando_dato, nombre_usuario_conespacios, id_jefatura, pasando_modificar);
                                 checkTarea.setVisibility(View.INVISIBLE);
                                 RECEPTOR = "1";
                                 MandarMensaje();
+                                //Toast.makeText(getContext(), pasando_modificar, Toast.LENGTH_SHORT).show();
+                                validarTareaPDC("https://yotrabajoconpecs.ddns.net/validar_tarea_pdc.php?id=" + pasando_modificar);
                             }
                         });
                     }catch(JSONException e){
@@ -789,13 +728,38 @@ public class panelPDC extends Fragment {
         });
     }
 
+    private void guardarListaTarea(String URL, String tarea, String quien, String jefatura, String id){
+        StringRequest stringRequest = new StringRequest(Request.Method.POST, URL, new Response.Listener<String>() {
+            @Override
+            public void onResponse(String response) {
+                Toast.makeText(getContext(), "Se ha terminado la tarea con éxito", Toast.LENGTH_SHORT).show();
+            }
+        }, new Response.ErrorListener(){
+            @Override
+            public void onErrorResponse(VolleyError error) {
+                Toast.makeText(getContext(), error.toString(), Toast.LENGTH_SHORT).show();
+            }
+        }){
+            @Override
+            protected Map<String, String> getParams() throws AuthFailureError {
+                Map<String,String> parametros = new HashMap<String,String>();
+                parametros.put("id_tarea_lista", tarea);
+                parametros.put("quien_envia", quien);
+                parametros.put("id_jefatura", jefatura);
+                parametros.put("id_listatarea", id);
+                return parametros;
+            }
+        };
+        RequestQueue requestQueue = Volley.newRequestQueue(getContext());
+        requestQueue.add(stringRequest);
+    }
+
     private void MandarMensaje() {
-        //Toast.makeText(Login.this, "entre a SubirToken", Toast.LENGTH_SHORT).show();
         HashMap<String, String> hashMapToken = new HashMap<>();
         hashMapToken.put("emisor", EMISOR);
         hashMapToken.put("nombrecompleto", NOMBRE);
         hashMapToken.put("receptor", RECEPTOR);
-        Toast.makeText(getContext(), EMISOR + NOMBRE + RECEPTOR + "" + IP_MENSAJE, Toast.LENGTH_SHORT).show();
+        //Toast.makeText(getContext(), EMISOR + NOMBRE + RECEPTOR + "" + IP_MENSAJE, Toast.LENGTH_SHORT).show();
 
         JsonObjectRequest solicitud = new JsonObjectRequest(Request.Method.POST, IP_MENSAJE, new JSONObject(hashMapToken), new Response.Listener<JSONObject>() {
             @Override
@@ -813,5 +777,22 @@ public class panelPDC extends Fragment {
         });
         RequestQueue requestQueue = Volley.newRequestQueue(getContext());
         requestQueue.add(solicitud);
+    }
+
+    private void validarTareaPDC(String URL){
+        AsyncHttpClient client = new AsyncHttpClient();
+        client.get(URL, new AsyncHttpResponseHandler() {
+            @RequiresApi(api = Build.VERSION_CODES.M)
+            @Override
+            public void onSuccess(int statusCode, Header[] headers, byte[] responseBody) {
+                if(statusCode == 200){
+                    //Toast.makeText(getContext(), "Se ha modificado", Toast.LENGTH_SHORT).show();
+                }
+            }
+            @Override
+            public void onFailure(int statusCode, Header[] headers, byte[] responseBody, Throwable error) {
+                Toast.makeText(getContext(), "Conexión fallida", Toast.LENGTH_SHORT).show();
+            }
+        });
     }
 }

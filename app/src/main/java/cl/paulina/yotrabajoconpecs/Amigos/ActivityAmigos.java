@@ -47,6 +47,7 @@ public class ActivityAmigos extends Fragment {
     private ArrayList descargar_mensaje;
     private ArrayList descargar_hora;
     public String nombreCompleto;
+    public String correo;
 
     public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View vista = inflater.inflate(R.layout.activity_amigos, container, false);
@@ -68,12 +69,13 @@ public class ActivityAmigos extends Fragment {
         return vista;
     }
 
-    public void agregarAmigos(int fotoDePerfil, String nombre, String ultimoMensaje, String hora){
+    public void agregarAmigos(int fotoDePerfil, String nombre, String ultimoMensaje, String hora, String id){
         AmigosAtributos amigosAtributos = new AmigosAtributos();
         amigosAtributos.setFotoDePerfil(fotoDePerfil);
         amigosAtributos.setNombre(nombre);
         amigosAtributos.setUltimoMensaje(ultimoMensaje);
         amigosAtributos.setHora(hora);
+        amigosAtributos.setId(id);
         atributosList.add(amigosAtributos);
         adapter.notifyDataSetChanged();
     }
@@ -88,7 +90,7 @@ public class ActivityAmigos extends Fragment {
                     for(int i = 0; i < jsonarray.length(); i++){
                         JSONObject js = jsonarray.getJSONObject(i);
                         nombreCompleto = js.getString("nombre_usuario") + " " + js.getString("apellido_usuario");
-                        String correo = js.getString("correo");
+                        correo = js.getString("correo");
                         String jefatura = js.getString("jefatura");
                         DescargarMensajes("https://yotrabajoconpecs.ddns.net/query_ultimo_mensaje.php?usuario=" + correo);
                     }
@@ -124,7 +126,7 @@ public class ActivityAmigos extends Fragment {
                             descargar_hora.add(jsonarray.getJSONObject(i).getString("hora_del_mensaje"));
                             String curTime = descargar_hora.get(i).toString().substring(0,5);
                             String mensaje = descargar_mensaje.get(i).toString();
-                            agregarAmigos(R.drawable.ic_baseline_supervised_user_circle_24, nombreCompleto, mensaje, curTime);
+                            agregarAmigos(R.drawable.ic_baseline_supervised_user_circle_24, nombreCompleto, mensaje, curTime, correo);
                         }
                     }catch(JSONException e){
                         e.printStackTrace();

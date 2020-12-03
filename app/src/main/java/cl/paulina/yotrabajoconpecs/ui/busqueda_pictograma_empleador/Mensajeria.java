@@ -117,12 +117,10 @@ public class Mensajeria extends Fragment {
                 String mensaje = eTEscribirMensaje.getText().toString().trim();
                 if (!mensaje.isEmpty()) {
                     MENSAJE_ENVIAR = mensaje;
-
                     Date dt = new Date();
                     int hours = dt.getHours();
                     int minutes = dt.getMinutes();
                     String curTime = hours + ":" + minutes + ", Hoy";
-
                     MandarMensaje();
                     CreateMensaje(mensaje, curTime, 1);
                     eTEscribirMensaje.setText("");
@@ -146,6 +144,43 @@ public class Mensajeria extends Fragment {
         return vista;
     }
 
+    private void descargarDatos() {
+        nombre_login.clear();
+        correo_login.clear();
+        final ProgressDialog progressDialog = new ProgressDialog(getActivity());
+        AsyncHttpClient client = new AsyncHttpClient();
+        client.get("https://yotrabajoconpecs.ddns.net/query_loginreciclado.php", new AsyncHttpResponseHandler() {
+            @RequiresApi(api = Build.VERSION_CODES.M)
+            @Override
+            public void onSuccess(int statusCode, Header[] headers, byte[] responseBody) {
+                if (statusCode == 200) {
+                    progressDialog.dismiss();
+                    try {
+                        JSONArray jsonarray = new JSONArray(new String(responseBody));
+                        for (int i = 0; i < jsonarray.length(); i++) {
+                            nombre_login.add(jsonarray.getJSONObject(i).getString("nombres"));
+                            correo_login.add(jsonarray.getJSONObject(i).getString("correo"));
+                        }
+                        EMISOR = correo_login.get(correo_login.size()-1).toString();
+                        NOMBRE = nombre_login.get(nombre_login.size()-1).toString();
+                        DescargarMensajes("https://yotrabajoconpecs.ddns.net/query_mensajes_empleador.php?usuario=" + correo_login.get(correo_login.size()-1).toString());
+                    } catch (JSONException e) {
+                        e.printStackTrace();
+                    }
+                }
+            }
+
+            @Override
+            public void onFailure(int statusCode, Header[] headers, byte[] responseBody, Throwable error) {
+                Context context = getContext();
+                CharSequence text = "Conexión fallida";
+                int duration = Toast.LENGTH_SHORT;
+                Toast toast = Toast.makeText(context, text, duration);
+                toast.show();
+            }
+        });
+    }
+
     private void MandarMensaje() {
         //Toast.makeText(Login.this, "entre a SubirToken", Toast.LENGTH_SHORT).show();
         HashMap<String, String> hashMapToken = new HashMap<>();
@@ -153,10 +188,9 @@ public class Mensajeria extends Fragment {
         hashMapToken.put("nombrecompleto", NOMBRE);
         hashMapToken.put("receptor", RECEPTOR);
         hashMapToken.put("mensaje", MENSAJE_ENVIAR);
-        /*Toast.makeText(getContext(), EMISOR, Toast.LENGTH_SHORT).show();
-        Toast.makeText(getContext(), NOMBRE, Toast.LENGTH_SHORT).show();
-        Toast.makeText(getContext(), RECEPTOR, Toast.LENGTH_SHORT).show();
-        Toast.makeText(getContext(), MENSAJE_ENVIAR, Toast.LENGTH_SHORT).show();*/
+
+        //Toast.makeText(getContext(), RECEPTOR, Toast.LENGTH_SHORT).show();
+        //Toast.makeText(getContext(), MENSAJE_ENVIAR, Toast.LENGTH_SHORT).show();
         //Toast.makeText(Login.this, emailemail + FirebaseInstanceId.getInstance().getToken(), Toast.LENGTH_SHORT).show();
 
         JsonObjectRequest solicitud = new JsonObjectRequest(Request.Method.POST, IP_MENSAJE, new JSONObject(hashMapToken), new Response.Listener<JSONObject>() {
@@ -170,7 +204,7 @@ public class Mensajeria extends Fragment {
         }, new Response.ErrorListener() {
             @Override
             public void onErrorResponse(VolleyError error) {
-                Toast.makeText(getContext(), "Ocurrió un error", Toast.LENGTH_SHORT).show();
+                Toast.makeText(getContext(), "Ocurrió un error aqui", Toast.LENGTH_SHORT).show();
             }
         });
         RequestQueue requestQueue = Volley.newRequestQueue(getContext());
@@ -202,43 +236,6 @@ public class Mensajeria extends Fragment {
 
     public void setScrollbarChat() {
         rv.scrollToPosition(adapter.getItemCount() - 1);
-    }
-
-    private void descargarDatos() {
-        nombre_login.clear();
-        correo_login.clear();
-        final ProgressDialog progressDialog = new ProgressDialog(getActivity());
-        AsyncHttpClient client = new AsyncHttpClient();
-        client.get("https://yotrabajoconpecs.ddns.net/query_loginreciclado.php", new AsyncHttpResponseHandler() {
-            @RequiresApi(api = Build.VERSION_CODES.M)
-            @Override
-            public void onSuccess(int statusCode, Header[] headers, byte[] responseBody) {
-                if (statusCode == 200) {
-                    progressDialog.dismiss();
-                    try {
-                        JSONArray jsonarray = new JSONArray(new String(responseBody));
-                        for (int i = 0; i < jsonarray.length(); i++) {
-                            nombre_login.add(jsonarray.getJSONObject(i).getString("nombres"));
-                            correo_login.add(jsonarray.getJSONObject(i).getString("correo"));
-                        }
-                        EMISOR = correo_login.get(correo_login.size()-1).toString();
-                        NOMBRE = nombre_login.get(nombre_login.size()-1).toString();
-                        DescargarMensajes("https://yotrabajoconpecs.ddns.net/query_mensajes_empleador.php?usuario=" + EMISOR);
-                    } catch (JSONException e) {
-                        e.printStackTrace();
-                    }
-                }
-            }
-
-            @Override
-            public void onFailure(int statusCode, Header[] headers, byte[] responseBody, Throwable error) {
-                Context context = getContext();
-                CharSequence text = "Conexión fallida";
-                int duration = Toast.LENGTH_SHORT;
-                Toast toast = Toast.makeText(context, text, duration);
-                toast.show();
-            }
-        });
     }
 
     private void DescargarMensajes(String URL){

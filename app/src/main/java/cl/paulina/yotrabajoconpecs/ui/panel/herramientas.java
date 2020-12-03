@@ -102,7 +102,7 @@ public class herramientas extends Fragment {
                                     LinearLayout contenido = new LinearLayout(getContext());
                                     contenido.setLayoutParams(new LinearLayout.LayoutParams(ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT));
                                     contenido.setOrientation(LinearLayout.HORIZONTAL);
-                                    imagen.setLayoutParams(new LinearLayout.LayoutParams(600, 600));
+                                    imagen.setLayoutParams(new LinearLayout.LayoutParams(400, 400));
                                     imagen.setPadding(10, 10, 10, 10);
                                     imagen.setId(j);
                                     Picasso.get().load("https://yotrabajoconpecs.ddns.net/" + pictos.get(j)).into(imagen);

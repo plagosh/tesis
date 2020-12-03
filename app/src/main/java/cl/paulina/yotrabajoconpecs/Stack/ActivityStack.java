@@ -66,6 +66,7 @@ public class ActivityStack extends Fragment {
     private ArrayList nombre_usuario;
     private ArrayList apellido_usuario;
     private ArrayList id_tarea_lista;
+    private ArrayList id;
     public String myid = "";
 
     public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
@@ -78,7 +79,9 @@ public class ActivityStack extends Fragment {
         apellido_usuario = new ArrayList();
         tv_jefatura = new ArrayList();
         id_tarea_lista = new ArrayList();
+        id = new ArrayList();
         gridView = vista.findViewById(R.id.stackRecyclerView);
+
         descargarUsuario();
 
         return vista;
@@ -90,6 +93,7 @@ public class ActivityStack extends Fragment {
         tv_hora.clear();
         tv_jefatura.clear();
         id_tarea_lista.clear();
+        id.clear();
         final ProgressDialog progressDialog = new ProgressDialog(getActivity());
         AsyncHttpClient client = new AsyncHttpClient();
         client.get(URL_GET_ALL_STACK, new AsyncHttpResponseHandler() {
@@ -105,6 +109,7 @@ public class ActivityStack extends Fragment {
                             tv_tarea.add(jsonarray.getJSONObject(i).getString("quien_envia"));
                             tv_hora.add(jsonarray.getJSONObject(i).getString("fecha"));
                             id_tarea_lista.add(jsonarray.getJSONObject(i).getString("id_tarea_lista"));
+                            id.add(jsonarray.getJSONObject(i).getString("id_listatarea"));
                         }gridView.setAdapter(new CustomAdapter(getContext()));
                     }catch(JSONException e){
                         e.printStackTrace();
@@ -167,10 +172,7 @@ public class ActivityStack extends Fragment {
                 @Override
                 public void onClick(View v) {
                     //mandar corroboracion
-                    Fragment fragment = new panelPDC();
-                    Bundle bundle = new Bundle();
-                    bundle.putString("key_tarea_corroborada", "check");
-                    fragment.setArguments(bundle);
+                    validarTareaEmpleador("https://yotrabajoconpecs.ddns.net/validar_tarea_empleador.php?id=" + id.get(position).toString());
                     //eliminar tarea
                     eliminarTareaLista("https://yotrabajoconpecs.ddns.net/eliminar_ListaTarea.php?id_tarea_lista=" + id_tarea_lista.get(position).toString());
                 }
@@ -229,6 +231,23 @@ public class ActivityStack extends Fragment {
                     }catch(JSONException e){
                         e.printStackTrace();
                     }
+                }
+            }
+            @Override
+            public void onFailure(int statusCode, Header[] headers, byte[] responseBody, Throwable error) {
+                Toast.makeText(getContext(), "Conexión fallida", Toast.LENGTH_SHORT).show();
+            }
+        });
+    }
+
+    private void validarTareaEmpleador(String URL){
+        AsyncHttpClient client = new AsyncHttpClient();
+        client.get(URL, new AsyncHttpResponseHandler() {
+            @RequiresApi(api = Build.VERSION_CODES.M)
+            @Override
+            public void onSuccess(int statusCode, Header[] headers, byte[] responseBody) {
+                if(statusCode == 200){
+                    //Toast.makeText(getContext(), "Se ha modificado", Toast.LENGTH_SHORT).show();
                 }
             }
             @Override
