@@ -59,6 +59,9 @@ public class Mensajeria extends Fragment {
     private String RECEPTOR;
     public ArrayList nombre_login, correo_login;
     private static final String IP_MENSAJE = "https://yotrabajoconpecs.ddns.net/Enviar_Mensajes.php";
+    private ArrayList descargar_mensaje;
+    private ArrayList descargar_tipo;
+    private ArrayList descargar_hora;
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
@@ -68,6 +71,9 @@ public class Mensajeria extends Fragment {
 
         nombre_login = new ArrayList();
         correo_login = new ArrayList();
+        descargar_mensaje = new ArrayList();
+        descargar_tipo = new ArrayList();
+        descargar_hora = new ArrayList();
 
         Bundle bundle = getArguments();
         Bundle datosRecibido = getArguments();
@@ -115,7 +121,7 @@ public class Mensajeria extends Fragment {
                     Date dt = new Date();
                     int hours = dt.getHours();
                     int minutes = dt.getMinutes();
-                    String curTime = hours + ":" + minutes;
+                    String curTime = hours + ":" + minutes + ", Hoy";
 
                     MandarMensaje();
                     CreateMensaje(mensaje, curTime, 1);
@@ -217,6 +223,7 @@ public class Mensajeria extends Fragment {
                         }
                         EMISOR = correo_login.get(correo_login.size()-1).toString();
                         NOMBRE = nombre_login.get(nombre_login.size()-1).toString();
+                        DescargarMensajes("https://yotrabajoconpecs.ddns.net/query_mensajes_empleador.php?usuario=" + EMISOR);
                     } catch (JSONException e) {
                         e.printStackTrace();
                     }
@@ -230,6 +237,41 @@ public class Mensajeria extends Fragment {
                 int duration = Toast.LENGTH_SHORT;
                 Toast toast = Toast.makeText(context, text, duration);
                 toast.show();
+            }
+        });
+    }
+
+    private void DescargarMensajes(String URL){
+        descargar_mensaje.clear();
+        descargar_tipo.clear();
+        descargar_hora.clear();
+        final ProgressDialog progressDialog = new ProgressDialog(getActivity());
+        AsyncHttpClient client = new AsyncHttpClient();
+        client.get(URL, new AsyncHttpResponseHandler() {
+            @RequiresApi(api = Build.VERSION_CODES.M)
+            @Override
+            public void onSuccess(int statusCode, Header[] headers, byte[] responseBody) {
+                if(statusCode == 200){
+                    progressDialog.dismiss();
+                    try{
+                        JSONArray jsonarray = new JSONArray(new String(responseBody));
+                        for(int i = 0; i < jsonarray.length(); i++){
+                            descargar_mensaje.add(jsonarray.getJSONObject(i).getString("mensaje"));
+                            descargar_tipo.add(jsonarray.getJSONObject(i).getString("tipo_mensaje"));
+                            descargar_hora.add(jsonarray.getJSONObject(i).getString("hora_del_mensaje"));
+                            String curTime = descargar_hora.get(i).toString();
+                            String mensaje = descargar_mensaje.get(i).toString();
+                            int tipo = Integer.parseInt(descargar_tipo.get(i).toString());
+                            CreateMensaje(mensaje, curTime, tipo);
+                        }
+                    }catch(JSONException e){
+                        e.printStackTrace();
+                    }
+                }
+            }
+            @Override
+            public void onFailure(int statusCode, Header[] headers, byte[] responseBody, Throwable error) {
+                Toast.makeText(getContext(), "Conexión fallida", Toast.LENGTH_SHORT).show();
             }
         });
     }

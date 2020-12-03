@@ -39,6 +39,7 @@
                     android:text="Paulina Lagos ha terminado la tarea:"
                     android:textSize="20sp"
                     android:textColor="@color/colorAccent"
+                    android:ellipsize="end"
                     android:maxLines="1"/>
 
                 <TextView

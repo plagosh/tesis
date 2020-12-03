@@ -5,15 +5,23 @@ import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.os.Build;
 import android.os.Bundle;
+import android.provider.Settings;
+import android.util.SparseBooleanArray;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.BaseAdapter;
 import android.widget.CheckBox;
+import android.widget.GridView;
+import android.widget.ImageButton;
+import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.RequiresApi;
+import androidx.cardview.widget.CardView;
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -28,6 +36,7 @@ import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
 import com.loopj.android.http.AsyncHttpClient;
 import com.loopj.android.http.AsyncHttpResponseHandler;
+import com.squareup.picasso.Picasso;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -41,52 +50,46 @@ import java.util.Stack;
 
 import cl.paulina.yotrabajoconpecs.Amigos.AmigosAdapter;
 import cl.paulina.yotrabajoconpecs.Amigos.AmigosAtributos;
+import cl.paulina.yotrabajoconpecs.Preferences;
 import cl.paulina.yotrabajoconpecs.R;
+import cl.paulina.yotrabajoconpecs.ui.busqueda_pictograma_pdc.examplebuttonsheetdialog;
+import cl.paulina.yotrabajoconpecs.ui.libro.libroPDC;
+import cl.paulina.yotrabajoconpecs.ui.panel.AddActivity;
 import cl.paulina.yotrabajoconpecs.ui.panel.ViewEventsActivity;
 import cl.paulina.yotrabajoconpecs.ui.panel.panelPDC;
 import cz.msebera.android.httpclient.Header;
 
 public class ActivityStack extends Fragment {
-    private TextView tarea, hora;
-    private CheckBox checkear;
-    private List<StackAtributos> atributosList;
-    private StackAdapter adapter;
-    private static final String URL_GET_ALL_STACK = "https://yotrabajoconpecs.ddns.net/query_lista_tarea.php";
-    private ArrayList id_tarea, tv_tarea, tv_hora;
+    private GridView gridView;
+    private ArrayList id_tarea, tv_tarea, tv_hora, tv_jefatura;
+    private ArrayList id_usuario;
+    private ArrayList nombre_usuario;
+    private ArrayList apellido_usuario;
+    private ArrayList id_tarea_lista;
+    public String myid = "";
 
     public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View vista = inflater.inflate(R.layout.activity_stack, container, false);
-        atributosList = new ArrayList<>();
         id_tarea = new ArrayList();
         tv_tarea = new ArrayList();
         tv_hora = new ArrayList();
-        RecyclerView rv = vista.findViewById(R.id.stackRecyclerView);
-        LinearLayoutManager lm = new LinearLayoutManager(getContext());
-        rv.setLayoutManager(lm);
+        id_usuario = new ArrayList();
+        nombre_usuario = new ArrayList();
+        apellido_usuario = new ArrayList();
+        tv_jefatura = new ArrayList();
+        id_tarea_lista = new ArrayList();
+        gridView = vista.findViewById(R.id.stackRecyclerView);
+        descargarUsuario();
 
-        adapter = new StackAdapter(atributosList, getContext());
-        rv.setAdapter(adapter);
-        tarea = vista.findViewById(R.id.nombreTarea);
-        hora = vista.findViewById(R.id.horaTarea);
-        checkear = vista.findViewById(R.id.checkeado);
-        SolicitudJSON();
         return vista;
     }
 
-    public void agregarStack(int fotoDePerfil, String nombre, String tarea, String hora){
-        StackAtributos stackAtributos = new StackAtributos();
-        stackAtributos.setFotoDePerfil(fotoDePerfil);
-        stackAtributos.setNombre(nombre);
-        stackAtributos.setTarea(tarea);
-        stackAtributos.setHora(hora);
-        atributosList.add(stackAtributos);
-        adapter.notifyDataSetChanged();
-    }
-
-    private void SolicitudJSON(){
+    private void SolicitudJSON(String URL_GET_ALL_STACK){
         id_tarea.clear();
         tv_tarea.clear();
         tv_hora.clear();
+        tv_jefatura.clear();
+        id_tarea_lista.clear();
         final ProgressDialog progressDialog = new ProgressDialog(getActivity());
         AsyncHttpClient client = new AsyncHttpClient();
         client.get(URL_GET_ALL_STACK, new AsyncHttpResponseHandler() {
@@ -101,55 +104,137 @@ public class ActivityStack extends Fragment {
                             id_tarea.add(jsonarray.getJSONObject(i).getString("nombre_tarea"));
                             tv_tarea.add(jsonarray.getJSONObject(i).getString("quien_envia"));
                             tv_hora.add(jsonarray.getJSONObject(i).getString("fecha"));
-                            String mensaje = tv_tarea.get(i).toString() + " ha terminado la tarea:";
-                            agregarStack(R.drawable.ic_baseline_supervised_user_circle_24, mensaje, id_tarea.get(i).toString(), tv_hora.get(i).toString());
-                            if (checkear.isChecked() == true){
-                                //Enviar corroboración
-                                Fragment fragment = new panelPDC();
-                                Bundle bundle = new Bundle();
-                                bundle.putString("key_comprobacion", "eliminado");
-                                fragment.setArguments(bundle);
-                                //Eliminar del stack
-                                eliminarTareaLista("https://yotrabajoconpecs.ddns.net/eliminar_ListaTarea.php", id_tarea.get(i).toString());
-                            }
-                        }
+                            id_tarea_lista.add(jsonarray.getJSONObject(i).getString("id_tarea_lista"));
+                        }gridView.setAdapter(new CustomAdapter(getContext()));
                     }catch(JSONException e){
                         e.printStackTrace();
                     }
                 }
             }
-
             @Override
             public void onFailure(int statusCode, Header[] headers, byte[] responseBody, Throwable error) {
-                Context context = getContext();
-                CharSequence text = "Conexión fallida";
-                int duration = Toast.LENGTH_SHORT;
-                Toast toast = Toast.makeText(context, text, duration);
-                toast.show();
+                Toast.makeText(getContext(), "Conexión fallida", Toast.LENGTH_SHORT).show();
             }
         });
     }
 
-    private void eliminarTareaLista(String URL, String id_tarea_lista){
-        StringRequest stringRequest = new StringRequest(Request.Method.POST, URL, new Response.Listener<String>() {
+    private class CustomAdapter extends BaseAdapter {
+        Context ctx;
+        LayoutInflater layoutInflater;
+        CardView cardView;
+        ImageView imageView;
+        TextView nombre, tarea, hora;
+        CheckBox tv_check;
+
+        @RequiresApi(api = Build.VERSION_CODES.M)
+        public CustomAdapter(Context applicationContext){
+            this.ctx = applicationContext;
+            layoutInflater = (LayoutInflater)this.ctx.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+        }
+
+        @Override
+        public int getCount(){
+            return id_tarea.size();
+        }
+
+        @Override
+        public Object getItem(int position){
+            return position;
+        }
+
+        @Override
+        public long getItemId(int position){
+            return position;
+        }
+
+        @Override
+        public View getView(int position, View convertView, ViewGroup parent){
+            ViewGroup viewGroup = (ViewGroup) layoutInflater.inflate(R.layout.card_view_stack, null);
+            cardView = (CardView) viewGroup.findViewById(R.id.cardViewStack);
+            imageView = (ImageView) viewGroup.findViewById(R.id.fotoDePerfilPDC);
+            nombre = (TextView) viewGroup.findViewById(R.id.nombreStack);
+            tarea = (TextView) viewGroup.findViewById(R.id.nombreTarea);
+            hora = (TextView) viewGroup.findViewById(R.id.horaTarea);
+            tv_check = (CheckBox) viewGroup.findViewById(R.id.checkeado);
+            imageView.setImageResource(R.drawable.ic_baseline_supervised_user_circle_24);
+            String nuevo_texto = tv_tarea.get(position).toString() + " ha terminado la tarea:";
+            nombre.setText(nuevo_texto);
+            tarea.setText(id_tarea.get(position).toString());
+            hora.setText(tv_hora.get(position).toString());
+            tv_check.setChecked(false);
+
+            tv_check.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    //mandar corroboracion
+                    Fragment fragment = new panelPDC();
+                    Bundle bundle = new Bundle();
+                    bundle.putString("key_tarea_corroborada", "check");
+                    fragment.setArguments(bundle);
+                    //eliminar tarea
+                    eliminarTareaLista("https://yotrabajoconpecs.ddns.net/eliminar_ListaTarea.php?id_tarea_lista=" + id_tarea_lista.get(position).toString());
+                }
+            });
+            return viewGroup;
+        }
+
+
+    }
+
+    private void eliminarTareaLista(String URL){
+        final ProgressDialog progressDialog = new ProgressDialog(getActivity());
+        AsyncHttpClient client = new AsyncHttpClient();
+        client.get(URL, new AsyncHttpResponseHandler() {
+            @RequiresApi(api = Build.VERSION_CODES.M)
             @Override
-            public void onResponse(String response) {
-                Toast.makeText(getContext(), "Se ha eliminado de la lista de tarea", Toast.LENGTH_SHORT).show();
+            public void onSuccess(int statusCode, Header[] headers, byte[] responseBody) {
+                if(statusCode == 200){
+                    progressDialog.dismiss();
+                    Toast.makeText(getContext(), "Se ha eliminado con éxito", Toast.LENGTH_SHORT).show();
+                }
             }
-        }, new Response.ErrorListener(){
             @Override
-            public void onErrorResponse(VolleyError error) {
-                Toast.makeText(getContext(), error.toString(), Toast.LENGTH_SHORT).show();
+            public void onFailure(int statusCode, Header[] headers, byte[] responseBody, Throwable error) {
+                Toast.makeText(getContext(), "Conexión fallida", Toast.LENGTH_SHORT).show();
             }
-        }){
+        });
+    }
+
+    private void descargarUsuario(){
+        id_usuario.clear();
+        nombre_usuario.clear();
+        apellido_usuario.clear();
+        final ProgressDialog progressDialog = new ProgressDialog(getActivity());
+        AsyncHttpClient client = new AsyncHttpClient();
+        client.get("https://yotrabajoconpecs.ddns.net/query_usuario.php", new AsyncHttpResponseHandler() {
+            @RequiresApi(api = Build.VERSION_CODES.M)
             @Override
-            protected Map<String, String> getParams() throws AuthFailureError {
-                Map<String,String> parametros = new HashMap<String,String>();
-                parametros.put("id_tarea_lista", id_tarea_lista);
-                return parametros;
+            public void onSuccess(int statusCode, Header[] headers, byte[] responseBody) {
+                if(statusCode == 200){
+                    progressDialog.dismiss();
+                    try{
+                        JSONArray jsonarray = new JSONArray(new String(responseBody));
+                        for(int i = 0; i < jsonarray.length(); i++){
+                            nombre_usuario.add(jsonarray.getJSONObject(i).getString("nombre_usuario"));
+                            apellido_usuario.add(jsonarray.getJSONObject(i).getString("apellido_usuario"));
+                            id_usuario.add(jsonarray.getJSONObject(i).getString("id_usuario"));
+                            String nombre_usuario_conespacios = nombre_usuario.get(i).toString() + " " + apellido_usuario.get(i).toString();
+                            String nombre_usuario_sinespacios = nombre_usuario_conespacios.replace(" ", "");
+                            String usuario = Preferences.obtenerPreferenceString(getContext(), Preferences.PREFERENCE_USUARIO_LOGIN);
+                            if(usuario.equals(nombre_usuario_sinespacios)){
+                                myid = id_usuario.get(i).toString();
+                            }
+                        }
+                        SolicitudJSON("https://yotrabajoconpecs.ddns.net/query_lista_tarea.php?jefatura=" + myid);
+                    }catch(JSONException e){
+                        e.printStackTrace();
+                    }
+                }
             }
-        };
-        RequestQueue requestQueue = Volley.newRequestQueue(getContext());
-        requestQueue.add(stringRequest);
+            @Override
+            public void onFailure(int statusCode, Header[] headers, byte[] responseBody, Throwable error) {
+                Toast.makeText(getContext(), "Conexión fallida", Toast.LENGTH_SHORT).show();
+            }
+        });
     }
 }

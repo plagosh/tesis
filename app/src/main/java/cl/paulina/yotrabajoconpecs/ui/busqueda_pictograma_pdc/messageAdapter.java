@@ -8,6 +8,7 @@ import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.FrameLayout;
 import android.widget.ImageButton;
 import android.widget.ImageView;
@@ -75,11 +76,9 @@ public class messageAdapter extends RecyclerView.Adapter<messageAdapter.Mensajes
         lista = new ArrayList();
 
         String id = mensajedetexto.get(position).getId();
-
         String urlCompleto[] = id.split(" ");
         holder.TvMensaje.removeAllViews();
         for(int i = 0; i < urlCompleto.length; i++){
-            lista.add(urlCompleto[i]);
             ImageButton imagen = new ImageButton(context);
             holder.TvMensaje.setGravity(Gravity.CENTER);
             imagen.setBackgroundResource(R.drawable.boton_rectangulo);
@@ -88,6 +87,7 @@ public class messageAdapter extends RecyclerView.Adapter<messageAdapter.Mensajes
             Picasso.get().load("https://yotrabajoconpecs.ddns.net/" + urlCompleto[i]).into(imagen);
             holder.TvMensaje.addView(imagen);
         }
+        holder.TvMs.setText(mensajedetexto.get(position).getMensaje());
         holder.TvHora.setText(mensajedetexto.get(position).getHoraDelMensaje());
         if(Build.VERSION.SDK_INT < Build.VERSION_CODES.LOLLIPOP) holder.cardView.getBackground().setAlpha(0);
         else holder.cardView.setBackgroundColor(ContextCompat.getColor(context, android.R.color.transparent));
@@ -101,7 +101,7 @@ public class messageAdapter extends RecyclerView.Adapter<messageAdapter.Mensajes
     static class MensajesViewHolder extends RecyclerView.ViewHolder{
         CardView cardView;
         LinearLayout mensajeBG, TvMensaje;
-        TextView TvHora;
+        TextView TvHora, TvMs;
 
         MensajesViewHolder(View itemView){
             super(itemView);
@@ -109,6 +109,7 @@ public class messageAdapter extends RecyclerView.Adapter<messageAdapter.Mensajes
             mensajeBG = (LinearLayout) itemView.findViewById(R.id.mensajeBG);
             TvMensaje = (LinearLayout) itemView.findViewById(R.id.crearCaja);
             TvHora = (TextView) itemView.findViewById(R.id.msHora);
+            TvMs = (TextView) itemView.findViewById(R.id.msMensaje);
         }
     }
 }

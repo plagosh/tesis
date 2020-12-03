@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.CheckBox;
 import android.widget.ImageView;
 import android.widget.TextView;
 import androidx.annotation.NonNull;
@@ -38,6 +39,7 @@ public class StackAdapter extends RecyclerView.Adapter<StackAdapter.HolderStack>
         holder.nombre.setText(atributosList.get(position).getNombre());
         holder.tarea.setText(atributosList.get(position).getTarea());
         holder.hora.setText(atributosList.get(position).getHora());
+        holder.tv_check.setChecked(atributosList.get(position).getId());
     }
 
     @Override
@@ -49,6 +51,7 @@ public class StackAdapter extends RecyclerView.Adapter<StackAdapter.HolderStack>
         CardView cardView;
         ImageView imageView;
         TextView nombre, tarea, hora;
+        CheckBox tv_check;
 
         public HolderStack(View itemView){
             super(itemView);
@@ -57,6 +60,7 @@ public class StackAdapter extends RecyclerView.Adapter<StackAdapter.HolderStack>
             nombre = (TextView) itemView.findViewById(R.id.nombreStack);
             tarea = (TextView) itemView.findViewById(R.id.nombreTarea);
             hora = (TextView) itemView.findViewById(R.id.horaTarea);
+            tv_check = (CheckBox) itemView.findViewById(R.id.checkeado);
         }
     }
 

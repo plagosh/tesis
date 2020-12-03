@@ -46,6 +46,7 @@ public class examplebuttonsheetdialog extends BottomSheetDialogFragment {
     public ArrayList glosa;
     public Fragment fragment;
     Bundle datos;
+    BottomSheetBehavior sheetBehavior;
 
     @SuppressLint("RestrictedApi")
     @Override
@@ -97,7 +98,6 @@ public class examplebuttonsheetdialog extends BottomSheetDialogFragment {
                             break;
                         }
                     }
-
                     //Toast.makeText(getContext(), "Bottom Sheet State Changed to: " + state, Toast.LENGTH_SHORT).show();
                 }
 
@@ -237,6 +237,7 @@ public class examplebuttonsheetdialog extends BottomSheetDialogFragment {
                     datos.putString("glosa_frase", glosa.get(position).toString());
                     fragmento.setArguments(datos);
                     cambiarFragmento(fragmento);
+                    sheetBehavior.setState(BottomSheetBehavior.STATE_HIDDEN);
                 }
             });
             return viewGroup;

@@ -29,6 +29,7 @@ import com.android.volley.VolleyError;
 import com.android.volley.toolbox.JsonObjectRequest;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
+import com.google.android.material.bottomsheet.BottomSheetBehavior;
 import com.loopj.android.http.AsyncHttpClient;
 import com.loopj.android.http.AsyncHttpResponseHandler;
 import com.squareup.picasso.Picasso;
@@ -74,6 +75,10 @@ public class libroPDC extends Fragment {
     private static final String IP_MENSAJE = "https://yotrabajoconpecs.ddns.net/Enviar_Mensajes.php";
     ImageButton imagen1, imagen2, arriba1, arriba2, abajo1, abajo2;
     Bundle datos;
+    private ArrayList descargar_mensaje;
+    private ArrayList descargar_tipo;
+    private ArrayList descargar_hora;
+    private ArrayList descargar_url;
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
@@ -113,6 +118,10 @@ public class libroPDC extends Fragment {
         menssage = new ArrayList();
         urlQueryCero = new ArrayList();
         urls = new ArrayList();
+        descargar_mensaje = new ArrayList();
+        descargar_tipo = new ArrayList();
+        descargar_hora = new ArrayList();
+        descargar_url = new ArrayList();
 
         recibir_frase = getArguments();
         Bundle recibir_verbo = getArguments();
@@ -184,7 +193,6 @@ public class libroPDC extends Fragment {
         adapter = new messageAdapter(mensajedetexto, getContext());
         rv.setAdapter(adapter);
         bTEnviarMensaje = vista.findViewById(R.id.bTEnviarMensaje);
-
         if(recibir_frase != null && recibir_glosa != null) {
             if (String.valueOf(recibir_frase.getString("url_frase")) != String.valueOf(0)) {
                 if (String.valueOf(recibir_glosa.getString("glosa_frase")) != String.valueOf(0)) {
@@ -193,12 +201,11 @@ public class libroPDC extends Fragment {
                     Date dt = new Date();
                     int hours = dt.getHours();
                     int minutes = dt.getMinutes();
-                    String curTime = hours + ":" + minutes;
+                    String curTime = hours + ":" + minutes + ", Hoy";
                     MENSAJE_ENVIAR = glosa_frase;
-                    EMISOR = "Maximiliano Ramirez Henriquez";
-                    NOMBRE = "marce36";
+                    NOMBRE = "Maximiliano Ramirez Henriquez";
+                    EMISOR = "marce36";
                     MandarMensaje();
-                    CreateMensaje(url_frase, MENSAJE_ENVIAR, curTime, 1);
                 }
             }
             recibir_frase.clear();
@@ -373,7 +380,7 @@ public class libroPDC extends Fragment {
         hashMapToken.put("nombrecompleto", NOMBRE);
         hashMapToken.put("receptor", RECEPTOR);
         hashMapToken.put("mensaje", MENSAJE_ENVIAR);
-        Toast.makeText(getContext(), EMISOR + NOMBRE + RECEPTOR + MENSAJE_ENVIAR + "" + IP_MENSAJE, Toast.LENGTH_SHORT).show();
+        //Toast.makeText(getContext(), EMISOR + NOMBRE + RECEPTOR + MENSAJE_ENVIAR + "" + IP_MENSAJE, Toast.LENGTH_SHORT).show();
 
         JsonObjectRequest solicitud = new JsonObjectRequest(Request.Method.POST, IP_MENSAJE, new JSONObject(hashMapToken), new Response.Listener<JSONObject>() {
             @Override
@@ -439,6 +446,8 @@ public class libroPDC extends Fragment {
                         }
                         EMISOR = correo_login.get(correo_login.size()-1).toString();
                         NOMBRE = nombre_login.get(nombre_login.size()-1).toString();
+                        //Toast.makeText(getContext(), EMISOR, Toast.LENGTH_SHORT).show();
+                        DescargarMensajes("https://yotrabajoconpecs.ddns.net/query_mensajes.php?usuario=" + EMISOR);
                     } catch (JSONException e) {
                         e.printStackTrace();
                     }
@@ -447,11 +456,7 @@ public class libroPDC extends Fragment {
 
             @Override
             public void onFailure(int statusCode, Header[] headers, byte[] responseBody, Throwable error) {
-                Context context = getContext();
-                CharSequence text = "Conexión fallida";
-                int duration = Toast.LENGTH_SHORT;
-                Toast toast = Toast.makeText(context, text, duration);
-                toast.show();
+                Toast.makeText(getContext(), "Conexión fallida", Toast.LENGTH_SHORT).show();
             }
         });
     }
@@ -483,11 +488,7 @@ public class libroPDC extends Fragment {
 
             @Override
             public void onFailure(int statusCode, Header[] headers, byte[] responseBody, Throwable error) {
-                Context context = getContext();
-                CharSequence text = "Conexión fallida";
-                int duration = Toast.LENGTH_SHORT;
-                Toast toast = Toast.makeText(context, text, duration);
-                toast.show();
+                Toast.makeText(getContext(), "Conexión fallida", Toast.LENGTH_SHORT).show();
             }
         });
     }
@@ -518,11 +519,7 @@ public class libroPDC extends Fragment {
 
             @Override
             public void onFailure(int statusCode, Header[] headers, byte[] responseBody, Throwable error) {
-                Context context = getContext();
-                CharSequence text = "Conexión fallida";
-                int duration = Toast.LENGTH_SHORT;
-                Toast toast = Toast.makeText(context, text, duration);
-                toast.show();
+                Toast.makeText(getContext(), "Conexión fallida", Toast.LENGTH_SHORT).show();
             }
         });
     }
@@ -553,11 +550,7 @@ public class libroPDC extends Fragment {
 
             @Override
             public void onFailure(int statusCode, Header[] headers, byte[] responseBody, Throwable error) {
-                Context context = getContext();
-                CharSequence text = "Conexión fallida";
-                int duration = Toast.LENGTH_SHORT;
-                Toast toast = Toast.makeText(context, text, duration);
-                toast.show();
+                Toast.makeText(getContext(), "Conexión fallida", Toast.LENGTH_SHORT).show();
             }
         });
     }
@@ -618,6 +611,45 @@ public class libroPDC extends Fragment {
         };
         RequestQueue requestQueue = Volley.newRequestQueue(getContext());
         requestQueue.add(stringRequest);
+    }
+
+    private void DescargarMensajes(String URL){
+        descargar_mensaje.clear();
+        descargar_tipo.clear();
+        descargar_hora.clear();
+        descargar_url.clear();
+        final ProgressDialog progressDialog = new ProgressDialog(getActivity());
+        AsyncHttpClient client = new AsyncHttpClient();
+        client.get(URL, new AsyncHttpResponseHandler() {
+            @RequiresApi(api = Build.VERSION_CODES.M)
+            @Override
+            public void onSuccess(int statusCode, Header[] headers, byte[] responseBody) {
+                if(statusCode == 200){
+                    progressDialog.dismiss();
+                    try{
+                        JSONArray jsonarray = new JSONArray(new String(responseBody));
+                        for(int i = 0; i < jsonarray.length(); i++){
+                            descargar_mensaje.add(jsonarray.getJSONObject(i).getString("mensaje"));
+                            descargar_tipo.add(jsonarray.getJSONObject(i).getString("tipo_mensaje"));
+                            descargar_hora.add(jsonarray.getJSONObject(i).getString("hora_del_mensaje"));
+                            descargar_url.add(jsonarray.getJSONObject(i).getString("url"));
+                            String curTime = descargar_hora.get(i).toString();
+                            String mensaje = descargar_mensaje.get(i).toString();
+                            String mensajedos = descargar_url.get(i).toString();
+                            int tipo = Integer.parseInt(descargar_tipo.get(i).toString());
+
+                            CreateMensaje(mensajedos, mensaje, curTime, tipo);
+                        }
+                    }catch(JSONException e){
+                        e.printStackTrace();
+                    }
+                }
+            }
+            @Override
+            public void onFailure(int statusCode, Header[] headers, byte[] responseBody, Throwable error) {
+                Toast.makeText(getContext(), "Conexión fallida", Toast.LENGTH_SHORT).show();
+            }
+        });
     }
 
     public void cambiarFragmento(Fragment fragment){

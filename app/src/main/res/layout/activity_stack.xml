@@ -12,12 +12,12 @@
         android:layout_margin="16dp"
         android:orientation="vertical">
 
-        <androidx.recyclerview.widget.RecyclerView
+        <GridView
             android:id="@+id/stackRecyclerView"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             tools:listitem="@layout/card_view_stack"
             android:layout_gravity="start">
-        </androidx.recyclerview.widget.RecyclerView>
+        </GridView>
     </LinearLayout>
 </LinearLayout>
