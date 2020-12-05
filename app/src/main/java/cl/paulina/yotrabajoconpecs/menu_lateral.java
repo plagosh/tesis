@@ -74,7 +74,7 @@ public class menu_lateral extends AppCompatActivity {
         });
 
         mAppBarConfiguration = new AppBarConfiguration.Builder(
-                R.id.nav_inicio, R.id.nav_libro, R.id.nav_panel, R.id.nav_micuenta, R.id.nav_configuracion, R.id.nav_cerrar_sesion)
+                R.id.nav_inicio, R.id.nav_libro, R.id.nav_panel)
                 .setDrawerLayout(drawer)
                 .build();
 

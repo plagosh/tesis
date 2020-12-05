@@ -35,12 +35,13 @@ public class desglose extends Fragment {
     ArrayList pictos, pictos2;
     public Fragment fragment;
     PreferenciasCompartidas pc;
-    AlertDialog.Builder builder;
-    int Sapo = 0;
     Bundle datos;
     String key = "id_tarea";
-    LinearLayout contenido, caja, layout;
-    private ArrayList id_desglose, tarea_id_tarea, url, id_detalle;
+    LinearLayout layout;
+    ImageButton imagen;
+    private ArrayList id_desglose, tarea_id_tarea, url, id_detalle, id_herramienta;
+    public String pasando_dato;
+    public String HERRAMIENTA;
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
@@ -53,103 +54,73 @@ public class desglose extends Fragment {
         tarea_id_tarea = new ArrayList();
         id_detalle = new ArrayList();
         url = new ArrayList();
+        id_herramienta = new ArrayList();
         layout = vista.findViewById(R.id.cajaBotonImagen);
 
         pc = new PreferenciasCompartidas();
-        caja = new LinearLayout(getContext());
-        caja.setLayoutParams(new LinearLayout.LayoutParams(LinearLayout.LayoutParams.FILL_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT));
-        caja.setOrientation(LinearLayout.HORIZONTAL);
-        caja.setOrientation(LinearLayout.VERTICAL);
         pc.loadData(pictos, getContext(), key);
-        descargando();
+        Bundle datosRecibido = getArguments();
+        String id = datosRecibido.getString("id_tarea");
+        descargando("https://yotrabajoconpecs.ddns.net/query2.php?tarea=" + id);
 
         return vista;
     }
 
-    private void descargando(){
+    private void descargando(String URL){
         id_desglose.clear();
         tarea_id_tarea.clear();
         id_detalle.clear();
         url.clear();
-
-        final ProgressDialog progressDialog = new ProgressDialog(getActivity());
-        progressDialog.setMessage("Cargando datos...");
-        progressDialog.show();
+        id_herramienta.clear();
         AsyncHttpClient client = new AsyncHttpClient();
-        client.get("https://yotrabajoconpecs.ddns.net/query2.php", new AsyncHttpResponseHandler() {
+        client.get(URL, new AsyncHttpResponseHandler() {
             @RequiresApi(api = Build.VERSION_CODES.M)
             @Override
             public void onSuccess(int statusCode, Header[] headers, byte[] responseBody) {
                 if(statusCode == 200){
-                    progressDialog.dismiss();
-                    Bundle datosRecibido = getArguments();
-                    String id = datosRecibido.getString("id_tarea");
-                    //Toast.makeText(getContext(), "tengo el id_tarea: " + id, Toast.LENGTH_SHORT).show();
                     try{
                          JSONArray jsonarray = new JSONArray(new String(responseBody));
-
                          for(int j = 0; j < jsonarray.length(); j++){
-                            //Toast.makeText(getContext(), "recorriendo for " + j, Toast.LENGTH_SHORT).show();
                             id_desglose.add(jsonarray.getJSONObject(j).getString("id_desglose"));
                             tarea_id_tarea.add(jsonarray.getJSONObject(j).getString("tarea_id_tarea"));
                             id_detalle.add(jsonarray.getJSONObject(j).getString("id_detalle"));
                             url.add(jsonarray.getJSONObject(j).getString("url"));
+                            id_herramienta.add(jsonarray.getJSONObject(j).getString("id_herramienta"));
+                            imagen = new ImageButton(getContext());
+                            imagen.setLayoutParams(new LinearLayout.LayoutParams(ViewGroup.LayoutParams.WRAP_CONTENT, 400));
+                            imagen.setBackgroundResource(R.drawable.boton_rectangulo);
+                            imagen.setScaleType(ImageButton.ScaleType.FIT_CENTER);
+                            imagen.setId(j);
+                            layout.setOrientation(LinearLayout.VERTICAL);
+                            layout.setPadding(10, 10, 10, 10);
+                            Picasso.get().load("https://yotrabajoconpecs.ddns.net/" + url.get(j).toString()).into(imagen);
+                            layout.addView(imagen);
+                            if(id_herramienta.get(j).toString().equals("null")){
 
-                            //Toast.makeText(getContext(), "id_desglose: " + id_desglose.get(j).toString(), Toast.LENGTH_SHORT).show();
-                            String tarea = tarea_id_tarea.get(j).toString();
-                            if(tarea.equals(id)){
-                                pictos.add(url.get(j).toString());
-                                pictos2.add(id_desglose.get(j).toString());
+                            }else{
+                                pasando_dato = id_desglose.get(j).toString();
+                                imagen.setOnClickListener(new View.OnClickListener() {
+                                    @Override
+                                    public void onClick(View v) {
+                                        Fragment fragment = new herramientas();
+                                        FragmentTransaction transaction = getFragmentManager().beginTransaction();
+                                        transaction.replace(R.id.nav_host_fragment, fragment);
+                                        transaction.addToBackStack(null);
+                                        transaction.commit();
+                                        datos.putString("id_desglose", pasando_dato);
+                                        fragment.setArguments(datos);
+                                    }
+                                });
                             }
-                        }
-                        if (pictos.size() > 0) {
-                            Log.e("GenerarFotoTamañoLista ", String.valueOf(pictos.size()));
-                            for (int i = 0; pictos.size()> i; i++) {
-                                if(pictos.get(i) != "") {
-                                    ImageButton imagen = new ImageButton(getContext());
-                                    LinearLayout contenido = new LinearLayout(getContext());
-                                    contenido.setLayoutParams(new LinearLayout.LayoutParams(ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT));
-                                    contenido.setOrientation(LinearLayout.HORIZONTAL);
-                                    imagen.setLayoutParams(new LinearLayout.LayoutParams(600, 600));
-                                    imagen.setPadding(10, 10, 10, 10);
-                                    imagen.setId(i);
-                                    Picasso.get().load("https://yotrabajoconpecs.ddns.net/" + pictos.get(i)).into(imagen);
-                                    contenido.addView(imagen);
-                                    caja.addView(contenido);
-                                    String pasando_dato = pictos2.get(i).toString();
-                                    imagen.setOnClickListener(new View.OnClickListener() {
-                                        @Override
-                                        public void onClick(View v) {
-                                            Fragment fragment = new herramientas();
-                                            FragmentTransaction transaction = getFragmentManager().beginTransaction();
-                                            transaction.replace(R.id.nav_host_fragment, fragment);
-                                            transaction.addToBackStack(null);
-                                            transaction.commit();
-                                            datos.putString("id_desglose", pasando_dato);
-                                            Log.e("Enviar", "desglose enviada");
-                                            fragment.setArguments(datos);
-                                            //Toast.makeText(getContext(), "pase el id_desglose: " + pasando_dato, Toast.LENGTH_SHORT).show();
-                                        }
-                                    });
-                                }
-                            }
-                            layout.addView(caja);
-                        }
+                         }
                     }catch(JSONException e){
                         e.printStackTrace();
                     }
                 }
             }
-
             @Override
             public void onFailure(int statusCode, Header[] headers, byte[] responseBody, Throwable error) {
-                //progressDialog.dismiss();
-                Context context = getContext();
-                CharSequence text = "Conexión fallida";
-                int duration = Toast.LENGTH_SHORT;
-
-                Toast toast = Toast.makeText(context, text, duration);
-                toast.show();
+                Toast.makeText(getContext(), "Conexión fallida", Toast.LENGTH_SHORT).show();
             }
         });
     }

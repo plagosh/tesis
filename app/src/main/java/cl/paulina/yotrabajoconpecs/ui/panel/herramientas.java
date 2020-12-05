@@ -6,6 +6,7 @@ import android.content.Context;
 import android.os.Build;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -57,76 +58,50 @@ public class herramientas extends Fragment {
         caja.setOrientation(LinearLayout.HORIZONTAL);
         caja.setOrientation(LinearLayout.VERTICAL);
         pc.loadData(pictos, getContext(), key);
-        descargarDatos();
 
+        Bundle datosRecibido = getArguments();
+        String id = datosRecibido.getString("id_desglose");
+        descargarDatos("https://yotrabajoconpecs.ddns.net/query4.php?desgloce=" + id);
 
         return vista;
     }
 
-    private void descargarDatos(){
+    private void descargarDatos(String URL){
         id_herramienta.clear();
         desglose_id_desglose.clear();
         url.clear();
-
-        final ProgressDialog progressDialog = new ProgressDialog(getActivity());
-        progressDialog.setMessage("Cargando datos...");
-        progressDialog.show();
         AsyncHttpClient client = new AsyncHttpClient();
-        client.get("https://yotrabajoconpecs.ddns.net/query4.php", new AsyncHttpResponseHandler() {
+        client.get(URL, new AsyncHttpResponseHandler() {
             @RequiresApi(api = Build.VERSION_CODES.M)
             @Override
             public void onSuccess(int statusCode, Header[] headers, byte[] responseBody) {
                 if(statusCode == 200){
-                    progressDialog.dismiss();
-                    Bundle datosRecibido = getArguments();
-                    String id = datosRecibido.getString("id_desglose");
-                    //Toast.makeText(getContext(), "tengo el id_desglose: " + id, Toast.LENGTH_SHORT).show();
                     try{
                         JSONArray jsonarray = new JSONArray(new String(responseBody));
                         for(int i = 0; i < jsonarray.length(); i++){
-                            //Toast.makeText(getContext(), "recorriendo for " + i, Toast.LENGTH_SHORT).show();
+                            //
                             id_herramienta.add(jsonarray.getJSONObject(i).getString("id_herramienta"));
                             desglose_id_desglose.add(jsonarray.getJSONObject(i).getString("desglose_id_desglose"));
                             url.add(jsonarray.getJSONObject(i).getString("url"));
 
-                            String desglose = desglose_id_desglose.get(i).toString();
-                            if(desglose.equals(id)){
-                                pictos.add(url.get(i).toString());
-                            }
-                        }
-                        if (pictos.size() > 0) {
-                            Log.e("GenerarFotoTamañoLista ", String.valueOf(pictos.size()));
-                            for (int j = 0; pictos.size()> j; j++) {
-                                if(pictos.get(j) != "") {
-                                    ImageButton imagen = new ImageButton(getContext());
-                                    LinearLayout contenido = new LinearLayout(getContext());
-                                    contenido.setLayoutParams(new LinearLayout.LayoutParams(ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT));
-                                    contenido.setOrientation(LinearLayout.HORIZONTAL);
-                                    imagen.setLayoutParams(new LinearLayout.LayoutParams(400, 400));
-                                    imagen.setPadding(10, 10, 10, 10);
-                                    imagen.setId(j);
-                                    Picasso.get().load("https://yotrabajoconpecs.ddns.net/" + pictos.get(j)).into(imagen);
-                                    contenido.addView(imagen);
-                                    caja.addView(contenido);
-                                }
-                            }
-                            layout.addView(caja);
+                            ImageButton imagen = new ImageButton(getContext());
+                            imagen.setBackgroundResource(R.drawable.boton_rectangulo);
+                            imagen.setScaleType(ImageButton.ScaleType.FIT_CENTER);
+                            imagen.setLayoutParams(new LinearLayout.LayoutParams(ViewGroup.LayoutParams.WRAP_CONTENT,400));
+                            imagen.setId(i);
+                            Picasso.get().load("https://yotrabajoconpecs.ddns.net/" + url.get(i)).into(imagen);
+                            layout.setOrientation(LinearLayout.VERTICAL);
+                            layout.setPadding(10, 10, 10, 10);
+                            layout.addView(imagen);
                         }
                     }catch(JSONException e){
                         e.printStackTrace();
                     }
                 }
             }
-
             @Override
             public void onFailure(int statusCode, Header[] headers, byte[] responseBody, Throwable error) {
-                //progressDialog.dismiss();
-                Context context = getContext();
-                CharSequence text = "Conexión fallida";
-                int duration = Toast.LENGTH_SHORT;
-
-                Toast toast = Toast.makeText(context, text, duration);
-                toast.show();
+                Toast.makeText(getContext(), "Conexión fallida", Toast.LENGTH_SHORT).show();
             }
         });
     }

@@ -14,7 +14,7 @@
         android:theme="@style/AppTheme">
         <activity
             android:name=".menu_lateral"
-            android:label="MenuLateral"
+            android:label="@string/titulo"
             android:theme="@style/AppTheme.NoActionBar"></activity>
         <activity android:name=".Login">
             <intent-filter>

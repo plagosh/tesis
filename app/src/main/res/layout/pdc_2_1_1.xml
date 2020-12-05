@@ -14,7 +14,7 @@
         <ImageView
             android:layout_width="80sp"
             android:layout_height="140sp"
-            android:src="@drawable/herramientas"/>
+            android:src="@drawable/ic_baseline_handyman_24"/>
 
         <LinearLayout
             android:id="@+id/layoutdesglose"

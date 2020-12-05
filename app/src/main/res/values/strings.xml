@@ -5,6 +5,7 @@
     <string name="nav_header_subtitle">plagosh1@gmail.com</string>
     <string name="nav_header_desc">Navigation header</string>
     <string name="title_activity_menu_lateral">MenuLateral</string>
+    <string name="titulo">Titulo</string>
 
     #sesion
     <string name="bienvenida">

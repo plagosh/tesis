@@ -67,7 +67,11 @@ public class ActivityStack extends Fragment {
     private ArrayList apellido_usuario;
     private ArrayList id_tarea_lista;
     private ArrayList id;
+    private ArrayList correo_pdc;
+    private ArrayList nombre_pdc;
+    private ArrayList apellido_pdc;
     public String myid = "";
+    public String PDC;
 
     public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View vista = inflater.inflate(R.layout.activity_stack, container, false);
@@ -79,12 +83,52 @@ public class ActivityStack extends Fragment {
         apellido_usuario = new ArrayList();
         tv_jefatura = new ArrayList();
         id_tarea_lista = new ArrayList();
+        correo_pdc = new ArrayList();
+        nombre_pdc = new ArrayList();
+        apellido_pdc = new ArrayList();
         id = new ArrayList();
         gridView = vista.findViewById(R.id.stackRecyclerView);
 
         descargarUsuario();
 
         return vista;
+    }
+
+    private void descargarPDC(String nombre){
+        correo_pdc.clear();
+        nombre_usuario.clear();
+        apellido_usuario.clear();
+        final ProgressDialog progressDialog = new ProgressDialog(getActivity());
+        AsyncHttpClient client = new AsyncHttpClient();
+        client.get("https://yotrabajoconpecs.ddns.net/query_usuario.php", new AsyncHttpResponseHandler() {
+            @RequiresApi(api = Build.VERSION_CODES.M)
+            @Override
+            public void onSuccess(int statusCode, Header[] headers, byte[] responseBody) {
+                if(statusCode == 200){
+                    progressDialog.dismiss();
+                    try{
+                        JSONArray jsonarray = new JSONArray(new String(responseBody));
+                        for(int i = 0; i < jsonarray.length(); i++){
+                            nombre_pdc.add(jsonarray.getJSONObject(i).getString("nombre_usuario"));
+                            apellido_pdc.add(jsonarray.getJSONObject(i).getString("apellido_usuario"));
+                            correo_pdc.add(jsonarray.getJSONObject(i).getString("correo"));
+                            String nombre_usuario_conespacios = nombre_pdc.get(i).toString() + " " + apellido_pdc.get(i).toString();
+                            String nombre_usuario_sinespacios = nombre_usuario_conespacios.replace(" ", "");
+                            if(nombre.equals(nombre_usuario_sinespacios)){
+                                PDC = correo_pdc.get(i).toString();
+                            }
+                        }
+                        SolicitudJSON("https://yotrabajoconpecs.ddns.net/query_lista_tarea.php?jefatura=" + myid);
+                    }catch(JSONException e){
+                        e.printStackTrace();
+                    }
+                }
+            }
+            @Override
+            public void onFailure(int statusCode, Header[] headers, byte[] responseBody, Throwable error) {
+                Toast.makeText(getContext(), "Conexión fallida", Toast.LENGTH_SHORT).show();
+            }
+        });
     }
 
     private void SolicitudJSON(String URL_GET_ALL_STACK){
@@ -171,8 +215,9 @@ public class ActivityStack extends Fragment {
             tv_check.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
+                    descargarPDC(tv_tarea.get(position).toString());
                     //mandar corroboracion
-                    validarTareaEmpleador("https://yotrabajoconpecs.ddns.net/validar_tarea_empleador.php?id=" + id.get(position).toString());
+                    validarTareaEmpleador("https://yotrabajoconpecs.ddns.net/validar_tarea_empleador.php?id=" + id.get(position).toString() + "&usuario=" + PDC);
                     //eliminar tarea
                     eliminarTareaLista("https://yotrabajoconpecs.ddns.net/eliminar_ListaTarea.php?id_tarea_lista=" + id_tarea_lista.get(position).toString());
                 }
