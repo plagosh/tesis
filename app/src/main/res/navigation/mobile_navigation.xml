@@ -72,8 +72,23 @@
         android:label="Chat"
         tools:layout="@layout/pdc_mensajeria" />
     <fragment
-        android:id="@+id/nav_n"
-        android:name="cl.paulina.yotrabajoconpecs.ui.busqueda_pictograma_pdc.examplebuttonsheetdialog"
-        android:label="Chat"
+        android:id="@+id/nav_frase"
+        android:name="cl.paulina.yotrabajoconpecs.ui.libro.examplebuttonsheetdialog"
+        android:label="Frase"
         tools:layout="@layout/bottom_sheet_layout" />
+    <fragment
+        android:id="@+id/nav_frase_general"
+        android:name="cl.paulina.yotrabajoconpecs.ui.libro.frase_general"
+        android:label="Frase General"
+        tools:layout="@layout/bottom_sheet_layout" />
+    <fragment
+        android:id="@+id/nav_frase_consulta"
+        android:name="cl.paulina.yotrabajoconpecs.ui.libro.frase_consulta"
+        android:label="Frase Consulta"
+        tools:layout="@layout/register" />
+    <fragment
+        android:id="@+id/nav_frase_sugerencia"
+        android:name="cl.paulina.yotrabajoconpecs.ui.libro.frase_sugerencia"
+        android:label="Frase Sugerencia"
+        tools:layout="@layout/login" />
 </navigation>

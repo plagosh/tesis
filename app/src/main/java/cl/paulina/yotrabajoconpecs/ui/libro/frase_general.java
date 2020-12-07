@@ -1,4 +1,4 @@
-package cl.paulina.yotrabajoconpecs.ui.busqueda_pictograma_pdc;
+package cl.paulina.yotrabajoconpecs.ui.libro;
 
 import android.annotation.SuppressLint;
 import android.app.Dialog;
@@ -16,6 +16,7 @@ import android.widget.LinearLayout;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.annotation.RequiresApi;
 import androidx.coordinatorlayout.widget.CoordinatorLayout;
 import androidx.fragment.app.Fragment;
@@ -33,10 +34,9 @@ import org.json.JSONException;
 import java.util.ArrayList;
 
 import cl.paulina.yotrabajoconpecs.R;
-import cl.paulina.yotrabajoconpecs.ui.libro.libroPDC;
 import cz.msebera.android.httpclient.Header;
 
-public class examplebuttonsheetdialog extends BottomSheetDialogFragment {
+public class frase_general extends Fragment {
     private GridView gridView;
     public LinearLayout contentCaja;
     private ArrayList id_frase;
@@ -48,12 +48,9 @@ public class examplebuttonsheetdialog extends BottomSheetDialogFragment {
     Bundle datos;
     BottomSheetBehavior sheetBehavior;
 
-    @SuppressLint("RestrictedApi")
     @Override
-    public void setupDialog(Dialog dialog, int style) {
-        super.setupDialog(dialog, style);
-        View view = LayoutInflater.from(getContext()).inflate(R.layout.bottom_sheet_layout, null);
-        dialog.setContentView(view);
+    public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
+        View view = inflater.inflate(R.layout.bottom_sheet_layout, container, false);
 
         gridView = view.findViewById(R.id.listviewFrase);
         contentCaja = view.findViewById(R.id.contentCaja);
@@ -66,74 +63,7 @@ public class examplebuttonsheetdialog extends BottomSheetDialogFragment {
 
         descargarDatos();
 
-        CoordinatorLayout.LayoutParams params = (CoordinatorLayout.LayoutParams) ((View) view.getParent()).getLayoutParams();
-        CoordinatorLayout.Behavior behavior = params.getBehavior();
-
-        if (behavior != null && behavior instanceof BottomSheetBehavior) {
-            ((BottomSheetBehavior) behavior).setBottomSheetCallback(new BottomSheetBehavior.BottomSheetCallback() {
-                @Override
-                public void onStateChanged(@NonNull View bottomSheet, int newState) {
-                    String state = "";
-
-                    switch (newState) {
-                        case BottomSheetBehavior.STATE_DRAGGING: {
-                            state = "DRAGGING";
-                            break;
-                        }
-                        case BottomSheetBehavior.STATE_SETTLING: {
-                            state = "SETTLING";
-                            break;
-                        }
-                        case BottomSheetBehavior.STATE_EXPANDED: {
-                            state = "EXPANDED";
-                            break;
-                        }
-                        case BottomSheetBehavior.STATE_COLLAPSED: {
-                            state = "COLLAPSED";
-                            break;
-                        }
-                        case BottomSheetBehavior.STATE_HIDDEN: {
-                            dismiss();
-                            state = "HIDDEN";
-                            break;
-                        }
-                    }
-                    //Toast.makeText(getContext(), "Bottom Sheet State Changed to: " + state, Toast.LENGTH_SHORT).show();
-                }
-
-                @Override
-                public void onSlide(@NonNull View bottomSheet, float slideOffset) {
-                    String state = "";
-                }
-            });
-        }
-    }
-
-    private void descargarGlosa(){
-        glosa.clear();
-        final ProgressDialog progressDialog = new ProgressDialog(getActivity());
-        AsyncHttpClient client = new AsyncHttpClient();
-        client.get("https://yotrabajoconpecs.ddns.net/query_frase2.php", new AsyncHttpResponseHandler() {
-            @RequiresApi(api = Build.VERSION_CODES.M)
-            @Override
-            public void onSuccess(int statusCode, Header[] headers, byte[] responseBody) {
-                if(statusCode == 200){
-                    progressDialog.dismiss();
-                    try{
-                        JSONArray jsonarray = new JSONArray(new String(responseBody));
-                        for(int i = 0; i < jsonarray.length(); i++){
-                            glosa.add(jsonarray.getJSONObject(i).getString("glosa"));
-                        }
-                    }catch(JSONException e){
-                        e.printStackTrace();
-                    }
-                }
-            }
-            @Override
-            public void onFailure(int statusCode, Header[] headers, byte[] responseBody, Throwable error) {
-                Toast.makeText(getContext(), "Conexión fallida", Toast.LENGTH_SHORT).show();
-            }
-        });
+        return view;
     }
 
     private void descargarDatos(){
@@ -150,7 +80,7 @@ public class examplebuttonsheetdialog extends BottomSheetDialogFragment {
                         JSONArray jsonarray = new JSONArray(new String(responseBody));
                         for(int i = 0; i < jsonarray.length(); i++){
                             id_frase.add(jsonarray.getJSONObject(i).getString("url"));
-                        }gridView.setAdapter(new CustomAdapter(getContext()));
+                        }gridView.setAdapter(new frase_general.CustomAdapter(getContext()));
                     }catch(JSONException e){
                         e.printStackTrace();
                     }

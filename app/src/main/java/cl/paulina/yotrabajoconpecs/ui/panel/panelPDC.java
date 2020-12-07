@@ -20,6 +20,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 import androidx.annotation.NonNull;
 import androidx.annotation.RequiresApi;
+import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentTransaction;
 
@@ -105,6 +106,7 @@ public class panelPDC extends Fragment {
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
         View vista = inflater.inflate(R.layout.pdc_2, container, false);
+        ((AppCompatActivity) getActivity()).getSupportActionBar().setTitle("Panel");
         datosRecibidos = getArguments();
         fragment = getTargetFragment();
         datos = new Bundle();

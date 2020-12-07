@@ -11,6 +11,7 @@ import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AlertDialog;
+import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentTransaction;
 
@@ -26,6 +27,7 @@ public class panelEmpleador extends Fragment implements CalendarView.OnDateChang
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
         View vista = inflater.inflate(R.layout.empleador_2_1, container, false);
+        ((AppCompatActivity) getActivity()).getSupportActionBar().setTitle("Panel");
         calendarView = vista.findViewById(R.id.calendarView);
         calendarText = vista.findViewById(R.id.textViewCalendar);
         stack = vista.findViewById(R.id.irastack);

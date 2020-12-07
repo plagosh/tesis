@@ -18,6 +18,7 @@ import android.widget.Toast;
 import androidx.annotation.NonNull;
 import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AlertDialog;
+import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 import com.loopj.android.http.AsyncHttpClient;
 import com.loopj.android.http.AsyncHttpResponseHandler;
@@ -39,6 +40,7 @@ public class ViewEventsActivity extends Fragment implements View.OnLongClickList
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
         View vista = inflater.inflate(R.layout.activity_view_events, container, false);
+        ((AppCompatActivity) getActivity()).getSupportActionBar().setTitle("Ver Tareas");
         listView = vista.findViewById(R.id.listaeventos);
         spinnerPDC = vista.findViewById(R.id.spinnerPDC);
 

@@ -15,6 +15,7 @@ import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.RequiresApi;
+import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentTransaction;
 
@@ -46,6 +47,7 @@ public class desglose extends Fragment {
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
         View vista = inflater.inflate(R.layout.pdc_2_1, container, false);
+        ((AppCompatActivity) getActivity()).getSupportActionBar().setTitle("Tareas");
         fragment = getTargetFragment();
         datos = new Bundle();
         pictos = new ArrayList();

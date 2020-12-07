@@ -1,62 +1,35 @@
 package cl.paulina.yotrabajoconpecs.Stack;
 
 import android.app.ProgressDialog;
-import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.os.Build;
 import android.os.Bundle;
-import android.provider.Settings;
-import android.util.SparseBooleanArray;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.CheckBox;
 import android.widget.GridView;
-import android.widget.ImageButton;
 import android.widget.ImageView;
-import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.RequiresApi;
+import androidx.appcompat.app.AppCompatActivity;
 import androidx.cardview.widget.CardView;
 import androidx.fragment.app.Fragment;
-import androidx.recyclerview.widget.LinearLayoutManager;
-import androidx.recyclerview.widget.RecyclerView;
 
-import com.android.volley.AuthFailureError;
-import com.android.volley.Request;
-import com.android.volley.RequestQueue;
-import com.android.volley.Response;
-import com.android.volley.VolleyError;
-import com.android.volley.toolbox.JsonObjectRequest;
-import com.android.volley.toolbox.StringRequest;
-import com.android.volley.toolbox.Volley;
 import com.loopj.android.http.AsyncHttpClient;
 import com.loopj.android.http.AsyncHttpResponseHandler;
-import com.squareup.picasso.Picasso;
 
 import org.json.JSONArray;
 import org.json.JSONException;
-import org.json.JSONObject;
 
 import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
-import java.util.Stack;
 
-import cl.paulina.yotrabajoconpecs.Amigos.AmigosAdapter;
-import cl.paulina.yotrabajoconpecs.Amigos.AmigosAtributos;
 import cl.paulina.yotrabajoconpecs.Preferences;
 import cl.paulina.yotrabajoconpecs.R;
-import cl.paulina.yotrabajoconpecs.ui.busqueda_pictograma_pdc.examplebuttonsheetdialog;
-import cl.paulina.yotrabajoconpecs.ui.libro.libroPDC;
-import cl.paulina.yotrabajoconpecs.ui.panel.AddActivity;
-import cl.paulina.yotrabajoconpecs.ui.panel.ViewEventsActivity;
-import cl.paulina.yotrabajoconpecs.ui.panel.panelPDC;
 import cz.msebera.android.httpclient.Header;
 
 public class ActivityStack extends Fragment {
@@ -75,6 +48,7 @@ public class ActivityStack extends Fragment {
 
     public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View vista = inflater.inflate(R.layout.activity_stack, container, false);
+        ((AppCompatActivity) getActivity()).getSupportActionBar().setTitle("Tareas PDC terminadas");
         id_tarea = new ArrayList();
         tv_tarea = new ArrayList();
         tv_hora = new ArrayList();

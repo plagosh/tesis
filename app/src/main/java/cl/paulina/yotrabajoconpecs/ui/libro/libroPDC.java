@@ -1,4 +1,5 @@
 package cl.paulina.yotrabajoconpecs.ui.libro;
+import android.app.ActionBar;
 import android.app.ProgressDialog;
 import android.content.BroadcastReceiver;
 import android.content.Context;
@@ -12,14 +13,18 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.Toast;
+import android.widget.Toolbar;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.RequiresApi;
+import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 import androidx.localbroadcastmanager.content.LocalBroadcastManager;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
+import androidx.viewpager.widget.ViewPager;
 
 import com.android.volley.AuthFailureError;
 import com.android.volley.Request;
@@ -29,7 +34,6 @@ import com.android.volley.VolleyError;
 import com.android.volley.toolbox.JsonObjectRequest;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
-import com.google.android.material.bottomsheet.BottomSheetBehavior;
 import com.loopj.android.http.AsyncHttpClient;
 import com.loopj.android.http.AsyncHttpResponseHandler;
 import com.squareup.picasso.Picasso;
@@ -46,12 +50,7 @@ import java.util.Map;
 
 import cl.paulina.yotrabajoconpecs.R;
 import cl.paulina.yotrabajoconpecs.ui.busqueda_pictograma_empleador.MensajeDeTexto;
-import cl.paulina.yotrabajoconpecs.ui.busqueda_pictograma_pdc.busquedaPictogramapdc2Fragment;
-import cl.paulina.yotrabajoconpecs.ui.busqueda_pictograma_pdc.busquedaPictogramapdc3Fragment;
-import cl.paulina.yotrabajoconpecs.ui.busqueda_pictograma_pdc.examplebuttonsheetdialog;
 import cl.paulina.yotrabajoconpecs.ui.busqueda_pictograma_pdc.messageAdapter;
-import cl.paulina.yotrabajoconpecs.ui.busqueda_pictograma_pdc.busquedaPictogramapdcFragment;
-import cl.paulina.yotrabajoconpecs.ui.panel.AddActivity;
 import cz.msebera.android.httpclient.Header;
 
 public class libroPDC extends Fragment {
@@ -80,10 +79,11 @@ public class libroPDC extends Fragment {
     private ArrayList descargar_hora;
     private ArrayList descargar_url;
 
+    @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
         View vista = inflater.inflate(R.layout.pdc_mensajeria, container, false);
-
+        ((AppCompatActivity) getActivity()).getSupportActionBar().setTitle("Chat");
         rv = vista.findViewById(R.id.recyclerview);
         imagen1 = vista.findViewById(R.id.ImagenButtonUno);
         imagen2 = vista.findViewById(R.id.ImagenButtonDos);

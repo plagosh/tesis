@@ -1,6 +1,7 @@
 package cl.paulina.yotrabajoconpecs;
 import androidx.annotation.NonNull;
 import androidx.annotation.RequiresApi;
+import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentTransaction;
 
@@ -37,6 +38,7 @@ public class MainActivity extends Fragment {
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
         View vista = inflater.inflate(R.layout.sesion, container, false);
+        ((AppCompatActivity) getActivity()).getSupportActionBar().setTitle("Inicio");
         btnPanelPrincipal = vista.findViewById(R.id.to_pdc);
         nombre = vista.findViewById(R.id.nombre);
         nombres = new ArrayList();

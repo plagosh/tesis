@@ -16,6 +16,7 @@ import android.widget.Spinner;
 import android.widget.Toast;
 import androidx.annotation.NonNull;
 import androidx.annotation.RequiresApi;
+import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 import com.android.volley.AuthFailureError;
 import com.android.volley.Request;
@@ -46,6 +47,7 @@ public class AddActivity extends Fragment {
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
         View vista = inflater.inflate(R.layout.activity_add, container, false);
+        ((AppCompatActivity) getActivity()).getSupportActionBar().setTitle("Agregar Tarea");
         fechadesde = vista.findViewById(R.id.fechadesde);
         horadesde = vista.findViewById(R.id.horadesde);
         fechahasta = vista.findViewById(R.id.fechahasta);

@@ -12,6 +12,7 @@ import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.RequiresApi;
+import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentTransaction;
 
@@ -38,7 +39,7 @@ public class panelPrincipalFragment extends Fragment {
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
         View vista = inflater.inflate(R.layout.pdc_0, container, false);
-
+        ((AppCompatActivity) getActivity()).getSupportActionBar().setTitle("Inicio");
         btnLibro = vista.findViewById(R.id.libro);
         btnPanel = vista.findViewById(R.id.panel);
         tipo = new ArrayList();

@@ -13,6 +13,7 @@ import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.RequiresApi;
+import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -51,7 +52,7 @@ public class ActivityAmigos extends Fragment {
 
     public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View vista = inflater.inflate(R.layout.activity_amigos, container, false);
-
+        ((AppCompatActivity) getActivity()).getSupportActionBar().setTitle("Lista PDC");
         atributosList = new ArrayList<>();
 
         RecyclerView rv = vista.findViewById(R.id.amigosRecyclerView);
