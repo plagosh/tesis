@@ -4,41 +4,23 @@ import android.app.Notification;
 import android.app.NotificationChannel;
 import android.app.NotificationManager;
 import android.app.PendingIntent;
-import android.content.ContentResolver;
 import android.content.Context;
 import android.content.Intent;
 import android.media.RingtoneManager;
-import android.net.ConnectivityManager;
 import android.net.Uri;
 import android.os.Build;
-import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.RequiresApi;
-import androidx.core.app.NotificationCompat.Builder;
 import androidx.localbroadcastmanager.content.LocalBroadcastManager;
 
-import com.android.volley.RequestQueue;
-import com.android.volley.Response;
-import com.android.volley.VolleyError;
-import com.android.volley.toolbox.JsonObjectRequest;
-import com.android.volley.toolbox.Volley;
 import com.google.firebase.messaging.FirebaseMessagingService;
 import com.google.firebase.messaging.RemoteMessage;
 
-import org.json.JSONArray;
-import org.json.JSONException;
-import org.json.JSONObject;
-
-import java.lang.reflect.Array;
-import java.util.ArrayList;
-import java.util.Random;
-
-import cl.paulina.yotrabajoconpecs.Amigos.ActivityAmigos;
 import cl.paulina.yotrabajoconpecs.Preferences;
 import cl.paulina.yotrabajoconpecs.R;
-import cl.paulina.yotrabajoconpecs.ui.busqueda_pictograma_empleador.Mensajeria;
-import cl.paulina.yotrabajoconpecs.ui.libro.libroPDC;
+import cl.paulina.yotrabajoconpecs.MisClases.LibroEmpleador.MensajeriaFragment;
+import cl.paulina.yotrabajoconpecs.MisClases.LibroPDC.LibroPDCFragment;
 
 public class FireBaseServiceMensajes extends FirebaseMessagingService {
     @RequiresApi(api = Build.VERSION_CODES.O)
@@ -67,7 +49,7 @@ public class FireBaseServiceMensajes extends FirebaseMessagingService {
     }
 
     private void MensajeEmpleador(String mensaje, String hora, String emisor){
-        Intent i = new Intent(Mensajeria.MENSAJE);
+        Intent i = new Intent(MensajeriaFragment.MENSAJE);
         i.putExtra("key_mensaje",  mensaje);
         i.putExtra("key_hora",  hora);
         i.putExtra("key_emisor_PHP",  emisor);
@@ -75,7 +57,7 @@ public class FireBaseServiceMensajes extends FirebaseMessagingService {
     }
 
     private void MensajePDC(String mensaje, String hora, String emisor, String url){
-        Intent i = new Intent(libroPDC.MENSAJE);
+        Intent i = new Intent(LibroPDCFragment.MENSAJE);
         i.putExtra("key_mensaje",  mensaje);
         i.putExtra("key_hora",  hora);
         i.putExtra("key_emisor_PHP",  emisor);
@@ -85,7 +67,7 @@ public class FireBaseServiceMensajes extends FirebaseMessagingService {
 
     @RequiresApi(api = Build.VERSION_CODES.O)
     private void showNotificationEmpleador(String cabecera, String cuerpo){
-        Intent i = new Intent(this, Mensajeria.class);
+        Intent i = new Intent(this, MensajeriaFragment.class);
         PendingIntent pendingIntent = PendingIntent.getActivity(this, 0, i, PendingIntent.FLAG_ONE_SHOT);
 
         Uri soundNotificacion = RingtoneManager.getDefaultUri(RingtoneManager.TYPE_NOTIFICATION);
@@ -112,7 +94,7 @@ public class FireBaseServiceMensajes extends FirebaseMessagingService {
 
     @RequiresApi(api = Build.VERSION_CODES.O)
     private void showNotificationPDC(String cabecera, String cuerpo){
-        Intent i = new Intent(this, libroPDC.class);
+        Intent i = new Intent(this, LibroPDCFragment.class);
         PendingIntent pendingIntent = PendingIntent.getActivity(this, 0, i, PendingIntent.FLAG_ONE_SHOT);
 
         Uri soundNotificacion = RingtoneManager.getDefaultUri(RingtoneManager.TYPE_NOTIFICATION);

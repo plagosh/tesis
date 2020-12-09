@@ -24,7 +24,7 @@ import org.json.JSONException;
 
 import java.util.ArrayList;
 
-import cl.paulina.yotrabajoconpecs.ui.principal.panelPrincipalFragment;
+import cl.paulina.yotrabajoconpecs.MisClases.Principal.PanelPrincipalFragment;
 import cz.msebera.android.httpclient.Header;
 
 public class MainActivity extends Fragment {
@@ -83,7 +83,7 @@ public class MainActivity extends Fragment {
         btnPanelPrincipal.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Fragment fragment = new panelPrincipalFragment();
+                Fragment fragment = new PanelPrincipalFragment();
                 fragment.setTargetFragment(MainActivity.this,1);
                 cambiarFragmento(fragment);
             }

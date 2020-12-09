@@ -1,14 +1,11 @@
 package cl.paulina.yotrabajoconpecs;
 
-import android.app.Activity;
 import android.app.ProgressDialog;
 import android.content.Context;
 import android.content.Intent;
-import android.content.SharedPreferences;
 import android.os.Build;
 import android.os.Bundle;
 import android.text.TextUtils;
-import android.util.Log;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.LinearLayout;
@@ -17,7 +14,6 @@ import android.widget.RadioButton;
 import android.widget.Toast;
 import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.content.ContextCompat;
 
 import com.android.volley.AuthFailureError;
 import com.android.volley.Request;
@@ -38,7 +34,6 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 
-import cl.paulina.yotrabajoconpecs.ui.busqueda_pictograma_empleador.Mensajeria;
 import cz.msebera.android.httpclient.Header;
 
 public class Login extends AppCompatActivity {
