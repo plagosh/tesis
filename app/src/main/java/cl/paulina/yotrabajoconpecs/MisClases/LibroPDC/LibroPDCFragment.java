@@ -30,6 +30,8 @@ import com.android.volley.VolleyError;
 import com.android.volley.toolbox.JsonObjectRequest;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
+import com.google.android.material.bottomsheet.BottomSheetDialog;
+import com.google.android.material.bottomsheet.BottomSheetDialogFragment;
 import com.loopj.android.http.AsyncHttpClient;
 import com.loopj.android.http.AsyncHttpResponseHandler;
 import com.squareup.picasso.Picasso;
@@ -176,8 +178,8 @@ public class LibroPDCFragment extends Fragment {
         bTEnviarFrase.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Frase fragment = new Frase();
-                fragment.show(getActivity().getSupportFragmentManager(), "TAG");
+                Frase frase = new Frase();
+                frase.show(getParentFragmentManager(), "TAG");
             }
         });
 
