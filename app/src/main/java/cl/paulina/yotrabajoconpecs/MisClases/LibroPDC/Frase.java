@@ -49,18 +49,18 @@ public class Frase extends BottomSheetDialogFragment {
     private ArrayList nombre_usuario;
     private ArrayList apellido_usuario;
     private ArrayList id_usuario;
+    private ArrayList fraseArray;
     Bundle datos;
     BottomSheetBehavior sheetBehavior;
     public String IDUSUARIO;
     public String USUARIO;
 
-    public Frase(){
-    }
-
-    @Nullable
+    @SuppressLint("RestrictedApi")
     @Override
-    public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.bottom_sheet_layout, container, false);
+    public void setupDialog(Dialog dialog, int style) {
+        super.setupDialog(dialog, style);
+        View view = LayoutInflater.from(getContext()).inflate(R.layout.bottom_sheet_layout, null);
+        dialog.setContentView(view);
         gridView = view.findViewById(R.id.listviewFrase);
         contentCaja = view.findViewById(R.id.contentCaja);
 
@@ -72,10 +72,52 @@ public class Frase extends BottomSheetDialogFragment {
         nombre_usuario = new ArrayList();
         apellido_usuario = new ArrayList();
         id_usuario = new ArrayList();
+        fraseArray = new ArrayList();
         USUARIO = Preferences.obtenerPreferenceString(getContext(), Preferences.PREFERENCE_USUARIO_LOGIN);
+
         descargarUsuario();
 
-        return view;
+        CoordinatorLayout.LayoutParams params = (CoordinatorLayout.LayoutParams) ((View) view.getParent()).getLayoutParams();
+        CoordinatorLayout.Behavior behavior = params.getBehavior();
+
+        if (behavior != null && behavior instanceof BottomSheetBehavior) {
+            ((BottomSheetBehavior) behavior).setBottomSheetCallback(new BottomSheetBehavior.BottomSheetCallback() {
+                @Override
+                public void onStateChanged(@NonNull View bottomSheet, int newState) {
+                    String state = "";
+
+                    switch (newState) {
+                        case BottomSheetBehavior.STATE_DRAGGING: {
+                            state = "DRAGGING";
+                            break;
+                        }
+                        case BottomSheetBehavior.STATE_SETTLING: {
+                            state = "SETTLING";
+                            break;
+                        }
+                        case BottomSheetBehavior.STATE_EXPANDED: {
+                            state = "EXPANDED";
+                            break;
+                        }
+                        case BottomSheetBehavior.STATE_COLLAPSED: {
+                            state = "COLLAPSED";
+                            break;
+                        }
+                        case BottomSheetBehavior.STATE_HIDDEN: {
+                            dismiss();
+                            state = "HIDDEN";
+                            break;
+                        }
+                    }
+
+                    //Toast.makeText(getContext(), "Bottom Sheet State Changed to: " + state, Toast.LENGTH_SHORT).show();
+                }
+
+                @Override
+                public void onSlide(@NonNull View bottomSheet, float slideOffset) {
+                }
+            });
+        }
     }
 
     private void descargarUsuario(){
@@ -140,6 +182,23 @@ public class Frase extends BottomSheetDialogFragment {
         });
     }
 
+    private void AgregarFrecuenciaFrase(String URL){
+        AsyncHttpClient client = new AsyncHttpClient();
+        client.get(URL, new AsyncHttpResponseHandler() {
+            @RequiresApi(api = Build.VERSION_CODES.M)
+            @Override
+            public void onSuccess(int statusCode, Header[] headers, byte[] responseBody) {
+                if(statusCode == 200){
+                    //Toast.makeText(getContext(), "Se ha modificado", Toast.LENGTH_SHORT).show();
+                }
+            }
+            @Override
+            public void onFailure(int statusCode, Header[] headers, byte[] responseBody, Throwable error) {
+                Toast.makeText(getContext(), "Conexión fallida", Toast.LENGTH_SHORT).show();
+            }
+        });
+    }
+
     private class CustomAdapter extends BaseAdapter {
         Context ctx;
         LayoutInflater layoutInflater;
@@ -182,9 +241,10 @@ public class Frase extends BottomSheetDialogFragment {
                 TvImagenButton.addView(imagen);
             }
             glosa.clear();
+            fraseArray.clear();
             final ProgressDialog progressDialog = new ProgressDialog(getActivity());
             AsyncHttpClient client = new AsyncHttpClient();
-            Toast.makeText(getContext(), IDUSUARIO, Toast.LENGTH_SHORT).show();
+            //Toast.makeText(getContext(), IDUSUARIO, Toast.LENGTH_SHORT).show();
             client.get("https://yotrabajoconpecs.ddns.net/query_frase2.php?idusuario=" + IDUSUARIO, new AsyncHttpResponseHandler() {
                 @RequiresApi(api = Build.VERSION_CODES.M)
                 @Override
@@ -195,6 +255,7 @@ public class Frase extends BottomSheetDialogFragment {
                             JSONArray jsonarray = new JSONArray(new String(responseBody));
                             for(int i = 0; i < jsonarray.length(); i++){
                                 glosa.add(jsonarray.getJSONObject(i).getString("glosa"));
+                                fraseArray.add(jsonarray.getJSONObject(i).getString("id_frase"));
                             }
                         }catch(JSONException e){
                             e.printStackTrace();
@@ -213,6 +274,7 @@ public class Frase extends BottomSheetDialogFragment {
                     datos = new Bundle();
                     datos.putString("url_frase", id_frase.get(position).toString());
                     datos.putString("glosa_frase", glosa.get(position).toString());
+                    AgregarFrecuenciaFrase("https://yotrabajoconpecs.ddns.net/modificar_frase.php?frase=" + fraseArray.get(position).toString());
                     fragmento.setArguments(datos);
                     cambiarFragmento(fragmento);
                 }

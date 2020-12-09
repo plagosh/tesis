@@ -179,7 +179,7 @@ public class LibroPDCFragment extends Fragment {
             @Override
             public void onClick(View v) {
                 Frase frase = new Frase();
-                frase.show(getParentFragmentManager(), "TAG");
+                frase.show(getActivity().getSupportFragmentManager(), "TAG");
             }
         });
 
