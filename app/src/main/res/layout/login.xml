@@ -78,17 +78,6 @@
             android:textSize="16sp"
             android:onClick="iniciarRegistro"/>
 
-        <TextView
-            android:id="@+id/button_actualizarContraseña"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:textAlignment="center"
-            android:inputType="textUri"
-            android:text="¿Has olvidado tu contraseña? Recupera aquí"
-            android:textSize="16sp"
-            android:onClick="iniciarRegistro"/>
-
         <ProgressBar
             android:id="@+id/progressLogin"
             android:layout_width="match_parent"

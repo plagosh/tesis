@@ -19,7 +19,6 @@
             android:layout_height="300dp"
             android:layout_weight="1"
             android:layout_gravity="center_horizontal"
-            android:src="@drawable/maxi"
             android:clickable="true"
             android:layout_margin="@dimen/cardview_default_radius"
             android:background="@drawable/boton_redondo"/>
@@ -43,17 +42,18 @@
                 android:layout_height="wrap_content"
                 android:textSize="20sp"
                 android:layout_gravity="center"
-                android:text="nombre no definido"
-                />
+                android:text="nombre no definido" />
+
+            <Button
+                android:id="@+id/cambiar_imagen"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:text="Cambiar Foto"
+                android:textColor="@color/colorBlanco"
+                android:layout_marginTop="50dp"
+                android:background="@drawable/bordes_redondos"/>
         </LinearLayout>
-
-
-        <ImageView
-            android:layout_width="145dp"
-            android:layout_height="93dp"
-            android:layout_gravity="center"
-            android:layout_weight="1"
-            android:src="@drawable/logo" />
     </LinearLayout>
 
 </LinearLayout>

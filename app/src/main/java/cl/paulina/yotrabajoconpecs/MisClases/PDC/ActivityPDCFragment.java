@@ -1,6 +1,7 @@
 package cl.paulina.yotrabajoconpecs.MisClases.PDC;
 
 import android.app.ProgressDialog;
+import android.graphics.drawable.Drawable;
 import android.os.Build;
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -11,6 +12,7 @@ import android.widget.Toast;
 import androidx.annotation.NonNull;
 import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.content.ContextCompat;
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -22,6 +24,7 @@ import com.android.volley.toolbox.JsonObjectRequest;
 import com.android.volley.toolbox.Volley;
 import com.loopj.android.http.AsyncHttpClient;
 import com.loopj.android.http.AsyncHttpResponseHandler;
+import com.squareup.picasso.Picasso;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -119,7 +122,9 @@ public class ActivityPDCFragment extends Fragment {
                             descargar_hora.add(jsonarray.getJSONObject(i).getString("hora_del_mensaje"));
                             String curTime = descargar_hora.get(i).toString().substring(0,5);
                             String mensaje = descargar_mensaje.get(i).toString();
-                            agregarAmigos(R.drawable.ic_baseline_supervised_user_circle_24, nombreCompleto, mensaje, curTime, correo);
+                            String uri = "https://yotrabajoconpecs.ddns.net/uploads/" + correo + ".jpg";
+                            int imageResource = getResources().getIdentifier(uri, null, getActivity().getPackageName());
+                            agregarAmigos(imageResource, nombreCompleto, mensaje, curTime, correo);
                         }
                     }catch(JSONException e){
                         e.printStackTrace();

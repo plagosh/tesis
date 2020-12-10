@@ -547,6 +547,7 @@ public class PanelPDCFragment extends Fragment {
         realizada.clear();
         realizada_pdc.clear();
         id_desglose.clear();
+        rellenarTabla("https://yotrabajoconpecs.ddns.net/query3.php?usuario=" + EMISOR + "&idusuario=" + IDUSUARIO);
         final ProgressDialog progressDialog = new ProgressDialog(getActivity());
         progressDialog.setMessage("Cargando datos...");
         progressDialog.show();
@@ -609,30 +610,31 @@ public class PanelPDCFragment extends Fragment {
                             }).start();
                             //Toast.makeText(getContext(), text, duration).show();
                         }
+
                         for(int j = 0; j < id.size(); j++){
-                            int ultimo = Integer.parseInt(id.get(id.size()-1).toString());
-                            if(realizada.get(j).toString().equals("null") && ultimo != j) {
-                                if(horan.compareTo(hora_inicio.get(j).toString()) > 0 && horan.compareTo(hora_termino.get(j).toString()) < 0) {
+                            String ultimo = id.get(id.size()-1).toString();
+                            if(horan.compareTo(hora_inicio.get(j).toString()) > 0 && horan.compareTo(hora_termino.get(j).toString()) < 0) {
+                                if (realizada.get(j).toString().equals("null")) {
                                     dato = url.get(j).toString();
                                     pasando_dato = id_tarea.get(j).toString();
                                     pasando_modificar = id.get(j).toString();
                                     realizado_pdc = realizada_pdc.get(j).toString();
                                     DESGLOSE = id_desglose.get(j).toString();
-                                }else if(horan.compareTo(hora_termino.get(j).toString()) > 0) {
-                                    dato = url.get(j).toString();
-                                    pasando_dato = id_tarea.get(j).toString();
-                                    pasando_modificar = id.get(j).toString();
-                                    realizado_pdc = realizada_pdc.get(j).toString();
-                                    DESGLOSE = id_desglose.get(j).toString();
+                                    //Toast.makeText(getContext(), DESGLOSE, Toast.LENGTH_LONG).show();
+                                } else {
+                                    dato = url.get(j+1).toString();
+                                    pasando_dato = id_tarea.get(j+1).toString();
+                                    pasando_modificar = id.get(j+1).toString();
+                                    realizado_pdc = realizada_pdc.get(j+1).toString();
+                                    DESGLOSE = id_desglose.get(j+1).toString();
+                                    //Toast.makeText(getContext(), DESGLOSE, Toast.LENGTH_LONG).show();
                                 }
-                            }else{
-                                eliminarTabla("https://yotrabajoconpecs.ddns.net/eliminar_lista_tarea_usuario.php?usuario=" + EMISOR);
-                                rellenarTabla("https://yotrabajoconpecs.ddns.net/query3.php", EMISOR);
                             }
+
                             if(realizado_pdc == "null"){
                                 checkTarea.setVisibility(View.VISIBLE);
                             }
-                            if(!DESGLOSE.equals("null")){
+                            if(!DESGLOSE.equals("")) {
                                 tvpanel.setOnClickListener(new View.OnClickListener() {
                                     @Override
                                     public void onClick(View v) {
@@ -788,7 +790,7 @@ public class PanelPDCFragment extends Fragment {
         });
     }
 
-    private void eliminarTabla(String URL){
+    private void rellenarTabla(String URL) {
         AsyncHttpClient client = new AsyncHttpClient();
         client.get(URL, new AsyncHttpResponseHandler() {
             @RequiresApi(api = Build.VERSION_CODES.M)
@@ -803,28 +805,5 @@ public class PanelPDCFragment extends Fragment {
                 Toast.makeText(getContext(), "Conexión fallida", Toast.LENGTH_SHORT).show();
             }
         });
-    }
-
-    private void rellenarTabla(String URL, String usuario) {
-        HashMap<String, String> hashMapToken = new HashMap<>();
-        hashMapToken.put("usuario", usuario);
-        //Toast.makeText(getContext(), EMISOR + NOMBRE + RECEPTOR + "" + IP_MENSAJE, Toast.LENGTH_SHORT).show();
-
-        JsonObjectRequest solicitud = new JsonObjectRequest(Request.Method.POST, URL, new JSONObject(hashMapToken), new Response.Listener<JSONObject>() {
-            @Override
-            public void onResponse(JSONObject response) {
-                try {
-                    Toast.makeText(getContext(), response.getString("resultado"), Toast.LENGTH_SHORT).show();
-                } catch (JSONException e) {
-                }
-            }
-        }, new Response.ErrorListener() {
-            @Override
-            public void onErrorResponse(VolleyError error) {
-                Toast.makeText(getContext(), "Ocurrió un error", Toast.LENGTH_SHORT).show();
-            }
-        });
-        RequestQueue requestQueue = Volley.newRequestQueue(getContext());
-        requestQueue.add(solicitud);
     }
 }
