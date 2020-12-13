@@ -11,6 +11,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.ImageButton;
+import android.widget.LinearLayout;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
@@ -53,7 +54,7 @@ import cz.msebera.android.httpclient.Header;
 public class LibroPDCFragment extends Fragment {
     public static final String MENSAJE = "MENSAJE";
     private BroadcastReceiver bR;
-    Bundle recibir_frase;
+    Bundle bundle, datos;
     private RecyclerView rv;
     private List<MensajeDeTexto> mensajedetexto;
     private MessageAdapterFragment adapter;
@@ -70,7 +71,6 @@ public class LibroPDCFragment extends Fragment {
     public ArrayList nombre_login, correo_login, pictos, url, urlita, urlota, categoria, categories, nombre, nombrecito, nombresote, botonuno, botondos, pos, menssage, urlQueryCero, urls, celular;
     private static final String IP_MENSAJE = "https://yotrabajoconpecs.ddns.net/Enviar_Mensajes.php";
     ImageButton imagen1, imagen2, arriba1, arriba2, abajo1, abajo2;
-    Bundle datos;
     private ArrayList descargar_mensaje;
     private ArrayList descargar_tipo;
     private ArrayList descargar_hora;
@@ -81,6 +81,7 @@ public class LibroPDCFragment extends Fragment {
                              ViewGroup container, Bundle savedInstanceState) {
         View vista = inflater.inflate(R.layout.pdc_mensajeria, container, false);
         ((AppCompatActivity) getActivity()).getSupportActionBar().setTitle("Chat");
+        //Definiendo elementos del Layout
         rv = vista.findViewById(R.id.recyclerview);
         imagen1 = vista.findViewById(R.id.ImagenButtonUno);
         imagen2 = vista.findViewById(R.id.ImagenButtonDos);
@@ -89,7 +90,10 @@ public class LibroPDCFragment extends Fragment {
         abajo1 = vista.findViewById(R.id.AbajoButtonUno);
         abajo2 = vista.findViewById(R.id.AbajoButton2);
         bTEnviarFrase = vista.findViewById(R.id.bTEnviarFrase);
+        bTEnviarMensaje = vista.findViewById(R.id.bTEnviarMensaje);
+        //DEFINIENDO ARRAYLIST
         datos = new Bundle();
+        bundle = getArguments();
         mensajedetexto = new ArrayList<>();
         nombre_login = new ArrayList();
         correo_login = new ArrayList();
@@ -107,11 +111,6 @@ public class LibroPDCFragment extends Fragment {
         botonuno = new ArrayList();
         botondos = new ArrayList();
         celular = new ArrayList();
-        botonuno.clear();
-        botondos.clear();
-        botonuno.add(0);
-        botondos.add(0);
-        pos.add(0);
         menssage = new ArrayList();
         urlQueryCero = new ArrayList();
         urls = new ArrayList();
@@ -119,62 +118,37 @@ public class LibroPDCFragment extends Fragment {
         descargar_tipo = new ArrayList();
         descargar_hora = new ArrayList();
         descargar_url = new ArrayList();
-
-        recibir_frase = getArguments();
-        Bundle recibir_verbo = getArguments();
-        Bundle recibir_glosa = getArguments();
-        Bundle recibir_sust = getArguments();
-        Bundle recibir_adj = getArguments();
+        botonuno.clear();
+        botondos.clear();
+        botonuno.add(0);
+        botondos.add(0);
+        pos.add(0);
+        categoria_verbo = "";
 
         RECEPTOR = "1";
-        /*
-        if(recibir_verbo != null) {
-            if (String.valueOf(recibir_verbo.getString("url_verbo")) != String.valueOf(0)) {
-                String url_verbo = recibir_verbo.getString("url_verbo");
-                categoria_verbo = recibir_verbo.getString("categoria_imagen_verbo");
-                Toast.makeText(getContext(), categoria_verbo, Toast.LENGTH_SHORT).show();
-                Picasso.get().load("https://yotrabajoconpecs.ddns.net/" + url_verbo).into(imagen1);
-            }
-            recibir_verbo.clear();
-        }
 
-        if(categoria_verbo != null){
-            if(categoria_verbo.equals("3")){
-                imagen2.setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View v) {
-                        Fragment fragment = new busquedaPictogramapdc2Fragment();
-                        cambiarFragmento(fragment);
+        //Recibiendo los datos de ListaVerboSustFragment()
+        if(bundle != null) {
+            if (bundle.getString("url_verbo") != null) {
+                if(bundle.getString("nombre_imagen_verbo") != null){
+                    String url_verbo = bundle.getString("url_verbo");
+                    String glosa_verbo = bundle.getString("nombre_imagen_verbo");
+                    categoria_verbo = bundle.getString("categoria_imagen_verbo");
+                    nDatos = glosa_verbo;
+                    nURL = url_verbo;
+                    imagen1.setScaleType(ImageButton.ScaleType.FIT_CENTER);
+                    if(categoria_verbo.equals("3")){
+                        imagen1.setBackgroundResource(R.drawable.boton_rectangulo_verbo);
+                    }else{
+                        imagen1.setBackgroundResource(R.drawable.boton_rectangulo_sustantivo);
                     }
-                });
-            }else{
-                imagen2.setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View v) {
-                        Fragment fragment = new busquedaPictogramapdc3Fragment();
-                        cambiarFragmento(fragment);
-                    }
-                });
+                    Picasso.get().load("https://yotrabajoconpecs.ddns.net/" + url_verbo).into(imagen1);
+                }
             }
+            bundle.clear();
         }
 
-        if(recibir_sust != null) {
-            if (String.valueOf(recibir_sust.getString("url_sust")) != String.valueOf(0)) {
-                String url_sust = recibir_sust.getString("url_sust");
-                Picasso.get().load("https://yotrabajoconpecs.ddns.net/" + url_sust).into(imagen2);
-            }
-            recibir_sust.clear();
-        }
-
-        if(recibir_adj != null) {
-            if (String.valueOf(recibir_adj.getString("url_adj")) != String.valueOf(0)) {
-                String url_adj = recibir_adj.getString("url_adj");
-                Picasso.get().load("https://yotrabajoconpecs.ddns.net/" + url_adj).into(imagen2);
-            }
-            recibir_adj.clear();
-        }
-        */
-
+        //Cambiando de fragmento a Frase()
         bTEnviarFrase.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -183,45 +157,32 @@ public class LibroPDCFragment extends Fragment {
             }
         });
 
+        //Descargando usuarios para descargar los últimos mensajes
         descargar();
 
+        //Definiendo el adapter para enviar mensajes
         LinearLayoutManager lm = new LinearLayoutManager(getContext());
         rv.setLayoutManager(lm);
         adapter = new MessageAdapterFragment(mensajedetexto, getContext());
         rv.setAdapter(adapter);
-        bTEnviarMensaje = vista.findViewById(R.id.bTEnviarMensaje);
-        if(recibir_frase != null && recibir_glosa != null) {
-            if (String.valueOf(recibir_frase.getString("url_frase")) != String.valueOf(0)) {
-                if (String.valueOf(recibir_glosa.getString("glosa_frase")) != String.valueOf(0)) {
-                    String url_frase = recibir_frase.getString("url_frase");
-                    String glosa_frase = recibir_glosa.getString("glosa_frase");
-                    Date dt = new Date();
-                    int hours = dt.getHours();
-                    int minutes = dt.getMinutes();
-                    String curTime = hours + ":" + minutes + ", Hoy";
-                    MENSAJE_ENVIAR = glosa_frase;
-                    NOMBRE = "Maximiliano Ramirez Henriquez";
-                    EMISOR = "marce36";
-                    MandarMensaje();
-                }
-            }
-            recibir_frase.clear();
-        }
+
         //todos
-        descargarDatos();
+        descargarVerboSustantivo();
         //sustantivos
-        descargarDatitos();
+        descargarSustantivo();
         //adjetivos
-        descargarDatotes();
+        descargarAdjetivo();
 
         arriba1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 abajo1.setVisibility(View.VISIBLE);
                 arriba2.setVisibility(View.VISIBLE);
-                imagen1.setBackgroundResource(R.drawable.boton_rectangulo);
-                //Toast.makeText(getContext(), sapo2 + "", Toast.LENGTH_SHORT).show();
-                //Toast.makeText(getContext(), url.get(sapo2).toString(), Toast.LENGTH_SHORT).show();
+                if(categoria.get(sapo2).toString().equals("3")){
+                    imagen1.setBackgroundResource(R.drawable.boton_rectangulo_verbo);
+                }else{
+                    imagen1.setBackgroundResource(R.drawable.boton_rectangulo_sustantivo);
+                }
                 String url_rescatada = url.get(sapo2).toString();
                 Picasso.get().load("https://yotrabajoconpecs.ddns.net/" + url_rescatada).into(imagen1);
                 //imagen1.setStroke(8, getResources().getColor(R.color.colorWhite));
@@ -262,17 +223,16 @@ public class LibroPDCFragment extends Fragment {
                 abajo2.setVisibility(View.VISIBLE);
                 if(ultimaCategoria == "3") {
                     sapo3++;
-                    imagen2.setBackgroundResource(R.drawable.boton_rectangulo);
+                    imagen2.setBackgroundResource(R.drawable.boton_rectangulo_verbo);
                     Picasso.get().load("https://yotrabajoconpecs.ddns.net/" + urlita.get(sapo3).toString()).into(imagen2);
                     nDatitos = nombrecito.get(sapo3).toString();
                     nURLita = urlita.get(sapo3).toString();
                     //Toast.makeText(getContext(), nDatitos, Toast.LENGTH_SHORT).show();
                     imagen2.setScaleType(ImageButton.ScaleType.FIT_CENTER);
-
                     botondos.add(nombrecito.get(sapo3));
                 }else{
                     sapo3++;
-                    imagen2.setBackgroundResource(R.drawable.boton_rectangulo);
+                    imagen2.setBackgroundResource(R.drawable.boton_rectangulo_sustantivo);
                     Picasso.get().load("https://yotrabajoconpecs.ddns.net/" + urlota.get(sapo3).toString()).into(imagen2);
                     nDatotes = nombresote.get(sapo3).toString();
                     nURLota = urlota.get(sapo3).toString();
@@ -290,7 +250,7 @@ public class LibroPDCFragment extends Fragment {
                 if(ultimaCategoria == "3") {
                     if(sapo3 > 0){
                         sapo3--;
-                        imagen2.setBackgroundResource(R.drawable.boton_rectangulo);
+                        imagen2.setBackgroundResource(R.drawable.boton_rectangulo_sustantivo);
                         Picasso.get().load("https://yotrabajoconpecs.ddns.net/" + urlita.get(sapo3).toString()).into(imagen2);
                         nDatitos = nombrecito.get(sapo3).toString();
                         nURLita = urlita.get(sapo3).toString();
@@ -302,7 +262,7 @@ public class LibroPDCFragment extends Fragment {
                     }
                 }else{
                     if(sapo3 > 0){
-                        imagen2.setBackgroundResource(R.drawable.boton_rectangulo);
+                        imagen2.setBackgroundResource(R.drawable.boton_rectangulo_adjetivo);
                         Picasso.get().load("https://yotrabajoconpecs.ddns.net/" + urlota.get(sapo3).toString()).into(imagen2);
                         nDatotes = nombresote.get(sapo3).toString();
                         nURLota = urlota.get(sapo3).toString();
@@ -316,15 +276,15 @@ public class LibroPDCFragment extends Fragment {
                 }
             }
         });
-        /*
+
         imagen1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Fragment fragment = new busquedaPictogramapdcFragment();
+                Fragment fragment = new ListaVerboSustFragment();
                 cambiarFragmento(fragment);
             }
         });
-        */
+
         bTEnviarMensaje.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -458,7 +418,7 @@ public class LibroPDCFragment extends Fragment {
         });
     }
 
-    private void descargarDatos(){
+    private void descargarVerboSustantivo(){
         url.clear();
         categoria.clear();
         nombre.clear();
@@ -490,7 +450,7 @@ public class LibroPDCFragment extends Fragment {
         });
     }
 
-    private void descargarDatitos(){
+    private void descargarSustantivo(){
         //sustantivos
         urlita.clear();
         nombrecito.clear();
@@ -521,7 +481,7 @@ public class LibroPDCFragment extends Fragment {
         });
     }
 
-    private void descargarDatotes(){
+    private void descargarAdjetivo(){
         //sustantivos
         urlota.clear();
         nombresote.clear();

@@ -98,6 +98,7 @@ public class PanelPDCFragment extends Fragment {
     public String IDUSUARIO;
     public String Valor_dia;
     public String DESGLOSE;
+    public String CORREO;
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
@@ -621,6 +622,10 @@ public class PanelPDCFragment extends Fragment {
                                     realizado_pdc = realizada_pdc.get(j).toString();
                                     DESGLOSE = id_desglose.get(j).toString();
                                     //Toast.makeText(getContext(), DESGLOSE, Toast.LENGTH_LONG).show();
+                                    tvpanel.setBackgroundResource(R.drawable.boton_rectangulo);
+                                    tvpanel.setLayoutParams(new LinearLayout.LayoutParams(ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT));
+                                    tvpanel.setScaleType(ImageButton.ScaleType.CENTER_INSIDE);
+                                    Picasso.get().load("https://yotrabajoconpecs.ddns.net/" + dato).into(tvpanel);
                                 } else {
                                     dato = url.get(j+1).toString();
                                     pasando_dato = id_tarea.get(j+1).toString();
@@ -628,13 +633,17 @@ public class PanelPDCFragment extends Fragment {
                                     realizado_pdc = realizada_pdc.get(j+1).toString();
                                     DESGLOSE = id_desglose.get(j+1).toString();
                                     //Toast.makeText(getContext(), DESGLOSE, Toast.LENGTH_LONG).show();
+                                    tvpanel.setBackgroundResource(R.drawable.boton_rectangulo);
+                                    tvpanel.setLayoutParams(new LinearLayout.LayoutParams(ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT));
+                                    tvpanel.setScaleType(ImageButton.ScaleType.CENTER_INSIDE);
+                                    Picasso.get().load("https://yotrabajoconpecs.ddns.net/" + dato).into(tvpanel);
                                 }
                             }
 
                             if(realizado_pdc == "null"){
                                 checkTarea.setVisibility(View.VISIBLE);
                             }
-                            if(!DESGLOSE.equals("")) {
+                            if(DESGLOSE == "null") {
                                 tvpanel.setOnClickListener(new View.OnClickListener() {
                                     @Override
                                     public void onClick(View v) {
@@ -651,10 +660,6 @@ public class PanelPDCFragment extends Fragment {
                                 });
                             }
                         }
-                        tvpanel.setBackgroundResource(R.drawable.boton_rectangulo);
-                        tvpanel.setLayoutParams(new LinearLayout.LayoutParams(ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT));
-                        tvpanel.setScaleType(ImageButton.ScaleType.CENTER_INSIDE);
-                        Picasso.get().load("https://yotrabajoconpecs.ddns.net/" + dato).into(tvpanel);
                     }catch(JSONException e){
                         e.printStackTrace();
                     }
@@ -696,13 +701,14 @@ public class PanelPDCFragment extends Fragment {
                                 EMISOR = correo_usuario.get(i).toString();
                                 NOMBRE = nombre_usuario_conespacios;
                                 IDUSUARIO = id_usuario.get(i).toString();
+                                CORREO = correo_usuario.get(i).toString();
                             }
                         }
                         descargarDatos("https://yotrabajoconpecs.ddns.net/query_TareasDia.php?usuario=" + EMISOR);
                         checkTarea.setOnClickListener(new View.OnClickListener() {
                             @Override
                             public void onClick(View v) {
-                                guardarListaTarea("https://yotrabajoconpecs.ddns.net/save_lista_tarea.php", pasando_dato, nombre_usuario_conespacios, id_jefatura, pasando_modificar);
+                                guardarListaTarea("https://yotrabajoconpecs.ddns.net/save_lista_tarea.php", pasando_dato, NOMBRE, id_jefatura, pasando_modificar, CORREO);
                                 checkTarea.setVisibility(View.INVISIBLE);
                                 RECEPTOR = "1";
                                 MandarMensaje();
@@ -722,7 +728,7 @@ public class PanelPDCFragment extends Fragment {
         });
     }
 
-    private void guardarListaTarea(String URL, String tarea, String quien, String jefatura, String id){
+    private void guardarListaTarea(String URL, String tarea, String quien, String jefatura, String id, String correo){
         StringRequest stringRequest = new StringRequest(Request.Method.POST, URL, new Response.Listener<String>() {
             @Override
             public void onResponse(String response) {
@@ -739,6 +745,7 @@ public class PanelPDCFragment extends Fragment {
                 Map<String,String> parametros = new HashMap<String,String>();
                 parametros.put("id_tarea_lista", tarea);
                 parametros.put("quien_envia", quien);
+                parametros.put("correo", correo);
                 parametros.put("id_jefatura", jefatura);
                 parametros.put("id_listatarea", id);
                 return parametros;

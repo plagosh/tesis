@@ -1,7 +1,7 @@
 package cl.paulina.yotrabajoconpecs.MisClases.PDC;
 
 public class PDCAtributos {
-    private int fotoDePerfil;
+    private String fotoDePerfil;
     private String nombre;
     private String ultimoMensaje;
     private String hora;
@@ -11,11 +11,11 @@ public class PDCAtributos {
 
     }
 
-    public int getFotoDePerfil() {
+    public String getFotoDePerfil() {
         return fotoDePerfil;
     }
 
-    public void setFotoDePerfil(int fotoDePerfil) {
+    public void setFotoDePerfil(String fotoDePerfil) {
         this.fotoDePerfil = fotoDePerfil;
     }
 

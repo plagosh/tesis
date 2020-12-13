@@ -8,29 +8,23 @@ import androidx.fragment.app.FragmentPagerAdapter;
 public class AdapterFrase extends FragmentPagerAdapter {
 
     public AdapterFrase(@NonNull FragmentManager fm) {
-        super(fm, BEHAVIOR_RESUME_ONLY_CURRENT_FRAGMENT);
+        super(fm);
     }
 
     @Override
     public Fragment getItem(int position) {
-        Fragment f = null;
-        switch(position) {
-            case 0:
-                f = new frase_general(); //1
-                break;
-            case 1:
-                f = new frase_consulta(); //2
-                break;
-            case 2:
-                f = new frase_sugerencia();//v1
-                break;
-        }
-        return f;
+        if(position == 0){
+            return new frase_consulta();
+        }else if(position == 1){
+            return new frase_general();
+        }else if(position == 2){
+            return new frase_sugerencia();
+        }return null;
     }
 
     @Override
     public int getCount() {
-        return 0;
+        return 3;
     }
 
     @Override

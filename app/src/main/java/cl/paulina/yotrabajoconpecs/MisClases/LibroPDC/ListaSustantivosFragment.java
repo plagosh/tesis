@@ -130,7 +130,7 @@ public class ListaSustantivosFragment extends Fragment {
             Picasso.get().load("https://yotrabajoconpecs.ddns.net/" + var).into(tvimagen);
             tvimagen.setLayoutParams(new LinearLayout.LayoutParams(200, 200));
             tvimagen.setScaleType(ImageButton.ScaleType.FIT_CENTER);
-            tvimagen.setBackgroundResource(R.drawable.boton_rectangulo);
+            tvimagen.setBackgroundResource(R.drawable.boton_rectangulo_sustantivo);
             tvnombre.setText(nombre_imagen.get(position).toString());
             tvimagen.setOnClickListener(new View.OnClickListener() {
                 @Override

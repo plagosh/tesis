@@ -25,6 +25,7 @@ import com.android.volley.toolbox.Volley;
 import com.loopj.android.http.AsyncHttpClient;
 import com.loopj.android.http.AsyncHttpResponseHandler;
 import com.squareup.picasso.Picasso;
+import com.squareup.picasso.PicassoProvider;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -65,7 +66,7 @@ public class ActivityPDCFragment extends Fragment {
         return vista;
     }
 
-    public void agregarAmigos(int fotoDePerfil, String nombre, String ultimoMensaje, String hora, String id){
+    public void agregarAmigos(String fotoDePerfil, String nombre, String ultimoMensaje, String hora, String id){
         PDCAtributos PDCAtributos = new PDCAtributos();
         PDCAtributos.setFotoDePerfil(fotoDePerfil);
         PDCAtributos.setNombre(nombre);
@@ -122,9 +123,10 @@ public class ActivityPDCFragment extends Fragment {
                             descargar_hora.add(jsonarray.getJSONObject(i).getString("hora_del_mensaje"));
                             String curTime = descargar_hora.get(i).toString().substring(0,5);
                             String mensaje = descargar_mensaje.get(i).toString();
-                            String uri = "https://yotrabajoconpecs.ddns.net/uploads/" + correo + ".jpg";
-                            int imageResource = getResources().getIdentifier(uri, null, getActivity().getPackageName());
-                            agregarAmigos(imageResource, nombreCompleto, mensaje, curTime, correo);
+                            //String uri = "https://yotrabajoconpecs.ddns.net/uploads/" + correo + ".jpg";
+                            //int imageResource = getResources().getIdentifier(uri, "drawable", getActivity().getPackageName());
+                            agregarAmigos("https://yotrabajoconpecs.ddns.net/uploads/" + correo + ".jpg", nombreCompleto, mensaje, curTime, correo);
+                            ;
                         }
                     }catch(JSONException e){
                         e.printStackTrace();

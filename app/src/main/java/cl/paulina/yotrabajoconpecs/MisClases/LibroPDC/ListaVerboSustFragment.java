@@ -131,13 +131,16 @@ public class ListaVerboSustFragment extends Fragment{
             Picasso.get().load("https://yotrabajoconpecs.ddns.net/" + var).into(tvimagen);
             tvimagen.setLayoutParams(new LinearLayout.LayoutParams(200, 200));
             tvimagen.setScaleType(ImageButton.ScaleType.FIT_CENTER);
-            tvimagen.setBackgroundResource(R.drawable.boton_rectangulo);
+            if(categoria_imagen.get(position).toString().equals("3")){
+                tvimagen.setBackgroundResource(R.drawable.boton_rectangulo_verbo);
+            }else{
+                tvimagen.setBackgroundResource(R.drawable.boton_rectangulo_sustantivo);
+            }
             tvnombre.setText(nombre_imagen.get(position).toString());
             tvimagen.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
                     Fragment fragment = new LibroPDCFragment();
-                    Toast.makeText(getContext(), categoria_imagen.get(position).toString(), Toast.LENGTH_SHORT).show();
                     datos.putString("url_verbo", url.get(position).toString());
                     datos.putString("categoria_imagen_verbo", categoria_imagen.get(position).toString());
                     datos.putString("nombre_imagen_verbo", nombre_imagen.get(position).toString());

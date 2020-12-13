@@ -109,11 +109,7 @@ public class MainActivity extends Fragment {
 
             @Override
             public void onFailure(int statusCode, Header[] headers, byte[] responseBody, Throwable error) {
-                Context context = getContext();
-                CharSequence text = "Conexión fallida";
-                int duration = Toast.LENGTH_SHORT;
-                Toast toast = Toast.makeText(context, text, duration);
-                toast.show();
+                Toast.makeText(getContext(), "Conexión fallida", Toast.LENGTH_SHORT);
             }
         });
 
@@ -164,7 +160,7 @@ public class MainActivity extends Fragment {
         StringRequest stringRequest = new StringRequest(Request.Method.POST, URL, new Response.Listener<String>() {
             @Override
             public void onResponse(String response) {
-                Toast.makeText(getContext(), response, Toast.LENGTH_SHORT).show();
+                Toast.makeText(getContext(), "Se ha cambiado la foto con éxito", Toast.LENGTH_SHORT).show();
             }
         }, new Response.ErrorListener() {
             @Override

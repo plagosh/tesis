@@ -37,15 +37,14 @@ public class ListaAdjetivosFragment extends Fragment {
     private ArrayList id_imagen, id_arasaac, nombre_imagen, categoria_imagen, url;
     public Fragment fragment;
     private ImageButton tvimagen;
-    Bundle datos;
     Bundle datosRecibidos;
+    Bundle datos;
 
     public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
 
         View vista = inflater.inflate(R.layout.pdc_1_4, container, false);
         datosRecibidos = getArguments();
         fragment = getTargetFragment();
-        datos = new Bundle();
         gridView = vista.findViewById(R.id.listview3);
         tvimagen = vista.findViewById(R.id.tv_imagen);
         id_imagen = new ArrayList();
@@ -131,15 +130,17 @@ public class ListaAdjetivosFragment extends Fragment {
             Picasso.get().load("https://yotrabajoconpecs.ddns.net/" + var).into(tvimagen);
             tvimagen.setLayoutParams(new LinearLayout.LayoutParams(200, 200));
             tvimagen.setScaleType(ImageButton.ScaleType.FIT_CENTER);
-            tvimagen.setBackgroundResource(R.drawable.boton_rectangulo);
+            tvimagen.setBackgroundResource(R.drawable.boton_rectangulo_adjetivo);
             tvnombre.setText(nombre_imagen.get(position).toString());
             tvimagen.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
+                    //Toast.makeText(getContext(), nombre_imagen.get(position).toString() + " " + url.get(position).toString(), Toast.LENGTH_SHORT).show();
                     Fragment fragmento = new LibroPDCFragment();
+                    datos = new Bundle();
                     datos.putString("url_adj", url.get(position).toString());
                     datos.putString("nombre_imagen_adj", nombre_imagen.get(position).toString());
-                    fragment.setArguments(datos);
+                    fragmento.setArguments(datos);
                     cambiarFragmento(fragmento);
                 }
             });

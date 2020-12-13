@@ -32,76 +32,134 @@
                 android:layout_height="wrap_content"
                 android:orientation="vertical">
 
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/colorAccent"
+                    android:text="Seleccione tipo de usuario:"
+                    android:textSize="15sp"/>
+
                 <Spinner
                     android:id="@+id/spinner"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:background="@color/colorAccent"
                     android:spinnerMode="dropdown"
-                    android:textColor="#FFFF"
-                    android:textSize="20sp" />
+                    android:textColor="@color/colorAccent"
+                    android:textSize="15sp" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/colorAccent"
+                    android:text="Correo eléctronico:"
+                    android:layout_marginTop="20sp"
+                    android:textSize="15sp"/>
 
                 <EditText
                     android:id="@+id/emailRegister"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:hint="Correo electrónico"
+                    android:hint="hola@mundo.cl"
                     android:inputType="textEmailAddress"
-                    android:textColorHint="@color/colorAccent"
-                    android:textSize="20sp" />
+                    android:textSize="15sp" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/colorAccent"
+                    android:text="Nombre:"
+                    android:layout_marginTop="20sp"
+                    android:textSize="15sp"/>
 
                 <EditText
                     android:id="@+id/firstNameRegister"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:hint="Nombre"
+                    android:hint="Pedro"
                     android:inputType="textPersonName"
-                    android:textColorHint="@color/colorAccent"
-                    android:textSize="20sp" />
+                    android:textSize="15sp" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/colorAccent"
+                    android:text="Apellidos:"
+                    android:layout_marginTop="20sp"
+                    android:textSize="15sp"/>
 
                 <EditText
                     android:id="@+id/lastNameRegister"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:hint="Apellidos"
+                    android:hint="Alvarez Viza"
                     android:inputType="textPersonName"
-                    android:textColorHint="@color/colorAccent"
-                    android:textSize="20sp" />
+                    android:textSize="15sp" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/colorAccent"
+                    android:text="Contraseña:"
+                    android:layout_marginTop="20sp"
+                    android:textSize="15sp"/>
 
                 <EditText
                     android:id="@+id/passwordRegister"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:hint="Contraseña"
+                    android:hint="********"
                     android:inputType="textPassword"
-                    android:textColorHint="@color/colorAccent"
-                    android:textSize="20sp" />
+                    android:textSize="15sp" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/colorAccent"
+                    android:text="Fecha de nacimiento:"
+                    android:layout_marginTop="20sp"
+                    android:textSize="15sp"/>
 
                 <EditText
                     android:id="@+id/fechanacimiento"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:hint="Fecha de nacimiento"
-                    android:textColorHint="@color/colorAccent"
-                    android:textSize="20sp" />
+                    android:hint="2020-01-01"
+                    android:textSize="15sp" />
 
-                <Spinner
-                    android:id="@+id/spinnerjefatura"
+                <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:background="@color/colorAccent"
-                    android:spinnerMode="dropdown"
-                    android:textColor="#FFFF"
-                    android:textSize="20sp" />
+                    android:textColor="@color/colorAccent"
+                    android:text="Cargo en la empresa:"
+                    android:layout_marginTop="20sp"
+                    android:textSize="15sp"/>
 
                 <EditText
                     android:id="@+id/cargoRegister"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:hint="Cargo dentro de la empresa"
+                    android:hint="Cajero"
                     android:inputType="textEmailAddress"
-                    android:textColorHint="@color/colorAccent"
-                    android:textSize="20sp" />
+                    android:textSize="15sp" />
+
+                <TextView
+                    android:id="@+id/nombrejefatura"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/colorAccent"
+                    android:text="Nombre de la jefatura:"
+                    android:visibility="invisible"
+                    android:layout_marginTop="20sp"
+                    android:textSize="15sp"/>
+
+                <Spinner
+                    android:id="@+id/spinnerjefatura"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:spinnerMode="dropdown"
+                    android:visibility="invisible"
+                    android:textColor="@color/colorAccent"
+                    android:textSize="15sp" />
 
                 <Button
                     android:id="@+id/button_register"

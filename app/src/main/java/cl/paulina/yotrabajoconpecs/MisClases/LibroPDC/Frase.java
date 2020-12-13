@@ -21,17 +21,27 @@ import androidx.annotation.RequiresApi;
 import androidx.coordinatorlayout.widget.CoordinatorLayout;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentTransaction;
+import androidx.viewpager.widget.ViewPager;
 
+import com.android.volley.Request;
+import com.android.volley.RequestQueue;
+import com.android.volley.Response;
+import com.android.volley.VolleyError;
+import com.android.volley.toolbox.JsonObjectRequest;
+import com.android.volley.toolbox.Volley;
 import com.google.android.material.bottomsheet.BottomSheetBehavior;
 import com.google.android.material.bottomsheet.BottomSheetDialogFragment;
+import com.google.android.material.tabs.TabLayout;
 import com.loopj.android.http.AsyncHttpClient;
 import com.loopj.android.http.AsyncHttpResponseHandler;
 import com.squareup.picasso.Picasso;
 
 import org.json.JSONArray;
 import org.json.JSONException;
+import org.json.JSONObject;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 
 import cl.paulina.yotrabajoconpecs.Preferences;
 import cl.paulina.yotrabajoconpecs.R;
@@ -50,11 +60,36 @@ public class Frase extends BottomSheetDialogFragment {
     private ArrayList apellido_usuario;
     private ArrayList id_usuario;
     private ArrayList fraseArray;
-    Bundle datos;
-    BottomSheetBehavior sheetBehavior;
     public String IDUSUARIO;
     public String USUARIO;
+    private TabLayout tabLayout;
+    private ViewPager viewPager;
 
+    @Nullable
+    @Override
+    public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
+        View view = inflater.inflate(R.layout.frase, container, false);
+        gridView = view.findViewById(R.id.listviewFrase);
+        contentCaja = view.findViewById(R.id.contentCaja);
+        tabLayout = view.findViewById(R.id.tabLayout);
+        viewPager = view.findViewById(R.id.viewLayout);
+        tabLayout.setupWithViewPager(viewPager);
+        viewPager.setAdapter(new AdapterFrase(getActivity().getSupportFragmentManager()));
+        id_frase = new ArrayList();
+        url = new ArrayList();
+        agregandoFrase = new ArrayList();
+        id_imagen = new ArrayList();
+        glosa = new ArrayList();
+        nombre_usuario = new ArrayList();
+        apellido_usuario = new ArrayList();
+        id_usuario = new ArrayList();
+        fraseArray = new ArrayList();
+        USUARIO = Preferences.obtenerPreferenceString(getContext(), Preferences.PREFERENCE_USUARIO_LOGIN);
+
+        //descargarUsuario();
+        return view;
+    }
+    /*
     @SuppressLint("RestrictedApi")
     @Override
     public void setupDialog(Dialog dialog, int style) {
@@ -271,11 +306,8 @@ public class Frase extends BottomSheetDialogFragment {
                 @Override
                 public void onClick(View v) {
                     Fragment fragmento = new LibroPDCFragment();
-                    datos = new Bundle();
-                    datos.putString("url_frase", id_frase.get(position).toString());
-                    datos.putString("glosa_frase", glosa.get(position).toString());
+                    MandarMensaje("marce36", "Maximiliano Ramirez Henriquez", "1", glosa.get(position).toString());
                     AgregarFrecuenciaFrase("https://yotrabajoconpecs.ddns.net/modificar_frase.php?frase=" + fraseArray.get(position).toString());
-                    fragmento.setArguments(datos);
                     cambiarFragmento(fragmento);
                 }
             });
@@ -289,4 +321,32 @@ public class Frase extends BottomSheetDialogFragment {
         transaction.addToBackStack(null);
         transaction.commit();
     }
+
+    private void MandarMensaje(String EMISOR, String NOMBRE, String RECEPTOR, String MENSAJE_ENVIAR) {
+        //Toast.makeText(Login.this, "entre a SubirToken", Toast.LENGTH_SHORT).show();
+        HashMap<String, String> hashMapToken = new HashMap<>();
+        hashMapToken.put("emisor", EMISOR);
+        hashMapToken.put("nombrecompleto", NOMBRE);
+        hashMapToken.put("receptor", RECEPTOR);
+        hashMapToken.put("mensaje", MENSAJE_ENVIAR);
+        //Toast.makeText(getContext(), EMISOR + NOMBRE + RECEPTOR + MENSAJE_ENVIAR + "" + IP_MENSAJE, Toast.LENGTH_SHORT).show();
+
+        JsonObjectRequest solicitud = new JsonObjectRequest(Request.Method.POST, "https://yotrabajoconpecs.ddns.net/Enviar_Mensajes.php", new JSONObject(hashMapToken), new Response.Listener<JSONObject>() {
+            @Override
+            public void onResponse(JSONObject response) {
+                try {
+                    Toast.makeText(getContext(), response.getString("resultado"), Toast.LENGTH_SHORT).show();
+                } catch (JSONException e) {
+                }
+            }
+        }, new Response.ErrorListener() {
+            @Override
+            public void onErrorResponse(VolleyError error) {
+                Toast.makeText(getContext(), "Ocurrió un error", Toast.LENGTH_SHORT).show();
+            }
+        });
+        RequestQueue requestQueue = Volley.newRequestQueue(getContext());
+        requestQueue.add(solicitud);
+    }
+    */
 }

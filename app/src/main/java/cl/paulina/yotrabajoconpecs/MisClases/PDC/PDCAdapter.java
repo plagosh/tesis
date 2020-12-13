@@ -16,6 +16,8 @@ import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.squareup.picasso.Picasso;
+
 import java.util.List;
 
 import cl.paulina.yotrabajoconpecs.R;
@@ -40,7 +42,8 @@ public class PDCAdapter extends RecyclerView.Adapter<PDCAdapter.HolderAmigos>{
 
     @Override
     public void onBindViewHolder(@NonNull HolderAmigos holder, int position) {
-        holder.imageView.setImageResource(atributosList.get(position).getFotoDePerfil());
+        Picasso.get().load(atributosList.get(position).getFotoDePerfil()).into(holder.imageView);
+        //holder.imageView.setImageResource(atributosList.get(position).getFotoDePerfil());
         holder.nombre.setText(atributosList.get(position).getNombre());
         holder.mensaje.setText(atributosList.get(position).getUltimoMensaje());
         holder.hora.setText(atributosList.get(position).getHora());

@@ -14,7 +14,7 @@
             android:title="Menú principal" />
         <menu>
             <item
-                android:id="@+id/nav_libro"
+                android:id="@+id/nav_libropdchat"
                 android:icon="@drawable/outline_book_black_18dp"
                 android:title="Libro" />
             <item

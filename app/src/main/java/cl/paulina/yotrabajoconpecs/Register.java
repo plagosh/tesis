@@ -17,6 +17,7 @@ import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.ProgressBar;
 import android.widget.Spinner;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.RequiresApi;
@@ -51,10 +52,12 @@ public class Register extends AppCompatActivity {
     Spinner myspinner, spinnerjefatura;
     DatePickerDialog.OnDateSetListener setListener;
     private Calendar c;
+    private TextView mijefatura;
     private ArrayList idusuario, nombreusuario, apellidousuario, jefatura;
-    public int ultimo;
+    private ArrayList elementos2;
+    private ArrayList elementos3;
+    public int tipousuario;
     public String jefaturafinal = "";
-    public String edad = "";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -69,25 +72,19 @@ public class Register extends AppCompatActivity {
         fecha = findViewById(R.id.fechanacimiento);
         cargoRegister = findViewById(R.id.cargoRegister);
         myspinner = findViewById(R.id.spinner);
+        mijefatura = findViewById(R.id.nombrejefatura);
         idusuario = new ArrayList();
         nombreusuario = new ArrayList();
         apellidousuario = new ArrayList();
         jefatura = new ArrayList();
-        
+        elementos2 = new ArrayList();
+        elementos3 = new ArrayList();
+
         c = Calendar.getInstance();
         final int year = c.get(Calendar.YEAR);
         final int month = c.get(Calendar.MONTH);
         final int day = c.get(Calendar.DAY_OF_MONTH);
         getSupportActionBar().hide();
-
-        //CALCULAR EDAD
-        String fechanacimiento = fecha.getText().toString();
-        Date datenacimiento = stringToDate(fechanacimiento, "yyyy-MM-dd");
-        long date = System.currentTimeMillis();
-        SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
-        String dateString = sdf.format(date);
-        //Date asd = dateString - datenacimiento;
-        //edad = asd.toString();
 
         //ELEGIR UN DIA DEL CALENDARIO PARA LA FECHA DE NACIMIENTO
         setListener = new DatePickerDialog.OnDateSetListener() {
@@ -110,7 +107,7 @@ public class Register extends AppCompatActivity {
                         String date = year + "-" + month + "-" + day;
                         fecha.setText(date);
                     }
-                },year, month, day);
+                }, year, month, day);
                 datePickerDialog.show();
             }
         });
@@ -126,41 +123,21 @@ public class Register extends AppCompatActivity {
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
                 String elemento = (String) myspinner.getAdapter().getItem(position);
                 String empleador = "empleador";
-                if(empleador.equals(elemento)){
-                    ultimo = 1;
-                }else{
-                    ultimo = 2;
+                if (empleador.equals(elemento)) {
+                    tipousuario = 1;
+                } else {
+                    tipousuario = 2;
+                    mijefatura.setVisibility(View.VISIBLE);
+                    spinnerjefatura.setVisibility(View.VISIBLE);
                 }
                 //Toast.makeText(Register.this, "Seleccionaste: " + elemento, Toast.LENGTH_SHORT).show();
             }
+
             @Override
             public void onNothingSelected(AdapterView<?> parent) {
                 Toast.makeText(Register.this, "No ha seleccionado una opción", Toast.LENGTH_SHORT).show();
             }
         });
-
-        //SPINNER JEFATURA
-        /*
-        ArrayList<String> elementos2 = new ArrayList<>();
-        for(int k = 0; k < idusuario.size(); k++){
-            if(jefatura.get(k) != "0"){
-                elementos2.add(nombreusuario.get(k) + " " + apellidousuario.get(k));
-                jefaturafinal = idusuario.get(k).toString();
-            }
-        }
-        ArrayAdapter adp2 = new ArrayAdapter(Register.this, android.R.layout.simple_spinner_dropdown_item, elementos2);
-        myspinner.setAdapter(adp2);
-        myspinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
-                @Override
-                public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-                    String elemento2 = (String) myspinner.getAdapter().getItem(position);
-                }
-
-            @Override
-            public void onNothingSelected(AdapterView<?> parent) {
-                Toast.makeText(Register.this, "No ha seleccionado una opción", Toast.LENGTH_SHORT).show();
-            }
-        });*/
 
         //HACER LA DESCARGA DE LOS USUARIOS
         descargarDatos();
@@ -180,7 +157,7 @@ public class Register extends AppCompatActivity {
         String lastName = lastNameRegister.getText().toString();
         String email = emailRegister.getText().toString();
         String password = passwordRegister.getText().toString();
-        String elemento = ultimo + "";
+        String elemento = tipousuario + "";
         String cargo = cargoRegister.getText().toString();
 
         if (TextUtils.isEmpty(email)) {
@@ -203,39 +180,27 @@ public class Register extends AppCompatActivity {
         }
         progressRegister.setVisibility(View.VISIBLE);
 
-        ejecutarservicio("https://yotrabajoconpecs.ddns.net/saveUsuario.php", elemento, password, firstName, lastName, edad, email, jefaturafinal, cargo);
+        ejecutarservicio("https://yotrabajoconpecs.ddns.net/saveUsuario.php?tipousuario_tipo=" + elemento + "&clave=" + password + "&nombre_usuario=" + firstName + "&apellido_usuario="+ lastName + "&edad=" + date + "&correo=" + email + "&jefatura=" + jefaturafinal + "&cargo=" + cargo);
         //ejecutarservicio(URL, tipo, password, firstName, lastName, edad, email, jefaturafinal, cargo);
     }
 
-    private void ejecutarservicio(String URL, String tipo, String contraseña, String nombre, String apellidos, String fecha, String correo, String jefe, String cargo){
-        StringRequest stringRequest = new StringRequest(Request.Method.POST, URL, new Response.Listener<String>() {
+    private void ejecutarservicio(String URL){
+        AsyncHttpClient client = new AsyncHttpClient();
+        client.get(URL, new AsyncHttpResponseHandler() {
+            @RequiresApi(api = Build.VERSION_CODES.M)
             @Override
-            public void onResponse(String response) {
-                //Toast.makeText(getContext(), "OPERACION EXITOSA", Toast.LENGTH_SHORT).show();
+            public void onSuccess(int statusCode, Header[] headers, byte[] responseBody) {
+                if(statusCode == 200){
+                    Toast.makeText(Register.this, "Se ha guardado el usuario con éxito", Toast.LENGTH_SHORT).show();
+                    Intent i = new Intent(getApplicationContext(), Login.class);
+                    startActivity(i);
+                }
             }
-        }, new Response.ErrorListener(){
             @Override
-            public void onErrorResponse(VolleyError error) {
-                Toast.makeText(getApplicationContext(), error.toString(), Toast.LENGTH_SHORT).show();
+            public void onFailure(int statusCode, Header[] headers, byte[] responseBody, Throwable error) {
+                Toast.makeText(Register.this, "No se ha podido guardar el usuario", Toast.LENGTH_SHORT).show();
             }
-        }){
-            @Override
-            protected Map<String, String> getParams() throws AuthFailureError {
-                Map<String,String> parametros = new HashMap<String,String>();
-                parametros.put("id_usuario", "");
-                parametros.put("tipo", tipo);
-                parametros.put("contraseña", contraseña);
-                parametros.put("nombre", nombre);
-                parametros.put("apellidos", apellidos);
-                parametros.put("fecha", fecha);
-                parametros.put("correo", correo);
-                parametros.put("jefatura", jefe);
-                parametros.put("cargo", cargo);
-                return parametros;
-            }
-        };
-        RequestQueue requestQueue = Volley.newRequestQueue(getApplicationContext());
-        requestQueue.add(stringRequest);
+        });
     }
 
     private void descargarDatos(){
@@ -243,14 +208,12 @@ public class Register extends AppCompatActivity {
         nombreusuario.clear();
         apellidousuario.clear();
         jefatura.clear();
-        final ProgressDialog progressDialog = new ProgressDialog(this);
         AsyncHttpClient client = new AsyncHttpClient();
-        client.get("https://yotrabajoconpecs.ddns.net/query_tarea.php", new AsyncHttpResponseHandler() {
+        client.get("https://yotrabajoconpecs.ddns.net/query_usuario.php", new AsyncHttpResponseHandler() {
             @RequiresApi(api = Build.VERSION_CODES.M)
             @Override
             public void onSuccess(int statusCode, Header[] headers, byte[] responseBody) {
                 if(statusCode == 200){
-                    progressDialog.dismiss();
                     try{
                         JSONArray jsonarray = new JSONArray(new String(responseBody));
                         for(int i = 0; i < jsonarray.length(); i++){
@@ -258,7 +221,24 @@ public class Register extends AppCompatActivity {
                             nombreusuario.add(jsonarray.getJSONObject(i).getString("nombre_usuario"));
                             apellidousuario.add(jsonarray.getJSONObject(i).getString("apellido_usuario"));
                             jefatura.add(jsonarray.getJSONObject(i).getString("jefatura"));
+                            if(jefatura.get(i).toString().equals("0")){
+                                elementos2.add(nombreusuario.get(i).toString() + " " + apellidousuario.get(i).toString());
+                                elementos3.add(idusuario.get(i).toString());
+                            }
                         }
+                        //SPINNER JEFATURA
+                        ArrayAdapter adp2 = new ArrayAdapter(Register.this, android.R.layout.simple_spinner_dropdown_item, elementos2);
+                        spinnerjefatura.setAdapter(adp2);
+                        spinnerjefatura.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+                            @Override
+                            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+                                jefaturafinal = elementos3.get(position).toString();
+                            }
+                            @Override
+                            public void onNothingSelected(AdapterView<?> parent) {
+                                Toast.makeText(Register.this, "No ha seleccionado una opción", Toast.LENGTH_SHORT).show();
+                            }
+                        });
                     }catch(JSONException e){
                         e.printStackTrace();
                     }
@@ -267,21 +247,9 @@ public class Register extends AppCompatActivity {
 
             @Override
             public void onFailure(int statusCode, Header[] headers, byte[] responseBody, Throwable error) {
-                Context context = Register.this;
-                CharSequence text = "Conexión fallida";
-                int duration = Toast.LENGTH_SHORT;
-                Toast toast = Toast.makeText(context, text, duration);
-                toast.show();
+                Toast.makeText(Register.this, "Conexión fallida", Toast.LENGTH_SHORT).show();
             }
         });
     }
 
-    private Date stringToDate(String aDate,String aFormat) {
-        if(aDate==null) return null;
-        ParsePosition pos = new ParsePosition(0);
-        SimpleDateFormat simpledateformat = new SimpleDateFormat(aFormat);
-        Date stringDate = simpledateformat.parse(aDate, pos);
-        return stringDate;
-
-    }
 }

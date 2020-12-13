@@ -92,7 +92,6 @@ public class PanelPrincipalFragment extends Fragment {
                 }
             }
         });
-
         return vista;
     }
 
@@ -121,11 +120,7 @@ public class PanelPrincipalFragment extends Fragment {
 
             @Override
             public void onFailure(int statusCode, Header[] headers, byte[] responseBody, Throwable error) {
-                Context context = getContext();
-                CharSequence text = "Conexión fallida";
-                int duration = Toast.LENGTH_SHORT;
-                Toast toast = Toast.makeText(context, text, duration);
-                toast.show();
+                Toast.makeText(getContext(), "Conexión fallida", Toast.LENGTH_SHORT).show();
             }
         });
     }

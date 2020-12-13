@@ -22,6 +22,7 @@ import androidx.fragment.app.Fragment;
 
 import com.loopj.android.http.AsyncHttpClient;
 import com.loopj.android.http.AsyncHttpResponseHandler;
+import com.squareup.picasso.Picasso;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -43,6 +44,7 @@ public class ActivityStackFragment extends Fragment {
     private ArrayList correo_pdc;
     private ArrayList nombre_pdc;
     private ArrayList apellido_pdc;
+    private ArrayList tv_correo;
     public String myid = "";
     public String PDC;
 
@@ -60,49 +62,13 @@ public class ActivityStackFragment extends Fragment {
         correo_pdc = new ArrayList();
         nombre_pdc = new ArrayList();
         apellido_pdc = new ArrayList();
+        tv_correo = new ArrayList();
         id = new ArrayList();
         gridView = vista.findViewById(R.id.stackRecyclerView);
 
         descargarUsuario();
 
         return vista;
-    }
-
-    private void descargarPDC(String nombre){
-        correo_pdc.clear();
-        nombre_usuario.clear();
-        apellido_usuario.clear();
-        final ProgressDialog progressDialog = new ProgressDialog(getActivity());
-        AsyncHttpClient client = new AsyncHttpClient();
-        client.get("https://yotrabajoconpecs.ddns.net/query_usuario.php", new AsyncHttpResponseHandler() {
-            @RequiresApi(api = Build.VERSION_CODES.M)
-            @Override
-            public void onSuccess(int statusCode, Header[] headers, byte[] responseBody) {
-                if(statusCode == 200){
-                    progressDialog.dismiss();
-                    try{
-                        JSONArray jsonarray = new JSONArray(new String(responseBody));
-                        for(int i = 0; i < jsonarray.length(); i++){
-                            nombre_pdc.add(jsonarray.getJSONObject(i).getString("nombre_usuario"));
-                            apellido_pdc.add(jsonarray.getJSONObject(i).getString("apellido_usuario"));
-                            correo_pdc.add(jsonarray.getJSONObject(i).getString("correo"));
-                            String nombre_usuario_conespacios = nombre_pdc.get(i).toString() + " " + apellido_pdc.get(i).toString();
-                            String nombre_usuario_sinespacios = nombre_usuario_conespacios.replace(" ", "");
-                            if(nombre.equals(nombre_usuario_sinespacios)){
-                                PDC = correo_pdc.get(i).toString();
-                            }
-                        }
-                        SolicitudJSON("https://yotrabajoconpecs.ddns.net/query_lista_tarea.php?jefatura=" + myid);
-                    }catch(JSONException e){
-                        e.printStackTrace();
-                    }
-                }
-            }
-            @Override
-            public void onFailure(int statusCode, Header[] headers, byte[] responseBody, Throwable error) {
-                Toast.makeText(getContext(), "Conexión fallida", Toast.LENGTH_SHORT).show();
-            }
-        });
     }
 
     private void SolicitudJSON(String URL_GET_ALL_STACK){
@@ -112,6 +78,7 @@ public class ActivityStackFragment extends Fragment {
         tv_jefatura.clear();
         id_tarea_lista.clear();
         id.clear();
+        tv_correo.clear();
         final ProgressDialog progressDialog = new ProgressDialog(getActivity());
         AsyncHttpClient client = new AsyncHttpClient();
         client.get(URL_GET_ALL_STACK, new AsyncHttpResponseHandler() {
@@ -128,6 +95,7 @@ public class ActivityStackFragment extends Fragment {
                             tv_hora.add(jsonarray.getJSONObject(i).getString("fecha"));
                             id_tarea_lista.add(jsonarray.getJSONObject(i).getString("id_tarea_lista"));
                             id.add(jsonarray.getJSONObject(i).getString("id_listatarea"));
+                            tv_correo.add(jsonarray.getJSONObject(i).getString("correo"));
                         }gridView.setAdapter(new CustomAdapter(getContext()));
                     }catch(JSONException e){
                         e.printStackTrace();
@@ -179,7 +147,12 @@ public class ActivityStackFragment extends Fragment {
             tarea = (TextView) viewGroup.findViewById(R.id.nombreTarea);
             hora = (TextView) viewGroup.findViewById(R.id.horaTarea);
             tv_check = (CheckBox) viewGroup.findViewById(R.id.checkeado);
-            imageView.setImageResource(R.drawable.ic_baseline_supervised_user_circle_24);
+            String CORREO = tv_correo.get(position).toString();
+            String uri = "https://yotrabajoconpecs.ddns.net/uploads/" + CORREO + ".jpg";
+            int imageResource = getResources().getIdentifier(uri, null, getActivity().getPackageName());
+
+            imageView.setImageResource(imageResource);
+            Picasso.get().load("https://yotrabajoconpecs.ddns.net/uploads/" + CORREO + ".jpg").into(imageView);
             String nuevo_texto = tv_tarea.get(position).toString() + " ha terminado la tarea:";
             nombre.setText(nuevo_texto);
             tarea.setText(id_tarea.get(position).toString());
@@ -189,9 +162,8 @@ public class ActivityStackFragment extends Fragment {
             tv_check.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    descargarPDC(tv_tarea.get(position).toString());
                     //mandar corroboracion
-                    validarTareaEmpleador("https://yotrabajoconpecs.ddns.net/validar_tarea_empleador.php?id=" + id.get(position).toString() + "&usuario=" + PDC);
+                    validarTareaEmpleador("https://yotrabajoconpecs.ddns.net/validar_tarea_empleador.php?id=" + id.get(position).toString() + "&usuario=" + tv_correo.get(position).toString());
                     //eliminar tarea
                     eliminarTareaLista("https://yotrabajoconpecs.ddns.net/eliminar_ListaTarea.php?id_tarea_lista=" + id_tarea_lista.get(position).toString());
                 }

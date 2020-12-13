@@ -32,8 +32,10 @@ import cz.msebera.android.httpclient.Header;
 public class menu_lateral extends AppCompatActivity {
 
     private AppBarConfiguration mAppBarConfiguration;
-    TextView menuName;
+    private TextView menuName, menuCorreo;
     public ArrayList recibiendo;
+    public ArrayList tipo;
+    public ArrayList correo;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -43,11 +45,14 @@ public class menu_lateral extends AppCompatActivity {
         setSupportActionBar(toolbar);
         DrawerLayout drawer = findViewById(R.id.drawer_layout);
         NavigationView navigationView = findViewById(R.id.nav_view);
-
         menuName = findViewById(R.id.menuNombre);
+        menuCorreo = findViewById(R.id.menuCorreo);
         recibiendo = new ArrayList();
-
+        tipo = new ArrayList();
+        correo = new ArrayList();
         recibiendo.clear();
+        tipo.clear();
+        correo.clear();
         final ProgressDialog progressDialog = new ProgressDialog(getApplication());
         AsyncHttpClient client = new AsyncHttpClient();
         client.get("https://yotrabajoconpecs.ddns.net/query_loginreciclado.php", new AsyncHttpResponseHandler() {
@@ -60,7 +65,13 @@ public class menu_lateral extends AppCompatActivity {
                         JSONArray jsonarray = new JSONArray(new String(responseBody));
                         for (int i = 0; i < jsonarray.length(); i++) {
                             recibiendo.add(jsonarray.getJSONObject(i).getString("nombres"));
+                            tipo.add(jsonarray.getJSONObject(i).getString("tipo"));
+                            correo.add(jsonarray.getJSONObject(i).getString("correo"));
                         }
+                        //menuName.setText("Hola");
+                        //recibiendo.get(recibiendo.size()-1).toString()
+                        //Toast.makeText(menu_lateral.this, recibiendo.get(recibiendo.size()-1).toString(), Toast.LENGTH_LONG).show();
+                        //menuCorreo.setText(correo.get(correo.size()-1).toString());
                     } catch (JSONException e) {
                         e.printStackTrace();
                     }
@@ -74,7 +85,7 @@ public class menu_lateral extends AppCompatActivity {
         });
 
         mAppBarConfiguration = new AppBarConfiguration.Builder(
-                R.id.nav_inicio, R.id.nav_libro, R.id.nav_panel)
+                R.id.nav_inicio, R.id.nav_libropdchat, R.id.nav_panel)
                 .setDrawerLayout(drawer)
                 .build();
 
