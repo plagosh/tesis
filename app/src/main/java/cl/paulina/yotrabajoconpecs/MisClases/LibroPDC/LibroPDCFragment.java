@@ -173,6 +173,7 @@ public class LibroPDCFragment extends Fragment {
         //adjetivos
         descargarAdjetivo();
 
+        //Anterior verbo/sustantivo
         arriba1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

@@ -45,6 +45,9 @@ public class ActivityPDCFragment extends Fragment {
     private ArrayList descargar_hora;
     public String nombreCompleto;
     public String correo;
+    public ArrayList nombreCompletoArray;
+    public ArrayList correoArray;
+    public int x;
 
     public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View vista = inflater.inflate(R.layout.activity_amigos, container, false);
@@ -57,9 +60,12 @@ public class ActivityPDCFragment extends Fragment {
 
         adapter = new PDCAdapter(atributosList, getContext());
         rv.setAdapter(adapter);
+        x = 0;
 
         descargar_mensaje = new ArrayList();
         descargar_hora = new ArrayList();
+        nombreCompletoArray = new ArrayList();
+        correoArray = new ArrayList();
 
         SolicitudJSON();
 
@@ -86,10 +92,9 @@ public class ActivityPDCFragment extends Fragment {
                     JSONArray jsonarray = new JSONArray(new String(responseBody));
                     for(int i = 0; i < jsonarray.length(); i++){
                         JSONObject js = jsonarray.getJSONObject(i);
-                        nombreCompleto = js.getString("nombre_usuario") + " " + js.getString("apellido_usuario");
-                        correo = js.getString("correo");
-                        String jefatura = js.getString("jefatura");
-                        DescargarMensajes("https://yotrabajoconpecs.ddns.net/query_ultimo_mensaje.php?usuario=" + correo);
+                        nombreCompletoArray.add(js.getString("nombre_usuario") + " " + js.getString("apellido_usuario"));
+                        correoArray.add(js.getString("correo"));
+                        DescargarMensajes("https://yotrabajoconpecs.ddns.net/query_ultimo_mensaje.php?usuario=" + correoArray.get(i).toString());
                     }
                 } catch (JSONException e) {
                     Toast.makeText(getContext(), "Ocurrió un error al descomponer el JSON", Toast.LENGTH_SHORT).show();
@@ -125,8 +130,8 @@ public class ActivityPDCFragment extends Fragment {
                             String mensaje = descargar_mensaje.get(i).toString();
                             //String uri = "https://yotrabajoconpecs.ddns.net/uploads/" + correo + ".jpg";
                             //int imageResource = getResources().getIdentifier(uri, "drawable", getActivity().getPackageName());
-                            agregarAmigos("https://yotrabajoconpecs.ddns.net/uploads/" + correo + ".jpg", nombreCompleto, mensaje, curTime, correo);
-                            ;
+                            agregarAmigos("https://yotrabajoconpecs.ddns.net/uploads/" + correoArray.get(x).toString() + ".jpg", nombreCompletoArray.get(x).toString(), mensaje, curTime, correo);
+                            x++;
                         }
                     }catch(JSONException e){
                         e.printStackTrace();

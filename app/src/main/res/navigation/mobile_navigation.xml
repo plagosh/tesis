@@ -85,10 +85,10 @@
         android:id="@+id/nav_frase_consulta"
         android:name="cl.paulina.yotrabajoconpecs.MisClases.LibroPDC.frase_consulta"
         android:label="Frase Consulta"
-        tools:layout="@layout/register" />
+        tools:layout="@layout/empleador_2" />
     <fragment
         android:id="@+id/nav_frase_sugerencia"
         android:name="cl.paulina.yotrabajoconpecs.MisClases.LibroPDC.frase_sugerencia"
         android:label="Frase Sugerencia"
-        tools:layout="@layout/login" />
+        tools:layout="@layout/activity_add" />
 </navigation>
