@@ -73,7 +73,6 @@ public class AddActivity extends Fragment {
         idCalendario = new ArrayList();
 
         descargarPDC();
-        descargarTareas();
 
         Bundle bundle = getArguments();
         int dia = 0, mes = 0, anio = 0;
@@ -150,12 +149,12 @@ public class AddActivity extends Fragment {
         requestQueue.add(stringRequest);
     }
 
-    private void descargarTareas(){
+    private void descargarTareas(String URL){
         idtarea.clear();
         nombretarea.clear();
         final ProgressDialog progressDialog = new ProgressDialog(getActivity());
         AsyncHttpClient client = new AsyncHttpClient();
-        client.get("https://yotrabajoconpecs.ddns.net/query_tarea.php", new AsyncHttpResponseHandler() {
+        client.get(URL, new AsyncHttpResponseHandler() {
             @RequiresApi(api = Build.VERSION_CODES.M)
             @Override
             public void onSuccess(int statusCode, Header[] headers, byte[] responseBody) {
@@ -217,15 +216,17 @@ public class AddActivity extends Fragment {
                             apellidoUsuario.add(jsonarray.getJSONObject(i).getString("apellido_usuario"));
                         }
                         ArrayList nombreCompleto = new ArrayList();
+                        ArrayList idCompleto = new ArrayList();
                         for(int j = 0; j < nombreUsuario.size(); j++){
                             nombreCompleto.add(nombreUsuario.get(j).toString() + " " + apellidoUsuario.get(j).toString());
+                            idCompleto.add(idUsuario.get(j).toString());
                         }
                         ArrayAdapter adapter = new ArrayAdapter(getContext(), android.R.layout.simple_spinner_dropdown_item, nombreCompleto);
                         spinnerPDC.setAdapter(adapter);
                         spinnerPDC.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
                             @Override
                             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-                                String nombreUsuario = (String) spinnerPDC.getAdapter().getItem(position);
+                                descargarTareas("https://yotrabajoconpecs.ddns.net/query_tarea.php?idusuario=" + idCompleto.get(position).toString());
                             }
                             @Override
                             public void onNothingSelected(AdapterView<?> parent) {

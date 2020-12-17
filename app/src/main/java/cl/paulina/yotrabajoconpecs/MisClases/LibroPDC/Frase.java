@@ -62,15 +62,17 @@ public class Frase extends BottomSheetDialogFragment {
     private ArrayList apellido_usuario;
     private ArrayList id_usuario;
     private ArrayList fraseArray;
+    private ArrayList categoria_frase;
     public String IDUSUARIO;
     public String USUARIO;
     private TabLayout tabLayout;
     private ViewPager viewPager;
 
+    /*
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.frase, container, false);
+        View view = inflater.inflate(R.layout.bottom_sheet_layout, container, false);
         gridView = view.findViewById(R.id.listviewFrase);
         contentCaja = view.findViewById(R.id.contentCaja);
         tabLayout = view.findViewById(R.id.tabLayout);
@@ -108,8 +110,8 @@ public class Frase extends BottomSheetDialogFragment {
 
         //descargarUsuario();
         return view;
-    }
-    /*
+    }*/
+
     @SuppressLint("RestrictedApi")
     @Override
     public void setupDialog(Dialog dialog, int style) {
@@ -128,6 +130,7 @@ public class Frase extends BottomSheetDialogFragment {
         apellido_usuario = new ArrayList();
         id_usuario = new ArrayList();
         fraseArray = new ArrayList();
+        categoria_frase = new ArrayList();
         USUARIO = Preferences.obtenerPreferenceString(getContext(), Preferences.PREFERENCE_USUARIO_LOGIN);
 
         descargarUsuario();
@@ -212,6 +215,7 @@ public class Frase extends BottomSheetDialogFragment {
 
     private void descargarDatos(String URL){
         id_frase.clear();
+        categoria_frase.clear();
         final ProgressDialog progressDialog = new ProgressDialog(getActivity());
         AsyncHttpClient client = new AsyncHttpClient();
         client.get(URL, new AsyncHttpResponseHandler() {
@@ -224,6 +228,7 @@ public class Frase extends BottomSheetDialogFragment {
                         JSONArray jsonarray = new JSONArray(new String(responseBody));
                         for(int i = 0; i < jsonarray.length(); i++){
                             id_frase.add(jsonarray.getJSONObject(i).getString("url"));
+                            categoria_frase.add(jsonarray.getJSONObject(i).getString("categoria"));
                         }gridView.setAdapter(new CustomAdapter(getContext()));
                     }catch(JSONException e){
                         e.printStackTrace();
@@ -286,10 +291,20 @@ public class Frase extends BottomSheetDialogFragment {
             TvImagenButton = (LinearLayout) viewGroup.findViewById(R.id.tv_imagen_frase);
 
             String frase = id_frase.get(position).toString();
+            String categoria = categoria_frase.get(position).toString();
             String split[] = frase.split(" ");
+            String splitcat[] = categoria.split(" ");
             for(int i = 0; i < split.length; i++) {
                 ImageButton imagen = new ImageButton(getContext());
-                imagen.setBackgroundResource(R.drawable.boton_rectangulo);
+                if(splitcat[i].equals("3")){
+                    imagen.setBackgroundResource(R.drawable.boton_rectangulo_verbo);
+                }else if(splitcat[i].equals("2")){
+                    imagen.setBackgroundResource(R.drawable.boton_rectangulo_sustantivo);
+                }else if(splitcat[i].equals("4")){
+                    imagen.setBackgroundResource(R.drawable.boton_rectangulo_adjetivo);
+                }else{
+                    imagen.setBackgroundResource(R.drawable.boton_rectangulo);
+                }
                 imagen.setLayoutParams(new LinearLayout.LayoutParams(130, 130));
                 imagen.setScaleType(ImageButton.ScaleType.FIT_CENTER);
                 Picasso.get().load("https://yotrabajoconpecs.ddns.net/" + split[i]).into(imagen);
@@ -368,5 +383,4 @@ public class Frase extends BottomSheetDialogFragment {
         RequestQueue requestQueue = Volley.newRequestQueue(getContext());
         requestQueue.add(solicitud);
     }
-    */
 }

@@ -6,6 +6,7 @@ public class MensajeDeTexto {
     //emisor: 1, receptor: 2
     private int tipoMensaje;
     private String HoraDelMensaje;
+    private String categoriaMensaje;
 
     public MensajeDeTexto() {
     }
@@ -40,5 +41,13 @@ public class MensajeDeTexto {
 
     public void setHoraDelMensaje(String horaDelMensaje) {
         HoraDelMensaje = horaDelMensaje;
+    }
+
+    public String getCategoriaMensaje() {
+        return categoriaMensaje;
+    }
+
+    public void setCategoriaMensaje(String categoriaMensaje) {
+        this.categoriaMensaje = categoriaMensaje;
     }
 }

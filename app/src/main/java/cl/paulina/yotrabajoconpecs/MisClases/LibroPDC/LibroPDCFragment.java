@@ -68,13 +68,15 @@ public class LibroPDCFragment extends Fragment {
     public String categoria_verbo;
     public String ultimaCategoria;
     public String nDatos, nDatitos, nDatotes, nURL, nURLita, nURLota, id;
-    public ArrayList nombre_login, correo_login, pictos, url, urlita, urlota, categoria, categories, nombre, nombrecito, nombresote, botonuno, botondos, pos, menssage, urlQueryCero, urls, celular;
+    public ArrayList nombre_login, correo_login, pictos, url, urlita, urlota, categoria, categories, nombre, nombrecito, nombresote, botonuno, botondos, pos, menssage, urlQueryCero, urls, celular, categorita, categorota;
     private static final String IP_MENSAJE = "https://yotrabajoconpecs.ddns.net/Enviar_Mensajes.php";
     ImageButton imagen1, imagen2, arriba1, arriba2, abajo1, abajo2;
     private ArrayList descargar_mensaje;
     private ArrayList descargar_tipo;
     private ArrayList descargar_hora;
     private ArrayList descargar_url;
+    private ArrayList descargar_categoria;
+    public String verboCategoria, sustCategoria, adjCategoria;
 
     @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
     public View onCreateView(@NonNull LayoutInflater inflater,
@@ -118,6 +120,9 @@ public class LibroPDCFragment extends Fragment {
         descargar_tipo = new ArrayList();
         descargar_hora = new ArrayList();
         descargar_url = new ArrayList();
+        categorita = new ArrayList();
+        categorota = new ArrayList();
+        descargar_categoria = new ArrayList();
         botonuno.clear();
         botondos.clear();
         botonuno.add(0);
@@ -136,6 +141,7 @@ public class LibroPDCFragment extends Fragment {
                     categoria_verbo = bundle.getString("categoria_imagen_verbo");
                     nDatos = glosa_verbo;
                     nURL = url_verbo;
+                    verboCategoria = categoria_verbo;
                     imagen1.setScaleType(ImageButton.ScaleType.FIT_CENTER);
                     if(categoria_verbo.equals("3")){
                         imagen1.setBackgroundResource(R.drawable.boton_rectangulo_verbo);
@@ -189,6 +195,7 @@ public class LibroPDCFragment extends Fragment {
                 //imagen1.setStroke(8, getResources().getColor(R.color.colorWhite));
                 nDatos = nombre.get(sapo2).toString();
                 nURL = url.get(sapo2).toString();
+                verboCategoria = categoria.get(sapo2).toString();
                 //Toast.makeText(getContext(), nDatos, Toast.LENGTH_SHORT).show();
                 imagen1.setScaleType(ImageButton.ScaleType.FIT_CENTER);
                 botonuno.add(categoria.get(sapo2));
@@ -203,10 +210,15 @@ public class LibroPDCFragment extends Fragment {
             public void onClick(View v) {
                 if(sapo2 > 0){
                     sapo2--;
-                    imagen1.setBackgroundResource(R.drawable.boton_rectangulo);
+                    if(categoria.get(sapo2).toString().equals("3")){
+                        imagen1.setBackgroundResource(R.drawable.boton_rectangulo_verbo);
+                    }else{
+                        imagen1.setBackgroundResource(R.drawable.boton_rectangulo_sustantivo);
+                    }
                     Picasso.get().load("https://yotrabajoconpecs.ddns.net/" + url.get(sapo2).toString()).into(imagen1);
                     nDatos = nombre.get(sapo2).toString();
                     nURL = url.get(sapo2).toString();
+                    verboCategoria = categoria.get(sapo2).toString();
                     //Toast.makeText(getContext(), nDatos, Toast.LENGTH_SHORT).show();
                     imagen1.setScaleType(ImageButton.ScaleType.FIT_CENTER);
                     botonuno.add(categoria.get(sapo2));
@@ -228,6 +240,7 @@ public class LibroPDCFragment extends Fragment {
                     Picasso.get().load("https://yotrabajoconpecs.ddns.net/" + urlita.get(sapo3).toString()).into(imagen2);
                     nDatitos = nombrecito.get(sapo3).toString();
                     nURLita = urlita.get(sapo3).toString();
+                    sustCategoria = categorita.get(sapo3).toString();
                     //Toast.makeText(getContext(), nDatitos, Toast.LENGTH_SHORT).show();
                     imagen2.setScaleType(ImageButton.ScaleType.FIT_CENTER);
                     botondos.add(nombrecito.get(sapo3));
@@ -237,6 +250,7 @@ public class LibroPDCFragment extends Fragment {
                     Picasso.get().load("https://yotrabajoconpecs.ddns.net/" + urlota.get(sapo3).toString()).into(imagen2);
                     nDatotes = nombresote.get(sapo3).toString();
                     nURLota = urlota.get(sapo3).toString();
+                    adjCategoria = categorota.get(sapo3).toString();
                     //Toast.makeText(getContext(), nDatotes, Toast.LENGTH_SHORT).show();
                     imagen2.setScaleType(ImageButton.ScaleType.FIT_CENTER);
                     botondos.add(nombrecito.get(sapo3));
@@ -255,6 +269,7 @@ public class LibroPDCFragment extends Fragment {
                         Picasso.get().load("https://yotrabajoconpecs.ddns.net/" + urlita.get(sapo3).toString()).into(imagen2);
                         nDatitos = nombrecito.get(sapo3).toString();
                         nURLita = urlita.get(sapo3).toString();
+                        sustCategoria = categorita.get(sapo3).toString();
                         //Toast.makeText(getContext(), nDatitos, Toast.LENGTH_SHORT).show();
                         imagen2.setScaleType(ImageButton.ScaleType.FIT_CENTER);
                         botondos.add(nombrecito.get(sapo3));
@@ -267,6 +282,7 @@ public class LibroPDCFragment extends Fragment {
                         Picasso.get().load("https://yotrabajoconpecs.ddns.net/" + urlota.get(sapo3).toString()).into(imagen2);
                         nDatotes = nombresote.get(sapo3).toString();
                         nURLota = urlota.get(sapo3).toString();
+                        adjCategoria = categorota.get(sapo3).toString();
                         //Toast.makeText(getContext(), nDatotes, Toast.LENGTH_SHORT).show();
                         imagen2.setScaleType(ImageButton.ScaleType.FIT_CENTER);
                         botondos.add(nombresote.get(sapo3));
@@ -293,12 +309,15 @@ public class LibroPDCFragment extends Fragment {
                 celular.clear();
                 String nMensaje;
                 String nMURL;
+                String nCategoria;
                 if(ultimaCategoria == "2"){
                     nMensaje = nDatitos;
                     nMURL = nURLita;
+                    nCategoria = sustCategoria;
                 }else{
                     nMensaje = nDatotes;
                     nMURL = nURLota;
+                    nCategoria = adjCategoria;
                 }
 
                 Date dt = new Date();
@@ -308,9 +327,10 @@ public class LibroPDCFragment extends Fragment {
                 //para enviar el mensaje accedemos al método.
                 String mensaje = "yo quiero " + nDatos + " " + nMensaje;
                 String mensajedos = "repo/img/2617.png " + "repo/img/5441.png " + nURL + " " + nMURL;
+                String categ = "0 0 " + verboCategoria + " " + nCategoria;
                 MENSAJE_ENVIAR = mensaje;
                 MandarMensaje();
-                CreateMensaje(mensajedos, mensaje, curTime, 1);
+                CreateMensaje(mensajedos, mensaje, curTime, 1, categ);
             }
         });
 
@@ -322,8 +342,9 @@ public class LibroPDCFragment extends Fragment {
                 String hora = intent.getStringExtra("key_hora");
                 String horaParametros[] = hora.split("\\,");
                 String emisor = intent.getStringExtra("key_emisor_PHP");
+                String categoria = intent.getStringExtra("key_categoria");
                 if(emisor.equals(RECEPTOR)){
-                    CreateMensaje(url, mensaje, horaParametros[0], 2);
+                    CreateMensaje(url, mensaje, horaParametros[0], 2, categoria);
                 }
             }
         };
@@ -344,26 +365,27 @@ public class LibroPDCFragment extends Fragment {
             @Override
             public void onResponse(JSONObject response) {
                 try {
-                    Toast.makeText(getContext(), response.getString("resultado"), Toast.LENGTH_SHORT).show();
+                    Toast.makeText(getContext(), response.getString("resultado") + " a " + RECEPTOR, Toast.LENGTH_SHORT).show();
                 } catch (JSONException e) {
                 }
             }
         }, new Response.ErrorListener() {
             @Override
             public void onErrorResponse(VolleyError error) {
-                Toast.makeText(getContext(), "Ocurrió un error", Toast.LENGTH_SHORT).show();
+                Toast.makeText(getContext(), "Ocurrió un error al enviar el mensaje", Toast.LENGTH_SHORT).show();
             }
         });
         RequestQueue requestQueue = Volley.newRequestQueue(getContext());
         requestQueue.add(solicitud);
     }
 
-    public void CreateMensaje(String id, String mensaje, String hora, int tipoDeMensaje) {
+    public void CreateMensaje(String id, String mensaje, String hora, int tipoDeMensaje, String cat) {
         MensajeDeTexto mensajeDeTextoAuxiliar = new MensajeDeTexto();
         mensajeDeTextoAuxiliar.setId(id);
         mensajeDeTextoAuxiliar.setMensaje(mensaje);
         mensajeDeTextoAuxiliar.setTipoMensaje(tipoDeMensaje);
         mensajeDeTextoAuxiliar.setHoraDelMensaje(hora);
+        mensajeDeTextoAuxiliar.setCategoriaMensaje(cat);
         mensajedetexto.add(mensajeDeTextoAuxiliar);
         adapter.notifyDataSetChanged();
         setScrollbarChat();
@@ -455,6 +477,7 @@ public class LibroPDCFragment extends Fragment {
         //sustantivos
         urlita.clear();
         nombrecito.clear();
+        categorita.clear();
         final ProgressDialog progressDialog = new ProgressDialog(getActivity());
         AsyncHttpClient client = new AsyncHttpClient();
         client.get("https://yotrabajoconpecs.ddns.net/query1.php", new AsyncHttpResponseHandler() {
@@ -468,6 +491,7 @@ public class LibroPDCFragment extends Fragment {
                         for(int i = 0; i < jsonarray.length(); i++){
                             urlita.add(jsonarray.getJSONObject(i).getString("url"));
                             nombrecito.add(jsonarray.getJSONObject(i).getString("nombre_imagen"));
+                            categorita.add(jsonarray.getJSONObject(i).getString("categoria_imagen"));
                         }
                     }catch(JSONException e){
                         e.printStackTrace();
@@ -486,6 +510,7 @@ public class LibroPDCFragment extends Fragment {
         //sustantivos
         urlota.clear();
         nombresote.clear();
+        categorota.clear();
         final ProgressDialog progressDialog = new ProgressDialog(getActivity());
         AsyncHttpClient client = new AsyncHttpClient();
         client.get("https://yotrabajoconpecs.ddns.net/query5.php", new AsyncHttpResponseHandler() {
@@ -499,6 +524,7 @@ public class LibroPDCFragment extends Fragment {
                         for(int i = 0; i < jsonarray.length(); i++){
                             urlota.add(jsonarray.getJSONObject(i).getString("url"));
                             nombresote.add(jsonarray.getJSONObject(i).getString("nombre_imagen"));
+                            categorota.add(jsonarray.getJSONObject(i).getString("categoria_imagen"));
                         }
                     }catch(JSONException e){
                         e.printStackTrace();
@@ -576,6 +602,7 @@ public class LibroPDCFragment extends Fragment {
         descargar_tipo.clear();
         descargar_hora.clear();
         descargar_url.clear();
+        descargar_categoria.clear();
         final ProgressDialog progressDialog = new ProgressDialog(getActivity());
         AsyncHttpClient client = new AsyncHttpClient();
         client.get(URL, new AsyncHttpResponseHandler() {
@@ -591,12 +618,14 @@ public class LibroPDCFragment extends Fragment {
                             descargar_tipo.add(jsonarray.getJSONObject(i).getString("tipo_mensaje"));
                             descargar_hora.add(jsonarray.getJSONObject(i).getString("hora_del_mensaje"));
                             descargar_url.add(jsonarray.getJSONObject(i).getString("url"));
+                            descargar_categoria.add(jsonarray.getJSONObject(i).getString("categoria"));
                             String curTime = descargar_hora.get(i).toString();
                             String mensaje = descargar_mensaje.get(i).toString();
                             String mensajedos = descargar_url.get(i).toString();
+                            String categoria = descargar_categoria.get(i).toString();
                             int tipo = Integer.parseInt(descargar_tipo.get(i).toString());
 
-                            CreateMensaje(mensajedos, mensaje, curTime, tipo);
+                            CreateMensaje(mensajedos, mensaje, curTime, tipo, categoria);
                         }
                     }catch(JSONException e){
                         e.printStackTrace();

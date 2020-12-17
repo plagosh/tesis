@@ -199,7 +199,7 @@ public class MensajeriaFragment extends Fragment {
             @Override
             public void onResponse(JSONObject response) {
                 try {
-                    Toast.makeText(getContext(), response.getString("resultado"), Toast.LENGTH_SHORT).show();
+                    Toast.makeText(getContext(), response.getString("resultado") + " a " + RECEPTOR, Toast.LENGTH_SHORT).show();
                 } catch (JSONException e) {
                 }
             }

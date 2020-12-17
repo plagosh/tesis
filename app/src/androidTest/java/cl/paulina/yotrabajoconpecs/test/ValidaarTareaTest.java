@@ -19,6 +19,8 @@ import org.junit.runner.RunWith;
 
 import static androidx.test.espresso.Espresso.onView;
 import static androidx.test.espresso.action.ViewActions.click;
+import static androidx.test.espresso.action.ViewActions.closeSoftKeyboard;
+import static androidx.test.espresso.action.ViewActions.replaceText;
 import static androidx.test.espresso.matcher.ViewMatchers.isDisplayed;
 import static androidx.test.espresso.matcher.ViewMatchers.withClassName;
 import static androidx.test.espresso.matcher.ViewMatchers.withId;
@@ -28,13 +30,33 @@ import static org.hamcrest.Matchers.is;
 
 @LargeTest
 @RunWith(AndroidJUnit4.class)
-public class PDCTerminaTareaTest {
+public class ValidaarTareaTest {
 
     @Rule
     public ActivityTestRule<Login> mActivityTestRule = new ActivityTestRule<>(Login.class);
 
     @Test
-    public void pDCTerminaTareaTest() {
+    public void validaarTareaTest() {
+        ViewInteraction appCompatEditText = onView(
+                allOf(withId(R.id.userLogin),
+                        childAtPosition(
+                                childAtPosition(
+                                        withClassName(is("android.widget.LinearLayout")),
+                                        0),
+                                1),
+                        isDisplayed()));
+        appCompatEditText.perform(replaceText("1"), closeSoftKeyboard());
+
+        ViewInteraction appCompatEditText2 = onView(
+                allOf(withId(R.id.passwordLogin),
+                        childAtPosition(
+                                childAtPosition(
+                                        withClassName(is("android.widget.LinearLayout")),
+                                        0),
+                                2),
+                        isDisplayed()));
+        appCompatEditText2.perform(replaceText("1"), closeSoftKeyboard());
+
         ViewInteraction appCompatButton = onView(
                 allOf(withId(R.id.button_login), withText("Ingresar"),
                         childAtPosition(
@@ -65,15 +87,25 @@ public class PDCTerminaTareaTest {
                         isDisplayed()));
         appCompatImageView.perform(click());
 
-        ViewInteraction appCompatImageButton = onView(
-                allOf(withId(R.id.checktarea),
+        ViewInteraction appCompatButton2 = onView(
+                allOf(withId(R.id.irastack), withText("TAREAS"),
                         childAtPosition(
                                 childAtPosition(
-                                        withClassName(is("android.widget.LinearLayout")),
-                                        1),
-                                0),
+                                        withClassName(is("android.widget.RelativeLayout")),
+                                        0),
+                                2),
                         isDisplayed()));
-        appCompatImageButton.perform(click());
+        appCompatButton2.perform(click());
+
+        ViewInteraction appCompatCheckBox = onView(
+                allOf(withId(R.id.checkeado),
+                        childAtPosition(
+                                childAtPosition(
+                                        withId(R.id.cardViewStack),
+                                        0),
+                                2),
+                        isDisplayed()));
+        appCompatCheckBox.perform(click());
     }
 
     private static Matcher<View> childAtPosition(

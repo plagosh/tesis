@@ -34,6 +34,7 @@ public class FireBaseServiceMensajes extends FirebaseMessagingService {
         String receptor = remoteMessage.getData().get("receptor");
         String emisorPHP = remoteMessage.getData().get("emisor");
         String url = remoteMessage.getData().get("url");
+        String categoria = remoteMessage.getData().get("categoria");
         String emisor = Preferences.obtenerPreferenceString(this, Preferences.PREFERENCE_USUARIO_LOGIN);
 
         if(!emisorPHP.equals(receptor)) {
@@ -42,7 +43,7 @@ public class FireBaseServiceMensajes extends FirebaseMessagingService {
                 MensajeEmpleador(mensaje, hora, emisorPHP);
                 showNotificationEmpleador(cabecera, cuerpo);
             } else {
-                MensajePDC(mensaje, hora, emisorPHP, url);
+                MensajePDC(mensaje, hora, emisorPHP, url, categoria);
                 showNotificationPDC(cabecera, cuerpo);
             }
         }
@@ -56,12 +57,13 @@ public class FireBaseServiceMensajes extends FirebaseMessagingService {
         LocalBroadcastManager.getInstance(getApplicationContext()).sendBroadcast(i);
     }
 
-    private void MensajePDC(String mensaje, String hora, String emisor, String url){
+    private void MensajePDC(String mensaje, String hora, String emisor, String url, String cat){
         Intent i = new Intent(LibroPDCFragment.MENSAJE);
         i.putExtra("key_mensaje",  mensaje);
         i.putExtra("key_hora",  hora);
         i.putExtra("key_emisor_PHP",  emisor);
         i.putExtra("key_url",  url);
+        i.putExtra("key_categoria",  cat);
         LocalBroadcastManager.getInstance(getApplicationContext()).sendBroadcast(i);
     }
 

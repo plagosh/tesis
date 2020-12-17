@@ -84,6 +84,7 @@ public class PanelPDCFragment extends Fragment {
     private ArrayList realizada;
     private ArrayList realizada_pdc;
     private ArrayList id_desglose;
+    private ArrayList cat_imagen;
     public String usuario;
     public String id_jefatura;
     public String nombre_usuario_conespacios;
@@ -131,6 +132,7 @@ public class PanelPDCFragment extends Fragment {
         realizada = new ArrayList();
         realizada_pdc = new ArrayList();
         id_desglose = new ArrayList();
+        cat_imagen = new ArrayList();
         tvdia.setText("" + tv_dia);
         tvano.setText("" + tv_ano);
         usuario = Preferences.obtenerPreferenceString(getContext(), Preferences.PREFERENCE_USUARIO_LOGIN);
@@ -192,6 +194,7 @@ public class PanelPDCFragment extends Fragment {
         realizada.clear();
         realizada_pdc.clear();
         id_desglose.clear();
+        cat_imagen.clear();
         rellenarTabla("https://yotrabajoconpecs.ddns.net/query3.php?usuario=" + EMISOR + "&idusuario=" + IDUSUARIO);
         final ProgressDialog progressDialog = new ProgressDialog(getActivity());
         progressDialog.setMessage("Cargando datos...");
@@ -217,6 +220,7 @@ public class PanelPDCFragment extends Fragment {
                             realizada.add(jsonarray.getJSONObject(i).getString("realizada"));
                             realizada_pdc.add(jsonarray.getJSONObject(i).getString("realizada_pdc"));
                             id_desglose.add(jsonarray.getJSONObject(i).getString("desglose"));
+                            cat_imagen.add(jsonarray.getJSONObject(i).getString("categoria_imagen"));
 
                             String horainicio = hora_inicio.get(i).toString();
                             String subhorainicio = horainicio.substring(0,2);
@@ -266,7 +270,15 @@ public class PanelPDCFragment extends Fragment {
                                     realizado_pdc = realizada_pdc.get(j).toString();
                                     DESGLOSE = id_desglose.get(j).toString();
                                     //Toast.makeText(getContext(), DESGLOSE, Toast.LENGTH_LONG).show();
-                                    tvpanel.setBackgroundResource(R.drawable.boton_rectangulo);
+                                    if(cat_imagen.get(j).toString().equals("3")){
+                                        tvpanel.setBackgroundResource(R.drawable.boton_rectangulo_verbo);
+                                    }else if(cat_imagen.get(j).toString().equals("2")){
+                                        tvpanel.setBackgroundResource(R.drawable.boton_rectangulo_sustantivo);
+                                    }else if(cat_imagen.get(j).toString().equals("4")){
+                                        tvpanel.setBackgroundResource(R.drawable.boton_rectangulo_adjetivo);
+                                    }else{
+                                        tvpanel.setBackgroundResource(R.drawable.boton_rectangulo);
+                                    }
                                     tvpanel.setLayoutParams(new LinearLayout.LayoutParams(ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT));
                                     tvpanel.setScaleType(ImageButton.ScaleType.CENTER_INSIDE);
                                     Picasso.get().load("https://yotrabajoconpecs.ddns.net/" + dato).into(tvpanel);
@@ -381,7 +393,7 @@ public class PanelPDCFragment extends Fragment {
         }, new Response.ErrorListener(){
             @Override
             public void onErrorResponse(VolleyError error) {
-                Toast.makeText(getContext(), error.toString(), Toast.LENGTH_SHORT).show();
+                Toast.makeText(getContext(), error.toString() + " en guardarListaTarea", Toast.LENGTH_SHORT).show();
             }
         }){
             @Override
@@ -417,7 +429,7 @@ public class PanelPDCFragment extends Fragment {
         }, new Response.ErrorListener() {
             @Override
             public void onErrorResponse(VolleyError error) {
-                Toast.makeText(getContext(), "Ocurrió un error", Toast.LENGTH_SHORT).show();
+                Toast.makeText(getContext(), "Ocurrió un error en MandarMensaje", Toast.LENGTH_SHORT).show();
             }
         });
         RequestQueue requestQueue = Volley.newRequestQueue(getContext());

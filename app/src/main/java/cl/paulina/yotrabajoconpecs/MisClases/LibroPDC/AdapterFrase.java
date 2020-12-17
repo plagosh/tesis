@@ -15,9 +15,9 @@ public class AdapterFrase extends FragmentPagerAdapter {
     @Override
     public Fragment getItem(int position) {
         if(position == 0){
-            return new frase_consulta();
-        }else if(position == 1){
             return new frase_general();
+        }else if(position == 1){
+            return new frase_consulta();
         }else if(position == 2){
             return new frase_sugerencia();
         }return null;

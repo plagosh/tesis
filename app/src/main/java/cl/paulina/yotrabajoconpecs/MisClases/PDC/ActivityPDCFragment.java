@@ -130,7 +130,7 @@ public class ActivityPDCFragment extends Fragment {
                             String mensaje = descargar_mensaje.get(i).toString();
                             //String uri = "https://yotrabajoconpecs.ddns.net/uploads/" + correo + ".jpg";
                             //int imageResource = getResources().getIdentifier(uri, "drawable", getActivity().getPackageName());
-                            agregarAmigos("https://yotrabajoconpecs.ddns.net/uploads/" + correoArray.get(x).toString() + ".jpg", nombreCompletoArray.get(x).toString(), mensaje, curTime, correo);
+                            agregarAmigos("https://yotrabajoconpecs.ddns.net/uploads/" + correoArray.get(x).toString() + ".jpg", nombreCompletoArray.get(x).toString(), mensaje, curTime, correoArray.get(x).toString());
                             x++;
                         }
                     }catch(JSONException e){

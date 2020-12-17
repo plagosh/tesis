@@ -36,7 +36,7 @@ public class DesgloseFragment extends Fragment {
     String key = "id_tarea";
     LinearLayout layout;
     ImageButton imagen;
-    private ArrayList id_desglose, tarea_id_tarea, url, id_detalle, id_herramienta;
+    private ArrayList id_desglose, tarea_id_tarea, url, id_detalle, id_herramienta, categoria;
     public String pasando_dato;
     public String HERRAMIENTA;
 
@@ -53,6 +53,7 @@ public class DesgloseFragment extends Fragment {
         id_detalle = new ArrayList();
         url = new ArrayList();
         id_herramienta = new ArrayList();
+        categoria = new ArrayList();
         layout = vista.findViewById(R.id.cajaBotonImagen);
 
         pc = new PreferenciasCompartidas();
@@ -70,6 +71,7 @@ public class DesgloseFragment extends Fragment {
         id_detalle.clear();
         url.clear();
         id_herramienta.clear();
+        categoria.clear();
         AsyncHttpClient client = new AsyncHttpClient();
         client.get(URL, new AsyncHttpResponseHandler() {
             @RequiresApi(api = Build.VERSION_CODES.M)
@@ -84,9 +86,18 @@ public class DesgloseFragment extends Fragment {
                             id_detalle.add(jsonarray.getJSONObject(j).getString("id_detalle"));
                             url.add(jsonarray.getJSONObject(j).getString("url"));
                             id_herramienta.add(jsonarray.getJSONObject(j).getString("id_herramienta"));
+                            categoria.add(jsonarray.getJSONObject(j).getString("categoria_imagen"));
                             imagen = new ImageButton(getContext());
                             imagen.setLayoutParams(new LinearLayout.LayoutParams(ViewGroup.LayoutParams.WRAP_CONTENT, 400));
-                            imagen.setBackgroundResource(R.drawable.boton_rectangulo);
+                            if(categoria.get(j).toString().equals("3")){
+                                imagen.setBackgroundResource(R.drawable.boton_rectangulo_verbo);
+                            }else if(categoria.get(j).toString().equals("2")){
+                                imagen.setBackgroundResource(R.drawable.boton_rectangulo_sustantivo);
+                            }else if(categoria.get(j).toString().equals("4")){
+                                imagen.setBackgroundResource(R.drawable.boton_rectangulo_adjetivo);
+                            }else{
+                                imagen.setBackgroundResource(R.drawable.boton_rectangulo);
+                            }
                             imagen.setScaleType(ImageButton.ScaleType.FIT_CENTER);
                             imagen.setId(j);
                             layout.setOrientation(LinearLayout.VERTICAL);

@@ -64,7 +64,6 @@ public class ViewEventsActivity extends Fragment implements View.OnLongClickList
         fecha = anio + "-" + mes + "-" + dia;
         listView.setOnLongClickListener(this);
         descargarPDC();
-        descargarDatosCalendario("https://yotrabajoconpecs.ddns.net/queryVerTarea.php?fecha=" + fecha);
         return vista;
     }
 
@@ -107,15 +106,18 @@ public class ViewEventsActivity extends Fragment implements View.OnLongClickList
                             apellidoUsuario.add(jsonarray.getJSONObject(i).getString("apellido_usuario"));
                         }
                         ArrayList nombreCompleto = new ArrayList();
+                        ArrayList idArray = new ArrayList();
                         for(int j = 0; j < nombreUsuario.size(); j++){
                             nombreCompleto.add(nombreUsuario.get(j).toString() + " " + apellidoUsuario.get(j).toString());
+                            idArray.add(idUsuario.get(j).toString());
                         }
                         ArrayAdapter adapter = new ArrayAdapter(getContext(), android.R.layout.simple_spinner_dropdown_item, nombreCompleto);
                         spinnerPDC.setAdapter(adapter);
                         spinnerPDC.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
                             @Override
                             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-                                String nombreUsuario = (String) spinnerPDC.getAdapter().getItem(position);
+                                //Toast.makeText(getContext(), idArray.get(position).toString(), Toast.LENGTH_SHORT).show();
+                                descargarDatosCalendario("https://yotrabajoconpecs.ddns.net/queryVerTarea.php?fecha=" + fecha + "&idusuario=" + idArray.get(position).toString());
                             }
                             @Override
                             public void onNothingSelected(AdapterView<?> parent) {

@@ -11,6 +11,7 @@ import android.widget.ImageButton;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.cardview.widget.CardView;
@@ -64,12 +65,22 @@ public class MessageAdapterFragment extends RecyclerView.Adapter<MessageAdapterF
         lista = new ArrayList();
 
         String id = mensajedetexto.get(position).getId();
+        String categoria = mensajedetexto.get(position).getCategoriaMensaje();
         String urlCompleto[] = id.split(" ");
+        String categoriaCompleto[] = categoria.split(" ");
         holder.TvMensaje.removeAllViews();
         for(int i = 0; i < urlCompleto.length; i++){
             ImageButton imagen = new ImageButton(context);
             holder.TvMensaje.setGravity(Gravity.CENTER);
-            imagen.setBackgroundResource(R.drawable.boton_rectangulo);
+            if(categoriaCompleto[i].equals("3")){
+                imagen.setBackgroundResource(R.drawable.boton_rectangulo_verbo);
+            }else if(categoriaCompleto[i].equals("2")){
+                imagen.setBackgroundResource(R.drawable.boton_rectangulo_sustantivo);
+            }else if(categoriaCompleto[i].equals("4")){
+                imagen.setBackgroundResource(R.drawable.boton_rectangulo_adjetivo);
+            }else{
+                imagen.setBackgroundResource(R.drawable.boton_rectangulo);
+            }
             imagen.setLayoutParams(new LinearLayout.LayoutParams(130, 130));
             imagen.setScaleType(ImageButton.ScaleType.FIT_CENTER);
             Picasso.get().load("https://yotrabajoconpecs.ddns.net/" + urlCompleto[i]).into(imagen);
